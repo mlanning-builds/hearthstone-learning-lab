@@ -1975,6 +1975,30 @@
       "status": "provisional_runtime_independent_reference_pending",
       "current_behavior": "19 explicit historical minion/spell bodies implement printed numeric damage, healing, draw, armor or buffs through shared primitive operations. They are excluded from Standard construction and do not approve historical pools.",
       "required_evidence": "Historical membership and alias audit plus remaining historical dependencies, shared targeting, copy and event fidelity."
+    },
+    {
+      "id": "historical_death_primitives",
+      "cards": [
+        "BOT_031",
+        "CFM_646",
+        "EX1_029",
+        "EX1_096",
+        "GVG_076",
+        "KAR_029",
+        "LEG_CS3_013",
+        "LOOT_413",
+        "OG_120",
+        "OG_151",
+        "OG_256",
+        "OG_323",
+        "TRL_525",
+        "TSC_001",
+        "ULD_177",
+        "ULD_184"
+      ],
+      "status": "written_unverified",
+      "current_behavior": "Sixteen generated-only historical bodies use explicit reviewed Deathrattle primitives: hero damage, draw, armor, board buffs and area damage. Exact frozen metadata is pinned. No historical generation pool is approved.",
+      "required_evidence": "Independent client interaction traces and complete source-specific historical pool membership. Paid play, Silence, fatigue, armor, surviving-board buffs and damage to both boards have local scenarios."
     }
   ]
 }

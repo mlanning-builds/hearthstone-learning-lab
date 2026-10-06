@@ -21,7 +21,7 @@ Do not silently filter unsupported outcomes from generation pools. Keep unknown 
 From the repository root:
 
 ```sh
-python -m unittest discover -s tests/tools
+python tools/check_without_training.py --suite supporting
 python -m unittest discover -s tools/tests
 python tools/sync_candidate_inventory.py --engine-root staging/rebased-88
 ```
@@ -29,7 +29,7 @@ python tools/sync_candidate_inventory.py --engine-root staging/rebased-88
 From staging/rebased-88, using the repository virtual environment:
 
 ```sh
-../../.venv/bin/python -c 'from expanded.status import run_rule_fixtures; r=run_rule_fixtures(); print(r); raise SystemExit(not r["success"])'
+../../.venv/bin/python ../../tools/check_without_training.py --suite candidate
 ```
 
 Training and deck-search experiments are run manually by the project owner in Jupyter. Do not launch them as part of checks or CI. Never commit local model files, run folders, credentials, or notebook outputs.

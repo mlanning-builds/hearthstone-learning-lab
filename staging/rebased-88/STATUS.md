@@ -1,4 +1,4 @@
-> New changes awaiting full regression: 890 Standard implementations and 229 generated historical bodies. The verified checkpoint below precedes Irida, Primalfin Challenger and the 19 numeric historical admissions.
+> New changes awaiting full regression: 890 Standard implementations and 245 generated historical bodies. The verified checkpoint below precedes Irida, Primalfin Challenger and the numeric and Deathrattle historical admissions. The current non-training regression also identified a Chef fixture opponent with raised mana capacity; that fixture is now controlled and the raised-capacity interaction is tested separately.
 
 # Current candidate status
 

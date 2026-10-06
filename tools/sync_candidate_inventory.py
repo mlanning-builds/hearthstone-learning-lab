@@ -46,7 +46,7 @@ def main():
     records=registry()  # Validate every existing reviewed hash first.
     import importlib
     historical_ids=set()
-    for name in ('historical_vanilla','historical_simple','historical_numeric'):
+    for name in ('historical_vanilla','historical_simple','historical_numeric','historical_death'):
         if (root/'expanded'/f'{name}.py').exists():
             historical_ids.update(importlib.import_module('expanded.'+name).GENERATED_IDS)
     if not historical_ids<=set(records)&TOKEN_IDS&set(RULES):

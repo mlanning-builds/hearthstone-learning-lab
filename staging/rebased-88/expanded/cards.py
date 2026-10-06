@@ -826,6 +826,12 @@ from . import kindred
 RULES['TLC_251']=kindred.RULES['TLC_251']
 from . import stored_obligations
 RULES['JAIL_719']=stored_obligations.RULES['JAIL_719']
+from . import historical_death
+RULES.update(historical_death.RULES)
+DEATH_EFFECTS.update(historical_death.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_death.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_death.GENERATED_IDS)
+
 from . import historical_numeric
 RULES.update(historical_numeric.RULES)
 TOKEN_IDS.update(historical_numeric.GENERATED_IDS)
@@ -839,7 +845,7 @@ RULES.update(historical_simple.RULES)
 TOKEN_IDS.update(historical_simple.GENERATED_IDS)
 PLAYABLE_TOKENS.update(historical_simple.GENERATED_IDS)
 
-COLLECTIBLE_IDS = (LEGACY_SUPPORTED | PASSIVE | set(RULES) | set(LOCATION_RULES)) - historical_numeric.GENERATED_IDS - BLOOD_FIGHTER_TOKEN_IDS - historical_simple.GENERATED_IDS - historical_vanilla.GENERATED_IDS - CLOSED_TIMELINE_TOKEN_IDS - entity_effects.TOKEN_IDS - stored_cards.TOKEN_IDS - shatter.TOKEN_IDS - spell_casting_cards.TOKEN_IDS - modifier_cards.TOKEN_IDS - hero_powers.TOKEN_IDS - permanents.TOKEN_IDS - dreams.TOKEN_IDS - quests.TOKEN_IDS - on_draw_cards.TOKEN_IDS - batch30_cards.TOKEN_IDS - composed_cards.TOKEN_IDS - persistent_cards.TOKEN_IDS - batch60_cards.TOKEN_IDS - local_family_cards.TOKEN_IDS - COIN_IDS - {'TOKEN_COIN','SW_108t','EX1_014t','EX1_277','WW_001t','TLC_630t','JAIL_941t'}
+COLLECTIBLE_IDS = (LEGACY_SUPPORTED | PASSIVE | set(RULES) | set(LOCATION_RULES)) - historical_death.GENERATED_IDS - historical_numeric.GENERATED_IDS - BLOOD_FIGHTER_TOKEN_IDS - historical_simple.GENERATED_IDS - historical_vanilla.GENERATED_IDS - CLOSED_TIMELINE_TOKEN_IDS - entity_effects.TOKEN_IDS - stored_cards.TOKEN_IDS - shatter.TOKEN_IDS - spell_casting_cards.TOKEN_IDS - modifier_cards.TOKEN_IDS - hero_powers.TOKEN_IDS - permanents.TOKEN_IDS - dreams.TOKEN_IDS - quests.TOKEN_IDS - on_draw_cards.TOKEN_IDS - batch30_cards.TOKEN_IDS - composed_cards.TOKEN_IDS - persistent_cards.TOKEN_IDS - batch60_cards.TOKEN_IDS - local_family_cards.TOKEN_IDS - COIN_IDS - {'TOKEN_COIN','SW_108t','EX1_014t','EX1_277','WW_001t','TLC_630t','JAIL_941t'}
 
 
 @lru_cache(maxsize=2)

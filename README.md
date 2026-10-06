@@ -30,7 +30,7 @@ flowchart LR
 | Component | Status |
 | --- | --- |
 | Standard card implementations | 890 of 1,185 connected to the development candidate |
-| Generated historical cards | 229 explicit bodies; generation-pool completion is separate |
+| Generated historical cards | 245 explicit bodies; generation-pool completion is separate |
 | Shared interactions and client fidelity | In progress; passing local checks does not establish complete game fidelity |
 | Training and deck search | Code and notebooks available for manual experiments on supported cards |
 

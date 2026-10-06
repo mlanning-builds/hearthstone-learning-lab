@@ -6,7 +6,7 @@
   "remaining_collectibles": 295,
   "completion_target": "Zero unsupported collectible behavior and required generated outcomes, followed by fidelity gates.",
   "methodology": "Conservative candidate graph. Explicit runtime identity bindings resolve named dependencies only; independent behavior review and pool gates remain. Scores are relative effort and fan-out, not measured time.",
-  "source_sha256": "8ec3de5463de5e9c999439baa76fa9657e82c011300db0e798495dc7f021a62b",
+  "source_sha256": "924cb3708be1b4f6da4074b7eda3ded6096da16add4c5e8efcfb1288b5791852",
   "unresolved_cards": 56,
   "cyclic_candidate_groups": [
     [

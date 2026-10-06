@@ -52,7 +52,15 @@ def run_rule_fixtures(progress=None):
     import uuid
     from datetime import datetime,timezone
     start_fingerprint=code_fingerprint()
-    suite=unittest.defaultTestLoader.discover(str(ROOT/'tests'),pattern='test_expanded*.py')
+    discovered=unittest.defaultTestLoader.discover(str(ROOT/'tests'),pattern='test_expanded*.py')
+    excluded_modules={'test_expanded_training','test_expanded_learning_core'}
+    def rule_cases(items):
+        for item in items:
+            if isinstance(item,unittest.TestSuite):
+                yield from rule_cases(item)
+            elif item.__class__.__module__.split('.')[-1] not in excluded_modules:
+                yield item
+    suite=unittest.TestSuite(rule_cases(discovered))
     total=suite.countTestCases()
     class ProgressResult(unittest.TextTestResult):
         def stopTest(self,test):
@@ -67,7 +75,8 @@ def run_rule_fixtures(progress=None):
                 success=result.wasSuccessful() and unchanged,tests_run=result.testsRun,
                 failures=len(result.failures),errors=len(result.errors),skipped=len(result.skipped),
                 completed_at=datetime.now(timezone.utc).isoformat(),
-                scope='Targeted engine fixtures only; not full Standard certification or training.')
+                excluded_modules=sorted(excluded_modules),
+                scope='Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.')
     folder=ROOT/'runs/expanded_validation';folder.mkdir(parents=True,exist_ok=True)
     run_id=uuid.uuid4().hex
     report['run_id']=run_id

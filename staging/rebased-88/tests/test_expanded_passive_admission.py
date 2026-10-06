@@ -11,8 +11,8 @@ class PassiveAdmissionTests(unittest.TestCase):
   ids=[c for c in sorted(COLLECTIBLE_IDS) if c not in BUNDLES and c not in ('JAIL_397','JAIL_430',root) and eligible(records[c],hero,(0,0,0)) and (not cheap or records[c]['cost']<=3)]
   self.assertGreaterEqual(len(ids),29)
   d=Deck(hero,(root,)+tuple(ids[:29]));self.assertEqual(validate(d),[]);return d
- def game(self,hero,root,cheap=False):
-  g=Game([self.deck(hero,root,cheap),random_deck('WARRIOR',99)],seed=98)
+ def game(self,hero,root,cheap=False,opposing_root='CORE_CS2_122'):
+  g=Game([self.deck(hero,root,cheap),self.deck('WARRIOR',opposing_root)],seed=98)
   g.step(Action('mulligan'));g.step(Action('mulligan'));return g
  def play(self,g,cid,target=0):
   g.current=0;g.players[0].mana=g.players[0].max_mana=10;c=g._add(0,cid)
@@ -56,3 +56,12 @@ class PassiveAdmissionTests(unittest.TestCase):
   self.assertTrue(any(g.cards[c]['cost']>3 for c in p.starting_deck))
   for _ in range(10):g.step(Action('end'))
   self.assertLess(p.max_mana,10)
+
+ def test_chef_does_not_cap_later_crystals_from_raised_capacity(self):
+  g=self.game('DRUID','JAIL_860',cheap=True,opposing_root='EDR_000');p=g.players[0]
+  self.assertEqual(p.mana_capacity,15);ends=0
+  while ends<5:
+   owner=g.current;g.step(Action('end'))
+   if owner==0:ends+=1
+  self.assertEqual(p.max_mana,10)
+  g.step(Action('end'));self.assertEqual((p.max_mana,p.mana),(11,11))

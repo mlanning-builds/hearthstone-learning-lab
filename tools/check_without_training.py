@@ -25,8 +25,10 @@ def main():
     if args.suite == "candidate":
         candidate = ROOT / "staging/rebased-88"
         sys.path.insert(0, str(candidate))
-        tests = candidate / "tests"
-        pattern = "test_expanded*.py"
+        from expanded.status import run_rule_fixtures
+        report = run_rule_fixtures()
+        print(report, flush=True)
+        return 0 if report["success"] else 1
     else:
         sys.path.insert(0, str(ROOT))
         tests = ROOT / "tests/tools"

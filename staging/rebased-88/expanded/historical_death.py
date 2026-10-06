@@ -1,0 +1,4 @@
+"""Explicit generated-only historical Deathrattles; no pool approval."""
+RULES={cid:('none',[]) for cid in ('BOT_031', 'CFM_646', 'EX1_029', 'EX1_096', 'GVG_076', 'KAR_029', 'LEG_CS3_013', 'LOOT_413', 'OG_120', 'OG_151', 'OG_256', 'OG_323', 'TRL_525', 'TSC_001', 'ULD_177', 'ULD_184')}
+DEATH_EFFECTS={'BOT_031': [('damage_enemy_hero', 2)], 'CFM_646': [('damage_enemy_hero', 2)], 'EX1_029': [('damage_enemy_hero', 2)], 'EX1_096': [('draw', 1)], 'GVG_076': [('area_damage', 'all_minions', 2)], 'KAR_029': [('draw', 1)], 'LEG_CS3_013': [('damage_enemy_hero', 3)], 'LOOT_413': [('armor', 3)], 'OG_120': [('area_damage', 'all_minions', 8)], 'OG_151': [('area_damage', 'all_minions', 1)], 'OG_256': [('board_buff', 1, 1)], 'OG_323': [('draw', 1)], 'TRL_525': [('draw', 2)], 'TSC_001': [('damage_enemy_hero', 4)], 'ULD_177': [('draw', 8)], 'ULD_184': [('damage_enemy_hero', 3)]}
+GENERATED_IDS=frozenset(RULES)
