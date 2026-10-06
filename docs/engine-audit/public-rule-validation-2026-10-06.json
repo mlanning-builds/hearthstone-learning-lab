@@ -1,0 +1,22 @@
+{
+  "fingerprint": "0ff8760632200cc15ecd63be4a2892025122525ce4788cdcdb1541ca8e61867e",
+  "end_fingerprint": "0ff8760632200cc15ecd63be4a2892025122525ce4788cdcdb1541ca8e61867e",
+  "source_unchanged": true,
+  "fixture_success": true,
+  "success": true,
+  "tests_run": 4382,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "completed_at": "2026-10-06T19:26:24.151110+00:00",
+  "excluded_modules": [
+    "test_expanded_learning_core",
+    "test_expanded_training"
+  ],
+  "scope": "Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.",
+  "standard_implementations": 890,
+  "standard_catalog_size": 1185,
+  "historical_generated_bodies": 245,
+  "supporting_checks_passed": 69,
+  "completion_queue_checks_passed": 32
+}

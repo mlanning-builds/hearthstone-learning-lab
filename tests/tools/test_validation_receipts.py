@@ -10,6 +10,25 @@ spec=importlib.util.spec_from_file_location('candidate_status_receipts',ROOT/'st
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 class ValidationReceiptTests(unittest.TestCase):
+    def test_rule_checks_do_not_execute_learning_scenarios(self):
+        executed=[]
+        class ForbiddenLearningCase(unittest.TestCase):
+            def runTest(self):
+                raise AssertionError('Learning scenario must not execute in rule checks')
+        ForbiddenLearningCase.__module__='test_expanded_training'
+        class RuleCase(unittest.TestCase):
+            def runTest(self):
+                executed.append('rule')
+        suite=unittest.TestSuite([unittest.TestSuite([ForbiddenLearningCase(),RuleCase()])])
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            with patch.object(module,'ROOT',root), patch.object(module,'code_fingerprint',return_value='same'), patch('unittest.defaultTestLoader.discover',return_value=suite):
+                report=module.run_rule_fixtures()
+            self.assertTrue(report['success'])
+            self.assertEqual(report['tests_run'],1)
+            self.assertEqual(executed,['rule'])
+            self.assertIn('test_expanded_training',report['excluded_modules'])
+
     def run_fixture(self, root, fingerprints, passing=True):
         result=unittest.TestResult()
         result.testsRun=1

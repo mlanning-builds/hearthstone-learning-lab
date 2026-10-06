@@ -373,6 +373,7 @@
     "JAIL_516",
     "JAIL_703",
     "JAIL_718",
+    "JAIL_719",
     "JAIL_721",
     "JAIL_734",
     "JAIL_801",
@@ -530,6 +531,7 @@
     "TLC_246",
     "TLC_247",
     "TLC_250",
+    "TLC_251",
     "TLC_252",
     "TLC_253",
     "TLC_254",
@@ -601,7 +603,7 @@
     "TTN_851"
   ],
   "remaining_in_milestone": 0,
-  "stage": "597 additional candidate cards; implementation target reached, semantic review remains",
+  "stage": "599 additional candidate cards; implementation target reached, semantic review remains",
   "execution": "Assistant or user local validation authorized; long training needs a budget",
   "prepared_checks": 266,
   "new_prepared_checks": 87,
@@ -611,15 +613,15 @@
     "frozen card hashes",
     "declared opcode dispatch coverage"
   ],
-  "runtime_checks": "4371 candidate checks passed",
+  "runtime_checks": "4382 candidate checks passed",
   "baseline_fingerprint": "d0509a7207e0d77f81cabe05add42e0656102cb87b6b9716ed7fbb8a09065aac",
   "release_ready": false,
   "milestone_complete": false,
   "active_engine_cards": 291,
-  "staged_overlay_cards": 888,
+  "staged_overlay_cards": 890,
   "next_work": [
     "Review candidate semantics and interactions against independent evidence.",
-    "Implement the full Standard remainder: 297 card effects and generated dependencies.",
+    "Implement the full Standard remainder: 295 card effects and generated dependencies.",
     "Validate shared interactions, full-class learning and reproducibility before release."
   ],
   "baseline_rebase_required": false,
@@ -628,23 +630,27 @@
     "path": "staging/rebased-88",
     "version": "all-class-experimental-0.15-candidate",
     "validation": {
-      "fingerprint": "240219a5fb2db6e29d8f03878477679e9be6c8afaed2089921e8badfb70c2c6f",
-      "end_fingerprint": "240219a5fb2db6e29d8f03878477679e9be6c8afaed2089921e8badfb70c2c6f",
+      "fingerprint": "0ff8760632200cc15ecd63be4a2892025122525ce4788cdcdb1541ca8e61867e",
+      "end_fingerprint": "0ff8760632200cc15ecd63be4a2892025122525ce4788cdcdb1541ca8e61867e",
       "source_unchanged": true,
       "fixture_success": true,
       "success": true,
-      "tests_run": 4371,
+      "tests_run": 4382,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
-      "completed_at": "2026-10-06T18:32:25.178063+00:00",
-      "scope": "Targeted engine fixtures only; not full Standard certification or training.",
-      "run_id": "9bb32bee242443a9a8627679f51085ad",
-      "report_path": "/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-9bb32bee242443a9a8627679f51085ad.json"
+      "completed_at": "2026-10-06T19:26:24.151110+00:00",
+      "excluded_modules": [
+        "test_expanded_learning_core",
+        "test_expanded_training"
+      ],
+      "scope": "Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.",
+      "run_id": "1427e5e2e7774c3e9e645a26311e28ae",
+      "report_path": "staging/rebased-88/runs/expanded_validation/validation-1427e5e2e7774c3e9e645a26311e28ae.json"
     },
     "active": false
   },
   "implementation_target_reached": true,
-  "remaining_standard_cards": 297,
-  "generated_historical_effects_written": 210
+  "remaining_standard_cards": 295,
+  "generated_historical_effects_written": 245
 }
