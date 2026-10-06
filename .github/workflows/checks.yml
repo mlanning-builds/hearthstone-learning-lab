@@ -1,0 +1,22 @@
+name: Simulator checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - name: Check supporting tools
+        run: |
+          python tools/check_without_training.py --suite supporting
+          python -m unittest discover -s tools/tests
+      - name: Check candidate inventory
+        run: python tools/sync_candidate_inventory.py --engine-root staging/rebased-88
+      - name: Run simulator rule scenarios
+        working-directory: staging/rebased-88
+        run: python ../../tools/check_without_training.py --suite candidate

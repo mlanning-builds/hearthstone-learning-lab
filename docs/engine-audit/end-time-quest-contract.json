@@ -1,0 +1,78 @@
+{
+  "patch": "36.6.0.251952",
+  "cards": [
+    "END_017",
+    "END_017t"
+  ],
+  "status": "implementation contract; no admission",
+  "primary_constraints": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/cards/121159-battle-at-the-end-time",
+      "fact": "Quest requires filling hand then emptying it; reward Tick and Tock."
+    },
+    {
+      "url": "https://us.forums.blizzard.com/en/hearthstone/t/3443-hotfix-patch/156699",
+      "fact": "Official hotfix says Gaslight Gatekeeper and Sir Finley, Sea Guide should work with this Quest.",
+      "inference": "Transient empty hand during a hand replacement must be observed; a post-effect-only check is insufficient."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24267727",
+      "fact": "35.0 fixes reward being destroyed when completed with a full hand.",
+      "limit": "Confirms reward preservation, not exact insertion priority."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24276665/35-6-patch-notes",
+      "fact": "Sheltered Survivor must be able to complete the Quest."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/cards/121160/",
+      "fact": "Printed Tick and Tock has draw-until-full Battlecry and empty-opponent-hand Deathrattle.",
+      "limit": "Printed text alone does not distinguish discard from removal or establish dynamic versus initial-count draw semantics."
+    }
+  ],
+  "source_audit": {
+    "expanded/provenance.py::_enter_hand": "Common hand entry, must publish count after append, preserving intermediate full state.",
+    "expanded/systems.py::_discard_cards": "Removes entire batch before listeners; capture empty boundary before refill triggers.",
+    "expanded/game.py::_play": "Physical hand removal precedes play effects; preserve empty state before Battlecry/refill.",
+    "expanded/stored_cards.py": "stored_mix_hands, stored_starting_hand, stored_swap_back clear then refill without an intervening settle; must capture empty state before reentry.",
+    "expanded/lifecycle.py::_settle": "Existing hand checkpoint alone misses transient empty/full states inside compound effects.",
+    "expanded/draw_events.py::_draw_split": "Existing draw_until snapshots 10 minus initial hand size and splits that fixed number into resumable draws. It does not dynamically recalculate after each draw. Determine correct Tick and Tock behavior with cast-when-drawn and extra-draw triggers before reusing unchanged."
+  },
+  "implementation_requirements": [
+    "Ordered full then empty public objective; no retroactive pre-Quest fullness.",
+    "Separate boundary observation from reward delivery so a newly awarded card cannot be accidentally included in the operation that emptied the hand.",
+    "Review every physical hand removal/replacement, including shuffle choices, Tradeable, transfers, consumption and temporary expiry.",
+    "Reward Battlecry must use resumable draw machinery, preserve cast-when-drawn/discover interruptions and terminate when deck exhausted or game ends.",
+    "Resolve whether emptying opponent hand is destruction rather than discard; do not guess from the word empty.",
+    "Preserve independent gates for exact event priority, reward insertion, overflow and nested refill effects."
+  ],
+  "required_tests": [
+    "full then empty across turns",
+    "empty before full does not complete",
+    "one effect empties and refills",
+    "Sheltered Survivor last held card",
+    "discard refill trigger",
+    "full-hand reward retained",
+    "opponent-hand isolation",
+    "reward draw interruptions and empty deck",
+    "Deathrattle triggers versus discard semantics",
+    "record-off parity"
+  ],
+  "mutation_semantics": {
+    "observe_before_refill": [
+      "systems._trade: physical departure before replacement draw",
+      "stored_cards.stored_starting_hand and stored_swap_back: actual whole-hand removal before restoration",
+      "game._play: held card paid/removed before Battlecry",
+      "systems._shuffle_hand_card: selected hand card moved to deck",
+      "systems._discard_cards: selected batch removed before discard-trigger refills"
+    ],
+    "do_not_infer_from_python_list_operations": [
+      "shatter._shatter_update: remove parent then insert halves is one transformation, not proven hand-empty event",
+      "quest_families._quest_family_hand_checkpoint: removing two halves then inserting combined card is one combination",
+      "entity_effects.entity_swap_hand: pop/remove/insert includes ordering bookkeeping; exact swap boundary needs independent evidence",
+      "stored_cards.stored_mix_hands: clearing lists is an implementation detail; cannot assume this counts like shuffling all hand cards into deck",
+      "provenance._mulligan: pregame hand replacement must not advance in-game Quest"
+    ],
+    "policy": "Add explicit semantic hand-boundary notifications at reviewed zone transitions. Do not instrument every Python remove/pop blindly. Final settle checkpoint may backstop stable states but cannot replace transient event delivery."
+  }
+}

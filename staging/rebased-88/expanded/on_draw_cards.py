@@ -1,0 +1,35 @@
+"""Explicit on-draw identities from the pinned Constructed archive."""
+IMP='CAP_400t2t'
+SHRED='TIME_025t'
+RULES={
+ 'CAP_400':('none',[]),
+ 'CAP_401':('none',[('on_draw_top_imp',)]),
+ 'CAP_404':('none',[('opponent_next_turn_cost','MINION',2),('on_draw_shuffle',IMP,2,1)]),
+ 'CAP_406':('none',[('on_draw_imp_upgrade',)]),
+ 'CORE_SW_439':('none',[]),
+ 'EDR_260':('none',[]),
+ 'JAIL_386':('none',[('armor',2),('on_draw_shuffle','JAIL_386t',5,0)]),
+ 'JAIL_881':('none',[('missiles','enemies',4),('on_draw_shuffle','JAIL_881t',2,0)]),
+ 'TIME_025':('none',[('on_draw_shuffle',SHRED,2,0)]),
+ 'TIME_026':('none',[('board_buff',1,1),('on_draw_shuffle',SHRED,2,0)]),
+ 'TIME_027':('none',[('missiles','enemies',6),('on_draw_shuffle',SHRED,2,0)]),
+ 'TIME_028':('none',[('on_draw_consume_shred','buff')]),
+ 'TIME_029':('none',[('on_draw_consume_shred','copy')]),
+ 'TLC_518':('none',[('on_draw_shuffle','TLC_513t2',3,0)]),
+}
+DEATH_EFFECTS={
+ 'CAP_400':[('on_draw_shuffle',IMP,2,1)],
+ 'CORE_SW_439':[('on_draw_shuffle','SW_439t',4,0)],
+ 'EDR_260':[('on_draw_shuffle','EDR_260t',2,0)],
+}
+CAST_EFFECTS={
+ 'EDR_445pt3':(('imbue_portal',),),
+ 'SW_439t':(('summon','SW_439t2',1),),
+ 'JAIL_386t':(('armor',2),),
+ 'JAIL_881t':(('missiles','enemies',4),),
+ 'JAIL_443t':(('on_draw_hurt_owner',2),),
+ SHRED:(('on_draw_hurt_owner',3),),
+}
+SUMMON_DRAW={'EDR_260t':0,'TLC_513t2':0,IMP:1}
+TOKEN_IDS=set(CAST_EFFECTS)|set(SUMMON_DRAW)|{'SW_439t2'}
+TOKEN_RULES={cid:('none',list(CAST_EFFECTS.get(cid,()))) for cid in TOKEN_IDS}

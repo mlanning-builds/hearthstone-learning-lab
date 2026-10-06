@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-09-18",
+  "included_sets": {
+    "CORE": "Core",
+    "EMERALD_DREAM": "Into the Emerald Dream",
+    "THE_LOST_CITY": "The Lost City of Un’Goro",
+    "TIME_TRAVEL": "Across the Timeways",
+    "CATACLYSM": "CATACLYSM",
+    "ESCAPEFROM_VIOLET_HOLD": "Escape from Violet Hold",
+    "EVENT": "Event"
+  },
+  "included_exceptions": {
+    "BE_036": {
+      "name": "M.O.T.H.E.R.",
+      "available_from": "2026-09-15"
+    }
+  },
+  "excluded_future_cards": {
+    "BE_EVENT_100": "2026-10-06",
+    "BE_EVENT_101": "2026-10-06",
+    "BE_EVENT_102": "2026-10-06",
+    "BE_013": "2026-10-20",
+    "BE_259": "2026-10-20",
+    "BE_703": "2026-10-20"
+  },
+  "banned_ids": [],
+  "bans_status": "No Standard ban found in reviewed announcements; not verified against authenticated live-client legality metadata."
+}

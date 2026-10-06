@@ -1,0 +1,103 @@
+{
+  "patch": "36.6.0.251952",
+  "scope": "Latorvius dependency implementation contract; not runtime support or independent certification. Historical rewards are generated dependencies, not legal deck additions.",
+  "root": "TLC_602",
+  "reward": "TLC_602t",
+  "catalog_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+  "primary_sources": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/cards/117716-enter-the-lost-city/",
+      "supports": "Printed ten-turn Quest; does not establish exact progress checkpoint."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/es-es/cards/117717-latorvius-gaze-of-the-city/",
+      "supports": "Two random Journey to UnGoro Quest rewards to hand, remainder shuffled."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/cards/41167-time-warp/",
+      "supports": "Extra turn and once-per-game restriction; matches frozen record."
+    }
+  ],
+  "rewards": [
+    {
+      "card_id": "UNG_028t",
+      "name": "Time Warp",
+      "implementation": "Extra-turn scheduling after complete end-turn cleanup; once-per-game consumption per player.",
+      "validation": "Replay, two controllers, skipped turns, death and turn-limit boundaries.",
+      "record_sha256": "421984792ec46e27f48a4016e0c88c1e354b33f1edc02ec36c51c27e882c98d0"
+    },
+    {
+      "card_id": "UNG_067t1",
+      "name": "Crystal Core",
+      "implementation": "Persistent player stat-setting rule for existing and future minions.",
+      "validation": "Hand/deck/board scope, silence, transformation, control changes, damage and later enchantment ordering.",
+      "record_sha256": "48578c421a78d5856a9c723a218a99cb79e0f4f2c7f7a8429f7db9c7788ffea8"
+    },
+    {
+      "card_id": "UNG_116t",
+      "name": "Barnabus",
+      "implementation": "Snapshot deck minions and attach cost-setting changes to physical cards.",
+      "validation": "Future shuffled cards excluded; draw/bounce and later cost modifiers.",
+      "record_sha256": "5b77cfc018aba83d29665be3aea6e6c990525d4bd0f722234e7e3c3df1cce530"
+    },
+    {
+      "card_id": "UNG_829t1",
+      "name": "Nether Portal",
+      "implementation": "Permanent untouchable board entity with two end-turn Imp summons.",
+      "validation": "Board capacity, target exclusion, copying, placement and trigger ordering.",
+      "record_sha256": "5676dc50bcaa3c7d93e0af1673d1c9aa5f91fcb417384938095f55383238f025"
+    },
+    {
+      "card_id": "UNG_920t1",
+      "name": "Queen Carnassa",
+      "implementation": "Shuffle twenty physical Brood tokens; Brood Battlecry draws.",
+      "validation": "Deck caps, shuffle attribution, draw triggers; frozen Queen includes Rush.",
+      "record_sha256": "b770ad2e4ad6bf91604fa81c4a50156d65a1955f794ec1c74be014da0467b7c1"
+    },
+    {
+      "card_id": "UNG_934t1",
+      "name": "Sulfuras",
+      "implementation": "Battlecry replaces primary hero power with random enemy damage.",
+      "validation": "Power refresh/cost, targeting, damage bonuses and replacement interactions.",
+      "record_sha256": "d563b32bb9258bd064737238a0c490dbbd34a847519b71fc4885f4071424a1dd"
+    },
+    {
+      "card_id": "UNG_940t8",
+      "name": "Amara",
+      "implementation": "Reuse hero Health-setting semantics after verifying maximum/current Health.",
+      "validation": "Armor, damage history, healing triggers and health caps.",
+      "record_sha256": "0de57471aa6e3ea461f4b54492d005dfb81f6016e8483673e49a71248a5517e5"
+    },
+    {
+      "card_id": "UNG_942t",
+      "name": "Megafin",
+      "implementation": "Fill hand using complete random Murloc pool.",
+      "validation": "Frozen generation eligibility, full hand, selection with replacement, entry triggers.",
+      "record_sha256": "03326ab31e4f959e1605341bd7204cf91fef35053216ab1b31141329a7275415"
+    },
+    {
+      "card_id": "UNG_954t1",
+      "name": "Galvadon",
+      "implementation": "Five sequential Adapt offers on the same physical minion.",
+      "validation": "Eligible adaptations, removed source, automatic choices and repeated Battlecries.",
+      "record_sha256": "4061f9958c43bd13f3db1719e0ebc8ba21c02b5b92c5e94d16e546384240393e"
+    }
+  ],
+  "root_gates": [
+    "Confirm whether survive progress increments at owner start/end or opponent end, including the turn Quest is played and extra/skipped turns.",
+    "Use exact nine-reward universe; draw two without replacement only after validating all outcomes.",
+    "Confirm overflow, reward order, shuffled remainder and repeated Battlecry behavior."
+  ],
+  "engine_attachment_points": {
+    "extra_turn": "expanded/lifecycle.py:_finish_turn after cleanup and before next owner selection; _begin_turn must still run all ordinary start work.",
+    "adapt": "expanded/adapt.py application helper; choice eligibility still needs resolution.",
+    "hero_power": "expanded/hero_powers.py replacement infrastructure.",
+    "generation": "explicit complete PoolRequest contracts; never restrict to currently supported Murlocs."
+  },
+  "acceptance": [
+    "All nine reward bodies and their tokens/powers available before root admission.",
+    "Expose persistent player effects and remaining extra-turn state in observation/features.",
+    "Focused boundary fixtures plus consolidated regression on unchanged source.",
+    "Independent reference evidence required for unresolved timing and enchantment semantics."
+  ]
+}

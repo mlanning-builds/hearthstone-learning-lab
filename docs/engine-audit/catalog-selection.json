@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-09-18",
+  "expected_count": 1185,
+  "catalog_count": 1185,
+  "missing": [],
+  "extra": [],
+  "changed_records": [],
+  "duplicate_ids": false,
+  "expired_exclusions": [],
+  "selection_consistent": true,
+  "legality_certified": false,
+  "scope": "Internal selection consistency only. Source set membership, bans, release rules and exceptional deck construction require independent verification.",
+  "patch": "36.6.0.251952",
+  "manifest_date_matches_rules": true
+}

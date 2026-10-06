@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "catalog": 1185,
+    "written": 503,
+    "missing": 682,
+    "semantic_mappings_reviewed": 0,
+    "dependency_closures_certified": 0,
+    "independently_certified_cards": 0,
+    "non_target_referenced_records": 123,
+    "recorded_fidelity_gaps": 19
+  },
+  "receipt_matches_current": false,
+  "candidate_fingerprint": "5fd5efa8c4d00a4065a2db88acc73420c6e178891e232bcd5354a3ce554dc660",
+  "structural_checks": "passed",
+  "engine_executed": false,
+  "deterministic_regeneration": true,
+  "unique_catalog_ids": true,
+  "counts_checked": true,
+  "backlog_references_checked": true,
+  "entrypoint_paths_checked": true,
+  "conservative_validation_flags_checked": true,
+  "script_syntax_checked": true
+}

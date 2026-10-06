@@ -1,0 +1,21 @@
+{
+  "scope": "Provisional closed Blood Fighter family; no generation pool approval or independent client certification",
+  "cards": [
+    {
+      "id": "TIME_850",
+      "record_sha256": "96f4cdf417e78d917be9193cae7ba0ddb6b6620981bda8f4d58c0b2e23df8652",
+      "text": "[x]<b>Fabled</b>, <b>Rush</b>. <b>Deathrattle:</b>\nSummon a Blood Fighter from\nyour hand. It gains +5/+5 and\nattacks a random enemy."
+    },
+    {
+      "id": "TIME_850t",
+      "record_sha256": "5cefb53c1bce2ea987d6728cf432a5cd6411408754bd890c7725dfe453d2612f",
+      "text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a Blood\nFighter from your hand. Give\nit +5/+5 and <b>Taunt</b>."
+    },
+    {
+      "id": "TIME_850t1",
+      "record_sha256": "eb334b6e1066585de4479af810e9327d506d682a0d7e13cf19a7ff269917415a",
+      "text": "[x]<b>Elusive</b>\n<b>Deathrattle:</b> Summon a Blood\nFighter from your hand. Give\nit +5/+5 and <b>Elusive</b>."
+    }
+  ],
+  "checks": "Four production registry tests cover paid play, physical hand consumption with modifiers, forced attack, keyword grant and silence. Fifteen staged Fabled checks also pass. Shared recruitment uses new board UIDs; persistent modifier/copy fidelity remains tracked."
+}

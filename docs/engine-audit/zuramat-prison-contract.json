@@ -1,0 +1,13 @@
+{
+  "source": "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/",
+  "author": "HearthstoneTeam",
+  "confirmed": [
+    "Select a random stored card and remove it from the pool after play.",
+    "Each Zuramat plays each of its stored cards once.",
+    "A copy inherits only the remaining pool, independently.",
+    "Base copies such as Carnivorous Cube do not inherit stored cards.",
+    "Two prisons produce two distinct Zuramat pools."
+  ],
+  "staged": true,
+  "remaining_gate": "zuramat_prison_replay"
+}

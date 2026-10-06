@@ -1,0 +1,4617 @@
+{
+  "patch": "36.6.0.251952",
+  "scope": "Regular Constructed frozen Standard; not Battlegrounds or Mercenaries",
+  "archive_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "note": "Fabled roots use named pinned XML tags. Prefix relatives are candidate mappings only; unknown numeric tags are not interpreted. These records do not establish behavior or admission.",
+  "families": [
+    {
+      "root": {
+        "card_id": "TIME_005",
+        "record": {
+          "artist": "Alex Horley Orlandelli",
+          "attack": 10,
+          "cardClass": "WARLOCK",
+          "collectible": true,
+          "collectionText": "[x]<b>Fabled+</b>. Your deck size is 40,\nbut has 10 Rafaams! <b>Battlecry:</b>\nIf you played the rest, destroy\nthe enemy hero.",
+          "cost": 10,
+          "dbfId": 119432,
+          "elite": true,
+          "flavor": "Timethief Rafaam has recruited himself from every universe to RULE ALL OF TIME! Murozond is just a temporary obstacle\u2026",
+          "health": 10,
+          "id": "TIME_005",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Timethief Rafaam",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled+</b>. Your deck size is 40,\nbut has 10 Rafaams! <b>Battlecry:</b>\nIf you played the rest, destroy\nthe enemy hero.@ <i>({0} left!)</i>@ <i>(Ready!)</i>",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "10"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "10"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "10"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "9"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "997",
+            "name": "DECK_RULE_MOD_DECK_SIZE",
+            "value": "40"
+          },
+          {
+            "enum_id": "1724",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "2459",
+            "name": "ENTITY_TAG_THRESHOLD_TAG_ID",
+            "value": "2"
+          },
+          {
+            "enum_id": "2460",
+            "name": "ENTITY_TAG_THRESHOLD_VALUE",
+            "value": "9"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "3928",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4184",
+            "name": "FABLED_PLUS",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_005t1",
+          "record": {
+            "artist": "Mooncolony",
+            "attack": 1,
+            "cardClass": "WARLOCK",
+            "cost": 1,
+            "dbfId": 119433,
+            "elite": true,
+            "health": 1,
+            "id": "TIME_005t1",
+            "mechanics": [
+              "BATTLECRY",
+              "DEATHRATTLE"
+            ],
+            "name": "Tiny Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Battlecry and Deathrattle:</b>\nDraw a Rafaam.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "1"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "1"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t2",
+          "record": {
+            "artist": "Stefan Bogdasarov",
+            "attack": 2,
+            "cardClass": "WARLOCK",
+            "cost": 2,
+            "dbfId": 119434,
+            "elite": true,
+            "health": 2,
+            "id": "TIME_005t2",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Green Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Battlecry:</b> Give other Rafaams in your hand and battlefield +2/+2.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "2"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "2"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t2e",
+          "record": {
+            "cardClass": "WARLOCK",
+            "dbfId": 119440,
+            "id": "TIME_005t2e",
+            "name": "SUPREME GREENOLOGY!",
+            "set": "TIME_TRAVEL",
+            "text": "+2/+2.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t3",
+          "record": {
+            "artist": "Matt Dixon",
+            "attack": 4,
+            "cardClass": "WARLOCK",
+            "cost": 4,
+            "dbfId": 119441,
+            "elite": true,
+            "health": 4,
+            "id": "TIME_005t3",
+            "mechanics": [
+              "BATTLECRY",
+              "DISCOVER"
+            ],
+            "name": "Explorer Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Battlecry:</b> <b>Discover</b> a Rafaam from your deck.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "4"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "4"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "415",
+              "name": "DISCOVER",
+              "value": "1"
+            },
+            {
+              "enum_id": "1342",
+              "name": "USE_DISCOVER_VISUALS",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t4",
+          "record": {
+            "artist": "Ian Ameling",
+            "attack": 5,
+            "cardClass": "WARLOCK",
+            "cost": 5,
+            "dbfId": 119443,
+            "elite": true,
+            "health": 5,
+            "id": "TIME_005t4",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Warchief Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Battlecry:</b> Gain 5 Armor.\nIf you're holding another\nRafaam, gain 5 more.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "5"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "5"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "5"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t5",
+          "record": {
+            "artist": "James Ryman",
+            "attack": 7,
+            "cardClass": "WARLOCK",
+            "cost": 7,
+            "dbfId": 119444,
+            "elite": true,
+            "health": 7,
+            "id": "TIME_005t5",
+            "mechanics": [
+              "BATTLECRY",
+              "TAUNT"
+            ],
+            "name": "Mindflayer R'faam",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> If you're holding\nanother Rafaam, summon\na copy of this.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "7"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "7"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "7"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "190",
+              "name": "TAUNT",
+              "value": "1"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t6",
+          "record": {
+            "artist": "Luca Zontini",
+            "attack": 6,
+            "cardClass": "WARLOCK",
+            "cost": 6,
+            "dbfId": 119445,
+            "elite": true,
+            "health": 6,
+            "id": "TIME_005t6",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Calamitous Rafaam",
+            "race": "DEMON",
+            "races": [
+              "DEMON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "<b>Battlecry:</b> Deal 6 damage to all minions that aren't Rafaam.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "6"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "6"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "6"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "15"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t7",
+          "record": {
+            "artist": "Kevin Sidharta",
+            "attack": 8,
+            "cardClass": "WARLOCK",
+            "cost": 8,
+            "dbfId": 119446,
+            "elite": true,
+            "health": 8,
+            "id": "TIME_005t7",
+            "mechanics": [
+              "RUSH"
+            ],
+            "name": "Giant Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Rush</b>. Costs (1) less\nfor each Rafaam you've\nplayed this game.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "8"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "8"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "8"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "791",
+              "name": "RUSH",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t8",
+          "record": {
+            "artist": "Patrik Bjorkstrom",
+            "attack": 3,
+            "cardClass": "WARLOCK",
+            "cost": 3,
+            "dbfId": 119447,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_005t8",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Murloc Rafaam",
+            "race": "MURLOC",
+            "races": [
+              "MURLOC"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "<b>Battlecry:</b> The next Rafaam you play costs (3) less.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t8e",
+          "record": {
+            "cardClass": "WARLOCK",
+            "dbfId": 119448,
+            "id": "TIME_005t8e",
+            "name": "MRGLEERM MRGLOSLGY!!",
+            "set": "TIME_TRAVEL",
+            "text": "Your next Rafaam costs (3) less.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t9",
+          "record": {
+            "artist": "Sergey Tsvelykh",
+            "attack": 9,
+            "cardClass": "WARLOCK",
+            "cost": 9,
+            "dbfId": 119450,
+            "elite": true,
+            "health": 9,
+            "id": "TIME_005t9",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Archmage Rafaam",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Battlecry:</b> Transform all minions that aren't Rafaam into 1/1 Sheep.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "9"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "9"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "9"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_005t9t",
+          "record": {
+            "artist": "Matt Dixon",
+            "attack": 1,
+            "cardClass": "WARLOCK",
+            "cost": 1,
+            "dbfId": 119562,
+            "health": 1,
+            "id": "TIME_005t9t",
+            "name": "Baaaafam",
+            "race": "BEAST",
+            "races": [
+              "BEAST"
+            ],
+            "set": "TIME_TRAVEL",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "1"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "9"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "20"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "3928",
+              "name": "1",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_005t1",
+        "TIME_005t2",
+        "TIME_005t3",
+        "TIME_005t4",
+        "TIME_005t5",
+        "TIME_005t6",
+        "TIME_005t7",
+        "TIME_005t8",
+        "TIME_005t9"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_009",
+        "record": {
+          "artist": "James Ryman",
+          "attack": 6,
+          "cardClass": "PALADIN",
+          "collectible": true,
+          "cost": 8,
+          "dbfId": 119918,
+          "elite": true,
+          "flavor": "In one future, Gelbin invents a way to preserve his brain in a suit of robotic armor, and leads the gnomes into a bright future powered by the Holy Light.",
+          "health": 6,
+          "id": "TIME_009",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Gelbin of Tomorrow",
+          "race": "MECHANICAL",
+          "races": [
+            "MECHANICAL"
+          ],
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>\n<b>Battlecry:</b> Put one of each\nAura from your deck into\nthe battlefield.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "6"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "6"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "8"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "5"
+          },
+          {
+            "enum_id": "200",
+            "name": "CARDRACE",
+            "value": "17"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_009t1",
+          "record": {
+            "artist": "Kevin Sidharta",
+            "cardClass": "PALADIN",
+            "cost": 4,
+            "dbfId": 119919,
+            "elite": true,
+            "id": "TIME_009t1",
+            "mechanics": [
+              "TRADEABLE"
+            ],
+            "name": "Gnomish Aura",
+            "set": "TIME_TRAVEL",
+            "spellSchool": "HOLY",
+            "text": "[x]<b>Tradeable</b>\nAt the end of your turn,\nrestore #4 Health to all your\ncharacters. Lasts 3 turns.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "2",
+              "name": "TAG_SCRIPT_DATA_NUM_1",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "5"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "535",
+              "name": "QUEST_PROGRESS_TOTAL",
+              "value": "3"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "5"
+            },
+            {
+              "enum_id": "1720",
+              "name": "TRADEABLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "1724",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "1743",
+              "name": "DECK_ACTION_COST",
+              "value": "1"
+            },
+            {
+              "enum_id": "2311",
+              "name": "OBJECTIVE",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3429",
+              "name": "PALADIN_AURA",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_009t2",
+          "record": {
+            "artist": "Patrik Bjorkstrom",
+            "cardClass": "PALADIN",
+            "cost": 5,
+            "dbfId": 119920,
+            "elite": true,
+            "id": "TIME_009t2",
+            "mechanics": [
+              "TRADEABLE"
+            ],
+            "name": "Mekkatorque's Aura",
+            "referencedTags": [
+              "DIVINE_SHIELD"
+            ],
+            "set": "TIME_TRAVEL",
+            "spellSchool": "HOLY",
+            "text": "[x]<b>Tradeable</b>. At the end\nof your turn, give a random\nfriendly minion +4/+4 and\n<b>Divine Shield</b>. Lasts 3 turns.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "2",
+              "name": "TAG_SCRIPT_DATA_NUM_1",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "5"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "5"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "535",
+              "name": "QUEST_PROGRESS_TOTAL",
+              "value": "3"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "5"
+            },
+            {
+              "enum_id": "1720",
+              "name": "TRADEABLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "1724",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "1743",
+              "name": "DECK_ACTION_COST",
+              "value": "1"
+            },
+            {
+              "enum_id": "2311",
+              "name": "OBJECTIVE",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "3429",
+              "name": "PALADIN_AURA",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_009t2e",
+          "record": {
+            "cardClass": "PALADIN",
+            "dbfId": 120815,
+            "id": "TIME_009t2e",
+            "name": "For Gnomeregan!",
+            "set": "TIME_TRAVEL",
+            "text": "+4/+4.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "5"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_009t1",
+        "TIME_009t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_020",
+        "record": {
+          "artist": "Luca Zontini",
+          "attack": 12,
+          "cardClass": "DEMONHUNTER",
+          "collectible": true,
+          "cost": 2,
+          "dbfId": 120074,
+          "elite": true,
+          "flavor": "The wound Broxigar dealt to Sargeras during his last stand is a glory no other orcish hero has ever achieved.",
+          "health": 12,
+          "id": "TIME_020",
+          "mechanics": [
+            "CHARGE",
+            "START_OF_GAME_KEYWORD"
+          ],
+          "name": "Broxigar",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled, Charge</b>\n<b>Start of Game:</b> Disappear.\nKill all 4 Demons from Argus\nto reappear in hand.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "12"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "12"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "2"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "197",
+            "name": "CHARGE",
+            "value": "1"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "14"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "968",
+            "name": "START_OF_GAME_KEYWORD",
+            "value": "1"
+          },
+          {
+            "enum_id": "1673",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          },
+          {
+            "enum_id": "4759",
+            "name": "1",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_020t1",
+          "record": {
+            "artist": "Drew Hill",
+            "attack": 3,
+            "cardClass": "DEMONHUNTER",
+            "cost": 3,
+            "dbfId": 120082,
+            "durability": 0,
+            "elite": true,
+            "health": 2,
+            "id": "TIME_020t1",
+            "mechanics": [
+              "LIFESTEAL",
+              "TRIGGER_VISUAL"
+            ],
+            "name": "Axe of Cenarius",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Lifesteal</b>\nAfter your hero attacks\nand kills a minion, draw\na Portal to Argus.",
+            "type": "WEAPON"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "32",
+              "name": "TRIGGER_VISUAL",
+              "value": "1"
+            },
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "2"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "7"
+            },
+            {
+              "enum_id": "685",
+              "name": "LIFESTEAL",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t2",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DEMONHUNTER",
+            "cost": 0,
+            "dbfId": 120083,
+            "elite": true,
+            "id": "TIME_020t2",
+            "name": "First Portal to Argus",
+            "set": "TIME_TRAVEL",
+            "spellSchool": "FEL",
+            "text": "[x]Summon a 1/1 Demon for\nyour opponent. When it dies,\ndraw a card and shuffle the\nnext Portal into your deck.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t2t",
+          "record": {
+            "artist": "Bima Kusuma",
+            "attack": 1,
+            "cardClass": "DEMONHUNTER",
+            "cost": 1,
+            "dbfId": 120142,
+            "health": 1,
+            "id": "TIME_020t2t",
+            "mechanics": [
+              "DEATHRATTLE"
+            ],
+            "name": "Fleeing Ur'zul",
+            "race": "DEMON",
+            "races": [
+              "DEMON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Deathrattle:</b> Your opponent\ndraws a card. Shuffle the\nSecond Portal to Argus\ninto their deck.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "1"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "15"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t3",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DEMONHUNTER",
+            "cost": 0,
+            "dbfId": 120164,
+            "elite": true,
+            "id": "TIME_020t3",
+            "name": "Second Portal to Argus",
+            "set": "TIME_TRAVEL",
+            "spellSchool": "FEL",
+            "text": "[x]Summon a 2/1 Demon for\nyour opponent. When it dies,\ndraw a card and shuffle the\nnext Portal into your deck.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t3t",
+          "record": {
+            "artist": "Bima Kusuma",
+            "attack": 2,
+            "cardClass": "DEMONHUNTER",
+            "cost": 2,
+            "dbfId": 120165,
+            "health": 1,
+            "id": "TIME_020t3t",
+            "mechanics": [
+              "DEATHRATTLE"
+            ],
+            "name": "Fleeing Incubus",
+            "race": "DEMON",
+            "races": [
+              "DEMON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Deathrattle:</b> Your opponent\ndraws a card. Shuffle the\nThird Portal to Argus\ninto their deck.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "2"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "15"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t4",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DEMONHUNTER",
+            "cost": 0,
+            "dbfId": 120166,
+            "elite": true,
+            "id": "TIME_020t4",
+            "name": "Third Portal to Argus",
+            "set": "TIME_TRAVEL",
+            "spellSchool": "FEL",
+            "text": "[x]Summon a 3/1 Demon for\nyour opponent. When it dies,\ndraw a card and shuffle the\nnext Portal into your deck.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t4t",
+          "record": {
+            "artist": "Bima Kusuma",
+            "attack": 3,
+            "cardClass": "DEMONHUNTER",
+            "cost": 3,
+            "dbfId": 120167,
+            "health": 1,
+            "id": "TIME_020t4t",
+            "mechanics": [
+              "DEATHRATTLE"
+            ],
+            "name": "Fleeing Wrathguard",
+            "race": "DEMON",
+            "races": [
+              "DEMON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Deathrattle:</b> Your opponent\ndraws a card. Shuffle the\nFinal Portal to Argus\ninto their deck.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "15"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t5",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DEMONHUNTER",
+            "cost": 0,
+            "dbfId": 120168,
+            "elite": true,
+            "id": "TIME_020t5",
+            "name": "Final Portal to Argus",
+            "set": "TIME_TRAVEL",
+            "spellSchool": "FEL",
+            "text": "Summon a 4/1\nDemon for your opponent. When it dies, Broxigar reappears in your hand.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "1635",
+              "name": "SPELL_SCHOOL",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_020t5t",
+          "record": {
+            "artist": "Bima Kusuma",
+            "attack": 4,
+            "cardClass": "DEMONHUNTER",
+            "cost": 4,
+            "dbfId": 120169,
+            "health": 1,
+            "id": "TIME_020t5t",
+            "mechanics": [
+              "DEATHRATTLE"
+            ],
+            "name": "Fleeing Terrorguard",
+            "race": "DEMON",
+            "races": [
+              "DEMON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "<b>Deathrattle:</b> Broxigar reappears in your opponent's hand.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "1"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "4"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "14"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "15"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_020t1",
+        "TIME_020t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_209",
+        "record": {
+          "artist": "Timur Shevtsov",
+          "attack": 3,
+          "cardClass": "SHAMAN",
+          "collectible": true,
+          "cost": 5,
+          "dbfId": 119643,
+          "elite": true,
+          "flavor": "There is no story more tragic in Ironforge history than that of King Muradin slaying the corrupted Prince Arthas. The Lich King never rose to power, the Stormriders united, but the boy's death created fractures in the Alliance that would never repair.",
+          "health": 2,
+          "id": "TIME_209",
+          "mechanics": [
+            "BATTLECRY",
+            "DEATHRATTLE",
+            "RUSH"
+          ],
+          "name": "Muradin, High King",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>, <b>Rush</b>. <b>Battlecry:</b>\nBring the High King's\nHammer to ME! <b>Deathrattle:</b>\nAdd it to your hand.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "2"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "3"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "5"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "8"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "217",
+            "name": "DEATHRATTLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "791",
+            "name": "RUSH",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_209e",
+          "record": {
+            "cardClass": "SHAMAN",
+            "dbfId": 119644,
+            "elite": true,
+            "id": "TIME_209e",
+            "name": "Hammer of the High King",
+            "set": "TIME_TRAVEL",
+            "text": "Holding the High King's Hammer. <b>Deathrattle:</b> Add it to your hand.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "8"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_209t",
+          "record": {
+            "artist": "Timur Shevtsov",
+            "attack": 3,
+            "cardClass": "SHAMAN",
+            "cost": 6,
+            "dbfId": 119647,
+            "durability": 0,
+            "elite": true,
+            "health": 4,
+            "id": "TIME_209t",
+            "mechanics": [
+              "DEATHRATTLE",
+              "WINDFURY"
+            ],
+            "name": "High King's Hammer",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Windfury</b>\n<b>Deathrattle:</b> Shuffle this\ninto your deck with +2\n\u00a0Attack permanently.",
+            "type": "WEAPON"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "4"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "6"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "189",
+              "name": "WINDFURY",
+              "value": "1"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "8"
+            },
+            {
+              "enum_id": "201",
+              "name": "FACTION",
+              "value": "3"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "7"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_209t2",
+          "record": {
+            "artist": "Timur Shevtsov",
+            "cardClass": "SHAMAN",
+            "cost": 3,
+            "dbfId": 119653,
+            "elite": true,
+            "id": "TIME_209t2",
+            "name": "Avatar Form",
+            "set": "TIME_TRAVEL",
+            "text": "[x]Give a friendly character\n+2 Attack and \"After this\nattacks, deal 2 damage to\nall enemies\" this turn.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "8"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_209t2e",
+          "record": {
+            "cardClass": "SHAMAN",
+            "dbfId": 121003,
+            "id": "TIME_209t2e",
+            "mechanics": [
+              "TAG_ONE_TURN_EFFECT",
+              "TRIGGER_VISUAL"
+            ],
+            "name": "Avatar Form",
+            "set": "TIME_TRAVEL",
+            "text": "+2 Attack and After this attacks, deal 2 damage to all enemies this turn.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "32",
+              "name": "TRIGGER_VISUAL",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "8"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            },
+            {
+              "enum_id": "338",
+              "name": "TAG_ONE_TURN_EFFECT",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_209t",
+        "TIME_209t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_211",
+        "record": {
+          "artist": "Eva Widermann",
+          "attack": 5,
+          "cardClass": "DRUID",
+          "collectible": true,
+          "cost": 5,
+          "dbfId": 119928,
+          "elite": true,
+          "flavor": "There was a time when Azshara was a benevolent queen to the Kaldorei. There is a timeline where she even stayed one.",
+          "health": 5,
+          "id": "TIME_211",
+          "mechanics": [
+            "CHOOSE_ONE"
+          ],
+          "name": "Lady Azshara",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>. <b>Choose One -</b>\nEmpower Zin-Azshari; or\nThe Well of Eternity. <i>(The\n\u00a0\u00a0other gets destroyed!)</i>",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "5"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "5"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "5"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "2"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "443",
+            "name": "CHOOSE_ONE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_211a",
+          "record": {
+            "artist": "Gabor Szikszai",
+            "cardClass": "DRUID",
+            "cost": 5,
+            "dbfId": 120204,
+            "id": "TIME_211a",
+            "name": "Empower Zin-Azshari",
+            "set": "TIME_TRAVEL",
+            "text": "[x]The minions summoned\nby Zin-Azshari will have\ndoubled stats. Destroy\nThe Well of Eternity.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "5"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211b",
+          "record": {
+            "artist": "Gabor Szikszai",
+            "cardClass": "DRUID",
+            "cost": 5,
+            "dbfId": 120205,
+            "id": "TIME_211b",
+            "name": "Empower the Well",
+            "set": "TIME_TRAVEL",
+            "text": "The spells created by The Well of Eternity will cast twice.\nDestroy Zin-Azshari.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "5"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t1",
+          "record": {
+            "artist": "Daniil Kudriavtsev",
+            "cardClass": "DRUID",
+            "cost": 4,
+            "dbfId": 119929,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_211t1",
+            "name": "The Well of Eternity",
+            "set": "TIME_TRAVEL",
+            "text": "Fill your hand\nwith random\n<b>Temporary</b> spells.",
+            "type": "LOCATION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "39"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t1t",
+          "record": {
+            "artist": "Daniil Kudriavtsev",
+            "cardClass": "DRUID",
+            "cost": 4,
+            "dbfId": 120200,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_211t1t",
+            "name": "The Well of Eternity",
+            "set": "TIME_TRAVEL",
+            "text": "[x]Fill your hand\nwith random <b>Temporary</b>\nspells. They cast twice.",
+            "type": "LOCATION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "39"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t1te",
+          "record": {
+            "cardClass": "DRUID",
+            "dbfId": 120201,
+            "id": "TIME_211t1te",
+            "name": "Eternalized",
+            "set": "TIME_TRAVEL",
+            "text": "Casts twice.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t2",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DRUID",
+            "cost": 4,
+            "dbfId": 119930,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_211t2",
+            "name": "Zin-Azshari",
+            "set": "TIME_TRAVEL",
+            "text": "Summon a copy of a friendly minion.",
+            "type": "LOCATION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "39"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t2t",
+          "record": {
+            "artist": "BOSi Studio",
+            "cardClass": "DRUID",
+            "cost": 4,
+            "dbfId": 120202,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_211t2t",
+            "name": "Zin-Azshari",
+            "set": "TIME_TRAVEL",
+            "text": "Summon a copy of a friendly minion with\nits stats doubled.",
+            "type": "LOCATION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "4"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "39"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_211t2te",
+          "record": {
+            "cardClass": "DRUID",
+            "dbfId": 120203,
+            "id": "TIME_211t2te",
+            "name": "The City's Strength",
+            "set": "TIME_TRAVEL",
+            "text": "Doubled stats.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "2"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_211t1",
+        "TIME_211t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_609",
+        "record": {
+          "artist": "Rafael Zanchetin",
+          "attack": 2,
+          "cardClass": "HUNTER",
+          "collectible": true,
+          "cost": 3,
+          "dbfId": 119707,
+          "elite": true,
+          "flavor": "Whatever she would later become, no hero fought the Lich King so courageously as the Ranger General of Silvermoon.",
+          "hasDiamondSkin": true,
+          "health": 4,
+          "id": "TIME_609",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Ranger General Sylvanas",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>. <b>Battlecry:</b> Deal 2\ndamage to all enemies.\n\u00a0\u00a0\u00a0\u00a0If you've played Alleria or\u00a0\u00a0\u00a0\u00a0\n\u00a0\u00a0Vereesa, repeat for each.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "4"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "2"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "3"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "3"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "1932",
+            "name": "HAS_DIAMOND_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_609t1",
+          "record": {
+            "artist": "Caroline Gariba",
+            "attack": 2,
+            "cardClass": "HUNTER",
+            "cost": 3,
+            "dbfId": 119705,
+            "elite": true,
+            "hasDiamondSkin": true,
+            "health": 4,
+            "id": "TIME_609t1",
+            "mechanics": [
+              "BATTLECRY",
+              "DISCOVER"
+            ],
+            "name": "Ranger Captain Alleria",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Battlecry:</b> <b>Discover</b> a spell.\nIf you've played Sylvanas or\nVereesa, repeat for each.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "4"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "3"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "415",
+              "name": "DISCOVER",
+              "value": "1"
+            },
+            {
+              "enum_id": "1932",
+              "name": "HAS_DIAMOND_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_609t2",
+          "record": {
+            "artist": "Tee Fuyuan",
+            "attack": 2,
+            "cardClass": "HUNTER",
+            "cost": 3,
+            "dbfId": 119706,
+            "elite": true,
+            "hasDiamondSkin": true,
+            "health": 4,
+            "id": "TIME_609t2",
+            "mechanics": [
+              "BATTLECRY"
+            ],
+            "name": "Ranger Initiate Vereesa",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Battlecry:</b> Give minions in\nyour deck +1/+1. If you've\nplayed Alleria or Sylvanas,\nrepeat for each.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "4"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "3"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "1932",
+              "name": "HAS_DIAMOND_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_609t2e",
+          "record": {
+            "cardClass": "HUNTER",
+            "dbfId": 120410,
+            "id": "TIME_609t2e",
+            "name": "Windrunner's Allegiance",
+            "set": "TIME_TRAVEL",
+            "text": "+1/+1.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "3"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_609t1",
+        "TIME_609t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_619",
+        "record": {
+          "artist": "James Ryman",
+          "attack": 4,
+          "cardClass": "DEATHKNIGHT",
+          "collectible": true,
+          "cost": 4,
+          "dbfId": 120183,
+          "elite": true,
+          "flavor": "In one dark timeline, Talanji was struck down and raised again as a death knight. But even death can't stop her from protecting the Zandalari.",
+          "health": 5,
+          "id": "TIME_619",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Talanji of the Graves",
+          "race": "UNDEAD",
+          "races": [
+            "UNDEAD"
+          ],
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled.</b> <b>Battlecry:</b> Draw\nBwonsamdi <i>(or resurrect\nhim if he has died)</i>. Choose\na Boon to give him.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "5"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "4"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "4"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "1"
+          },
+          {
+            "enum_id": "200",
+            "name": "CARDRACE",
+            "value": "11"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_619e",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120189,
+            "id": "TIME_619e",
+            "name": "Boon of Power Player Ench",
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Taunt</b> <i>permanently</i>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619e2",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120190,
+            "id": "TIME_619e2",
+            "name": "Boon of Longevity Player Ench",
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Lifesteal</b> <i>permanently</i>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619e3",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120191,
+            "id": "TIME_619e3",
+            "name": "Boon of Speed Player Ench",
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Rush</b> <i>permanently</i>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619e4",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120192,
+            "id": "TIME_619e4",
+            "name": "Pact for Power",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Taunt</b>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619e5",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120193,
+            "id": "TIME_619e5",
+            "name": "Pact for Longevity",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Lifesteal</b>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619e6",
+          "record": {
+            "cardClass": "DEATHKNIGHT",
+            "dbfId": 120194,
+            "id": "TIME_619e6",
+            "name": "Pact for Speed",
+            "set": "TIME_TRAVEL",
+            "text": "<b>Rush</b>.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619t",
+          "record": {
+            "artist": "Ramzy Kamen",
+            "attack": 6,
+            "cardClass": "DEATHKNIGHT",
+            "cost": 6,
+            "dbfId": 120187,
+            "elite": true,
+            "health": 6,
+            "id": "TIME_619t",
+            "mechanics": [
+              "DEATHRATTLE"
+            ],
+            "name": "Bwonsamdi",
+            "race": "UNDEAD",
+            "races": [
+              "UNDEAD"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Deathrattle:</b> Summon a\nrandom 4-Cost minion.\n<i>(Any Boons given to\n\u00a0\u00a0\u00a0Bwonsamdi carry over.)</i>",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "2",
+              "name": "TAG_SCRIPT_DATA_NUM_1",
+              "value": "4"
+            },
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "6"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "6"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "6"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "11"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "1724",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619t2",
+          "record": {
+            "artist": "Ivo Campelo da Silva",
+            "cardClass": "DEATHKNIGHT",
+            "cost": 3,
+            "dbfId": 120188,
+            "elite": true,
+            "id": "TIME_619t2",
+            "name": "What Befell Zandalar",
+            "set": "TIME_TRAVEL",
+            "text": "[x]Deal $2 damage to all\nenemies. Choose a Boon\nto give to Bwonsamdi.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619t3",
+          "record": {
+            "artist": "Grafit Studio",
+            "cardClass": "DEATHKNIGHT",
+            "cost": 0,
+            "dbfId": 120184,
+            "hideCost": true,
+            "id": "TIME_619t3",
+            "name": "Boon of Power",
+            "referencedTags": [
+              "DEATHRATTLE",
+              "TAUNT"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Taunt</b> <i>permanently</i>. Minions summoned by his <b>Deathrattle</b> cost (2) more.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "684",
+              "name": "HIDE_COST",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619t4",
+          "record": {
+            "artist": "Grafit Studio",
+            "cardClass": "DEATHKNIGHT",
+            "cost": 0,
+            "dbfId": 120185,
+            "hideCost": true,
+            "id": "TIME_619t4",
+            "name": "Boon of Longevity",
+            "referencedTags": [
+              "DEATHRATTLE",
+              "LIFESTEAL"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Lifesteal</b> <i>permanently</i>. Minions summoned by his <b>Deathrattle</b> cost (2) more.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "684",
+              "name": "HIDE_COST",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_619t5",
+          "record": {
+            "artist": "Grafit Studio",
+            "cardClass": "DEATHKNIGHT",
+            "cost": 0,
+            "dbfId": 120186,
+            "hideCost": true,
+            "id": "TIME_619t5",
+            "name": "Boon of Speed",
+            "referencedTags": [
+              "DEATHRATTLE",
+              "RUSH"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "Give Bwonsamdi <b>Rush</b> <i>permanently</i>. Minions summoned by his <b>Deathrattle</b> cost (2) more.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "1"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "684",
+              "name": "HIDE_COST",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_619t",
+        "TIME_619t2"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_850",
+        "record": {
+          "artist": "Alex Horley Orlandelli",
+          "attack": 7,
+          "cardClass": "WARRIOR",
+          "collectible": true,
+          "cost": 7,
+          "dbfId": 119451,
+          "elite": true,
+          "flavor": "In the Crimson Ring they call him Lo'gosh, the Ghost Wolf. He's forgotten the time when he was called by another name: Varian Wrynn, King of Stormwind.",
+          "health": 7,
+          "id": "TIME_850",
+          "mechanics": [
+            "DEATHRATTLE",
+            "RUSH"
+          ],
+          "name": "Lo'Gosh, Blood Fighter",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>, <b>Rush</b>. <b>Deathrattle:</b>\nSummon a Blood Fighter from\nyour hand. It gains +5/+5 and\nattacks a random enemy.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "7"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "7"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "7"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "10"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "217",
+            "name": "DEATHRATTLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "791",
+            "name": "RUSH",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_850e",
+          "record": {
+            "cardClass": "WARRIOR",
+            "dbfId": 119452,
+            "id": "TIME_850e",
+            "name": "Crimson Blood",
+            "set": "TIME_TRAVEL",
+            "text": "+5/+5.",
+            "type": "ENCHANTMENT"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "10"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_850t",
+          "record": {
+            "artist": "Zoltan Boros",
+            "attack": 7,
+            "cardClass": "WARRIOR",
+            "cost": 7,
+            "dbfId": 119453,
+            "elite": true,
+            "health": 7,
+            "id": "TIME_850t",
+            "mechanics": [
+              "DEATHRATTLE",
+              "TAUNT"
+            ],
+            "name": "Broll, Blood Fighter",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a Blood\nFighter from your hand. Give\nit +5/+5 and <b>Taunt</b>.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "7"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "7"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "7"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "190",
+              "name": "TAUNT",
+              "value": "1"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "10"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_850t1",
+          "record": {
+            "artist": "James Ryman",
+            "attack": 7,
+            "cardClass": "WARRIOR",
+            "cost": 7,
+            "dbfId": 119454,
+            "elite": true,
+            "health": 7,
+            "id": "TIME_850t1",
+            "mechanics": [
+              "DEATHRATTLE",
+              "ELUSIVE"
+            ],
+            "name": "Valeera, Blood Fighter",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Elusive</b>\n<b>Deathrattle:</b> Summon a Blood\nFighter from your hand. Give\nit +5/+5 and <b>Elusive</b>.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "7"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "7"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "7"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "10"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "217",
+              "name": "DEATHRATTLE",
+              "value": "1"
+            },
+            {
+              "enum_id": "1211",
+              "name": "ELUSIVE",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_850t",
+        "TIME_850t1"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_852",
+        "record": {
+          "artist": "Zoltan Boros",
+          "attack": 2,
+          "cardClass": "MAGE",
+          "collectible": true,
+          "cost": 5,
+          "dbfId": 119524,
+          "elite": true,
+          "flavor": "Once Malygos' beloved mate, Sindragosa was among the first to suspect the corruption that had overtaken Neltharion. She came to regret not trusting her suspicions.",
+          "health": 8,
+          "id": "TIME_852",
+          "mechanics": [
+            "AURA"
+          ],
+          "name": "Azure Queen Sindragosa",
+          "race": "DRAGON",
+          "races": [
+            "DRAGON"
+          ],
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>\nIf you control another\nDragon, your Arcane\nspells cost (2) less.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "8"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "2"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "5"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "4"
+          },
+          {
+            "enum_id": "200",
+            "name": "CARDRACE",
+            "value": "24"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "362",
+            "name": "AURA",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_852t1",
+          "record": {
+            "artist": "Alex Stone",
+            "attack": 2,
+            "cardClass": "MAGE",
+            "cost": 5,
+            "dbfId": 119527,
+            "elite": true,
+            "health": 8,
+            "id": "TIME_852t1",
+            "mechanics": [
+              "AURA"
+            ],
+            "name": "Azure King Malygos",
+            "race": "DRAGON",
+            "races": [
+              "DRAGON"
+            ],
+            "set": "TIME_TRAVEL",
+            "text": "If you control another Dragon, your Arcane spells cast twice.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "8"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "5"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "4"
+            },
+            {
+              "enum_id": "200",
+              "name": "CARDRACE",
+              "value": "24"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "362",
+              "name": "AURA",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_852t3",
+          "record": {
+            "artist": "Drew Hill",
+            "cardClass": "MAGE",
+            "cost": 8,
+            "dbfId": 119525,
+            "elite": true,
+            "id": "TIME_852t3",
+            "name": "Azure Oathstone",
+            "set": "TIME_TRAVEL",
+            "text": "Summon your Dragons that died this game.",
+            "type": "SPELL"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "8"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "4"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "5"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_852t1",
+        "TIME_852t3"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_875",
+        "record": {
+          "artist": "L. Lullabi & T. Shevtsov",
+          "attack": 5,
+          "cardClass": "ROGUE",
+          "collectible": true,
+          "cost": 4,
+          "dbfId": 119814,
+          "elite": true,
+          "flavor": "Garona made her mark that day. No longer was she simply the assassin of the Horde. She was now the liberator of the dictatorship of Lordaeron.",
+          "health": 4,
+          "id": "TIME_875",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Garona Halforcen",
+          "rarity": "LEGENDARY",
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>. <b>Battlecry:</b> If your\nopponent is holding King\nLlane, destroy him and cut\ntheir Health in half.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "4"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "5"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "4"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "7"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_875t",
+          "record": {
+            "artist": "Ramzy Kamen",
+            "attack": 3,
+            "cardClass": "ROGUE",
+            "cost": 3,
+            "dbfId": 119815,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_875t",
+            "mechanics": [
+              "BATTLECRY",
+              "START_OF_GAME_KEYWORD"
+            ],
+            "name": "King Llane",
+            "set": "TIME_TRAVEL",
+            "text": "[x]<b>Start of Game:</b> Hide from\nGarona in the enemy's deck.\n<b>Battlecry:</b> Draw a card. Shuffle\nthis back into your deck.",
+            "type": "MINION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "3"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "7"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "4"
+            },
+            {
+              "enum_id": "218",
+              "name": "BATTLECRY",
+              "value": "1"
+            },
+            {
+              "enum_id": "968",
+              "name": "START_OF_GAME_KEYWORD",
+              "value": "1"
+            },
+            {
+              "enum_id": "1673",
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_875t1",
+          "record": {
+            "artist": "Gabriel Lopes",
+            "attack": 3,
+            "cardClass": "ROGUE",
+            "cost": 2,
+            "dbfId": 119816,
+            "durability": 0,
+            "elite": true,
+            "health": 2,
+            "id": "TIME_875t1",
+            "mechanics": [
+              "TRIGGER_VISUAL"
+            ],
+            "name": "The Kingslayers",
+            "set": "TIME_TRAVEL",
+            "text": "After your hero attacks, both players draw a <b>Legendary</b> card.",
+            "type": "WEAPON"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "32",
+              "name": "TRIGGER_VISUAL",
+              "value": "1"
+            },
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "2"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "3"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "2"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "7"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_875t",
+        "TIME_875t1"
+      ]
+    },
+    {
+      "root": {
+        "card_id": "TIME_890",
+        "record": {
+          "artist": "Sergey Tsvelykh",
+          "attack": 7,
+          "cardClass": "PRIEST",
+          "collectible": true,
+          "cost": 10,
+          "dbfId": 120060,
+          "elite": true,
+          "flavor": "In our timeline, Medivh tells himself he never had the chance to reject Sargeras' dark influence. But there's a timeline where he did.",
+          "health": 7,
+          "id": "TIME_890",
+          "mechanics": [
+            "BATTLECRY"
+          ],
+          "name": "Medivh the Hallowed",
+          "rarity": "LEGENDARY",
+          "referencedTags": [
+            "SILENCE"
+          ],
+          "set": "TIME_TRAVEL",
+          "text": "[x]<b>Fabled</b>. Costs (0) if\nyou control Karazhan.\n<b>Battlecry:</b> <b>Silence</b> and destroy\nall other minions.",
+          "type": "MINION"
+        },
+        "numeric_tags": [
+          {
+            "enum_id": "45",
+            "name": "HEALTH",
+            "value": "7"
+          },
+          {
+            "enum_id": "47",
+            "name": "ATK",
+            "value": "7"
+          },
+          {
+            "enum_id": "48",
+            "name": "COST",
+            "value": "10"
+          },
+          {
+            "enum_id": "114",
+            "name": "ELITE",
+            "value": "1"
+          },
+          {
+            "enum_id": "183",
+            "name": "CARD_SET",
+            "value": "1957"
+          },
+          {
+            "enum_id": "199",
+            "name": "CLASS",
+            "value": "6"
+          },
+          {
+            "enum_id": "202",
+            "name": "CARDTYPE",
+            "value": "4"
+          },
+          {
+            "enum_id": "203",
+            "name": "RARITY",
+            "value": "5"
+          },
+          {
+            "enum_id": "218",
+            "name": "BATTLECRY",
+            "value": "1"
+          },
+          {
+            "enum_id": "321",
+            "name": "COLLECTIBLE",
+            "value": "1"
+          },
+          {
+            "enum_id": "676",
+            "name": "DONT_PICK_FROM_SUBSETS",
+            "value": "1"
+          },
+          {
+            "enum_id": "2589",
+            "name": "HAS_SIGNATURE_QUALITY",
+            "value": "1"
+          },
+          {
+            "enum_id": "2936",
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "enum_id": "4085",
+            "name": "FABLED",
+            "value": "1"
+          }
+        ]
+      },
+      "prefix_candidates": [
+        {
+          "card_id": "TIME_890t",
+          "record": {
+            "artist": "Sergey Tsvelykh",
+            "attack": 1,
+            "cardClass": "PRIEST",
+            "cost": 10,
+            "dbfId": 120064,
+            "durability": 0,
+            "elite": true,
+            "health": 3,
+            "id": "TIME_890t",
+            "name": "Atiesh the Greatstaff",
+            "set": "TIME_TRAVEL",
+            "text": "[x]Costs (0) if you control\nMedivh. Double the\ndamage and healing\nof your spells.",
+            "type": "WEAPON"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "3"
+            },
+            {
+              "enum_id": "47",
+              "name": "ATK",
+              "value": "1"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "10"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "6"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "7"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "card_id": "TIME_890t2",
+          "record": {
+            "artist": "Grace Liu",
+            "cardClass": "PRIEST",
+            "cost": 10,
+            "dbfId": 120068,
+            "elite": true,
+            "health": 2,
+            "id": "TIME_890t2",
+            "name": "Karazhan the Sanctum",
+            "set": "TIME_TRAVEL",
+            "text": "Costs (0) if you're wielding Atiesh. Summon two random 8-Cost minions.",
+            "type": "LOCATION"
+          },
+          "numeric_tags": [
+            {
+              "enum_id": "45",
+              "name": "HEALTH",
+              "value": "2"
+            },
+            {
+              "enum_id": "48",
+              "name": "COST",
+              "value": "10"
+            },
+            {
+              "enum_id": "114",
+              "name": "ELITE",
+              "value": "1"
+            },
+            {
+              "enum_id": "183",
+              "name": "CARD_SET",
+              "value": "1957"
+            },
+            {
+              "enum_id": "199",
+              "name": "CLASS",
+              "value": "6"
+            },
+            {
+              "enum_id": "202",
+              "name": "CARDTYPE",
+              "value": "39"
+            },
+            {
+              "enum_id": "2589",
+              "name": "HAS_SIGNATURE_QUALITY",
+              "value": "1"
+            },
+            {
+              "enum_id": "4445",
+              "name": "IS_FABLED_BUNDLE_CARD",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "named_bundle_tag_candidates": [
+        "TIME_890t",
+        "TIME_890t2"
+      ]
+    }
+  ],
+  "primary_documentation": [
+    "https://hearthstone.blizzard.com/en-gb/expansions-adventures/across-the-timeways",
+    "https://hearthstone.blizzard.com/en-us/news/24241547",
+    "https://hearthstone.blizzard.com/en-us/news/24244424/34-2-patch-notes-events-and-features"
+  ]
+}

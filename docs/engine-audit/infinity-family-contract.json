@@ -1,0 +1,197 @@
+{
+  "scope": "Regular Constructed frozen Infinity family; research contract, no runtime admission.",
+  "patch": "36.6.0.251952",
+  "catalog_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+  "records": {
+    "END_012": {
+      "artist": "Studio Hive",
+      "attack": 4,
+      "cardClass": "PALADIN",
+      "collectible": true,
+      "cost": 3,
+      "dbfId": 121151,
+      "durability": 0,
+      "flavor": "Woah there, looks like you got hit with this hammer pretty hard. How many fingers am I holding up?",
+      "health": 2,
+      "id": "END_012",
+      "isMiniSet": true,
+      "mechanics": [
+        "BATTLECRY"
+      ],
+      "name": "Hand of Infinity",
+      "rarity": "RARE",
+      "set": "TIME_TRAVEL",
+      "text": "[x]Can't attack heroes.\n<b>Battlecry:</b> Set this\nweapon's Attack to\nINFINITY this turn!",
+      "type": "WEAPON"
+    },
+    "END_018": {
+      "artist": "Slawomir Maniak",
+      "attack": 5,
+      "cardClass": "WARLOCK",
+      "collectible": true,
+      "cost": 3,
+      "dbfId": 121162,
+      "flavor": "I didn't want to play that one anyway.",
+      "health": 5,
+      "id": "END_018",
+      "isMiniSet": true,
+      "mechanics": [
+        "BATTLECRY",
+        "DEATHRATTLE"
+      ],
+      "name": "Acolyte of Infinity",
+      "race": "DRAGON",
+      "races": [
+        "DRAGON"
+      ],
+      "rarity": "COMMON",
+      "set": "TIME_TRAVEL",
+      "text": "[x]<b>Battlecry:</b> Set the Cost of\na random card in your hand\nto INFINITY! <b>Deathrattle:</b>\nChange it back.",
+      "type": "MINION"
+    },
+    "END_024": {
+      "artist": "Studio Hive",
+      "cardClass": "MAGE",
+      "collectible": true,
+      "cost": 3,
+      "dbfId": 121187,
+      "flavor": "This card is total overkill.",
+      "id": "END_024",
+      "isMiniSet": true,
+      "mechanics": [
+        "SECRET",
+        "ImmuneToSpellpower"
+      ],
+      "name": "Flames of Infinity",
+      "rarity": "COMMON",
+      "set": "TIME_TRAVEL",
+      "spellSchool": "FIRE",
+      "text": "<b>Secret:</b> When your enemy's turn ends, deal INFINITE damage to their highest Health minion.",
+      "type": "SPELL"
+    },
+    "TIME_024": {
+      "artist": "Zoltan Boros",
+      "attack": 8,
+      "cardClass": "NEUTRAL",
+      "collectible": true,
+      "cost": 9,
+      "dbfId": 120266,
+      "elite": true,
+      "flavor": "Oh yeah?? Well, next turn I hit for Infinity +1!",
+      "health": 8,
+      "id": "TIME_024",
+      "mechanics": [
+        "BATTLECRY"
+      ],
+      "name": "Murozond, Unbounded",
+      "race": "DRAGON",
+      "races": [
+        "DRAGON"
+      ],
+      "rarity": "LEGENDARY",
+      "set": "TIME_TRAVEL",
+      "text": "<b>Battlecry:</b> At the start of your next turn, set this minion's Attack to INFINITY!",
+      "type": "MINION"
+    }
+  },
+  "xml_integer_tags": {
+    "END_012": {
+      "HEALTH": "2",
+      "ATK": "4",
+      "COST": "3",
+      "CARD_SET": "1957",
+      "CLASS": "5",
+      "CARDTYPE": "7",
+      "RARITY": "3",
+      "BATTLECRY": "1",
+      "COLLECTIBLE": "1",
+      "MINI_SET": "1"
+    },
+    "END_018": {
+      "HEALTH": "5",
+      "ATK": "5",
+      "COST": "3",
+      "CARD_SET": "1957",
+      "CLASS": "9",
+      "CARDRACE": "24",
+      "CARDTYPE": "4",
+      "RARITY": "1",
+      "DEATHRATTLE": "1",
+      "BATTLECRY": "1",
+      "COLLECTIBLE": "1",
+      "MINI_SET": "1"
+    },
+    "END_024": {
+      "COST": "3",
+      "CARD_SET": "1957",
+      "CLASS": "4",
+      "CARDTYPE": "5",
+      "RARITY": "1",
+      "SECRET": "1",
+      "COLLECTIBLE": "1",
+      "ImmuneToSpellpower": "1",
+      "SPELL_SCHOOL": "2",
+      "MINI_SET": "1"
+    },
+    "TIME_024": {
+      "HEALTH": "8",
+      "ATK": "8",
+      "COST": "9",
+      "ELITE": "1",
+      "CARD_SET": "1957",
+      "CLASS": "12",
+      "CARDRACE": "24",
+      "CARDTYPE": "4",
+      "RARITY": "5",
+      "BATTLECRY": "1",
+      "COLLECTIBLE": "1",
+      "HAS_SIGNATURE_QUALITY": "1"
+    }
+  },
+  "primary_sources": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24294373/updated-9-29-2026-36-6-patch-notes",
+      "constraint": "Flames of Infinity no longer always triggers first at enemy end turn; integrate creation-order scheduling rather than a pre-end shortcut."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/cards/121162-acolyte-of-infinity/",
+      "constraint": "Physical selected hand card gets cost change; Deathrattle restores it."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24245105",
+      "constraint": "Hand of Infinity attack change lasts one turn."
+    }
+  ],
+  "shared_requirements": [
+    "Determine actual client numeric representation from authoritative evidence; neither arbitrary huge integer nor IEEE float infinity is established by printed text.",
+    "Keep observations, JSON replay and feature values finite/serializable with an explicit representation contract.",
+    "Handle damage prevention, shields, immunity, damage caps, Lifesteal and overkill through ordinary damage resolution.",
+    "Preserve physical-source identity for timed weapon/minion effects and physical-hand identity for reversible cost changes."
+  ],
+  "bindings": {
+    "END_012": [
+      "Cannot attack heroes is persistent weapon restriction.",
+      "Temporary weapon attack setting must restore prior enchantment state without affecting a replacement weapon."
+    ],
+    "END_018": [
+      "Random current hand card; no target when hand empty.",
+      "Restore only the linked cost effect, with stacking/copy/Silence/transform/zone transitions reviewed."
+    ],
+    "END_024": [
+      "Enemy end-turn trigger in ordinary timing order.",
+      "Highest current Health enemy minion, random ties; Spell Damage immunity confirmed by frozen XML."
+    ],
+    "TIME_024": [
+      "Schedule for next owner turn start.",
+      "Track the physical source across death, Silence, control change and copies."
+    ]
+  },
+  "unresolved": [
+    "Exact numeric sentinel, arithmetic saturation/overflow and comparisons.",
+    "Cost-setting precedence and restoration under later modifications.",
+    "Activation-time versus resolution-time highest-Health selection.",
+    "Source-loss and control-change timing for delayed Battlecry."
+  ],
+  "runtime_status": "Four staged bodies implemented in expanded/infinity.py; no live admission.",
+  "numeric_policy": "2147483647 is an explicit provisional integer representation pending independent pinned-client boundary verification; no claim of proven saturation/arithmetic fidelity."
+}

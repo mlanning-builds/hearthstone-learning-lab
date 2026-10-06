@@ -1,0 +1,49 @@
+"""Third 30-card batch: persistent identity bonuses and attached card effects."""
+RULES = {
+ 'MEND_800':('none',[]), 'MEND_801':('none',[]),
+ 'MEND_802':('none',[('recruits_shield',2)]),
+ 'MEND_803':('none',[('recruit_bonus',1,1)]),
+ 'MEND_804':('none',[('double_recruits',)]),
+ 'MEND_900':('none',[('summon','CS2_101t',4),('add','CS2_101t',4)]),
+ 'CATA_209':('none',[('choose_held_modifier','spell_damage',1)]),
+ 'CATA_458':('none',[('zone_spell_damage',1)]),
+ 'EDR_874':('none',[('add_spell_damage','CS2_008',1),('add_spell_damage','EX1_173',1)]),
+ 'TLC_223':('none',[('draw_fire_spell_damage',2)]),
+ 'BE_036':('none',[('choose_held_modifier','radiating_discount',5)]),
+ 'TIME_036':('none',[('inspect_rightmost',)]),
+ 'FIR_951':('none',[('choose_corpses_stats',)]),
+ 'CORE_ULD_178':('none',[('choose_unique_keyword',),('choose_unique_keyword',)]),
+ 'EDR_491':('none',[('inherit_deathrattles_turn',)]),
+ 'DINO_410':('none',[]), 'TLC_234':('none',[]),
+ 'EDR_209':('none',[('choose_cenarius',),('choose_cenarius',),('choose_cenarius',)]),
+ 'CATA_566':('none',[('choose_held_modifier','growing_discount',1)]),
+ 'END_032':('none',[('combo_overload_keywords',)]),
+ 'FIR_919':('none',[]),
+ 'END_025':('minion',[('damage',3),('return_spell_if_dead',)]),
+ 'TTN_851':('none',[('resistance_aura',)]),
+ 'EDR_234':('none',[('draw_locked',),('draw_locked',)]),
+ 'CATA_215':('enemy_minion',[('bounce_locked',)]),
+ 'EDR_527':('none',[('fill_enemy_deck_copies',3)]),
+ 'JAIL_379':('none',[('reveal_spell_missiles',5,5)]),
+ 'JAIL_510':('none',[('destroy_all_minions',),('bottom_demons',3)]),
+ 'TIME_042':('none',[('discard_entire_hand',),('add','TIME_042t',1)]),
+ 'CATA_699':('none',[('choose_steal_health',3)]*3),
+}
+TOKEN_RULES={
+ 'CS2_008':('character',[('damage',1)]),
+ 'EX1_173':('character',[('damage',5),('draw',1)]),
+ 'TIME_042t':('minion',[('buff',1,1)]),
+}
+TOKEN_IDS={'CS2_008','EX1_173','TIME_042t','DINO_410t','DINO_410t2','DINO_410t3','DINO_410t4','DINO_410t5','TLC_234t','EDR_209t5'}
+DEATH_EFFECTS={
+ 'MEND_800':[('recruit_bonus',1,0)],
+ 'DINO_410':[('death_summon','DINO_410t2',1)],
+ 'DINO_410t2':[('death_summon','DINO_410t3',1)],
+ 'DINO_410t3':[('death_summon','DINO_410t4',1)],
+ 'DINO_410t4':[('death_summon','DINO_410t5',1)],
+ 'DINO_410t5':[('death_summon','DINO_410t',1)],
+ 'TLC_234':[('death_summon','TLC_234t',1)],
+ 'TLC_234t':[('death_summon','TLC_234',1)],
+ 'FIR_919':[('at_current_end_add','FIR_919')],
+}
+TRIGGERS={'MEND_801':('self_shield_lost',[('recruit_bonus',0,1)])}

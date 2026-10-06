@@ -1,0 +1,5594 @@
+{
+  "scope": "Frozen regular Standard Herald/Colossal source inventory; not runtime support or verified dependency membership.",
+  "build": "36.6.0.251952",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "xml_source": "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+  "collectibles": [
+    "CATA_139",
+    "CATA_150",
+    "CATA_151",
+    "CATA_153",
+    "CATA_154",
+    "CATA_155",
+    "CATA_156",
+    "CATA_158",
+    "CATA_160",
+    "CATA_190h",
+    "CATA_300",
+    "CATA_432",
+    "CATA_488",
+    "CATA_492",
+    "CATA_497",
+    "CATA_525",
+    "CATA_530",
+    "CATA_550",
+    "CATA_561",
+    "CATA_565",
+    "CATA_580",
+    "CATA_722",
+    "CATA_725",
+    "CATA_726",
+    "CATA_780",
+    "CATA_785"
+  ],
+  "collectible_count": 26,
+  "candidate_relative_count": 43,
+  "unresolved": [
+    "Off-class Herald army selection",
+    "Whether and when existing entities receive upgrades",
+    "Starting-deck random-generation restrictions",
+    "Appendage position and summon notification order",
+    "Numeric tags with nonsemantic names must not be interpreted from their name",
+    "Deathwing choice, upgrade and discount semantics"
+  ],
+  "cards": [
+    {
+      "card_id": "CATA_139",
+      "family": "colossal",
+      "record": {
+        "name": "Wickerfang",
+        "type": "MINION",
+        "cardClass": "DRUID",
+        "cost": 6,
+        "attack": 0,
+        "health": 5,
+        "text": "<b>Colossal +4</b>\nAfter one of Wickerfang's Legs gains stats, this gains them too.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "5"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "6"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "2"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "128061"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "128061"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_139t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Wickerfang's Leg",
+        "type": "MINION",
+        "cardClass": "DRUID",
+        "cost": 1,
+        "attack": 0,
+        "health": 2,
+        "text": "At the end of your turn, gain +1/+1.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "2"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_139t2",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Wickerfang's Leg",
+        "type": "MINION",
+        "cardClass": "DRUID",
+        "cost": 1,
+        "attack": 0,
+        "health": 2,
+        "text": "At the end of your turn, gain +1/+1.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "2"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_139t3",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Wickerfang's Leg",
+        "type": "MINION",
+        "cardClass": "DRUID",
+        "cost": 1,
+        "attack": 0,
+        "health": 2,
+        "text": "At the end of your turn, gain +1/+1.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "2"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_139t4",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Wickerfang's Leg",
+        "type": "MINION",
+        "cardClass": "DRUID",
+        "cost": 1,
+        "attack": 0,
+        "health": 2,
+        "text": "At the end of your turn, gain +1/+1.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "2"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_150",
+      "family": "colossal",
+      "record": {
+        "name": "Ragnaros, the Great Fire",
+        "type": "MINION",
+        "cardClass": "WARRIOR",
+        "cost": 8,
+        "attack": 8,
+        "health": 8,
+        "text": "[x]<b>Colossal +2</b>\nAt the end of your turn, trigger\n\u00a0\u00a0\u00a0your minions' <b>Deathrattles</b>.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "8"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "8"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "8"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "124113"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "124113"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2469",
+          "name": "COLOSSAL_LIMB_ON_LEFT",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_150t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Hand of Ragnaros",
+        "type": "MINION",
+        "cardClass": "WARRIOR",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> twice to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> once to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2469",
+          "name": "COLOSSAL_LIMB_ON_LEFT",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_150t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Hand of Ragnaros",
+        "type": "MINION",
+        "cardClass": "WARRIOR",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> twice to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> once to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_151",
+      "family": "colossal",
+      "record": {
+        "name": "Azshara, Ocean Lord",
+        "type": "MINION",
+        "cardClass": "DEMONHUNTER",
+        "cost": 8,
+        "attack": 8,
+        "health": 8,
+        "text": "<b>Colossal +2</b>\nYour hero has <b>Windfury</b>.",
+        "mechanics": [
+          "AURA",
+          "COLOSSAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "3",
+          "name": "TAG_SCRIPT_DATA_NUM_2",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "8"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "8"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "8"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "92"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "125413"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "125413"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_151t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Azshara's Tentacle",
+        "type": "MINION",
+        "cardClass": "DEMONHUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> twice to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> once to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "92"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_151t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Azshara's Tentacle",
+        "type": "MINION",
+        "cardClass": "DEMONHUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> twice to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> once to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "92"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_153",
+      "family": "colossal",
+      "record": {
+        "name": "Al'Akir, Lord of Storms",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 8,
+        "attack": 2,
+        "health": 8,
+        "text": "[x]<b>Colossal +2, <b>Rush</b>, Windfury</b>\n<b>Battlecry:</b> Get 2 minions with\nCost equal to this minion's\nAttack. They cost (1).",
+        "mechanics": [
+          "BATTLECRY",
+          "COLOSSAL",
+          "RUSH",
+          "WINDFURY"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "8"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "8"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "189",
+          "name": "WINDFURY",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "791",
+          "name": "RUSH",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "127053"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "127053"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_153t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Charged Hand of Al'Akir",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 1,
+        "attack": 1,
+        "health": 2,
+        "text": "[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> twice to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> once to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.",
+        "mechanics": [
+          "AURA"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_153t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Charged Hand of Al'Akir",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 1,
+        "attack": 1,
+        "health": 2,
+        "text": "[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> twice to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> once to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.",
+        "mechanics": [
+          "AURA"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_154",
+      "family": "colossal",
+      "record": {
+        "name": "Sinestra",
+        "type": "MINION",
+        "cardClass": "ROGUE",
+        "cost": 6,
+        "attack": 5,
+        "health": 5,
+        "text": "<b>Colossal +2</b>\nYour spells from other classes cast twice.",
+        "mechanics": [
+          "AURA",
+          "COLOSSAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "5"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "5"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "6"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "125503"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "125503"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_154t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Sinestra's Wing",
+        "type": "MINION",
+        "cardClass": "ROGUE",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_154t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Sinestra's Wing",
+        "type": "MINION",
+        "cardClass": "ROGUE",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_155",
+      "family": "colossal",
+      "record": {
+        "name": "Arisen Onyxia",
+        "type": "MINION",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 9,
+        "attack": 3,
+        "health": 6,
+        "text": "[x]<b>Colossal +2</b>. When your\nhero would lose Health on\nyour turn, gain that much\nmax Health instead.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "6"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "3"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "9"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "125416"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "125416"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2196",
+          "name": "COST_BLOOD",
+          "value": "2"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2534",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_155t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Onyxia's Wing",
+        "type": "MINION",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x][x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2534",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_155t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Onyxia's Wing",
+        "type": "MINION",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x][x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2534",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_156",
+      "family": "herald",
+      "record": {
+        "name": "Experimental Animation",
+        "type": "SPELL",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 6,
+        "text": "<b>Herald</b> {0}.\nDeal $4 damage to all enemy minions."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "6"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1635",
+          "name": "SPELL_SCHOOL",
+          "value": "6"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2196",
+          "name": "COST_BLOOD",
+          "value": "2"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_158",
+      "family": "herald",
+      "record": {
+        "name": "Maniacal Follower",
+        "type": "MINION",
+        "cardClass": "ROGUE",
+        "cost": 3,
+        "attack": 4,
+        "health": 1,
+        "text": "<b>Stealth</b>\n<b>Deathrattle:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "DEATHRATTLE",
+          "STEALTH"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "4"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "3"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "191",
+          "name": "STEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_158t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Sinestra",
+        "type": "MINION",
+        "cardClass": "ROGUE",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\nrandom spell from another\nclass. It costs ({0}) less."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_160",
+      "family": "herald",
+      "record": {
+        "name": "Scorching Ravager",
+        "type": "MINION",
+        "cardClass": "WARRIOR",
+        "cost": 4,
+        "attack": 4,
+        "health": 3,
+        "text": "<b>Battlecry:</b> <b>Herald</b> {0}. Give the Soldier <b>Rush</b>.",
+        "mechanics": [
+          "BATTLECRY"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "3"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "4"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "4"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "3"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190h",
+      "family": "herald",
+      "record": {
+        "name": "Deathwing, Worldbreaker",
+        "type": "HERO",
+        "classes": [
+          "DEATHKNIGHT",
+          "ROGUE",
+          "SHAMAN",
+          "WARLOCK",
+          "WARRIOR",
+          "DEMONHUNTER"
+        ],
+        "cost": 10,
+        "health": 30,
+        "text": "[x]<b>Battlecry:</b> Choose {0}\nCataclysm to unleash!\n<i><b>Herald</b> twice to upgrade.</i>@[x]<b>Battlecry:</b> Choose {0}\n|4(Cataclysm,Cataclysms) to unleash!\n<i><b>Herald</b> once to upgrade.</i>@[x]<b>Battlecry:</b> Choose {0}\n|4(Cataclysm,Cataclysms) to unleash!",
+        "mechanics": [
+          "BATTLECRY"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "30"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "10"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "3"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "292",
+          "name": "ARMOR",
+          "value": "12"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "380",
+          "name": "HERO_POWER",
+          "value": "125466"
+        },
+        {
+          "enumID": "476",
+          "name": "MULTIPLE_CLASSES",
+          "value": "9153"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "2839",
+          "name": "EMOTECHARACTER",
+          "value": "506"
+        },
+        {
+          "enumID": "3382",
+          "name": "KEEP_HERO_CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "3837",
+          "name": "SKIP_ARMOR_ANIMATION",
+          "value": "1"
+        },
+        {
+          "enumID": "4485",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4628",
+          "name": "SKIP_HERO_TWEEN",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190p",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Ruthless",
+        "type": "HERO_POWER",
+        "cardClass": "NEUTRAL",
+        "cost": 2,
+        "text": "+$a5 Attack this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190t10",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Dragon's Reign",
+        "type": "SPELL",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "text": "Summon a 12/12 Dragon."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "684",
+          "name": "HIDE_COST",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190t11",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Topple",
+        "type": "SPELL",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "text": "[x]Destroy the highest\n Health enemy minion."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "684",
+          "name": "HIDE_COST",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190t12",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Raze",
+        "type": "SPELL",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "text": "Deal 4 damage to all enemy minions.",
+        "mechanics": [
+          "ImmuneToSpellpower"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "349",
+          "name": "ImmuneToSpellpower",
+          "value": "1"
+        },
+        {
+          "enumID": "684",
+          "name": "HIDE_COST",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190t13",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Enthrall",
+        "type": "SPELL",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "text": "Shuffle five random <b>Legendary</b> Dragons into your deck. They cost (1)."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "684",
+          "name": "HIDE_COST",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_190t14",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Progeny of Deathwing",
+        "type": "MINION",
+        "cardClass": "NEUTRAL",
+        "cost": 10,
+        "attack": 12,
+        "health": 12
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "12"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "12"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "10"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "12"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_300",
+      "family": "colossal",
+      "record": {
+        "name": "The Black Blood",
+        "type": "MINION",
+        "cardClass": "PRIEST",
+        "cost": 7,
+        "attack": 5,
+        "health": 9,
+        "text": "[x]<b>Colossal +3. </b>\nAfter you restore Health\nto a character, attack a\nrandom enemy minion.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "9"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "5"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "7"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "6"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "122756"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "122756"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_300t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Black Blood's Body",
+        "type": "MINION",
+        "cardClass": "PRIEST",
+        "cost": 2,
+        "attack": 2,
+        "health": 2,
+        "text": "[x]At the end of your turn,\nrestore #3 Health to\na random damaged\n\u00a0friendly character.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "6"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_300t2",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Black Blood's Body",
+        "type": "MINION",
+        "cardClass": "PRIEST",
+        "cost": 2,
+        "attack": 2,
+        "health": 2,
+        "text": "[x]At the end of your turn,\nrestore #3 Health to\na random damaged\n\u00a0friendly character.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "6"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_300t3",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Black Blood's Body",
+        "type": "MINION",
+        "cardClass": "PRIEST",
+        "cost": 2,
+        "attack": 2,
+        "health": 2,
+        "text": "[x]At the end of your turn,\nrestore #3 Health to\na random damaged\n\u00a0friendly character.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "6"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_432",
+      "family": "colossal",
+      "record": {
+        "name": "Chromatus",
+        "type": "MINION",
+        "cardClass": "PALADIN",
+        "cost": 8,
+        "attack": 8,
+        "health": 8,
+        "text": "<b>Colossal +4</b>\n<b>Taunt</b>, <b>Lifesteal</b>, <b>Elusive</b>, <b>Divine Shield</b>",
+        "mechanics": [
+          "COLOSSAL",
+          "DIVINE_SHIELD",
+          "ELUSIVE",
+          "LIFESTEAL",
+          "TAUNT"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "8"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "8"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "8"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "190",
+          "name": "TAUNT",
+          "value": "1"
+        },
+        {
+          "enumID": "194",
+          "name": "DIVINE_SHIELD",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "5"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "685",
+          "name": "LIFESTEAL",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "122402"
+        },
+        {
+          "enumID": "1211",
+          "name": "ELUSIVE",
+          "value": "1"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_432t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Green Head of Chromatus",
+        "type": "MINION",
+        "cardClass": "PALADIN",
+        "cost": 2,
+        "attack": 2,
+        "health": 3,
+        "text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Remove\n <b>Taunt</b> from Chromatus.",
+        "mechanics": [
+          "DEATHRATTLE",
+          "TAUNT"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "3"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "190",
+          "name": "TAUNT",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "5"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_432t2",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Red Head of Chromatus",
+        "type": "MINION",
+        "cardClass": "PALADIN",
+        "cost": 2,
+        "attack": 2,
+        "health": 3,
+        "text": "<b>Lifesteal</b>\n<b>Deathrattle:</b> Remove <b>Lifesteal</b> from Chromatus.",
+        "mechanics": [
+          "DEATHRATTLE",
+          "LIFESTEAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "3"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "5"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "685",
+          "name": "LIFESTEAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_432t3",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Blue Head of Chromatus",
+        "type": "MINION",
+        "cardClass": "PALADIN",
+        "cost": 2,
+        "attack": 2,
+        "health": 3,
+        "text": "[x]<b>Elusive</b>\n<b>Deathrattle:</b> Remove\n <b>Elusive</b> from Chromatus.",
+        "mechanics": [
+          "DEATHRATTLE",
+          "ELUSIVE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "3"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "5"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1211",
+          "name": "ELUSIVE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_432t4",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Bronze Head of Chromatus",
+        "type": "MINION",
+        "cardClass": "PALADIN",
+        "cost": 2,
+        "attack": 2,
+        "health": 3,
+        "text": "<b>Divine Shield</b>\n<b>Deathrattle:</b> Remove\n<b>Divine Shield</b> from Chromatus.",
+        "mechanics": [
+          "DEATHRATTLE",
+          "DIVINE_SHIELD"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "3"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "194",
+          "name": "DIVINE_SHIELD",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "5"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_488",
+      "family": "colossal",
+      "record": {
+        "name": "Vulcanos",
+        "type": "MINION",
+        "cardClass": "MAGE",
+        "cost": 7,
+        "attack": 4,
+        "health": 8,
+        "text": "[x]<b>Colossal +2</b>\nAt the end of your turn,\ndeal 3 damage to all\nother minions.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "8"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "4"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "7"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "4"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "128032"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "128032"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_488t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Plume of Vulcanos",
+        "type": "MINION",
+        "cardClass": "MAGE",
+        "cost": 2,
+        "attack": 1,
+        "health": 5,
+        "text": "[x]Whenever this takes\ndamage, get a random Fire\nspell. It costs (3) less.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "5"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "4"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_488t2",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Plume of Vulcanos",
+        "type": "MINION",
+        "cardClass": "MAGE",
+        "cost": 2,
+        "attack": 1,
+        "health": 5,
+        "text": "[x]Whenever this takes\ndamage, get a random Fire\nspell. It costs (3) less.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "5"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "4"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_497",
+      "family": "herald",
+      "record": {
+        "name": "Ultraxion",
+        "type": "MINION",
+        "classes": [
+          "DEATHKNIGHT",
+          "ROGUE",
+          "SHAMAN",
+          "WARLOCK",
+          "WARRIOR",
+          "DEMONHUNTER"
+        ],
+        "cost": 6,
+        "attack": 6,
+        "health": 7,
+        "text": "[x]<b>Battlecry:</b> <b>Herald</b> {0}.\nReduce Deathwing's\nCost by ({1}).\n <i>(<b>Herald</b> to improve!)</i>",
+        "mechanics": [
+          "BATTLECRY"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "7"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "6"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "6"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "476",
+          "name": "MULTIPLE_CLASSES",
+          "value": "9153"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1932",
+          "name": "HAS_DIAMOND_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_525",
+      "family": "herald",
+      "record": {
+        "name": "Armored Bloodletter",
+        "type": "MINION",
+        "cardClass": "DEMONHUNTER",
+        "cost": 3,
+        "attack": 3,
+        "health": 1,
+        "text": "<b>Rush</b>\n<b>Battlecry:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "BATTLECRY",
+          "RUSH"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "3"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "3"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "92"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "791",
+          "name": "RUSH",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_525t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Azshara",
+        "type": "MINION",
+        "cardClass": "DEMONHUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> twice to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn.\n<i>\u00a0<b>Herald</b> once to upgrade.</i>@[x]When summoned, give your\nhero +{0} Attack this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "92"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_530",
+      "family": "herald",
+      "record": {
+        "name": "Fel Infusion",
+        "type": "SPELL",
+        "cardClass": "DEMONHUNTER",
+        "cost": 2,
+        "text": "<b>Herald</b> {0}.\nYour hero has \n<b>Lifesteal</b> this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "122849"
+        },
+        {
+          "enumID": "3",
+          "name": "TAG_SCRIPT_DATA_NUM_2",
+          "value": "122850"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "14"
+        },
+        {
+          "enumID": "201",
+          "name": "FACTION",
+          "value": "3"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "4"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1635",
+          "name": "SPELL_SCHOOL",
+          "value": "7"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550",
+      "family": "colossal",
+      "record": {
+        "name": "Magmaw",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 7,
+        "attack": 2,
+        "health": 12,
+        "text": "<b>Colossal +99</b>\nSummon any leftover appendages when there is room.",
+        "mechanics": [
+          "COLOSSAL",
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "99"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "12"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "7"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "122866"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "122866"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t2",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t3",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t4",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t5",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_550t6",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Magmaw's Body",
+        "type": "MINION",
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "<b>Deathrattle:</b> Give a random friendly minion +2 Attack.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "3"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "20"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2539",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_561",
+      "family": "herald",
+      "record": {
+        "name": "Ritual of Power",
+        "type": "SPELL",
+        "cardClass": "SHAMAN",
+        "cost": 2,
+        "text": "[x]<b>Herald</b> {0}.\nGet two 1/1 Elementals\nwith <b>Rush</b>."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "3"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1635",
+          "name": "SPELL_SCHOOL",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_561t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Breezling",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "<b>Rush</b>",
+        "mechanics": [
+          "RUSH"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "791",
+          "name": "RUSH",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_565",
+      "family": "herald",
+      "record": {
+        "name": "Skywall Sentinel",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 2,
+        "attack": 0,
+        "health": 2,
+        "text": "<b>Taunt</b>\n<b>Battlecry:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "BATTLECRY",
+          "TAUNT"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "190",
+          "name": "TAUNT",
+          "value": "1"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "3"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_565t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Al'Akir",
+        "type": "MINION",
+        "cardClass": "SHAMAN",
+        "cost": 1,
+        "attack": 1,
+        "health": 2,
+        "text": "[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> twice to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.\n<i><b>Herald</b> once to upgrade.</i>@[x]Adjacent minions\nhave +{0} Attack.",
+        "mechanics": [
+          "AURA"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "8"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_580",
+      "family": "herald",
+      "record": {
+        "name": "Cataclysmic War Axe",
+        "type": "WEAPON",
+        "cardClass": "WARRIOR",
+        "cost": 3,
+        "attack": 3,
+        "health": 2,
+        "text": "<b>Battlecry:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "BATTLECRY"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "2"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "3"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "3"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "7"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_580t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Ragnaros",
+        "type": "MINION",
+        "cardClass": "WARRIOR",
+        "cost": 1,
+        "attack": 2,
+        "health": 1,
+        "text": "[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> twice to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0} damage\nto a random enemy.\n<i><b>Herald</b> once to upgrade.</i>@[x]<b>Deathrattle:</b> Deal {0}\ndamage to a random\nenemy.",
+        "mechanics": [
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "10"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "18"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_722",
+      "family": "herald",
+      "record": {
+        "name": "Envoy of the End",
+        "type": "MINION",
+        "classes": [
+          "DEATHKNIGHT",
+          "ROGUE",
+          "SHAMAN",
+          "WARLOCK",
+          "WARRIOR",
+          "DEMONHUNTER"
+        ],
+        "cost": 5,
+        "attack": 5,
+        "health": 4,
+        "text": "<b>Taunt</b>\n <b>Battlecry:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "BATTLECRY",
+          "TAUNT"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "4"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "5"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "5"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "190",
+          "name": "TAUNT",
+          "value": "1"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "476",
+          "name": "MULTIPLE_CLASSES",
+          "value": "9153"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_725",
+      "family": "herald",
+      "record": {
+        "name": "Shadowsworn Disciple",
+        "type": "MINION",
+        "cardClass": "WARLOCK",
+        "cost": 2,
+        "attack": 2,
+        "health": 1,
+        "text": "<b><b>Battlecry:</b> Herald</b> {0}.\n<b>Deathrattle:</b> Restore #3 Health to your hero.",
+        "mechanics": [
+          "BATTLECRY",
+          "DEATHRATTLE"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "2"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "9"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "217",
+          "name": "DEATHRATTLE",
+          "value": "1"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_725t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Cho'gall",
+        "type": "MINION",
+        "cardClass": "WARLOCK",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]At the end of your turn,\n\u00a0\u00a0\u00a0\u00a0destroy the minion to the\u00a0\u00a0\u00a0\u00a0\nright to gain +{0}/+{0}.\n\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>@[x]At the end of your turn,\n\u00a0\u00a0\u00a0\u00a0destroy the minion to the\u00a0\u00a0\u00a0\u00a0\nright to gain +{0}/+{0}.\n\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>@[x]At the end of your turn,\ndestroy the minion to the\nright to gain +{0}/+{0}.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "9"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_726",
+      "family": "colossal",
+      "record": {
+        "name": "Cho'gall, Mastermind",
+        "type": "MINION",
+        "cardClass": "WARLOCK",
+        "cost": 9,
+        "attack": 6,
+        "health": 6,
+        "text": "[x]<b>Colossal +2</b>\nYour Arms and Soldiers\ndestroy minions in the\n\u00a0enemy's deck instead.",
+        "mechanics": [
+          "AURA",
+          "COLOSSAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "6"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "6"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "9"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "9"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "5"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "362",
+          "name": "AURA",
+          "value": "1"
+        },
+        {
+          "enumID": "1078",
+          "name": "DISPLAY_CARD_ON_MOUSEOVER",
+          "value": "125435"
+        },
+        {
+          "enumID": "1452",
+          "name": "COLLECTION_RELATED_CARD_DATABASE_ID",
+          "value": "125435"
+        },
+        {
+          "enumID": "1544",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2247",
+          "name": "COLOSSAL",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_726t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Cho's Arm",
+        "type": "MINION",
+        "cardClass": "WARLOCK",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]At the end of your turn,\n\u00a0\u00a0\u00a0\u00a0destroy the minion to the\u00a0\u00a0\u00a0\u00a0\nright to gain +{0}/+{0}.\n\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>@[x]At the end of your turn,\ndestroy the minion to the\nright to gain +{0}/+{0}. \n<i><b>Herald</b> once to upgrade.</i>@[x]At the end of your turn,\ndestroy the minion to the\nright to gain +{0}/+{0}.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "9"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_726t1",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Gall's Arm",
+        "type": "MINION",
+        "cardClass": "WARLOCK",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]At the end of your turn,\n\u00a0\u00a0\u00a0\u00a0destroy the minion to the\u00a0\u00a0\u00a0\u00a0\nright to gain +{0}/+{0}.\n\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>@[x]At the end of your turn,\n\u00a0\u00a0\u00a0\u00a0destroy the minion to the\u00a0\u00a0\u00a0\u00a0\nright to gain +{0}/+{0}.\n\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>@[x]At the end of your turn,\ndestroy the minion to the\nright to gain +{0}/+{0}.",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "32",
+          "name": "TRIGGER_VISUAL",
+          "value": "1"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "114",
+          "name": "ELITE",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "9"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2248",
+          "name": "COLOSSAL_LIMB",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_780",
+      "family": "herald",
+      "record": {
+        "name": "Obsessive Technician",
+        "type": "MINION",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 4,
+        "attack": 3,
+        "health": 5,
+        "text": "<b>Lifesteal</b>\n<b>Battlecry:</b> <b>Herald</b> {0}.",
+        "mechanics": [
+          "BATTLECRY",
+          "LIFESTEAL"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "5"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "3"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "4"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "1"
+        },
+        {
+          "enumID": "218",
+          "name": "BATTLECRY",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "685",
+          "name": "LIFESTEAL",
+          "value": "1"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2196",
+          "name": "COST_BLOOD",
+          "value": "2"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_780t",
+      "family": "candidate_prefix_relative",
+      "record": {
+        "name": "Soldier of Onyxia",
+        "type": "MINION",
+        "cardClass": "DEATHKNIGHT",
+        "cost": 1,
+        "attack": 1,
+        "health": 1,
+        "text": "[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> twice to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x][x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn.\n\u00a0\u00a0\u00a0\u00a0\u00a0<i><b>Herald</b> once to upgrade.</i>\u00a0\u00a0\u00a0\u00a0@[x]When summoned, get a\n random {0}-Cost minion.\n It costs Health this turn."
+      },
+      "numeric_tags": [
+        {
+          "enumID": "2",
+          "name": "TAG_SCRIPT_DATA_NUM_1",
+          "value": "2"
+        },
+        {
+          "enumID": "45",
+          "name": "HEALTH",
+          "value": "1"
+        },
+        {
+          "enumID": "47",
+          "name": "ATK",
+          "value": "1"
+        },
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "1"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "1"
+        },
+        {
+          "enumID": "200",
+          "name": "CARDRACE",
+          "value": "24"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "4"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2534",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_785",
+      "family": "herald",
+      "record": {
+        "name": "Rite of Twilight",
+        "type": "SPELL",
+        "cardClass": "ROGUE",
+        "cost": 2,
+        "text": "<b>Herald</b> {0}.\n<b>Combo:</b> Deal $3 damage.",
+        "mechanics": [
+          "COMBO"
+        ]
+      },
+      "numeric_tags": [
+        {
+          "enumID": "48",
+          "name": "COST",
+          "value": "2"
+        },
+        {
+          "enumID": "183",
+          "name": "CARD_SET",
+          "value": "1980"
+        },
+        {
+          "enumID": "199",
+          "name": "CLASS",
+          "value": "7"
+        },
+        {
+          "enumID": "202",
+          "name": "CARDTYPE",
+          "value": "5"
+        },
+        {
+          "enumID": "203",
+          "name": "RARITY",
+          "value": "3"
+        },
+        {
+          "enumID": "220",
+          "name": "COMBO",
+          "value": "1"
+        },
+        {
+          "enumID": "321",
+          "name": "COLLECTIBLE",
+          "value": "1"
+        },
+        {
+          "enumID": "1635",
+          "name": "SPELL_SCHOOL",
+          "value": "6"
+        },
+        {
+          "enumID": "1724",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "2589",
+          "name": "HAS_SIGNATURE_QUALITY",
+          "value": "1"
+        },
+        {
+          "enumID": "4309",
+          "name": "HERALD",
+          "value": "1"
+        },
+        {
+          "enumID": "4538",
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "enumID": "4632",
+          "name": "2",
+          "value": "2"
+        }
+      ]
+    }
+  ]
+}

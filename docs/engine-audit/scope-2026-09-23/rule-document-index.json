@@ -1,0 +1,166 @@
+{
+  "documents": [
+    {
+      "card_ids": [
+        "TIME_705"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/attached-card-costs.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "JAIL_802"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/battlecry-play-triggers.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "DINO_417"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/board-expiration.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "CATA_476",
+        "CATA_999",
+        "CORE_BT_493",
+        "CORE_DRG_107",
+        "DINO_130",
+        "DINO_419",
+        "EDR_476",
+        "EDR_492",
+        "EDR_816",
+        "EDR_971",
+        "FIR_778",
+        "FIR_929",
+        "JAIL_007",
+        "JAIL_312",
+        "JAIL_441",
+        "JAIL_513",
+        "JAIL_720",
+        "TIME_059",
+        "TIME_100",
+        "TIME_428",
+        "TIME_605",
+        "TIME_710",
+        "TIME_856",
+        "TLC_225",
+        "TLC_237",
+        "TLC_249",
+        "TLC_427",
+        "TLC_443",
+        "TLC_468",
+        "TLC_823",
+        "TLC_EVENT_402"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/card-batch-0.8.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "DINO_132",
+        "EDR_110",
+        "JAIL_307"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/damage-effects-batch.md",
+      "urls": [
+        "https://hearthstone.wiki.gg/wiki/Sporegnasher"
+      ]
+    },
+    {
+      "card_ids": [
+        "TLC_624"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/damaged-board-copies.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "DINO_131",
+        "JAIL_516"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/deck-keyword-summons.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "EDR_238"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/distinct-resurrection.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "JAIL_462"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/draw-result-keywords.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "DINO_402"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/fill-board-copies.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "JAIL_459"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/friendly-keyword-auras.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "TIME_606"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/hero-power-hand-auras.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "TLC_224"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/mechanized-magma.md",
+      "urls": []
+    },
+    {
+      "card_ids": [
+        "BE_036",
+        "BE_EVENT_100",
+        "BE_EVENT_101",
+        "BE_EVENT_102"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/standard.md",
+      "urls": [
+        "https://api.hearthstonejson.com/v1/251952/enUS/cards.json."
+      ]
+    },
+    {
+      "card_ids": [
+        "DINO_421",
+        "JAIL_387"
+      ],
+      "evidence_quality": "unreviewed_document_reference",
+      "file": "docs/zone-minion-buffs.md",
+      "urls": []
+    }
+  ],
+  "schema": 1
+}

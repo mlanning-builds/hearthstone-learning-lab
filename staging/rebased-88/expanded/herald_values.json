@@ -1,0 +1,26 @@
+{
+  "build": "36.6.0.251952",
+  "xml_source": "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "meaning": "Base army ability magnitudes from enum 2; not Herald use counts. Scaling/timing requires independent review.",
+  "values": {
+    "CATA_150t": 2,
+    "CATA_150t1": 2,
+    "CATA_151t": 1,
+    "CATA_151t1": 1,
+    "CATA_153t": 1,
+    "CATA_153t1": 1,
+    "CATA_154t": 1,
+    "CATA_154t1": 1,
+    "CATA_155t": 2,
+    "CATA_155t1": 2,
+    "CATA_158t": 1,
+    "CATA_525t": 1,
+    "CATA_565t": 1,
+    "CATA_580t": 2,
+    "CATA_725t": 2,
+    "CATA_726t": 2,
+    "CATA_726t1": 2,
+    "CATA_780t": 2
+  }
+}

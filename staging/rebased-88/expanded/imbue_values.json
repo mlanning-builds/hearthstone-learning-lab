@@ -1,0 +1,145 @@
+{
+  "build": "251952",
+  "commit": "5212f4e1783b54dca934f65174b9e3798107c6e7",
+  "source": "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+  "source_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "cards": {
+    "EDR_445p": {
+      "CARDNAME": "Blessing of the Dragon",
+      "CARDTEXT": "[x]Shuffle two Emerald\nPortals into your deck.\n<i>(Your Portals summon\n<b>@</b>-Cost Dragons.)</i>",
+      "ARTISTNAME": "Kevin Sidharta",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "COST": "1",
+      "CARD_SET": "1946",
+      "CLASS": "5",
+      "CARDTYPE": "10",
+      "1": "1"
+    },
+    "EDR_445pt3": {
+      "CARDNAME": "Emerald Portal",
+      "CARDTEXT": "<b>Casts When Drawn</b>\nSummon a random\n@-Cost Dragon.",
+      "ARTISTNAME": "L. Lullabi & I. Campelo da Silva",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "COST": "1",
+      "CARD_SET": "1946",
+      "CLASS": "5",
+      "CARDTYPE": "5",
+      "CASTS_WHEN_DRAWN": "1",
+      "1": "1"
+    },
+    "EDR_448p": {
+      "CARDNAME": "Blessing of the Wind",
+      "CARDTEXT": "[x]Transform a friendly\nminion into a random\none that costs (<b>@</b>) more.",
+      "ARTISTNAME": "Studio Hive",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "TAG_SCRIPT_DATA_NUM_2": "1",
+      "COST": "2",
+      "CARD_SET": "1946",
+      "CLASS": "8",
+      "CARDTYPE": "10",
+      "1": "1"
+    },
+    "EDR_449p": {
+      "CARDNAME": "Blessing of the Moon",
+      "CARDTEXT": "[x]Choose a playable Priest\nminion or spell to add to\nyour hand. It costs (<b>@</b>) less,\nbut is <b>Temporary</b>.",
+      "ARTISTNAME": "Daniil Kudriavtsev",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "COST": "2",
+      "CARD_SET": "1946",
+      "CLASS": "6",
+      "CARDTYPE": "10",
+      "USE_DISCOVER_VISUALS": "1",
+      "1": "1"
+    },
+    "EDR_847p": {
+      "CARDNAME": "Blessing of the Golem",
+      "CARDTEXT": "Summon a <b>@</b>/<b>@</b> Plant_Golem.",
+      "ARTISTNAME": "Daniil Kudriavtsev",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "COST": "2",
+      "CARD_SET": "1946",
+      "CLASS": "2",
+      "CARDTYPE": "10",
+      "1": "1"
+    },
+    "EDR_847pt2": {
+      "CARDNAME": "Plant Golem",
+      "ARTISTNAME": "Daniil Kudriavtsev",
+      "HEALTH": "1",
+      "ATK": "1",
+      "COST": "1",
+      "CARD_SET": "1946",
+      "CLASS": "2",
+      "CARDTYPE": "4"
+    },
+    "EDR_847pt3": {
+      "CARDNAME": "Plant Golem",
+      "ARTISTNAME": "Daniil Kudriavtsev",
+      "HEALTH": "1",
+      "ATK": "1",
+      "COST": "1",
+      "CARD_SET": "1946",
+      "CLASS": "2",
+      "CARDTYPE": "4"
+    },
+    "EDR_847pt4": {
+      "CARDNAME": "Plant Golem",
+      "ARTISTNAME": "Daniil Kudriavtsev",
+      "HEALTH": "1",
+      "ATK": "1",
+      "COST": "1",
+      "CARD_SET": "1946",
+      "CLASS": "2",
+      "CARDTYPE": "4"
+    },
+    "EDR_850p": {
+      "CARDNAME": "Blessing of the Wolf",
+      "CARDTEXT": "Give a random Beast\nin your hand +<b>@</b> Attack.\nIt costs (<b>@</b>) less.",
+      "ARTISTNAME": "BOSi Studio",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "TAG_SCRIPT_DATA_NUM_2": "1",
+      "COST": "2",
+      "CARD_SET": "1946",
+      "CLASS": "3",
+      "CARDTYPE": "10",
+      "1": "1"
+    },
+    "EDR_851p": {
+      "CARDNAME": "Blessing of the Wisp",
+      "CARDTEXT": "[x]Summon |4(<b>@</b> Wisp,<b>@</b> Wisps).\nDeal <b>$@</b> damage\nrandomly split among\nall enemies.",
+      "ARTISTNAME": "Studio Hive",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "COST": "2",
+      "CARD_SET": "1946",
+      "CLASS": "4",
+      "CARDTYPE": "10",
+      "ImmuneToSpellpower": "1",
+      "1": "1"
+    },
+    "END_000p": {
+      "CARDNAME": "Blessing of the Bronze",
+      "CARDTEXT": "[x]<b>Rewind</b>\nGet a random minion\nfrom another class.\nIt costs (<b>@</b>) less.",
+      "ARTISTNAME": "Tanamaes Leejierasaes",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "TAG_SCRIPT_DATA_NUM_2": "1",
+      "COST": "1",
+      "CARD_SET": "1957",
+      "CLASS": "7",
+      "CARDTYPE": "10",
+      "1": "1",
+      "REWIND": "1"
+    },
+    "END_003p": {
+      "CARDNAME": "Blessing of the Infinite",
+      "CARDTEXT": "<b>Passive</b>\nThe first Undead you\nplay each turn gains\n+<b>@</b> Attack.",
+      "ARTISTNAME": "Tanamaes Leejierasaes",
+      "TAG_SCRIPT_DATA_NUM_1": "1",
+      "TRIGGER_VISUAL": "1",
+      "CARD_SET": "1957",
+      "CLASS": "1",
+      "CARDTYPE": "10",
+      "HIDE_COST": "1",
+      "1": "1"
+    }
+  }
+}

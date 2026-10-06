@@ -1,0 +1,30 @@
+{
+  "scope": "Bounded experimental pipeline evidence, preceding Blood Fighter admission; not full Standard or playing-strength certification",
+  "engine_fingerprint": "ab84ec138ed4426e07471d2689cce0e4a0d609cda78f18a65e0ba1029d328226",
+  "regression_tests": 4367,
+  "random_games": 22,
+  "random_terminal": 22,
+  "random_errors": 0,
+  "random_capped": 0,
+  "training_games": 11,
+  "training_updates": 11,
+  "training_steps": 1197,
+  "training_classes": [
+    "DEATHKNIGHT",
+    "DEMONHUNTER",
+    "DRUID",
+    "HUNTER",
+    "MAGE",
+    "PALADIN",
+    "PRIEST",
+    "ROGUE",
+    "SHAMAN",
+    "WARLOCK",
+    "WARRIOR"
+  ],
+  "all_checkpoint_hashes_checked": true,
+  "training_manifest": "runs/candidate_training/68f0ff76cc7542a9bca40a993b6a8b32/manifest.json",
+  "deck_search_manifest": "runs/deck_search/7d55346e0a0742b583b4700fb3fa5451/manifest.json",
+  "deck_search_games": 10,
+  "deck_search_completed": true
+}

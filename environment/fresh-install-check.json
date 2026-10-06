@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "completed_at": "2026-09-23T08:08:26.182689+00:00",
+  "fresh_install_verified": true,
+  "scope": "Fresh virtual environment from observed pins on this machine; relocated notebook 09 only; no training.",
+  "python_version": "3.9.6",
+  "system": "Darwin",
+  "machine": "arm64",
+  "pins_sha256": "37e92e43183d784d90886bcdc6b835203f63b8c78b3f2b3acf0b0835f662e7f5",
+  "package_count": 97,
+  "package_versions_match": true,
+  "pip_check_passed": true,
+  "environment_path": "/private/tmp/hearthstone-fresh-20260923-0806",
+  "notebook_receipt": "/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/runs/relocation_checks/bbca04eba89f4ddba948e881e4c4d0de/receipt.json",
+  "notebook_sha256": "f0fa3b630c4a75e77d67781c53185482036168a69b8ec52a12fb6817fd2d6cca",
+  "engine_fingerprint": "1cf36f08bcdf85f8e2f281bd65f0273fcb5118464b27b78f168201858239ab51",
+  "games": 11,
+  "terminal": 11,
+  "errors": 0,
+  "capped": 0,
+  "feature_decisions_checked": 1422,
+  "limitations": [
+    "Same macOS/Python platform only; not cross-platform verification.",
+    "Version pins do not lock package artifact hashes; package cache was allowed.",
+    "Training notebooks and full Standard correctness are outside this check."
+  ],
+  "archive": "runs/fresh_install_checks/4f7de71a6e55463692cb13edf20241b8/receipt.json"
+}

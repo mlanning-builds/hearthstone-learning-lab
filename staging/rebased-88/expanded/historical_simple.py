@@ -1,0 +1,47 @@
+"""Explicit frozen historical bodies matching reviewed primitive behavior.
+
+Declarations are compiled offline from matching printed effects, class, school
+and mechanics. No text parsing or identity substitution occurs during play.
+These are generated dependencies, not Standard deck entries or approved pools.
+"""
+RULES={'AT_055': ('character', [('heal', 5)]),
+ 'AT_064': ('character', [('damage', 3), ('armor', 3)]),
+ 'BOT_222': ('minion', [('damage', 4), ('damage_own_hero', 4)]),
+ 'BT_035': ('none', [('hero_attack', 2), ('draw', 1)]),
+ 'BT_292': ('minion', [('buff', 2, 1), ('draw', 1)]),
+ 'BT_714': ('enemy_character', [('freeze',)]),
+ 'BT_801': ('minion', [('damage', 3)]),
+ 'CFM_647': ('character', [('damage', 1)]),
+ 'CFM_659': ('character', [('heal', 2)]),
+ 'CS1_112': ('none', [('area_damage', 'enemy_minions', 2), ('area_heal', 2)]),
+ 'CS1_130': ('minion', [('damage', 3)]),
+ 'CS2_009': ('minion', [('buff', 2, 3), ('keyword', 'TAUNT')]),
+ 'CS2_023': ('none', [('draw', 2)]),
+ 'CS2_024': ('character', [('damage', 3), ('freeze',)]),
+ 'CS2_032': ('none', [('area_damage', 'enemy_minions', 5)]),
+ 'CS2_042': ('character', [('damage', 4)]),
+ 'CS2_062': ('none', [('area_damage', 'all_characters', 3)]),
+ 'CS2_076': ('enemy_minion', [('destroy',)]),
+ 'CS2_093': ('none', [('area_damage', 'enemies', 2)]),
+ 'CS2_094': ('character', [('damage', 3), ('draw', 1)]),
+ 'CS2_141': ('character', [('damage', 1)]),
+ 'CS2_189': ('character', [('damage', 1)]),
+ 'DS1_185': ('character', [('damage', 2)]),
+ 'EX1_011': ('character', [('heal', 2)]),
+ 'EX1_169': ('none', [('temporary_mana', 1)]),
+ 'EX1_197': ('none', [('destroy_large', 5)]),
+ 'EX1_238': ('character', [('damage', 3)]),
+ 'EX1_259': ('none', [('area_damage', 'enemy_minions', 3)]),
+ 'EX1_309': ('minion', [('destroy',), ('heal_own_hero', 3)]),
+ 'EX1_319': ('none', [('damage_own_hero', 3)]),
+ 'EX1_362': ('friendly_minion', [('keyword', 'DIVINE_SHIELD')]),
+ 'EX1_606': ('none', [('armor', 5), ('draw', 1)]),
+ 'EX1_619': ('none', [('health_one',)]),
+ 'ICC_055': ('minion', [('damage', 3)]),
+ 'SW_066': ('minion', [('silence',)]),
+ 'SW_442': ('character', [('damage', 4)]),
+ 'TRL_307': ('character', [('heal', 4), ('draw', 1)]),
+ 'ULD_191': ('friendly_minion', [('buff', 0, 2)]),
+ 'UNG_205': ('enemy_character', [('freeze',)]),
+ 'UNG_848': ('none', [('area_damage', 'other_minions', 2)])}
+GENERATED_IDS=frozenset(RULES)

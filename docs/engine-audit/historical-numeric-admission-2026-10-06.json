@@ -1,0 +1,318 @@
+{
+  "scope": "Provisional production admission; independent client fidelity and complete generation membership remain unfinished",
+  "card_ids": [
+    "AT_103",
+    "BOT_308",
+    "CS2_007",
+    "CS2_077",
+    "CS2_147",
+    "CS2_150",
+    "DRG_054",
+    "EX1_015",
+    "EX1_194",
+    "EX1_279",
+    "GVG_053",
+    "OG_094",
+    "OG_223",
+    "OG_234",
+    "TRL_128",
+    "TSC_963",
+    "ULD_190",
+    "UNG_923",
+    "WON_315"
+  ],
+  "records": [
+    {
+      "card_id": "AT_103",
+      "name": "North Sea Kraken",
+      "text": "<b>Battlecry:</b> Deal 4 damage.",
+      "record_sha256": "740a1a92baaf08c66538530021169c0abe6a6f656cb38ea1026cf1a5af09eae4",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BOT_308",
+      "name": "Spring Rocket",
+      "text": "<b>Battlecry:</b> Deal 2 damage.",
+      "record_sha256": "748529f2cf9718026386bcac4fa1f418c877acbe4aad9ccd683c8c432264115a",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_007",
+      "name": "Healing Touch",
+      "text": "Restore #8 Health.",
+      "record_sha256": "8d4e44b2bbfb8e42c7644502b1d1e4a05eec934ff36f37d91043946eb50d004e",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_077",
+      "name": "Sprint",
+      "text": "Draw 4 cards.",
+      "record_sha256": "556aa51b572080fb4241e1fbbc81065cb24d176346f696a04aa35f9b6b97070d",
+      "rule": [
+        "none",
+        [
+          [
+            "draw",
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_147",
+      "name": "Gnomish Inventor",
+      "text": "<b>Battlecry:</b> Draw a card.",
+      "record_sha256": "05c2afb332922f2242b81df0904f3feb95ee17f3aa89fae39ee49c3766167bac",
+      "rule": [
+        "none",
+        [
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_150",
+      "name": "Stormpike Commando",
+      "text": "<b>Battlecry:</b> Deal 2 damage.",
+      "record_sha256": "841acde33bfc2369473056d18be1041cb8d55fecb22634aecd8c3145b02a972c",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "DRG_054",
+      "name": "Big Ol' Whelp",
+      "text": "<b>Battlecry:</b> Draw a card.",
+      "record_sha256": "8512a5eecaf83c8aaf9bf1ca45ce7fcd856bc02eb9f7066e1ecd8e77cba801f4",
+      "rule": [
+        "none",
+        [
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_015",
+      "name": "Novice Engineer",
+      "text": "<b>Battlecry:</b> Draw a card.",
+      "record_sha256": "69d51766f6e08313765803519a9cf723ad48a81a8b793b07fe10f320f7dcecb3",
+      "rule": [
+        "none",
+        [
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_194",
+      "name": "Power Infusion",
+      "text": "Give a minion +2/+6.",
+      "record_sha256": "20e32038785a85a97b2ef03775035899f5b99a87ab678f8cb2365abd22c2e5d8",
+      "rule": [
+        "minion",
+        [
+          [
+            "buff",
+            2,
+            6
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_279",
+      "name": "Pyroblast",
+      "text": "Deal $10 damage.",
+      "record_sha256": "b6a20dfbf7c4b51e4fd6ee78ab86d3aa318e25d87612ac5ea2658d72939b0f4d",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            10
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "GVG_053",
+      "name": "Shieldmaiden",
+      "text": "<b>Battlecry:</b> Gain 5 Armor.",
+      "record_sha256": "8aecca0d1e6c28ad3d23167236764e18485e0dd331531b22f81947fc7631faa2",
+      "rule": [
+        "none",
+        [
+          [
+            "armor",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "OG_094",
+      "name": "Power Word: Tentacles",
+      "text": "Give a minion +2/+6.",
+      "record_sha256": "ac20fc8012c256510839bde5ed3286d79c61a55e75249f1a9830f4f7628932b2",
+      "rule": [
+        "minion",
+        [
+          [
+            "buff",
+            2,
+            6
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "OG_223",
+      "name": "Divine Strength",
+      "text": "Give a minion +1/+2.",
+      "record_sha256": "36543bf0b06f6c3f1c7ff3082311df35eaf0344f837d30e15bf48f2f91fe889d",
+      "rule": [
+        "minion",
+        [
+          [
+            "buff",
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "OG_234",
+      "name": "Darkshire Alchemist",
+      "text": "<b>Battlecry:</b> Restore\n#5 Health.",
+      "record_sha256": "f9ad5ebe088404ff33b4ff58775d2855bd5c00f22bdcfbfc77b3e62a67f784e5",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "TRL_128",
+      "name": "Regenerate",
+      "text": "Restore #3 Health.",
+      "record_sha256": "ffdc70a503151e668d712c8795a7ada3b6d9b7af98af0e3f9ecc5d3e5ff3d0bb",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "TSC_963",
+      "name": "Filletfighter",
+      "text": "<b>Battlecry:</b> Deal 1 damage.",
+      "record_sha256": "3e489649c65e6432bb8ab61d140ade6d84b59fbcf0a29db0ecf02f8a5d515129",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "ULD_190",
+      "name": "Pit Crocolisk",
+      "text": "<b>Battlecry:</b> Deal 5 damage.",
+      "record_sha256": "c889145d6d0edbb2f6dbc2036f81b3a6d8983e7be05700c6ad098dcf969d9fa3",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "UNG_923",
+      "name": "Iron Hide",
+      "text": "Gain 5 Armor.",
+      "record_sha256": "171578c0f9bf913915935c54a221e1c6fe58c432e3169a12ac24a9e710342175",
+      "rule": [
+        "none",
+        [
+          [
+            "armor",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "WON_315",
+      "name": "Darkshire Alchemist",
+      "text": "<b>Battlecry:</b> Restore\n#5 Health.",
+      "record_sha256": "d6c344ee249ab66f3627b2990b4b3e901c58b9b697197ab272322009038580b5",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            5
+          ]
+        ]
+      ]
+    }
+  ],
+  "excluded": {
+    "UNG_084": "Canonical identity belongs to the frozen Standard catalog; not a past-only outcome"
+  },
+  "checks": "Seven checks passed against the isolated preparation copy: every paid play, canonical exclusion, spell damage versus Battlecry, healing caps, draw counts, stat buffs and armor."
+}

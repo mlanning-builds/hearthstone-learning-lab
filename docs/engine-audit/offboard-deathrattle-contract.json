@@ -1,0 +1,42 @@
+{
+  "scope": "Regular Constructed IMPFERNAL removal semantics; primary developer clarification overrides earlier provisional fixtures.",
+  "primary_source": "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/",
+  "author": "HearthstoneTeam",
+  "triggers": [
+    "Burndown",
+    "Tick and Tock",
+    "Gunslinger Kurtrus",
+    "Ghost",
+    "Boomboss Thogrun TNT",
+    "Overdraw",
+    "Overdraw with Godfrey effect"
+  ],
+  "does_not_trigger": [
+    "IsoRath",
+    "Runi Temporal Guardian",
+    "Fins Beyond Time",
+    "Secret Passage",
+    "The Ryecleaver",
+    "Army of the Frozen Throne",
+    "Irida Sinseeker",
+    "Hamm the Hungry"
+  ],
+  "other_constraints": [
+    "Hamm eating a minion is not generic destruction despite zone removal.",
+    "Tick and Tock triggers IMPFERNAL but this alone does not prove it is discard for other listeners."
+  ],
+  "status": "Shared burn handler applied after unchanged 4162-check receipt; all 39 focused overdraw, recovery and Discover checks passed. Full receipt predates this correction; broader interaction audit remains open.",
+  "godfrey_confirmed_constraints": {
+    "cache_capacity": 99,
+    "overflow": "Additional overdrawn cards are lost but destruction still occurs.",
+    "deck_selection": "Developer explicitly includes Xavius and Doommaiden in protected deck draws.",
+    "modifications": "Returned cards retain buffs.",
+    "return_order": "Random."
+  },
+  "correction_implemented": {
+    "file": "expanded/draw_events.py",
+    "remove_condition": "not player.overdraw_return_active",
+    "reason": "Godfrey does not stop overdraw destruction; return is a separate subsequent behavior.",
+    "test": "test_overdraw_protection_keeps_card_without_destroying_it must be replaced by a fixture expecting damage plus retained cache."
+  }
+}

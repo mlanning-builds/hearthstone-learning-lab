@@ -1,0 +1,172 @@
+{
+  "gaps": [
+    {
+      "cards": [
+        "CORE_RLK_745"
+      ],
+      "current_behavior": "Requires board space before spending Corpses.",
+      "id": "corpse_copy_full_board",
+      "required_evidence": "Independent client trace or authoritative rule showing Corpse balance when Malignant Horror ends its turn on a full board.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [],
+      "current_behavior": "Copies stats, damage, keywords, Silence, Frozen expiry, temporary Attack and expiration; general attached enchantment state and copied Frozen thaw timing remain unaudited.",
+      "id": "copy_state_completeness",
+      "required_evidence": "Enumerated enchantment/state model plus independent interaction traces for copy transitions.",
+      "status": "incomplete"
+    },
+    {
+      "cards": [
+        "CATA_216"
+      ],
+      "current_behavior": "Lifesteal heals per damaged target; additive permanent healing modifiers are not implemented.",
+      "id": "healing_aggregation",
+      "required_evidence": "Pinned-patch evidence for multi-target Lifesteal aggregation with additive healing bonuses.",
+      "status": "unimplemented"
+    },
+    {
+      "cards": [
+        "TLC_517",
+        "TLC_520",
+        "TLC_513"
+      ],
+      "current_behavior": "Records actor, destination, count and shuffle/trade kind; does not implement payoff eligibility.",
+      "id": "shuffle_payoff_eligibility",
+      "required_evidence": "Verify trade, opponent-caused insertions and batch boundaries against each payoff.",
+      "status": "unimplemented"
+    },
+    {
+      "cards": [],
+      "current_behavior": "Literal dependency checks do not cover all eligible generated pools or recursive generated effects.",
+      "id": "generated_dependency_closure",
+      "required_evidence": "Complete patch-pinned generation eligibility and recursive dependency validation.",
+      "status": "incomplete"
+    },
+    {
+      "cards": [],
+      "current_behavior": "Uses the frozen Standard catalog; live bans, release eligibility and exceptional deck construction remain unverified.",
+      "id": "standard_legality",
+      "required_evidence": "Authoritative rules and eligibility pinned to the target patch and date.",
+      "status": "incomplete"
+    },
+    {
+      "cards": [
+        "CATA_494"
+      ],
+      "current_behavior": "Summons a fresh copy without hand enchantments; continuous board auras apply. Uses batch listener snapshots.",
+      "id": "maloriak_graveyard_copy",
+      "required_evidence": "Target-patch client trace confirming hand-buff stripping and simultaneous multi-discard interactions. General rule source: https://hearthstone.blizzard.com/en-us/news/21965466",
+      "status": "inferred_general_rule"
+    },
+    {
+      "cards": [
+        "CS3_025"
+      ],
+      "current_behavior": "Runthak uses a non-choice before-combat event after supported attack-canceling Secrets. Arbitrary attack redirection, precombat death processing and suspended choices are not a complete combat-phase model.",
+      "id": "precombat_event_generalization",
+      "required_evidence": "Independent target-patch combat traces and resumable proposed-attack/attack phase coverage before adding effects that redirect attacks, kill combatants or require choices at this boundary.",
+      "status": "partial"
+    },
+    {
+      "cards": [
+        "CORE_SCH_181"
+      ],
+      "current_behavior": "Resolves hand summon before deck summon, preserving supported stat buffs. Full-board failures leave cards in source zones.",
+      "id": "willow_zone_priority",
+      "required_evidence": "Target-patch trace confirming zone priority with one remaining board slot and timing between summons; general enchantment transfer remains incomplete.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "CORE_CATA_001"
+      ],
+      "current_behavior": "One-use set-cost and discount effects resolve in stored order; existing timed taxes apply afterward. General timestamped cost enchantment precedence is not implemented.",
+      "id": "cost_set_modifier_order",
+      "required_evidence": "Target-patch traces and a unified modifier ordering model covering cost-setting, personal enchantments and continuous taxes.",
+      "status": "partial"
+    },
+    {
+      "cards": [
+        "EDR_847",
+        "CORE_DRG_403"
+      ],
+      "current_behavior": "One-use set and additive Hero Power modifiers apply in creation order and are consumed together at the next use. Persistent auras and replaced Hero Powers are not modeled.",
+      "id": "hero_power_cost_order",
+      "required_evidence": "Target-patch client traces confirming both modifier orders, replacement and aura interactions.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "CORE_EX1_100",
+        "CORE_EX1_559"
+      ],
+      "current_behavior": "Non-choice pre-spell listeners run before existing spell-counter Secrets. Cho copies the registered base spell record; general spell enchantment transfer and joint Secret/listener ordering are incomplete.",
+      "id": "pre_spell_phase_generalization",
+      "required_evidence": "Pinned-client traces for copy enchantments, revealed Secret provenance, arbitrary pre-spell choices and combined Secret/listener ordering.",
+      "status": "partial"
+    },
+    {
+      "cards": [
+        "CORE_EX1_287"
+      ],
+      "current_behavior": "Countered spells spend mana and consume applicable cost modifiers; pre-spell listeners run, but completed-play history, Combo count, spell-school history and Overload do not advance.",
+      "id": "countered_play_accounting",
+      "required_evidence": "Patch-pinned independent traces for Counterspell followed by Combo, repeated-card checks, school-dependent effects and next-card cost modifiers. Historical descriptions distinguish on-play and after-play triggers and cannot certify every counter.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "TIME_606"
+      ],
+      "current_behavior": "Live hand-size cost-setting aura applied before ordered next-use cost modifiers.",
+      "id": "hero_power_hand_aura_order",
+      "required_evidence": "Independent pinned-client traces for Fletcher with cost taxes and set-cost effects in both creation orders.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "TIME_705"
+      ],
+      "current_behavior": "Attached cost-setting overrides earlier card-local changes; later card-local deltas apply afterward, then player-level cost effects.",
+      "id": "attached_set_cost_order",
+      "required_evidence": "Independent traces for dynamically self-discounting cards and persistent player auras interacting with attached set-cost enchantments.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "TLC_624"
+      ],
+      "current_behavior": "Selects living damaged originals in board order once, appends copies left-to-right until board full and grants Rush after each summon. Uses existing partial copy-state model.",
+      "id": "nablya_copy_order",
+      "required_evidence": "Independent client traces for board position, insufficient space, aura interactions, Frozen and other copied enchantments, and simultaneous summon-trigger ordering.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [],
+      "current_behavior": "Board-to-board copies preserve the source Frozen expiry value and cannot attack while Frozen. Silence clears the copy independently.",
+      "id": "copied_freeze_expiry",
+      "required_evidence": "Pinned-client traces comparing original and copy thaw timing for exhausted/non-exhausted originals, summoning sickness, newly granted Rush, and cross-owner copies. Historical reports conflict on these cases.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "DINO_417"
+      ],
+      "current_behavior": "Uses existing silenciable expires flag, resolved at the current controller end turn with other end-turn effects.",
+      "id": "board_expiry_controller",
+      "required_evidence": "Independent client traces for control changes, copying expiry and ordering against simultaneous end-turn triggers.",
+      "status": "unverified_assumption"
+    },
+    {
+      "cards": [
+        "JAIL_462"
+      ],
+      "current_behavior": "Both drawn identities are inspected even if a full hand burns a card; fatigue is not a drawn card.",
+      "id": "hogdriver_burned_draws",
+      "required_evidence": "Independent pinned-client trace for one or both drawn minions burning, plus draw replacement/cast-when-drawn interactions.",
+      "status": "unverified_assumption"
+    }
+  ],
+  "schema": 1
+}

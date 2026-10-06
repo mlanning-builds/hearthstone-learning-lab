@@ -1,0 +1,8 @@
+{
+  "scope": "Provisional production admission, not independent client certification",
+  "card_id": "TLC_251",
+  "record_sha256": "7131a5c929b64f3b6cc92bf2d89455cbc58e7d4fe4a01a4b35311db19a043f5c",
+  "text": "<b>Battlecry:</b> Your next <b>Kindred</b> triggers twice.",
+  "checks": "Four production checks: paid priming, visible state, inactive Kindred/nonmembers preserve charge, next active Kindred doubles only its bonus and consumes charge, active Kindred cost reduction applies twice before payment.",
+  "limitations": "Independent client traces for charge stacking, double cost reduction and general Kindred timing remain pending. Other unsupported Kindred identities remain unavailable."
+}

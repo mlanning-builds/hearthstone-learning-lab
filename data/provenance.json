@@ -1,0 +1,9 @@
+{
+  "source": "https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json",
+  "download_date": "2026-09-18",
+  "source_sha256": "d8c6616877b7b0736a59a3b24bee3d6b789a7504382ef68650feec5b8385a930",
+  "pool_sha256": "5983e642d1e0d814cb5e88612fa87814a2afcf50ff833f39b97009f4371c0014",
+  "filter": "collectible CORE, DEATHKNIGHT or NEUTRAL, MINION/SPELL/WEAPON/LOCATION",
+  "card_count": 117,
+  "status": "Frozen data snapshot; current live patch legality and bans not independently verified. Not the full Standard pool."
+}

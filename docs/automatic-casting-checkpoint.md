@@ -1,0 +1,11 @@
+# Automatic casting integration
+
+This block covers regular Constructed cards in the frozen 36.6.0.251952 catalog. It does not change rotation or include Mercenaries/Battlegrounds.
+
+Six cards share the candidate's resumable internal-spell system: Chaos Supplicant, Forbidden Shrine, Jailhouse Manastorm, Tricksy Improviser, Faceless Enigma and Creature of the Sacred Cave. Their pool contracts are complete-or-error: unsupported outcomes must not be dropped. Creature of the Sacred Cave is now live after checking internal support for every live Holy spell. The other five source cards remain staged pending full outcome closure and independent interaction review.
+
+The implementation distinguishes spells cast by the player from spells cast by an entity. Internal casts do not pay hand costs, inflate player-cast history, or recursively trigger Chaos Supplicant/Manastorm. Spell context controls damage, random legal targeting, automatic choices and Overload. Manastorm installs persistent owner state; multiple Battlecries stack and survive removal of the minion. Sacred Cave selects from the current owner's turn history with duplicate cast occurrences preserved and prefers its own body when that is a legal target. Enigma's offered choices are private and are not Discover events.
+
+Fyrakk and Gelbin remain explicit exceptions. Fyrakk needs reviewed Fire immunity, enemy-target preference/fallback and mana-budget termination. Gelbin requires actual Aura placement plus the Fabled construction package. The official [Fyrakk card record](https://hearthstone.blizzard.com/en-us/cards/115756-fyrakk-the-blazing) supplies printed requirements but is not an event-order oracle. Blizzard's [Across the Timeways description](https://hearthstone.blizzard.com/en-gb/expansions-adventures/across-the-timeways) confirms Fabled's added deck cards; a Battlecry-only implementation would be incomplete.
+
+Conformance gates include effective-versus-paid Cost, persistent-listener order relative to board listeners, Secret duplicate/full-zone behavior and pool availability. Controlled fixtures verify code behavior, not independent Hearthstone client fidelity. Candidate STATUS.md records consolidated verification when complete.

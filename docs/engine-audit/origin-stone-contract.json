@@ -1,0 +1,71 @@
+{
+  "patch": "36.6.0.251952",
+  "cards": [
+    "TLC_460",
+    "TLC_460t"
+  ],
+  "status": "implementation contract, not card admission",
+  "primary_constraints": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/news/24223019",
+      "constraint": "Kazakusan choices must not trigger Origin Stone."
+    },
+    {
+      "url": "https://us.forums.blizzard.com/en/hearthstone/t/3641-hotfix-patch/165130",
+      "constraint": "Playing Frame Job against an Origin Stone owner must not trigger that weapon."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24294373",
+      "constraint": "Origin Stone plus Sands of Time must not get stuck; Forbidden Sequence plus Arcane Flow hand-cap behavior was fixed. Exact sequencing needs independent traces."
+    }
+  ],
+  "source_findings": {
+    "systems._resolve_choice": "Has original options and selected object before dispatch. Snapshot unchosen payloads and equipped physical weapon identity before mutable choice resolution.",
+    "systems._record_discover": "Only records owner counters, no original options or source context. Cannot reconstruct unchosen cards from this later.",
+    "discovery._defer_discover_followups": "Existing innermost resolution-frame deferral provides continuation pattern; currently only physical selected-card discount listeners.",
+    "generation._generation_choice": "Deletes generation context after placement. Capture modifiers and origin beforehand where required.",
+    "spell_casting": "Internal casts are available; full automatic play also needs minion, location, weapon and hero handling with correct play-versus-summon semantics."
+  },
+  "required_cases": [
+    "selected card burns in full hand",
+    "one or two available options",
+    "nested Discover while Origin Stone resolves",
+    "final durability charge and replacement weapon",
+    "Secret identity hidden in opponent history",
+    "Kazakusan excluded",
+    "Frame Job ownership exclusion",
+    "Trust Fall multi-choice no duplicate play",
+    "Sands of Time continuation terminates",
+    "full-board minion/location outcomes",
+    "random targeting and no valid target",
+    "automatic choice policy and physical card modifiers",
+    "Quest completion at eight, not historical seven"
+  ],
+  "remaining_unknowns": [
+    "exact durability loss timing",
+    "automatic outcome order",
+    "which Discover-like mechanics qualify",
+    "Adapt attribution",
+    "minion Battlecry versus summoned-only behavior",
+    "source-modified options versus printed copies"
+  ],
+  "shared_automatic_play_workstream": {
+    "existing": "Physical internal spell casting supports random targets, suspended choices, spell modifiers and replay frames. No generic all-card automatic-play entry point was found in expanded engine.",
+    "consumers": [
+      "TLC_460t Origin Stone",
+      "EDR_031 repeat top-deck cards",
+      "JAIL_500 replay cards and end turn",
+      "CORE_WON_145 generated pack cards"
+    ],
+    "requirements": [
+      "Use one resumable frame per physical card; preserve parent sequence through nested choices.",
+      "Preflight card type and complete effect support before irreversible removal or RNG use.",
+      "Spell branch reuses physical internal caster and its privacy rules.",
+      "Define separate minion entry and Battlecry semantics from summon-only behavior using evidence.",
+      "Handle board capacity, locations, weapons and hero replacement explicitly.",
+      "Do not temporarily add a card to hand and fake a paid play: that would alter costs, Outcast, Combo, Quest counts and provenance.",
+      "Snapshot Origin Stone physical weapon identity so nested replacement cannot consume the wrong durability.",
+      "Keep effect-attributed casts distinct from player-paid plays."
+    ]
+  }
+}

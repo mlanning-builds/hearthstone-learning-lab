@@ -1,0 +1,316 @@
+[
+  {
+    "class": "WARRIOR",
+    "hero": {
+      "artist": "Wei Wang",
+      "cardClass": "WARRIOR",
+      "collectible": true,
+      "dbfId": 7,
+      "health": 30,
+      "heroPowerDbfId": 725,
+      "id": "HERO_01",
+      "name": "Garrosh Hellscream",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "WARRIOR",
+      "cost": 2,
+      "dbfId": 725,
+      "id": "HERO_01bp",
+      "name": "Armor Up!",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nGain $d2 Armor.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "SHAMAN",
+    "hero": {
+      "artist": "Glenn Rane",
+      "cardClass": "SHAMAN",
+      "collectible": true,
+      "dbfId": 1066,
+      "health": 30,
+      "heroPowerDbfId": 687,
+      "id": "HERO_02",
+      "name": "Thrall",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "SHAMAN",
+      "cost": 2,
+      "dbfId": 687,
+      "id": "HERO_02bp",
+      "name": "Totemic Call",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nSummon a random basic Totem.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "ROGUE",
+    "hero": {
+      "artist": "Glenn Rane",
+      "cardClass": "ROGUE",
+      "collectible": true,
+      "dbfId": 930,
+      "health": 30,
+      "heroPowerDbfId": 730,
+      "id": "HERO_03",
+      "name": "Valeera Sanguinar",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "ROGUE",
+      "cost": 2,
+      "dbfId": 730,
+      "id": "HERO_03bp",
+      "name": "Dagger Mastery",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "PALADIN",
+    "hero": {
+      "artist": "James Ryman",
+      "cardClass": "PALADIN",
+      "collectible": true,
+      "dbfId": 671,
+      "health": 30,
+      "heroPowerDbfId": 472,
+      "id": "HERO_04",
+      "name": "Uther Lightbringer",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "PALADIN",
+      "cost": 2,
+      "dbfId": 472,
+      "id": "HERO_04bp",
+      "name": "Reinforce",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nSummon a {0} Silver Hand Recruit.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "HUNTER",
+    "hero": {
+      "artist": "Ben Thompson",
+      "cardClass": "HUNTER",
+      "collectible": true,
+      "dbfId": 31,
+      "health": 30,
+      "heroPowerDbfId": 229,
+      "id": "HERO_05",
+      "name": "Rexxar",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "HUNTER",
+      "collectionText": "<b>Hero Power</b>\nDeal $2 damage.",
+      "cost": 2,
+      "dbfId": 229,
+      "id": "HERO_05bp",
+      "name": "Steady Shot",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "DRUID",
+    "hero": {
+      "artist": "Alex Horley Orlandelli",
+      "cardClass": "DRUID",
+      "collectible": true,
+      "dbfId": 274,
+      "health": 30,
+      "heroPowerDbfId": 1123,
+      "id": "HERO_06",
+      "name": "Malfurion Stormrage",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "DRUID",
+      "cost": 2,
+      "dbfId": 1123,
+      "id": "HERO_06bp",
+      "name": "Shapeshift",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\n+$a1 Attack this turn.\n+$d1 Armor.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "WARLOCK",
+    "hero": {
+      "artist": "Alex Horley Orlandelli",
+      "cardClass": "WARLOCK",
+      "collectible": true,
+      "dbfId": 893,
+      "health": 30,
+      "heroPowerDbfId": 300,
+      "id": "HERO_07",
+      "name": "Gul'dan",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "WARLOCK",
+      "cost": 2,
+      "dbfId": 300,
+      "id": "HERO_07bp",
+      "name": "Life Tap",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nDraw a card and take $2 damage.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "MAGE",
+    "hero": {
+      "artist": "Glenn Rane",
+      "cardClass": "MAGE",
+      "collectible": true,
+      "dbfId": 637,
+      "health": 30,
+      "heroPowerDbfId": 807,
+      "id": "HERO_08",
+      "name": "Jaina Proudmoore",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "MAGE",
+      "cost": 2,
+      "dbfId": 807,
+      "id": "HERO_08bp",
+      "name": "Fireblast",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "targetingArrowText": "Deal 1 damage.",
+      "text": "<b>Hero Power</b>\nDeal $1 damage.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "PRIEST",
+    "hero": {
+      "artist": "Wayne Reynolds",
+      "cardClass": "PRIEST",
+      "collectible": true,
+      "dbfId": 813,
+      "health": 30,
+      "heroPowerDbfId": 479,
+      "id": "HERO_09",
+      "name": "Anduin Wrynn",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "cardClass": "PRIEST",
+      "cost": 2,
+      "dbfId": 479,
+      "id": "HERO_09bp",
+      "name": "Lesser Heal",
+      "rarity": "FREE",
+      "set": "LEGACY",
+      "text": "<b>Hero Power</b>\nRestore #2 Health.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "DEMONHUNTER",
+    "hero": {
+      "artist": "Alex Horley Orlandelli",
+      "cardClass": "DEMONHUNTER",
+      "collectible": true,
+      "dbfId": 56550,
+      "health": 30,
+      "heroPowerDbfId": 60224,
+      "id": "HERO_10",
+      "name": "Illidan Stormrage",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "artist": "Virtuos",
+      "cardClass": "DEMONHUNTER",
+      "cost": 1,
+      "dbfId": 60224,
+      "id": "HERO_10bp",
+      "name": "Demon Claws",
+      "set": "LEGACY",
+      "text": "[x]<b>Hero Power</b>\n+$a1 Attack this turn.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": false
+  },
+  {
+    "class": "DEATHKNIGHT",
+    "hero": {
+      "artist": "Alex Horley Orlandelli",
+      "cardClass": "DEATHKNIGHT",
+      "collectible": true,
+      "dbfId": 78065,
+      "health": 30,
+      "heroPowerDbfId": 78162,
+      "id": "HERO_11",
+      "name": "The Lich King",
+      "rarity": "FREE",
+      "set": "HERO_SKINS",
+      "type": "HERO"
+    },
+    "hero_power": {
+      "artist": "Studio Hive",
+      "cardClass": "DEATHKNIGHT",
+      "cost": 2,
+      "dbfId": 78162,
+      "id": "HERO_11bp",
+      "name": "Ghoul Charge",
+      "rarity": "FREE",
+      "referencedTags": [
+        "CHARGE"
+      ],
+      "set": "BASIC",
+      "text": "[x]<b>Hero Power</b>\nSummon a 1/1 Ghoul\nwith <b>Charge</b>. It dies at\nend of turn.",
+      "type": "HERO_POWER"
+    },
+    "simulation_implemented": true
+  }
+]

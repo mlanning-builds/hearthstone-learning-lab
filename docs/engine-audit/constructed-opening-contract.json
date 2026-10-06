@@ -1,0 +1,13 @@
+{
+  "source": "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/",
+  "author": "HearthstoneTeam",
+  "confirmed": [
+    "Azalina limits submitted deck to twenty and copies twenty opponent physical cards without replacement before mulligan.",
+    "Copied Start of Game effects activate; original-deck predicates still inspect submitted cards.",
+    "Azalina copies are outside original deck provenance.",
+    "Conflicting deck-size modifiers cannot share a submitted deck.",
+    "Beatrix adds ten copies immediately before game, yielding forty from ordinary thirty.",
+    "Hogger runs after other setup effects, includes hand legendaries, and is capped by 99 deck slots."
+  ],
+  "limitations": "See constructed_opening_copies fidelity gate; no live admission."
+}

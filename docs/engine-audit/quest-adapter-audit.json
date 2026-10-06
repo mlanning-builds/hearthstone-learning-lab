@@ -1,0 +1,66 @@
+{
+  "patch": "36.6.0.251952",
+  "status": "implementation prerequisites; not admission or validated game behavior",
+  "family": "TLC_631 / TLC_631t",
+  "primary_evidence": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24223019/33-2-patch-notes",
+      "constraint": "Gorishi reward must work on the opponent turn as well as the owner turn. Quest own-turn restriction remains separate."
+    }
+  ],
+  "source_findings": [
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "symbol": "_damage",
+      "finding": "Published damage event contains target and actual dealt amount but no controller. damage_source supports minion identity for entity callbacks, not complete owner attribution."
+    },
+    {
+      "file": "staging/rebased-88/expanded/game.py",
+      "symbol": "_deal_effect",
+      "finding": "Effect context has owner, including spells with source=None. This owner must be passed explicitly; inferring current player is incorrect during opponent-turn effects."
+    },
+    {
+      "file": "staging/rebased-88/expanded/game.py",
+      "symbol": "attack resolution",
+      "finding": "Attacker and defender damage are separate calls; retaliation belongs to defender controller. Hero attackers have no minion source. Spill and cleave need the original attacker controller."
+    },
+    {
+      "file": "staging/rebased-88/engine/game.py",
+      "symbol": "_damage",
+      "finding": "Returns damage including overkill and armor. Prevented damage returns zero. Exact-two checks must use resolved damage, not pre-modification requested amount."
+    }
+  ],
+  "required_contract": [
+    "Carry explicit damage controller, source identity where available, and causal origin through direct effects, hero powers, combat, retaliation, spill, delayed events and nested effects.",
+    "Do not assign fatigue or unattributed damage to current player as a fallback.",
+    "Snapshot target controller before subsequent death/removal/control changes.",
+    "Advance Quest only on owner turn for owner-attributed damage to an enemy with resolved amount exactly two.",
+    "Reward observes both turns; distinguish reward-generated damage to avoid accidental infinite self-trigger recursion. Establish multiple reward stacking semantics from independent evidence before admission.",
+    "Preserve event queue ordering, lifesteal/poison attribution, death checkpoints and simultaneous damage batches."
+  ],
+  "required_interaction_cases": [
+    "spell and minion effect",
+    "hero power",
+    "hero attack",
+    "defender retaliation",
+    "opponent-turn trigger",
+    "self/friendly damage excluded",
+    "armor absorption",
+    "Divine Shield and immunity",
+    "incoming damage modifiers",
+    "spell damage and multiplier",
+    "overkill",
+    "cleave and spill",
+    "poison and lifesteal",
+    "multiple reward instances",
+    "reward recursion",
+    "nested damage ownership restoration",
+    "record=False parity",
+    "full-hand reward waiting"
+  ],
+  "next_other_families": {
+    "TLC_830": "Distinct played Beast Attack values 1/3/5/7; establish stat snapshot timing. Reward requires complete sequential 8/6/4 Attack Beast Discover pools and cost-two modifications.",
+    "TLC_229": "Unique tribe progress requires reviewed multi-type/ALL handling; do not blindly count every tag. Reward requires persistent Adapt grants to later played minions.",
+    "END_017": "Ordered full-hand then empty-hand checkpoints; reward draw-to-full and opponent hand removal must preserve existing draw/discard event rules."
+  }
+}

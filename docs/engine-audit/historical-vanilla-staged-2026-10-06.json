@@ -1,0 +1,2232 @@
+{
+  "schema": 1,
+  "scope": "Provisional historical generated dependencies; no production pool approval",
+  "card_ids": [
+    "AT_020",
+    "AT_087",
+    "AT_092",
+    "AT_095",
+    "AT_097",
+    "AT_101",
+    "AT_102",
+    "AT_114",
+    "BOT_050",
+    "BOT_309",
+    "BOT_414",
+    "BOT_534",
+    "BOT_603",
+    "BT_423",
+    "CFM_300",
+    "CFM_636",
+    "CFM_653",
+    "CFM_665",
+    "CFM_666",
+    "CFM_815",
+    "CFM_854",
+    "CS1_042",
+    "CS1_069",
+    "CS2_118",
+    "CS2_119",
+    "CS2_120",
+    "CS2_121",
+    "CS2_124",
+    "CS2_125",
+    "CS2_127",
+    "CS2_131",
+    "CS2_161",
+    "CS2_162",
+    "CS2_168",
+    "CS2_169",
+    "CS2_171",
+    "CS2_172",
+    "CS2_173",
+    "CS2_179",
+    "CS2_182",
+    "CS2_186",
+    "CS2_187",
+    "CS2_200",
+    "CS2_201",
+    "CS2_213",
+    "CS2_231",
+    "CS2_232",
+    "CS3_030",
+    "DAL_047",
+    "DAL_085",
+    "DAL_090",
+    "DAL_092",
+    "DAL_760",
+    "DEEP_006",
+    "DMF_044",
+    "DMF_059",
+    "DMF_114",
+    "DMF_190",
+    "DRG_061",
+    "DRG_065",
+    "DRG_066",
+    "DRG_073",
+    "DRG_079",
+    "DRG_239",
+    "DRG_310",
+    "ETC_357",
+    "EX1_008",
+    "EX1_010",
+    "EX1_017",
+    "EX1_020",
+    "EX1_021",
+    "EX1_023",
+    "EX1_028",
+    "EX1_032",
+    "EX1_033",
+    "EX1_067",
+    "EX1_170",
+    "EX1_396",
+    "EX1_405",
+    "EX1_522",
+    "EX1_543",
+    "FP1_008",
+    "FP1_010",
+    "GDB_452",
+    "GIL_113",
+    "GIL_120",
+    "GIL_143",
+    "GIL_527",
+    "GIL_545",
+    "GIL_562",
+    "GIL_809",
+    "GVG_018",
+    "GVG_037",
+    "GVG_044",
+    "GVG_058",
+    "GVG_064",
+    "GVG_070",
+    "GVG_071",
+    "GVG_081",
+    "GVG_084",
+    "GVG_085",
+    "GVG_091",
+    "GVG_093",
+    "GVG_098",
+    "ICC_023",
+    "ICC_032",
+    "ICC_038",
+    "ICC_212",
+    "ICC_220",
+    "ICC_419",
+    "ICC_820",
+    "ICC_905",
+    "JAM_007",
+    "KAR_011",
+    "KAR_300",
+    "LEG_CS3_037",
+    "LOEA10_3",
+    "LOE_010",
+    "LOE_022",
+    "LOOT_117",
+    "LOOT_125",
+    "LOOT_137",
+    "LOOT_258",
+    "LOOT_315",
+    "NEW1_010",
+    "NEW1_011",
+    "NEW1_023",
+    "OG_141",
+    "OG_142",
+    "OG_145",
+    "OG_152",
+    "OG_153",
+    "OG_247",
+    "OG_248",
+    "OG_325",
+    "OG_326",
+    "OG_327",
+    "OG_340",
+    "RLK_602",
+    "SCH_137",
+    "SCH_143",
+    "SCH_145",
+    "SCH_712",
+    "TRL_513",
+    "TRL_550",
+    "TTN_710",
+    "ULD_193",
+    "ULD_194",
+    "ULD_205",
+    "ULD_206",
+    "ULD_207",
+    "ULD_274",
+    "ULD_275",
+    "ULD_450",
+    "ULD_721",
+    "ULD_723",
+    "UNG_019",
+    "UNG_071",
+    "UNG_806",
+    "UNG_808",
+    "UNG_812",
+    "UNG_813",
+    "UNG_814",
+    "UNG_852",
+    "WON_312",
+    "WON_366",
+    "WW_376",
+    "YOD_003",
+    "YOD_010",
+    "YOP_031"
+  ],
+  "count": 170,
+  "mechanics": [
+    "CHARGE",
+    "DIVINE_SHIELD",
+    "ELUSIVE",
+    "LIFESTEAL",
+    "POISONOUS",
+    "REBORN",
+    "RUSH",
+    "STEALTH",
+    "TAUNT",
+    "WINDFURY"
+  ],
+  "review_basis": "Frozen collectible retired-set minions with only explicit static keywords or no printed effect. Candidate extraction is offline; runtime must use explicit IDs and pinned hashes.",
+  "records": [
+    {
+      "card_id": "AT_020",
+      "name": "Fearsome Doomguard",
+      "text": "",
+      "mechanics": [],
+      "cost": 7,
+      "attack": 6,
+      "health": 8,
+      "record_sha256": "819b5aacbe855aad4945b31b745d900349108e3b4dd1e4cffdcd47df9d63f630"
+    },
+    {
+      "card_id": "AT_087",
+      "name": "Argent Horserider",
+      "text": "<b>Charge</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "CHARGE",
+        "DIVINE_SHIELD"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "a777e5d86a01dbe8a9cbc453f8224befc27a56e47aa78097fb4102927f3967b2"
+    },
+    {
+      "card_id": "AT_092",
+      "name": "Ice Rager",
+      "text": "",
+      "mechanics": [],
+      "cost": 3,
+      "attack": 5,
+      "health": 2,
+      "record_sha256": "e132df5229ff0618326e62092c78b1ec8fe9f9a375b661ebdfe20f749d70848b"
+    },
+    {
+      "card_id": "AT_095",
+      "name": "Silent Knight",
+      "text": "<b>Stealth</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "STEALTH"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "698730f214f4977039990f8faf88fb275fbcfe0721e2591c347ef8a8e8092d0f"
+    },
+    {
+      "card_id": "AT_097",
+      "name": "Tournament Attendee",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 1,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "4db47dd76505caada97f6a7b532c2f00c900e9d1a9ac72515d185e7394000887"
+    },
+    {
+      "card_id": "AT_101",
+      "name": "Pit Fighter",
+      "text": "",
+      "mechanics": [],
+      "cost": 5,
+      "attack": 5,
+      "health": 6,
+      "record_sha256": "641e52ff2078ebef8da090d040788af8c9da90874831d403c97a51a224569da9"
+    },
+    {
+      "card_id": "AT_102",
+      "name": "Captured Jormungar",
+      "text": "",
+      "mechanics": [],
+      "cost": 7,
+      "attack": 5,
+      "health": 9,
+      "record_sha256": "71599bf1648de4d9e7354ff6770c4cd3441ca4b14f5ef3a1152e0f1ed79ac2d4"
+    },
+    {
+      "card_id": "AT_114",
+      "name": "Evil Heckler",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "8a87908896aee7312a53efc774642ffb208d6915e321f23475f4373e93385697"
+    },
+    {
+      "card_id": "BOT_050",
+      "name": "Rusty Recycler",
+      "text": "<b>Taunt</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "record_sha256": "576288be4d20952b0d123b79cbe3dd1eb322a299079f496a1a95a6bc89456ea9"
+    },
+    {
+      "card_id": "BOT_309",
+      "name": "Upgradeable Framebot",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 1,
+      "health": 5,
+      "record_sha256": "902a780e5f6dbb848ffabb27d9a708161e3bde8ca443dad7695d75d8ec093155"
+    },
+    {
+      "card_id": "BOT_414",
+      "name": "Cloakscale Chemist",
+      "text": "<b>Stealth</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "STEALTH"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "record_sha256": "971fa5045aa3a0d8c4c3f0cdffef7edea20d268d83df89a9d85583548eb15c9e"
+    },
+    {
+      "card_id": "BOT_534",
+      "name": "Bull Dozer",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 9,
+      "attack": 9,
+      "health": 7,
+      "record_sha256": "f83d0ca391159efce48b1809537a6eeecf3d88a181858766955da359b3e332d5"
+    },
+    {
+      "card_id": "BOT_603",
+      "name": "Steel Rager",
+      "text": "<b>Rush</b>",
+      "mechanics": [
+        "RUSH"
+      ],
+      "cost": 4,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "4fb543ae144bc04babb698018d8252fd83a8b71229c1d61a7566cf028df4326d"
+    },
+    {
+      "card_id": "BT_423",
+      "name": "Ashtongue Battlelord",
+      "text": "<b>Taunt</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "record_sha256": "b06ef0d602ea226b14eda8953d74e05752de53c7eb4a8b7b8d7090f58d77064c"
+    },
+    {
+      "card_id": "CFM_300",
+      "name": "Public Defender",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 0,
+      "health": 7,
+      "record_sha256": "4074443c22a388ad1f1708b508a521875ef1ec94a27a587816cec3a99fadbb50"
+    },
+    {
+      "card_id": "CFM_636",
+      "name": "Shadow Rager",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 3,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "da0000c3d207c45e30083d9bd218c40d3642750a3bbc18bc6d78d74a192a12be"
+    },
+    {
+      "card_id": "CFM_653",
+      "name": "Hired Gun",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 4,
+      "health": 3,
+      "record_sha256": "aad5bf6c857c696a761d2c1da18591655545413657654dc6b235676c33dfd649"
+    },
+    {
+      "card_id": "CFM_665",
+      "name": "Worgen Greaser",
+      "text": "",
+      "mechanics": [],
+      "cost": 4,
+      "attack": 6,
+      "health": 5,
+      "record_sha256": "431235d39e58ac23a49f6a6dbf6762b7853af3c494343ff0879edff761dc9c21"
+    },
+    {
+      "card_id": "CFM_666",
+      "name": "Grook Fu Master",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 5,
+      "attack": 3,
+      "health": 5,
+      "record_sha256": "35e8c615815effef07d2b010e94e673002c73bc2dc6cafc975a4dcb45485189a"
+    },
+    {
+      "card_id": "CFM_815",
+      "name": "Wickerflame Burnbristle",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "1eaef87e321866d05c0fba23d868397f5bb5ebb66c30d98b06d65ed6fee812e1"
+    },
+    {
+      "card_id": "CFM_854",
+      "name": "Ancient of Blossoms",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 3,
+      "health": 8,
+      "record_sha256": "0cad87cf7ea39f396a30e93e4095393bb2e90f672f5bcbf40f446f7b14b3b89b"
+    },
+    {
+      "card_id": "CS1_042",
+      "name": "Goldshire Footman",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "record_sha256": "cf4411a3508e2045be5601736389bac7403a3977cd7dd3d81cf6f7edbfb71e10"
+    },
+    {
+      "card_id": "CS1_069",
+      "name": "Fen Creeper",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "record_sha256": "72cd08c318b32ec196448561ff4767416363564e2b98833896738db3952ac264"
+    },
+    {
+      "card_id": "CS2_118",
+      "name": "Magma Rager",
+      "text": "",
+      "mechanics": [],
+      "cost": 3,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "9bd5043b0aca90f8cb690538e0767161e36c77834ff08dd33f5f2468ec9d8974"
+    },
+    {
+      "card_id": "CS2_119",
+      "name": "Oasis Snapjaw",
+      "text": "",
+      "mechanics": [],
+      "cost": 4,
+      "attack": 2,
+      "health": 7,
+      "record_sha256": "51606c625e8a86d16e3a7c40eb39fffdaaa6f434092bda904f53256b1af19407"
+    },
+    {
+      "card_id": "CS2_120",
+      "name": "River Crocolisk",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "record_sha256": "b1c62ee6a37f4ee0be4d8af6489458fe0d23fe5d8110da093cd4f26542bce594"
+    },
+    {
+      "card_id": "CS2_121",
+      "name": "Frostwolf Grunt",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "b777b9a505cc5537f1456a3edc736371965f49bcc429b8d57c9387b56138acd0"
+    },
+    {
+      "card_id": "CS2_124",
+      "name": "Wolfrider",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 1,
+      "record_sha256": "d5675baacb4f9c9a1de5702ff1f25e00211a4ca92e1a2ad6faa3f71b2f06e546"
+    },
+    {
+      "card_id": "CS2_125",
+      "name": "Ironfur Grizzly",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "deeeda35f38a86dc5fbca14d40319a36fde79210ff4b2cde694f597815c88e0f"
+    },
+    {
+      "card_id": "CS2_127",
+      "name": "Silverback Patriarch",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "bb388aab41a063e26555246164736b14b7daee65af55de4619349f05bb16fc95"
+    },
+    {
+      "card_id": "CS2_131",
+      "name": "Stormwind Knight",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "record_sha256": "86f90fc8bc9c3db7612d6e77181a0c6378223d7c52dba9b0fe58cd7eb6de1d7a"
+    },
+    {
+      "card_id": "CS2_161",
+      "name": "Ravenholdt Assassin",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 7,
+      "attack": 7,
+      "health": 5,
+      "record_sha256": "9a313679eaa009b09b5b12e5f62c7caddd39ab07480714dbe6da6c05740760bf"
+    },
+    {
+      "card_id": "CS2_162",
+      "name": "Lord of the Arena",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 6,
+      "health": 5,
+      "record_sha256": "6c480179570d03c421135d55d5d0085a9efa38dbda0d0bec63015eec7eb3d00d"
+    },
+    {
+      "card_id": "CS2_168",
+      "name": "Murloc Raider",
+      "text": "",
+      "mechanics": [],
+      "cost": 1,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "71bd5fe9ca1e20fb3213c7601228d3018e8bfe206fdf3dcbf5546f6eea9eaaf3"
+    },
+    {
+      "card_id": "CS2_169",
+      "name": "Young Dragonhawk",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "5b5f369e29ae7fd408a17dac9bdac6f1d04b609649042204ef791653fd6bed95"
+    },
+    {
+      "card_id": "CS2_171",
+      "name": "Stonetusk Boar",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "e2fa5c7c303beafded276560e24d3f0138ecc415f4440d4a7558279fb6f09882"
+    },
+    {
+      "card_id": "CS2_172",
+      "name": "Bloodfen Raptor",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "883d0a46c8df1959ae4fe67d5128d2a1f87dee904c6653129f56abb6fa0da570"
+    },
+    {
+      "card_id": "CS2_173",
+      "name": "Bluegill Warrior",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "4714fb361100aa422ca7a01f2a3505db2c5a27d89af5031c369c3e10f6d40ed1"
+    },
+    {
+      "card_id": "CS2_179",
+      "name": "Sen'jin Shieldmasta",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "record_sha256": "19ab0b93a36aaed9df6f7bdcf1a496b657a7e73a6ab72f45398b357c1b4310e2"
+    },
+    {
+      "card_id": "CS2_182",
+      "name": "Chillwind Yeti",
+      "text": "",
+      "mechanics": [],
+      "cost": 4,
+      "attack": 4,
+      "health": 5,
+      "record_sha256": "90179be8602aba121e1cbb80b3cb36bde77c6fcf496ea9844d837db17b55f4bb"
+    },
+    {
+      "card_id": "CS2_186",
+      "name": "War Golem",
+      "text": "",
+      "mechanics": [],
+      "cost": 7,
+      "attack": 7,
+      "health": 7,
+      "record_sha256": "478c1e2802490012d8ee0d2f927297e976e00478be26b052d9cdf2a15e9c3368"
+    },
+    {
+      "card_id": "CS2_187",
+      "name": "Booty Bay Bodyguard",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 5,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "6c66095aa07610c325a7de9b14281f84853680caa2a10c7accc3e279add28f0b"
+    },
+    {
+      "card_id": "CS2_200",
+      "name": "Boulderfist Ogre",
+      "text": "",
+      "mechanics": [],
+      "cost": 6,
+      "attack": 6,
+      "health": 7,
+      "record_sha256": "2d68d19415443f69dbfd2541bebf1237ff446359beb675af08d445252021066f"
+    },
+    {
+      "card_id": "CS2_201",
+      "name": "Core Hound",
+      "text": "",
+      "mechanics": [],
+      "cost": 7,
+      "attack": 9,
+      "health": 5,
+      "record_sha256": "c3174e02b78c172ee55205dc90c1953142c8233bab2ebbe068ece9d16077ee19"
+    },
+    {
+      "card_id": "CS2_213",
+      "name": "Reckless Rocketeer",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 6,
+      "attack": 5,
+      "health": 2,
+      "record_sha256": "335f2d943c42f3f48179f28f5ee9209799a438206a61616c4fcc300dba60daba"
+    },
+    {
+      "card_id": "CS2_231",
+      "name": "Wisp",
+      "text": "",
+      "mechanics": [],
+      "cost": 0,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "5f22ffbf48bec14203a381d9111d4c20a4a9454a7eea998d77ae8084829c88e7"
+    },
+    {
+      "card_id": "CS2_232",
+      "name": "Ironbark Protector",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 8,
+      "attack": 8,
+      "health": 8,
+      "record_sha256": "d1887f237ec46018e5f021cfd3a0dc61e68254939e83eeea52320a1ebc6c1705"
+    },
+    {
+      "card_id": "CS3_030",
+      "name": "Warsong Outrider",
+      "text": "<b>Rush</b>",
+      "mechanics": [
+        "RUSH"
+      ],
+      "cost": 4,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "bba1723ad8cdf7c0f6e57dfd6a815132f079e8385c96957edb053cea36a7410f"
+    },
+    {
+      "card_id": "DAL_047",
+      "name": "Walking Fountain",
+      "text": "<b>Lifesteal</b>, <b>Rush</b>, <b>Windfury</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "RUSH",
+        "WINDFURY"
+      ],
+      "cost": 8,
+      "attack": 4,
+      "health": 8,
+      "record_sha256": "922034124bec8e4da1efb4a990dd87aba3b97d49c691ada6e5d05ff2c57f4e56"
+    },
+    {
+      "card_id": "DAL_085",
+      "name": "Dalaran Crusader",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 5,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "84402a79b2c0a471276e46cfd188acc7f3fc701fd311a7c6a60a3409fe1ff657"
+    },
+    {
+      "card_id": "DAL_090",
+      "name": "Hench-Clan Sneak",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "2a43b756ff20a0b55e14b1d0117e7e96e3cb54af265a1afc1a2fd457b2cc57cf"
+    },
+    {
+      "card_id": "DAL_092",
+      "name": "Arcane Servant",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "record_sha256": "ef92b1e47211a74d2f5465f9b538c059a1efed6a72a0ad31e7e152aaf36b12aa"
+    },
+    {
+      "card_id": "DAL_760",
+      "name": "Burly Shovelfist",
+      "text": "<b>Rush</b>",
+      "mechanics": [
+        "RUSH"
+      ],
+      "cost": 9,
+      "attack": 9,
+      "health": 9,
+      "record_sha256": "b2af2d0ed9870e622b0a62fd78911bafd48512f61f458dc9b382e65ad530594e"
+    },
+    {
+      "card_id": "DEEP_006",
+      "name": "Stone Drake",
+      "text": "<b>Divine Shield</b>, <b>Taunt</b>,\n<b>Lifesteal</b>, <b>Elusive</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "ELUSIVE",
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 2,
+      "health": 8,
+      "record_sha256": "3b4168d0886f799a300d3e671a878ac7a52f433857e10115a331cf44b8c05030"
+    },
+    {
+      "card_id": "DMF_044",
+      "name": "Rock Rager",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "a5c12720d2a8d24d2110a1d41a0bc2c6570067cc47aa362c9b57900bf101eede"
+    },
+    {
+      "card_id": "DMF_059",
+      "name": "Fizzy Elemental",
+      "text": "<b>Rush</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "RUSH",
+        "TAUNT"
+      ],
+      "cost": 9,
+      "attack": 10,
+      "health": 10,
+      "record_sha256": "c01633d357fe0f638103b26725f1763e069b2b43e40eee6923d08d2bef145cef"
+    },
+    {
+      "card_id": "DMF_114",
+      "name": "Midway Maniac",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 5,
+      "record_sha256": "65e17abd2d6dd14e79b6a0ff02d15df42ff5d38e6d43328905c2a6556a603c62"
+    },
+    {
+      "card_id": "DMF_190",
+      "name": "Fantastic Firebird",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "record_sha256": "b5ca862ec16bacd5b476d0799665092a2313243c47bbb1e64335fd3fdf6a2945"
+    },
+    {
+      "card_id": "DRG_061",
+      "name": "Gyrocopter",
+      "text": "<b>Rush</b>\n<b>Windfury</b>",
+      "mechanics": [
+        "RUSH",
+        "WINDFURY"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 5,
+      "record_sha256": "66cb99214b4103fa5f798b13f269982d1914b448ccc244529bede2dfdb0a7cb8"
+    },
+    {
+      "card_id": "DRG_065",
+      "name": "Hippogryph",
+      "text": "<b>Rush</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "RUSH",
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "record_sha256": "857abafb76b8460877e2f1c683a9559042681b52a947f36d841f3f8f8fe47c07"
+    },
+    {
+      "card_id": "DRG_066",
+      "name": "Evasive Chimaera",
+      "text": "<b>Poisonous</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "POISONOUS"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "ac229bc1a0ca8308e4acde73c11971f2d7557c731af388c2ed13db5e5c6b34a9"
+    },
+    {
+      "card_id": "DRG_073",
+      "name": "Evasive Feywing",
+      "text": "<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE"
+      ],
+      "cost": 4,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "ab4968758f97219bfb2efa1a32c1094c2a0462d6fd7d13239d30fed5f409a5bd"
+    },
+    {
+      "card_id": "DRG_079",
+      "name": "Evasive Wyrm",
+      "text": "<b>Rush</b>\n<b>Divine Shield</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "ELUSIVE",
+        "RUSH"
+      ],
+      "cost": 6,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "760063cba6c175c7e51b2dddf59aa3adc0266f0489646952682416d9d0acc796"
+    },
+    {
+      "card_id": "DRG_239",
+      "name": "Blazing Battlemage",
+      "text": "",
+      "mechanics": [],
+      "cost": 1,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "bf72973340405b3415795a4a8063328fae9a1cda69e97e51c5fd7a91d9cad668"
+    },
+    {
+      "card_id": "DRG_310",
+      "name": "Evasive Drakonid",
+      "text": "<b>Taunt</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "TAUNT"
+      ],
+      "cost": 7,
+      "attack": 7,
+      "health": 7,
+      "record_sha256": "5d8b8665231121294930377936b1e66ecf36ae5a79f02e54a7f7f93c43cb1c9f"
+    },
+    {
+      "card_id": "ETC_357",
+      "name": "Brass Elemental",
+      "text": "<b>Rush</b>, <b>Divine Shield</b>,\n<b>Taunt</b>, <b>Windfury</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "RUSH",
+        "TAUNT",
+        "WINDFURY"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "ddcedf1bd9e6c92984d4b00e80a6e39a0344e8e7487348d2598ccbb2cf7abab0"
+    },
+    {
+      "card_id": "EX1_008",
+      "name": "Argent Squire",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "02543f3a2867b00afecf0be88665405e4f881e560636ac969e24fae5543782e7"
+    },
+    {
+      "card_id": "EX1_010",
+      "name": "Worgen Infiltrator",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 1,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "999dc74c7df6fc087a6be8ca1af9e9744adb300280e7c731cb1dbbcb6b7e6d19"
+    },
+    {
+      "card_id": "EX1_017",
+      "name": "Jungle Panther",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "record_sha256": "7faf949780a025db53bd738ee751ed8da842e3d9e596ece5772d5548e3d6d036"
+    },
+    {
+      "card_id": "EX1_020",
+      "name": "Scarlet Crusader",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 1,
+      "record_sha256": "0fe00cd4bdc673a1ecaf200759b42a922b8e62a21ddfd2c8e514123834ea29ab"
+    },
+    {
+      "card_id": "EX1_021",
+      "name": "Thrallmar Farseer",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "record_sha256": "d3ed003cd1e28396eb040f799c5bb4306f2a8990df5eb1eaf950027495a87cf5"
+    },
+    {
+      "card_id": "EX1_023",
+      "name": "Silvermoon Guardian",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "61de4858f976b639543da8749843c3265f5b0f78122c8f2af827a3df4d66348c"
+    },
+    {
+      "card_id": "EX1_028",
+      "name": "Stranglethorn Tiger",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 5,
+      "attack": 5,
+      "health": 5,
+      "record_sha256": "fba3720a2bcd179930537ac7260c69dde90b67274a9eb7cd1af259e790e8ba24"
+    },
+    {
+      "card_id": "EX1_032",
+      "name": "Sunwalker",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 5,
+      "record_sha256": "6cb8d1de8addfab435346156f63d96aa36ce8d1906997ae95e23a1b04036d7b9"
+    },
+    {
+      "card_id": "EX1_033",
+      "name": "Windfury Harpy",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 5,
+      "record_sha256": "c1f7147178f906265f38acda421706fc60de05a093c64568732820ef39391075"
+    },
+    {
+      "card_id": "EX1_067",
+      "name": "Argent Commander",
+      "text": "<b>Charge</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "CHARGE",
+        "DIVINE_SHIELD"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 2,
+      "record_sha256": "032de9d45f709cea0d84085645584a1e4e08f00e4a7d7a593f27231b28d7a084"
+    },
+    {
+      "card_id": "EX1_170",
+      "name": "Emperor Cobra",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "record_sha256": "08fcde9e567f706de422a14282c392913f320f484b7e7e091d89332df289cd64"
+    },
+    {
+      "card_id": "EX1_396",
+      "name": "Mogu'shan Warden",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 1,
+      "health": 7,
+      "record_sha256": "19bfd96369c54fee09d6d13f2a3477db0e8b1b152136c979d737ed4a0f68d734"
+    },
+    {
+      "card_id": "EX1_405",
+      "name": "Shieldbearer",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 1,
+      "attack": 0,
+      "health": 4,
+      "record_sha256": "1cf961efe675461d7f51d75f171d038bcc682481389e0dee6c84ba75d73979b5"
+    },
+    {
+      "card_id": "EX1_522",
+      "name": "Patient Assassin",
+      "text": "<b>Stealth</b>\n <b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS",
+        "STEALTH"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "record_sha256": "c971df6b6f286d909dba4977af57ac37dd956470385205b04b9a636c863d77b1"
+    },
+    {
+      "card_id": "EX1_543",
+      "name": "King Krush",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 9,
+      "attack": 8,
+      "health": 8,
+      "record_sha256": "eda0b79514bef41eb04438634cb178bf8e530839905346ffd61b64aec644fd14"
+    },
+    {
+      "card_id": "FP1_008",
+      "name": "Spectral Knight",
+      "text": "<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE"
+      ],
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "record_sha256": "bbfedab52c857e9ac9329af57eb8e1dbae5ceeff31ffac6df759c1385fa12ecb"
+    },
+    {
+      "card_id": "FP1_010",
+      "name": "Maexxna",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 6,
+      "attack": 2,
+      "health": 8,
+      "record_sha256": "f760f389104622ebd26a533efa13fd8c42d8858693f704dac07215f889e6e7d1"
+    },
+    {
+      "card_id": "GDB_452",
+      "name": "Shield of Askara",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 8,
+      "record_sha256": "67adb1693936a7fc05a6849af7046c2a6c42e1fb583c105355a3266eead72a81"
+    },
+    {
+      "card_id": "GIL_113",
+      "name": "Rabid Worgen",
+      "text": "<b>Rush</b>",
+      "mechanics": [
+        "RUSH"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "72e8fc3088f1289aee1bed827ac8e26f64c52a9f5a1ba7232de5c3f29fc494e7"
+    },
+    {
+      "card_id": "GIL_120",
+      "name": "Furious Ettin",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 7,
+      "attack": 5,
+      "health": 9,
+      "record_sha256": "0284c46c9c850795d69eab0c2b58f57e680acd8cf5f260f5634c9a19eecd2f95"
+    },
+    {
+      "card_id": "GIL_143",
+      "name": "Vicious Scalehide",
+      "text": "<b>Lifesteal</b>\n<b>Rush</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "RUSH"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "record_sha256": "4da276e35be841624d5e6d387b619269fe208b96e4556beef1465660d5253a48"
+    },
+    {
+      "card_id": "GIL_527",
+      "name": "Felsoul Inquisitor",
+      "text": "<b>Lifesteal</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "record_sha256": "a5ca027f79c87280e9b72cae8e968afb71602a3148013053a86745f49571b86d"
+    },
+    {
+      "card_id": "GIL_545",
+      "name": "Ghostly Charger",
+      "text": "<b>Divine Shield</b>\n<b>Rush</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "RUSH"
+      ],
+      "cost": 5,
+      "attack": 3,
+      "health": 4,
+      "record_sha256": "581dd69c87da3350bc02fe2640aab2dcd07864b5c613ac4e0ce235d595ae8e73"
+    },
+    {
+      "card_id": "GIL_562",
+      "name": "Vilebrood Skitterer",
+      "text": "<b>Poisonous</b>\n<b>Rush</b>",
+      "mechanics": [
+        "POISONOUS",
+        "RUSH"
+      ],
+      "cost": 5,
+      "attack": 1,
+      "health": 3,
+      "record_sha256": "62b104b031ad204c5680bd76443bc15c5a7d77b6c312c977f87a3e62a957341b"
+    },
+    {
+      "card_id": "GIL_809",
+      "name": "Unpowered Steambot",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 0,
+      "health": 9,
+      "record_sha256": "d44ebc854abfbf23c16d76099dfb82cd603c1ca3348dd7e5d4c6a5b0a12f8864"
+    },
+    {
+      "card_id": "GVG_018",
+      "name": "Queen of Pain",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "75d84a95b7b2751515dbbeaf439ec991f86f968f703ed2bc451d176f8790cc18"
+    },
+    {
+      "card_id": "GVG_037",
+      "name": "Whirling Zap-o-matic",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "7b915dc71ced61eeb24dd5c6c9a270271a1f8b0e9fc000a12df20e366981f5c2"
+    },
+    {
+      "card_id": "GVG_044",
+      "name": "Spider Tank",
+      "text": "",
+      "mechanics": [],
+      "cost": 3,
+      "attack": 3,
+      "health": 4,
+      "record_sha256": "79e2f5677bc5d2d7b33f2fb05e9951da2ee099a03dfa448f101a311dc2726594"
+    },
+    {
+      "card_id": "GVG_058",
+      "name": "Shielded Minibot",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "0f65bbbaca60eba5f7004c7c9df92b0da4ba09d7e1d3302ea3abbb11a612e5ad"
+    },
+    {
+      "card_id": "GVG_064",
+      "name": "Puddlestomper",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "cf1b9665bbd0043162922c28dc0286a2ffc2b7c1f7c00fe9e864ace89fbeb6b9"
+    },
+    {
+      "card_id": "GVG_070",
+      "name": "Salty Dog",
+      "text": "",
+      "mechanics": [],
+      "cost": 5,
+      "attack": 7,
+      "health": 4,
+      "record_sha256": "6baaf5ada1b0f963d3077f64d3cc4424debca33e8eed072e77cb859d2142ade1"
+    },
+    {
+      "card_id": "GVG_071",
+      "name": "Lost Tallstrider",
+      "text": "",
+      "mechanics": [],
+      "cost": 4,
+      "attack": 5,
+      "health": 4,
+      "record_sha256": "d83d1da4e4a2231ee45174a96b8d19b34e4186258ca4819c72c24afc94fcc073"
+    },
+    {
+      "card_id": "GVG_081",
+      "name": "Gilblin Stalker",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "record_sha256": "04220aae8ce8fb525fa4709c3cbab2131a2a610000886f7caa55f4f99e5522f9"
+    },
+    {
+      "card_id": "GVG_084",
+      "name": "Flying Machine",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "352dbf70d2ae884cac77435253394a8c571979cc9b91d5cf040b306fb9f1c2ae"
+    },
+    {
+      "card_id": "GVG_085",
+      "name": "Annoy-o-Tron",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "record_sha256": "57ca4a81cc517a673d59a1fbf25aa33793a5480a5b2fd40fedd8065bdf5073af"
+    },
+    {
+      "card_id": "GVG_091",
+      "name": "Arcane Nullifier X-21",
+      "text": "<b>Taunt</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "record_sha256": "ce79513459159ba42b4b7e30905405a5f90ccc49995c14768e46aa8ef07873da"
+    },
+    {
+      "card_id": "GVG_093",
+      "name": "Target Dummy",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 0,
+      "attack": 0,
+      "health": 2,
+      "record_sha256": "ea4a9d0c3e1a49a8bd39878c0914bcc95e8c1ce5ca272fcc070575160038ffc1"
+    },
+    {
+      "card_id": "GVG_098",
+      "name": "Gnomeregan Infantry",
+      "text": "<b>Charge</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "CHARGE",
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "c628cfbd6d0de120919cc1503933cd328c6fd3a72b992ba41db98fe497d19692"
+    },
+    {
+      "card_id": "ICC_023",
+      "name": "Snowflipper Penguin",
+      "text": "",
+      "mechanics": [],
+      "cost": 0,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "ae45b210b0cf75869fee26ebe4bf29ffecab4297923fe42d8308c19eaa52efc1"
+    },
+    {
+      "card_id": "ICC_032",
+      "name": "Venomancer",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 5,
+      "attack": 2,
+      "health": 5,
+      "record_sha256": "ae0b85bbdc059abcb508a3bd9a8e87c867febe64ad815140aa86f2614a6f1577"
+    },
+    {
+      "card_id": "ICC_038",
+      "name": "Righteous Protector",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "cc769706129aa895cc5c19ad740e4893a2aa50d76d10cddadae16a8b2a1340cc"
+    },
+    {
+      "card_id": "ICC_212",
+      "name": "Acolyte of Agony",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "ab95f57e34d065ee12fe08b29624e7a83b8102df8f72f28b2c530fc4e970cb52"
+    },
+    {
+      "card_id": "ICC_220",
+      "name": "Deadscale Knight",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "2dc51337e6db9d13a7797bc9155e090d3f24d784ab0a833b2f9c20ee629d684e"
+    },
+    {
+      "card_id": "ICC_419",
+      "name": "Bearshark",
+      "text": "<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE"
+      ],
+      "cost": 3,
+      "attack": 4,
+      "health": 3,
+      "record_sha256": "fe8519df828ef2be34c81968850d5f37b773205919211d6ff4d5613f25c23065"
+    },
+    {
+      "card_id": "ICC_820",
+      "name": "Chillblade Champion",
+      "text": "<b>Charge</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "CHARGE",
+        "LIFESTEAL"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "7beb1cd6136c104cc2a8a8d70b963997792cafec29b57af7dca04ac817696c9d"
+    },
+    {
+      "card_id": "ICC_905",
+      "name": "Bloodworm",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "record_sha256": "5a939a036cbdb8a8b92eb1659001c6cf65d7d5c39299602b58a557f7d73191d8"
+    },
+    {
+      "card_id": "JAM_007",
+      "name": "Cool Ghoul",
+      "text": "<b>Divine Shield</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "REBORN"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 1,
+      "record_sha256": "08d1a0fb533f17bf1dabcaf103f9599b3f72dee35d9bdc6e97ae83f909c228c2"
+    },
+    {
+      "card_id": "KAR_011",
+      "name": "Pompous Thespian",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "c2b1254ea359212f1b213ecd358cc551e1a3235d470d7b6a4419112bfeb2192a"
+    },
+    {
+      "card_id": "KAR_300",
+      "name": "Enchanted Raven",
+      "text": "",
+      "mechanics": [],
+      "cost": 1,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "388863b193fbf0383f1d12faa705d7eaac60c163e1c7fa5c99c8aef735b9bf6b"
+    },
+    {
+      "card_id": "LEG_CS3_037",
+      "name": "Emerald Skytalon",
+      "text": "<b>Rush</b>",
+      "mechanics": [
+        "RUSH"
+      ],
+      "cost": 1,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "2e6bd8c765f70dee7aa8eeff16b7c5e0a81a6299a29bd89dcfa54dcb711e50a2"
+    },
+    {
+      "card_id": "LOE_010",
+      "name": "Pit Snake",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 1,
+      "attack": 2,
+      "health": 1,
+      "record_sha256": "fd5c532e5a23181aa94e8e67ee0ad4d93aaf637fdadb1cfbfe2f3eca4bb5e43c"
+    },
+    {
+      "card_id": "LOE_022",
+      "name": "Fierce Monkey",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 4,
+      "record_sha256": "99daa82125c2fb744a0d120307180204d7562b2051f30eaad47b8cfce64cfb1d"
+    },
+    {
+      "card_id": "LOEA10_3",
+      "name": "Murloc Tinyfin",
+      "text": "",
+      "mechanics": [],
+      "cost": 0,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "2c8f40727c77422b137e5ab7aaacb93131501638b8e8db11d7b3a6e87834b740"
+    },
+    {
+      "card_id": "LOOT_117",
+      "name": "Wax Elemental",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 1,
+      "attack": 0,
+      "health": 2,
+      "record_sha256": "dc7cd1ec42f1cb2296c96d528dbc91b1a92703b3f23d25082531652ffa6c0a32"
+    },
+    {
+      "card_id": "LOOT_125",
+      "name": "Stoneskin Basilisk",
+      "text": "<b>Divine Shield</b>\n <b>Poisonous</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "POISONOUS"
+      ],
+      "cost": 3,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "127bcbac8a776177c1218f4bbc60af371b46205542936f73eb61fe0421a8ca6f"
+    },
+    {
+      "card_id": "LOOT_137",
+      "name": "Sleepy Dragon",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 9,
+      "attack": 6,
+      "health": 12,
+      "record_sha256": "38dc93ccf7a9e20f68771ca9a091b75dc8d5350d573f2253092d1b576b6cf103"
+    },
+    {
+      "card_id": "LOOT_258",
+      "name": "Dire Mole",
+      "text": "",
+      "mechanics": [],
+      "cost": 1,
+      "attack": 1,
+      "health": 3,
+      "record_sha256": "425abe8a6abcf1e30d4bd9ba0c916ec3f6f38dc73cb3dce36324eec6e9fc8707"
+    },
+    {
+      "card_id": "LOOT_315",
+      "name": "Trogg Gloomeater",
+      "text": "<b>Taunt</b>\n<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS",
+        "TAUNT"
+      ],
+      "cost": 5,
+      "attack": 1,
+      "health": 5,
+      "record_sha256": "8454ae62de38fd10d0caf42891bc40def5f541e33f23805a7c9a85986a173a0c"
+    },
+    {
+      "card_id": "NEW1_010",
+      "name": "Al'Akir the Windlord",
+      "text": "<b>Charge, Divine Shield, Taunt, Windfury</b>",
+      "mechanics": [
+        "CHARGE",
+        "DIVINE_SHIELD",
+        "TAUNT",
+        "WINDFURY"
+      ],
+      "cost": 8,
+      "attack": 3,
+      "health": 6,
+      "record_sha256": "374690daef78ba94f878660f32bcd721ddd634bdd1f25075efdd58ae2a1b9e35"
+    },
+    {
+      "card_id": "NEW1_011",
+      "name": "Kor'kron Elite",
+      "text": "<b>Charge</b>",
+      "mechanics": [
+        "CHARGE"
+      ],
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "record_sha256": "071580dc9198acfa3f2d7c39521e47ea0a0961e9b46bbecbe1068c4a49ddfa6b"
+    },
+    {
+      "card_id": "NEW1_023",
+      "name": "Faerie Dragon",
+      "text": "<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE"
+      ],
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "b5a352d083b045fd30ef2b02c75947d39bc0b816011f96f0c1e0a2d7e74bd50f"
+    },
+    {
+      "card_id": "OG_141",
+      "name": "Faceless Behemoth",
+      "text": "",
+      "mechanics": [],
+      "cost": 10,
+      "attack": 10,
+      "health": 10,
+      "record_sha256": "b5828bcd7a164c77aa8fa990fabc013d2345e9590e17c86eaf5c381db33a1bae"
+    },
+    {
+      "card_id": "OG_142",
+      "name": "Eldritch Horror",
+      "text": "",
+      "mechanics": [],
+      "cost": 8,
+      "attack": 6,
+      "health": 10,
+      "record_sha256": "2d74b6606d9b53479c1be8454d8cba1a22886b5dbbd96af2c4cd3e661b03a915"
+    },
+    {
+      "card_id": "OG_145",
+      "name": "Psych-o-Tron",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 5,
+      "attack": 3,
+      "health": 4,
+      "record_sha256": "c07bb1025c1fee9c42b47a6c10b93defdbed19924e00e02efa98d7b590cc7c95"
+    },
+    {
+      "card_id": "OG_152",
+      "name": "Grotesque Dragonhawk",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 7,
+      "attack": 5,
+      "health": 5,
+      "record_sha256": "5bd4b31aac717330372a104fa19f3fa36a2108c19907c06da8fc2fcb7130e6e9"
+    },
+    {
+      "card_id": "OG_153",
+      "name": "Bog Creeper",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 7,
+      "attack": 6,
+      "health": 8,
+      "record_sha256": "1491a7fb79a35b966e7a5803f07d60cee9ef9750d17f9ce9945474fb9d3843e4"
+    },
+    {
+      "card_id": "OG_247",
+      "name": "Twisted Worgen",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 2,
+      "attack": 3,
+      "health": 1,
+      "record_sha256": "e133c7b0527f24fb5cb0c65f0f2dc9e0467dc66b9a476fc66ce822ae92d617e3"
+    },
+    {
+      "card_id": "OG_248",
+      "name": "Am'gam Rager",
+      "text": "",
+      "mechanics": [],
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "record_sha256": "dd267424cb54dd634e458b8755e57b9772bfd160024fc4b55ae94aabcc84629b"
+    },
+    {
+      "card_id": "OG_325",
+      "name": "Carrion Grub",
+      "text": "",
+      "mechanics": [],
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "record_sha256": "04d88e44a2b374d5546b9b95be2bff979e4fabe8836b13877adf6d30aa92f190"
+    },
+    {
+      "card_id": "OG_326",
+      "name": "Duskboar",
+      "text": "",
+      "mechanics": [],
+      "cost": 2,
+      "attack": 4,
+      "health": 1,
+      "record_sha256": "1fb2b3646aa2953dd75dfa2df68c6abcdce3b98039945b2deb463422d4cbd3c3"
+    },
+    {
+      "card_id": "OG_327",
+      "name": "Squirming Tentacle",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "record_sha256": "61851d66175d138b1302040b99cba198c3e5a96d7719379001ae3d2a848adf2e"
+    },
+    {
+      "card_id": "OG_340",
+      "name": "Soggoth the Slitherer",
+      "text": "<b>Taunt</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "TAUNT"
+      ],
+      "cost": 9,
+      "attack": 5,
+      "health": 9,
+      "record_sha256": "e2a38eff1b082f4d0bcaeb74b9a755ed5f9aa47e34f70664d7ceb16896568f9d"
+    },
+    {
+      "card_id": "RLK_602",
+      "name": "Silverfury Stalwart",
+      "text": "<b>Rush</b>\n<b>Elusive</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "RUSH",
+        "TAUNT"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 8,
+      "record_sha256": "cd9aaf9d5aff6fb2166bb971007c7e67ecd2f2ba8d03516f959ee640b0a54089"
+    },
+    {
+      "card_id": "SCH_137",
+      "name": "Frazzled Freshman",
+      "text": "",
+      "mechanics": [],
+      "cost": 1,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "adbf2c24e9d176283506dbc4ae158fc6ca9a9498f9d4a7113fa73a7cd1ffbcc1"
+    },
+    {
+      "card_id": "SCH_143",
+      "name": "Divine Rager",
+      "text": "<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD"
+      ],
+      "cost": 4,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "e1cd9e4e0ef316f4180b15b31a86415f2904e682273d699c14aece275ac233c8"
+    },
+    {
+      "card_id": "SCH_145",
+      "name": "Desk Imp",
+      "text": "",
+      "mechanics": [],
+      "cost": 0,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "c01af078da3a2f5dbdc7880cad2dc83e804e44675a2879ef7d0301787e040256"
+    },
+    {
+      "card_id": "SCH_712",
+      "name": "Judicious Junior",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 6,
+      "attack": 4,
+      "health": 9,
+      "record_sha256": "157198f4d4bbd235430dfe3d80b0ee2fb01a19875aed92d2b885dab4e3d08430"
+    },
+    {
+      "card_id": "TRL_513",
+      "name": "Mosh'Ogg Enforcer",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "TAUNT"
+      ],
+      "cost": 8,
+      "attack": 2,
+      "health": 14,
+      "record_sha256": "95621de1682f1e89847311107c6becfbea4c4b480e41b827ddbc624af684a1ee"
+    },
+    {
+      "card_id": "TRL_550",
+      "name": "Amani War Bear",
+      "text": "<b>Rush</b>\n<b>Taunt</b>",
+      "mechanics": [
+        "RUSH",
+        "TAUNT"
+      ],
+      "cost": 7,
+      "attack": 5,
+      "health": 7,
+      "record_sha256": "deccb2025a883e0e90b75ba3737d2ff8487fb9af73e2146919b6465dc944db8c"
+    },
+    {
+      "card_id": "TTN_710",
+      "name": "Ancient Totem",
+      "text": "",
+      "mechanics": [],
+      "cost": 0,
+      "attack": 0,
+      "health": 3,
+      "record_sha256": "3505b0c0136bf7816e9078404d636401426b66f6c119666b213014ed3df2fcf7"
+    },
+    {
+      "card_id": "ULD_193",
+      "name": "Living Monument",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 10,
+      "attack": 10,
+      "health": 10,
+      "record_sha256": "72fe8f7768cd9bc48a2d62ee84e804f8e0f9133ee81c1555da3e9879d9415286"
+    },
+    {
+      "card_id": "ULD_194",
+      "name": "Wasteland Scorpid",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 7,
+      "attack": 3,
+      "health": 9,
+      "record_sha256": "762327f41f3ef94be814db3ba9681abbba8c3bfee664d0e7dd997c08145e1cb4"
+    },
+    {
+      "card_id": "ULD_205",
+      "name": "Candletaker",
+      "text": "<b>Reborn</b>",
+      "mechanics": [
+        "REBORN"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "e7fbe4ba4729fbbed3d10ee450c111be4e5f018e5de99cf221efe7d37a2f2cea"
+    },
+    {
+      "card_id": "ULD_206",
+      "name": "Restless Mummy",
+      "text": "<b>Rush</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "REBORN",
+        "RUSH"
+      ],
+      "cost": 4,
+      "attack": 3,
+      "health": 2,
+      "record_sha256": "5210108f8349dcf4b5e80abb3faf79a62ae28c8e61f249af7f6af46c1569f660"
+    },
+    {
+      "card_id": "ULD_207",
+      "name": "Ancestral Guardian",
+      "text": "<b>Lifesteal</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "LIFESTEAL",
+        "REBORN"
+      ],
+      "cost": 4,
+      "attack": 4,
+      "health": 2,
+      "record_sha256": "5187e569a125f1bbac51f2e9da26d0a82b10b0f8b73f8771ca2724901bb5b4a9"
+    },
+    {
+      "card_id": "ULD_274",
+      "name": "Wasteland Assassin",
+      "text": "<b>Stealth</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "REBORN",
+        "STEALTH"
+      ],
+      "cost": 5,
+      "attack": 4,
+      "health": 2,
+      "record_sha256": "d975160eb1ebd4ac91e36076e8e7ee923c26918f7d6572d07e4bd7938b75a1d5"
+    },
+    {
+      "card_id": "ULD_275",
+      "name": "Bone Wraith",
+      "text": "<b>Taunt</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "REBORN",
+        "TAUNT"
+      ],
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "record_sha256": "db8096eca8d490f760224b6896fb0f036b25893aeff55cfed240e24ef59f01a9"
+    },
+    {
+      "card_id": "ULD_450",
+      "name": "Vilefiend",
+      "text": "<b>Lifesteal</b>",
+      "mechanics": [
+        "LIFESTEAL"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "4e25b0a45c8b9d0092bed57f31a2f8db3f6886782d01fb10dafcb1b5ebbf7ed6"
+    },
+    {
+      "card_id": "ULD_721",
+      "name": "Colossus of the Moon",
+      "text": "<b>Divine Shield</b>\n<b>Reborn</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "REBORN"
+      ],
+      "cost": 10,
+      "attack": 10,
+      "health": 10,
+      "record_sha256": "596ff54066326d61da2c2ddba43d8aca74abd5dba92ee3d5fd3179204fcc3f90"
+    },
+    {
+      "card_id": "ULD_723",
+      "name": "Murmy",
+      "text": "<b>Reborn</b>",
+      "mechanics": [
+        "REBORN"
+      ],
+      "cost": 1,
+      "attack": 1,
+      "health": 1,
+      "record_sha256": "66d66058ba0c0269babf92ad3bc77075f8118870269a4932f8934f352b9f679a"
+    },
+    {
+      "card_id": "UNG_019",
+      "name": "Air Elemental",
+      "text": "<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE"
+      ],
+      "cost": 1,
+      "attack": 3,
+      "health": 1,
+      "record_sha256": "35e4e6a38d7edb63096e304b7c805049100b43f27b66753fb988c87f87812bbb"
+    },
+    {
+      "card_id": "UNG_071",
+      "name": "Giant Mastodon",
+      "text": "<b>Taunt</b>",
+      "mechanics": [
+        "TAUNT"
+      ],
+      "cost": 9,
+      "attack": 6,
+      "health": 12,
+      "record_sha256": "f782b7c13e917d690fe2e0fced138cd017ff9199e9e1d3f0f63ebe5d828bc9c1"
+    },
+    {
+      "card_id": "UNG_806",
+      "name": "Ultrasaur",
+      "text": "",
+      "mechanics": [],
+      "cost": 10,
+      "attack": 7,
+      "health": 14,
+      "record_sha256": "3cfa647b7c197cd5b7e37ca19b148ecb1d12558b342d5c281be864b1644287a3"
+    },
+    {
+      "card_id": "UNG_808",
+      "name": "Stubborn Gastropod",
+      "text": "<b>Taunt</b>\n  <b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS",
+        "TAUNT"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "record_sha256": "04d89378db51ce21d148727e7fe0cadb6294a39a8a840747e7056244d8c546af"
+    },
+    {
+      "card_id": "UNG_812",
+      "name": "Sabretooth Stalker",
+      "text": "<b>Stealth</b>",
+      "mechanics": [
+        "STEALTH"
+      ],
+      "cost": 6,
+      "attack": 8,
+      "health": 2,
+      "record_sha256": "82a56a7196f031701bf36f8729d8de30d6d574e3646f5065ce344fbcae389648"
+    },
+    {
+      "card_id": "UNG_813",
+      "name": "Stormwatcher",
+      "text": "<b>Windfury</b>",
+      "mechanics": [
+        "WINDFURY"
+      ],
+      "cost": 7,
+      "attack": 4,
+      "health": 8,
+      "record_sha256": "a0880cba6e8179e89c3ccb12a3756beb250f1f529c19b2e46cb74e661a17e0fe"
+    },
+    {
+      "card_id": "UNG_814",
+      "name": "Giant Wasp",
+      "text": "<b>Stealth</b>\n <b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS",
+        "STEALTH"
+      ],
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "68be1fe4dd255c9f603cc7cb31ce4faa0d4bb526a628f41345a9918c14af5f10"
+    },
+    {
+      "card_id": "UNG_852",
+      "name": "Tyrantus",
+      "text": "<b>Taunt</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "TAUNT"
+      ],
+      "cost": 10,
+      "attack": 14,
+      "health": 14,
+      "record_sha256": "f183efbca67cf2136c2cdd4d0e280395906f9e1371a03b97e8619d3680da1db8"
+    },
+    {
+      "card_id": "WON_312",
+      "name": "Wickerflame Burnbristle",
+      "text": "<b>Taunt</b>\n<b>Divine Shield</b>\n<b>Lifesteal</b>",
+      "mechanics": [
+        "DIVINE_SHIELD",
+        "LIFESTEAL",
+        "TAUNT"
+      ],
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "record_sha256": "046ec28e06e6c373c549bdf76afb3b3c801400e2b51c77b7680496d6f55da024"
+    },
+    {
+      "card_id": "WON_366",
+      "name": "Worgen Greaser",
+      "text": "",
+      "mechanics": [],
+      "cost": 4,
+      "attack": 6,
+      "health": 5,
+      "record_sha256": "5c92fe708e7776c3d9aeac8d43a0d98bcde3d8bf32a5a64a9e2492a9c01d3adc"
+    },
+    {
+      "card_id": "WW_376",
+      "name": "Cactus Rager",
+      "text": "<b>Poisonous</b>",
+      "mechanics": [
+        "POISONOUS"
+      ],
+      "cost": 2,
+      "attack": 5,
+      "health": 1,
+      "record_sha256": "0ab1ffd30c62b0949a4e5d41904c43ec35e09959bab4c0345957fc4a8fbef7fc"
+    },
+    {
+      "card_id": "YOD_003",
+      "name": "Winged Guardian",
+      "text": "<b>Taunt</b>\n<b>Reborn</b>\n<b>Elusive</b>",
+      "mechanics": [
+        "ELUSIVE",
+        "REBORN",
+        "TAUNT"
+      ],
+      "cost": 7,
+      "attack": 6,
+      "health": 8,
+      "record_sha256": "55511e74d364a0fc167fa913c683efa525c1a337d61bdaa84c292817b3c33189"
+    },
+    {
+      "card_id": "YOD_010",
+      "name": "Shotbot",
+      "text": "<b>Reborn</b>",
+      "mechanics": [
+        "REBORN"
+      ],
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "record_sha256": "b6527ae46150be78b836c45ef49f3e557a4f817ae78bc7dea8f68458a8496a8a"
+    },
+    {
+      "card_id": "YOP_031",
+      "name": "Crabrider",
+      "text": "<b><b>Rush</b>\nWindfury</b>",
+      "mechanics": [
+        "RUSH",
+        "WINDFURY"
+      ],
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "record_sha256": "57a991750784b62624d72fcc03106b6a8fce76ec5fa5f16f826945c8d365f5af"
+    }
+  ],
+  "not_complete": [
+    "No historical generation membership contract is approved",
+    "Other old effects and their generated dependencies remain unavailable",
+    "Passing shared keyword checks is not independent client conformance"
+  ],
+  "evidence": [
+    "expanded/historical_vanilla.py",
+    "tests/test_expanded_historical_vanilla.py",
+    "expanded/reviewed_cards.json"
+  ]
+}

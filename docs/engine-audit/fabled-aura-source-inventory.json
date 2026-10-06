@@ -1,0 +1,375 @@
+{
+  "patch": "36.6.0.251952",
+  "scope": "Pinned PALADIN_AURA tag inventory, not executable admission or current legality.",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "archive_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+  "cards": [
+    {
+      "card_id": "CATA_480",
+      "in_frozen_catalog": true,
+      "record": {
+        "artist": "Tee Fuyuan",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 3,
+        "dbfId": 123691,
+        "flavor": "Sand always messes up the flow of time when it gets stuck in my watch.",
+        "id": "CATA_480",
+        "name": "Sandfury Aura",
+        "rarity": "RARE",
+        "set": "CATACLYSM",
+        "spellSchool": "HOLY",
+        "text": "Your minions' end of turn effects trigger twice. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "EDR_259e1",
+      "in_frozen_catalog": false,
+      "record": {
+        "cardClass": "PALADIN",
+        "cost": 1,
+        "dbfId": 116020,
+        "elite": true,
+        "id": "EDR_259e1",
+        "name": "Ursol's Aura",
+        "set": "EMERALD_DREAM",
+        "spellSchool": "HOLY",
+        "text": "At the end of your turn, cast {0}. Lasts 0 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "END_011",
+      "in_frozen_catalog": true,
+      "record": {
+        "artist": "Ramzy Kamen",
+        "classes": [
+          "DRUID",
+          "PALADIN"
+        ],
+        "collectible": true,
+        "cost": 2,
+        "dbfId": 121150,
+        "flavor": "Really makes you feel like you're running in the 90s.",
+        "id": "END_011",
+        "isMiniSet": true,
+        "name": "Acceleration Aura",
+        "rarity": "COMMON",
+        "set": "TIME_TRAVEL",
+        "spellSchool": "HOLY",
+        "text": "At the start of your turn, gain a temporary Mana Crystal. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "GDB_140",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Ursula Dorada",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 6,
+        "dbfId": 111651,
+        "flavor": "Horse girls rise up!",
+        "id": "GDB_140",
+        "name": "Celestial Aura",
+        "rarity": "EPIC",
+        "set": "SPACE",
+        "spellSchool": "HOLY",
+        "text": "While you have exactly 1 minion in play, its Attack and Health are 10. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "JAIL_327",
+      "in_frozen_catalog": true,
+      "record": {
+        "artist": "Ursula Dorada",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 3,
+        "dbfId": 126617,
+        "flavor": "You're good enough, strong enough, and gosh darnit people like you.",
+        "id": "JAIL_327",
+        "name": "Reinforcement Aura",
+        "rarity": "RARE",
+        "set": "ESCAPEFROM_VIOLET_HOLD",
+        "spellSchool": "HOLY",
+        "text": "[x]At the end of your turn,\nsummon a minion from\nyour deck that costs (2)\nor less. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "LEG_TTN_908",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Vlad Botos",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 4,
+        "countAsCopyOfDbfId": 96917,
+        "dbfId": 130586,
+        "flavor": "Also makes your animations 20% faster.",
+        "id": "LEG_TTN_908",
+        "name": "Crusader Aura",
+        "rarity": "EPIC",
+        "set": "LEGACY",
+        "spellSchool": "HOLY",
+        "text": "Whenever a friendly minion attacks, give it +2/+1. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "TIME_009t1",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Kevin Sidharta",
+        "cardClass": "PALADIN",
+        "cost": 4,
+        "dbfId": 119919,
+        "elite": true,
+        "id": "TIME_009t1",
+        "mechanics": [
+          "TRADEABLE"
+        ],
+        "name": "Gnomish Aura",
+        "set": "TIME_TRAVEL",
+        "spellSchool": "HOLY",
+        "text": "[x]<b>Tradeable</b>\nAt the end of your turn,\nrestore #4 Health to all your\ncharacters. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1",
+        "IS_FABLED_BUNDLE_CARD": "1"
+      }
+    },
+    {
+      "card_id": "TIME_009t2",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Patrik Bjorkstrom",
+        "cardClass": "PALADIN",
+        "cost": 5,
+        "dbfId": 119920,
+        "elite": true,
+        "id": "TIME_009t2",
+        "mechanics": [
+          "TRADEABLE"
+        ],
+        "name": "Mekkatorque's Aura",
+        "referencedTags": [
+          "DIVINE_SHIELD"
+        ],
+        "set": "TIME_TRAVEL",
+        "spellSchool": "HOLY",
+        "text": "[x]<b>Tradeable</b>. At the end\nof your turn, give a random\nfriendly minion +4/+4 and\n<b>Divine Shield</b>. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1",
+        "IS_FABLED_BUNDLE_CARD": "1"
+      }
+    },
+    {
+      "card_id": "TIME_700",
+      "in_frozen_catalog": true,
+      "record": {
+        "artist": "Vlad Botos",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 5,
+        "dbfId": 120644,
+        "flavor": "We need to find the missing dragon link!",
+        "id": "TIME_700",
+        "name": "Chronological Aura",
+        "rarity": "COMMON",
+        "referencedTags": [
+          "TAUNT"
+        ],
+        "set": "TIME_TRAVEL",
+        "spellSchool": "HOLY",
+        "text": "At the end of your turn, summon a 3/5 Dragon with <b>Taunt</b>.\nLasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "TOY_808",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Kevin Sidharta",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 7,
+        "dbfId": 103629,
+        "flavor": "She has at LEAST Craftsmanship +3.",
+        "id": "TOY_808",
+        "name": "Crafter's Aura",
+        "rarity": "RARE",
+        "set": "WHIZBANGS_WORKSHOP",
+        "spellSchool": "HOLY",
+        "text": "At the end of your turn, summon a random 6-Cost minion.\nLasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "TTN_851",
+      "in_frozen_catalog": true,
+      "record": {
+        "artist": "Tanamaes Leejierasaes",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 2,
+        "dbfId": 98053,
+        "flavor": "Perfect for defending against Beasts. Specifically small ones. Like, a very specific species of small insectoid animal. Ants. It resists ants.",
+        "howToEarn": "Unlocked with Paladin class.",
+        "howToEarnGolden": "Unlocked after winning 50 games as Paladin.",
+        "id": "TTN_851",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ],
+        "name": "Resistance Aura",
+        "rarity": "COMMON",
+        "set": "CORE",
+        "spellSchool": "HOLY",
+        "text": "Your opponent's\nspells cost (1) more.\nLasts 2 enemy turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "TTN_854",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Vlad Botos",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 2,
+        "dbfId": 98056,
+        "flavor": "Ok, fine, I'll read the manual\u2026",
+        "id": "TTN_854",
+        "name": "Inventor's Aura",
+        "rarity": "COMMON",
+        "set": "TITANS",
+        "spellSchool": "HOLY",
+        "text": "Your Mechs cost (1) less. Lasts 2 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "TTN_908",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Vlad Botos",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 4,
+        "dbfId": 96917,
+        "flavor": "Also makes your animations 20% faster.",
+        "howToEarn": "Unlocked with Paladin class.",
+        "howToEarnGolden": "Unlocked after winning 250 games as Paladin.",
+        "id": "TTN_908",
+        "name": "Crusader Aura",
+        "rarity": "EPIC",
+        "set": "CORE_HIDDEN",
+        "spellSchool": "HOLY",
+        "text": "Whenever a friendly minion attacks, give it +2/+1. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "VAC_922",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Zoltan Boros",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 106446,
+        "flavor": "One ring to rule them all, and in the sunlight save them.",
+        "id": "VAC_922",
+        "name": "Lifesaving Aura",
+        "rarity": "RARE",
+        "set": "ISLAND_VACATION",
+        "spellSchool": "HOLY",
+        "text": "At the end of your turn, get a 1-Cost Sunscreen that gives +1/+2. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    },
+    {
+      "card_id": "WW_341",
+      "in_frozen_catalog": false,
+      "record": {
+        "artist": "Vlad Botos",
+        "cardClass": "PALADIN",
+        "collectible": true,
+        "cost": 3,
+        "dbfId": 100195,
+        "flavor": "You're my favorite deput- oh. You died\u2026 Ok just kidding, THAT guy is my favorite deputy.",
+        "id": "WW_341",
+        "name": "Deputization Aura",
+        "rarity": "RARE",
+        "referencedTags": [
+          "LIFESTEAL"
+        ],
+        "set": "WILD_WEST",
+        "spellSchool": "HOLY",
+        "text": "Your left-most minion has +2 Attack and <b>Lifesteal</b>. Lasts 3 turns.",
+        "type": "SPELL"
+      },
+      "named_tags": {
+        "PALADIN_AURA": "1",
+        "OBJECTIVE": "1"
+      }
+    }
+  ]
+}

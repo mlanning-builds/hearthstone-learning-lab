@@ -1,0 +1,1186 @@
+id,name,class,type,effect_written,provisional_systems,mapping_reviewed,dependencies_certified,source_references,test_literal_references
+BE_036,M.O.T.H.E.R.,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history,False,False,0,1
+CAP_000,SI:7 Slayer,ROGUE,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CAP_001,Silent Strike,ROGUE,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+CAP_002,Follow the Footsteps,ROGUE,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+CAP_003,SI:7 Supplier,ROGUE,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,0
+CAP_004,Disguised Operator,ROGUE,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+CAP_005,Mathias Shaw,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+CAP_006,Tricks of the Trade,ROGUE,SPELL,False,combat_damage,False,False,0,0
+CAP_101,Follow the Fuse,WARRIOR,SPELL,False,enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+CAP_102,Land Ho!,WARRIOR,SPELL,False,resolution_events;zones_history,False,False,0,0
+CAP_103,Hand Cannon,WARRIOR,WEAPON,False,resolution_events;combat_damage,False,False,0,0
+CAP_104,Blastpowder Engineer,WARRIOR,MINION,False,combat_damage,False,False,0,0
+CAP_105,Hook n' Heave,WARRIOR,SPELL,False,resolution_events;generation_choices,False,False,0,0
+CAP_106,Captain Crowley,WARRIOR,MINION,False,resolution_events,False,False,0,0
+CAP_107,Cannonmaster,WARRIOR,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+CAP_400,Kabal Conspirator,WARLOCK,MINION,False,resolution_events;zones_history,False,False,0,0
+CAP_401,Corrupt Constable,WARLOCK,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+CAP_402,Follow the Evidence,WARLOCK,SPELL,False,enchantments;zones_history,False,False,0,0
+CAP_403,Frame Job,WARLOCK,SPELL,False,generation_choices;zones_history,False,False,0,0
+CAP_404,Harsh Sentence,WARLOCK,SPELL,False,enchantments;zones_history,False,False,0,0
+CAP_405,Godfather Kazakus,WARLOCK,MINION,False,resolution_events;generation_choices,False,False,0,0
+CAP_406,Kabal Mastermind,WARLOCK,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CAP_407,Wanted Poster,NEUTRAL,SPELL,False,enchantments;generation_choices;modern_keywords,False,False,0,0
+CAP_800,Sinful Steed,PRIEST,MINION,False,resolution_events,False,False,0,0
+CAP_801,Haunt,PRIEST,SPELL,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CAP_802,Follow the Ghosts,PRIEST,SPELL,False,resolution_events;enchantments;zones_history,False,False,0,0
+CAP_803,Lingering Spirit,PRIEST,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+CAP_804,Specter Specialist,PRIEST,MINION,True,resolution_events;enchantments,False,False,1,0
+CAP_805,Slime 'em!,PRIEST,SPELL,False,enchantments,False,False,0,0
+CAP_806,Raith Van Geist,PRIEST,MINION,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+CATA_111,Darkscale Broodmother,NEUTRAL,MINION,True,resolution_events;resources_classes,False,False,1,2
+CATA_130,Crystalspine Cub,DRUID,MINION,False,resolution_events;enchantments;resources_classes,False,False,0,0
+CATA_131,Felwood Treant,DRUID,MINION,False,resolution_events;enchantments;resources_classes,False,False,0,0
+CATA_132,Broodwatcher,DRUID,MINION,False,resolution_events;generation_choices;combat_damage;resources_classes,False,False,0,0
+CATA_133,Iridescent Flitterwing,DRUID,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,0
+CATA_134,Wildwood Circle,DRUID,SPELL,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+CATA_135,Mossbinding,DRUID,SPELL,True,resolution_events;enchantments;resources_classes,False,False,1,3
+CATA_136,Azshara's Triumph,DRUID,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+CATA_138,Forest's Gift,DRUID,SPELL,True,enchantments,False,False,1,0
+CATA_139,Wickerfang,DRUID,MINION,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+CATA_140,Merithra of the Dream,DRUID,MINION,False,resolution_events;enchantments;generation_choices;zones_history;resources_classes,False,False,0,0
+CATA_150,"Ragnaros, the Great Fire",WARRIOR,MINION,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+CATA_151,"Azshara, Ocean Lord",DEMONHUNTER,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_153,"Al'Akir, Lord of Storms",SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;modern_keywords,False,False,0,0
+CATA_154,Sinestra,ROGUE,MINION,False,enchantments;zones_history;modern_keywords,False,False,0,0
+CATA_155,Arisen Onyxia,DEATHKNIGHT,MINION,False,enchantments;modern_keywords,False,False,0,0
+CATA_156,Experimental Animation,DEATHKNIGHT,SPELL,False,combat_damage;modern_keywords,False,False,0,0
+CATA_158,Maniacal Follower,ROGUE,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_160,Scorching Ravager,WARRIOR,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_161,Gruesome Nightmare,DEATHKNIGHT,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+CATA_180,War'loc,NEUTRAL,MINION,False,resolution_events;enchantments;resources_classes,False,False,0,0
+CATA_185,Faceless Replicator,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CATA_186,Stickybomb Saboteur,NEUTRAL,MINION,False,resolution_events;enchantments,False,False,0,0
+CATA_190h,"Deathwing, Worldbreaker",,HERO,False,resolution_events;generation_choices;hero_replacement;modern_keywords,False,False,0,0
+CATA_200,Agent of the Old Ones,ROGUE,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,1,0
+CATA_201,Twilight Mistress,ROGUE,MINION,True,resolution_events;zones_history,False,False,1,1
+CATA_202,Stolen Power,ROGUE,SPELL,False,generation_choices;modern_keywords,False,False,0,0
+CATA_203,Garona's Last Stand,ROGUE,SPELL,True,fallback_review,False,False,1,0
+CATA_206,Twisted Monstrosity,NEUTRAL,MINION,False,enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+CATA_208,Selfless Protector,NEUTRAL,MINION,True,combat_damage,False,False,2,3
+CATA_209,Battlefield Blaster,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+CATA_210,Twilight Egg,NEUTRAL,MINION,False,resolution_events;enchantments,False,False,0,0
+CATA_213,Vyranoth,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+CATA_215,Daze,ROGUE,SPELL,False,zones_history,False,False,0,0
+CATA_216,Cleansing Cleric,PRIEST,MINION,False,resolution_events;combat_damage,False,False,0,0
+CATA_300,The Black Blood,PRIEST,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;modern_keywords,False,False,0,0
+CATA_301,Ruby Sanctum,PRIEST,LOCATION,False,combat_damage;secrets_locations,False,False,0,0
+CATA_302,Mend,PRIEST,SPELL,True,combat_damage;zones_history,False,False,1,0
+CATA_303,Purifying Breath,PRIEST,SPELL,True,combat_damage,False,False,1,0
+CATA_304,Injured Attendant,PRIEST,MINION,True,resolution_events;combat_damage,False,False,1,0
+CATA_305,Incensed Matriarch,PRIEST,MINION,True,resolution_events;enchantments,False,False,2,0
+CATA_306,Schism,PRIEST,SPELL,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_307,"Alexstrasza, Guardian of Life",PRIEST,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CATA_308,Medivh's Triumph,PRIEST,SPELL,True,enchantments;combat_damage,False,False,2,0
+CATA_432,Chromatus,PALADIN,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_452,Spellweaver's Brilliance,MAGE,SPELL,True,resolution_events;enchantments;combat_damage,False,False,2,1
+CATA_458,Archmage Kalec,MAGE,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+CATA_464,Blackwing Experiment,DEATHKNIGHT,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+CATA_465,Chow Down,DEATHKNIGHT,SPELL,True,resolution_events;enchantments;combat_damage;resources_classes,False,False,1,2
+CATA_467,Command Claw,DEATHKNIGHT,WEAPON,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,2,0
+CATA_469,Chromatic Broodmother,DEATHKNIGHT,MINION,False,resolution_events;combat_damage;resources_classes,False,False,0,0
+CATA_470,Victor Nefarius,DEATHKNIGHT,MINION,False,resolution_events;enchantments,False,False,0,0
+CATA_471,Talanji's Last Stand,DEATHKNIGHT,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CATA_472,Inspiring Maul,PALADIN,WEAPON,False,resolution_events;generation_choices,False,False,0,0
+CATA_473,"Nozdormu, Bronze Aspect",PALADIN,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,1
+CATA_474,Spearheart Sentry,PALADIN,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CATA_475,Scalebreaker Bulwark,PALADIN,MINION,True,resolution_events;combat_damage,False,False,2,2
+CATA_476,Bronze Keeper,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,1
+CATA_477,Chamber of Aspects,PALADIN,LOCATION,True,enchantments;generation_choices;zones_history;secrets_locations,False,False,3,2
+CATA_478,Bronze Redeemer,PALADIN,MINION,True,resolution_events,False,False,2,2
+CATA_479,Flight Maneuvers,PALADIN,SPELL,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_480,Sandfury Aura,PALADIN,SPELL,False,resolution_events,False,False,0,0
+CATA_481,Iso'rath,ROGUE,MINION,False,resolution_events;generation_choices;zones_history;dormant,False,False,0,0
+CATA_483,Unstable Spellcaster,MAGE,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+CATA_484,Winterspring Whelp,MAGE,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CATA_485,Sleet Storm,MAGE,SPELL,True,generation_choices;combat_damage,False,False,1,0
+CATA_487,Raincaller,MAGE,MINION,False,enchantments;combat_damage,False,False,0,0
+CATA_488,Vulcanos,MAGE,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_489,Arcane Flow,MAGE,SPELL,False,combat_damage;modern_keywords,False,False,0,0
+CATA_490,Ocular Occultist,WARLOCK,MINION,True,resolution_events;generation_choices;combat_damage;zones_history,False,False,1,2
+CATA_491,Eldritch Tentacles,WARLOCK,SPELL,True,combat_damage,False,False,1,0
+CATA_492,Shrine of Twilight,WARLOCK,LOCATION,False,zones_history;secrets_locations;modern_keywords,False,False,0,0
+CATA_493,Duke of Below,WARLOCK,MINION,True,enchantments;combat_damage,False,False,3,9
+CATA_494,Maloriak,WARLOCK,MINION,True,resolution_events;enchantments;zones_history,False,False,2,4
+CATA_496,Cursed Chains,WARLOCK,SPELL,False,resolution_events;combat_damage,False,False,0,0
+CATA_497,Ultraxion,,MINION,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+CATA_498,Rafaams' Last Stand,WARLOCK,SPELL,False,generation_choices;combat_damage,False,False,0,0
+CATA_499,Disposable Acolytes,WARLOCK,SPELL,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_525,Armored Bloodletter,DEMONHUNTER,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_526,Broxigar's Last Stand,DEMONHUNTER,SPELL,True,combat_damage;zones_history,False,False,1,1
+CATA_527,"Nespirah, Enthralled",DEMONHUNTER,LOCATION,False,resolution_events;combat_damage;zones_history;secrets_locations,False,False,0,0
+CATA_528,Sigil of the Seas,DEMONHUNTER,SPELL,False,resolution_events;combat_damage,False,False,0,0
+CATA_529,Ravenous Felfisher,DEMONHUNTER,MINION,True,enchantments;zones_history,False,False,2,1
+CATA_530,Fel Infusion,DEMONHUNTER,SPELL,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_533,Flash Flood,DEMONHUNTER,SPELL,False,combat_damage;resources_classes,False,False,0,0
+CATA_550,Magmaw,HUNTER,MINION,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+CATA_551,Stonetalon Striker,HUNTER,MINION,False,enchantments;combat_damage;zones_history,False,False,0,0
+CATA_552,Ebonscale Scout,HUNTER,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+CATA_553,Ebyssian,HUNTER,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+CATA_554,Earthen Roar,HUNTER,SPELL,False,enchantments,False,False,0,0
+CATA_556,Carrier Whelp,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CATA_557,Sylvanas's Triumph,HUNTER,SPELL,True,enchantments;combat_damage;zones_history,False,False,2,1
+CATA_558,Reinforcement Rallier,HUNTER,MINION,True,combat_damage,False,False,1,0
+CATA_560,Confront the Tol'vir,HUNTER,SPELL,True,resolution_events;enchantments;zones_history,False,False,1,1
+CATA_561,Ritual of Power,SHAMAN,SPELL,False,generation_choices;combat_damage;modern_keywords,False,False,0,0
+CATA_563,Crackling Cloudstrider,SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_564,Air Support,SHAMAN,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CATA_565,Skywall Sentinel,SHAMAN,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_566,Tol'vir Carver,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_567,Ascendance,SHAMAN,SPELL,False,resolution_events;enchantments,False,False,0,0
+CATA_568,Muradin's Last Stand,SHAMAN,SPELL,True,enchantments;zones_history,False,False,2,1
+CATA_569,Ceremonial Clash,SHAMAN,SPELL,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+CATA_570,Morchok,SHAMAN,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+CATA_580,Cataclysmic War Axe,WARRIOR,WEAPON,False,resolution_events;modern_keywords,False,False,0,0
+CATA_581,Decimation,WARRIOR,SPELL,True,combat_damage,False,False,1,0
+CATA_582,Searing Fissure,WARRIOR,SPELL,True,enchantments;combat_damage,False,False,1,0
+CATA_584,Erupting Volcano,WARRIOR,LOCATION,True,combat_damage;zones_history;secrets_locations,False,False,2,6
+CATA_585,Torch,WARRIOR,SPELL,False,combat_damage;zones_history,False,False,0,0
+CATA_586,Destructive Blaze,WARRIOR,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+CATA_591,Commander Geddon,WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_610,Lo'Gosh's Last Stand,WARRIOR,SPELL,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_612,Frostbitten Imp,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CATA_613,Survivalist,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,5
+CATA_614,Shadowed Informant,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+CATA_615,"Genn, Cursed King",NEUTRAL,MINION,False,enchantments;zones_history,False,False,0,0
+CATA_616,Gronn Giant,NEUTRAL,MINION,True,enchantments;zones_history,False,False,2,1
+CATA_621,Gelbin's Triumph,PALADIN,SPELL,False,generation_choices,False,False,0,0
+CATA_697,Malevolent Mutant,DEMONHUNTER,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,1,0
+CATA_699,Dread Leviathan,DEMONHUNTER,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+CATA_720,Warmaster Blackhorn,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,0
+CATA_721,Sheltered Survivor,NEUTRAL,MINION,True,resolution_events;generation_choices;zones_history,False,False,1,0
+CATA_722,Envoy of the End,,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_723,Drakeadon Mongrel,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CATA_724,Stormbinder,SHAMAN,MINION,True,resolution_events;resources_classes,False,False,2,0
+CATA_725,Shadowsworn Disciple,WARLOCK,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_726,"Cho'gall, Mastermind",WARLOCK,MINION,False,enchantments;zones_history;modern_keywords,False,False,0,0
+CATA_780,Obsessive Technician,DEATHKNIGHT,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+CATA_785,Rite of Twilight,ROGUE,SPELL,False,combat_damage;resources_classes;modern_keywords,False,False,0,0
+CATA_786,Chaos Supplicant,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_820,Supply Run,HUNTER,SPELL,False,enchantments;zones_history;modern_keywords,False,False,0,0
+CATA_897,Gemstone Hoarder,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,2,2
+CATA_898,Scaled Lancer,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,5
+CATA_978,Sindragosa's Triumph,MAGE,SPELL,False,enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+CATA_979,Conjuration Specialist,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_999,Earthen Drake,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,4
+CATA_EVENT_000,Primordial Lord,NEUTRAL,MINION,False,resolution_events;generation_choices;modern_keywords,False,False,0,0
+CATA_EVENT_001,Destructive Phoenix,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CATA_EVENT_002,Baleful Blazer,WARRIOR,MINION,True,resolution_events;zones_history,False,False,1,1
+CATA_EVENT_110,"Dragon Soul, Shattered",NEUTRAL,SPELL,False,resolution_events;zones_history;deck_legality,False,False,0,0
+CATA_EVENT_400,Commissary Crook,DRUID,MINION,False,resolution_events;enchantments;generation_choices;resources_classes;modern_keywords,False,False,0,0
+CATA_EVENT_401,Tunneling Geomancer,NEUTRAL,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+CATA_EVENT_402,Deadly Bribe,ROGUE,SPELL,True,enchantments;generation_choices;resources_classes,False,False,1,1
+CORE_AT_037,Living Roots,DRUID,SPELL,True,resolution_events;generation_choices;combat_damage,False,False,2,3
+CORE_AT_052,Totem Golem,SHAMAN,MINION,True,resources_classes,False,False,1,0
+CORE_AT_055,Flash Heal,PRIEST,SPELL,True,combat_damage,False,False,1,9
+CORE_AT_062,Ball of Spiders,HUNTER,SPELL,False,resolution_events;generation_choices,False,False,0,0
+CORE_AT_064,Bash,WARRIOR,SPELL,True,enchantments;combat_damage,False,False,1,0
+CORE_AT_123,Chillmaw,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,0
+CORE_AV_107,Glaciate,SHAMAN,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,1
+CORE_AV_337,Mountain Bear,HUNTER,MINION,True,resolution_events;combat_damage,False,False,2,3
+CORE_BAR_310,Lightshower Elemental,PRIEST,MINION,True,resolution_events;combat_damage,False,False,2,1
+CORE_BAR_311,Devouring Plague,PRIEST,SPELL,True,combat_damage,False,False,1,1
+CORE_BAR_313,Priest of An'she,PRIEST,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CORE_BAR_541,Runed Orb,MAGE,SPELL,False,generation_choices;combat_damage,False,False,0,0
+CORE_BAR_801,Wound Prey,HUNTER,SPELL,True,resolution_events;combat_damage,False,False,1,0
+CORE_BAR_812,Oasis Ally,MAGE,SPELL,True,resolution_events;secrets_locations,False,False,4,1
+CORE_BAR_878,Veteran Warmedic,PALADIN,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,4
+CORE_BOT_222,Spirit Bomb,WARLOCK,SPELL,True,combat_damage,False,False,1,0
+CORE_BOT_256,Astromancer,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CORE_BOT_451,Voltaic Burst,SHAMAN,SPELL,True,resolution_events;combat_damage;resources_classes,False,False,1,0
+CORE_BOT_576,Crazed Chemist,ROGUE,MINION,True,enchantments;combat_damage;resources_classes,False,False,1,0
+CORE_BRM_013,Quick Shot,HUNTER,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_BT_035,Chaos Strike,DEMONHUNTER,SPELL,True,enchantments;combat_damage;zones_history,False,False,1,10
+CORE_BT_072,Deep Freeze,MAGE,SPELL,True,resolution_events;combat_damage,False,False,1,2
+CORE_BT_120,Warmaul Challenger,WARRIOR,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_BT_156,Imprisoned Vilefiend,NEUTRAL,MINION,False,combat_damage;dormant,False,False,0,0
+CORE_BT_187,Kayn Sunfury,DEMONHUNTER,MINION,True,combat_damage,False,False,2,1
+CORE_BT_201,Augmented Porcupine,HUNTER,MINION,True,resolution_events;combat_damage,False,False,2,0
+CORE_BT_292,Hand of A'dal,PALADIN,SPELL,True,enchantments;zones_history,False,False,1,0
+CORE_BT_321,Netherwalker,DEMONHUNTER,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_BT_351,Battlefiend,DEMONHUNTER,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,0
+CORE_BT_416,Raging Felscreamer,DEMONHUNTER,MINION,True,resolution_events;enchantments,False,False,1,1
+CORE_BT_480,Crimson Sigil Runner,DEMONHUNTER,MINION,True,zones_history;resources_classes,False,False,1,0
+CORE_BT_491,Spectral Sight,DEMONHUNTER,SPELL,True,zones_history;resources_classes,False,False,1,1
+CORE_BT_493,Priestess of Fury,DEMONHUNTER,MINION,True,resolution_events;combat_damage,False,False,2,1
+CORE_BT_510,Wrathspike Brute,DEMONHUNTER,MINION,True,resolution_events;combat_damage,False,False,2,8
+CORE_BT_701,Spymistress,ROGUE,MINION,True,combat_damage,False,False,1,0
+CORE_BT_781,Bulwark of Azzinoth,WARRIOR,WEAPON,True,resolution_events;combat_damage;secrets_locations,False,False,2,2
+CORE_BT_801,Eye Beam,DEMONHUNTER,SPELL,True,enchantments;combat_damage;resources_classes,False,False,2,2
+CORE_BT_921,Aldrachi Warblades,DEMONHUNTER,WEAPON,True,combat_damage,False,False,1,0
+CORE_CATA_001,Tichondrius,DEMONHUNTER,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,7
+CORE_CATA_002,Calia Menethil,PRIEST,MINION,True,resolution_events;enchantments;zones_history,False,False,1,1
+CORE_CATA_004,Rehgar Earthfury,SHAMAN,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+CORE_CATA_006,Ulfar,DRUID,MINION,False,resolution_events;enchantments,False,False,0,0
+CORE_CATA_007,Consumption,DEATHKNIGHT,SPELL,True,generation_choices;combat_damage;zones_history,False,False,1,0
+CORE_CATA_009,Death's Advance,DEATHKNIGHT,SPELL,False,generation_choices;combat_damage,False,False,0,0
+CORE_CFM_344,"Finja, the Flying Star",NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+CORE_CFM_604,Greater Healing Potion,PRIEST,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_CFM_670,Mayor Noggenfogger,NEUTRAL,MINION,False,fallback_review,False,False,0,0
+CORE_CFM_753,Grimestreet Outfitter,PALADIN,MINION,True,resolution_events;enchantments;zones_history,False,False,1,0
+CORE_CFM_781,"Shaku, the Collector",ROGUE,MINION,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+CORE_CFM_790,Dirty Rat,NEUTRAL,MINION,True,resolution_events;generation_choices;combat_damage;zones_history,False,False,1,1
+CORE_CS1_112,Holy Nova,PRIEST,SPELL,True,combat_damage,False,False,1,0
+CORE_CS1_130,Holy Smite,PRIEST,SPELL,True,combat_damage,False,False,1,0
+CORE_CS2_004,Power Word: Shield,PRIEST,SPELL,True,enchantments;zones_history,False,False,1,0
+CORE_CS2_009,Mark of the Wild,DRUID,SPELL,True,enchantments;combat_damage,False,False,1,0
+CORE_CS2_023,Arcane Intellect,MAGE,SPELL,True,zones_history,False,False,1,3
+CORE_CS2_024,Frostbolt,MAGE,SPELL,True,combat_damage,False,False,1,3
+CORE_CS2_028,Blizzard,MAGE,SPELL,True,combat_damage,False,False,1,0
+CORE_CS2_029,Fireball,MAGE,SPELL,True,combat_damage,False,False,2,143
+CORE_CS2_032,Flamestrike,MAGE,SPELL,True,combat_damage,False,False,1,4
+CORE_CS2_042,Fire Elemental,SHAMAN,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_CS2_053,Far Sight,SHAMAN,SPELL,True,enchantments;zones_history,False,False,1,1
+CORE_CS2_062,Hellfire,WARLOCK,SPELL,True,combat_damage,False,False,1,0
+CORE_CS2_072,Backstab,ROGUE,SPELL,True,combat_damage,False,False,1,0
+CORE_CS2_074,Deadly Poison,ROGUE,SPELL,True,enchantments;combat_damage;secrets_locations,False,False,1,0
+CORE_CS2_076,Assassinate,ROGUE,SPELL,True,fallback_review,False,False,1,0
+CORE_CS2_093,Consecration,PALADIN,SPELL,True,combat_damage,False,False,1,0
+CORE_CS2_094,Hammer of Wrath,PALADIN,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_CS2_108,Execute,WARRIOR,SPELL,True,fallback_review,False,False,1,0
+CORE_CS2_122,Raid Leader,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,5
+CORE_CS2_179,Sen'jin Shieldmasta,NEUTRAL,MINION,True,combat_damage,False,False,3,12
+CORE_CS2_188,Abusive Sergeant,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+CORE_CS2_189,Elven Archer,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,5,7
+CORE_CS2_222,Stormwind Champion,NEUTRAL,MINION,True,enchantments,False,False,2,8
+CORE_DAL_575,Khadgar,MAGE,MINION,False,resolution_events,False,False,0,0
+CORE_DAL_720,Waggle Pick,ROGUE,WEAPON,True,resolution_events;enchantments;generation_choices;zones_history,False,False,2,1
+CORE_DMF_067,Prize Vendor,NEUTRAL,MINION,True,resolution_events,False,False,2,1
+CORE_DMF_511,Foxy Fraud,ROGUE,MINION,True,resolution_events;enchantments;resources_classes,False,False,1,0
+CORE_DRG_024,Sky Raider,WARRIOR,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_DRG_079,Evasive Wyrm,NEUTRAL,MINION,True,combat_damage,False,False,1,0
+CORE_DRG_107,Violet Spellwing,MAGE,MINION,True,resolution_events;generation_choices;zones_history,False,False,2,1
+CORE_DRG_256,Dragonbane,HUNTER,MINION,True,resolution_events;generation_choices;combat_damage;resources_classes,False,False,2,2
+CORE_DRG_403,Blowtorch Saboteur,NEUTRAL,MINION,True,resolution_events;enchantments;resources_classes,False,False,1,7
+CORE_DS1_184,Tracking,HUNTER,SPELL,True,generation_choices;zones_history,False,False,1,4
+CORE_DS1_185,Arcane Shot,HUNTER,SPELL,True,combat_damage,False,False,1,0
+CORE_EDR_001,Babbling Bookcase,MAGE,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_EDR_002,Poison Breath,DEATHKNIGHT,SPELL,True,enchantments;combat_damage,False,False,4,0
+CORE_EDR_003,Falric,DEATHKNIGHT,MINION,False,resolution_events;enchantments;zones_history;resources_classes,False,False,0,0
+CORE_EDR_004_2026,Raptor Herald,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;rewind;modern_keywords,False,False,0,0
+CORE_ETC_111,Merch Seller,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_ETC_523,Death Metal Knight,DEATHKNIGHT,MINION,False,enchantments;combat_damage;resources_classes,False,False,0,0
+CORE_EX1_002,The Black Knight,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_EX1_005,Big Game Hunter,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_EX1_007,Acolyte of Pain,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,3
+CORE_EX1_010,Worgen Infiltrator,NEUTRAL,MINION,True,combat_damage,False,False,1,1
+CORE_EX1_011,Voodoo Doctor,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,4,0
+CORE_EX1_012,Bloodmage Thalnos,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,15
+CORE_EX1_014,King Mukla,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,0
+CORE_EX1_028,Stranglethorn Tiger,NEUTRAL,MINION,True,combat_damage,False,False,1,1
+CORE_EX1_043,Twilight Drake,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,1,0
+CORE_EX1_058,Sunfury Protector,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CORE_EX1_059,Crazed Alchemist,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CORE_EX1_082,Mad Bomber,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_EX1_096,Loot Hoarder,NEUTRAL,MINION,True,resolution_events;zones_history,False,False,5,4
+CORE_EX1_100,Lorewalker Cho,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,2,7
+CORE_EX1_103,Coldlight Seer,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,0
+CORE_EX1_110,Cairne Bloodhoof,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,5,4
+CORE_EX1_129,Fan of Knives,ROGUE,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_EX1_131,Defias Ringleader,ROGUE,MINION,True,resolution_events;resources_classes,False,False,1,1
+CORE_EX1_134,SI:7 Agent,ROGUE,MINION,True,combat_damage;resources_classes,False,False,1,0
+CORE_EX1_145,Preparation,ROGUE,SPELL,True,enchantments;zones_history,False,False,1,1
+CORE_EX1_154,Wrath,DRUID,SPELL,True,generation_choices;combat_damage;zones_history,False,False,3,5
+CORE_EX1_160,Power of the Wild,DRUID,SPELL,True,resolution_events;enchantments;generation_choices,False,False,3,1
+CORE_EX1_162,Dire Wolf Alpha,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,3
+CORE_EX1_169,Innervate,DRUID,SPELL,True,enchantments;resources_classes,False,False,1,0
+CORE_EX1_189,Brightwing,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_EX1_193,Psychic Conjurer,PRIEST,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,1,0
+CORE_EX1_197,Shadow Word: Ruin,PRIEST,SPELL,True,combat_damage,False,False,1,0
+CORE_EX1_198,Natalie Seline,PRIEST,MINION,True,resolution_events;enchantments,False,False,1,0
+CORE_EX1_238,Lightning Bolt,SHAMAN,SPELL,True,combat_damage;resources_classes,False,False,1,3
+CORE_EX1_246,Hex,SHAMAN,SPELL,True,enchantments;combat_damage,False,False,1,1
+CORE_EX1_250,Earth Elemental,SHAMAN,MINION,True,combat_damage;resources_classes,False,False,1,0
+CORE_EX1_259,Lightning Storm,SHAMAN,SPELL,True,combat_damage;resources_classes,False,False,1,0
+CORE_EX1_278,Shiv,ROGUE,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_EX1_287,Counterspell,MAGE,SPELL,True,secrets_locations,False,False,3,23
+CORE_EX1_289,Ice Barrier,MAGE,SPELL,True,enchantments;secrets_locations,False,False,3,2
+CORE_EX1_302,Mortal Coil,WARLOCK,SPELL,True,combat_damage;zones_history,False,False,1,1
+CORE_EX1_309,Siphon Soul,WARLOCK,SPELL,True,combat_damage,False,False,1,0
+CORE_EX1_310,Doomguard,WARLOCK,MINION,True,resolution_events;generation_choices;combat_damage;zones_history,False,False,1,4
+CORE_EX1_312,Twisting Nether,WARLOCK,SPELL,True,fallback_review,False,False,1,2
+CORE_EX1_319,Flame Imp,WARLOCK,MINION,True,resolution_events;combat_damage,False,False,1,30
+CORE_EX1_323,Lord Jaraxxus,WARLOCK,HERO,False,resolution_events;hero_replacement,False,False,0,0
+CORE_EX1_362,Argent Protector,PALADIN,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+CORE_EX1_383,Tirion Fordring,PALADIN,MINION,True,resolution_events;combat_damage,False,False,2,2
+CORE_EX1_391,Slam,WARRIOR,SPELL,True,combat_damage;zones_history,False,False,1,1
+CORE_EX1_414,Grommash Hellscream,WARRIOR,MINION,True,enchantments;combat_damage,False,False,2,2
+CORE_EX1_506,Murloc Tidehunter,NEUTRAL,MINION,True,resolution_events,False,False,3,94
+CORE_EX1_507,Murloc Warleader,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,2
+CORE_EX1_509,Murloc Tidecaller,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CORE_EX1_559,Archmage Antonidas,MAGE,MINION,True,resolution_events;generation_choices;zones_history,False,False,2,6
+CORE_EX1_604,Frothing Berserker,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,2
+CORE_EX1_606,Shield Block,WARRIOR,SPELL,True,enchantments;zones_history,False,False,1,0
+CORE_EX1_610,Explosive Trap,HUNTER,SPELL,True,combat_damage;secrets_locations,False,False,3,1
+CORE_EX1_611,Freezing Trap,HUNTER,SPELL,True,enchantments;combat_damage;zones_history;secrets_locations,False,False,3,2
+CORE_EX1_619,Equality,PALADIN,SPELL,True,fallback_review,False,False,1,0
+CORE_GIL_531,Witch's Apprentice,SHAMAN,MINION,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+CORE_GIL_534,Hench-Clan Thug,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,1
+CORE_GIL_558,Swamp Leech,NEUTRAL,MINION,True,combat_damage,False,False,3,0
+CORE_GIL_577,Rat Trap,HUNTER,SPELL,True,resolution_events;secrets_locations,False,False,3,1
+CORE_GIL_622,Lifedrinker,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,3,1
+CORE_GIL_623,Witchwood Grizzly,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,1,0
+CORE_GIL_836,Blazing Invocation,SHAMAN,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_GVG_059,Coghammer,PALADIN,WEAPON,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,1,0
+CORE_GVG_061,Muster for Battle,PALADIN,SPELL,True,resolution_events;zones_history;secrets_locations,False,False,1,0
+CORE_GVG_085,Annoy-o-Tron,NEUTRAL,MINION,True,combat_damage,False,False,3,1
+CORE_GVG_103,Micro Machine,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,1
+CORE_GVG_114,Sneed's Old Shredder,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_ICC_038,Righteous Protector,PALADIN,MINION,True,combat_damage,False,False,1,0
+CORE_ICC_055,Drain Soul,WARLOCK,SPELL,True,combat_damage,False,False,1,0
+CORE_ICC_210,Shadow Ascendant,PRIEST,MINION,True,resolution_events;enchantments;generation_choices,False,False,2,1
+CORE_ICC_214,Obsidian Statue,PRIEST,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,1
+CORE_ICC_407,Gnomeferatu,WARLOCK,MINION,True,resolution_events;zones_history,False,False,1,1
+CORE_KAR_057,Ivory Knight,PALADIN,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+CORE_KAR_061,The Curator,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,1,1
+CORE_KAR_062,Netherspite Historian,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_KAR_069,Swashburglar,ROGUE,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_KAR_077,Silvermoon Portal,PALADIN,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_LOE_039,Gorillabot A-3,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_LOOT_013,Vulgar Homunculus,WARLOCK,MINION,True,resolution_events;combat_damage,False,False,1,4
+CORE_LOOT_044,Bladed Gauntlet,WARRIOR,WEAPON,True,enchantments;combat_damage,False,False,3,1
+CORE_LOOT_101,Explosive Runes,MAGE,SPELL,False,resolution_events;combat_damage;secrets_locations,False,False,0,0
+CORE_LOOT_137,Sleepy Dragon,NEUTRAL,MINION,True,combat_damage,False,False,3,0
+CORE_LOOT_309,Oaken Summons,DRUID,SPELL,True,resolution_events;enchantments;zones_history,False,False,1,1
+CORE_LOOT_368,Voidlord,WARLOCK,MINION,True,resolution_events;combat_damage,False,False,2,1
+CORE_LOOT_373,Healing Rain,SHAMAN,SPELL,True,combat_damage,False,False,1,1
+CORE_LOOT_413,Plated Beetle,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,7,0
+CORE_NEW1_018,Bloodsail Raider,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;secrets_locations,False,False,1,0
+CORE_NEW1_020,Wild Pyromancer,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,3
+CORE_NEW1_021,Doomsayer,NEUTRAL,MINION,True,resolution_events,False,False,2,1
+CORE_NEW1_022,Dread Corsair,NEUTRAL,MINION,True,enchantments;combat_damage;secrets_locations,False,False,2,0
+CORE_NEW1_023,Faerie Dragon,NEUTRAL,MINION,True,combat_damage,False,False,3,1
+CORE_NEW1_027,Southsea Captain,NEUTRAL,MINION,True,enchantments,False,False,2,0
+CORE_NEW1_031,Animal Companion,HUNTER,SPELL,True,resolution_events;generation_choices,False,False,1,1
+CORE_NX2_028,Hookfist-3000,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,0
+CORE_OG_031,Hammer of Twilight,SHAMAN,WEAPON,True,resolution_events,False,False,2,1
+CORE_OG_044,Fandral Staghelm,DRUID,MINION,True,enchantments;generation_choices,False,False,2,2
+CORE_OG_047,Feral Rage,DRUID,SPELL,True,enchantments;generation_choices;combat_damage,False,False,2,0
+CORE_OG_149,Ravaging Ghoul,WARRIOR,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_OG_211,Call of the Wild,HUNTER,SPELL,True,resolution_events,False,False,1,7
+CORE_OG_218,Bloodhoof Brave,WARRIOR,MINION,True,enchantments;combat_damage,False,False,2,0
+CORE_ONY_018,Boomkin,DRUID,MINION,True,generation_choices;combat_damage,False,False,2,0
+CORE_ONY_022,Battle Vicar,PALADIN,MINION,False,resolution_events;generation_choices,False,False,0,0
+CORE_REV_023,Demolition Renovator,NEUTRAL,MINION,True,resolution_events;secrets_locations,False,False,1,1
+CORE_REV_308,Maze Guide,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_REV_946,Steamcleaner,NEUTRAL,MINION,False,resolution_events,False,False,0,0
+CORE_REV_990,Sanguine Depths,WARRIOR,LOCATION,True,enchantments;combat_damage;secrets_locations,False,False,2,20
+CORE_RLK_062,Nerubian Swarmguard,DEATHKNIGHT,MINION,True,resolution_events;enchantments;combat_damage,False,False,3,1
+CORE_RLK_063,Frostwyrm's Fury,DEATHKNIGHT,SPELL,True,resolution_events;combat_damage,False,False,1,1
+CORE_RLK_066,Hematurge,DEATHKNIGHT,MINION,False,resolution_events;generation_choices;resources_classes;deck_legality,False,False,0,0
+CORE_RLK_083,Deathchiller,DEATHKNIGHT,MINION,True,resolution_events;generation_choices;combat_damage;zones_history,False,False,2,3
+CORE_RLK_086,Frostmourne,DEATHKNIGHT,WEAPON,False,resolution_events;secrets_locations,False,False,0,0
+CORE_RLK_087,Asphyxiate,DEATHKNIGHT,SPELL,True,combat_damage,False,False,3,0
+CORE_RLK_116,Necrotic Mortician,DEATHKNIGHT,MINION,False,resolution_events;generation_choices;zones_history;resources_classes;deck_legality,False,False,0,0
+CORE_RLK_118,Tomb Guardians,DEATHKNIGHT,SPELL,True,resolution_events;enchantments;combat_damage;resources_classes,False,False,1,2
+CORE_RLK_121,Acolyte of Death,DEATHKNIGHT,MINION,False,resolution_events;zones_history,False,False,0,0
+CORE_RLK_505,Marrow Manipulator,DEATHKNIGHT,MINION,True,resolution_events;generation_choices;combat_damage;resources_classes,False,False,3,1
+CORE_RLK_506,Boneguard Commander,DEATHKNIGHT,MINION,True,resolution_events;combat_damage;resources_classes,False,False,1,1
+CORE_RLK_567,Shadow of Demise,ROGUE,SPELL,False,enchantments;zones_history,False,False,0,0
+CORE_RLK_657,Underking,DRUID,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,1
+CORE_RLK_706,Alexandros Mograine,DEATHKNIGHT,MINION,True,resolution_events;combat_damage,False,False,1,1
+CORE_RLK_712,Blood Tap,DEATHKNIGHT,SPELL,True,enchantments;zones_history;resources_classes,False,False,3,0
+CORE_RLK_745,Malignant Horror,DEATHKNIGHT,MINION,True,resolution_events;enchantments;resources_classes,False,False,2,6
+CORE_RLK_814,Crystalsmith Cultist,PRIEST,MINION,True,resolution_events;enchantments,False,False,1,0
+CORE_SCH_181,Archwitch Willow,WARLOCK,MINION,True,resolution_events;generation_choices;zones_history,False,False,1,1
+CORE_SCH_512,Initiation,PRIEST,SPELL,True,resolution_events;enchantments;combat_damage,False,False,1,1
+CORE_SCH_605,Lake Thresher,NEUTRAL,MINION,False,combat_damage,False,False,0,0
+CORE_SCH_713,Cult Neophyte,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,1
+CORE_SCH_717,Keymaster Alabaster,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+CORE_SW_047,Highlord Fordragon,PALADIN,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,1
+CORE_SW_066,Royal Librarian,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,8
+CORE_SW_068,Mo'arg Forgefiend,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,5,0
+CORE_SW_072,Rustrot Viper,NEUTRAL,MINION,True,resolution_events;secrets_locations,False,False,1,0
+CORE_SW_088,Demonic Assault,WARLOCK,SPELL,True,resolution_events;combat_damage,False,False,1,0
+CORE_SW_108,First Flame,MAGE,SPELL,True,generation_choices;combat_damage;zones_history,False,False,1,0
+CORE_SW_429,Best in Shell,DRUID,SPELL,True,resolution_events;combat_damage,False,False,1,0
+CORE_SW_439,Vibrant Squirrel,DRUID,MINION,False,resolution_events;zones_history,False,False,0,0
+CORE_SW_442,Void Shard,PRIEST,SPELL,True,combat_damage,False,False,1,0
+CORE_TID_931,Jackpot!,ROGUE,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+CORE_TRL_111,Headhunter's Hatchet,HUNTER,WEAPON,True,resolution_events;enchantments;secrets_locations,False,False,1,0
+CORE_TRL_240,Savage Striker,DRUID,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_TRL_307,Flash of Light,PALADIN,SPELL,True,combat_damage;zones_history,False,False,1,0
+CORE_TRL_345,"Krag'wa, the Frog",SHAMAN,MINION,True,resolution_events;zones_history,False,False,1,1
+CORE_TRL_900,"Halazzi, the Lynx",HUNTER,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,0
+CORE_TSC_076,Immortalized in Stone,PALADIN,SPELL,True,resolution_events;combat_damage,False,False,1,1
+CORE_TSC_650,Flipper Friends,DRUID,SPELL,True,resolution_events;generation_choices;combat_damage,False,False,2,0
+CORE_TTN_843,Eredar Deceptor,DEMONHUNTER,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+CORE_TTN_866,Mythical Terror,DEMONHUNTER,MINION,False,resolution_events;combat_damage,False,False,0,0
+CORE_ULD_133,Crystal Merchant,DRUID,MINION,True,resolution_events;enchantments;zones_history;resources_classes,False,False,2,1
+CORE_ULD_152,Pressure Plate,HUNTER,SPELL,True,resolution_events;generation_choices;secrets_locations,False,False,3,1
+CORE_ULD_165,Riftcleaver,WARLOCK,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_ULD_178,Siamat,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+CORE_ULD_191,Beaming Sidekick,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,4,0
+CORE_ULD_271,Injured Tol'vir,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,3,0
+CORE_ULD_280,Sahket Sapper,ROGUE,MINION,True,resolution_events;generation_choices;zones_history,False,False,2,0
+CORE_ULD_723,Murmy,NEUTRAL,MINION,True,resolution_events,False,False,3,0
+CORE_UNG_084,Fire Plume Phoenix,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,4,1
+CORE_UNG_205,Glacial Shard,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_UNG_809,Fire Fly,NEUTRAL,MINION,True,resolution_events;generation_choices;zones_history,False,False,1,1
+CORE_UNG_848,Primordial Drake,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+CORE_UNG_912,Jeweled Macaw,HUNTER,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+CORE_UNG_928,Tar Creeper,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,1
+CORE_UNG_952,Spikeridged Steed,PALADIN,SPELL,False,resolution_events;enchantments;combat_damage,False,False,0,0
+CORE_WC_042,Wailing Vapor,SHAMAN,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,0
+CORE_WC_701,Felrattler,DEMONHUNTER,MINION,True,resolution_events;combat_damage,False,False,2,0
+CORE_WON_096,Dark Peddler,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_WON_141,Menagerie Mug,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_WON_145,Avatar of Hearthstone,NEUTRAL,MINION,False,resolution_events,False,False,0,0
+CORE_WON_337,Ironforge Portal,WARRIOR,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+CORE_WON_350,I Know a Guy,WARRIOR,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+CORE_WON_351,Small-Time Buccaneer,NEUTRAL,MINION,True,enchantments;combat_damage;secrets_locations,False,False,2,37
+CORE_WW_329,Detonation Juggernaut,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,0
+CORE_WW_374,Corpse Farm,DEATHKNIGHT,SPELL,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+CORE_YOD_026,Fiendish Servant,WARLOCK,MINION,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,2,0
+CORE_YOP_001,Illidari Studies,DEMONHUNTER,SPELL,False,enchantments;generation_choices;resources_classes,False,False,0,0
+CORE_YOP_034,Runaway Blackwing,NEUTRAL,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,1
+CS3_007,Novice Zapper,SHAMAN,MINION,True,enchantments;combat_damage;resources_classes,False,False,1,0
+CS3_020,Illidari Inquisitor,DEMONHUNTER,MINION,False,resolution_events;combat_damage,False,False,0,0
+CS3_022,Fogsail Freebooter,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;secrets_locations,False,False,1,0
+CS3_024,Taelan Fordring,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,6
+CS3_025,Overlord Runthak,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,69
+CS3_035,Nozdormu the Eternal,NEUTRAL,MINION,False,resolution_events;deck_legality,False,False,0,0
+CS3_038,Redgill Razorjaw,NEUTRAL,MINION,True,combat_damage,False,False,3,0
+Core_CS2_200,Boulderfist Ogre,NEUTRAL,MINION,True,fallback_review,False,False,3,99
+Core_LOE_115,Raven Idol,DRUID,SPELL,False,generation_choices,False,False,0,0
+Core_UNG_072,Stonehill Defender,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+DINO_130,Longneck Egg,DRUID,MINION,True,resolution_events;enchantments,False,False,2,13
+DINO_131,Possessed Animancer,WARLOCK,MINION,True,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,2,3
+DINO_132,Asphyxiodon,WARLOCK,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,22
+DINO_136,Horn of Feasting,DEMONHUNTER,SPELL,False,resolution_events;enchantments;combat_damage;resources_classes,False,False,0,0
+DINO_137,Skittish Saucier,DEMONHUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,1,6
+DINO_138,Diabolus Rex,DEMONHUNTER,MINION,True,combat_damage;modern_keywords,False,False,1,1
+DINO_400,Barricade Basher,WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+DINO_401,The Great Dracorex,WARRIOR,MINION,False,resolution_events;combat_damage,False,False,0,0
+DINO_402,Bat Mask,WARLOCK,SPELL,True,enchantments,False,False,1,0
+DINO_403,Devilsaur Mask,HUNTER,SPELL,True,enchantments;combat_damage,False,False,1,1
+DINO_404,Firegill,PALADIN,MINION,True,enchantments;combat_damage;modern_keywords,False,False,1,2
+DINO_405,Hatching Ceremony,PALADIN,SPELL,False,resolution_events;enchantments,False,False,0,0
+DINO_406,Fire Breath,SHAMAN,SPELL,True,enchantments;combat_damage,False,False,1,1
+DINO_407,"Mirrex, the Crystalline",ROGUE,MINION,False,enchantments;zones_history,False,False,0,0
+DINO_408,Crystal Tusk,ROGUE,WEAPON,True,resolution_events;zones_history,False,False,2,1
+DINO_409,Techysaurus,MAGE,MINION,False,enchantments;combat_damage;zones_history,False,False,0,0
+DINO_410,The Egg of Khelos,NEUTRAL,MINION,False,resolution_events;combat_damage,False,False,0,0
+DINO_411,Holy Eggbearer,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,1,2
+DINO_412,Tortotem,SHAMAN,MINION,False,resolution_events;generation_choices,False,False,0,0
+DINO_413,Chillspine Stegodon,SHAMAN,MINION,True,resolution_events;generation_choices;combat_damage;modern_keywords,False,False,1,1
+DINO_414,Tribute Dance,MAGE,SPELL,False,enchantments;generation_choices,False,False,0,0
+DINO_415,Story of Umbra,DEATHKNIGHT,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+DINO_416,Hollow Direhorn,DEATHKNIGHT,MINION,False,resolution_events;enchantments;combat_damage;resources_classes,False,False,0,0
+DINO_417,Soulrest Ceremony,DEATHKNIGHT,SPELL,True,resolution_events;enchantments;combat_damage,False,False,1,0
+DINO_419,Herbivore Assistant,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+DINO_421,Seismopod,DRUID,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,3
+DINO_422,Ankylodon,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+DINO_424,Hero's Welcome,PALADIN,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+DINO_426,Ritual of Life,PRIEST,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+DINO_427,Costume Merchant,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+DINO_428,Behemoth Mask,PRIEST,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+DINO_429,Sheep Mask,MAGE,SPELL,False,resolution_events;enchantments;combat_damage,False,False,0,0
+DINO_430,Beast Speaker Taka,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+DINO_431,Atlasaurus,PRIEST,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+DINO_432,Panther Mask,DRUID,SPELL,True,enchantments;combat_damage;zones_history,False,False,1,1
+DINO_433,Guard Duty,WARRIOR,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+DINO_434,Raptor-Nest Nurse,HUNTER,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+DINO_435,Crater Experiment,NEUTRAL,MINION,True,resolution_events;enchantments;modern_keywords,False,False,1,8
+EDR_000,"Ysera, Emerald Aspect",NEUTRAL,MINION,False,resolution_events;enchantments;resources_classes;deck_legality,False,False,0,0
+EDR_001,Hopeful Dryad,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+EDR_014,Verdant Dreamsaber,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_031,Ohn'ahra,SHAMAN,MINION,False,resolution_events;zones_history,False,False,0,0
+EDR_060,Ward of Earth,DRUID,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_102,Treacherous Tormentor,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+EDR_105,Creature of Madness,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+EDR_110,Sporegnasher,NEUTRAL,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,3
+EDR_209,Forest Lord Cenarius,DRUID,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_226,Exotic Houndmaster,HUNTER,MINION,False,resolution_events;zones_history;resources_classes;modern_keywords,False,False,0,0
+EDR_227,Umbraclaw,HUNTER,MINION,False,resolution_events;combat_damage;resources_classes;modern_keywords,False,False,0,0
+EDR_230,Beanstalk Brute,SHAMAN,MINION,True,resolution_events;enchantments;zones_history,False,False,1,1
+EDR_231,Aspect's Embrace,SHAMAN,SPELL,False,combat_damage;zones_history;resources_classes;modern_keywords,False,False,0,0
+EDR_232,Typhoon,SHAMAN,SPELL,False,generation_choices;zones_history,False,False,0,0
+EDR_233,Spirits of the Forest,SHAMAN,SPELL,True,resolution_events;generation_choices;combat_damage,False,False,2,0
+EDR_234,Emerald Bounty,SHAMAN,SPELL,False,zones_history,False,False,0,0
+EDR_238,Merithra,SHAMAN,MINION,True,resolution_events;enchantments;zones_history,False,False,1,2
+EDR_251,Dragonscale Armaments,PALADIN,SPELL,False,zones_history,False,False,0,0
+EDR_252,Mark of Ursol,PALADIN,SPELL,True,enchantments;generation_choices,False,False,1,3
+EDR_253,Ursine Maul,PALADIN,WEAPON,True,resolution_events;combat_damage;zones_history,False,False,2,0
+EDR_254,Animated Moonwell,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,0
+EDR_255,Renewing Flames,PALADIN,SPELL,True,combat_damage,False,False,1,2
+EDR_256,Dreamwarden,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+EDR_257,Lightmender,PALADIN,MINION,True,enchantments;generation_choices;combat_damage,False,False,2,0
+EDR_258,Toreth the Unbreaking,PALADIN,MINION,False,combat_damage,False,False,0,0
+EDR_259,Ursol,PALADIN,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+EDR_260,Illusory Greenwing,NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+EDR_261,Amphibian's Spirit,HUNTER,SPELL,False,resolution_events;enchantments,False,False,0,0
+EDR_262,Spirit Bond,HUNTER,SPELL,False,resolution_events;combat_damage,False,False,0,0
+EDR_263,Grace of the Greatwolf,HUNTER,SPELL,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+EDR_264,Aegis of Light,PALADIN,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes;modern_keywords,False,False,0,0
+EDR_270,Horn of Plenty,DRUID,SPELL,False,enchantments;generation_choices,False,False,0,0
+EDR_271,Grove Shaper,DRUID,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_272,Evergreen Stag,DRUID,MINION,True,combat_damage,False,False,1,0
+EDR_273,Symbiosis,DRUID,SPELL,False,generation_choices,False,False,0,0
+EDR_416,Shepherd's Crook,HUNTER,WEAPON,False,resolution_events;combat_damage;dormant,False,False,0,0
+EDR_421,Omen,DEMONHUNTER,MINION,False,resolution_events;combat_damage,False,False,0,0
+EDR_430,Aessina,MAGE,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,1
+EDR_449,Lunarwing Messenger,PRIEST,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+EDR_451,Goldpetal Drake,PALADIN,MINION,False,resolution_events;resources_classes;modern_keywords,False,False,0,0
+EDR_453,Briarspawn Drake,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+EDR_454,Clutch of Corruption,WARRIOR,LOCATION,False,resolution_events;enchantments;generation_choices;secrets_locations,False,False,0,0
+EDR_455,Succumb to Madness,WARRIOR,SPELL,False,generation_choices;zones_history,False,False,0,0
+EDR_456,Darkrider,WARRIOR,MINION,False,resolution_events;generation_choices,False,False,0,0
+EDR_457,Brood Keeper,WARRIOR,MINION,True,resolution_events,False,False,1,5
+EDR_459,Afflicted Devastator,WARRIOR,MINION,True,resolution_events;combat_damage,False,False,2,1
+EDR_460,Wish of the New Moon,PRIEST,SPELL,False,enchantments;combat_damage;zones_history,False,False,0,0
+EDR_461,Ritual of the New Moon,PRIEST,SPELL,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_462,Selenic Drake,PRIEST,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+EDR_463,Twilight Influence,PRIEST,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_464,Tyrande,PRIEST,MINION,False,resolution_events;zones_history,False,False,0,0
+EDR_465,Ysondre,WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+EDR_468,Eggbasher,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+EDR_469,Slumbering Sprite,NEUTRAL,MINION,False,resolution_events;dormant,False,False,0,0
+EDR_470,Barkshield Sentinel,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,3
+EDR_471,Tortolla,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,12
+EDR_472,Weaver of the Cycle,PRIEST,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+EDR_476,Moonwell,PRIEST,SPELL,True,combat_damage,False,False,1,3
+EDR_477,Glowroot Lure,SHAMAN,MINION,True,enchantments;combat_damage,False,False,2,2
+EDR_480,Goldrinn,HUNTER,MINION,False,enchantments;combat_damage,False,False,0,0
+EDR_481,Mythical Runebear,HUNTER,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+EDR_482,Rotten Apple,WARLOCK,SPELL,False,combat_damage,False,False,0,0
+EDR_483,Fractured Power,WARLOCK,SPELL,False,enchantments;resources_classes,False,False,0,0
+EDR_484,Scavenging Flytrap,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+EDR_485,Rotheart Dryad,WARLOCK,MINION,True,resolution_events;enchantments;zones_history,False,False,2,1
+EDR_486,Scorching Observer,NEUTRAL,MINION,True,combat_damage,False,False,1,0
+EDR_487,"Wallow, the Wretched",WARLOCK,MINION,False,enchantments;zones_history,False,False,0,0
+EDR_488,Avant-Gardening,WARLOCK,SPELL,False,resolution_events;generation_choices,False,False,0,0
+EDR_489,Agamaggan,WARLOCK,MINION,False,resolution_events;enchantments;resources_classes,False,False,0,0
+EDR_490,Sleep Paralysis,WARLOCK,SPELL,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+EDR_491,Archdruid of Thorns,WARLOCK,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+EDR_492,Mother Duck,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,6
+EDR_493,Alara'shi,DEMONHUNTER,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_494,Hungering Ancient,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_495,Twisted Treant,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,2,0
+EDR_517,Q'onzu,MAGE,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+EDR_518,Living Garden,SHAMAN,MINION,False,resolution_events;enchantments;zones_history;modern_keywords,False,False,0,0
+EDR_519,Wisprider,MAGE,MINION,False,resolution_events;resources_classes;modern_keywords,False,False,0,0
+EDR_520,Forbidden Shrine,MAGE,LOCATION,False,enchantments;generation_choices;zones_history;resources_classes;secrets_locations,False,False,0,1
+EDR_521,Tricky Satyr,ROGUE,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,1,0
+EDR_522,Mimicry,ROGUE,SPELL,True,enchantments;generation_choices,False,False,1,0
+EDR_523,Web of Deception,ROGUE,SPELL,False,resolution_events;combat_damage;zones_history,False,False,0,0
+EDR_524,Shadowcloaked Assailant,ROGUE,MINION,True,resolution_events;zones_history,False,False,1,1
+EDR_525,Barbed Thorn,ROGUE,WEAPON,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_526,"Renferal, the Malignant",ROGUE,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+EDR_527,Ashamane,ROGUE,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+EDR_528,Nightmare Fuel,ROGUE,SPELL,False,enchantments;generation_choices;zones_history;resources_classes,False,False,0,0
+EDR_529,Plucky Podling,SHAMAN,MINION,False,enchantments,False,False,0,0
+EDR_530,Daydreaming Pixie,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+EDR_531,Siphoning Growth,WARRIOR,SPELL,True,enchantments,False,False,1,0
+EDR_540,Twisted Webweaver,ROGUE,MINION,True,resolution_events;zones_history,False,False,2,8
+EDR_570,Ominous Nightmares,WARRIOR,SPELL,True,enchantments;generation_choices;combat_damage,False,False,2,0
+EDR_571,Fae Trickster,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,2,2
+EDR_572,Tormented Dreadwing,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,2,1
+EDR_598,Dream Rager,NEUTRAL,MINION,True,combat_damage,False,False,1,0
+EDR_654,Overgrown Horror,WARLOCK,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+EDR_780,Bloodthistle Illusionist,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+EDR_781,Harbinger of the Blighted,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_800,Flutterwing Guardian,NEUTRAL,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+EDR_804,Divination,MAGE,SPELL,False,zones_history,False,False,0,0
+EDR_810,Hideous Husk,DEATHKNIGHT,MINION,False,resolution_events,False,False,0,0
+EDR_811,Rite of Atrocity,DEATHKNIGHT,SPELL,False,enchantments;generation_choices;resources_classes,False,False,0,0
+EDR_812,Grotesque Runeblade,DEATHKNIGHT,WEAPON,False,resolution_events;enchantments;combat_damage;zones_history;resources_classes;secrets_locations;deck_legality,False,False,0,0
+EDR_813,Morbid Swarm,DEATHKNIGHT,SPELL,False,resolution_events;generation_choices;combat_damage;resources_classes,False,False,0,0
+EDR_814,Infested Breath,DEATHKNIGHT,SPELL,False,resolution_events;combat_damage,False,False,0,0
+EDR_815,Corpse Flower,DEATHKNIGHT,MINION,False,resolution_events;combat_damage;resources_classes,False,False,0,0
+EDR_816,Monstrous Mosquito,DEATHKNIGHT,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,1
+EDR_817,Sanguine Infestation,DEATHKNIGHT,SPELL,False,resolution_events;zones_history,False,False,0,0
+EDR_818,Nythendra,DEATHKNIGHT,MINION,False,resolution_events;combat_damage,False,False,0,0
+EDR_819,Ursoc,DEATHKNIGHT,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+EDR_820,Wyvern's Slumber,DEMONHUNTER,SPELL,False,resolution_events;generation_choices;combat_damage;dormant,False,False,0,0
+EDR_840,Grim Harvest,DEMONHUNTER,SPELL,False,resolution_events;generation_choices;zones_history;dormant,False,False,0,0
+EDR_841,Dreadsoul Corrupter,DEMONHUNTER,MINION,False,resolution_events;generation_choices;dormant,False,False,0,0
+EDR_842,Defiled Spear,DEMONHUNTER,WEAPON,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+EDR_843,Reforestation,DRUID,SPELL,False,generation_choices;zones_history,False,False,0,0
+EDR_844,"Naralex, Herald of the Flights",NEUTRAL,MINION,False,enchantments,False,False,0,0
+EDR_845,Hamuul Runetotem,DRUID,MINION,False,resolution_events;zones_history;resources_classes;modern_keywords;deck_legality,False,False,0,0
+EDR_846,Shaladrassil,NEUTRAL,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+EDR_847,Dreambound Disciple,DRUID,MINION,True,resolution_events;enchantments;resources_classes,False,False,2,1
+EDR_848,Photosynthesis,DRUID,SPELL,False,generation_choices;combat_damage,False,False,0,0
+EDR_849,Dreambound Raptor,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+EDR_852,Bitterbloom Knight,NEUTRAL,MINION,False,resolution_events;resources_classes;modern_keywords,False,False,0,0
+EDR_853,Broll Bearmantle,HUNTER,MINION,True,resolution_events;generation_choices;zones_history,False,False,2,2
+EDR_856,Nightmare Lord Xavius,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_860,Resplendent Dreamweaver,NEUTRAL,MINION,False,resolution_events;combat_damage;resources_classes;modern_keywords,False,False,0,0
+EDR_861,Tranquil Treant,NEUTRAL,MINION,True,resolution_events;enchantments;resources_classes,False,False,2,1
+EDR_871,Spirit Gatherer,MAGE,MINION,False,resolution_events;generation_choices;resources_classes;modern_keywords,False,False,0,0
+EDR_872,Spark of Life,MAGE,SPELL,False,generation_choices,False,False,0,0
+EDR_873,Envoy of the Glade,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+EDR_874,Stellar Balance,MAGE,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+EDR_882,Jumpscare!,DEMONHUNTER,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+EDR_888,Malorne the Waywatcher,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;resources_classes;modern_keywords,False,False,0,0
+EDR_889,Petal Peddler,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices,False,False,2,6
+EDR_890,Nightmare Dragonkin,DEMONHUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,2,1
+EDR_891,Ravenous Felhunter,DEMONHUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,2,2
+EDR_892,Ferocious Felbat,DEMONHUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,2,1
+EDR_895,"Aviana, Elune's Chosen",PRIEST,MINION,False,resolution_events;enchantments,False,False,0,0
+EDR_940,Merry Moonkin,MAGE,MINION,False,resolution_events;enchantments,False,False,0,0
+EDR_941,Starsurge,MAGE,SPELL,False,combat_damage;zones_history,False,False,0,0
+EDR_942,Curious Cumulus,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+EDR_950,Sharp-Eyed Lookout,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+EDR_970,Kaldorei Priestess,PRIEST,MINION,False,resolution_events;enchantments;combat_damage;resources_classes;modern_keywords,False,False,0,0
+EDR_971,Critter Caretaker,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,1
+EDR_978,Meadowstrider,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+EDR_979,Ancient of Yore,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history;dormant,False,False,0,0
+EDR_999,Gnawing Greenfin,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+END_000,Eventuality,ROGUE,SPELL,False,combat_damage;resources_classes;modern_keywords,False,False,0,0
+END_001,Jagged Edge of Time,,WEAPON,False,resolution_events;resources_classes;modern_keywords,False,False,0,0
+END_002,Wicked Blightspawn,,MINION,True,resolution_events;enchantments;combat_damage;secrets_locations,False,False,2,1
+END_003,Finality,DEATHKNIGHT,SPELL,False,zones_history;modern_keywords,False,False,0,0
+END_004,Remnant of Rage,,MINION,True,resolution_events;enchantments;zones_history,False,False,2,2
+END_005,Bygone Echoes,,SPELL,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+END_006,Chronikar,DEMONHUNTER,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+END_007,Press the Advantage,,SPELL,True,enchantments;combat_damage;zones_history,False,False,1,0
+END_008,Enduring Roach,,MINION,True,resolution_events;resources_classes,False,False,2,3
+END_009,Splintered Reality,DRUID,SPELL,False,resolution_events;enchantments;zones_history,False,False,0,0
+END_010,Twilight Timereaver,,MINION,True,enchantments;generation_choices;combat_damage,False,False,2,0
+END_011,Acceleration Aura,,SPELL,False,resolution_events;enchantments;resources_classes,False,False,0,0
+END_012,Hand of Infinity,PALADIN,WEAPON,False,resolution_events;enchantments;combat_damage;secrets_locations,False,False,0,0
+END_013,Brutish Endmaw,,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+END_014,Synchronized Spark,,SPELL,True,enchantments;generation_choices;combat_damage,False,False,1,1
+END_015,Triennium Rex,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;modern_keywords,False,False,0,0
+END_016,Chronoclaws,,WEAPON,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,0
+END_017,Battle at the End Time,,SPELL,False,zones_history;quests,False,False,0,0
+END_018,Acolyte of Infinity,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+END_019,Endtime Survivor,,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+END_020,Eternal Toil,,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+END_021,Dimensional Weaponsmith,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,0
+END_022,Time-Twisted Seer,,MINION,True,enchantments;combat_damage,False,False,2,2
+END_023,Bitter End,,SPELL,True,combat_damage,False,False,1,0
+END_024,Flames of Infinity,MAGE,SPELL,False,combat_damage;secrets_locations,False,False,0,0
+END_025,Eternal Firebolt,,SPELL,False,resolution_events;combat_damage;zones_history,False,False,0,0
+END_026,Fragment of Nothing,,MINION,True,resolution_events;zones_history,False,False,2,2
+END_027,Wings of Eternity,PRIEST,SPELL,False,generation_choices,False,False,0,0
+END_028,For All Time,,SPELL,True,combat_damage;resources_classes,False,False,1,0
+END_029,Voodoo Totem,,MINION,False,resolution_events;generation_choices,False,False,0,0
+END_030,Haywire Hornswog,SHAMAN,MINION,True,enchantments;combat_damage;resources_classes,False,False,2,2
+END_031,Shade of the End Time,,MINION,True,enchantments;combat_damage,False,False,1,0
+END_032,Winged Aberration,,MINION,False,enchantments;combat_damage;resources_classes,False,False,0,0
+END_033,Prescient Slitherdrake,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,4
+END_034,Crumblecrusher,NEUTRAL,MINION,True,resolution_events;generation_choices;secrets_locations,False,False,1,1
+END_035,Omen of the End,NEUTRAL,MINION,True,resolution_events;zones_history,False,False,1,4
+END_036,Morchie,NEUTRAL,MINION,False,resolution_events;generation_choices;rewind,False,False,0,0
+END_037,Endtime Murozond,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+FIR_777,Spirit of the Kaldorei,PRIEST,MINION,False,resolution_events;enchantments;combat_damage;resources_classes,False,False,0,0
+FIR_778,Avatar of Destruction,SHAMAN,MINION,True,resolution_events;combat_damage,False,False,2,4
+FIR_900,Cremate,DEATHKNIGHT,SPELL,False,enchantments;generation_choices,False,False,0,0
+FIR_901,Frostburn Matriarch,DEATHKNIGHT,MINION,False,resolution_events;combat_damage,False,False,0,0
+FIR_902,Sigil of Cinder,DEMONHUNTER,SPELL,False,resolution_events;combat_damage,False,False,0,0
+FIR_904,Felfire Blaze,DEMONHUNTER,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,7
+FIR_906,Overheat,DRUID,SPELL,True,enchantments;generation_choices;zones_history,False,False,1,3
+FIR_907,Amirdrassil,DRUID,LOCATION,False,resolution_events;enchantments;zones_history;resources_classes;secrets_locations,False,False,0,0
+FIR_908,Charred Chameleon,DRUID,MINION,False,resolution_events;enchantments;combat_damage;resources_classes,False,False,0,0
+FIR_909,Bursting Shot,HUNTER,SPELL,True,generation_choices;combat_damage,False,False,1,1
+FIR_910,Scorching Winds,MAGE,SPELL,True,generation_choices;combat_damage;zones_history,False,False,1,6
+FIR_911,Smoldering Grove,MAGE,SPELL,False,resolution_events;zones_history,False,False,0,0
+FIR_913,Inferno Herald,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+FIR_914,Smoldering Strength,PALADIN,SPELL,False,resolution_events;enchantments,False,False,0,0
+FIR_916,Smoldering Ascent,PRIEST,SPELL,False,resolution_events;combat_damage,False,False,0,0
+FIR_918,Light of the New Moon,PRIEST,SPELL,False,enchantments;zones_history,False,False,0,0
+FIR_919,Everburning Phoenix,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+FIR_920,Smoke Bomb,ROGUE,SPELL,False,resolution_events;generation_choices;combat_damage;resources_classes,False,False,0,0
+FIR_921,Petal Picker,NEUTRAL,MINION,False,resolution_events;zones_history;resources_classes;modern_keywords,False,False,0,0
+FIR_922,Cindersword,ROGUE,WEAPON,False,resolution_events;enchantments;combat_damage,False,False,0,0
+FIR_923,Flames of the Firelord,SHAMAN,SPELL,True,enchantments;generation_choices;combat_damage,False,False,1,4
+FIR_924,Shadowflame Stalker,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+FIR_927,Emberscarred Whelp,SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+FIR_928,Keeper of Flame,WARRIOR,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+FIR_929,Living Flame,NEUTRAL,MINION,True,resolution_events;zones_history,False,False,2,1
+FIR_939,Shadowflame Suffusion,WARRIOR,SPELL,False,generation_choices;combat_damage,False,False,0,0
+FIR_940,Zaqali Flamemancer,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,1,2
+FIR_941,Searing Reflection,PALADIN,SPELL,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+FIR_951,Volcoross,DEATHKNIGHT,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes,False,False,0,0
+FIR_952,Scorchreaver,DEMONHUNTER,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+FIR_953,Magma Hound,HUNTER,MINION,False,resolution_events;combat_damage,False,False,0,0
+FIR_954,Conflagrate,WARLOCK,SPELL,True,combat_damage,False,False,1,1
+FIR_955,Emberroot Destroyer,WARLOCK,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,2
+FIR_956,Dragon Turtle,WARRIOR,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+FIR_958,Tindral Sageswift,NEUTRAL,MINION,False,resolution_events;combat_damage,False,False,0,0
+FIR_959,Fyrakk the Blazing,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage;zones_history;resources_classes,False,False,0,0
+FIR_960,Tending Dragonkin,HUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,1,1
+FIR_961,Ashleaf Pixie,PALADIN,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+JAIL_007,Sewer Imp,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,1
+JAIL_029,Rioter,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,2
+JAIL_030,Escape Artist,NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_035,Vigilant Sentry,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+JAIL_101,Violet Punisher,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+JAIL_118,"V'ama, Looming Death",PALADIN,MINION,True,resolution_events,False,False,1,1
+JAIL_122,Jailhouse Manastorm,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_123,Breakout Architect,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_125,Cold Snap,MAGE,SPELL,False,generation_choices;combat_damage,False,False,0,0
+JAIL_200,Infest the Scullery,DRUID,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+JAIL_201,Secret Ingredient,DRUID,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+JAIL_202,Spiderling,DRUID,MINION,True,enchantments;combat_damage,False,False,2,2
+JAIL_204,Solitary Prisoner,NEUTRAL,MINION,True,enchantments,False,False,2,1
+JAIL_205,Rat Burglar,NEUTRAL,MINION,False,resolution_events;zones_history,False,False,0,0
+JAIL_206,Dark Bribe,DEMONHUNTER,SPELL,False,enchantments;zones_history,False,False,0,0
+JAIL_225,Nab,ROGUE,SPELL,False,enchantments;combat_damage;zones_history,False,False,0,0
+JAIL_303,Ancient Augur,WARLOCK,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+JAIL_307,Crowd Control,WARRIOR,SPELL,True,enchantments;combat_damage;zones_history,False,False,2,1
+JAIL_311,Scrappy Defender,WARRIOR,MINION,True,enchantments;combat_damage;zones_history,False,False,2,1
+JAIL_312,Contraband Wands,MAGE,SPELL,True,generation_choices,False,False,1,1
+JAIL_313,Bootleg Alchemist,MAGE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_315,Mystic Misdirection,MAGE,SPELL,False,enchantments;combat_damage;secrets_locations,False,False,0,0
+JAIL_319,The Skeleton Key,MAGE,SPELL,False,generation_choices;combat_damage,False,False,0,0
+JAIL_321,Tricksy Improviser,MAGE,MINION,False,resolution_events;generation_choices;zones_history;secrets_locations;modern_keywords,False,False,0,0
+JAIL_326,Judgment,PALADIN,SPELL,False,enchantments;generation_choices;modern_keywords,False,False,0,0
+JAIL_327,Reinforcement Aura,PALADIN,SPELL,False,resolution_events;enchantments;zones_history,False,False,0,0
+JAIL_328,Scarlet Bruiser,PALADIN,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_329,Truth Seeker,PALADIN,WEAPON,False,resolution_events;enchantments;combat_damage,False,False,0,0
+JAIL_330,Dalaran Champion,PALADIN,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+JAIL_376,Ball and Chain,WARRIOR,WEAPON,True,resolution_events;enchantments,False,False,2,1
+JAIL_377,Holy Bola!,PALADIN,SPELL,True,enchantments;zones_history,False,False,1,1
+JAIL_379,Spire Security,MAGE,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+JAIL_380,Smuggled Shovel,HUNTER,WEAPON,False,resolution_events;zones_history,False,False,0,0
+JAIL_384,Chainbreaker Hogger,WARRIOR,MINION,False,resolution_events;combat_damage;zones_history;deck_legality,False,False,0,0
+JAIL_386,Scramble for Gear,WARRIOR,SPELL,False,enchantments;zones_history,False,False,0,0
+JAIL_387,Release the Beasts,WARRIOR,SPELL,True,enchantments;generation_choices;zones_history,False,False,1,0
+JAIL_395,Sewer Swimmer,HUNTER,MINION,False,resolution_events;modern_keywords,False,False,0,0
+JAIL_397,Commander Beatrix,PALADIN,MINION,False,enchantments;combat_damage;zones_history,False,False,0,0
+JAIL_398,IMPFERNAL!,NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_399,Imp Gang Stooge,WARLOCK,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_407,Vanessa the Ringleader,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;modern_keywords,False,False,0,0
+JAIL_421,Warptooth,WARRIOR,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_430,Azalina Soulsever,PRIEST,MINION,False,resolution_events;zones_history,False,False,0,0
+JAIL_432,Mind Sweeper,PRIEST,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+JAIL_433,Unshackle Soul,PRIEST,SPELL,False,enchantments;zones_history,False,False,0,0
+JAIL_434,Enthralled Shade,PRIEST,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+JAIL_435,Rampaging Hound,WARRIOR,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+JAIL_436,Widow's Bite,DRUID,SPELL,False,enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+JAIL_440,Tower of Ghouls,DEATHKNIGHT,MINION,True,resolution_events;combat_damage,False,False,2,2
+JAIL_441,Drink Blood,DEATHKNIGHT,SPELL,True,combat_damage;resources_classes,False,False,1,1
+JAIL_442,Disguised Doctor,DEATHKNIGHT,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_443,The Living Plague,DEATHKNIGHT,MINION,False,combat_damage;zones_history,False,False,0,0
+JAIL_444,Sawbones,DEATHKNIGHT,MINION,False,resolution_events;zones_history;resources_classes;modern_keywords,False,False,0,0
+JAIL_445,Bone Flurry,DEATHKNIGHT,SPELL,False,combat_damage;zones_history,False,False,0,0
+JAIL_446,Blood Doctor Thal'ena,DEATHKNIGHT,MINION,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+JAIL_447,Reckless Detective,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+JAIL_448,Karov the Broken,PRIEST,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+JAIL_450,Corpse Cannon,DEATHKNIGHT,WEAPON,True,resolution_events;combat_damage,False,False,2,1
+JAIL_451,Blood Clone,DEATHKNIGHT,SPELL,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+JAIL_452,Disguised Detective,SHAMAN,MINION,False,zones_history;resources_classes,False,False,0,0
+JAIL_453,Jailbird,NEUTRAL,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+JAIL_454,Emergency Surgery,DEATHKNIGHT,SPELL,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+JAIL_455,Disguised Watchman,WARRIOR,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+JAIL_456,P1CK-P0K3T,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,1,1
+JAIL_457,Hijacked Securitybot,SHAMAN,MINION,False,resolution_events;enchantments;modern_keywords,False,False,0,0
+JAIL_458,Tiny Pal,SHAMAN,WEAPON,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+JAIL_459,Arachnathid,NEUTRAL,MINION,True,combat_damage,False,False,2,6
+JAIL_460,Concealing Confection,NEUTRAL,MINION,False,resolution_events;generation_choices;secrets_locations,False,False,0,0
+JAIL_461,Disguised Executioner,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+JAIL_462,Getaway Hogdriver,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,1
+JAIL_470,Lotus Troublemaker,ROGUE,MINION,False,resolution_events;generation_choices;combat_damage;zones_history;resources_classes,False,False,0,0
+JAIL_474,Jade Guardians,ROGUE,SPELL,False,enchantments;generation_choices;zones_history;resources_classes,False,False,0,0
+JAIL_500,Slice and Dice,ROGUE,SPELL,False,zones_history,False,False,0,0
+JAIL_501,Picklock,ROGUE,MINION,False,resolution_events;combat_damage;resources_classes,False,False,0,0
+JAIL_502,Alarm-o-Matic,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_503,Blackpaw's Whip,ROGUE,WEAPON,True,resolution_events;enchantments;zones_history,False,False,3,4
+JAIL_504,"Aya, Lotus Kingpin",ROGUE,MINION,False,resolution_events;generation_choices;hero_replacement,False,False,0,0
+JAIL_507,Spiteful Chef,DRUID,MINION,False,resolution_events;enchantments;combat_damage;resources_classes,False,False,0,0
+JAIL_509,Godfrey the Betrayer,WARLOCK,MINION,False,resolution_events;enchantments;zones_history;deck_legality,False,False,0,0
+JAIL_510,Annihilation,WARLOCK,SPELL,False,resolution_events;zones_history,False,False,0,0
+JAIL_511,Spire of Solitude,WARLOCK,LOCATION,False,resolution_events;generation_choices;combat_damage;zones_history;secrets_locations,False,False,0,0
+JAIL_513,Caged Cranium,WARLOCK,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,1
+JAIL_514,The Unseen Atlas,WARLOCK,SPELL,True,enchantments;zones_history,False,False,2,1
+JAIL_515,Shadow Rounds,WARLOCK,SPELL,False,generation_choices;combat_damage;zones_history,False,False,0,0
+JAIL_516,Scarlet Recruiter,PALADIN,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,0
+JAIL_703,Gullible Guard,NEUTRAL,MINION,False,resolution_events,False,False,0,0
+JAIL_706,Thief's Tools,ROGUE,SPELL,False,enchantments;generation_choices,False,False,0,0
+JAIL_718,Black Market Auctioneer,NEUTRAL,MINION,False,resolution_events;zones_history;modern_keywords,False,False,0,0
+JAIL_719,Irida Sinseeker,DEMONHUNTER,MINION,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+JAIL_720,Lotus Bookie,ROGUE,MINION,True,resolution_events;generation_choices,False,False,2,1
+JAIL_721,"Tras'tath, Soul Parasite",DEMONHUNTER,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+JAIL_730,Stardust Scythe,DEMONHUNTER,WEAPON,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+JAIL_732,Void Soul,DEMONHUNTER,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+JAIL_733,Vicious Voidscale,DEMONHUNTER,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+JAIL_734,Hellraiser,DEMONHUNTER,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history,False,False,0,0
+JAIL_735,Code Violet,MAGE,SPELL,False,resolution_events;enchantments;zones_history;modern_keywords,False,False,0,0
+JAIL_800,Mug'Zee,SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;zones_history;resources_classes;deck_legality,False,False,0,0
+JAIL_801,Molten Gold,SHAMAN,SPELL,False,combat_damage;zones_history,False,False,0,0
+JAIL_802,Gallagio Goon,SHAMAN,MINION,True,resolution_events;enchantments,False,False,2,2
+JAIL_803,Frostshatter,SHAMAN,SPELL,False,combat_damage;zones_history,False,False,0,0
+JAIL_805,Stormfury,SHAMAN,SPELL,False,combat_damage;zones_history,False,False,0,0
+JAIL_806,Hexmarshal,SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_831,King of the Underbelly,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_850,Warden Maiev,NEUTRAL,MINION,False,resolution_events;enchantments;dormant,False,False,0,0
+JAIL_851,Inspector Murloc Holmes,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+JAIL_852,"Togwaggle, Smuggler King",NEUTRAL,MINION,False,resolution_events;zones_history,False,False,0,0
+JAIL_860,Chef Neth'rek,DRUID,MINION,False,resolution_events;enchantments;zones_history;resources_classes;deck_legality,False,False,0,0
+JAIL_861,Noxious Bribe,DRUID,SPELL,False,enchantments;generation_choices,False,False,0,0
+JAIL_866,Lethal Recipe,DRUID,SPELL,True,enchantments;zones_history;resources_classes,False,False,1,1
+JAIL_872,Spider Rider,DRUID,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,0
+JAIL_875,Staff of Trickery,DRUID,WEAPON,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+JAIL_876,Dig for Freedom,HUNTER,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+JAIL_877,Underbelly Network,HUNTER,LOCATION,True,resolution_events;zones_history;secrets_locations,False,False,2,3
+JAIL_878,Guard Dog,HUNTER,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+JAIL_879,Beast Tripwire,HUNTER,SPELL,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+JAIL_880,Black Market Overseer,HUNTER,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+JAIL_881,Arcane Tripwire,HUNTER,SPELL,False,combat_damage;zones_history,False,False,0,0
+JAIL_882,R4T-C4TCH3R,HUNTER,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+JAIL_883,Activated Golem,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,2,2
+JAIL_887,Zuramat's Prison,NEUTRAL,LOCATION,False,resolution_events;generation_choices;combat_damage;zones_history;secrets_locations,False,False,0,0
+JAIL_890,Captive Nathrezim,DEMONHUNTER,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+JAIL_891,Void Blast,DEMONHUNTER,SPELL,False,generation_choices;combat_damage,False,False,0,0
+JAIL_892,Cosmic Manifestations,DEMONHUNTER,SPELL,False,generation_choices;combat_damage;zones_history;resources_classes,False,False,0,0
+JAIL_906,Moragg,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices;zones_history;modern_keywords,False,False,0,0
+JAIL_909,Defias Wannabe,ROGUE,MINION,False,enchantments;zones_history;resources_classes;modern_keywords,False,False,0,0
+JAIL_912,Soothsayer,PRIEST,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;modern_keywords,False,False,0,0
+JAIL_913,Hold Them Off!,PRIEST,SPELL,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+JAIL_940,Undeath Sentence,PRIEST,SPELL,False,resolution_events;generation_choices;zones_history,False,False,0,0
+JAIL_941,Holy Embrace,PRIEST,SPELL,True,generation_choices;combat_damage,False,False,1,1
+JAIL_942,Specter of Despair,PRIEST,MINION,True,combat_damage,False,False,1,1
+JAIL_974,Captured Archmage,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+JAIL_986,Frantic Forger,NEUTRAL,MINION,False,resolution_events;generation_choices,False,False,0,0
+JAIL_987,Low Security Wing,SHAMAN,LOCATION,False,generation_choices;zones_history;secrets_locations,False,False,0,0
+JAIL_997,Demonic Confinement,WARLOCK,SPELL,False,enchantments;dormant,False,False,0,0
+JAIL_998,Defias Smuggler,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+JAIL_EVENT_100,Watfin,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+JAIL_EVENT_101,Soul Immolation,DEMONHUNTER,SPELL,False,enchantments;combat_damage;resources_classes,False,False,0,0
+JAIL_EVENT_102,Desperate Bribe,SHAMAN,SPELL,False,resolution_events;enchantments,False,False,0,0
+MEND_040,Ash Worm,DRUID,MINION,False,dormant,False,False,0,0
+MEND_041,Wizened Wildspeaker,DRUID,MINION,False,resolution_events;combat_damage;resources_classes,False,False,0,0
+MEND_042,Lifebloom,DRUID,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+MEND_043,Heartroot Stones,DRUID,SPELL,False,enchantments;zones_history,False,False,0,0
+MEND_044,Tranquil Clearing,DRUID,LOCATION,False,resolution_events;enchantments;combat_damage;secrets_locations,False,False,0,0
+MEND_045,Seeding Dragon,DRUID,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+MEND_046,Bashana Runetotem,DRUID,MINION,False,resolution_events;generation_choices;resources_classes,False,False,0,0
+MEND_100,Cultivating Sprite,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+MEND_300,Tame Pet,HUNTER,SPELL,False,enchantments;generation_choices;zones_history;hero_replacement,False,False,0,0
+MEND_301,Spiritspeaker,HUNTER,MINION,True,resolution_events;generation_choices,False,False,1,1
+MEND_302,Wasteland Vanguard,HUNTER,MINION,False,resolution_events;combat_damage,False,False,0,0
+MEND_303,Migrating Elekk,HUNTER,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;hero_replacement,False,False,0,0
+MEND_304,Talya Earthstrider,HUNTER,MINION,False,resolution_events,False,False,0,0
+MEND_305,Nurturing Nature,HUNTER,SPELL,True,enchantments;generation_choices;zones_history,False,False,1,2
+MEND_307,Roam Free,HUNTER,SPELL,False,resolution_events;enchantments;generation_choices;hero_replacement,False,False,0,0
+MEND_500,Bursting Leyline,MAGE,SPELL,False,generation_choices;combat_damage,False,False,0,0
+MEND_501,Ley Walker,MAGE,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+MEND_502,Crystallized Leyline,MAGE,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+MEND_503,Surge Needle,MAGE,MINION,False,resolution_events,False,False,0,0
+MEND_504,Leyline Nexus,MAGE,SPELL,False,enchantments;zones_history,False,False,0,0
+MEND_505,The Arcanomicon,MAGE,SPELL,False,generation_choices,False,False,0,0
+MEND_506,Mystic Runesaber,MAGE,MINION,False,resolution_events;combat_damage,False,False,0,0
+MEND_800,Brash Battlemaster,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+MEND_801,Resilient Savior,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+MEND_802,Convalescence,PALADIN,SPELL,False,resolution_events;combat_damage;zones_history,False,False,0,0
+MEND_803,Emboldening Blade,PALADIN,WEAPON,False,resolution_events;enchantments;zones_history,False,False,0,0
+MEND_804,Arator the Redeemer,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+MEND_805,Charity,PALADIN,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+MEND_900,Teamwork,PALADIN,SPELL,False,resolution_events;generation_choices;zones_history,False,False,0,0
+RLK_024,Death Strike,DEATHKNIGHT,SPELL,True,combat_damage,False,False,4,0
+RLK_025,Frost Strike,DEATHKNIGHT,SPELL,False,generation_choices;combat_damage;resources_classes;deck_legality,False,False,0,0
+RLK_048,Anti-Magic Shell,DEATHKNIGHT,SPELL,True,enchantments;combat_damage,False,False,3,0
+RLK_060,Army of the Dead,DEATHKNIGHT,SPELL,True,combat_damage;resources_classes,False,False,1,2
+RLK_061,Battlefield Necromancer,DEATHKNIGHT,MINION,True,resolution_events;combat_damage;resources_classes,False,False,2,1
+RLK_067,Corrupted Ashbringer,DEATHKNIGHT,WEAPON,True,combat_damage,False,False,3,2
+RLK_223,Thassarian,DEATHKNIGHT,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,5
+RLK_503,Body Bagger,DEATHKNIGHT,MINION,True,resolution_events;enchantments;resources_classes,False,False,3,2
+RLK_511,Harbinger of Winter,DEATHKNIGHT,MINION,True,resolution_events;zones_history,False,False,5,0
+RLK_707,Grave Strength,DEATHKNIGHT,SPELL,True,enchantments;combat_damage;resources_classes,False,False,3,0
+RLK_708,Chillfallen Baron,DEATHKNIGHT,MINION,True,resolution_events;zones_history,False,False,5,3
+RLK_709,Remorseless Winter,DEATHKNIGHT,SPELL,True,combat_damage;zones_history,False,False,3,0
+RLK_720,Gnome Muncher,DEATHKNIGHT,MINION,False,resolution_events;combat_damage,False,False,0,0
+RLK_958,Skeletal Sidekick,DEATHKNIGHT,MINION,True,resolution_events;enchantments;combat_damage,False,False,4,0
+TIME_000,Semi-Stable Portal,MAGE,SPELL,False,enchantments;generation_choices;zones_history;rewind,False,False,0,0
+TIME_001,Chrono Daggers,ROGUE,SPELL,False,generation_choices;combat_damage;rewind,False,False,0,0
+TIME_002,Aeon Wizard,NEUTRAL,MINION,False,resolution_events;generation_choices;rewind,False,False,0,0
+TIME_003,Portal Vanguard,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history;rewind,False,False,0,0
+TIME_004,Conflux Crasher,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage;rewind,False,False,0,0
+TIME_005,Timethief Rafaam,WARLOCK,MINION,False,resolution_events;enchantments;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_006,Mirror Dimension,MAGE,SPELL,True,resolution_events;combat_damage,False,False,1,3
+TIME_008,Bygone Doomspeaker,WARLOCK,MINION,False,resolution_events;generation_choices;zones_history;rewind,False,False,0,0
+TIME_009,Gelbin of Tomorrow,PALADIN,MINION,False,resolution_events;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_013,Farseer Wo,SHAMAN,MINION,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+TIME_014,Instant Multiverse,SHAMAN,SPELL,False,resolution_events;generation_choices;resources_classes;rewind,False,False,0,0
+TIME_015,Hardlight Protector,PALADIN,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TIME_016,Neon Innovation,PALADIN,SPELL,False,enchantments;generation_choices,False,False,0,0
+TIME_017,Tankgineer,PALADIN,MINION,False,resolution_events;combat_damage,False,False,0,0
+TIME_018,Mend the Timeline,PALADIN,SPELL,False,enchantments;generation_choices;combat_damage;rewind,False,False,0,0
+TIME_019,Manifested Timeways,PALADIN,MINION,False,resolution_events;combat_damage,False,False,0,0
+TIME_020,Broxigar,DEMONHUNTER,MINION,False,resolution_events;combat_damage;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_021,Doomsday Prepper,DEMONHUNTER,MINION,True,combat_damage;resources_classes,False,False,1,0
+TIME_022,Perennial Serpent,DEMONHUNTER,MINION,False,enchantments;combat_damage;dormant,False,False,0,0
+TIME_023,Contingency,DRUID,SPELL,True,zones_history,False,False,1,2
+TIME_024,"Murozond, Unbounded",NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TIME_025,Twilight Timehopper,WARLOCK,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+TIME_026,Entropic Continuity,WARLOCK,SPELL,False,enchantments;zones_history,False,False,0,0
+TIME_027,Tachyon Barrage,WARLOCK,SPELL,False,combat_damage;zones_history,False,False,0,0
+TIME_028,Fatebreaker,WARLOCK,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TIME_029,Ruinous Velocidrake,WARLOCK,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TIME_030,Divergence,WARLOCK,SPELL,False,generation_choices;zones_history,False,False,0,0
+TIME_031,RAFAAM LADDER!!,WARLOCK,SPELL,True,enchantments;zones_history,False,False,1,1
+TIME_032,Chronogor,WARLOCK,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TIME_033,Druid of Regrowth,DRUID,MINION,False,resolution_events;generation_choices;zones_history;rewind,False,False,0,0
+TIME_034,Stadium Announcer,WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;secrets_locations;rewind,False,False,0,0
+TIME_035,Time Machine,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage;rewind,False,False,0,0
+TIME_036,Royal Informant,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+TIME_037,Disciple of the Dove,PRIEST,MINION,True,resolution_events;enchantments;zones_history,False,False,1,3
+TIME_038,Mister Clocksworth,NEUTRAL,MINION,False,resolution_events;generation_choices;rewind,False,False,0,0
+TIME_039,Deja Vu,ROGUE,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+TIME_040,Fading Memory,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TIME_041,Futuristic Forefather,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TIME_042,King Maluk,HUNTER,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+TIME_043,PMM Infinitizer,PALADIN,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TIME_044,Past Gnomeregan,PALADIN,LOCATION,False,enchantments;secrets_locations,False,False,0,0
+TIME_045,Whelp of the Infinite,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,1,0
+TIME_046,Cyborg Patriarch,NEUTRAL,MINION,False,combat_damage;dormant,False,False,0,0
+TIME_047,Devious Coyote,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,2
+TIME_048,Clockwork Rager,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,1,2
+TIME_049,Dangerous Variant,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TIME_050,Sentient Hourglass,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TIME_051,Soldier of the Infinite,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+TIME_052,Amber Warden,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+TIME_053,Sandmaw,NEUTRAL,MINION,True,fallback_review,False,False,1,0
+TIME_054,Time Skipper,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,2,4
+TIME_055,Unknown Voyager,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TIME_056,Whelp of the Bronze,NEUTRAL,MINION,True,combat_damage,False,False,1,0
+TIME_057,Wizened Truthseeker,NEUTRAL,MINION,False,resolution_events;enchantments,False,False,0,0
+TIME_058,Paltry Flutterwing,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;dormant,False,False,0,0
+TIME_059,Living Paradox,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,1
+TIME_060,Quantum Destabilizer,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,5
+TIME_061,Timeless Causality,NEUTRAL,MINION,True,resolution_events;zones_history,False,False,1,0
+TIME_062,Chronicle Keeper,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TIME_063,Timelord Nozdormu,NEUTRAL,MINION,False,resolution_events;combat_damage;dormant,False,False,0,0
+TIME_064,Chrono-Lord Deios,NEUTRAL,MINION,False,resolution_events;resources_classes,False,False,0,0
+TIME_100,Hourglass Attendant,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,4
+TIME_101,Misplaced Pyromancer,NEUTRAL,MINION,False,resolution_events;combat_damage;modern_keywords,False,False,0,0
+TIME_102,Circadiamancer,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+TIME_103,Chromie,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TIME_209,"Muradin, High King",SHAMAN,MINION,False,resolution_events;generation_choices;combat_damage;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_211,Lady Azshara,DRUID,MINION,False,generation_choices;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_212,Lightning Rod,SHAMAN,SPELL,False,generation_choices;combat_damage,False,False,0,0
+TIME_213,Primordial Overseer,SHAMAN,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TIME_214,Flux Revenant,SHAMAN,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TIME_215,Thunderquake,SHAMAN,SPELL,False,generation_choices;combat_damage,False,False,0,0
+TIME_216,Nascent Bolt,SHAMAN,SPELL,True,combat_damage;zones_history,False,False,1,0
+TIME_217,Stormrook,SHAMAN,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TIME_218,Static Shock,SHAMAN,SPELL,True,enchantments;combat_damage,False,False,1,0
+TIME_427,Cleansing Lightspawn,PRIEST,MINION,True,resolution_events;combat_damage,False,False,1,1
+TIME_428,Yesterloc,NEUTRAL,MINION,True,resolution_events;enchantments,False,False,2,1
+TIME_429,Divine Augur,PRIEST,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TIME_431,Amber Priestess,PRIEST,MINION,True,resolution_events;combat_damage,False,False,1,1
+TIME_432,Intertwined Fate,PRIEST,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+TIME_433,Cease to Exist,PRIEST,SPELL,False,enchantments;generation_choices;rewind,False,False,0,0
+TIME_434,Temporal Traveler,NEUTRAL,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+TIME_435,Eternus,PRIEST,MINION,False,resolution_events,False,False,0,0
+TIME_436,Past Conflux,PRIEST,LOCATION,False,resolution_events;enchantments;generation_choices;secrets_locations,False,False,0,0
+TIME_441,Aeon Rend,DEMONHUNTER,SPELL,False,generation_choices;combat_damage;rewind,False,False,0,0
+TIME_442,Timeway Warden,DEMONHUNTER,MINION,False,resolution_events;dormant,False,False,0,0
+TIME_443,Hounds of Fury,DEMONHUNTER,SPELL,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TIME_444,Time-Lost Glaive,DEMONHUNTER,WEAPON,False,resolution_events;generation_choices,False,False,0,0
+TIME_446,The Eternal Hold,DEMONHUNTER,LOCATION,False,enchantments;generation_choices;zones_history;secrets_locations,False,False,0,0
+TIME_447,Power Word: Barrier,PRIEST,SPELL,False,enchantments;combat_damage;zones_history,False,False,0,0
+TIME_448,Solitude,DEMONHUNTER,SPELL,False,enchantments;generation_choices;zones_history,False,False,0,0
+TIME_449,Lasting Legacy,DEMONHUNTER,SPELL,False,enchantments;combat_damage;zones_history,False,False,0,0
+TIME_600,Precise Shot,HUNTER,SPELL,True,combat_damage;zones_history,False,False,1,5
+TIME_601,Arrow Retriever,HUNTER,MINION,True,resolution_events;enchantments;zones_history,False,False,1,0
+TIME_602,Wormhole,HUNTER,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;rewind,False,False,0,0
+TIME_603,Ticking Timebomb,HUNTER,MINION,True,resolution_events;generation_choices,False,False,2,0
+TIME_605,Epoch Stalker,HUNTER,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TIME_606,Quel'dorei Fletcher,HUNTER,MINION,True,enchantments;zones_history;resources_classes,False,False,2,6
+TIME_609,Ranger General Sylvanas,HUNTER,MINION,False,resolution_events;combat_damage;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_610,Shadows of Yesterday,DEATHKNIGHT,SPELL,False,resolution_events;enchantments;generation_choices;rewind,False,False,0,0
+TIME_611,Timestop,DEATHKNIGHT,SPELL,True,generation_choices;combat_damage,False,False,1,1
+TIME_612,Blood Draw,DEATHKNIGHT,SPELL,False,enchantments;generation_choices;resources_classes,False,False,0,0
+TIME_613,Cryofrozen Champion,DEATHKNIGHT,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TIME_614,Liferender,DEATHKNIGHT,MINION,False,resolution_events;combat_damage,False,False,0,0
+TIME_615,Forgotten Millennium,DEATHKNIGHT,SPELL,False,enchantments;generation_choices;zones_history;resources_classes,False,False,0,0
+TIME_616,Memoriam Manifest,DEATHKNIGHT,SPELL,True,resolution_events;enchantments;zones_history,False,False,1,1
+TIME_617,Chronochiller,DEATHKNIGHT,MINION,True,resolution_events;zones_history,False,False,2,1
+TIME_618,"Husk, Eternal Reaper",DEATHKNIGHT,MINION,False,resolution_events;enchantments;zones_history;resources_classes,False,False,0,0
+TIME_619,Talanji of the Graves,DEATHKNIGHT,MINION,False,resolution_events;enchantments;generation_choices;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_620,Untimely Death,HUNTER,SPELL,False,resolution_events;zones_history;secrets_locations,False,False,0,0
+TIME_700,Chronological Aura,PALADIN,SPELL,False,resolution_events;combat_damage,False,False,0,0
+TIME_701,Waveshaping,DRUID,SPELL,False,generation_choices;zones_history,False,False,0,0
+TIME_702,Ebb and Flow,DRUID,SPELL,False,enchantments;combat_damage;zones_history,False,False,0,0
+TIME_703,Endangered Dodo,DRUID,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TIME_704,Highborne Mentor,DRUID,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TIME_705,"Krona, Keeper of Eons",DRUID,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,1,2
+TIME_706,The Fins Beyond Time,PALADIN,MINION,False,resolution_events;enchantments;zones_history;hero_replacement,False,False,0,0
+TIME_707,Alternate Reality,DRUID,SPELL,False,enchantments;generation_choices;zones_history;hero_replacement,False,False,0,0
+TIME_710,Troubled Double,ROGUE,MINION,True,resolution_events;enchantments;combat_damage;resources_classes,False,False,1,1
+TIME_711,Flashback,ROGUE,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes,False,False,0,0
+TIME_712,Dethrone,ROGUE,SPELL,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+TIME_713,Time Adm'ral Hooktail,ROGUE,MINION,False,resolution_events,False,False,0,0
+TIME_714,Chrono-Lord Epoch,WARRIOR,MINION,False,resolution_events;zones_history,False,False,0,0
+TIME_715,For Glory!,WARRIOR,SPELL,True,enchantments;zones_history,False,False,2,1
+TIME_716,Slow Motion,WARRIOR,SPELL,True,enchantments,False,False,1,7
+TIME_720,Soldier of the Bronze,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+TIME_730,Kaldorei Cultivator,DRUID,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+TIME_750,Precursory Strike,WARRIOR,SPELL,True,enchantments;combat_damage;zones_history,False,False,1,4
+TIME_770,Fast Forward,ROGUE,SPELL,False,enchantments;zones_history,False,False,0,0
+TIME_810,Past Silvermoon,HUNTER,LOCATION,False,generation_choices;combat_damage;secrets_locations,False,False,0,0
+TIME_850,"Lo'Gosh, Blood Fighter",WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;zones_history;modern_keywords;deck_legality,False,False,0,0
+TIME_852,Azure Queen Sindragosa,MAGE,MINION,False,enchantments;modern_keywords;deck_legality,False,False,0,0
+TIME_855,Arcane Barrage,MAGE,SPELL,True,generation_choices;combat_damage,False,False,1,1
+TIME_856,Algeth'ar Instructor,MAGE,MINION,True,enchantments;combat_damage,False,False,2,12
+TIME_857,Alter Time,MAGE,SPELL,False,enchantments;generation_choices,False,False,0,0
+TIME_858,Temporal Construct,MAGE,MINION,True,resolution_events;combat_damage;zones_history,False,False,1,1
+TIME_859,Anomalize,MAGE,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TIME_860,Faceless Enigma,MAGE,MINION,False,resolution_events;generation_choices;zones_history;secrets_locations,False,False,0,0
+TIME_861,Timelooper Toki,MAGE,MINION,False,resolution_events;generation_choices,False,False,0,0
+TIME_870,Gladiatorial Combat,WARRIOR,SPELL,False,resolution_events;generation_choices;combat_damage;zones_history,False,False,0,0
+TIME_871,Heir of Hereafter,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TIME_872,Undefeated Champion,WARRIOR,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TIME_873,Unleash the Crocolisks,WARRIOR,SPELL,True,resolution_events;enchantments,False,False,1,1
+TIME_875,Garona Halforcen,ROGUE,MINION,False,resolution_events;modern_keywords;deck_legality,False,False,0,0
+TIME_876,Shapeshifter,ROGUE,MINION,False,enchantments;generation_choices;zones_history,False,False,0,0
+TIME_890,Medivh the Hallowed,PRIEST,MINION,False,resolution_events;enchantments;modern_keywords;deck_legality,False,False,0,0
+TIME_EVENT_300,Dark Iron Harbinger,NEUTRAL,MINION,False,resolution_events,False,False,0,0
+TIME_EVENT_301,Disciple of Demise,NEUTRAL,MINION,True,resolution_events,False,False,1,1
+TIME_EVENT_997,Welcome Home!,NEUTRAL,SPELL,False,resolution_events;enchantments;generation_choices;secrets_locations,False,False,0,0
+TIME_EVENT_998,"Runi, Temporal Guardian",PALADIN,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TIME_EVENT_999,Sands of Time,NEUTRAL,SPELL,False,resolution_events;generation_choices;rewind,False,False,0,0
+TLC_100,Elise the Navigator,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history;secrets_locations,False,False,0,0
+TLC_101,Undercover Cultist,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,0
+TLC_102,Torga,NEUTRAL,MINION,False,resolution_events;zones_history;modern_keywords,False,False,0,0
+TLC_106,Endbringer Umbra,NEUTRAL,MINION,False,resolution_events;zones_history,False,False,0,0
+TLC_107,Stormbrewer,NEUTRAL,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+TLC_109,Relic Miner,NEUTRAL,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+TLC_110,City Chief Esho,NEUTRAL,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TLC_220,Windswept Pageturner,MAGE,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+TLC_221,Sizzling Swarm,SHAMAN,SPELL,True,resolution_events;combat_damage,False,False,1,1
+TLC_222,Flight of the Firehawk,SHAMAN,SPELL,False,enchantments;zones_history,False,False,0,0
+TLC_223,Volcanic Thrasher,SHAMAN,MINION,False,resolution_events;enchantments;combat_damage;zones_history;modern_keywords,False,False,0,0
+TLC_224,Mechanized Magma,SHAMAN,MINION,True,resolution_events;enchantments,False,False,2,1
+TLC_225,Cinderfin,SHAMAN,MINION,True,resolution_events,False,False,2,1
+TLC_226,Conjured Bookkeeper,MAGE,MINION,True,resolution_events;enchantments;zones_history;modern_keywords,False,False,2,3
+TLC_227,Lava Flow,SHAMAN,SPELL,True,combat_damage;resources_classes,False,False,1,3
+TLC_228,Bralma Searstone,SHAMAN,MINION,False,combat_damage,False,False,0,0
+TLC_229,Spirit of the Mountain,SHAMAN,SPELL,False,quests,False,False,0,0
+TLC_230,TREEEES!!!,DRUID,SPELL,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+TLC_231,Story of Barnabus,DRUID,SPELL,True,enchantments;combat_damage;zones_history,False,False,1,1
+TLC_232,Ravenous Flock,DRUID,SPELL,False,resolution_events,False,False,0,0
+TLC_233,Hatchery Helper,DRUID,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,3
+TLC_234,Eternal Bloodpetal,DRUID,MINION,False,resolution_events,False,False,0,0
+TLC_235,Life Cycle,DRUID,SPELL,False,resolution_events;enchantments;generation_choices;hero_replacement,False,False,0,0
+TLC_236,Hybridization,DRUID,SPELL,True,enchantments;zones_history;modern_keywords,False,False,1,1
+TLC_237,Skyscreamer Eggs,DRUID,MINION,True,resolution_events,False,False,2,2
+TLC_239,Restore the Wild,DRUID,SPELL,False,quests,False,False,0,0
+TLC_240,Tyrannogill,PALADIN,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_241,Ido of the Threshfleet,PALADIN,MINION,False,enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_242,Ancient Stegodon,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,1,0
+TLC_243,Whirling Stormdrake,NEUTRAL,MINION,False,enchantments;combat_damage;modern_keywords,False,False,0,0
+TLC_244,Curious Explorer,NEUTRAL,MINION,True,resolution_events;enchantments;zones_history,False,False,2,1
+TLC_245,Ancient Raptor,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_246,Ancient Pterrordax,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_247,Primal Sabretooth,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_248,Ultragigasaur,NEUTRAL,MINION,True,fallback_review,False,False,1,0
+TLC_249,Sizzling Cinder,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,6,11
+TLC_250,Crater Gator,NEUTRAL,MINION,True,resolution_events,False,False,1,1
+TLC_251,Primalfin Challenger,NEUTRAL,MINION,False,resolution_events;modern_keywords,False,False,0,0
+TLC_252,Dissolving Ooze,NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history,False,False,0,0
+TLC_253,Petrified Ogre,NEUTRAL,MINION,False,resolution_events;enchantments;dormant,False,False,0,0
+TLC_254,Tortollan Storyteller,NEUTRAL,MINION,False,resolution_events;enchantments,False,False,0,0
+TLC_255,Crystal Tender,NEUTRAL,MINION,True,resolution_events;enchantments;resources_classes,False,False,1,0
+TLC_256,Marshland Thresher,NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage;zones_history,False,False,2,0
+TLC_257,"Loh, the Living Legend",DRUID,MINION,False,resolution_events;enchantments,False,False,0,0
+TLC_334,Relic of Kings,MAGE,SPELL,False,enchantments;generation_choices,False,False,0,0
+TLC_364,Story of the Waygate,MAGE,SPELL,False,enchantments;zones_history,False,False,0,0
+TLC_365,Storage Scuffle,MAGE,SPELL,False,enchantments;generation_choices;combat_damage,False,False,0,0
+TLC_366,Pterrorwing Ravager,HUNTER,MINION,True,enchantments;combat_damage;modern_keywords,False,False,2,3
+TLC_401,Bonechill Stegodon,DEATHKNIGHT,MINION,True,resolution_events;generation_choices;combat_damage,False,False,2,1
+TLC_426,Dive the Golakka Depths,PALADIN,SPELL,False,resolution_events;enchantments;quests,False,False,0,0
+TLC_427,Rockskipper,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,1,1
+TLC_428,Hot Spring Glider,PALADIN,MINION,False,resolution_events;enchantments;combat_damage;modern_keywords,False,False,0,0
+TLC_429,Steamfin Thief,NEUTRAL,MINION,True,resolution_events;combat_damage;modern_keywords,False,False,1,2
+TLC_430,Creature of the Sacred Cave,PALADIN,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+TLC_432,Dread Raptor,DEATHKNIGHT,MINION,True,resolution_events;enchantments;zones_history;modern_keywords,False,False,1,1
+TLC_433,Reanimate the Terror,DEATHKNIGHT,SPELL,False,resources_classes;quests,False,False,0,0
+TLC_434,Paleomancy,DEATHKNIGHT,SPELL,False,generation_choices;resources_classes,False,False,0,0
+TLC_435,Crypt Map,DEATHKNIGHT,SPELL,False,generation_choices;resources_classes;deck_legality,False,False,0,0
+TLC_436,Reanimated Pterrordax,DEATHKNIGHT,MINION,False,enchantments;combat_damage;resources_classes,False,False,0,0
+TLC_438,Violet Treasuregill,PALADIN,MINION,False,resolution_events;enchantments;generation_choices;zones_history,False,False,0,0
+TLC_439,Wave of Tar,DEATHKNIGHT,SPELL,True,enchantments;combat_damage,False,False,1,2
+TLC_440,Cryosleep,DEATHKNIGHT,SPELL,True,combat_damage;zones_history;modern_keywords,False,False,1,2
+TLC_441,Ready the Fleet,PALADIN,SPELL,True,enchantments,False,False,1,3
+TLC_442,Submerged Map,PALADIN,SPELL,False,generation_choices,False,False,0,0
+TLC_443,Reluctant Wrangler,DEATHKNIGHT,MINION,True,resolution_events;combat_damage,False,False,2,2
+TLC_444,Story of Galvadon,PALADIN,SPELL,False,enchantments;generation_choices,False,False,0,0
+TLC_446,Escape the Underfel,WARLOCK,SPELL,False,quests,False,False,0,0
+TLC_447,Caustic Fumes,WARLOCK,SPELL,True,combat_damage;modern_keywords,False,False,1,2
+TLC_449,Bloodpetal Biome,WARLOCK,LOCATION,False,enchantments;generation_choices;secrets_locations,False,False,0,0
+TLC_450,Spelunker,WARLOCK,MINION,False,resolution_events;enchantments,False,False,0,0
+TLC_451,Cursed Catacombs,WARLOCK,SPELL,False,generation_choices;zones_history,False,False,0,0
+TLC_452,Titanographer Osk,MAGE,MINION,False,enchantments;generation_choices;zones_history;modern_keywords,False,False,0,0
+TLC_454,Scalehide Kodo,NEUTRAL,MINION,True,resolution_events;combat_damage;modern_keywords,False,False,1,1
+TLC_460,The Forbidden Sequence,MAGE,SPELL,False,generation_choices;quests,False,False,0,0
+TLC_461,Scrappy Scavenger,MAGE,MINION,False,resolution_events;enchantments;generation_choices;resources_classes,False,False,0,0
+TLC_462,Unearthed Artifacts,MAGE,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_463,Razidir,WARLOCK,MINION,True,resolution_events;generation_choices;zones_history;modern_keywords,False,False,1,1
+TLC_464,Mountain Map,SHAMAN,SPELL,False,generation_choices;zones_history,False,False,0,0
+TLC_465,Stranglevine,NEUTRAL,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_466,Story of Lakkari,WARLOCK,SPELL,False,resolution_events;zones_history,False,False,0,0
+TLC_467,Whispering Stone,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes,False,False,0,0
+TLC_468,Blob of Tar,NEUTRAL,MINION,True,resolution_events;combat_damage,False,False,2,1
+TLC_469,Tunnel Terror,WARLOCK,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_477,Threshrider's Blessing,PALADIN,SPELL,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_478,Axe of the Forefathers,WARRIOR,WEAPON,True,resolution_events;combat_damage,False,False,2,0
+TLC_479,Deathrot Maw,WARLOCK,MINION,False,resolution_events;generation_choices;combat_damage,False,False,0,0
+TLC_480,"Krog, Crater King",NEUTRAL,MINION,True,resolution_events;enchantments;combat_damage,False,False,2,0
+TLC_482,Slagclaw,SHAMAN,MINION,True,resolution_events;modern_keywords,False,False,1,1
+TLC_483,Vault Breaker,MAGE,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_513,Lie in Wait,ROGUE,SPELL,False,zones_history;quests,False,False,0,0
+TLC_514,Merchant of Legend,ROGUE,MINION,False,resolution_events;generation_choices;zones_history,False,False,0,0
+TLC_515,Cultist Map,ROGUE,SPELL,False,generation_choices;zones_history,False,False,0,0
+TLC_516,Neferset Weaponsmith,ROGUE,MINION,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes;secrets_locations,False,False,0,0
+TLC_517,Knockback,ROGUE,SPELL,False,combat_damage;zones_history,False,False,0,0
+TLC_518,Interrogation,ROGUE,SPELL,False,combat_damage;zones_history,False,False,0,0
+TLC_519,Ambush Predators,ROGUE,SPELL,True,resolution_events;combat_damage;modern_keywords,False,False,1,1
+TLC_520,Underbrush Tracker,ROGUE,MINION,True,enchantments;combat_damage;zones_history,False,False,2,3
+TLC_521,Eyes in the Sky,ROGUE,MINION,False,resolution_events;zones_history,False,False,0,0
+TLC_522,Opu the Unseen,ROGUE,MINION,False,resolution_events;combat_damage;zones_history;resources_classes,False,False,0,0
+TLC_600,Windpeak Wyrm,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage;modern_keywords,False,False,2,1
+TLC_601,Shellnado,WARRIOR,SPELL,True,combat_damage,False,False,1,0
+TLC_602,Enter the Lost City,WARRIOR,SPELL,False,quests,False,False,0,0
+TLC_603,Platysaur,NEUTRAL,MINION,False,resolution_events;zones_history,False,False,0,0
+TLC_605,Tar Tyrant,NEUTRAL,MINION,True,enchantments;combat_damage,False,False,2,0
+TLC_606,Latorvian Armorer,WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,0
+TLC_620,Fortify,WARRIOR,SPELL,True,enchantments;combat_damage,False,False,1,0
+TLC_621,Willful Watcher,NEUTRAL,MINION,True,resolution_events;combat_damage;zones_history,False,False,2,0
+TLC_622,City Defenses,WARRIOR,SPELL,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TLC_623,Stonecarver,WARRIOR,MINION,True,resolution_events;enchantments,False,False,2,1
+TLC_624,"Nablya, the Watcher",WARRIOR,MINION,True,resolution_events;enchantments;combat_damage,False,False,1,1
+TLC_630,Gorishi Wasp,DEMONHUNTER,MINION,True,resolution_events;enchantments;generation_choices;combat_damage,False,False,2,1
+TLC_631,Unleash the Colossus,DEMONHUNTER,SPELL,False,combat_damage;quests,False,False,0,0
+TLC_632,Story of Sulfuras,WARRIOR,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;resources_classes,False,False,0,0
+TLC_633,Bugsquasher,DEMONHUNTER,MINION,True,resolution_events;combat_damage,False,False,1,0
+TLC_810,High Cultist Herenn,DEATHKNIGHT,MINION,False,resolution_events;zones_history,False,False,0,0
+TLC_811,Archaios,PRIEST,MINION,False,resolution_events;enchantments;combat_damage,False,False,0,0
+TLC_814,Twilight Mender,PRIEST,MINION,False,resolution_events;generation_choices,False,False,0,0
+TLC_815,Gravedawn Voidbulb,PRIEST,SPELL,False,resolution_events;enchantments;generation_choices;combat_damage;modern_keywords,False,False,0,0
+TLC_816,Gravedawn Sunbloom,PRIEST,SPELL,True,enchantments;zones_history;modern_keywords,False,False,2,2
+TLC_817,Reach Equilibrium,PRIEST,SPELL,False,zones_history;quests,False,False,0,0
+TLC_818,Resuscitate,PRIEST,SPELL,True,resolution_events;enchantments;zones_history,False,False,1,1
+TLC_819,Gladesong Siren,PRIEST,MINION,True,enchantments;combat_damage;zones_history,False,False,2,3
+TLC_820,Glade Ecologist,PRIEST,MINION,False,resolution_events;enchantments;generation_choices,False,False,0,0
+TLC_821,Wilted Shadow,PRIEST,MINION,False,resolution_events;combat_damage,False,False,0,0
+TLC_822,Dinositter,HUNTER,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,2,4
+TLC_823,Cower in Fear,HUNTER,SPELL,True,enchantments;combat_damage,False,False,1,1
+TLC_824,Odd Map,HUNTER,SPELL,False,generation_choices;combat_damage,False,False,0,0
+TLC_825,Ravasaur Matriarch,HUNTER,MINION,True,combat_damage;modern_keywords,False,False,1,1
+TLC_826,Story of Carnassa,HUNTER,SPELL,False,resolution_events;enchantments;zones_history,False,False,0,0
+TLC_827,Grazing Stegodon,HUNTER,MINION,False,resolution_events;enchantments;combat_damage;zones_history,False,False,0,0
+TLC_828,Supreme Dinomancy,HUNTER,SPELL,True,enchantments;zones_history,False,False,1,1
+TLC_829,Ravenous Devilsaur,NEUTRAL,MINION,True,resolution_events;enchantments;modern_keywords,False,False,1,1
+TLC_830,The Food Chain,HUNTER,SPELL,False,combat_damage;quests,False,False,0,0
+TLC_831,Pterrordax Egg,NEUTRAL,MINION,False,resolution_events,False,False,0,0
+TLC_833,Insect Claw,DEMONHUNTER,WEAPON,True,resolution_events;combat_damage,False,False,2,1
+TLC_835,Story of Amara,PRIEST,SPELL,True,enchantments,False,False,1,0
+TLC_836,Niri of the Crater,HUNTER,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TLC_840,Gorishi Tunneler,DEMONHUNTER,MINION,True,resolution_events;combat_damage,False,False,2,6
+TLC_841,Entomologist Toru,DEMONHUNTER,MINION,False,resolution_events;enchantments;zones_history,False,False,0,0
+TLC_888,Cloud Serpent,NEUTRAL,MINION,True,resolution_events;enchantments;generation_choices;zones_history,False,False,1,7
+TLC_900,Hive Map,DEMONHUNTER,SPELL,False,generation_choices,False,False,0,0
+TLC_901,Fumigate,DEMONHUNTER,SPELL,True,combat_damage,False,False,1,1
+TLC_902,Infestation,DEMONHUNTER,SPELL,True,enchantments;generation_choices;combat_damage,False,False,1,1
+TLC_903,Silithid Queen,DEMONHUNTER,MINION,True,enchantments;combat_damage;modern_keywords,False,False,1,1
+TLC_987,Questing Assistant,NEUTRAL,MINION,False,resolution_events;combat_damage;zones_history;quests,False,False,0,0
+TLC_EVENT_400,Storm the Gates,NEUTRAL,SPELL,False,enchantments;quests,False,False,0,0
+TLC_EVENT_402,Staff of the Endbringer,DEATHKNIGHT,WEAPON,True,resolution_events,False,False,2,2
+TTN_851,Resistance Aura,PALADIN,SPELL,False,enchantments,False,False,0,0

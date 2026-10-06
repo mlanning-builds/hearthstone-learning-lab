@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "patch": "36.6.0.251952",
+  "scope": "Provisional experimental runtime admission; independent client traces remain pending",
+  "collectibles": [
+    "JAIL_330",
+    "JAIL_509",
+    "JAIL_860"
+  ],
+  "generated_dependencies": [],
+  "evidence": [
+    "data/standard/cards.json",
+    "expanded/reviewed_cards.json",
+    "tests/test_expanded_passive_admission.py",
+    "tests/test_expanded_final_card_paths.py",
+    "tests/test_expanded_starting_rules.py"
+  ],
+  "runtime_paths": [
+    "Paid stat gain and Silence for Champion",
+    "Godfrey opening-deck predicate, physical overdraw cache and discounted return after a paid card frees space",
+    "Chef original-cost condition and fifth-owner-turn mana deadline"
+  ],
+  "open_independent_checks": [
+    "Champion set-stat, temporary-stat, aura and intrinsic-base transitions",
+    "Godfrey simultaneous freed slots, destruction interactions and recovery ordering",
+    "Chef initial turn counting, skipped turns and deadline phase relative to locked mana"
+  ],
+  "full_standard_ready": false
+}

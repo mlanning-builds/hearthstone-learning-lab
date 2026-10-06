@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "patch": "36.6.0.251952",
+  "scope": "Provisional experimental runtime admission; not independent client conformance",
+  "collectibles": ["CORE_DAL_575", "TIME_044", "TIME_810"],
+  "generated_dependencies": ["TIME_044t1", "TIME_044t2", "TIME_810t1", "TIME_810t2"],
+  "evidence": [
+    "data/standard/cards.json",
+    "data/standard/all_cards.json.gz",
+    "expanded/reviewed_cards.json",
+    "tests/test_expanded_closed_admission.py",
+    "tests/test_expanded_evolving_locations.py",
+    "tests/test_expanded_final_card_paths.py"
+  ],
+  "primary_reference_urls": [
+    "https://hearthstone.blizzard.com/en-us/cards/126975-khadgar",
+    "https://hearthstone.blizzard.com/en-us/cards/120821-past-gnomeregan",
+    "https://hearthstone.blizzard.com/en-us/cards/119166-past-silvermoon",
+    "https://hearthstone.blizzard.com/en-us/news/24245210/across-the-timeways-is-now-live"
+  ],
+  "reference_limitations": "Public library retrieval did not yield full card text uniformly. Frozen record hashes ground these declarations; the primary URLs are references, not verified independent interaction traces.",
+  "admission_conditions": [
+    "Every explicit dependent identity exists in the pinned manifest and runtime registry",
+    "Ordinary legal decks and paid plays execute without fixture registry patches or synthetic pools",
+    "Family interactions and consolidated regression pass for unchanged source",
+    "Independent timing and replacement gaps remain explicit and provisional"
+  ],
+  "open_independent_checks": [
+    "Khadgar ordering with summon listeners, transformed bodies, extra summons and summon-origin attribution",
+    "Evolving location last-charge, transform, destruction and activation ordering",
+    "Silvermoon excess damage with replacement, prevention and damage modifiers"
+  ]
+}

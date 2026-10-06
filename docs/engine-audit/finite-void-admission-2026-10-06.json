@@ -1,0 +1,8 @@
+{
+  "scope": "Provisional production admission; independent client fidelity and complete generation membership remain unfinished",
+  "card_id": "JAIL_719",
+  "record_sha256": "6cd19373679f47b05131988dc5af3f8755d97d4d6bd8a46fff9c6f9114a18ad8",
+  "text": "[x]<b>Lifesteal</b>. <b>Battlecry:</b> Send your\ndeck to the Void, except 1 card.\nAt the start of your turns, get\ntwo cards from the Void.",
+  "checks": "Four isolated preparation checks pass: paid capture of actual deck cards, source-independent owner-turn returns, finite depletion with normal fatigue, and clone/observation privacy.",
+  "limitations": "Random card retention and return order, multiple independent Void payloads and timing need independent client evidence; shared copy and entry fidelity remain unresolved."
+}

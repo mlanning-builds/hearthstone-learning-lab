@@ -1,0 +1,1245 @@
+{
+  "scope": "Eight remaining frozen regular Standard Quest/Sidequest root declarations and candidate dependencies; not admission or client verification.",
+  "patch": "36.6.0.251952",
+  "source": "staging/rebased-88/data/standard/all_cards.json.gz",
+  "source_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+  "roots": [
+    "END_017",
+    "TLC_229",
+    "TLC_460",
+    "TLC_602",
+    "TLC_631",
+    "TLC_817",
+    "TLC_830",
+    "TLC_EVENT_400"
+  ],
+  "prefix_relation_candidates": {
+    "END_017": [
+      "END_017t"
+    ],
+    "TLC_229": [
+      "TLC_229t14",
+      "TLC_229t14e"
+    ],
+    "TLC_460": [
+      "TLC_460t"
+    ],
+    "TLC_602": [
+      "TLC_602t"
+    ],
+    "TLC_631": [
+      "TLC_631e",
+      "TLC_631t"
+    ],
+    "TLC_817": [
+      "TLC_817t",
+      "TLC_817t2",
+      "TLC_817t3",
+      "TLC_817t4",
+      "TLC_817t5"
+    ],
+    "TLC_830": [
+      "TLC_830t"
+    ],
+    "TLC_EVENT_400": []
+  },
+  "relation_warning": "Prefixes identify candidates only; do not infer card behavior or generation eligibility from prefixes.",
+  "latorvius_historical_reward_candidates": [
+    "UNG_116t",
+    "UNG_920t1",
+    "UNG_028t",
+    "UNG_954t1",
+    "UNG_940t8",
+    "UNG_067t1",
+    "UNG_942t",
+    "UNG_829t1",
+    "UNG_934t1"
+  ],
+  "historical_warning": "These frozen UnGoro reward records include later card changes. Do not substitute their release-era text. Confirm the nine-card pool against independent evidence before admission.",
+  "work": {
+    "END_017": {
+      "progress": "ordered full-hand then empty-hand stages",
+      "reward": "draw to hand limit; opponent hand removal semantics"
+    },
+    "TLC_229": {
+      "progress": "unique minion types from paid play; multi-type and ALL matching",
+      "reward": "two Adapt choices retained for future played minions"
+    },
+    "TLC_460": {
+      "progress": "Discover completion event, not offer construction",
+      "reward": "Origin Stone automatic play of unchosen options and durability, including nested choices"
+    },
+    "TLC_602": {
+      "progress": "survived-turn boundary and when played turn counts",
+      "reward": "two distinct historical Quest rewards in hand, rest in deck; all nine rewards and dependencies"
+    },
+    "TLC_631": {
+      "progress": "exact actual two-damage events on owner turn",
+      "reward": "persistent two-damage follow-up with recursion suppression and source attribution"
+    },
+    "TLC_817": {
+      "progress": "independent Holy and Shadow goals active together",
+      "reward": "physical hand combination; copied Battlecry and Deathrattle, Reborn"
+    },
+    "TLC_830": {
+      "progress": "unique played Beast Attack values 1/3/5/7, stat snapshot timing",
+      "reward": "three complete sequential Beast Discover pools at Attack 8/6/4; costs set to 2"
+    },
+    "TLC_EVENT_400": {
+      "progress": "sidequest slot coexistence; paid Beast-or-Undead plays",
+      "reward": "custom Zombeast construction, complete eligible parts, dynamic card identity and cost reduction"
+    }
+  },
+  "records": {
+    "END_017": {
+      "record": {
+        "artist": "Mooncolony",
+        "classes": [
+          "HUNTER",
+          "WARLOCK"
+        ],
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 121159,
+        "elite": true,
+        "flavor": "Before Tick and Tock, we grew our entertainment on vines.",
+        "id": "END_017",
+        "isMiniSet": true,
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "Battle at the End Time",
+        "rarity": "LEGENDARY",
+        "set": "TIME_TRAVEL",
+        "text": "<b>Quest:</b> Fill your hand, then empty it.\n<b>Reward: </b>Tick and Tock.",
+        "type": "SPELL"
+      },
+      "record_sha256": "2dc1219b08f5a8e0c3322432dfddda4ef7f5267e1bd12810dc3b580d86dfa022"
+    },
+    "END_017t": {
+      "record": {
+        "artist": "Mooncolony",
+        "attack": 8,
+        "classes": [
+          "HUNTER",
+          "WARLOCK"
+        ],
+        "cost": 5,
+        "dbfId": 121160,
+        "elite": true,
+        "health": 8,
+        "id": "END_017t",
+        "isMiniSet": true,
+        "mechanics": [
+          "BATTLECRY",
+          "DEATHRATTLE"
+        ],
+        "name": "Tick and Tock",
+        "race": "DRAGON",
+        "races": [
+          "DRAGON"
+        ],
+        "set": "TIME_TRAVEL",
+        "text": "<b>Battlecry:</b> Draw until\nyour hand is full.\n<b>Deathrattle:</b> Empty the opponent's hand.",
+        "type": "MINION"
+      },
+      "record_sha256": "9df1ba34664b941ec6d004588a5d45a3992c2951ed82b3bbc5f3cb4bbe8ba22a"
+    },
+    "TLC_229": {
+      "record": {
+        "artist": "Dmitry Bolotov",
+        "cardClass": "SHAMAN",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 117538,
+        "elite": true,
+        "flavor": "Day 10. A Tortollan named Bralma took Niri, Elise, and I deep into the mountain. She showed us how the Tortollans move lava up from the base of the volcano through a system of \u201clavaqueducts.\u201d I was shocked to find a pack of Volcanosaurs living there!",
+        "id": "TLC_229",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "Spirit of the Mountain",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "<b>Quest:</b> Play 6 minions\nof unique types.\n<b>Reward:</b> Ashalon.",
+        "type": "SPELL"
+      },
+      "record_sha256": "8cc3c0ea5560e6821ac450a25f7441ea5c3617dbc7c9e3bcdb0c63cb03027aa6"
+    },
+    "TLC_229t14": {
+      "record": {
+        "artist": "Dmitry Bolotov",
+        "attack": 8,
+        "cardClass": "SHAMAN",
+        "cost": 5,
+        "dbfId": 120778,
+        "elite": true,
+        "health": 8,
+        "id": "TLC_229t14",
+        "mechanics": [
+          "BATTLECRY",
+          "RUSH"
+        ],
+        "name": "Ashalon, Ridge Guardian",
+        "race": "ELEMENTAL",
+        "races": [
+          "ELEMENTAL",
+          "BEAST"
+        ],
+        "referencedTags": [
+          "ADAPT"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Rush</b>. <b>Battlecry:</b> <b>Adapt</b> twice.\nFor the rest of the game,\ngive minions you play\nthose <b><b>Adapt</b>ations</b>.",
+        "type": "MINION"
+      },
+      "record_sha256": "f66407ecfb4a025742527f6eb633db93cd8dbd57fa120459fac7c31581829eec"
+    },
+    "TLC_229t14e": {
+      "record": {
+        "cardClass": "SHAMAN",
+        "dbfId": 120779,
+        "id": "TLC_229t14e",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ],
+        "name": "Perfect Evolution",
+        "set": "THE_LOST_CITY",
+        "text": "For the rest of the game, give minions you play those <b>Adaptations</b>.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "3ccd0969f1dc9d8209d82e81fd86c3ce0081455c094db7482f36eb1c746f90c5"
+    },
+    "TLC_460": {
+      "record": {
+        "artist": "Mooncolony",
+        "cardClass": "MAGE",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 118183,
+        "elite": true,
+        "flavor": "Day 9. We were not welcomed with open arms, but with spears! Fortunately, Chief Esho took pity on us and called off the guards. Learning of Elise's expertise, a Titanographer whisked her away to the library. Umbra disappeared in the twisting streets...",
+        "id": "TLC_460",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "The Forbidden Sequence",
+        "rarity": "LEGENDARY",
+        "referencedTags": [
+          "DISCOVER"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Quest:</b> <b>Discover</b> 8 cards.\n<b>Reward:</b> The Origin Stone.",
+        "type": "SPELL"
+      },
+      "record_sha256": "cf7cf0c90ef892b2fb6f40677bd7204b992c21ee923d223a6c262ae63e3d952a"
+    },
+    "TLC_460t": {
+      "record": {
+        "artist": "BOSi Studio",
+        "attack": 0,
+        "cardClass": "MAGE",
+        "cost": 3,
+        "dbfId": 118191,
+        "durability": 0,
+        "elite": true,
+        "health": 8,
+        "id": "TLC_460t",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ],
+        "name": "The Origin Stone",
+        "referencedTags": [
+          "DISCOVER"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "After you <b>Discover</b> a card, this plays the other options.\nLose 1 Durability.",
+        "type": "WEAPON"
+      },
+      "record_sha256": "1818ee93350ef9af9bc8e3b64a3f03804ab9b812783df44a3f6f998895817001"
+    },
+    "TLC_602": {
+      "record": {
+        "artist": "Zoltan Boros",
+        "cardClass": "WARRIOR",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 117716,
+        "elite": true,
+        "flavor": "Day 8. We\u2019ve done it! As night fell, we came upon a brilliantly glowing tunnel guarded by two slumbering Tol\u2019vir. With silent footsteps, we walked through and emerged into the heart of the Lost City! I\u2019m sure my people will welcome us with open arms.",
+        "id": "TLC_602",
+        "mechanics": [
+          "QUEST",
+          "TRIGGER_VISUAL"
+        ],
+        "name": "Enter the Lost City",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Quest:</b> Survive 10 turns.\n<b>Reward: </b>Latorvius, Gaze\nof the City.",
+        "type": "SPELL"
+      },
+      "record_sha256": "49b9173d7ef0dba16e44cb02ce048f1b0c968abf65b26fc429a353ee0c0e3406"
+    },
+    "TLC_602t": {
+      "record": {
+        "artist": "Kevin Sidharta",
+        "attack": 8,
+        "cardClass": "WARRIOR",
+        "cost": 5,
+        "dbfId": 117717,
+        "elite": true,
+        "health": 8,
+        "id": "TLC_602t",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Latorvius, Gaze of the City",
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Battlecry:</b> Get 2 random\n'Journey to Un'Goro' <b>Quest\nRewards</b>. Shuffle the rest\ninto your deck.",
+        "type": "MINION"
+      },
+      "record_sha256": "61950945575fcbe3c6768d3a0f9b8fc0c37eaddedf75f9c37fe5ad5df8b2373c"
+    },
+    "TLC_631": {
+      "record": {
+        "artist": "Felideus Bubastis",
+        "cardClass": "DEMONHUNTER",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 117871,
+        "elite": true,
+        "flavor": "Day 4. I am dismayed to report that we thought we'd found a hidden entrance to the Lost City, but in fact it was a Silithid Hive! We high-tailed it out of there faster than a goblin wearing rocket boots. I am not terribly fond of bugs.",
+        "id": "TLC_631",
+        "mechanics": [
+          "QUEST",
+          "TRIGGER_VISUAL"
+        ],
+        "name": "Unleash the Colossus",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "<b>Quest:</b> Deal exactly 2 damage to an enemy\non your turn, 12 times.\n<b>Reward:</b> Gorishi Colossus.",
+        "type": "SPELL"
+      },
+      "record_sha256": "61a98851f21b692e76c322692757db2ba0ec6c0a88540e330d30112a9e611a99"
+    },
+    "TLC_631e": {
+      "record": {
+        "cardClass": "DEMONHUNTER",
+        "dbfId": 123168,
+        "id": "TLC_631e",
+        "mechanics": [
+          "TRIGGER_VISUAL"
+        ],
+        "name": "Gorishi's Favor",
+        "set": "THE_LOST_CITY",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "557292c5bac888465a659934f562808cad9ec94522eb9b583a1de4e7c6ce2952"
+    },
+    "TLC_631t": {
+      "record": {
+        "artist": "James Ryman",
+        "attack": 8,
+        "cardClass": "DEMONHUNTER",
+        "cost": 5,
+        "dbfId": 117872,
+        "elite": true,
+        "health": 8,
+        "id": "TLC_631t",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Gorishi Colossus",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Battlecry:</b> For the rest of the\ngame, whenever you deal\nexactly 2 damage to an\nenemy, deal 2 more.",
+        "type": "MINION"
+      },
+      "record_sha256": "289ecaa0d2c590adfd409069335a70bf84cc9731a135497ed3e843d795b7a825"
+    },
+    "TLC_817": {
+      "record": {
+        "artist": "BOSi Studio",
+        "cardClass": "PRIEST",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 117544,
+        "elite": true,
+        "flavor": "Day 6. Today we found ourselves in a glade tormented by conflicting Holy and Shadow magic. At its center were two enormous Elementals, like opposite sides of the same coin. I hope one day we'll return here to see this broken place restored to peace.",
+        "id": "TLC_817",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "Reach Equilibrium",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Quest:</b> Cast 4 Holy spells\n<b>Reward:</b> Life's Breath.\n<b>Quest:</b> Cast 4 Shadow spells.\n<b>Reward:</b> Death's Touch.",
+        "type": "SPELL"
+      },
+      "record_sha256": "368bfe52f773d2894d980b84bbd903c4e691b5c8e6655ad77be3c6a80c1baf72"
+    },
+    "TLC_817t": {
+      "record": {
+        "battlegroundsRelatedCard": 119879,
+        "cardClass": "PRIEST",
+        "cost": 1,
+        "dbfId": 117545,
+        "elite": true,
+        "id": "TLC_817t",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "Cleanse the Shadow",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Quest:</b> Cast 4 Holy spells.\n<b>Reward:</b> Life's Breath.",
+        "type": "SPELL"
+      },
+      "record_sha256": "f976dd8c5c83a688caa7f97ae44d48e5acc4b8e0713f8a62a5e9cd4d8586f39a"
+    },
+    "TLC_817t2": {
+      "record": {
+        "battlegroundsRelatedCard": 119879,
+        "cardClass": "PRIEST",
+        "cost": 1,
+        "dbfId": 119726,
+        "elite": true,
+        "id": "TLC_817t2",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "Corrupt the Light",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Quest:</b> Cast 4 Shadow spells.\n<b>Reward:</b> Death's Touch.",
+        "type": "SPELL"
+      },
+      "record_sha256": "b2f59ae4b7d1350c6664c404bd8e4fb3239a3c1c43a72984a6ea716230af3c0b"
+    },
+    "TLC_817t3": {
+      "record": {
+        "artist": "Daniil Kudriavtsev",
+        "attack": 4,
+        "cardClass": "PRIEST",
+        "cost": 5,
+        "dbfId": 118551,
+        "elite": true,
+        "health": 4,
+        "id": "TLC_817t3",
+        "mechanics": [
+          "BATTLECRY",
+          "TAUNT"
+        ],
+        "name": "Sol'etos, Life's Breath",
+        "race": "ELEMENTAL",
+        "races": [
+          "ELEMENTAL"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Taunt</b>. <b>Battlecry:</b> Summon\na copy of this.\n<i>If you're holding both halves\n\u00a0of Sol'etos, combine!</i>",
+        "type": "MINION"
+      },
+      "record_sha256": "dec13a24b2815dfca87e7130475454af18fa85c57181ba1136b753c7326575ff"
+    },
+    "TLC_817t4": {
+      "record": {
+        "artist": "Daniil Kudriavtsev",
+        "attack": 4,
+        "cardClass": "PRIEST",
+        "cost": 5,
+        "dbfId": 118552,
+        "elite": true,
+        "health": 4,
+        "id": "TLC_817t4",
+        "mechanics": [
+          "DEATHRATTLE",
+          "REBORN"
+        ],
+        "name": "Sol'etos, Death's Touch",
+        "race": "ELEMENTAL",
+        "races": [
+          "ELEMENTAL"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Reborn</b>. <b>Deathrattle:</b> Deal 5\ndamage to a random enemy.\n<i>If you're holding both halves\nof Sol'etos, combine!</i>",
+        "type": "MINION"
+      },
+      "record_sha256": "ab7cfbaa5599c630a565c42eb81583a3149a3a5eb1932bcf7bebcd764bcd8f0f"
+    },
+    "TLC_817t5": {
+      "record": {
+        "artist": "Daniil Kudriavtsev",
+        "attack": 8,
+        "cardClass": "PRIEST",
+        "cost": 5,
+        "dbfId": 119879,
+        "elite": true,
+        "health": 8,
+        "id": "TLC_817t5",
+        "mechanics": [
+          "BATTLECRY",
+          "DEATHRATTLE",
+          "REBORN",
+          "TAUNT"
+        ],
+        "name": "Sol'etos, Cycle's Rebirth",
+        "race": "ELEMENTAL",
+        "races": [
+          "ELEMENTAL"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Taunt</b>, <b>Reborn</b>. <b>Battlecry:</b>\nSummon a copy of this.\n<b>Deathrattle:</b> Deal 5 damage\nto a random enemy.",
+        "type": "MINION"
+      },
+      "record_sha256": "631f390399260599812e594aa8f5598171e5121193566306888c6d53d579e1b4"
+    },
+    "TLC_830": {
+      "record": {
+        "artist": "L. Lullabi & T. Shevtsov",
+        "cardClass": "HUNTER",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 117672,
+        "elite": true,
+        "flavor": "Day 1. The search begins! I joined Elise Starseeker at the outskirts of the Crater, as well as a Tortollan named Umbra and a most curious gnome named Niri. Embarking into the jungle, we stumbled upon the largest tracks I\u2019ve ever laid eyes on!",
+        "id": "TLC_830",
+        "mechanics": [
+          "QUEST"
+        ],
+        "name": "The Food Chain",
+        "rarity": "LEGENDARY",
+        "set": "THE_LOST_CITY",
+        "text": "<b>Quest:</b> Play a 1, 3, 5, and 7-Attack Beast.\n<b>Reward:</b> Shokk.",
+        "type": "SPELL"
+      },
+      "record_sha256": "ee6e26cc1d1e7ff35f4c8493689c1c92be744943e8d0b137622e1eecbaf74b56"
+    },
+    "TLC_830t": {
+      "record": {
+        "artist": "Alex Horley Orlandelli",
+        "attack": 9,
+        "cardClass": "HUNTER",
+        "cost": 5,
+        "dbfId": 117673,
+        "elite": true,
+        "health": 9,
+        "id": "TLC_830t",
+        "mechanics": [
+          "BATTLECRY",
+          "RUSH"
+        ],
+        "name": "Shokk, Jungle Tyrant",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "set": "THE_LOST_CITY",
+        "text": "[x]<b>Rush</b>\n<b>Battlecry:</b> <b>Discover</b> any\n8, 6, and 4-Attack Beast.\nSet their Costs to (2).",
+        "type": "MINION"
+      },
+      "record_sha256": "9580e0a2955535fc7bd962ecc1f2a712e50d8ca20f41f90ac94c523bbec9b55c"
+    },
+    "TLC_EVENT_400": {
+      "record": {
+        "artist": "James Ryman",
+        "cardClass": "NEUTRAL",
+        "collectible": true,
+        "cost": 1,
+        "dbfId": 120648,
+        "flavor": "Have fun storming the Lost City!",
+        "howToEarn": "Earnable after opening a <i>The Lost City of Un'Goro</i> card pack.",
+        "howToEarnGolden": "Earnable after opening a golden <i>The Lost City of Un'Goro</i> card pack.",
+        "id": "TLC_EVENT_400",
+        "mechanics": [
+          "SIDE_QUEST"
+        ],
+        "name": "Storm the Gates",
+        "rarity": "EPIC",
+        "set": "EVENT",
+        "text": "[x]<b>Sidequest:</b> Play\n3 Beasts or Undead.\n<b>Reward:</b> Craft a custom\nZombeast. It costs (3) less.",
+        "type": "SPELL"
+      },
+      "record_sha256": "c049fce00cab76cb54a8ed415e18c1324f22d5165f3d155a1f3ab6b6991bbb81"
+    },
+    "UNG_028t": {
+      "record": {
+        "artist": "Rafael Zanchetin",
+        "cardClass": "MAGE",
+        "cost": 5,
+        "dbfId": 41167,
+        "elite": true,
+        "id": "UNG_028t",
+        "name": "Time Warp",
+        "set": "UNGORO",
+        "spellSchool": "ARCANE",
+        "text": "Take an extra turn.\n<i>(Once per game)</i>",
+        "type": "SPELL"
+      },
+      "record_sha256": "421984792ec46e27f48a4016e0c88c1e354b33f1edc02ec36c51c27e882c98d0"
+    },
+    "UNG_067t1": {
+      "record": {
+        "artist": "James Ryman",
+        "cardClass": "ROGUE",
+        "cost": 5,
+        "dbfId": 41221,
+        "elite": true,
+        "id": "UNG_067t1",
+        "name": "Crystal Core",
+        "set": "UNGORO",
+        "text": "For the rest of the game, your minions are 5/5.",
+        "type": "SPELL"
+      },
+      "record_sha256": "48578c421a78d5856a9c723a218a99cb79e0f4f2c7f7a8429f7db9c7788ffea8"
+    },
+    "UNG_067t1e": {
+      "record": {
+        "artist": "James Ryman",
+        "cardClass": "NEUTRAL",
+        "dbfId": 42991,
+        "id": "UNG_067t1e",
+        "name": "Crystallized",
+        "set": "UNGORO",
+        "text": "Your minions are 5/5.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "5b5e81264bf854019ec4483d904f528758d0882904aaf1f40163d049ca0c2440"
+    },
+    "UNG_067t1e2": {
+      "record": {
+        "cardClass": "NEUTRAL",
+        "dbfId": 46043,
+        "id": "UNG_067t1e2",
+        "mechanics": [
+          "CANT_BE_SILENCED"
+        ],
+        "name": "Crystallized",
+        "set": "UNGORO",
+        "text": "5/5.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "8ffd7390ca046c2f5a97cd0fb78661e40df8ef76f3bcac64a75033da5858b6f6"
+    },
+    "UNG_116t": {
+      "record": {
+        "artist": "Sean McNally",
+        "attack": 8,
+        "cardClass": "DRUID",
+        "cost": 5,
+        "dbfId": 41100,
+        "elite": true,
+        "health": 8,
+        "id": "UNG_116t",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Barnabus the Stomper",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "set": "UNGORO",
+        "text": "<b>Battlecry:</b> Reduce the\nCost of minions in your deck to (0).",
+        "type": "MINION"
+      },
+      "record_sha256": "5b77cfc018aba83d29665be3aea6e6c990525d4bd0f722234e7e3c3df1cce530"
+    },
+    "UNG_829t1": {
+      "record": {
+        "artist": "Alex Konstad",
+        "cardClass": "WARLOCK",
+        "cost": 5,
+        "dbfId": 41942,
+        "elite": true,
+        "id": "UNG_829t1",
+        "name": "Nether Portal",
+        "set": "UNGORO",
+        "spellSchool": "SHADOW",
+        "text": "Open a permanent portal that summons 3/2 Imps.",
+        "type": "SPELL"
+      },
+      "record_sha256": "5676dc50bcaa3c7d93e0af1673d1c9aa5f91fcb417384938095f55383238f025"
+    },
+    "UNG_829t2": {
+      "record": {
+        "artist": "Konstantin Turovec",
+        "attack": 0,
+        "cardClass": "WARLOCK",
+        "cost": 11,
+        "dbfId": 42224,
+        "elite": true,
+        "health": 1,
+        "hideStats": true,
+        "id": "UNG_829t2",
+        "mechanics": [
+          "TRIGGER_VISUAL",
+          "UNTOUCHABLE"
+        ],
+        "name": "Nether Portal",
+        "set": "UNGORO",
+        "text": "At the end of your turn, summon two 3/2 Imps.",
+        "type": "MINION"
+      },
+      "record_sha256": "96085e8109c547c54d085e45cf3a94eda8218b9ffc8467cb60022d92eca5f875"
+    },
+    "UNG_829t3": {
+      "record": {
+        "artist": "Rafael Zanchetin",
+        "attack": 3,
+        "cardClass": "WARLOCK",
+        "cost": 2,
+        "dbfId": 42753,
+        "health": 2,
+        "id": "UNG_829t3",
+        "name": "Nether Imp",
+        "race": "DEMON",
+        "races": [
+          "DEMON"
+        ],
+        "set": "UNGORO",
+        "type": "MINION"
+      },
+      "record_sha256": "3300576d72b8a3b14ad09552e5f1684560e55d9f59ef476a0f10a1b03989105b"
+    },
+    "UNG_920t1": {
+      "record": {
+        "artist": "A. J. Nazzaro",
+        "attack": 8,
+        "cardClass": "HUNTER",
+        "cost": 5,
+        "dbfId": 41367,
+        "elite": true,
+        "health": 8,
+        "id": "UNG_920t1",
+        "mechanics": [
+          "BATTLECRY",
+          "RUSH"
+        ],
+        "name": "Queen Carnassa",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "set": "UNGORO",
+        "text": "<b>Rush</b>\n<b>Battlecry:</b> Shuffle 20 Raptors into your deck.",
+        "type": "MINION"
+      },
+      "record_sha256": "b770ad2e4ad6bf91604fa81c4a50156d65a1955f794ec1c74be014da0467b7c1"
+    },
+    "UNG_920t2": {
+      "record": {
+        "artist": "A. J. Nazzaro",
+        "attack": 3,
+        "cardClass": "HUNTER",
+        "cost": 1,
+        "dbfId": 42013,
+        "health": 2,
+        "id": "UNG_920t2",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Carnassa's Brood",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "set": "UNGORO",
+        "text": "<b>Battlecry:</b> Draw a card.",
+        "type": "MINION"
+      },
+      "record_sha256": "cdda280cbd8d01f91e8464db284d07a1376354e66236e43857878a0326936329"
+    },
+    "UNG_934t1": {
+      "record": {
+        "artist": "James Ryman",
+        "attack": 4,
+        "cardClass": "WARRIOR",
+        "cost": 3,
+        "dbfId": 41426,
+        "durability": 0,
+        "elite": true,
+        "health": 2,
+        "id": "UNG_934t1",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Sulfuras",
+        "set": "UNGORO",
+        "text": "<b>Battlecry:</b> Your Hero Power becomes 'Deal 8\u00a0damage to a random enemy.'",
+        "type": "WEAPON"
+      },
+      "record_sha256": "d563b32bb9258bd064737238a0c490dbbd34a847519b71fc4885f4071424a1dd"
+    },
+    "UNG_934t2": {
+      "record": {
+        "artist": "Jimmy Lo",
+        "cardClass": "NEUTRAL",
+        "cost": 2,
+        "dbfId": 41940,
+        "id": "UNG_934t2",
+        "name": "DIE, INSECT!",
+        "set": "UNGORO",
+        "text": "Deal $8 damage to a random enemy.",
+        "type": "HERO_POWER"
+      },
+      "record_sha256": "c6788c73f60e24e7639062b0fc530f22dd1064c07c898ccabfac3a6f25160fa2"
+    },
+    "UNG_940t8": {
+      "record": {
+        "artist": "Konstantin Turovec",
+        "attack": 8,
+        "cardClass": "PRIEST",
+        "cost": 5,
+        "dbfId": 41950,
+        "elite": true,
+        "health": 8,
+        "id": "UNG_940t8",
+        "mechanics": [
+          "BATTLECRY",
+          "TAUNT"
+        ],
+        "name": "Amara, Warden of Hope",
+        "set": "UNGORO",
+        "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Set your\nhero's Health to 40.",
+        "type": "MINION"
+      },
+      "record_sha256": "0de57471aa6e3ea461f4b54492d005dfb81f6016e8483673e49a71248a5517e5"
+    },
+    "UNG_940t8e": {
+      "record": {
+        "cardClass": "PRIEST",
+        "dbfId": 111583,
+        "id": "UNG_940t8e",
+        "name": "Warded By Hope",
+        "set": "UNGORO",
+        "text": "Increased Health.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "78ba812e2c093dc5d3343cb2a5b2e378d1e05b459ce8f2048145e449858fa11a"
+    },
+    "UNG_942t": {
+      "record": {
+        "artist": "Steve Prescott",
+        "attack": 8,
+        "cardClass": "SHAMAN",
+        "cost": 5,
+        "dbfId": 41498,
+        "elite": true,
+        "health": 8,
+        "id": "UNG_942t",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Megafin",
+        "race": "MURLOC",
+        "races": [
+          "MURLOC"
+        ],
+        "set": "UNGORO",
+        "text": "<b>Battlecry:</b> Fill your hand with random Murlocs.",
+        "type": "MINION"
+      },
+      "record_sha256": "03326ab31e4f959e1605341bd7204cf91fef35053216ab1b31141329a7275415"
+    },
+    "UNG_954t1": {
+      "record": {
+        "artist": "Arthur Gimaldinov",
+        "attack": 8,
+        "cardClass": "PALADIN",
+        "cost": 5,
+        "dbfId": 41946,
+        "elite": true,
+        "health": 8,
+        "id": "UNG_954t1",
+        "mechanics": [
+          "BATTLECRY"
+        ],
+        "name": "Galvadon",
+        "race": "BEAST",
+        "races": [
+          "BEAST"
+        ],
+        "referencedTags": [
+          "ADAPT"
+        ],
+        "set": "UNGORO",
+        "text": "<b>Battlecry:</b> <b>Adapt</b> 5 times.",
+        "type": "MINION"
+      },
+      "record_sha256": "4061f9958c43bd13f3db1719e0ebc8ba21c02b5b92c5e94d16e546384240393e"
+    },
+    "UNG_999t10": {
+      "record": {
+        "artist": "Slawomir Maniak",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41054,
+        "hideCost": true,
+        "id": "UNG_999t10",
+        "mechanics": [
+          "STEALTH"
+        ],
+        "name": "Shrouding Mist",
+        "set": "UNGORO",
+        "text": "<b>Stealth</b> until your next turn.",
+        "type": "SPELL"
+      },
+      "record_sha256": "6235b209c24e55afe1a6610cef78759a24e886bf0329aae89c9dda2fa1a07893"
+    },
+    "UNG_999t10e": {
+      "record": {
+        "artist": "Slawomir Maniak",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41065,
+        "id": "UNG_999t10e",
+        "name": "Shrouding Mist",
+        "set": "UNGORO",
+        "text": "Stealthed until your next turn.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "9b49404c6ce80f397ae27ea5f850f9b8527368618d4e4bca5e7bbd40a56b4cc2"
+    },
+    "UNG_999t13": {
+      "record": {
+        "artist": "Mauricio Herrera",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41211,
+        "hideCost": true,
+        "id": "UNG_999t13",
+        "mechanics": [
+          "POISONOUS"
+        ],
+        "name": "Poison Spit",
+        "set": "UNGORO",
+        "text": "<b>Poisonous</b>",
+        "type": "SPELL"
+      },
+      "record_sha256": "4af198c59b8f304530b71e0ec6213c9311fef4d82da84285451f7d1f3a93f956"
+    },
+    "UNG_999t13e": {
+      "record": {
+        "artist": "Mauricio Herrera",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41210,
+        "id": "UNG_999t13e",
+        "name": "Poison Spit",
+        "set": "UNGORO",
+        "text": "<b>Poisonous</b>",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "465db0f085618fa7054eb469121e500c14f3a8655db9459369f1fcd9f1025ee2"
+    },
+    "UNG_999t14": {
+      "record": {
+        "artist": "Rudy Siswanto",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41691,
+        "hideCost": true,
+        "id": "UNG_999t14",
+        "name": "Volcanic Might",
+        "set": "UNGORO",
+        "text": "+1/+1",
+        "type": "SPELL"
+      },
+      "record_sha256": "6101d842c01993460c05f113769aa2fa3585ed58c5653e65c629fd6eba9d47b1"
+    },
+    "UNG_999t14e": {
+      "record": {
+        "artist": "Rudy Siswanto",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41692,
+        "id": "UNG_999t14e",
+        "name": "Volcanic Might",
+        "set": "UNGORO",
+        "text": "+1/+1.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "261dcb40c1af5072629e80d496d46154709138cb6fe1555292b496f8269a150e"
+    },
+    "UNG_999t2": {
+      "record": {
+        "artist": "Zoltan Boros",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41057,
+        "hideCost": true,
+        "id": "UNG_999t2",
+        "mechanics": [
+          "DEATHRATTLE"
+        ],
+        "name": "Living Spores",
+        "set": "UNGORO",
+        "text": "<b>Deathrattle:</b> Summon two 1/1 Plants.",
+        "type": "SPELL"
+      },
+      "record_sha256": "8eedb152e1594a1d9730ec3e5ecd718c00f0cfe0676c2e4bb28f45ca27d28e01"
+    },
+    "UNG_999t2e": {
+      "record": {
+        "artist": "Zoltan Boros",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41693,
+        "id": "UNG_999t2e",
+        "name": "Living Spores",
+        "set": "UNGORO",
+        "text": "<b>Deathrattle:</b> Summon two 1/1 Plants.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "d5e6bcb325032b5c131a7f57e348f46fcf36945f977e6c2ff56e980f563d0001"
+    },
+    "UNG_999t2t1": {
+      "record": {
+        "artist": "Zoltan Boros",
+        "attack": 1,
+        "cardClass": "NEUTRAL",
+        "cost": 1,
+        "dbfId": 41067,
+        "health": 1,
+        "id": "UNG_999t2t1",
+        "name": "Plant",
+        "set": "UNGORO",
+        "techLevel": 1,
+        "type": "MINION"
+      },
+      "record_sha256": "ff5433a54780d36828b9791b94d3d386848607fc70fbe8d2d1b92d161d9a1802"
+    },
+    "UNG_999t3": {
+      "record": {
+        "artist": "Garrett Hanna",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41058,
+        "hideCost": true,
+        "id": "UNG_999t3",
+        "name": "Flaming Claws",
+        "set": "UNGORO",
+        "text": "+3 Attack",
+        "type": "SPELL"
+      },
+      "record_sha256": "34f92ddbb813d1df6be8205cb1b905cc32dec616ff9139d4858abe55036b1f43"
+    },
+    "UNG_999t3e": {
+      "record": {
+        "artist": "Garrett Hanna",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41068,
+        "id": "UNG_999t3e",
+        "name": "Flaming Claws",
+        "set": "UNGORO",
+        "text": "+3 Attack.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "84ee32d119ce879a4b7e180aaafea1582bb33a2ff82f92fd6533b3bce8f650d1"
+    },
+    "UNG_999t4": {
+      "record": {
+        "artist": "Arthur Gimaldinov",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41059,
+        "hideCost": true,
+        "id": "UNG_999t4",
+        "name": "Rocky Carapace",
+        "set": "UNGORO",
+        "text": "+3 Health",
+        "type": "SPELL"
+      },
+      "record_sha256": "e0799d42fdbf2b6500ef6d7c9619c2adc191f829f848c0d778d880fdf57a613f"
+    },
+    "UNG_999t4e": {
+      "record": {
+        "artist": "Arthur Gimaldinov",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41069,
+        "id": "UNG_999t4e",
+        "name": "Rocky Carapace",
+        "set": "UNGORO",
+        "text": "+3 Health.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "05eb6aaf7fd04d2c96b7c395dab2a8d884bde9232ae012bd1f736ebe75632099"
+    },
+    "UNG_999t5": {
+      "record": {
+        "artist": "Jakub Kasper",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41060,
+        "hideCost": true,
+        "id": "UNG_999t5",
+        "mechanics": [
+          "ELUSIVE"
+        ],
+        "name": "Liquid Membrane",
+        "set": "UNGORO",
+        "text": "<b>Elusive</b>",
+        "type": "SPELL"
+      },
+      "record_sha256": "52e73edae162863eac73241cb93cebf723b0939c665e68e00e5a1c1ac3859368"
+    },
+    "UNG_999t5e": {
+      "record": {
+        "artist": "Jakub Kasper",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41070,
+        "id": "UNG_999t5e",
+        "name": "Liquid Membrane",
+        "set": "UNGORO",
+        "text": "<b>Elusive</b>.",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "714ae7c50e194287674b800d81c378e99656e90b232acc906faab46d968cba23"
+    },
+    "UNG_999t6": {
+      "record": {
+        "artist": "Konstantin Turovec",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41061,
+        "hideCost": true,
+        "id": "UNG_999t6",
+        "mechanics": [
+          "TAUNT"
+        ],
+        "name": "Massive",
+        "set": "UNGORO",
+        "text": "<b>Taunt</b>",
+        "type": "SPELL"
+      },
+      "record_sha256": "ef9598741fb41002a2a632a858e281775e9c6724a7c99c7f7eb850a78713815c"
+    },
+    "UNG_999t6e": {
+      "record": {
+        "artist": "Konstantin Turovec",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41071,
+        "id": "UNG_999t6e",
+        "name": "Massive",
+        "set": "UNGORO",
+        "text": "<b>Taunt</b>",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "09d06e4472ebd5df0736ba1799fde4486f2fea172c23875719d5e7c36883031e"
+    },
+    "UNG_999t7": {
+      "record": {
+        "artist": "James Ryman",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41062,
+        "hideCost": true,
+        "id": "UNG_999t7",
+        "mechanics": [
+          "WINDFURY"
+        ],
+        "name": "Lightning Speed",
+        "set": "UNGORO",
+        "text": "<b>Windfury</b>",
+        "type": "SPELL"
+      },
+      "record_sha256": "5df1b20d0239845d4db5a2a25c8f26a470c8d922a8ebdd223e63492e5c8f5ccd"
+    },
+    "UNG_999t7e": {
+      "record": {
+        "artist": "James Ryman",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41072,
+        "id": "UNG_999t7e",
+        "name": "Lightning Speed",
+        "set": "UNGORO",
+        "text": "<b>Windfury</b>",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "dbcfdc9cea420d7463eb68a23bd2455536e8af37cb1831ccd45607629207d975"
+    },
+    "UNG_999t8": {
+      "record": {
+        "artist": "L. Lullabi & K. Turovec",
+        "cardClass": "NEUTRAL",
+        "cost": 0,
+        "dbfId": 41063,
+        "hideCost": true,
+        "id": "UNG_999t8",
+        "mechanics": [
+          "DIVINE_SHIELD"
+        ],
+        "name": "Crackling Shield",
+        "set": "UNGORO",
+        "text": "<b>Divine Shield</b>",
+        "type": "SPELL"
+      },
+      "record_sha256": "5226dfa6199fbb7c10e3c6e54d4ef7bbe5012d64775c95935c9111c6b99953d8"
+    },
+    "UNG_999t8e": {
+      "record": {
+        "artist": "L. Lullabi & K. Turovec",
+        "cardClass": "NEUTRAL",
+        "dbfId": 41073,
+        "id": "UNG_999t8e",
+        "name": "Crackling Shield",
+        "set": "UNGORO",
+        "text": "<b>Divine Shield</b>",
+        "type": "ENCHANTMENT"
+      },
+      "record_sha256": "1c82c3244d14ece06772b636e1d8d163d1bd74a9c365da88b6dc630f427ef5a5"
+    }
+  },
+  "primary_reference_constraints": [
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24294373",
+      "patch": "36.6",
+      "constraints": [
+        "Origin Stone and Sands of Time must complete without a stuck continuation.",
+        "Forbidden Sequence and Arcane Flow must respect hand capacity."
+      ],
+      "limit": "Patch notes name fixed interactions, not their complete timing or choice semantics."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24290432",
+      "patch": "36.2",
+      "constraints": [
+        "Secrets automatically cast by Origin Stone must not expose identities to the opposing viewer in history.",
+        "Winterspring Whelp Frost effects must not duplicate with Origin Stone."
+      ]
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/news/24232759/33-6-patch-notes",
+      "patch": "33.6",
+      "constraints": [
+        "Trust Fall must not summon the second pair twice when Origin Stone is active."
+      ]
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/news/24223019",
+      "patch": "33.2",
+      "constraints": [
+        "Gorishi Colossus persistent reward works on both players turns, unlike its Quest progress.",
+        "Kazakusan does not trigger Origin Stone."
+      ],
+      "limit": "Historical notes changed Forbidden Sequence to seven; pinned card text says eight. Use frozen values, not this earlier balance value."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-us/news/24224212/notas-do-patch-33-0-3",
+      "patch": "33.0.3",
+      "constraints": [
+        "Reach Equilibrium needs four spells per school.",
+        "Spirit of the Mountain needs six types; Ashalon has Rush.",
+        "Shokk uses Discover rather than random generation.",
+        "Unleash the Colossus needs twelve exact-two damage events."
+      ],
+      "limit": "Do not apply unrelated older balance values instead of frozen records."
+    },
+    {
+      "url": "https://hearthstone.blizzard.com/en-gb/cards/120778-ashalon-ridge-guardian/",
+      "constraints": [
+        "Ashalon is Beast/Elemental; choices persist for minions played."
+      ],
+      "limit": "Live page supports printed semantics; frozen archive is the patch identity source."
+    }
+  ]
+}

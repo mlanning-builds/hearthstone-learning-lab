@@ -1,0 +1,92 @@
+"""Explicit Standard declarations: held progress, combat, and death payloads."""
+RULES = {
+ 'CATA_551':('none',[]),
+ 'CATA_552':('character',[('b60_attack_damage',)]),
+ 'CATA_553':('none',[('b60_dragon_rush',)]),
+ 'TIME_213':('none',[('b60_held_nature',)]),
+ 'TIME_702':('character',[('damage',3),('b60_held_armor',)]),
+ 'EDR_460':('minion',[('damage',6)]),
+ 'FIR_918':('minion',[('buff',3,3)]),
+ 'JAIL_801':('character',[('damage',4)]),
+ 'JAIL_803':('enemy_character',[('freeze',),('draw',2)]),
+ 'JAIL_805':('none',[('area_damage','enemy_minions',2)]),
+ 'EDR_843':('none',[]),
+ 'FIR_902':('none',[('schedule_turn_effect','start',1,1,(('missiles','enemies',6),))]),
+ 'CATA_130':('none',[]),
+ 'JAIL_470':('none',[('b60_held_shots',)]),
+ 'CATA_210':('none',[]),
+ 'TLC_827':('none',[]),
+ 'CORE_RLK_567':('none',[]),
+ 'DINO_407':('none',[]),
+ 'TIME_876':('none',[]),
+ 'CAP_000':('none',[]), 'CAP_005':('none',[]),
+ 'CAP_006':('character',[('b60_stealth_damage',)]),
+ 'CAP_001':('minion',[('buff',3,0),('b60_silent_strike',)]),
+ 'CORE_CATA_004':('none',[]), 'CORE_SCH_605':('none',[]),
+ 'DINO_401':('none',[]), 'EDR_421':('none',[]),
+ 'FIR_953':('none',[]), 'JAIL_030':('none',[]),
+ 'CATA_487':('none',[]),
+ 'TLC_811':('none',[]), 'TLC_247':('none',[]), 'CORE_CFM_344':('none',[]),
+ 'EDR_842':('none',[]), 'CORE_RLK_121':('none',[]),
+ 'EDR_484':('none',[]), 'DINO_416':('none',[]),
+ 'TLC_603':('none',[('b60_draw_remember',)]),
+ 'TLC_252':('friendly_minion',[('b60_bones',)]),
+ 'CATA_464':('none',[]),
+ 'JAIL_303':('none',[('b60_secret_hand',)]),
+ 'TIME_714':('none',[('b60_destroy_last_played',)]),
+ 'TIME_103':('none',[]),
+ 'CATA_554':('enemy_minion',[('b60_health_one',),('b60_other_health_one',)]),
+ 'CATA_570':('none',[('b60_draw_discount',10)]),
+ 'TLC_428':('none',[('b60_next_murloc',)]),
+ 'TLC_257':('none',[('b60_minion_cost',5)]),
+ 'EDR_844':('none',[]),
+ 'FIR_928':('none',[('b60_doomed_hand',)]),
+ 'CATA_610':('minion',[('b60_attach',('summon_from_zone','hand',(('type','eq','MINION'),)))]),
+ 'EDR_261':('minion',[('buff',2,2),('b60_attach',('b60_infest',))]),
+ 'TLC_831':('none',[]), 'CAP_800':('none',[]), 'CAP_803':('none',[]),
+ 'EDR_232':('none',[('b60_shuffle_all',)]),
+ 'CATA_978':('minion',[('b60_overkill_discount',8)]),
+ 'CATA_585':('damaged_minion',[('b60_torch',)]),
+ 'JAIL_445':('none',[('b60_death_missiles',)]),
+ 'MEND_302':('none',[('b60_missiles_repeat',)]),
+ 'TIME_212':('friendly_minion',[('damage',2),('damage_random_enemy_minion',4)]),
+}
+MOON_TRANSFORMS={'EDR_460':'EDR_460t','FIR_918':'FIR_918t','JAIL_801':'JAIL_801t','JAIL_803':'JAIL_803t','JAIL_805':'JAIL_805t'}
+DRAGON_TRANSFORMS={cid:cid+'t' for cid in ('CATA_551','CATA_552','CATA_553')}
+TOKEN_RULES={
+ 'CATA_551t':RULES['CATA_551'],'CATA_552t':RULES['CATA_552'],'CATA_553t':RULES['CATA_553'],
+ 'EDR_460t':('minion',[('damage',6)]),
+ 'FIR_918t':('minion',[('buff',3,3),('add','FIR_918',1)]),
+ 'JAIL_801t':RULES['JAIL_801'],'JAIL_803t':RULES['JAIL_803'],'JAIL_805t':RULES['JAIL_805'],
+ 'EDR_843t1':('none',[('filtered_draw',(('type','eq','SPELL'),),1),('filtered_draw',(('type','eq','MINION'),),1)]),
+ 'CATA_464t':('character',[('b60_payload_damage',)]),
+ 'TLC_829t':('minion',[('b60_payload_buff',)]),
+}
+TOKEN_IDS=set(TOKEN_RULES)|{'CATA_210t','TLC_831t'}
+CHOICES={'EDR_843':[
+ ('Draw a spell','none',[('filtered_draw',(('type','eq','SPELL'),),1)]),
+ ('Draw a minion','none',[('filtered_draw',(('type','eq','MINION'),),1)])]}
+TRIGGERS={
+ 'CAP_000':('b60_stealthed_attack',[('buff_event_source',2,2)]),
+ 'CAP_005':('b60_stealthed_attack',[('b60_discount_random',3)]),
+ 'CORE_CATA_004':('b60_adjacent_attack',[('add','CORE_EX1_238',1)]),
+ 'DINO_401':('attacked_self',[('b60_damage_others',)]),
+ 'EDR_421':('attacked_self',[('b60_omen_grow',)]),
+ 'FIR_953':('attacked_self',[('b60_survived_missiles',)]),
+ 'JAIL_030':('attacked_self',[('b60_escape',)]),
+ 'TLC_811':('b60_other_attack',[('b60_attacker_health',)]),
+ 'TLC_247':('b60_attack_kill',[('b60_copy_victim',)]),
+ 'CORE_CFM_344':('b60_attack_kill',[('summon_from_zone','deck',(('tribe','eq','MURLOC'),))]*2),
+ 'CORE_RLK_121':('b60_undead_death',[('draw',1)]),
+ 'EDR_484':('b60_any_death',[('b60_gain_dead_attack',)]),
+ 'DINO_416':('b60_friendly_death',[('b60_reborn_corpses',)]),
+}
+DEATH_EFFECTS={
+ 'CATA_210':[('b60_hatch',)], 'EDR_421':[('b60_omen_damage',)],
+ 'TLC_603':[('b60_discard_remembered',)], 'CATA_464':[('b60_breath',)],
+ 'JAIL_303':[('b60_discard_secret',)], 'TIME_103':[('b60_draw_played',)],
+ 'TLC_831':[('b60_pterrordax',)], 'CAP_803':[('b60_heal_excess',3)],
+}
+START_EFFECTS={'CATA_210':('owner',[('b60_egg_grow',)])}
+END_EFFECTS={'TLC_827':[('buff_self',1,0)]}
+WEAPON_TRIGGERS={'EDR_842':[('b60_weapon_other',)]}

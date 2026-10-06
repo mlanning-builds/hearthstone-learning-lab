@@ -1,0 +1,24 @@
+{
+  "scope": "Regular Constructed JAIL_500; not Mercenaries or adventure Hero Power. Staged contract, not admission.",
+  "primary_source": "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/",
+  "author": "HearthstoneTeam official designer/engineer Q&A",
+  "confirmed": [
+    "Replay order is random.",
+    "Disguised minions replay on the friendly board.",
+    "Slice and Dice cannot be randomly generated or cast by a random-generation pool."
+  ],
+  "printed_constraint": "Enemy targets preferred when legal; fallback required when no legal enemy exists.",
+  "implemented_foundations": [
+    "Private turn-indexed physical hand-play snapshots.",
+    "Automatic card execution and spell frames.",
+    "Explicit prefer_enemies targeting policy separate from strict enemies policy."
+  ],
+  "remaining": [
+    "Replay identity/enchantment and chosen-branch rules.",
+    "Countered/automatic play eligibility.",
+    "Battlecry and other play-trigger semantics.",
+    "Resumable replay sequence with captured random ordering.",
+    "End-turn request must wait until current card/trigger resolution completes and do nothing if already ending.",
+    "Nested replay recursion and history snapshot boundaries."
+  ]
+}

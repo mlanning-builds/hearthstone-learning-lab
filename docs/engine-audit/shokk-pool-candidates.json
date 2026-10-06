@@ -1,0 +1,164 @@
+{
+  "patch": "36.6.0.251952",
+  "status": "candidate membership, not approved generation contract",
+  "card": "TLC_830t",
+  "catalog_sha256": "9e6acb745cf370af30d5785155650917e51dabba8b9222694057725dc497986a",
+  "pools": {
+    "8": [
+      {
+        "id": "CATA_699",
+        "name": "Dread Leviathan",
+        "attack": 8
+      },
+      {
+        "id": "DINO_421",
+        "name": "Seismopod",
+        "attack": 8
+      },
+      {
+        "id": "EDR_888",
+        "name": "Malorne the Waywatcher",
+        "attack": 8
+      },
+      {
+        "id": "TLC_480",
+        "name": "Krog, Crater King",
+        "attack": 8
+      }
+    ],
+    "6": [
+      {
+        "id": "CATA_206",
+        "name": "Twisted Monstrosity",
+        "attack": 6
+      },
+      {
+        "id": "DINO_132",
+        "name": "Asphyxiodon",
+        "attack": 6
+      },
+      {
+        "id": "DINO_138",
+        "name": "Diabolus Rex",
+        "attack": 6
+      },
+      {
+        "id": "EDR_272",
+        "name": "Evergreen Stag",
+        "attack": 6
+      },
+      {
+        "id": "EDR_421",
+        "name": "Omen",
+        "attack": 6
+      },
+      {
+        "id": "EDR_819",
+        "name": "Ursoc",
+        "attack": 6
+      },
+      {
+        "id": "EDR_978",
+        "name": "Meadowstrider",
+        "attack": 6
+      },
+      {
+        "id": "JAIL_831",
+        "name": "King of the Underbelly",
+        "attack": 6
+      },
+      {
+        "id": "MEND_040",
+        "name": "Ash Worm",
+        "attack": 6
+      },
+      {
+        "id": "TLC_240",
+        "name": "Tyrannogill",
+        "attack": 6
+      },
+      {
+        "id": "TLC_401",
+        "name": "Bonechill Stegodon",
+        "attack": 6
+      }
+    ],
+    "4": [
+      {
+        "id": "CORE_CATA_006",
+        "name": "Ulfar",
+        "attack": 4
+      },
+      {
+        "id": "CORE_EDR_004_2026",
+        "name": "Raptor Herald",
+        "attack": 4
+      },
+      {
+        "id": "CORE_SCH_605",
+        "name": "Lake Thresher",
+        "attack": 4
+      },
+      {
+        "id": "CORE_TRL_345",
+        "name": "Krag'wa, the Frog",
+        "attack": 4
+      },
+      {
+        "id": "CORE_TRL_900",
+        "name": "Halazzi, the Lynx",
+        "attack": 4
+      },
+      {
+        "id": "CORE_TTN_866",
+        "name": "Mythical Terror",
+        "attack": 4
+      },
+      {
+        "id": "DINO_400",
+        "name": "Barricade Basher",
+        "attack": 4
+      },
+      {
+        "id": "EDR_014",
+        "name": "Verdant Dreamsaber",
+        "attack": 4
+      },
+      {
+        "id": "END_030",
+        "name": "Haywire Hornswog",
+        "attack": 4
+      },
+      {
+        "id": "FIR_924",
+        "name": "Shadowflame Stalker",
+        "attack": 4
+      },
+      {
+        "id": "JAIL_395",
+        "name": "Sewer Swimmer",
+        "attack": 4
+      },
+      {
+        "id": "JAIL_435",
+        "name": "Rampaging Hound",
+        "attack": 4
+      },
+      {
+        "id": "TLC_246",
+        "name": "Ancient Pterrordax",
+        "attack": 4
+      },
+      {
+        "id": "TLC_436",
+        "name": "Reanimated Pterrordax",
+        "attack": 4
+      },
+      {
+        "id": "TLC_469",
+        "name": "Tunnel Terror",
+        "attack": 4
+      }
+    ]
+  }
+}

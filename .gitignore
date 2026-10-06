@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+runs/
+.DS_Store
+
+# Local history and machine-specific files
+backups/
+**/backups/
+.env
+.env.*
+*.pem
+*.key
+*.log
+.uv/

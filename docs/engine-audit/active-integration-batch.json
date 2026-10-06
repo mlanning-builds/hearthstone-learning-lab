@@ -1,0 +1,428 @@
+{
+  "batch_id": "generation-integration-60-01",
+  "status": "historical_tracking_superseded",
+  "target": 60,
+  "baseline_live_count": 817,
+  "scope": "60 explicit collectible identities; recipe presence is not completion",
+  "completion_requires": [
+    "Live engine registration",
+    "Complete eligible outcome/dependency support",
+    "Focused behavioral validation",
+    "Regression validation"
+  ],
+  "cards": [
+    {
+      "card_id": "CATA_136",
+      "name": "Azshara's Triumph",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_140",
+      "name": "Merithra of the Dream",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_471",
+      "name": "Talanji's Last Stand",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_474",
+      "name": "Spearheart Sentry",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_499",
+      "name": "Disposable Acolytes",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_556",
+      "name": "Carrier Whelp",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_569",
+      "name": "Ceremonial Clash",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_621",
+      "name": "Gelbin's Triumph",
+      "status": "live_enabled_regression_validated"
+    },
+    {
+      "card_id": "CATA_723",
+      "name": "Drakeadon Mongrel",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CATA_EVENT_000",
+      "name": "Primordial Lord",
+      "status": "pending_integration"
+    },
+    {
+      "card_id": "CATA_EVENT_400",
+      "name": "Commissary Crook",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_AT_062",
+      "name": "Ball of Spiders",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_AV_107",
+      "name": "Glaciate",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_BOT_256",
+      "name": "Astromancer",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_BT_321",
+      "name": "Netherwalker",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_CATA_006",
+      "name": "Ulfar",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_CFM_781",
+      "name": "Shaku, the Collector",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_DRG_024",
+      "name": "Sky Raider",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_EDR_001",
+      "name": "Babbling Bookcase",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_ETC_111",
+      "name": "Merch Seller",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_EX1_189",
+      "name": "Brightwing",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_GIL_531",
+      "name": "Witch's Apprentice",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_GIL_836",
+      "name": "Blazing Invocation",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_GVG_114",
+      "name": "Sneed's Old Shredder",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_KAR_057",
+      "name": "Ivory Knight",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_KAR_062",
+      "name": "Netherspite Historian",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_KAR_069",
+      "name": "Swashburglar",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_KAR_077",
+      "name": "Silvermoon Portal",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_LOE_039",
+      "name": "Gorillabot A-3",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_ONY_022",
+      "name": "Battle Vicar",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_REV_308",
+      "name": "Maze Guide",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_TID_931",
+      "name": "Jackpot!",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_UNG_912",
+      "name": "Jeweled Macaw",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_WON_096",
+      "name": "Dark Peddler",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_WON_337",
+      "name": "Ironforge Portal",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_WON_350",
+      "name": "I Know a Guy",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "CORE_WW_374",
+      "name": "Corpse Farm",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "Core_UNG_072",
+      "name": "Stonehill Defender",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_412",
+      "name": "Tortotem",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_415",
+      "name": "Story of Umbra",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_422",
+      "name": "Ankylodon",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_424",
+      "name": "Hero's Welcome",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_426",
+      "name": "Ritual of Life",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_427",
+      "name": "Costume Merchant",
+      "status": "live_enabled_regression_validated"
+    },
+    {
+      "card_id": "DINO_430",
+      "name": "Beast Speaker Taka",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_431",
+      "name": "Atlasaurus",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_433",
+      "name": "Guard Duty",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "DINO_434",
+      "name": "Raptor-Nest Nurse",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_060",
+      "name": "Ward of Earth",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_461",
+      "name": "Ritual of the New Moon",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_462",
+      "name": "Selenic Drake",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_463",
+      "name": "Twilight Influence",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_465",
+      "name": "Ysondre",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_530",
+      "name": "Daydreaming Pixie",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_781",
+      "name": "Harbinger of the Blighted",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_848",
+      "name": "Photosynthesis",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "EDR_999",
+      "name": "Gnawing Greenfin",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "END_005",
+      "name": "Bygone Echoes",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "END_015",
+      "name": "Triennium Rex",
+      "status": "engine_body_written_pending_pool_and_integration"
+    },
+    {
+      "card_id": "END_020",
+      "name": "Eternal Toil",
+      "status": "engine_body_written_pending_pool_and_integration"
+    }
+  ],
+  "latest_validation": {
+    "scope": "Full engine fixture suite and 22 random legal games; not full Standard conformance",
+    "tests": 2671,
+    "passed": true,
+    "full_suite": true,
+    "failures": 0,
+    "errors": 0,
+    "fingerprint": "79ee1622543eb8a8c9b38dd9ec1b70b3e9e2287de21886011595320f2acb5bde",
+    "receipt": "runs/expanded_validation/validation-1eba659302dc4792b6eae32e8a04892c.json"
+  },
+  "shared_work": [
+    {
+      "mechanic": "generated physical summon groups followed by random enemy attacks",
+      "status": "implemented_with_focused_tests",
+      "tests_file": "tests/test_expanded_generated_attacks.py",
+      "limitation": "Synthetic reviewed pools; complete production pools still required"
+    },
+    {
+      "mechanic": "resource-dependent summon pools, corpse and Outcast branches, death-history repetition, conditional death-result generation and live generated Deathrattle resolution",
+      "status": "implemented_with_focused_tests",
+      "tests_file": "tests/test_expanded_generation_dynamic.py",
+      "limitation": "Production pool review/integration and independent interaction conformance remain open"
+    },
+    {
+      "mechanic": "Held generation upgrades, multi-type selectors, intrinsic discard/return hooks, Discover stat absorption, closed Mask/Aura generation and physical Aura duration",
+      "status": "implemented_with_full_regression",
+      "tests_files": [
+        "tests/test_expanded_generation_held_hooks.py",
+        "tests/test_expanded_generation_families.py"
+      ],
+      "limitation": "Only Costume Merchant and Gelbin's Triumph are live; broad pools and independent interaction timing remain open."
+    },
+    {
+      "mechanic": "Shatter, paid-play Rewind, Constructed Dark Gifts and forced combat sequences",
+      "status": "25_dependencies_live_full_regression_passed",
+      "tests_files": [
+        "tests/test_expanded_shatter.py",
+        "tests/test_expanded_rewind.py",
+        "tests/test_expanded_dark_gifts.py",
+        "tests/test_expanded_combat_sequences.py"
+      ],
+      "limitation": "Global outcome generators remain staged; candidate behavior still needs independent client conformance. These 25 additions are dependencies, not extra completed members of the fixed batch."
+    },
+    {
+      "mechanic": "Bound minions, set-aside hands, attached discard timers and remembered resurrection",
+      "status": "11_dependencies_live_full_regression_passed",
+      "tests_files": [
+        "tests/test_expanded_stored_cards.py"
+      ],
+      "card_ids": [
+        "CAP_805",
+        "CAP_806",
+        "CATA_481",
+        "CATA_EVENT_001",
+        "CORE_RLK_086",
+        "EDR_454",
+        "EDR_818",
+        "JAIL_852",
+        "TIME_706",
+        "TIME_EVENT_998",
+        "TLC_841"
+      ],
+      "limitation": "Independent interaction conformance remains open; these are dependencies, not new completed members of the fixed batch."
+    },
+    {
+      "mechanic": "Player-bound life rewards, physical turn-draw replacement, corpse multipliers, shield hit counters, weapon choices and caster-clock location dormancy",
+      "status": "7_dependencies_live_full_regression_passed",
+      "tests_files": [
+        "tests/test_expanded_lasting_rules.py"
+      ],
+      "card_ids": [
+        "CATA_307",
+        "CATA_591",
+        "CORE_EDR_003",
+        "EDR_258",
+        "EDR_525",
+        "JAIL_703",
+        "MEND_044"
+      ],
+      "limitation": "Independent interaction conformance remains open; these are dependencies, not new completed members of the fixed batch."
+    },
+    {
+      "mechanic": "Physical transformations, hidden copy enchantments, actual hand swaps, source-bound spells and delayed cost settings",
+      "status": "6_dependencies_live_full_regression_passed",
+      "tests_files": [
+        "tests/test_expanded_entity_effects.py"
+      ],
+      "card_ids": [
+        "CATA_185",
+        "DINO_414",
+        "EDR_780",
+        "EDR_895",
+        "JAIL_502",
+        "TLC_241"
+      ],
+      "limitation": "Independent interaction conformance remains open; these are dependencies, not new completed members of the fixed batch."
+    }
+  ],
+  "engine_body_count": 59,
+  "live_registered_count": 2,
+  "missing_direct_metadata_outcomes": 316,
+  "dependency_note": "This fixed batch reaches 316 of 317 remaining collectible definitions through direct metadata candidate pools, before historical/token closure. It is not an isolated 60-card implementation scope.",
+  "completed_batch_members": 2,
+  "validation": {
+    "tests_run": 2917,
+    "full_suite": true,
+    "failures": 0,
+    "errors": 0,
+    "fingerprint": "1356f7eda556b7563d87f3254b2d2ad102d39b736c9552cd31c9e092b82c1b7c",
+    "receipt": "runs/expanded_validation/validation-ef8f9e663b3c46869adc2901309f92ca.json"
+  },
+  "superseded_by": "completion-queue.json",
+  "delivery_constraint": false
+}

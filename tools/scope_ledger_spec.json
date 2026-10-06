@@ -1,0 +1,84 @@
+{
+  "resolution_events": {
+    "acceptance_scenario_ids": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ],
+    "work_required": "Define proposed action, payment, entry, pre/post effects, listener snapshots, death checkpoints and resumable choices. Add a general summon event only after its phase contract is established."
+  },
+  "enchantments": {
+    "acceptance_scenario_ids": [
+      5,
+      6,
+      7,
+      11
+    ],
+    "work_required": "Enumerate attached versus derived state, timestamp/order rules, zone transfer, copying, Silence and control-change behavior in one model."
+  },
+  "generation_choices": {
+    "acceptance_scenario_ids": [
+      9
+    ],
+    "work_required": "Specify complete per-effect pools with exclusions and recursion; distinguish target randomness, deck choices and creation from external pools."
+  },
+  "deck_legality": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Independently verify target-date rotation, releases/bans, rune/copy limits, sideboards and exceptional deck construction before claiming full Standard."
+  },
+  "combat_damage": {
+    "acceptance_scenario_ids": [
+      4,
+      7
+    ],
+    "work_required": "Verify target legality, attack redirection, damage prevention, Poisonous/Lifesteal, terminal checkpoints and simultaneous damage."
+  },
+  "zones_history": {
+    "acceptance_scenario_ids": [
+      3,
+      8,
+      10,
+      12
+    ],
+    "work_required": "Define physical card identity, history counters, burn/discard/shuffle distinctions, resurrection and terminal draw behavior."
+  },
+  "resources_classes": {
+    "acceptance_scenario_ids": [
+      8,
+      10
+    ],
+    "work_required": "Check resource payment/rejection, persistent class counters and Hero Power cost/reset/replacement behavior."
+  },
+  "secrets_locations": {
+    "acceptance_scenario_ids": [
+      8
+    ],
+    "work_required": "Generalize secret/listener ordering and location activation/reopen/destruction; add independent location scenarios after reviewing exact affected IDs."
+  },
+  "dormant": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Specify Dormant targeting, board occupancy, awakening clock and awakening event boundary; representative CORE_BT_156."
+  },
+  "quests": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Map each quest progress/reward condition and observation rules; do not equate a progress counter with a complete quest implementation."
+  },
+  "hero_replacement": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Review HERO card play, armor/health/weapon and Hero Power replacement/reset; representative CORE_EX1_323."
+  },
+  "rewind": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Define the exact reversible state and RNG/hidden-information behavior per card; exception rollback is not Rewind."
+  },
+  "modern_keywords": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Split into per-mechanic specifications (including Imbue, Herald, Shatter, Prepare, Kindred, Fabled, Colossal) before estimating implementation; composite category is not one feature."
+  },
+  "fallback_review": {
+    "acceptance_scenario_ids": [],
+    "work_required": "Read every unmatched card manually; no keyword match does not imply a vanilla or easy card."
+  }
+}

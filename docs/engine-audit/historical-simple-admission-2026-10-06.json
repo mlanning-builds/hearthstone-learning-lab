@@ -1,0 +1,781 @@
+{
+  "schema": 1,
+  "scope": "Provisional generated historical dependencies; no production historical pool approval",
+  "count": 40,
+  "card_ids": [
+    "AT_055",
+    "AT_064",
+    "BOT_222",
+    "BT_035",
+    "BT_292",
+    "BT_714",
+    "BT_801",
+    "CFM_647",
+    "CFM_659",
+    "CS1_112",
+    "CS1_130",
+    "CS2_009",
+    "CS2_023",
+    "CS2_024",
+    "CS2_032",
+    "CS2_042",
+    "CS2_062",
+    "CS2_076",
+    "CS2_093",
+    "CS2_094",
+    "CS2_141",
+    "CS2_189",
+    "DS1_185",
+    "EX1_011",
+    "EX1_169",
+    "EX1_197",
+    "EX1_238",
+    "EX1_259",
+    "EX1_309",
+    "EX1_319",
+    "EX1_362",
+    "EX1_606",
+    "EX1_619",
+    "ICC_055",
+    "SW_066",
+    "SW_442",
+    "TRL_307",
+    "ULD_191",
+    "UNG_205",
+    "UNG_848"
+  ],
+  "review_basis": "Exact normalized printed ability, type, class, school and mechanic match to admitted primitive declarations; target modes and opcodes restricted to explicitly inspected paths. Eye Beam additionally needs its printed Outcast cost mapping.",
+  "records": [
+    {
+      "card_id": "AT_055",
+      "name": "Flash Heal",
+      "printed_text": "Restore #5 Health.",
+      "source_card_id": "CORE_AT_055",
+      "record_sha256": "c627840d482fb947f95306ac3f922111bc7cb7b06f18237c304b5ccd02de94c8",
+      "source_record_sha256": "e0c272889518d0ab8d57880d0c07cf8fa578862b68f657ad54020c614b5441b7",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "AT_064",
+      "name": "Bash",
+      "printed_text": "Deal $3 damage.\nGain 3 Armor.",
+      "source_card_id": "CORE_AT_064",
+      "record_sha256": "4d12261206b12bedcc6598f9f3720e5abe87b0ceba715b681f774441f4b4f1eb",
+      "source_record_sha256": "e4fd8c136465df329f6f8dc9568bea526eb462b56e0f2d9cfe28fc3e7197c570",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            3
+          ],
+          [
+            "armor",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BOT_222",
+      "name": "Spirit Bomb",
+      "printed_text": "Deal $4 damage to a minion and your hero.",
+      "source_card_id": "CORE_BOT_222",
+      "record_sha256": "5227dbe618742b559197c9d6a3a7764293a0098105c9793fa81aca48f53a7d58",
+      "source_record_sha256": "fca72fbc891ef2d2d7232c5fe03422ab8b0ae40928105924928119971e0db662",
+      "rule": [
+        "minion",
+        [
+          [
+            "damage",
+            4
+          ],
+          [
+            "damage_own_hero",
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BT_035",
+      "name": "Chaos Strike",
+      "printed_text": "Give your hero +2\u00a0Attack this turn. Draw a card.",
+      "source_card_id": "CORE_BT_035",
+      "record_sha256": "e7bda3b6d63e7ed928ce5d14897f31768223d44d7ce5a124d66d67690fbabb27",
+      "source_record_sha256": "6b6a4816c1cc6ed240e23a54eaf4d1bb73a2ce3beec7bc4b40c4b71bef2c123a",
+      "rule": [
+        "none",
+        [
+          [
+            "hero_attack",
+            2
+          ],
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BT_292",
+      "name": "Hand of A'dal",
+      "printed_text": "Give a minion +2/+1.\nDraw a card.",
+      "source_card_id": "CORE_BT_292",
+      "record_sha256": "bcd1318f28bbacd25960c22648ea90afcf0593f9acf536989b452430a3862274",
+      "source_record_sha256": "4c2dff5baf30c15c317e70b004bf1cfd20994a808efa0aec7ba01ac7844ea6ff",
+      "rule": [
+        "minion",
+        [
+          [
+            "buff",
+            2,
+            1
+          ],
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BT_714",
+      "name": "Frozen Shadoweaver",
+      "printed_text": "<b>Battlecry:</b> <b>Freeze</b> an\u00a0enemy.",
+      "source_card_id": "CORE_UNG_205",
+      "record_sha256": "27ed251bd2d3b017bfdb0f6f47224f535d0a0235fc9ebcbf33960749d1d7830d",
+      "source_record_sha256": "b5e93ccfb69206dd9afd70219c40006fcbf2621acac1ea485ea6f8c0e7493e99",
+      "rule": [
+        "enemy_character",
+        [
+          [
+            "freeze"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "BT_801",
+      "name": "Eye Beam",
+      "printed_text": "<b>Lifesteal</b>. Deal $3 damage to a minion.\n<b>Outcast:</b> This costs (1).",
+      "source_card_id": "CORE_BT_801",
+      "record_sha256": "a9ea9785b4b2e9c5a0c5206d99e8acb6a2033b0435de2231a4d00ffaca4e81fc",
+      "source_record_sha256": "2292072e7183604986a9f42d51a0f8a4931b0ffb40e99087e806cb5f661d3fb3",
+      "rule": [
+        "minion",
+        [
+          [
+            "damage",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CFM_647",
+      "name": "Blowgill Sniper",
+      "printed_text": "<b>Battlecry:</b> Deal 1 damage.",
+      "source_card_id": "CORE_CS2_189",
+      "record_sha256": "bccfa7f9bdcdf29719ea1544b3c64ccdfe7f59ac44085cafc8faeb4d14b084c9",
+      "source_record_sha256": "14b6385af373e9378a4c5c128dd999edf583cdfbcca2baf73b4deb681ee33706",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CFM_659",
+      "name": "Gadgetzan Socialite",
+      "printed_text": "<b>Battlecry:</b> Restore #2\u00a0Health.",
+      "source_card_id": "CORE_EX1_011",
+      "record_sha256": "4f1ae941381a71b7295473664abec924a2502b8fef54d573973adb258c2f1594",
+      "source_record_sha256": "3d715adbcb4532211455783ffacd479bf7a89668cdeed50ba51a2e2d9212801d",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS1_112",
+      "name": "Holy Nova",
+      "printed_text": "Deal $2 damage to all enemy minions. Restore #2 Health to all friendly characters.",
+      "source_card_id": "CORE_CS1_112",
+      "record_sha256": "d69cc4530e05dc85edf8e46f11d61cbc78212ef38bcc7dcf8c1191a821e7ce9c",
+      "source_record_sha256": "55e16614cb7eac831e1dad68717c73feaa4fa72b59b2b5c95346a80e6da209e5",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "enemy_minions",
+            2
+          ],
+          [
+            "area_heal",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS1_130",
+      "name": "Holy Smite",
+      "printed_text": "Deal $3 damage\nto a minion.",
+      "source_card_id": "CORE_CS1_130",
+      "record_sha256": "865c0d4c5d91f165caf2914fd9adb96466e596bc5afca8ef9fd49cd164d55469",
+      "source_record_sha256": "2d152868155726a7d7ae940d8b825309643438aaffa203691bd2e2119a0abb44",
+      "rule": [
+        "minion",
+        [
+          [
+            "damage",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_009",
+      "name": "Mark of the Wild",
+      "printed_text": "Give a minion <b>Taunt</b> and +2/+3.<i>\n(+2 Attack/+3 Health)</i>",
+      "source_card_id": "CORE_CS2_009",
+      "record_sha256": "aa6902eebd153098f774025e34c915b3eda3762251c817ca6cf757c98749358c",
+      "source_record_sha256": "ba63a40127a65a3abd28c3815d49c4c8a807ff9a63d189e3576aa3b7ae8c63e7",
+      "rule": [
+        "minion",
+        [
+          [
+            "buff",
+            2,
+            3
+          ],
+          [
+            "keyword",
+            "TAUNT"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_023",
+      "name": "Arcane Intellect",
+      "printed_text": "Draw 2 cards.",
+      "source_card_id": "CORE_CS2_023",
+      "record_sha256": "98af50a7c398bd448516d36f0ef2a335313aeac8e9c8f290d77e71a6555fa9c3",
+      "source_record_sha256": "ae23b1c1b37533b9d1ad8120146047e42e35a8e386845f4fb2b44bd912209686",
+      "rule": [
+        "none",
+        [
+          [
+            "draw",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_024",
+      "name": "Frostbolt",
+      "printed_text": "Deal $3 damage to a\u00a0character and <b>Freeze</b> it.",
+      "source_card_id": "CORE_CS2_024",
+      "record_sha256": "bad00dea613d494e468dd234c119e345ad644723984f65ff6d62360e6cfa8e1d",
+      "source_record_sha256": "198d0e2cf6b2f458735d4ad807c729e35206933d30454286ad3163dfc4136b41",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            3
+          ],
+          [
+            "freeze"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_032",
+      "name": "Flamestrike",
+      "printed_text": "Deal $5 damage to all enemy minions.",
+      "source_card_id": "CORE_CS2_032",
+      "record_sha256": "ebb10f531a90c30e5381c247dfd3cc816b169dbc5d8136f9eaa8a83ec482a022",
+      "source_record_sha256": "ea7bc29c241bef75e3fb3fc6464a74326aa8f2925b2e2c6f9bd8d6730514bb8e",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "enemy_minions",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_042",
+      "name": "Fire Elemental",
+      "printed_text": "<b>Battlecry:</b> Deal 4 damage.",
+      "source_card_id": "CORE_CS2_042",
+      "record_sha256": "5327c0a620dad3bdcae265230635903c4e358515a2643764826ec7f70ea77ec2",
+      "source_record_sha256": "1ebbbc4e9ed308c58c7c47d6c6ee1ff2e351177d24ef79c8c4ef14790832493a",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_062",
+      "name": "Hellfire",
+      "printed_text": "Deal $3 damage to ALL\u00a0characters.",
+      "source_card_id": "CORE_CS2_062",
+      "record_sha256": "f9a8bf16875184473766f6960f1a80195789530e5839cd5334219bca1e3dc663",
+      "source_record_sha256": "b2e7699f24386bbcf0f5f965b2fdb2fe15b975adaf08592fdaa33af69c7b76c5",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "all_characters",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_076",
+      "name": "Assassinate",
+      "printed_text": "Destroy an enemy minion.",
+      "source_card_id": "CORE_CS2_076",
+      "record_sha256": "c86d70971d6116c311094df2eadc531c31cec18f62da506718b29773fe1b3303",
+      "source_record_sha256": "72c9ba51b2a62c3bbe0475c2bbee693a1ca522b6492c53be5aa25390e371dad3",
+      "rule": [
+        "enemy_minion",
+        [
+          [
+            "destroy"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_093",
+      "name": "Consecration",
+      "printed_text": "Deal $2 damage to all enemies.",
+      "source_card_id": "CORE_CS2_093",
+      "record_sha256": "cc56c928859fdd2f7dd726438a24a5474163fbcfc138b4f247529f9f90aadc8a",
+      "source_record_sha256": "3814c151d3e9e1a430a01a57ea8fb29e352a83d2e3a8c7d25f78216ec977843d",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "enemies",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_094",
+      "name": "Hammer of Wrath",
+      "printed_text": "Deal $3 damage.\nDraw a card.",
+      "source_card_id": "CORE_CS2_094",
+      "record_sha256": "6caedae7e3404949d4d26ffcfeb39c3996345ba402797f28022f39918d4da459",
+      "source_record_sha256": "7dbe0a1f1466b9b3a153da4754fc65e41a65a5c6dae136d72ea114b2eb8af5ba",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            3
+          ],
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_141",
+      "name": "Ironforge Rifleman",
+      "printed_text": "<b>Battlecry:</b> Deal 1 damage.",
+      "source_card_id": "CORE_CS2_189",
+      "record_sha256": "67719fd1039e42866d673fb3b5d568754f1b16f91a92ca92e6d4416223d26bce",
+      "source_record_sha256": "14b6385af373e9378a4c5c128dd999edf583cdfbcca2baf73b4deb681ee33706",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "CS2_189",
+      "name": "Elven Archer",
+      "printed_text": "<b>Battlecry:</b> Deal 1 damage.",
+      "source_card_id": "CORE_CS2_189",
+      "record_sha256": "3c3bab5a7be24e10795e3abb1df5592a72ad28666e8a7dc6c9dfa58afc598161",
+      "source_record_sha256": "14b6385af373e9378a4c5c128dd999edf583cdfbcca2baf73b4deb681ee33706",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "DS1_185",
+      "name": "Arcane Shot",
+      "printed_text": "Deal $2 damage.",
+      "source_card_id": "CORE_DS1_185",
+      "record_sha256": "a53736645cd75088634632a681fff13dfab750dd70d6bb208884eb4459340142",
+      "source_record_sha256": "f82a8b229b0ee6e10cef4ff762b65c3f69874e97f6dafaee781dc49678db273d",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_011",
+      "name": "Voodoo Doctor",
+      "printed_text": "<b>Battlecry:</b> Restore #2\u00a0Health.",
+      "source_card_id": "CORE_EX1_011",
+      "record_sha256": "22df1903a34c5e4e146c6fd5031d7b2524ff0faca4f0f136c6a0c112c64378b7",
+      "source_record_sha256": "3d715adbcb4532211455783ffacd479bf7a89668cdeed50ba51a2e2d9212801d",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_169",
+      "name": "Innervate",
+      "printed_text": "Gain 1 Mana Crystal this turn only.",
+      "source_card_id": "CORE_EX1_169",
+      "record_sha256": "5b587c70ca3bae65171b1e781c89a705c1b39611a1fe525454c48c3aee3607d4",
+      "source_record_sha256": "c2ee5cd88a02fe421d14d613d20253fda46e832ea159cf97d4c2b3851c97378e",
+      "rule": [
+        "none",
+        [
+          [
+            "temporary_mana",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_197",
+      "name": "Shadow Word: Ruin",
+      "printed_text": "Destroy all minions with 5 or more Attack.",
+      "source_card_id": "CORE_EX1_197",
+      "record_sha256": "57db4738e8ba2d59d992d412668d45f1794a03980295b385b83321c306da9568",
+      "source_record_sha256": "f1fe8ecd6699087ca0a4a0719dea9ef338af0f207f55bbb8fe986633031523dd",
+      "rule": [
+        "none",
+        [
+          [
+            "destroy_large",
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_238",
+      "name": "Lightning Bolt",
+      "printed_text": "Deal $3 damage. <b>Overload:</b> (1)",
+      "source_card_id": "CORE_EX1_238",
+      "record_sha256": "88534516ecf26d4985d7d3522042e57196f304423f6d3f04da43fe0ceec2a268",
+      "source_record_sha256": "f2617f70f890303908d9360f7b2a49557f13c66dfe2b54cd0b4e149dcf0ae03d",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_259",
+      "name": "Lightning Storm",
+      "printed_text": "Deal $3 damage to all\u00a0enemy minions. <b>Overload:</b> (1)",
+      "source_card_id": "CORE_EX1_259",
+      "record_sha256": "dbe8808434356ddea40b66ce4a8e9fd0c8dbe68fd8db248a54588748bf3de069",
+      "source_record_sha256": "7f45fcf4f8775a86ddf79146e4d38e8072361f2ca75d4ef113a2d224d7abba74",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "enemy_minions",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_309",
+      "name": "Siphon Soul",
+      "printed_text": "Destroy a minion. Restore #3 Health to\u00a0your hero.",
+      "source_card_id": "CORE_EX1_309",
+      "record_sha256": "81d01a9013125a28b6514a809a9463308fbe6721f2ce2f99db60c9449ddca303",
+      "source_record_sha256": "3138083b7604654ca6e3c0b5777a2ef6efa351046efbec0c53605bd6a109dc5f",
+      "rule": [
+        "minion",
+        [
+          [
+            "destroy"
+          ],
+          [
+            "heal_own_hero",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_319",
+      "name": "Flame Imp",
+      "printed_text": "<b>Battlecry:</b> Deal 3 damage to your hero.",
+      "source_card_id": "CORE_EX1_319",
+      "record_sha256": "c922b5e7ab68bebfe7a1cda549a81b7bef5983edd8255a6ec6953598757fb148",
+      "source_record_sha256": "c717de7e5dc6f422ec40229f9361148856ab9bc9697f86388c46e3a80647bbee",
+      "rule": [
+        "none",
+        [
+          [
+            "damage_own_hero",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_362",
+      "name": "Argent Protector",
+      "printed_text": "<b>Battlecry:</b> Give a friendly minion <b>Divine Shield</b>.",
+      "source_card_id": "CORE_EX1_362",
+      "record_sha256": "c4993742685a5c4460ef83dd3e7575c9149acb2164a0b2f5f95f9f7c289f4c72",
+      "source_record_sha256": "585043b8d7ee821291024ceb5bb2fb8844822dfd4e373d7cf67eb9d39c98cdaf",
+      "rule": [
+        "friendly_minion",
+        [
+          [
+            "keyword",
+            "DIVINE_SHIELD"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_606",
+      "name": "Shield Block",
+      "printed_text": "Gain 5 Armor.\nDraw a card.",
+      "source_card_id": "CORE_EX1_606",
+      "record_sha256": "6e9c5f65260da913db496a5df17f0a9622897f9294933514e5f9379885274fb8",
+      "source_record_sha256": "144be0239b2a2e3e1fea514e933d2d0dc04801c0d16daed8a855fef7cade17f4",
+      "rule": [
+        "none",
+        [
+          [
+            "armor",
+            5
+          ],
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "EX1_619",
+      "name": "Equality",
+      "printed_text": "Change the Health of ALL minions to 1.",
+      "source_card_id": "CORE_EX1_619",
+      "record_sha256": "30671d4e812345b6077f08b63917d8b2a834b1d3c86427ebdc82f2ecf0f8bd59",
+      "source_record_sha256": "99896c0f78e4139f6056a271cc82344c15faed41cbb8ff9be4cf58121423c8d9",
+      "rule": [
+        "none",
+        [
+          [
+            "health_one"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "ICC_055",
+      "name": "Drain Soul",
+      "printed_text": "<b>Lifesteal</b>\nDeal $3 damage\nto a minion.",
+      "source_card_id": "CORE_ICC_055",
+      "record_sha256": "57c19f60d67933a66100fa3b00726ed6f12bc116edd36b784734dceda5cf207c",
+      "source_record_sha256": "e1c83e40d79aef739ac83174eb2ffabec5c23f3d47d79daff0cf94f4cf99fdb9",
+      "rule": [
+        "minion",
+        [
+          [
+            "damage",
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "SW_066",
+      "name": "Royal Librarian",
+      "printed_text": "[x]<b>Tradeable</b>\n<b>Battlecry:</b> <b>Silence</b>\na minion.",
+      "source_card_id": "CORE_SW_066",
+      "record_sha256": "eec820e19150c13cdd8aa2d3af24ad29f88ea809bf01870b83a7bea967aa1281",
+      "source_record_sha256": "2233c026f81f8770b163127670e16cbf33b311b65af77ddb6ab9a4b7132b6f99",
+      "rule": [
+        "minion",
+        [
+          [
+            "silence"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "SW_442",
+      "name": "Void Shard",
+      "printed_text": "<b>Lifesteal</b>\nDeal $4 damage.",
+      "source_card_id": "CORE_SW_442",
+      "record_sha256": "45eff2128bca85fc5e123d47fdf7b106339111f990bbb71aa8cfa7c8f6db5e8b",
+      "source_record_sha256": "9dac75b1f2e91fc73687de18bbfe093d4e3c16789a8e67665dbe3732abf014ae",
+      "rule": [
+        "character",
+        [
+          [
+            "damage",
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "TRL_307",
+      "name": "Flash of Light",
+      "printed_text": "Restore #4 Health.\nDraw a card.",
+      "source_card_id": "CORE_TRL_307",
+      "record_sha256": "70cfe9d021468912b44c27b66db8cdbf992972a43d2139ecb72a92e94a3f147e",
+      "source_record_sha256": "782c365f58c351110733dbd8f9a3d12535b65186583262fbb690e02a234591b3",
+      "rule": [
+        "character",
+        [
+          [
+            "heal",
+            4
+          ],
+          [
+            "draw",
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "ULD_191",
+      "name": "Beaming Sidekick",
+      "printed_text": "<b>Battlecry:</b> Give a friendly minion +2 Health.",
+      "source_card_id": "CORE_ULD_191",
+      "record_sha256": "6ba980b4ead6ef0d83785b200a77a8f73d97d4b9ccdbd0c95ddc5ed3e0e9efbf",
+      "source_record_sha256": "b14edc0c5494d10679da5c70602e78e9454fef3cfddc978b050439b1636114ed",
+      "rule": [
+        "friendly_minion",
+        [
+          [
+            "buff",
+            0,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "UNG_205",
+      "name": "Glacial Shard",
+      "printed_text": "<b>Battlecry:</b> <b>Freeze</b> an\u00a0enemy.",
+      "source_card_id": "CORE_UNG_205",
+      "record_sha256": "1c1156b0dc5052b1f3c812ad3fbc34d9e36c70ccc338527fc29916a99a528989",
+      "source_record_sha256": "b5e93ccfb69206dd9afd70219c40006fcbf2621acac1ea485ea6f8c0e7493e99",
+      "rule": [
+        "enemy_character",
+        [
+          [
+            "freeze"
+          ]
+        ]
+      ]
+    },
+    {
+      "card_id": "UNG_848",
+      "name": "Primordial Drake",
+      "printed_text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Deal 2 damage\nto all other minions.",
+      "source_card_id": "CORE_UNG_848",
+      "record_sha256": "86b8c8eae7725d2e29d141aea6b2272408f1bf9a38110cd4c2ffc4b973234159",
+      "source_record_sha256": "08307543ea4c7fe0d1c263f95a841063c3bbb03e8a746c36cf5282cc043cef4f",
+      "rule": [
+        "none",
+        [
+          [
+            "area_damage",
+            "other_minions",
+            2
+          ]
+        ]
+      ]
+    }
+  ],
+  "not_complete": [
+    "Pool membership/canonical aliases still require independent review",
+    "Inherited generic interaction and client fidelity gaps remain",
+    "Other historical effects and dependencies are unavailable"
+  ]
+}

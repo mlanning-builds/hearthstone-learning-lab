@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "patch": "36.6.0.251952",
+  "scope": "Provisional experimental runtime admission; independent client conformance remains pending",
+  "collectibles": [
+    "JAIL_397",
+    "JAIL_430",
+    "JAIL_421",
+    "TIME_618"
+  ],
+  "generated_dependencies": [],
+  "evidence": [
+    "data/standard/cards.json",
+    "expanded/reviewed_cards.json",
+    "tests/test_expanded_constructed_admission.py",
+    "tests/test_expanded_zone_admission.py",
+    "tests/test_expanded_deck_setup.py",
+    "tests/test_expanded_zone_triggers.py",
+    "tests/test_expanded_fabled_decks.py"
+  ],
+  "runtime_changes": [
+    "Deck sampler handles 20-card Azalina decks and rejects conflicting size modifiers",
+    "Random Beatrix decks save an explicit legal seeded two-cost selection",
+    "Replay and comparison runners retain exceptional construction choices",
+    "Physical Warptooth recruits and consumed Husk hero enchantment use ordinary registry"
+  ],
+  "open_independent_checks": [
+    "Beatrix/Azalina setup ordering and original-deck predicates across copied start effects",
+    "Husk simultaneous lethal, direct destroy and resurrection ordering relative to Lifesteal",
+    "Warptooth full-board retries and captured-trigger ordering"
+  ],
+  "full_standard_ready": false
+}

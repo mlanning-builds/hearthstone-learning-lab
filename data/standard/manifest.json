@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-09-18",
+  "build": "251952",
+  "patch": "36.6.0.251952",
+  "downloaded_at_utc": "2026-09-19T00:56:45.394328+00:00",
+  "source": "https://api.hearthstonejson.com/v1/251952/enUS/cards.json",
+  "source_sha256": "079c41a102d386a289bcf2676815799967a8aa0aaeb6b0a5958c76bdd4a20ac3",
+  "all_record_count": 36022,
+  "standard_catalog_count": 1185,
+  "classes": [
+    "DEATHKNIGHT",
+    "DEMONHUNTER",
+    "DRUID",
+    "HUNTER",
+    "MAGE",
+    "PALADIN",
+    "PRIEST",
+    "ROGUE",
+    "SHAMAN",
+    "WARLOCK",
+    "WARRIOR"
+  ],
+  "files_sha256": {
+    "all_cards.json.gz": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661",
+    "card_tags.json": "c07592e551b05747acd95212a0fc2a794fa84362f78e081de911f34fad20301b",
+    "cards.json": "9e6acb745cf370af30d5785155650917e51dabba8b9222694057725dc497986a",
+    "classes.json": "75802380ade87f82ba4d83df9b57ec250c1c82498e7f463fc88a4d2ce5d94730",
+    "release_rules.json": "62cc1e5106b93a5bee60eaa35f96c4a930cf575fd79ebb173d71922afcf4cf58"
+  },
+  "sources": [
+    "https://hearthstone.blizzard.com/en-us/expansions-adventures",
+    "https://hearthstone.blizzard.com/en-us/news/24267727",
+    "https://hearthstone.blizzard.com/en-us/news/24294373",
+    "https://hearthstone.blizzard.com/en-us/news/24296231",
+    "https://github.com/HearthSim/hsdata",
+    "https://hearthstonejson.com/docs/cards.html"
+  ],
+  "legality_status": "Date-filtered catalog based on set rotation and reviewed release exceptions; live bans and all exceptional deck-building rules are not independently certified.",
+  "simulation_status": "Full Standard simulation NOT implemented. Catalog entries do not implement card effects."
+}

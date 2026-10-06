@@ -1,0 +1,1980 @@
+{
+  "scope": "Known unresolved behavior, not an exhaustive inventory. Written implementations and passing fixtures do not certify these rules.",
+  "gaps": [
+    {
+      "id": "corpse_copy_full_board",
+      "cards": [
+        "CORE_RLK_745"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Requires board space before spending Corpses.",
+      "required_evidence": "Independent client trace or authoritative rule showing Corpse balance when Malignant Horror ends its turn on a full board."
+    },
+    {
+      "id": "copy_state_completeness",
+      "cards": [],
+      "status": "incomplete",
+      "current_behavior": "Copies stats, damage, keywords, Silence, Frozen expiry, temporary Attack and expiration; general attached enchantment state and copied Frozen thaw timing remain unaudited.",
+      "required_evidence": "Enumerated enchantment/state model plus independent interaction traces for copy transitions."
+    },
+    {
+      "id": "healing_aggregation",
+      "cards": [
+        "CATA_216"
+      ],
+      "status": "partial",
+      "current_behavior": "Simultaneous effect Lifesteal heals once per owner per damage batch. Persistent additive healing bonuses stack by healing source owner and apply once per positive healing instance. Cleansing Cleric is implemented. Healing-to-damage conversion and multiplier ordering remain unimplemented and independently unverified.",
+      "required_evidence": "Pinned-patch evidence for multi-target Lifesteal aggregation with additive healing bonuses."
+    },
+    {
+      "id": "shuffle_payoff_eligibility",
+      "cards": [
+        "TLC_517",
+        "TLC_520",
+        "TLC_513"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Actor/destination-qualified shuffle history excludes trades. Implemented payoffs include TLC_517, TLC_520 and TLC_513. Lie in Wait counts one qualifying insertion event rather than one per card; prior events and opponent-caused insertions are excluded.",
+      "required_evidence": "Verify trade, opponent-caused insertions and batch boundaries against each payoff."
+    },
+    {
+      "id": "generated_dependency_closure",
+      "cards": [],
+      "status": "incomplete",
+      "current_behavior": "Literal dependency checks do not cover all eligible generated pools or recursive generated effects.",
+      "required_evidence": "Complete patch-pinned generation eligibility and recursive dependency validation."
+    },
+    {
+      "id": "standard_legality",
+      "cards": [],
+      "status": "incomplete",
+      "current_behavior": "Uses the frozen Standard catalog; live bans, release eligibility and exceptional deck construction remain unverified.",
+      "required_evidence": "Authoritative rules and eligibility pinned to the target patch and date."
+    },
+    {
+      "id": "maloriak_graveyard_copy",
+      "cards": [
+        "CATA_494"
+      ],
+      "status": "inferred_general_rule",
+      "current_behavior": "Summons a fresh copy without hand enchantments; continuous board auras apply. Uses batch listener snapshots.",
+      "required_evidence": "Target-patch client trace confirming hand-buff stripping and simultaneous multi-discard interactions. General rule source: https://hearthstone.blizzard.com/en-us/news/21965466"
+    },
+    {
+      "id": "precombat_event_generalization",
+      "cards": [
+        "CS3_025"
+      ],
+      "status": "partial",
+      "current_behavior": "Runthak uses a non-choice before-combat event after supported attack-canceling Secrets. Arbitrary attack redirection, precombat death processing and suspended choices are not a complete combat-phase model.",
+      "required_evidence": "Independent target-patch combat traces and resumable proposed-attack/attack phase coverage before adding effects that redirect attacks, kill combatants or require choices at this boundary."
+    },
+    {
+      "id": "willow_zone_priority",
+      "cards": [
+        "CORE_SCH_181"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Resolves hand summon before deck summon, preserving supported stat buffs. Full-board failures leave cards in source zones.",
+      "required_evidence": "Target-patch trace confirming zone priority with one remaining board slot and timing between summons; general enchantment transfer remains incomplete."
+    },
+    {
+      "id": "cost_set_modifier_order",
+      "cards": [
+        "CORE_CATA_001"
+      ],
+      "status": "partial",
+      "current_behavior": "One-use set-cost and discount effects resolve in stored order; existing timed taxes apply afterward. General timestamped cost enchantment precedence is not implemented.",
+      "required_evidence": "Target-patch traces and a unified modifier ordering model covering cost-setting, personal enchantments and continuous taxes."
+    },
+    {
+      "id": "hero_power_cost_order",
+      "cards": [
+        "EDR_847",
+        "CORE_DRG_403"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "One-use set and additive Hero Power modifiers apply in creation order and are consumed together at the next use. Selected persistent hand-size cost auras and explicit replacement/secondary powers are modeled. Broader power modifiers and independent timing validation remain incomplete; see replacement_and_secondary_power_timing.",
+      "required_evidence": "Target-patch client traces confirming both modifier orders, replacement and aura interactions."
+    },
+    {
+      "id": "pre_spell_phase_generalization",
+      "cards": [
+        "CORE_EX1_100",
+        "CORE_EX1_559"
+      ],
+      "status": "partial",
+      "current_behavior": "Non-choice pre-spell listeners run before existing spell-counter Secrets. Cho copies the registered base spell record; general spell enchantment transfer and joint Secret/listener ordering are incomplete.",
+      "required_evidence": "Pinned-client traces for copy enchantments, revealed Secret provenance, arbitrary pre-spell choices and combined Secret/listener ordering."
+    },
+    {
+      "id": "countered_play_accounting",
+      "cards": [
+        "CORE_EX1_287"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Countered spells spend mana and consume applicable cost modifiers; pre-spell listeners run, but completed-play history, Combo count, spell-school history and Overload do not advance.",
+      "required_evidence": "Patch-pinned independent traces for Counterspell followed by Combo, repeated-card checks, school-dependent effects and next-card cost modifiers. Historical descriptions distinguish on-play and after-play triggers and cannot certify every counter."
+    },
+    {
+      "id": "hero_power_hand_aura_order",
+      "cards": [
+        "TIME_606"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Live hand-size cost-setting aura applied before ordered next-use cost modifiers.",
+      "required_evidence": "Independent pinned-client traces for Fletcher with cost taxes and set-cost effects in both creation orders."
+    },
+    {
+      "id": "attached_set_cost_order",
+      "cards": [
+        "TIME_705"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Attached cost-setting overrides earlier card-local changes; later card-local deltas apply afterward, then player-level cost effects.",
+      "required_evidence": "Independent traces for dynamically self-discounting cards and persistent player auras interacting with attached set-cost enchantments."
+    },
+    {
+      "id": "nablya_copy_order",
+      "cards": [
+        "TLC_624"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Selects living damaged originals in board order once, appends copies left-to-right until board full and grants Rush after each summon. Uses existing partial copy-state model.",
+      "required_evidence": "Independent client traces for board position, insufficient space, aura interactions, Frozen and other copied enchantments, and simultaneous summon-trigger ordering."
+    },
+    {
+      "id": "copied_freeze_expiry",
+      "cards": [],
+      "status": "unverified_assumption",
+      "current_behavior": "Board-to-board copies preserve the source Frozen expiry value and cannot attack while Frozen. Silence clears the copy independently.",
+      "required_evidence": "Pinned-client traces comparing original and copy thaw timing for exhausted/non-exhausted originals, summoning sickness, newly granted Rush, and cross-owner copies. Historical reports conflict on these cases."
+    },
+    {
+      "id": "board_expiry_controller",
+      "cards": [
+        "DINO_417"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Uses existing silenciable expires flag, resolved at the current controller end turn with other end-turn effects.",
+      "required_evidence": "Independent client traces for control changes, copying expiry and ordering against simultaneous end-turn triggers."
+    },
+    {
+      "id": "hogdriver_burned_draws",
+      "cards": [
+        "JAIL_462"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Both drawn identities are inspected even if a full hand burns a card; fatigue is not a drawn card.",
+      "required_evidence": "Independent pinned-client trace for one or both drawn minions burning, plus draw replacement/cast-when-drawn interactions."
+    },
+    {
+      "id": "summon_listener_phase_order",
+      "cards": [
+        "CORE_EX1_509",
+        "EDR_815",
+        "TLC_220"
+      ],
+      "status": "partial_unverified",
+      "current_behavior": "Captures eligible existing listeners at entry; effect summons queue for existing operation/event checkpoints, hand-play notifications publish after card effects, Reborn after 1-health initialization. Excludes self, failed entry and transformation.",
+      "required_evidence": "Independent pinned-build traces for individual summons inside batches, grant timing, Battlecry/Secret ordering, transformed/departed subjects, dead listeners, control changes, resource competition and recursive/choice-producing listeners. This is an experimental checkpoint implementation, not complete summon phase conformance."
+    },
+    {
+      "id": "minion_postplay_phase_contract",
+      "cards": [],
+      "status": "unverified_ordering",
+      "current_behavior": "Resumable minion after-play stages settle summon reactions, then minion-play reactions, then after-card Secrets; each stage advances exactly once across choices. Spell after-play sequence is unchanged.",
+      "required_evidence": "Independent pinned-build traces for cross-type trigger timestamp order, mortally wounded subjects/listeners, Rat Trap alongside summon listeners, nested multi-summon effects and death checkpoints. The stage split fixes internal queue overtaking but is not a full client timing certificate."
+    },
+    {
+      "id": "fill_board_reaction_capacity",
+      "cards": [
+        "TLC_466"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Snapshots available board slots after preceding discard reactions; resolves that many resumable summon attempts. Does not add attempts when reactions create additional space.",
+      "required_evidence": "Pinned-client trace for fill-board summons where summon reactions create or remove board space, plus ordering of discard reactions before fill."
+    },
+    {
+      "id": "hero_shield_replacement_order",
+      "cards": [
+        "TIME_015",
+        "EDR_942"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Hero immunity prevents damage first; hero Divine Shield then prevents a positive hit before armor or weapon damage replacement. Shield loss is emitted as a public event.",
+      "required_evidence": "Independent target-patch trace for hero Divine Shield combined with weapon-based damage replacement and simultaneous damage."
+    },
+    {
+      "id": "batch60_hand_transform_fidelity",
+      "cards": [
+        "CORE_RLK_567",
+        "DINO_407",
+        "TIME_876",
+        "EDR_843",
+        "JAIL_470"
+      ],
+      "status": "unverified_interactions",
+      "current_behavior": "Physical-card state implements held progress, persistent mirror identity, owner-turn transformations, and paid-two-mana progress in hand/deck. Mirrex retains 3/4 stats and costs 3. Cross-zone resets and arbitrary enchantment transfer are not independently certified.",
+      "required_evidence": "Pinned-client traces for copying, repeated transforms, bounce/shuffle, inherited cost/stat enchantments and generated-during-resolution timing."
+    },
+    {
+      "id": "batch60_combat_death_order",
+      "cards": [
+        "CORE_SCH_605",
+        "DINO_401",
+        "FIR_953",
+        "CORE_CFM_344",
+        "TLC_247",
+        "EDR_484",
+        "CORE_RLK_121",
+        "DINO_416"
+      ],
+      "status": "partial",
+      "current_behavior": "Cleave batches damage; attack events capture victim identity and lethal result. Death notifications are queued from the captured death wave. Missiles exclude already lethally wounded minions. Deathrattles/Reborn during event-frame missile effects still follow the candidate outer checkpoint model, not a complete client timing model.",
+      "required_evidence": "Independent traces for simultaneous deaths, listener deaths, deathrattle choices and Reborn between event-triggered missiles. Stormbrewer remains excluded pending resumable precombat interruption rules."
+    },
+    {
+      "id": "batch60_cost_and_delayed_modifiers",
+      "cards": [
+        "TLC_257",
+        "TLC_428",
+        "EDR_844",
+        "FIR_928",
+        "CAP_803",
+        "CAP_800"
+      ],
+      "status": "unverified_interactions",
+      "current_behavior": "Permanent minion cost, first-Dragon cost, next-Murloc shield, destruction following hand-to-board, excess healing and enchanted full-health Reborn have local scenarios. General modifier timestamp precedence, control-change expiry and healing-prevention interactions remain uncertified.",
+      "required_evidence": "Pinned-client comparisons across modifier order, immunity/prevention, Silence, copied enchantments and changed control."
+    },
+    {
+      "id": "local_family_reference_fidelity",
+      "cards": [
+        "CAP_102",
+        "CAP_103",
+        "CAP_106",
+        "CAP_107",
+        "CAP_403",
+        "CATA_586",
+        "EDR_271",
+        "EDR_455",
+        "EDR_494",
+        "JAIL_734",
+        "TIME_713",
+        "TIME_870"
+      ],
+      "status": "internal_scenarios_only",
+      "current_behavior": "Real-zone Discover preserves physical deck indexes; resurrection creates fresh base minions. Hungering Ancient consumes deck stats and attaches fresh-identity hand rewards. Cannoneer shots use live enemy targets and the shared event/turn scheduler.",
+      "required_evidence": "Independent pinned-client traces for duplicate weighting, consumed enchantment reset, stacked Crowley shots, and deathrattle/Reborn timing between weapon-triggered shots. Phoenix and Holmes remain unsupported pending delayed hand-state semantics."
+    },
+    {
+      "id": "draw_event_continuations",
+      "cards": [
+        "CORE_SCH_717",
+        "CORE_TTN_843"
+      ],
+      "status": "partial_shared_system",
+      "current_behavior": "Normal, filtered, indexed, and explicit transfer draws publish private physical-card snapshots after successful hand entry. Plain/filtered groups, draw-pick/type/copy/minion-buff, bottom/distinct-cost/cheap-repeat/refill, excess/kill draws and cascading discounts now checkpoint each draw in play/event/death/turn frames. Private progress payloads survive intervening choices and deepcopy rollback.",
+      "required_evidence": "Independent client draw ordering and refill-count traces; future casts-when-drawn resolution; audit direct internal effect calls and nested opcode wrappers that bypass frame splitting. Existing simultaneous draw-both terminal semantics remain unchanged. These conversions do not certify the full draw system."
+    },
+    {
+      "id": "kindred_identity_reference",
+      "cards": [
+        "TLC_102"
+      ],
+      "status": "internal_scenarios_only",
+      "current_behavior": "Explicit pinned Kindred membership distinguishes ability cards from references; Torga draws an actual deck Kindred identity then a minion sharing a valid type or a spell sharing its school, with a draw checkpoint between them. Existing live Kindred checks now accept race fallback and reject unknown type labels.",
+      "required_evidence": "Independent pinned-client traces for first-card overdraw and random weighting. Other type-selection cards remain unimplemented pending their distinct-type assignment and empty-deck semantics. Common-type selector is a mathematical helper, not proof of Esho behavior."
+    },
+    {
+      "id": "bonus_leech_reference_fidelity",
+      "cards": [
+        "EDR_810",
+        "EDR_814",
+        "EDR_817",
+        "EDR_849",
+        "JAIL_101",
+        "TLC_240",
+        "TLC_444",
+        "TLC_465"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Post-30.2 Bonus Effect pool, owner-turn Rush eligibility, current keyword transfer with continuous auras recomputed, and Leech stat transfer with live Husk bonuses. Unit scenarios cover internal behavior; no client trace comparison yet.",
+      "required_evidence": "Client traces for stealing aura-provided keywords, Rush eligibility on frozen or zero-Attack minions, and boosted Leeches stealing more Health than a damaged victim has."
+    },
+    {
+      "id": "dormant_reference_fidelity",
+      "cards": [
+        "CORE_BT_156",
+        "EDR_416",
+        "EDR_469",
+        "EDR_820",
+        "EDR_840",
+        "EDR_841",
+        "EDR_979",
+        "JAIL_850",
+        "JAIL_997",
+        "MEND_040",
+        "TIME_022",
+        "TIME_046",
+        "TIME_063",
+        "TIME_442",
+        "TLC_253"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Inactive board entities excluded from normal minion sets; owner-turn countdown and explicit conditional wake triggers; awakening restores summoning sickness. Board copies preserve active/Dormant state, transformation starts printed dormancy, and initial Dormant entry/awakening do not publish ordinary summon notifications. Pinned latest expansion for Nozdormu is ESCAPEFROM_VIOLET_HOLD.",
+      "required_evidence": "Independent traces for copy versus transform versus resurrection, Dormant summon notifications, countdown ordering against other start-turn triggers, countered-spell Nozdormu progress, and bound captive references under copies/control changes. Tranquil Clearing remains unsupported; asleep is not assumed to mean Dormant."
+    },
+    {
+      "id": "physical_origin_reference_fidelity",
+      "cards": [
+        "CORE_REV_946",
+        "DINO_409",
+        "EDR_251",
+        "EDR_256",
+        "JAIL_205",
+        "JAIL_380",
+        "JAIL_432",
+        "JAIL_433",
+        "JAIL_434",
+        "TLC_364"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Physical original owner and canonical initial identity persist through draws, recruitment, returns and shuffles. Copies strip starting status and retain explicit opponent-copy ancestry. In-hand transformation does not count as a hand entry. Held watchers advance when an opponent copy is played. Dreamwarden resolves its draw before buffing a surviving source.",
+      "required_evidence": "Independent client traces for transformed originals, Core aliases, inherited copy ancestry, transformed mirror copies, countered plays and full-hand Rat Burglar theft. Local fixtures test this declared model; they do not independently certify these rules."
+    },
+    {
+      "id": "held_upgrade_reference_fidelity",
+      "cards": [
+        "CATA_131",
+        "CATA_132",
+        "CATA_498",
+        "FIR_911",
+        "FIR_914",
+        "FIR_916",
+        "JAIL_501"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Actual mana payments advance cards still held, excluding self-payment; owner-end frame snapshots upgrade held spells once per turn. Smoldering cards discard on their third owner end. Rafaams Last Stand gains one damage, retaining two distinct targets. Picklock uses a minimum-one remaining-mana base with ordinary modifiers, frozen before payment for play.",
+      "required_evidence": "Independent traces for Rafaam turn-boundary timing, copying or stealing aged cards, return/shuffle resets, end-trigger ordering and Picklock silence, stat-setting and cost-setting interactions. Local scenario tests are not a client oracle.",
+      "sources": [
+        "https://hearthstone.wiki.gg/wiki/Picklock",
+        "https://hearthstone.wiki.gg/wiki/Smoldering_Grove",
+        "https://hearthstone.wiki.gg/wiki/Smoldering_Strength",
+        "https://hearthstone.wiki.gg/wiki/Smoldering_Ascent",
+        "https://www.reddit.com/r/hearthstone/comments/1rdqyzf/new_warlock_card_rafaams_last_stand/"
+      ]
+    },
+    {
+      "id": "temporary_follow_reference_fidelity",
+      "cards": [
+        "CAP_101",
+        "CAP_802",
+        "TLC_450",
+        "TLC_451"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Temporary expiry runs as a discard batch after owner end-turn entries with resumable event processing. Spelunker uses a consumed-on-play Temporary selector. Catacombs excludes itself and draws the selected physical card. Follow attachments use complete current play legality, expire at turn cleanup, and resolve from queued after-play frames with independent stackable payloads.",
+      "required_evidence": "Independent client traces for Temporary cards created by expiry discard triggers, copy/shuffle/return retention, Follow target selection weighting, simultaneous attachments, copied carrier enchantments, countered carriers, damage attribution and spell-damage snapshot timing. Quest/Rift, Imp-formants and incomplete generation pools remain unsupported.",
+      "sources": [
+        "https://hearthstone.wiki.gg/wiki/Temporary-related",
+        "https://hearthstone.wiki.gg/wiki/Cursed_Catacombs",
+        "https://hearthstone.wiki.gg/wiki/Follow_the_Fuse"
+      ]
+    },
+    {
+      "id": "prepare_payment_interactions",
+      "cards": [
+        "CATA_EVENT_401",
+        "JAIL_326",
+        "JAIL_395",
+        "JAIL_435",
+        "JAIL_444",
+        "JAIL_453",
+        "JAIL_457",
+        "JAIL_718",
+        "JAIL_721",
+        "JAIL_890",
+        "JAIL_906",
+        "JAIL_909",
+        "JAIL_913",
+        "JAIL_998"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Prepare spends at least one Mana, caps payment at the amount needed to reach zero, discounts a physical card once, and locks it until its next owner turn. Targeted tests cover copying, shuffling, hand position, and mana-spend listeners.",
+      "required_evidence": "Client traces for next-card cost modifiers during Prepare, stacked conversion auras, and Jailbird reduction when the prepared card costs one."
+    },
+    {
+      "id": "draw_activation_checkpoint_order",
+      "cards": [
+        "CAP_400",
+        "CAP_401",
+        "CAP_402",
+        "CAP_404",
+        "CAP_406",
+        "CORE_SW_439",
+        "EDR_260",
+        "JAIL_386",
+        "JAIL_442",
+        "JAIL_881",
+        "TIME_025",
+        "TIME_026",
+        "TIME_027",
+        "TIME_028",
+        "TIME_029",
+        "TLC_518"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Overdraw burns without activating; on-draw effects and replacement draws use resumable event operations. Explicit Shred casts do not replace draws. Successful draw notifications precede the automatic effect.",
+      "required_evidence": "Independent traces for draw listeners that draw/copy/transform on-draw cards, automatic missile Spell Damage, full-board summons, and multi-draw selected-card ordering."
+    },
+    {
+      "id": "forced_combat_nested_death_order",
+      "cards": [
+        "CORE_TTN_866",
+        "CS3_020",
+        "DINO_428",
+        "EDR_014",
+        "JAIL_435",
+        "JAIL_454",
+        "JAIL_511",
+        "RLK_720",
+        "TIME_434",
+        "TIME_443",
+        "TLC_107",
+        "TLC_230"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Forced combat preserves current turn and source controller and does not spend normal attacks. Before-attack callbacks have an explicit resumable checkpoint. Groups stop attacking departed/dead entities.",
+      "required_evidence": "Client traces for lethal/death processing inside nested attack listeners, simultaneous multi-summon group ordering, target sampling and dying-source aura timing. Shared event/death scheduler limits still apply."
+    },
+    {
+      "id": "captured_effect_replay_semantics",
+      "cards": [
+        "JAIL_395",
+        "JAIL_444",
+        "JAIL_906",
+        "JAIL_940",
+        "TLC_106",
+        "CATA_472"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Live Deathrattles use the target context; historical replays sample recorded friendly deaths including attached effects. End-effect replay shares registered and base Totem operations.",
+      "required_evidence": "Client comparison for printed versus death-time enchantment replay, duplicate death records, historical summon positions and choice behavior when replayed by another source."
+    },
+    {
+      "id": "tribal_group_assignment_distribution",
+      "cards": [
+        "CORE_WON_141",
+        "TLC_110",
+        "TLC_222",
+        "TLC_254"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Type groups use randomized physical-card matching to distinct Constructed types, including dual types and ALL. Esho requires a nonempty common minion type. Firehawk snapshots selected physical cards, resolves draws, then buffs cards still in hand or their automatically summoned minions.",
+      "required_evidence": "Client traces for random weighting and dual/ALL reassignment; Esho with no minions left; Firehawk when draw listeners alter the second selected card or automatic replacement draw."
+    },
+    {
+      "id": "tribal_damage_modifier_order",
+      "cards": [
+        "CAP_104",
+        "EDR_480",
+        "TLC_228"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Combat and effect damage use source-controller tribal multipliers followed by additive tribal bonuses. Goldrinn stacks multiplicatively; Engineer requires its controller turn.",
+      "required_evidence": "Independent traces for simultaneous additive/multiplicative tribal damage effects, dead-source aura attribution and interaction with incoming damage modifiers."
+    },
+    {
+      "id": "alternate_play_payment_precedence",
+      "cards": [
+        "CAP_004",
+        "JAIL_442",
+        "JAIL_452",
+        "JAIL_455",
+        "JAIL_461",
+        "CATA_180",
+        "CORE_ETC_523",
+        "EDR_489",
+        "TLC_436"
+      ],
+      "status": "reference_validation_pending",
+      "current_behavior": "Either-side actions pay for the actor and resolve board effects for the recipient. Health payment bypasses damage, armor and immunity; own-health payment cannot kill its payer; Agamaggan can kill the opponent and rejects costs above ten. Matching payment conversions are consumed on play.",
+      "required_evidence": "Client traces for simultaneous cost-conversion precedence, stacked next-Murloc conversions, and either-side minion play/summon listener ownership."
+    },
+    {
+      "id": "staged_generation_60",
+      "cards": [
+        "CATA_136",
+        "CATA_471",
+        "CATA_474",
+        "CATA_484",
+        "CATA_556",
+        "CATA_569",
+        "CATA_723",
+        "CORE_AT_062",
+        "CORE_AV_107",
+        "CORE_BAR_541",
+        "CORE_BT_321",
+        "CORE_CATA_009",
+        "CORE_CFM_781",
+        "CORE_DRG_024",
+        "CORE_EDR_001",
+        "CORE_ETC_111",
+        "CORE_EX1_189",
+        "CORE_GIL_531",
+        "CORE_GIL_836",
+        "CORE_GVG_114",
+        "CORE_KAR_057",
+        "CORE_KAR_062",
+        "CORE_KAR_069",
+        "CORE_KAR_077",
+        "CORE_LOE_039",
+        "CORE_ONY_022",
+        "CORE_REV_308",
+        "CORE_TID_931",
+        "CORE_UNG_912",
+        "CORE_WON_096",
+        "CORE_WON_337",
+        "CORE_WON_350",
+        "Core_UNG_072",
+        "DINO_424",
+        "DINO_426",
+        "DINO_431",
+        "DINO_433",
+        "DINO_434",
+        "EDR_060",
+        "EDR_270",
+        "EDR_462",
+        "EDR_530",
+        "EDR_848",
+        "EDR_999",
+        "END_029",
+        "FIR_913",
+        "FIR_952",
+        "JAIL_125",
+        "JAIL_460",
+        "JAIL_507",
+        "JAIL_706",
+        "JAIL_876",
+        "MEND_042",
+        "MEND_045",
+        "TIME_613",
+        "TLC_334",
+        "TLC_477",
+        "TLC_514",
+        "TLC_516",
+        "TLC_814"
+      ],
+      "status": "staged_not_playable",
+      "current_behavior": "Shared generation primitives and 60 effect recipes are staged outside the collectible registry. Synthetic fixture pools test primitives only; no production pool contracts are installed.",
+      "required_evidence": "Review complete per-class membership, canonical/self-generation exclusions, recursive outcome closure, Discover history/events, summon modifier timing, grouped shuffle timing, and card-specific lifecycle wiring before promotion. Metadata matching in generation_audit is planning evidence only."
+    },
+    {
+      "id": "discover_followup_timing",
+      "cards": [
+        "TLC_483"
+      ],
+      "status": "internal_model_requires_reference_validation",
+      "current_behavior": "Selected physical results are private references. After-Discover discounts run after the enclosing play/event/death/turn effect sequence; listeners are captured after selection and rechecked for life, owner and Silence. Burned or removed entities are not retargeted.",
+      "required_evidence": "Independent client traces for multi-Discover ordering, listeners entering/leaving during the effect, and non-hand Discover results. Passing frame tests establish engine consistency, not full client fidelity."
+    },
+    {
+      "id": "replacement_and_secondary_power_timing",
+      "cards": [
+        "CORE_EX1_323",
+        "TLC_632",
+        "JAIL_EVENT_101",
+        "JAIL_446"
+      ],
+      "status": "implemented_internal_reference_pending",
+      "current_behavior": "Explicit primary and secondary slots preserve independent usage. Replacing/restoring primary powers readies the new instance. Sulfuras restores nested saved state after two uses. Generic refresh readies both slots; Collapsing Star refreshes only its captured primary instance. Secondary regrant replaces/readies its slot, and hero replacement preserves it.",
+      "required_evidence": "Independent target-patch traces for replacement/reset timing, nested swaps, repeated secondary grants, secondary retention across hero replacement, generic refresh scope, and Dormant Demon summon publication. Hero Card health and existing enchantment preservation require broader reference fixtures."
+    },
+    {
+      "id": "quest_progress_and_location_death_timing",
+      "cards": [
+        "TLC_239",
+        "TLC_433",
+        "TLC_987"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Quests occupy a shared five-slot secret/quest zone, one Quest at a time. Opening hand reservation, public progress, played history, immediate capped-hand rewards, centralized Corpse payment and once-per-own-turn seven-occupied-slot progress are implemented. Terror Grave uses deferred location Deathrattle effects for destruction and final-charge removal. Internal fixtures do not certify client ordering.",
+      "required_evidence": "Pinned-patch client traces for full-board Quest timing with Dormant minions/locations, already-full board at turn start, reward timing within compound Corpse effects, countered Quest played history and mixed location/minion death waves."
+    },
+    {
+      "id": "dream_rewards_and_held_upgrade_timing",
+      "cards": [
+        "EDR_001",
+        "EDR_846"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Closed five-card Dream and five-card corrupted Dream families. Shaladrassil compares paid card cost against the held copy after shared one-use discounts are consumed but before card effects; countered plays count. Reward order is shuffled. Nightmare is a silence-removable, copyable caster-turn enchantment. Ordinary Awakens exempts explicit Ysera minion identities; corrupted Awakening destroys Ysera minions before enemy damage. Hero Elusive is a live aura.",
+      "required_evidence": "Pinned client traces for one-use cost effects, countered and nested casts, original/current-controller Nightmare deadlines and copying, corruption retained through zone transitions, and Corrupted Awakening destruction ordering. Official hotfixes establish random reward order, own-player qualification, discounted-cost comparisons and Emerald Aspect exemption from ordinary Awakens; these do not certify every interaction."
+    },
+    {
+      "id": "untouchable_permanent_activation_timing",
+      "cards": [
+        "TLC_446"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Underfel Rift is a separate untouchable board object, with one activation per owner turn per object. Activation removes any chosen own hand card without play/discard/destroy events and resolves two independent fixed-pool summons through the existing resumable frame. Candidate permits activation on a full board and spends the card even when no summon fits. Portal insertion does not count as a minion summon.",
+      "required_evidence": "Pinned client traces for full-board activation legality, placement/adjacency, two independently usable Rifts, duplicate Fel Beast outcomes, removed-card visibility and reward timing for countered Temporary plays. Developer confirmation establishes removal is neither discard nor destruction; printed cards and 34.0.2 establish the six-card Quest and five-mana reward."
+    },
+    {
+      "id": "dusk_playerbound_returns_and_power_timing",
+      "cards": [
+        "TLC_513",
+        "TLC_513t",
+        "TLC_513hp",
+        "TLC_513t2"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Master Dusk summons two Ninjas through ordered checkpoints, then enables a persistent boolean player effect. Existing and future friendly Ninjas return clean copies after actual death even when silenced; the return is not a replayable Deathrattle. Replaying Master Dusk does not stack the boolean. Two filtered Hero Power draws resolve on-draw and choice continuations sequentially before after-use listeners. Lethal checks remain deferred through the complete power sequence, including choices.",
+      "required_evidence": "Pinned client traces for previously summoned Ninjas (an August 2025 bug report contradicts intended text), control changes, repeated Master Dusk stacking, simultaneous Ninja/death-listener ordering, death during reward summons, and filtered draw/after-power lethal timing. Candidate fixtures verify its stated policy, not independent client conformance."
+    },
+    {
+      "id": "repeatable_quest_summon_publication",
+      "cards": [
+        "TLC_426",
+        "TLC_426t"
+      ],
+      "status": "partial_reference_verified",
+      "current_behavior": "Six successful active Murloc summon publications reset progress immediately and increment a persistent summon bonus. The completing Murloc receives only the prior bonus. Subsequent summons within the same group receive the new bonus and count toward the next cycle. Played and Reborn entries use their existing deferred summon publication, with Reborn health initialized before the buff. No new hand reward, mana payment or ordinary spell-play event is produced by a cycle reset. Dormant Murlocs do not publish progress or receive this buff in the current candidate.",
+      "required_evidence": "Developer ClayByte confirms auto replay, occupied Quest slot, future-only bonus, individual multi-summon timing and pre-forced-attack buffs in the June 2025 reveal discussion. Still require pinned client traces for played Battlecry ordering, Dormant Murloc entry/awakening, Reborn health, copying enchanted Murlocs and ordinary cast/replay listeners on automatic resets."
+    },
+    {
+      "id": "recruited_pair_friendly_combat",
+      "cards": [
+        "TLC_810"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Recruits up to two physical Deathrattle minions sequentially from the current deck, preserving deck stat buffs/origin and bypassing draw/Battlecry. Each entry settles before the next. If both original entities survive, the first attacks the second through shared forced combat, including Secrets, retaliation, deaths and choices. Failed/absent recruits do not retarget another friendly minion.",
+      "required_evidence": "Pinned client traces for attacker direction, sequential versus preselected recruitment pools, precombat removal/control changes, full boards and Secret/trigger ordering during friendly combat."
+    },
+    {
+      "id": "held_bonus_pair_timing",
+      "cards": [
+        "CATA_206"
+      ],
+      "status": "partial_reference_verified",
+      "current_behavior": "Starts with Elusive/Taunt. At each owner turn end while held, samples a different unordered pair from the eight Bonus Effects; one keyword may repeat. Physical copies retain the pair, clean bounce/shuffle and Reborn use printed defaults. Play and recruitment propagate the pair before summon publication; mechanic filters and Taunt hand buffs read current physical keywords. Owner observations expose the pair without opponent-hand leakage.",
+      "required_evidence": "Developer ClayByte confirms initial pair and no-identical-pair rule in February 2026 reveal discussion. A firsthand client report describes end-turn rerolls. Still verify opponent-turn timing, reroll weighting and copy/Reborn/clean-zone semantics in the pinned client."
+    },
+    {
+      "id": "conditional_attack_immunity_windows",
+      "cards": [
+        "DINO_136",
+        "DINO_136t"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Outcast grants successfully summoned Raptors a turn-limited conditional immunity after all three summon operations. Attack windows start before Secrets and pre-attack triggers, persist across forced-attack choices, and close after simultaneous combat damage before after-attack triggers. Cancellation, departed targets, terminal cleanup and rollback remove windows; separate nested windows are tracked by identity. Copies retain temporary enchantments and Silence removes them.",
+      "required_evidence": "Independent pinned traces for exact immunity removal relative to damage/death/after-attack listeners, summon-trigger attacks before the Outcast grant, and ordinary versus forced attack choice timing. Printed card and the established immune-while-attacking interaction with Explosive Trap support the basic rule; candidate fixtures are not full phase conformance."
+    },
+    {
+      "id": "armor_gain_attack_chains",
+      "cards": [
+        "DINO_400",
+        "EDR_471"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "All candidate armor increases publish an owner-specific event. Basher buffs before choosing a live enemy minion for a forced attack, without spending normal attacks. Armor loss, zero gains and opponent gains do not trigger it. Reentrant Basher and EDR_471 damage/armor chains use explicit event frames; other unsupported trigger recursion still fails explicitly.",
+      "required_evidence": "Pinned client traces for competing armor listeners, nested death checkpoints, Ice Barrier cancellation/choices and Hero replacement armor versus Battlecry timing. Existing event/death scheduling gaps remain; fixtures validate candidate behavior, not full client conformance."
+    },
+    {
+      "id": "end_trigger_repetition",
+      "cards": [
+        "CATA_480"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Sandfury grants a non-stacking double-minion-end-trigger modifier through three owner turn ends. Ordinary and explicitly replayed end effects run as separate resumable sequences with source revalidation between repetitions. Player/scheduled spell effects and minion expiration are not doubled; public remaining durations enter feature schema v27.",
+      "required_evidence": "Pinned client traces for stacking/refresh with repeated copies and other repeaters, third-turn aura expiration ordering, source removal/Silence between repetitions and dormant/awakening effects. Blizzard library supplies printed behavior; local tests do not prove full phase parity."
+    },
+    {
+      "id": "nature_damage_replacement",
+      "cards": [
+        "TIME_214"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Positive damage from a friendly Nature spell to unsilenced Flux Revenant becomes +2/+1 before normal damage/shield processing. No actual damage, Lifesteal or damage-history credit results. Area and sequential effects preserve their remaining operations. Combat and opponent spells do not replace.",
+      "required_evidence": "Pinned traces for Divine Shield/Immune ordering, zero-damage attempts with modifiers, simultaneous area replacement ordering, and multi-school spell provenance. Stormrook remains unimplemented because its full random minion pool is not executable."
+    },
+    {
+      "id": "hand_adjacency_cost_aura",
+      "cards": [
+        "CATA_186",
+        "CATA_186t"
+      ],
+      "status": "partial_reference_verified",
+      "current_behavior": "Saboteur gives a playable Sabotage to the opponent. Each held token taxes its physical immediate neighbors, recalculated at query/payment time. Removing/moving/copying cards does not retain the tax. Sabotage surcharge caps at ten without reducing an already higher cost; unrelated timed taxes still apply.",
+      "required_evidence": "July 15 2026 firsthand client report confirms the ten-cost cap: https://us.forums.blizzard.com/en/hearthstone/t/sabotage-does-not-increase-card-cost-past-10/163424 . Still verify ordering against set-cost and stacked discounts/other live cost auras in the pinned client."
+    },
+    {
+      "id": "internal_spell_cast_attribution",
+      "cards": [
+        "TLC_522",
+        "JAIL_974",
+        "JAIL_515"
+      ],
+      "status": "partial_reference_verified",
+      "current_behavior": "Shared admission covers the fixed cast definitions, existing spell CHOICES and reviewed primitive/physical-state operation families. Zone casts consume the exact physical Card without draw/discard/play events, retain Spell Damage and rule_state, and pay no mana. General dynamic pools, cast-history attribution, event/death timing and card-specific replay exceptions remain incomplete.",
+      "required_evidence": "Blizzard 34.0 patch confirms Opu death processing between Battlecry and Combo. Official 36.0.2 hotfix confirms Captured Archmage live trigger after four other deaths: https://us.forums.blizzard.com/en/hearthstone/t/3602-hotfix-patch/163357 . Verify current caster/counter attribution, automatic targeting, recursion limits, spell identity aliases and dead-minion event timing. July 8 firsthand report says Archmage sometimes hits Elusive; candidate currently uses ordinary spell eligibility pending a reproducible pinned trace: https://us.forums.blizzard.com/en/hearthstone/t/captured-archmage-sometimes-targeting-elusive-minions/162984 ."
+    },
+    {
+      "id": "automatic_choice_attribution",
+      "cards": [],
+      "status": "partial",
+      "current_behavior": "Internal casts select their own effect choices with seeded RNG without resuming parent frames. Existing spell CHOICES select a branch before its targets; active own Fandral combines effects using the established Wrath and Power of the Wild overrides. Automatic Discover uses ordinary counters/followups. Nested manual effect contexts remain manual.",
+      "required_evidence": "Pinned-client traces for automatic Discover counters/listeners, effect ownership across nested draws and death triggers, and Choose One branch/target ordering. The firsthand 2023 Oh My Yogg report establishes automatic Discover selection only, not all these interactions.",
+      "sources": [
+        "https://us.forums.blizzard.com/en/hearthstone/t/oh-my-yogg-and-discover-spells/112600"
+      ]
+    },
+    {
+      "id": "internal_choose_one_ordering",
+      "cards": [
+        "EDR_813",
+        "EDR_490",
+        "CORE_EX1_154",
+        "CORE_EX1_160"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Branch is chosen uniformly before target selection, with no replacement branch when targeting fails. Own active Fandral combines the established branch operations. Enemy-target policy is applied to the selected branch. Morbid Swarm payment occurs during the damage effect; combined mode does not require a target below two Corpses.",
+      "required_evidence": "Pinned-client traces for uncastable random branches, insufficient Corpse branches, combined effects and special target policies. A firsthand Macaw/Morbid Swarm report shows that branch spells can have caster-specific target behavior; the generic policy is not a claim that all such exceptions are implemented.",
+      "sources": [
+        "https://us.forums.blizzard.com/en/hearthstone/t/zombeast-piece-chatty-macaw-and-morbid-swarm/154791"
+      ]
+    },
+    {
+      "id": "internal_secret_and_delayed_state",
+      "cards": [],
+      "status": "partial",
+      "current_behavior": "Secret placement rejects duplicate identities and a sixth shared Secret/Quest slot, retains the physical spell card, and allows a failed placement to finish its automatic cast. Delayed spell effects use existing owner-turn scheduling and current board Spell Damage. Missile sequences now retain a continuation between hits, including child choices and death settlement.",
+      "required_evidence": "Independent client timing for automatic Secret failures, later scheduled choice ownership, and whether physical spell enchantments must survive onto scheduled effects. Scheduled effects currently retain source card identity but not the full physical spell state. Nested event/death scheduler timing remains an existing gap.",
+      "sources": [
+        "https://us.forums.blizzard.com/en/hearthstone/t/fyrakk-the-blazing-can-cast-the-same-secret/161253"
+      ]
+    },
+    {
+      "id": "damage_followup_outcome_timing",
+      "cards": [
+        "CORE_EX1_302",
+        "CORE_EX1_391",
+        "TIME_216",
+        "CORE_SCH_512",
+        "END_014",
+        "CATA_303"
+      ],
+      "status": "partial",
+      "current_behavior": "Damage-follow-up operation frames preserve the existing immediate victim-health outcome, then wait for intervening scheduler choices and death processing before drawing, summoning, buffing or healing. This applies to ordinary plays as well as internal casts. Direct helper fallbacks outside operation frames retain their prior behavior.",
+      "required_evidence": "Independent pinned-client phase traces for damage replacement, transformation, prevention/healing before death, indirect trigger kills and survivor follow-up eligibility. Passing continuation tests demonstrate suspension behavior, not correctness of every kill-attribution edge."
+    },
+    {
+      "id": "physical_spell_consumers",
+      "cards": [
+        "CATA_563",
+        "TLC_438",
+        "CORE_RLK_567"
+      ],
+      "status": "partial",
+      "current_behavior": "Cloudstrider removes the selected physical hand spell and stores its identity privately; death casts a fresh copy. Treasuregill selects from all eligible actual deck spells and prefers itself as a legal target. Neither pool is narrowed to supported cards. Selecting untransformed Shadow of Demise still raises UnsupportedCard; normal play rolls back. These two consumer definitions are provisional, not complete dependency closure.",
+      "required_evidence": "Resolve untransformed Shadow of Demise automatic casting. Implement and verify repeated Battlecry binding to the original absorption selection. Verify full enchantment reset, hidden identity, target attribution and interrupted source removal against pinned client traces.",
+      "sources": [
+        "https://us.forums.blizzard.com/en/hearthstone/t/crackling-cloudstrider-and-volcanic-thrasher-interaction/159222",
+        "https://www.reddit.com/r/hearthstone/comments/1s0571g/crackling_cloudstrider_not_revealing_the_spell/",
+        "https://www.reddit.com/r/hearthstone/comments/1sunree/would_this_work/"
+      ]
+    },
+    {
+      "id": "spell_repetition_boundary",
+      "cards": [
+        "EDR_464",
+        "TLC_836"
+      ],
+      "status": "partial",
+      "current_behavior": "Shared repetition retains selected context/target and defers death/winner settlement across choices while draining child events, with separate Lifesteal. Tyrande grants up to three charges, consumes one per hand spell including countered plays, and overlaps nonmultiplicatively. Niri doubles one-cost hand spells using paid cost and internal spells using physical card cost; its minion-play listener buffs the played minion by its current attack/health, excludes itself, and multiple listeners each apply. Both definitions are provisional. Play/cast history and Overload currently publish once per root spell.",
+      "required_evidence": "Pinned-client traces for Tyrande regrant/stacking and countered-charge consumption; Niri discounted self-play, stat doubling under damage/auras, internal spell cost/aura and target changes, and any hero-power exception; repeated Overload and cast-event publication. Confirm deferred death scopes, destroyed targets, control/transform changes, nested trigger timing and whether condition/Spell Damage snapshots refresh for each copy. Hand-play spell-repeat eligibility currently snapshots before spell-played triggers. These assumptions must be resolved before full fidelity certification.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1t0tekl/why_tyrande_moonwell_behave_differently_than/",
+        "https://us.forums.blizzard.com/en/hearthstone/t/niri-the-crater-and-rogue-imbue/157586"
+      ]
+    },
+    {
+      "id": "stored_spell_aura",
+      "cards": [
+        "EDR_259"
+      ],
+      "status": "partial",
+      "current_behavior": "Ursol selects a random tied highest-current-cost hand spell, removes that exact card without draw/discard/payment events, and schedules three owner-end casts. Each cast copies the stored physical state and uses current board Spell Damage and a fresh branch/target selection. Stored spell identity/cost/attached Spell Damage are public through an explicit observation whitelist. Schedule survives minion silence/removal; missing cast support fails without narrowing selection. The generated EDR_259e1 Aura is now a reviewed payload-bearing internal spell; it creates the schedule through the shared casting/repetition path, including the current Niri policy. An unbound Aura token fails explicitly.",
+      "required_evidence": "Independent patch-pinned traces for physical enchantment retention, tied-cost selection, public payload fields, aura expiry during the final trigger, and Aura-on-Aura timing. The generated Ursol's Aura token is connected, but intermediate cast-event attribution and Niri repetition need independent traces; generic internal casts still do not publish all ordinary spell-cast listeners. Full payload observations beyond the listed whitelist, aura-extension modifiers and untransformed Shadow of Demise remain open. The August 2026 Chronological Aura bug report is not treated as proof that the behavior persists in the pinned patch.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1jwwt9d/fyi_about_ursols_inner_workings/",
+        "https://us.forums.blizzard.com/en/hearthstone/t/interaction-between-ursol-and-chronological-aura/164111",
+        "https://us.forums.blizzard.com/en/hearthstone/t/still-dont-get-why-ursols-spell-effect-is-an-aura/150420"
+      ]
+    },
+    {
+      "id": "imbue_state_and_power_bodies",
+      "cards": [
+        "EDR_226",
+        "EDR_227",
+        "EDR_231",
+        "EDR_264",
+        "EDR_449",
+        "EDR_451",
+        "EDR_518",
+        "EDR_519",
+        "EDR_800",
+        "EDR_845",
+        "EDR_852",
+        "EDR_860",
+        "EDR_871",
+        "EDR_888",
+        "EDR_970",
+        "END_000",
+        "END_001",
+        "END_003",
+        "FIR_921"
+      ],
+      "status": "partial",
+      "current_behavior": "All 19 consumer declarations remain staged, not registered. All eight class power bodies now have candidate runtime paths: Druid, Hunter, Mage, Shaman, Death Knight passive, Paladin portal shuffle and owner-progress Casts When Drawn, Priest one-minion/one-spell affordable Temporary choice, and Rogue other-class discounted minion with paid Hero Power Rewind. Missing complete pool contracts fail closed. Free Rogue power triggering explicitly rejects unverified Rewind timing. First replacement provisionally retains used state. No collectible coverage credit is added.",
+      "required_evidence": "Approve complete production pools for Priest, Rogue, exact-cost Dragons, Shaman, Aegis and Wild Gods. Independently verify Priest one-per-type sampling, effective-cost eligibility, hand/aura/inherent discounts, empty groups and Choose versus Discover; portal owner-progress scaling, burn/replacement draw, auto-cast event attribution and exact-cost exhaustion; Rogue Rewind checkpoint relative to use listeners, Morchie extra Rewinds and Wisprider free-trigger refresh behavior. Also verify Hamuul startup and player/internal cast attribution, first Imbue refresh, class/power swaps, Death Knight first-Undead timing and dormant plays, temporary Attack copying, Druid tokens and Mage summon retry behavior. Controlled pool fixtures do not certify client conformance.",
+      "sources": [
+        "https://hearthstone.blizzard.com/en-us/news/24189539/into-the-emerald-dream-is-now-live",
+        "https://news.blizzard.com/en-us/article/24179067/step-into-the-emerald-dream-hearthstones-next-expansion",
+        "https://www.reddit.com/r/hearthstone/comments/1jty9d1",
+        "https://us.forums.blizzard.com/en/hearthstone/t/imbue-should-refresh-your-hero-power/143821",
+        "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+        "https://hearthstone.blizzard.com/en-us/cards/114069/",
+        "https://hearthstone.blizzard.com/en-gb/cards/121243/",
+        "https://hearthstone.blizzard.com/en-us/news/24267727/35-0-patch-notes",
+        "https://us.forums.blizzard.com/en/hearthstone/t/emerald-portal-imbue-paladin-bug/146677",
+        "https://us.forums.blizzard.com/en/hearthstone/t/niri-the-crater-and-rogue-imbue/157586"
+      ]
+    },
+    {
+      "id": "secret_extensions",
+      "cards": [
+        "CORE_LOOT_101",
+        "JAIL_315"
+      ],
+      "status": "partial",
+      "current_behavior": "Misdirection transforms a minion attacker and cancels the attack. Explosive Runes uses the live played source after Battlecry and summon/minion-play reactions, snapshots health for excess, applies current Secret-owner Spell Damage and resolves a damage batch. Only the actual live played source can trigger it. Both are registered as provisional live definitions.",
+      "required_evidence": "Pinned client traces for transformed played minions, Divine Shield/Immune excess interactions, damaged-health snapshots, Secret ordering with replacement and intervening choices. Generic Secret sequences still have existing conformance gaps.",
+      "sources": [
+        "https://us.forums.blizzard.com/en/hearthstone/t/divine-shield-and-excess-dmg/111580"
+      ]
+    },
+    {
+      "id": "untimely_death",
+      "cards": [
+        "TIME_620"
+      ],
+      "status": "partial",
+      "current_behavior": "Captures a friendly death on the immediately following global turn, requires an actual played_turn marker and opponent turn, and queues an exact Secret UID plus dead identity/position. Resolves one clean resummon, independent of Reborn, with normal board capacity. Multiple simultaneous deaths cannot reuse a consumed Secret.",
+      "required_evidence": "Pinned-client ordering against other death listeners, Deathrattles and Reborn; transformed/controller-changed minions and turns skipped or repeated. Current transform helper does not preserve played-turn association; broader conformance remains open."
+    },
+    {
+      "id": "staged_transformation_pools_and_conformance",
+      "cards": [
+        "CATA_567",
+        "CATA_979",
+        "EDR_493",
+        "EDR_529",
+        "EDR_873",
+        "JAIL_313",
+        "JAIL_EVENT_102",
+        "TIME_049",
+        "TIME_055",
+        "TIME_859",
+        "TLC_235"
+      ],
+      "status": "staged_not_registered",
+      "current_behavior": "Shared candidate runtime covers exact-cost board transforms, original-identity deathrattles, held stat/cost retention, Neutral deck replacement, spell choices, start/surviving-damage triggers and four-value stat scrambling. Complete production pools are absent. Hand cost/enchantment retention, copy replacement, summon ordering, dormant scrambling and event timing need independent conformance review.",
+      "required_evidence": "Complete reviewed per-context outcome contracts and dependencies; pinned-patch traces for discounted and dynamic-cost hand cards, split enchantments, Podling copy/held interactions, Bribe ordering, Anomalize dormant/full-board cases and transformation event boundaries. Controlled fixture pools do not justify registry admission."
+    },
+    {
+      "id": "transformation_exceptional_bodies",
+      "cards": [
+        "CATA_615",
+        "TIME_030",
+        "TIME_707"
+      ],
+      "status": "not_implemented",
+      "current_behavior": "Top-level recipes only. No staged runtime body or registration was added for Genn, Divergence or Alternate Reality.",
+      "required_evidence": "Genn held parity transitions and every starting Hero Power upgrade; Divergence rounding/physical split/enchantment rules; complete historical Choose One membership and executable outcomes."
+    },
+    {
+      "id": "staged_rewind_generation",
+      "cards": [
+        "CORE_EDR_004_2026",
+        "TIME_000",
+        "TIME_002",
+        "TIME_014",
+        "TIME_018",
+        "TIME_033",
+        "TIME_034",
+        "TIME_035",
+        "TIME_038",
+        "TIME_602",
+        "TIME_EVENT_999"
+      ],
+      "status": "staged_not_registered",
+      "current_behavior": "Eleven staged runtime declarations reuse the Rewind snapshot and closed-pool generation, casting and Dark Gift systems. Includes 12-Mana summons, combined Holy-spell-cost healing, both-player weapons, forced attacks, three rerolls and post-Rewind Discover eligibility. Full production outcome contracts remain absent. Explicit frozen Rewind keyword membership compensates for missing metadata tags without parsing text at runtime.",
+      "required_evidence": "Complete per-context pools and executable dependencies, including every internally cast Nature spell. Independent timing/RNG evidence for budget summons (including zero-cost outcomes), healing aggregation with hand overflow, weapon replacement/death events, nested Discover and repeated Rewind interactions. The bounded 256-step summon guard is a fail-closed limit, not Hearthstone behavior."
+    },
+    {
+      "id": "morchie_outcome_retention",
+      "cards": [
+        "END_036"
+      ],
+      "status": "not_implemented",
+      "current_behavior": "Top-level recipe only. No runtime body or playable registration: keeping both potential outcomes is not implemented as arbitrary repeated effects.",
+      "required_evidence": "Pinned-patch behavior for automatic Rewind consumption, multiple charges, resources, board/hand capacity, minion identities, randomness, triggers and conflicting outcomes before implementing the replacement mechanic."
+    },
+    {
+      "id": "staged_choice_generation_continuations",
+      "cards": [
+        "CAP_002",
+        "CAP_105",
+        "CAP_407",
+        "CORE_RLK_066",
+        "CORE_RLK_116",
+        "CORE_YOP_001",
+        "Core_LOE_115",
+        "EDR_273",
+        "EDR_517",
+        "EDR_872",
+        "FIR_927",
+        "JAIL_123",
+        "JAIL_201",
+        "JAIL_328",
+        "JAIL_451",
+        "JAIL_474",
+        "JAIL_735",
+        "JAIL_806",
+        "JAIL_861",
+        "JAIL_875",
+        "JAIL_892",
+        "JAIL_986",
+        "JAIL_987",
+        "RLK_025",
+        "TIME_102",
+        "TIME_448",
+        "TIME_730",
+        "TIME_872",
+        "TLC_109",
+        "TLC_434",
+        "TLC_461",
+        "TLC_462",
+        "TLC_815"
+      ],
+      "status": "partial_staged",
+      "current_behavior": "33 new Standard declarations have candidate runtime paths for Rune/cost/rarity selection, modified Discover results, two-stage destination choices, corpse-funded extra outcomes, Choose One branches, Follow, physical Prepare/repeat/combined-choice/growing-discount flags, lifetime-play hand locks, bottom-deck placement, temporary mana crystals, location activation and conditional generation. No collectible promotion or production pool approval. Complete contracts are required; missing outcomes fail closed. Ordinary generated Discover now excludes the source canonical identity after validating the full pool. Schema v37 exposes the recent friendly Undead death condition and relative hand-lock progress.",
+      "required_evidence": "Complete per-class outcome eligibility and recursive closure, including Rune and Choose One membership and self-generation exclusions. Independent traces for Paleomancy empty/short pools, automatic Corpse spending and full-hand order; Blood Clone full-board spending and copy enchantments; Qonzu Discover callbacks relative to destination choice; Low Security Wing locks across transfer/copy/Prepare; modified spell-repeat stacking/counterspells; combined Choose One targeting; Follow attribution; Frantic Forger affordability versus full playability; Relic Miner token rarity and deck destruction events; bottom-deck ordering/shuffle attribution; Whelp mana-cap interactions and temporary crystals. Code Violet currently counts prior player-played spells through existing spells_turn history, not internally cast spells; resolve internal/repeated cast attribution before admission. Death window uses the existing death-record tribe model. These controlled fixtures are not client-conformance evidence."
+    },
+    {
+      "id": "historical_health_generation_review",
+      "cards": [
+        "CATA_EVENT_000",
+        "TIME_013",
+        "TIME_016",
+        "TIME_040",
+        "TIME_052",
+        "TIME_444",
+        "TIME_711",
+        "TIME_857",
+        "TIME_612",
+        "TIME_615",
+        "TLC_467"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Historical generation rejects current Standard aliases, tokens and unreviewed sets; every complete outcome pool remains separately required. Health grants reuse direct Health payment and track permanent or current-turn duration. No live registrations added.",
+      "required_evidence": "Independent historical membership and generated behavior closure, internal-cast attribution for Farseer Wo, payment precedence and Health/armor interactions, and copied or transferred enchantment lifetime evidence."
+    },
+    {
+      "id": "generated_dormant_entry_review",
+      "cards": [
+        "TIME_058"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Generated Dormant duration is installed before board insertion, aura refresh and summon notifications; uses existing owner-turn awakening. No live admission.",
+      "required_evidence": "Complete two-cost minion pool and executable dependencies; independent confirmation of interactions with intrinsic Dormant conditions, summon listeners and awakening effects."
+    },
+    {
+      "id": "eternal_hold_any_demon_scope",
+      "cards": [
+        "TIME_446"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Discover a minimum-five-cost Demon from an explicit complete contract, then test for no deck minions and apply a persistent next-minion cost setter. No live admission.",
+      "required_evidence": "Independent definition of any Demon membership, including whether historical outcomes apply, full executable outcome closure, and conditional timing/cost precedence confirmation. Standard-only queue candidates do not approve this scope."
+    },
+    {
+      "id": "lifetime_hero_attack_generation",
+      "cards": [
+        "JAIL_200"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Counts resolved hero combats per owner across turns and uses an exact-cost pool at three plus lifetime attacks; summons twice. Counter is public in feature schema v39.",
+      "required_evidence": "Independent attack-attempt versus resolved-combat semantics, redirected/cancelled combat and transformed hero continuity, plus complete executable pools at every reachable cost."
+    },
+    {
+      "id": "generation_event_lifecycle_review",
+      "cards": [
+        "JAIL_407",
+        "JAIL_879",
+        "TIME_EVENT_997",
+        "END_037",
+        "JAIL_319"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Shared paid-card trigger, physical location attached Deathrattles, queued cast-when-drawn tokens, turn skipping and repeatable Discover candidate paths. Full pools remain mandatory.",
+      "required_evidence": "Independent skip-turn expiry/trigger semantics, refreshed Discover probability/source/order, internal-cast behavior, location attachment ordering, and complete generated outcomes. Existing generic draw/copy behavior retains its documented limitations."
+    },
+    {
+      "id": "leyline_family_review",
+      "cards": [
+        "MEND_500",
+        "MEND_501",
+        "MEND_502",
+        "MEND_503",
+        "MEND_504",
+        "MEND_505",
+        "MEND_506"
+      ],
+      "status": "partial_live_review_required",
+      "current_behavior": "Pinned values 4/6/1 from frozen card tags; persistent owner upgrades, per-repetition checkpoints, cost changes and upgrade choices. MEND_500, MEND_503, MEND_504 and MEND_506 are live; the other three remain staged for pool closure.",
+      "required_evidence": "Independent excess damage under prevention/amplification, upgrade snapshot timing and cost precedence, and complete pools at every reachable summon cost. Frozen Crystallized value 6 differs from the earlier May 19 patch announcement value 5; retain frozen data and review later-patch provenance."
+    },
+    {
+      "id": "map_original_option_review",
+      "cards": [
+        "TLC_435",
+        "TLC_442",
+        "TLC_464",
+        "TLC_515",
+        "TLC_824",
+        "TLC_900"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "First Discover retains other options in a same-turn physical-card follow effect. Deck options track entity IDs through shuffle/draw. Follow-up choice is not counted as another Discover; unplayed types use whole-game history.",
+      "required_evidence": "Independent second-choice Discover attribution, deck-copy versus move semantics, transferred/copied enchantment behavior, moved/transformed unchosen deck options, and complete eligible outcome contracts."
+    },
+    {
+      "id": "automatic_casting_family_review",
+      "cards": [
+        "CATA_786",
+        "EDR_520",
+        "JAIL_122",
+        "JAIL_321",
+        "TIME_860",
+        "TLC_430"
+      ],
+      "status": "partial_live_review_required",
+      "current_behavior": "Six shared internal-cast consumers: exact-cost casting, persistent Manastorm, Secret offers, current-turn Holy history and location activation. Internal casts do not count as paid player casts. All outcomes require executable pool contracts. TLC_430 is now live after checking every live Holy spell supports internal casting; the other five bodies remain staged.",
+      "required_evidence": "Independent effective versus paid spell Cost, persistent listener order, Secret sampling/duplicates/full slots, complete pools and automatic choice boundaries. Fyrakk Fire immunity/budget semantics and Gelbin Aura/Fabled support remain separate explicit exceptions."
+    },
+    {
+      "id": "future_summon_scaling_review",
+      "cards": [
+        "JAIL_730",
+        "JAIL_732",
+        "JAIL_733",
+        "JAIL_891",
+        "MEND_300",
+        "MEND_303",
+        "MEND_304",
+        "MEND_307",
+        "TLC_430"
+      ],
+      "status": "partial_live_review_required",
+      "current_behavior": "Three stable owner-private Companion identities, current printed Cost replacement, one Talya bonus per originating summon effect, and per-owner Void Soul level. Talya is live; seven source cards remain staged. Empty Companion successors reject explicitly. Candidate Void Soul level saturates at ten.",
+      "required_evidence": "Independent replacement visibility and duplicate slot weighting, maximum/empty Companion successor semantics, Void Soul level-ten saturation and end-of-summon increment timing, full Beast/Demon membership and executable outcomes. Frozen Migrating Elekk text includes Taunt absent from metadata mechanics; explicit intrinsic rule follows printed text."
+    },
+    {
+      "id": "colossal_shared_entry",
+      "cards": [
+        "CATA_139",
+        "CATA_150",
+        "CATA_151",
+        "CATA_153",
+        "CATA_154",
+        "CATA_155",
+        "CATA_300",
+        "CATA_432",
+        "CATA_488",
+        "CATA_550",
+        "CATA_726"
+      ],
+      "status": "partial_staged_no_admissions",
+      "current_behavior": "Ten explicit appendage layouts share summon/copy/transform entry, dependency preflight, board capacity and fresh parent links. Candidate layout and notification order are not independently certified. No body or appendage abilities are credited by these layouts. Magmaw replenishment, dormant entry and silenced copies fail closed.",
+      "required_evidence": "Independent position and summon/transform event traces, Herald scaling and per-body/per-appendage abilities; Magmaw depletion/replenishment semantics before admission."
+    },
+    {
+      "id": "herald_army_scaling",
+      "cards": [
+        "CATA_156",
+        "CATA_158",
+        "CATA_160",
+        "CATA_492",
+        "CATA_497",
+        "CATA_525",
+        "CATA_530",
+        "CATA_561",
+        "CATA_565",
+        "CATA_580",
+        "CATA_722",
+        "CATA_725",
+        "CATA_780",
+        "CATA_785",
+        "CATA_190h"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Thirteen source bodies and eighteen soldier/appendage ability bodies share owner progress and entry snapshots. Candidate soldiers use the pre-increment level, with 2/4-use thresholds and a 4x cap; existing board entities retain their level, copied entities retain source level. Six owner-class armies supported; other classes, Ultraxion/Deathwing and Cho gall replacement fail closed. Shrine is a location activation. Full generated outcome contracts are required. Hero Lifesteal expires at turn change. Colossal body abilities remain separate.",
+      "required_evidence": "Client traces for summon-before-increment, full-board progress, existing-entity scaling including bounce/copy/silence, deathrattle ownership, upgrade/trigger ordering, off-class army selection, starting-deck generation restrictions, Ultraxion discounts, Deathwing choices and Cho gall replacement. Official thresholds: https://hearthstone.blizzard.com/en-us/news/24245219 ; base magnitudes: pinned XML enum 2 in herald_values.json. Numeric enum 4632 is not treated as a Herald use count."
+    },
+    {
+      "id": "colossal_body_composition",
+      "cards": [
+        "CATA_150",
+        "CATA_151",
+        "CATA_153",
+        "CATA_488"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Four staged bodies: Ragnaros snapshots friendly Deathrattle entity identities and replays still-live sources with their own contexts; Azshara grants a nonstacking two-attack hero limit; Al Akir snapshots current Attack after candidate appendage entry for two exact-Cost generated minions costing one; Vulcanos damages all other minions and its two Plumes generate discounted Fire spells on damage.",
+      "required_evidence": "Independent Ragnaros ordering and changed/departed source traces; entry/aura ordering for Al Akir; complete exact-Cost and Fire generation contracts; Plume lethal-damage/event ordering; all shared Herald/Colossal entry gates remain. Card text comes from frozen all_cards.json.gz. No card admission."
+    },
+    {
+      "id": "colossal_healing_and_repetition",
+      "cards": [
+        "CATA_154",
+        "CATA_300"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Sinestra reuses effect repetition for paid and internal other-class spells; own-class, neutral and multiclass including owner are excluded. Multiple Sinestras or interaction with another repetition source fail closed rather than guessing a stacking rule. The Black Blood queues one forced attack per actual credited healing event and per live unsilenced source; appendages heal a random damaged friendly character. Choice/death settlement uses existing resumable event frames.",
+      "required_evidence": "Independent cast-notification, target retention, overload and repetition stacking rules for Sinestra; complete other-class generation pools and shared entry timing; healing attribution, delayed-source eligibility, simultaneous healing and forced-attack ordering for The Black Blood. Frozen card text is preserved in data/standard/all_cards.json.gz. No live admission."
+    },
+    {
+      "id": "chogall_deck_replacement",
+      "cards": [
+        "CATA_726"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Live friendly unsilenced Cho gall replaces Arm/Soldier right-neighbor consumption with uniform selection of a physical enemy-deck minion slot. Buff occurs only after removal. Empty eligible pool does nothing; no friendly fallback, draw or board Deathrattle.",
+      "required_evidence": "Verify targeting distribution, empty-minion-deck behavior and replacement timing against frozen-patch client traces. Official card text establishes replacement only, not these details. No live admission."
+    },
+    {
+      "id": "colossal_final_bodies",
+      "cards": [
+        "CATA_139",
+        "CATA_155",
+        "CATA_432",
+        "CATA_550"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Wickerfang observes positive Attack/max-Health deltas from friendly Legs, including buff/stat-setting/aura paths, for all friendly unsilenced bodies. Chromatus heads remove their respective keyword from all friendly Chromatus bodies. Onyxia replaces own-turn health loss after Armor and health payments with max/current Health increase, preserving damage; the 35.0.3 payment exception is implemented. Magmaw owns 99 appendage entries, initially fills space, refills after death-wave completion and other settled board departures, stops at zero or after body loss/silence; new summons/copies reset the budget. Six printed Magmaw token identities cycle in inventory order.",
+      "required_evidence": "Independent client traces still required for Wickerfang gain semantics (auras, negative Attack, simultaneous recipients and multiple bodies); Chromatus named-card versus parent scope and stolen/copy heads; Onyxia Armor/damage-event/Lifesteal ordering and max-Health behavior; Magmaw token ordering, refill priority versus death/summon triggers, control/copy/silence behavior. Sinestra stacking and all prior pool/entry gates remain. No live admission.",
+      "sources": [
+        "data/standard/all_cards.json.gz",
+        "https://hearthstone.blizzard.com/en-us/news/24271854/35-0-3-patch-notes"
+      ]
+    },
+    {
+      "id": "herald_payoff_completion",
+      "cards": [
+        "CATA_497",
+        "CATA_190h"
+      ],
+      "status": "staged_runtime_independent_review_required",
+      "current_behavior": "Ultraxion snapshots prior Herald count plus one as a persistent owner Deathwing discount, Heralds once, then applies the discount. Explicit Deathwing identities exclude skins and Spawn of Deathwing. Deathwing preserves class/health, adds printed Armor, installs Ruthless (+5 Attack), snapshots 1/2/4 Cataclysm choices, permits repeated options, queues their Battlecry operations in selected order. Choices do not count as spell casts or Discover; all generated Legendary Dragons require a full pool contract.",
+      "required_evidence": "Independent Ultraxion amount/snapshot timing, Deathwing identity membership and cost-setting precedence; repeated choice eligibility and collect-all-before-resolution versus sequential offers; highest-Health tie selection, hero replacement class, and complete Legendary Dragon pool eligibility. Prior planning assumption of distinct-only Cataclysms was unsupported and is removed; repeatable candidate policy still needs client confirmation. All off-class Herald gates remain. No live admission.",
+      "sources": [
+        "data/standard/all_cards.json.gz",
+        "https://hearthstone.blizzard.com/en-us/expansions-adventures/CATACLYSM"
+      ]
+    },
+    {
+      "id": "evolving_locations_and_stormrook",
+      "cards": [
+        "TIME_044",
+        "TIME_436",
+        "TIME_810",
+        "FIR_907",
+        "CATA_527",
+        "TIME_217"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Gnomeregan and Silvermoon are provisionally registered; other evolving location families remain staged. Evolving location identities retain charges and cooldown. Conflux choices suspend and resume; Amirdrassil tracks uses; Nespirah reopens on Fel casts and summons its freed form on removal. Stormrook replaces friendly Nature spell damage before shield loss. Generated pools remain closed until complete reviewed contracts exist.",
+      "required_evidence": "Pinned client traces for last-charge order, destruction versus activation, Fel reopen event order, excess damage modifiers and Stormrook multi-hit ordering; complete token and pool closure."
+    },
+    {
+      "id": "physical_zone_replacements",
+      "cards": [
+        "TIME_030",
+        "TIME_707",
+        "JAIL_509"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Divergence rounds half stats and cost upward, preserves the original physical card and burns a copy at full hand. Alternate Reality replaces every held and deck identity from a complete historical Choose One pool. Godfrey caches overdrawn physical cards with a one-cost reduction and recovers in random order when aura refresh detects room. Godfrey has provisional ordinary-registry admission; Divergence and Alternate Reality remain staged.",
+      "required_evidence": "Pinned client evidence for split enchantments and rounding, replacement cost/entry semantics, and overdraw recovery ordering relative to played-card effects and multiple freed slots.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/"
+      ]
+    },
+    {
+      "id": "temporary_control_return",
+      "cards": [
+        "CATA_496"
+      ],
+      "status": "partial",
+      "current_behavior": "Original-controller end-turn deadline, cast-turn attack prohibition, silence/transform persistence and full-return-board death are implemented. Overlapping temporary control timers explicitly reject rather than invent order.",
+      "required_evidence": "Resolve overlapping control enchantments, permanent steals, dormant returns, copy behavior, and full-board return death ownership against independent client traces."
+    },
+    {
+      "id": "hero_resurrection_and_damage_recruit",
+      "cards": [
+        "TIME_618",
+        "JAIL_421"
+      ],
+      "status": "provisional_independent_reference_pending",
+      "current_behavior": "Husk installs one nonstacking consumed hero enchantment, spends up to20 Corpses at hero death checks and restores current Health without healing. Warptooth tracks distinct friendly damaged entities each owner turn and queues physical recruits from hand/deck. Metadata and focused tests cover frozen printed behavior, not full client conformance. Both cards now use the ordinary reviewed registry and have unpatched paid-action/recruit fixtures.",
+      "required_evidence": "Confirm resurrection Health caps, damage/Lifesteal order, direct destroy interaction, simultaneous lethal, and Warptooth full-board retries/capture ordering with client traces."
+    },
+    {
+      "id": "learned_spells_and_bulb",
+      "cards": [
+        "MEND_046",
+        "MEND_100",
+        "TIME_704"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Staged tokens retain an intrinsic learned spell across copies, bounce and shuffle. Paid token plays choose legal targets; internal casts preserve spell ownership and checkpoints. Mentor uses a complete class-or-neutral historical pool. Bashana samples feasible spell identities sequentially to maximize a twelve-mana budget across surviving Treants. Bulb upgrades at owner turn start and caps its spell cost at ten.",
+      "required_evidence": "Independent pinned traces for Bashana allocation distribution and full-hand behavior; Bulb upgrade boundary/cap; learned Choose One targeting and Elusive interactions. Branches with incompatible target modes explicitly reject. Full generated spell support, Prepare/non-player casts, and historical membership must be reviewed before admission."
+    },
+    {
+      "id": "void_and_toki_physical_tasks",
+      "cards": [
+        "JAIL_719",
+        "TIME_861"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Irida retains one random physical deck card, stores the rest in a finite player-bound payload and returns two random entries each owner start without replacing normal draws or fatigue. Repeated casts currently create independent payload triggers. Toki tracks three original physical spells and rewards only successful owner spell-play events, excluding burned originals, copies, transformed minions and internal casts.",
+      "required_evidence": "Pinned client traces for which card Irida retains, removed-card order/modifiers, multiple Irida effects, and hand-overflow consumption; Toki copy/transform/countered-play eligibility and reward event order. Full historical pool membership remains gated."
+    },
+    {
+      "id": "fabled_rafaam_garona_interactions",
+      "cards": [
+        "TIME_005",
+        "TIME_875"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Rafaam family membership includes Baaaafam but win checklist requires nine distinct Fabled companions. Garona halves current health with subtraction rounded up; multiple held Llanes explicitly reject. Llane transfers before other current opening rules, and Kingslayers draws owner then opponent through queued frames.",
+      "required_evidence": "Independent frozen-patch client outcomes for duplicate Llanes, overlapping opening effects, hero-destruction/replacement interactions and simultaneous attack/draw ordering. Generic generation contracts now reject all eleven Fabled roots; audit remaining legacy generation paths and full bundle mutation/search integration before admission."
+    },
+    {
+      "id": "broxigar_finite_return_boundaries",
+      "cards": [
+        "TIME_020"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Original Broxigar is removed before opening hands. A final Demon returns the one physical waiting card to its controller's opponent, consuming the payload even at a full hand. Multiple disappeared originals explicitly reject rather than choosing one. Portal Deathrattles draw then shuffle through separate continuation operations; Axe checks attack lethality before weapon-break effects.",
+      "required_evidence": "Independent frozen-patch client traces for mirror-match identity binding, multiple originals, full-hand reward disposal, opening-effect ordering and Portal/weapon death timing. Designer evidence establishes one original per chain and that an opponent may claim it; it does not settle these remaining cases."
+    },
+    {
+      "id": "gelbin_aura_placement_order_and_closure",
+      "cards": [
+        "TIME_009"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Gelbin chooses one physical deck copy of each recognized Aura identity and places it through effect frames without cast events, payment or spell-repeat consumption. Existing active copies do not block placement. The five frozen collectible Auras, both companions and valid Ursol payloads are supported; other tagged historical/context-specific Auras explicitly reject before payment. Duplicate choice is random within identity and identities resolve in captured deck order.",
+      "required_evidence": "Frozen-patch independent outcomes for duplicate-copy choice and placement order, concurrent Aura expiry/trigger timing and complete reachable historical Aura behavior. Direct placement must remain separate from casting. Existing Aura active-state and timing approximations need conformance review. Hero-effect-zone capacity and sharing with Secrets, Sigils and quests; newest-expansion awakening credit for direct Aura placement. Historical hotfix text does not by itself establish frozen-patch ordering."
+    },
+    {
+      "id": "azure_family_repeat_and_resurrection",
+      "cards": [
+        "TIME_852"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Sindragosa applies a live two-mana Arcane discount per unsilenced source with another living active Dragon. Malygos repeats an Arcane effect twice for one qualifying source; overlapping repetition sources reject. Oathstone snapshots all friendly Dragon death entries including duplicates, shuffles them and resurrects printed identities through individual effect checkpoints.",
+      "required_evidence": "Independent frozen-client traces for multiple Malygos and overlapping repeat sources, discount-enchantment ordering, target persistence between repetitions, resurrection sampling/order at board capacity, death-time tribe changes and inter-summon timing. All three family entities remain staged."
+    },
+    {
+      "id": "talanji_persistent_boons",
+      "cards": [
+        "TIME_619"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Deck draw takes priority over resurrection. Three distinct permanent owner Boons affect current and future friendly Bwonsamdis through external keywords. Deathrattle selects from a complete cost 4/6/8/10 pool and gives the result ordinary silenceable keyword enchantments. All Boons exhausted means no choice. Public state is feature schema v51.",
+      "required_evidence": "Designer confirms draw priority, distinct choices and current/future copies. Independent frozen-client traces still needed for Silence versus inherited enchantments, control changes, cost-pool closure, and Boon/death timing under copied or repeated triggers."
+    },
+    {
+      "id": "medivh_spell_multipliers",
+      "cards": [
+        "TIME_890"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Medivh, Atiesh and Karazhan have conditional zero base costs. Medivh silences then destroys other active minions. Atiesh doubles spell damage after additive bonus and spell healing after permanent healing bonus; powers, attacks and nonspell healing are separate. Spell Lifesteal with Atiesh explicitly rejects. Karazhan uses a complete eight-cost pool for two separate summons. Randomly split spell damage multiplies the number of one-damage hits after additive spell bonus; repeated fixed-damage waves still multiply each hit.",
+      "required_evidence": "Frozen-client traces for spell Lifesteal, additive/multiplicative ordering, delayed spell effects, overheal and overkill payloads, conditional cost enchantment ordering and Dormant control conditions. Complete eight-cost generation outcomes and scheduler conformance remain required. Confirm Atiesh uses the same split-damage conventions as prior spell doublers."
+    },
+    {
+      "id": "azshara_cross_zone_empowerment",
+      "cards": [
+        "TIME_211"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Azshara upgrades matching physical friendly locations in hand, deck and battlefield without refreshing durability/cooldown, and removes the other family including upgraded identities. Choose Both destroys both through the two existing choice branches, corroborated by designer clarification. The Well fills current free hand slots from a complete all-class spell pool with Temporary and optional repeat-spell modifiers. Zin copies friendly minions with doubled non-aura current stats prepared before arrival when upgraded. Internal physical casts now honor the retained repeat modifier.",
+      "required_evidence": "Frozen-client traces for duplicate copies and cross-zone enchantment preservation, damaged minion doubling and aura layering, final-charge slot timing, destroy/upgrade order and generated spell repeat interactions. Complete all-class spell closure and shared repetition/targeting fidelity still gate admission."
+    },
+    {
+      "id": "muradin_physical_weapon_and_avatar",
+      "cards": [
+        "TIME_209",
+        "TIME_209t",
+        "TIME_209t2"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Staged physical Hammer retrieval uses deck/hand/equipped priority, external held stats/Windfury/return attachment, copied independent payloads, one-time physical return, persistent Attack/durability modifiers on reshuffle. A second distinct held Hammer explicitly rejects. Avatar Form grants per-cast one-turn character damage after normal/forced combat; minion Poisonous/Lifesteal and pre-break hero keyword snapshot feed damage. Bodies are not live admitted.",
+      "required_evidence": "Pinned client traces for same-zone duplicate selection, repeated Battlecry replacement, Silence/return/copy/control/transformation of held Hammer, permanent versus ordinary enchantment retention (including durability and cost), partial durability return, repeated Deathrattles/replays, and Avatar Form trigger ordering, dying attackers, copied enchantments and hero keyword attribution when the weapon breaks. Printed text and 35.2 Poisonous fix do not prove all these interactions."
+    },
+    {
+      "id": "quest_reward_waiting_priority",
+      "cards": [
+        "TLC_433",
+        "TLC_239",
+        "TLC_446",
+        "TLC_513"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Completed card-reward Quests wait for hand capacity instead of burning the reward, per documented 33.0 rule change. Pending rewards deliver at play-removal, draw/generation, aura refresh and settle boundaries; completed Quest retains its slot until delivery.",
+      "required_evidence": "Independent pinned-client traces for priority versus simultaneous hand refill, overdraw-cache recovery, nested Discover, full-hand trades and the exact time the completed Quest releases its shared secret/Quest slot.",
+      "source": "https://hearthstone.wiki.gg/wiki/Quest_%28ability%29"
+    },
+    {
+      "id": "equilibrium_parallel_rewards",
+      "cards": [
+        "TLC_817",
+        "TLC_817t",
+        "TLC_817t2",
+        "TLC_817t3",
+        "TLC_817t4",
+        "TLC_817t5"
+      ],
+      "status": "independent_reference_pending",
+      "current_behavior": "Staged parallel Holy/Shadow progress from player spell completion, separate waiting rewards, shared secret-zone occupancy and fresh hand combination; repeated spell effects do not create extra player casts. Partial setup uses available slots in Holy-then-Shadow order.",
+      "required_evidence": "Pinned-client traces for four-secret partial setup, subquest installation/cast events, trigger order and countered spells, full-hand rewards, when combining occurs relative to draw modifiers/listeners, duplicate halves and hand position, and which modifiers/provenance survive combination. Confirm handbuff reset independently. No live admission."
+    },
+    {
+      "id": "gorishi_order_and_stacking",
+      "cards": [
+        "TLC_631",
+        "TLC_631t"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Staged exact-two attributed damage; own-turn Quest, both-turn reward. Repeated rewards queue separate two-damage hits and never recursively trigger another Gorishi hit. Dead minion targets are skipped.",
+      "required_evidence": "Independent traces for damage/death ordering, multiple rewards, reward damage progressing another Quest, overkill, lifesteal and damage replacement. Primary 33.2 patch confirms opponent-turn reward; stacking and recursion ordering are not independently certified."
+    },
+    {
+      "id": "endtime_hand_boundaries",
+      "cards": [
+        "END_017",
+        "END_017t"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Staged full then empty objective checks before shared reward delivery and after hand entry. Tick and Tock uses existing fixed initial-count draw_until and batch discard for empty opponent hand.",
+      "required_evidence": "Review exact semantics of swaps, atomic transforms, Tradeable and refill priority. Verify whether reward Deathrattle emits discard events and whether draw count is fixed or dynamic with cast-when-drawn. Audit all hand mutation boundaries. These unresolved assumptions prevent admission."
+    },
+    {
+      "id": "foodchain_stats_and_pools",
+      "cards": [
+        "TLC_830",
+        "TLC_830t"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Staged Quest uses printed plus hand Attack at paid-play notification, distinct 1/3/5/7 Beasts. Shokk preflights all three complete reviewed contracts, then sequentially Discovers 8/6/4 Attack Beasts at cost 2.",
+      "required_evidence": "Independent snapshot timing for battlefield auras, transform-on-play, Herald/scaling and Battlecry stat changes. Approve all production pool memberships and close every outcome dependency, including all-class eligibility and current printed Attack. No production contract is silently inferred from supported cards."
+    },
+    {
+      "id": "mountain_ashalon_choices",
+      "cards": [
+        "TLC_229",
+        "TLC_229t14"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "One unused type chosen per played minion, no retroactive reassignment. Two independent three-option Adapt offers from ten options; choices stored as public persistent player grants. Later played minions receive grants before Battlecry; summoned minions do not.",
+      "required_evidence": "Independent dual-type/ALL assignment and later reassignment traces; Adapt eligibility exclusions and Discover attribution; source removal/Silence during choices, repeated Battlecries, permanent stacking, grant timing relative to summon triggers and transformations. These gates prevent admission."
+    },
+    {
+      "id": "automatic_card_consumer_semantics",
+      "cards": [
+        "TLC_460t",
+        "EDR_031",
+        "JAIL_500",
+        "CORE_WON_145"
+      ],
+      "status": "incomplete",
+      "current_behavior": "Shared detached-card executor reuses internal spell casting, recruits minions without hand Battlecries, equips physical weapons, places locations and replaces supported heroes. It does not perform paid hand play.",
+      "required_evidence": "Consumer-specific Battlecry/replay/Combo/on-play/miniaturize semantics; source-zone consumption and failed placement; dynamic source controller changes; hero Battlecry and location enchantments; complete outcome support and privacy. Core helper alone is not a complete implementation of these cards."
+    },
+    {
+      "id": "origin_stone_resolution",
+      "cards": [
+        "TLC_460",
+        "TLC_460t"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Eight classified completed Discovers award weapon. Snapshot physical weapon UID before choice resolution; queue unchosen printed copies in offer order; reserve durability before automatic card effects. Missing/changed weapon cancels queued trigger.",
+      "required_evidence": "Exact charge loss/captured-trigger ordering, replacement weapon behavior, nested Discover, Sands of Time, Trust Fall, special Discover eligibility and modifier preservation. Validate Secrets through full observer traces. Automatic executor limitations remain; not admitted."
+    },
+    {
+      "id": "ohnahra_top_card_order",
+      "cards": [
+        "EDR_031"
+      ],
+      "status": "unverified_assumption",
+      "current_behavior": "Staged end-turn consumer takes the current top card, consumes without draw/discard, resolves through shared automatic executor, then repeats up to three. Empty deck causes no fatigue.",
+      "required_evidence": "Independent trace for dynamic top versus initial three snapshot when earlier cards draw/shuffle; failed board placement and terminal interruption; source controller changes and automatic play-specific triggers. Generic executor limits also gate admission."
+    },
+    {
+      "id": "extra_turn_scheduling",
+      "cards": [
+        "UNG_028t",
+        "TLC_602"
+      ],
+      "status": "partial",
+      "current_behavior": "Time Warp reserves one additional owner turn after complete end-turn cleanup; once-per-game state is per player. Ordinary start work still runs. No root admission.",
+      "required_evidence": "Independent traces for off-turn casts, both-player queued extra turns, skipped-turn interaction and exact once-per-game ownership under copied or redirected casts."
+    },
+    {
+      "id": "latorvius_historical_rewards",
+      "cards": [
+        "TLC_602",
+        "UNG_116t",
+        "UNG_920t1",
+        "UNG_940t8",
+        "UNG_954t1",
+        "UNG_934t1",
+        "UNG_942t"
+      ],
+      "status": "partial",
+      "current_behavior": "Barnabus sets physical deck-minion costs to zero; Carnassa shuffles twenty Brood tokens; Amara sets current and maximum Health; Galvadon offers five sequential Adapt choices without Ashalon persistence. Frozen Queen includes Rush. Sulfuras permanently replaces the hero power; Megafin fills free hand slots from an explicit Murloc pool contract.",
+      "required_evidence": "Independent Adapt eligibility/repeat/source-removal behavior, physical cost-enchantment ordering and retention, shuffle capacity/order and Health-setting interactions. Remaining reward implementations and root Quest timing are still absent. Megafin production pool membership/outcome closure and power refresh/damage-modifier interactions require review."
+    },
+    {
+      "id": "nether_portal_trigger_order",
+      "cards": [
+        "UNG_829t1",
+        "UNG_829t2"
+      ],
+      "status": "partial",
+      "current_behavior": "Untouchable permanent occupies a slot, has no activation, and schedules two resumable owner end-turn summons beside the portal in creation order. End-trigger repetition uses existing multiplier.",
+      "required_evidence": "Independent trace for left/right placement and summon order, Drakkari-style trigger multipliers, full-board spell legality/consumption, and simultaneous permanent/minion end effects.",
+      "sources": [
+        "https://hearthstone.blizzard.com/en-us/cards/42224-nether-portal/"
+      ]
+    },
+    {
+      "id": "crystal_core_base_stats",
+      "cards": [
+        "UNG_067t1",
+        "TLC_602"
+      ],
+      "status": "partial",
+      "current_behavior": "Persistent player flag and physical base-stat overrides; existing board minions receive a one-time stat reset, later summons use new base stats, Silence/copies/bounce retain overrides, and hand observations use adjusted bases.",
+      "required_evidence": "Audit all deck/hand/control transitions, dormant timing, explicit-stat copies, reborn, scaling minions (including Twisted Webweaver), stat swaps, cost/stat evaluation and damage-preservation ordering. Generated deck cards and direct mutation paths require complete provenance coverage before admission.",
+      "sources": [
+        "https://hearthstone.blizzard.com/en-gb/news/23076826",
+        "https://hearthstone.blizzard.com/en-us/news/24205006"
+      ]
+    },
+    {
+      "id": "slice_replay_semantics",
+      "cards": [
+        "JAIL_500"
+      ],
+      "status": "partial",
+      "current_behavior": "Snapshots owner current-turn admitted hand plays, excludes Slice and Dice identities, preflights outcomes, randomizes order, automatically executes fresh printed copies with enemy preference, then requests end of current owner turn at a settled action boundary.",
+      "required_evidence": "Independent replay eligibility for countered/automatic cards, earlier Slice and Dice copies, modifications and chosen branches; nested replay recursion, source-side cases, Battlecries/on-play semantics and forced end during start-turn or suspended trigger frames. Missing outcomes still reject rather than silently filter.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/"
+      ]
+    },
+    {
+      "id": "offboard_deathrattle_removal",
+      "cards": [
+        "JAIL_398"
+      ],
+      "status": "partial",
+      "current_behavior": "Shared hand/deck removal callback captures IMPFERNAL printed Deathrattle for discard and connected explicit destroy paths; normal battlefield Deathrattle uses other-characters damage. All three connected deck-overdraw paths dispatch destruction, including Godfrey recovery. Godfrey stores at most 99 overdrawn cards, retaining physical modifications; return does not dispatch destruction. Generated overflow is not a deck destruction.",
+      "required_evidence": "Complete audit of all destruction, burn, overdraw, replacement/deck-clear and transformation paths; trigger ordering relative to discard listeners, Deathrattle multipliers/copies, health-payment enchantment, and owner attribution. These off-board events intentionally do not create minion death history/corpses. Independently verify overdraw-versus-protection timing, opponent-deck draw ownership and whether generated overflow ever enters a trigger-eligible zone.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/"
+      ]
+    },
+    {
+      "id": "mugzee_passives",
+      "cards": [
+        "JAIL_800"
+      ],
+      "status": "partial",
+      "current_behavior": "Submitted-deck conditions grant Mug primary and Zee secondary when both qualify. Mug discounts first owner-turn minion by two from third owner turn; Zee counts played minions modulo five and repeats printed Battlecry operations. Passives have no activation actions.",
+      "required_evidence": "Independent original-versus-modified deck setup ordering, turn-three unlock timing, countered minion counting, secondary power cloning/swaps, Battlecry target/choice rebinding and repetition multipliers. Repetition currently duplicates operation sequence with the same context.",
+      "sources": [
+        "https://www.reddit.com/r/hearthstone/comments/1tux9zu/escape_from_violet_hold_how_does_this_work/"
+      ]
+    },
+    {
+      "id": "constructed_opening_copies",
+      "cards": [
+        "JAIL_397",
+        "JAIL_430",
+        "JAIL_384"
+      ],
+      "status": "provisional",
+      "current_behavior": "Explicit Beatrix selection adds ten physical copies before mulligan. Azalina uses simultaneous opponent snapshots, copies twenty physical positions, sets forty Health, and retains original submitted-deck predicates. Copied Godfrey, Ysera, Hamuul, MugZee, Broxigar and Llane setup paths are connected; Hogger copies current surviving legendaries up to 99 deck slots.",
+      "required_evidence": "Review Beatrix selection eligibility and provenance, Beatrix/Azalina ordering and combined deck-size rules, all copied setup effects as remaining cards are implemented, Hogger copies of modified physical cards, and two-player setup ordering. Beatrix and Azalina now have provisional production admission; independent setup-order and copied-effect traces remain required."
+    },
+    {
+      "id": "zuramat_prison_replay",
+      "cards": [
+        "JAIL_887",
+        "JAIL_887t2",
+        "JAIL_887t3"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Each physical Prison stores selected discard snapshots. Final-charge or explicit removal releases a Zuramat carrying only that Prison pool. Each own end turn consumes one random stored card via automatic execution; copied Zuramats copy the remaining pool independently and ordinary summons have none.",
+      "required_evidence": "Pinned-client ordering for final-charge release versus discard listeners and the 5/5 summon, full-board consumption, replay enchantments, death timing, automatic-play Battlecry semantics and all generated replay dependencies. Shared automatic execution is still separately gated."
+    },
+    {
+      "id": "infinity_numeric_and_timing",
+      "cards": [
+        "END_012",
+        "END_018",
+        "END_024",
+        "TIME_024"
+      ],
+      "status": "staged_unverified",
+      "current_behavior": "Four bodies share explicit JSON-safe 2147483647 attribute representation. Hand expires its weapon delta; Acolyte uses independently removable cost layers linked to the physical card; Murozond stores copyable and silenceable delayed enchantments; Flames enters the ordered end frame and uses ordinary damage prevention without Spell Damage.",
+      "required_evidence": "Independently verify exact frozen integer cap, saturation/arithmetic, costs after layered set-cost effects and copied/transformed cards, weapon setting order, Murozond control/Dormant timing, and end-Secret ordering across the frozen 36.6 fix. Passing fixtures prove implementation consistency, not numeric or event fidelity."
+    },
+    {
+      "id": "owner_turn_deadlines",
+      "cards": [
+        "JAIL_860",
+        "TLC_602"
+      ],
+      "status": "provisional_and_staged_independent_reference_pending",
+      "current_behavior": "Chef uses original submitted cost predicates and schedules one mana setting after five own turns. Lost City advances once per own end, outside end-effect duplication, then delivers Latorvius through the existing full-hand wait system. Chef has provisional ordinary-registry admission; Lost City remains staged.",
+      "required_evidence": "Independent pinned-client traces for exact start/end phase, initial partial-turn counting, skipped/extra turns, mana setting versus locked/crystal capacity, and full-hand reward timing. Printed totals and rewards are frozen; precise checkpoints remain provisional."
+    },
+    {
+      "id": "remaining_replacements_and_choices",
+      "cards": [
+        "CORE_DAL_575",
+        "TIME_064",
+        "JAIL_443",
+        "CATA_615",
+        "JAIL_330",
+        "CATA_213",
+        "JAIL_458",
+        "CATA_301",
+        "JAIL_851",
+        "TIME_041"
+      ],
+      "status": "partial_runtime_independent_reference_pending",
+      "current_behavior": "Khadgar is provisionally connected to the ordinary registry with production-path fixtures. Champion is provisionally admitted with paid stat-gain and Silence checks. Other summon/trigger replacements, parity/upgraded powers, Vyranoth distribution, ammunition, healing conversion and private hand choices remain staged.",
+      "required_evidence": "Independent summon provenance/attached buffs, repetition stacking and ordering, 50 paired Vyranoth increments versus 100 individual stats, Champion zone/copy/set-stat boundaries, Ruby multi-operation/Lifesteal scope, Tiny Pal replay/durability timing, complete guess pools, investigation timing and power replacement semantics."
+    },
+    {
+      "id": "construction_and_clock",
+      "cards": [
+        "CS3_035",
+        "JAIL_831",
+        "CATA_614"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Explicit decision clock, off-class Beast selections and held class rotation; unreviewed generated Underbelly fallback fails closed.",
+      "required_evidence": "Confirm contraband full cross-format membership, duplicates and rune rules; Informant initial class/end transition and exclusions; rope/choice/animation timing. Clock requires supplied elapsed time."
+    },
+    {
+      "id": "kindred_replacement",
+      "cards": [
+        "TLC_251"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Doubles explicit Kindred branches and additive discounts/buffs; replacements consume a pending marker on active resolution.",
+      "required_evidence": "Independent cases for replacement-style Kindred, cost-only activation, countered spells and stacking. Source cost/history at payment versus resolution needs review."
+    },
+    {
+      "id": "osk_forms",
+      "cards": [
+        "TLC_452"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "All 31 frozen forms have staged opcodes and integration fixtures; held entry/end rerolls and next-spell bonus.",
+      "required_evidence": "Independent timing and spell-consumption rules, off-turn changes, second removal targeting, excluded Titan target legality, Tendril pools and copy-buff summon multiplication."
+    },
+    {
+      "id": "essence_chain",
+      "cards": [
+        "CATA_EVENT_110"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Replaces opening deck root with six Essences; captures contiguous neighbors for internal casts.",
+      "required_evidence": "Exact left/right casting order, adjacency after draws/reordering, interruption/counters, copied opening rules and generated root behavior."
+    },
+    {
+      "id": "counterfeit_coin_family",
+      "cards": [
+        "JAIL_504"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Aya first-player selection; physical Coin replacement; three upgraded Coin bodies and nine lesser-potion ingredients.",
+      "required_evidence": "Complete potion distribution/order, Jade caps and copies, replacement across string deck entries, copied Aya timing and Counterspell consumption."
+    },
+    {
+      "id": "random_target_replacement",
+      "cards": [
+        "CORE_CFM_670"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Staged action/power/attack rerouting with broad target-type routing.",
+      "required_evidence": "Not a full target contract: verify printed restrictions, Stealth/Elusive/Immune, friendly attacks, random effect targets, secrets, forced attacks and targetless effects."
+    },
+    {
+      "id": "morchie_outcome_sequences",
+      "cards": [
+        "END_036"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Retains successive Rewind effects without re-paying or re-summoning; snapshots replacement at play entry.",
+      "required_evidence": "Independent client proof of all outcomes, source death, Deios/Mug interaction, internal casts and Rogue power with repeated-power effects."
+    },
+    {
+      "id": "custom_locations_trials",
+      "cards": [
+        "TLC_100",
+        "CAP_405"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Two-part construction choices, physical payloads, location activations/Deathrattles and owner-turn scheduled trials. Intrinsic crafted payloads now survive fresh replay; automatic location placement installs activation and Deathrattle payloads.",
+      "required_evidence": "Offer sampling/order, spell damage scope, generated incomplete tokens, copy/bounce/replay propagation and delay trigger timing remain review-gated."
+    },
+    {
+      "id": "curated_minion_forge",
+      "cards": [
+        "CATA_470",
+        "TLC_EVENT_400"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Composite stats, explicit Battlecry/Deathrattle/keyword contracts and Sidequest counter. Intrinsic definitions survive copies, Silence then bounce, and fresh replay without retaining temporary buffs or discounts. Missing curated pools fail closed.",
+      "required_evidence": "Production curated Standard/Wild component pools are NOT installed. Persistent/aura/trigger components and conflicting target modes need a complete composition resolver; tribe/ALL inheritance, resurrection, generated copies and sidequest capacity remain incomplete."
+    },
+    {
+      "id": "pack_and_suspicion_contracts",
+      "cards": [
+        "CORE_WON_145",
+        "JAIL_EVENT_100"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Reviewed caller-supplied distributions drive pack execution and visible suspicious stat/cost alterations; no production distributions installed.",
+      "required_evidence": "Obtain exact in-game pack membership/rarity distribution. Implement suspicious name and tribe identity overlays and complete mutation probabilities, modified-token identity/copy/silence rules. These cards are NOT production-ready."
+    },
+    {
+      "id": "fyrakk_complete_immunity",
+      "cards": [
+        "FIR_959"
+      ],
+      "status": "staged_incomplete_or_unverified",
+      "current_behavior": "Mana-budget Fire casts plus targeted non-damage and damage immunity hooks. Global destruction, stat replacement, board transformations and board-to-deck shuffles skip protected entities; queued transformations recheck protection before sampling. Eight staged fixtures cover these paths without admitting Fyrakk.",
+      "required_evidence": "Audit remaining Fire effect paths, control changes and target legality; independently validate immunity semantics, exact sampling, zero-cost loops, and over-budget behavior. Complete generation membership and outcome execution remain prerequisites for production admission."
+    },
+    {
+      "id": "closed_runtime_admissions",
+      "cards": [
+        "CORE_DAL_575",
+        "TIME_044",
+        "TIME_810"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "Khadgar and both pool-free timeline chains are connected to the ordinary registry, including every future-stage location identity. Production-path fixtures exercise paid plays without registry patches or synthetic pools.",
+      "required_evidence": "Independent Khadgar summon replacement/listener and origin ordering, evolving location last-charge and identity transition timing, and Silvermoon excess damage versus prevention/replacements. See docs/engine-audit/closed-admission-2026-10-06.json. Runtime admission does not close these gaps."
+    },
+    {
+      "id": "historical_keyword_only_dependencies",
+      "cards": [
+        "AT_020",
+        "AT_087",
+        "AT_092",
+        "AT_095",
+        "AT_097",
+        "AT_101",
+        "AT_102",
+        "AT_114",
+        "BOT_050",
+        "BOT_309",
+        "BOT_414",
+        "BOT_534",
+        "BOT_603",
+        "BT_423",
+        "CFM_300",
+        "CFM_636",
+        "CFM_653",
+        "CFM_665",
+        "CFM_666",
+        "CFM_815",
+        "CFM_854",
+        "CS1_042",
+        "CS1_069",
+        "CS2_118",
+        "CS2_119",
+        "CS2_120",
+        "CS2_121",
+        "CS2_124",
+        "CS2_125",
+        "CS2_127",
+        "CS2_131",
+        "CS2_161",
+        "CS2_162",
+        "CS2_168",
+        "CS2_169",
+        "CS2_171",
+        "CS2_172",
+        "CS2_173",
+        "CS2_179",
+        "CS2_182",
+        "CS2_186",
+        "CS2_187",
+        "CS2_200",
+        "CS2_201",
+        "CS2_213",
+        "CS2_231",
+        "CS2_232",
+        "CS3_030",
+        "DAL_047",
+        "DAL_085",
+        "DAL_090",
+        "DAL_092",
+        "DAL_760",
+        "DEEP_006",
+        "DMF_044",
+        "DMF_059",
+        "DMF_114",
+        "DMF_190",
+        "DRG_061",
+        "DRG_065",
+        "DRG_066",
+        "DRG_073",
+        "DRG_079",
+        "DRG_239",
+        "DRG_310",
+        "ETC_357",
+        "EX1_008",
+        "EX1_010",
+        "EX1_017",
+        "EX1_020",
+        "EX1_021",
+        "EX1_023",
+        "EX1_028",
+        "EX1_032",
+        "EX1_033",
+        "EX1_067",
+        "EX1_170",
+        "EX1_396",
+        "EX1_405",
+        "EX1_522",
+        "EX1_543",
+        "FP1_008",
+        "FP1_010",
+        "GDB_452",
+        "GIL_113",
+        "GIL_120",
+        "GIL_143",
+        "GIL_527",
+        "GIL_545",
+        "GIL_562",
+        "GIL_809",
+        "GVG_018",
+        "GVG_037",
+        "GVG_044",
+        "GVG_058",
+        "GVG_064",
+        "GVG_070",
+        "GVG_071",
+        "GVG_081",
+        "GVG_084",
+        "GVG_085",
+        "GVG_091",
+        "GVG_093",
+        "GVG_098",
+        "ICC_023",
+        "ICC_032",
+        "ICC_038",
+        "ICC_212",
+        "ICC_220",
+        "ICC_419",
+        "ICC_820",
+        "ICC_905",
+        "JAM_007",
+        "KAR_011",
+        "KAR_300",
+        "LEG_CS3_037",
+        "LOEA10_3",
+        "LOE_010",
+        "LOE_022",
+        "LOOT_117",
+        "LOOT_125",
+        "LOOT_137",
+        "LOOT_258",
+        "LOOT_315",
+        "NEW1_010",
+        "NEW1_011",
+        "NEW1_023",
+        "OG_141",
+        "OG_142",
+        "OG_145",
+        "OG_152",
+        "OG_153",
+        "OG_247",
+        "OG_248",
+        "OG_325",
+        "OG_326",
+        "OG_327",
+        "OG_340",
+        "RLK_602",
+        "SCH_137",
+        "SCH_143",
+        "SCH_145",
+        "SCH_712",
+        "TRL_513",
+        "TRL_550",
+        "TTN_710",
+        "ULD_193",
+        "ULD_194",
+        "ULD_205",
+        "ULD_206",
+        "ULD_207",
+        "ULD_274",
+        "ULD_275",
+        "ULD_450",
+        "ULD_721",
+        "ULD_723",
+        "UNG_019",
+        "UNG_071",
+        "UNG_806",
+        "UNG_808",
+        "UNG_812",
+        "UNG_813",
+        "UNG_814",
+        "UNG_852",
+        "WON_312",
+        "WON_366",
+        "WW_376",
+        "YOD_003",
+        "YOD_010",
+        "YOP_031"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "170 explicit retired collectible minions have pinned generated-only metadata and no-op bodies; static keywords use shared combat and targeting rules. Every ID is excluded from Standard deck construction. Import does not approve historical membership or enable a historical generator.",
+      "required_evidence": "Complete historical membership audit and remaining historical effects/dependencies. These bodies inherit unresolved shared keyword, copy, aura and zone-transition fidelity gaps."
+    },
+    {
+      "id": "historical_primitive_dependencies",
+      "cards": [
+        "AT_055",
+        "AT_064",
+        "BOT_222",
+        "BT_035",
+        "BT_292",
+        "BT_714",
+        "BT_801",
+        "CFM_647",
+        "CFM_659",
+        "CS1_112",
+        "CS1_130",
+        "CS2_009",
+        "CS2_023",
+        "CS2_024",
+        "CS2_032",
+        "CS2_042",
+        "CS2_062",
+        "CS2_076",
+        "CS2_093",
+        "CS2_094",
+        "CS2_141",
+        "CS2_189",
+        "DS1_185",
+        "EX1_011",
+        "EX1_169",
+        "EX1_197",
+        "EX1_238",
+        "EX1_259",
+        "EX1_309",
+        "EX1_319",
+        "EX1_362",
+        "EX1_606",
+        "EX1_619",
+        "ICC_055",
+        "SW_066",
+        "SW_442",
+        "TRL_307",
+        "ULD_191",
+        "UNG_205",
+        "UNG_848"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "40 explicit retired collectible bodies reuse frozen primitive semantics with matching printed effects, class, school and mechanics. Original stats and keywords remain pinned per identity. Eye Beam has its printed Outcast cost path. Every identity is generated-only, excluded from Standard decks, and does not approve a historical pool.",
+      "required_evidence": "Review complete historical membership/canonical aliases and remaining old effects. These cards inherit shared event, cost, targeting, copy and client-fidelity gaps."
+    },
+    {
+      "id": "blood_fighter_closed_family",
+      "cards": [
+        "TIME_850",
+        "TIME_850t",
+        "TIME_850t1"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "Explicit Fabled bundle and physical hand recruitment, +5/+5, printed keywords and forced random enemy attack use shared runtime. No generation pool is needed.",
+      "required_evidence": "Independent client traces for simultaneous death ordering, random hand recruitment, forced attack targeting and copied deathrattles."
+    },
+    {
+      "id": "finite_void_and_kindred_charge",
+      "cards": [
+        "JAIL_719",
+        "TLC_251"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "Irida stores finite physical deck cards and returns two at owner starts independent of the source; regular draw and fatigue continue. Challenger primes one nonstacking charge consumed by the next active Kindred, including prepayment cost reductions.",
+      "required_evidence": "Independent client traces for retained and returned card randomness, Void start timing and repeated payloads, Kindred charge stacking and cost timing. Shared copy and event gaps remain."
+    },
+    {
+      "id": "historical_numeric_dependencies",
+      "cards": [
+        "AT_103",
+        "BOT_308",
+        "CS2_007",
+        "CS2_077",
+        "CS2_147",
+        "CS2_150",
+        "DRG_054",
+        "EX1_015",
+        "EX1_194",
+        "EX1_279",
+        "GVG_053",
+        "OG_094",
+        "OG_223",
+        "OG_234",
+        "TRL_128",
+        "TSC_963",
+        "ULD_190",
+        "UNG_923",
+        "WON_315"
+      ],
+      "status": "provisional_runtime_independent_reference_pending",
+      "current_behavior": "19 explicit historical minion/spell bodies implement printed numeric damage, healing, draw, armor or buffs through shared primitive operations. They are excluded from Standard construction and do not approve historical pools.",
+      "required_evidence": "Historical membership and alias audit plus remaining historical dependencies, shared targeting, copy and event fidelity."
+    }
+  ]
+}
