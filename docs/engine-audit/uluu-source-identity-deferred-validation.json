@@ -1,0 +1,26 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "638df7e5c61fa5bd100413ffeaa0a64f5cc4d29eab85f8c9712096a67024cd17",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Require printed Choose One on provider source parents",
+    "Compare canonical parent identities for branch distinctness, preventing original/Core aliases from duplicating one choice"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Uluu%2C_the_Everdrifter"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Exact complete eligible pool, source transform/Fatespinner exclusions and pair distribution",
+    "Production provider and root admission"
+  ]
+}

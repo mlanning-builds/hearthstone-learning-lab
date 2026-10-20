@@ -70,7 +70,10 @@ class LearnedSpellTests(unittest.TestCase):
   cid=self.spell('TEST_PAST');c=self.pupil(cid);self.play(c,-2);m=self.g._transform(self.p.minions[0],'NEW1_034');self.assertFalse(hasattr(m,'_learned_spell'))
  def test_hand_transformation_removes_intrinsic_learned_spell(self):
   cid=self.spell('TEST_PAST');c=self.pupil(cid);self.g._b60_transform_card(c,'NEW1_034');self.assertFalse(hasattr(c,'_learned_spell'))
- def test_missing_historical_contract_preserves_hand_and_rng(self):
+ def test_missing_historical_outcome_preserves_hand_and_rng(self):
+  # The default Mage pool is executable. Deliberately remove an eligible
+  # outcome to test rejection, rather than requiring unfinished support.
+  self.g.cards.pop('BOT_257')
   state=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.run_ops([('learned_mentor',)])
   self.assertFalse(self.p.hand);self.assertEqual(self.g.rng.getstate(),state)
@@ -80,14 +83,24 @@ class LearnedSpellTests(unittest.TestCase):
   self.run_ops([('learned_mentor',)]);self.g.step(Action('choose',choices=(0,)));self.assertEqual(len(self.p.hand),10);self.assertEqual(self.p.discoveries_total,1)
  def nature(self):
   ids=[self.spell('TEST_NATURE_'+str(cost),cost=cost,mode='none',ops=[('armor',1)]) for cost in (0,2,4,10)]
-  self.contract(rules.NATURE,ids);return ids
+  self.contract(rules.NATURE,ids)
+  self.g.carve_allocation_contract=dict(source='Controlled fixture allocation, not a client distribution',outcomes_by_count={
+   1:((1,('TEST_NATURE_10',)),),
+   2:((1,('TEST_NATURE_10','TEST_NATURE_2')),),
+   3:((1,('TEST_NATURE_4','TEST_NATURE_4','TEST_NATURE_4')),),})
+  return ids
  def test_carve_allocates_twelve_mana_to_three_treants(self):
   self.nature();self.run_ops([('learned_carve',)]);self.assertEqual(len(self.p.hand),3)
   self.assertEqual(sum(self.g.cards[c._learned_spell]['cost'] for c in self.p.hand),12)
  def test_carve_one_hand_slot_maximizes_available_budget(self):
   self.nature()
+  del self.g.carve_allocation_contract
   for _ in range(9):self.g._add(0,'TOKEN_COIN')
   self.run_ops([('learned_carve',)]);self.assertEqual(self.p.hand[-1]._learned_spell,'TEST_NATURE_10');self.assertEqual(len(self.p.hand),10)
+ def test_carve_multiple_treants_uses_budget_preserving_approximation(self):
+  self.nature();del self.g.carve_allocation_contract
+  ids=self.g._learned_carve_allocation(('TEST_NATURE_2','TEST_NATURE_4','TEST_NATURE_10'),2)
+  self.assertEqual(len(ids),2);self.assertEqual(sum(self.g.cards[c]['cost'] for c in ids),12)
  def test_carve_full_hand_does_not_consume_rng_for_bound_payloads(self):
   self.nature()
   for _ in range(10):self.g._add(0,'TOKEN_COIN')
@@ -112,10 +125,21 @@ class LearnedSpellTests(unittest.TestCase):
  def test_bulb_caps_at_ten_without_increasing_mana_cost(self):
   self.run_ops([('learned_bulb',)]);c=self.p.hand[0];c.rule_state['bulb_level']=10;self.run_ops([('learned_bulb_tick',c.uid)])
   self.assertEqual(c.rule_state['bulb_level'],10);self.assertEqual(self.g._cost(c,0),3)
- def test_bulb_missing_pool_step_rolls_back_payment(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_bulb_missing_pool_step_rolls_back_payment(self,*contracts):
   self.run_ops([('learned_bulb',)]);c=self.p.hand[0];before=self.g.observe(0)
   with self.assertRaises(UnsupportedCard):self.play(c)
   self.assertEqual(self.g.observe(0),before)
  def test_learned_spell_is_encoded_without_private_payload_objects(self):
   cid=self.spell('TEST_PAST');self.pupil(cid);view=self.g.observe(0);encoded=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
   self.assertIn(cid,str(encoded));json.dumps(view)
+
+ def test_default_mage_historical_mentor_offers_executable_spells(self):
+  self.run_ops([('learned_mentor',)])
+  self.assertEqual(self.g.pending_choice['kind'],'learned_mentor')
+  self.assertEqual(len(self.p.hand),1)
+  for option in self.g.pending_choice['options']:
+   self.assertTrue(self.g._supports_internal_spell(option['card_id'],0))
+  self.g.step(Action('choose',choices=(0,)))
+  self.assertTrue(hasattr(self.p.hand[0],'_learned_spell'))

@@ -46,7 +46,7 @@ def main():
     records=registry()  # Validate every existing reviewed hash first.
     import importlib
     historical_ids=set()
-    for name in ('historical_vanilla','historical_simple','historical_numeric','historical_death'):
+    for name in ('historical_infuse_batches','historical_tribal_batches','historical_treasure_batches','historical_galakrond_batches','historical_ritual_batches','historical_secret_batches','historical_resource_batches','historical_sleep_batches','historical_arsenal_batches','historical_hand_batches','historical_play_batches','historical_resurrection_batches','historical_drawn_batches','historical_upgrade_batches','historical_copy_batches','historical_family_batches','historical_mutation_batches','historical_prime_batches','historical_form_batches','historical_event_batches','historical_keyword_batches','historical_draw_batches','historical_zone_batches','historical_condition_batches','historical_board_primitives','historical_generation_primitives','historical_power_primitives','historical_vanilla','historical_simple','historical_numeric','historical_death','historical_spellpower','historical_hand_primitives','historical_triggers','historical_death_primitives','historical_battlecry_buffs','historical_scaling','historical_passive_stats','historical_tutors','historical_removal','historical_fixed_summons','historical_conditional_battlecries'):
         if (root/'expanded'/f'{name}.py').exists():
             historical_ids.update(importlib.import_module('expanded.'+name).GENERATED_IDS)
     if not historical_ids<=set(records)&TOKEN_IDS&set(RULES):

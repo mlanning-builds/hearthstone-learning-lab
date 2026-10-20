@@ -1,6 +1,6 @@
 """Frozen Osk forms: explicit Titan-derived abilities, no text parsing."""
 from engine.cards import UnsupportedCard
-from .generation_cards import pool,discover,random_cards
+from .generation_cards import board_pool,pool,discover,random_cards
 FORMS=tuple('TLC_452t'+str(n) for n in (*range(1,10),*range(13,25),*range(26,36)))
 RULES={'TLC_452':('none',[])}
 SIX=pool(card_type='MINION',minimum=6,maximum=6)
@@ -84,17 +84,16 @@ class Titanographer:
         elif name=='osk_draw_twos':
             c=self._draw_filtered(owner,(('type','eq','MINION'),))
             if c:
-                d=self.cards[c.card_id];c.attack_bonus=2-d['attack'];c.health_bonus=2-d['health'];self._set_card_cost(c,2)
+                self._mutation_set_stats(c,owner,2,2);self._set_card_cost(c,2)
         elif name=='osk_copy':
             m=self._force_live(target)
             if m and 'TITAN' not in self.cards[m.card_id].get('mechanics',[]):
                 copy=self._summon(owner,m.card_id,copy_from=m,entry_origin='effect',entry_site='osk_copy')
                 if copy:self._buff(copy,2,2)
         elif name=='osk_six':
-            ids=self._generation_candidates(SIX,owner)
+            ids=self._generation_candidates(board_pool(SIX),owner)
             if ids:
-                m=self._summon(owner,self.rng.choice(ids),entry_origin='effect',entry_site='osk_six')
-                if m:m.keywords.update(('TAUNT','LIFESTEAL'))
+                self._summon(owner,self.rng.choice(ids),entry_keywords=('TAUNT','LIFESTEAL'),entry_origin='effect',entry_site='osk_six')
         elif name=='osk_remove_pair':
             m=self._force_live(target)
             if m and m in q.minions:q.board.remove(m)

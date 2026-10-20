@@ -17,18 +17,17 @@ class RandomTargets:
    mode=rule[0]
    if card.card_id in CHOICES and action.choices and action.choices[0]>=0:mode=CHOICES[card.card_id][action.choices[0]][1]
    if mode in ('none','weapon_required'):return action
-   if 'location' in mode:targets=[x.uid for p in self.players for x in p.locations]
-   else:
-    characters=self._visible_targets(owner,magic=self.cards[card.card_id]['type']=='SPELL')
-    targets=characters if 'character' in mode else [uid for uid in characters if uid>0]
+   targets=[uid for uid in self._targets_for(card.card_id,owner,mode_override=mode) if uid]
   elif action.kind=='power':
-   targets=self._visible_targets(owner,magic=True)
-   if action.choices==(1,):targets=[uid for uid in targets if uid>0]
+   if action.choices==(1,):targets=[uid for uid in self._visible_targets(owner,magic=True) if uid>0]
+   elif self.players[owner].primary_power is not None:targets=[uid for uid in self._replacement_power_targets(owner) if uid]
+   else:targets=self._visible_targets(owner,magic=True)
   else:return action
   return replace(action,target=self.rng.choice(targets)) if targets else action
  def _random_attack_target(self,source,target):
   if not self._noggenfogger_active():return target
-  targets=[self.hero_id(i) for i,p in enumerate(self.players) if not self._hero_immune(i)]
-  targets.extend(m.uid for p in self.players for m in p.minions if m.health>0 and 'STEALTH' not in self._effective_keywords(m) and 'IMMUNE' not in self._effective_keywords(m))
-  targets=[uid for uid in targets if uid!=source]
+  owner=self._find(source).owner if source>0 else -source-1
+  opponent=1-owner
+  targets=[] if self._hero_immune(opponent) or self._hero_stealth(opponent) else [self.hero_id(opponent)]
+  targets.extend(m.uid for m in self.players[opponent].minions if m.health>0 and 'STEALTH' not in self._effective_keywords(m) and 'IMMUNE' not in self._effective_keywords(m))
   return self.rng.choice(targets) if targets else target

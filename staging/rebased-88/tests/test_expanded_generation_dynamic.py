@@ -14,6 +14,7 @@ class DynamicGenerationTests(unittest.TestCase):
         self.g.players[0].mana=6;self.install(6,'EX1_tk34');self.run_card('CATA_EVENT_400')
         self.assertEqual(self.g.players[0].mana,0);self.assertEqual(self.g.players[0].minions[0].card_id,'EX1_tk34')
     def test_missing_resource_pool_does_not_spend(self):
+        self.install(10,'UNIMPLEMENTED_TEN_COST_MINION')
         before=self.g.rng.getstate()
         with self.assertRaises(UnsupportedCard):self.run_card('CATA_EVENT_400')
         self.assertEqual(self.g.players[0].mana,10);self.assertEqual(self.g.rng.getstate(),before)
@@ -21,6 +22,7 @@ class DynamicGenerationTests(unittest.TestCase):
         self.g.players[0].corpses=6;self.install(6,'EX1_tk34');self.run_card('CORE_WW_374')
         self.assertEqual(self.g.players[0].corpses,0);self.assertEqual(len(self.g.players[0].minions),1)
     def test_missing_corpse_pool_preserves_resource(self):
+        self.install(8,'UNIMPLEMENTED_EIGHT_COST_MINION')
         self.g.players[0].corpses=8
         with self.assertRaises(UnsupportedCard):self.run_card('CORE_WW_374')
         self.assertEqual(self.g.players[0].corpses,8)

@@ -14,7 +14,7 @@ FEL_POOL=GenerationPool('Underfel Rift Fel Beasts',FEL_BEASTS,
     'Pinned TLC_446 reward family: Felscreamer, Felraptor, Felhorn')
 NETHER_PORTAL='UNG_829t2'
 NETHER_IMP='UNG_829t3'
-PERMANENT_IDS={RIFT,NETHER_PORTAL}
+PERMANENT_IDS={RIFT,NETHER_PORTAL,'BAR_919t','WW_824t','SW_028t6'}
 TOKEN_IDS={RIFT,'TLC_446t',*FEL_BEASTS}
 PLAYABLE_TOKENS={'TLC_446t',*FEL_BEASTS}
 TOKEN_RULES={'TLC_446t':('none',[('open_permanent',RIFT)])}
@@ -44,12 +44,16 @@ class Permanents:
 
     def _permanent_actions(self):
         p=self.players[self.current]
-        return [Action('activate',obj.uid,c.uid) for obj in p.permanents
+        from .historical_starships import actions as starship_actions
+        return starship_actions(self)+[Action('activate',obj.uid,c.uid) for obj in p.permanents
                 if obj.card_id==RIFT and obj.used_turn!=p.turns_taken for c in p.hand]
 
     def _activate_permanent(self,action):
         owner=self.current;p=self.players[owner]
         obj=next(obj for obj in p.permanents if obj.uid==action.source)
+        if hasattr(obj,'_historical_ship_parts'):
+            from .historical_starships import activate as activate_starship
+            return activate_starship(self,action)
         if obj.card_id!=RIFT:raise UnsupportedCard('Permanent has no activation')
         if obj.used_turn==p.turns_taken:raise ValueError('Permanent already used this turn')
         card=next(c for c in p.hand if c.uid==action.target)
@@ -63,8 +67,15 @@ class Permanents:
             dict(owner=owner,source=None,target=0,bonus=0,lifesteal=False))
 
     def _permanent_turn_entries(self,phase):
+        if phase=='start':
+            return [dict(source=None,order=obj.uid,operations=(('historical_copy_nest_discover',obj.uid),))
+                    for obj in self.players[self.current].permanents if obj.card_id=='WW_824t'
+                    for _ in range(self._trigger_repetitions(self.current))]
         if phase!='end':return []
-        return [dict(source=None,order=obj.uid,operations=(('nether_imp',obj.uid,0),('nether_imp',obj.uid,1)))
+        burning=[dict(source=None,order=obj.uid,operations=(('historical_copy_burning_portal',obj.uid),))
+                 for obj in self.players[self.current].permanents if obj.card_id=='BAR_919t'
+                 for _ in range(self._end_trigger_count(self.current))]
+        return burning+[dict(source=None,order=obj.uid,operations=(('nether_imp',obj.uid,0),('nether_imp',obj.uid,1)))
                 for obj in self.players[self.current].permanents if obj.card_id==NETHER_PORTAL
                 for _ in range(self._end_trigger_count(self.current))]
 

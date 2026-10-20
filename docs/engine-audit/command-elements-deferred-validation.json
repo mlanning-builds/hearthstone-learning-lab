@@ -1,0 +1,30 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "903bc25d1b12cf3dad0b53c5c0edab5b68f161f663931bebf92a66a93dfe8a4c",
+  "new_card_ids": [
+    "SW_031",
+    "SW_031t",
+    "SW_031t2",
+    "SW_031t7",
+    "SW_031t8"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Overload-card progress/completion timing and countered plays",
+    "Intermediate reward event ordering and final reward hand capacity",
+    "Paid and automatic spell repetition interactions",
+    "Quest Accepted multi-quest exception remains unfinished"
+  ]
+}

@@ -79,8 +79,8 @@ class EquilibriumTests(unittest.TestCase):
  def test_opposing_halves_do_not_combine(self):
   self.g._add(0,rules.HALVES[0]);self.g._add(1,rules.HALVES[1]);self.g._settle();self.assertEqual(self.p.hand[0].card_id,rules.HALVES[0]);self.assertEqual(self.q.hand[0].card_id,rules.HALVES[1])
  def test_objectives_public_but_opponent_hand_private(self):
-  self.start();self.school('HOLY',2);view=self.g.observe(1);self.assertEqual(view['players'][0]['quest']['objective']['children'][0]['progress'],2);self.assertNotIn('hand',view['players'][0]);self.assertEqual(SCHEMA,'visible-action-features-v58')
- def test_root_remains_staged(self):self.assertNotIn(rules.ROOT,cards.COLLECTIBLE_IDS)
+  self.start();self.school('HOLY',2);view=self.g.observe(1);self.assertEqual(view['players'][0]['quest']['objective']['children'][0]['progress'],2);self.assertNotIn('hand',view['players'][0]);self.assertEqual(SCHEMA,'visible-action-features-v62')
+ def test_root_and_all_rewards_are_registered(self):self.assertIn(rules.ROOT,cards.COLLECTIBLE_IDS);self.assertTrue(set((*rules.SUBQUESTS,*rules.HALVES,rules.COMBINED))<=cards.registry().keys())
  def test_repeated_spell_effect_counts_as_one_player_cast(self):
   self.start();self.p.spell_repeat_charges=1;self.school('HOLY');self.assertEqual(self.p.quest['progress'],1);self.assertEqual(self.p.armor,2)
  def test_internal_cast_does_not_count_as_player_cast(self):

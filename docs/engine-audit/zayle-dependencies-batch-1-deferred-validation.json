@@ -1,0 +1,28 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_072",
+    "EX1_012",
+    "DAL_720",
+    "ULD_271",
+    "EX1_581"
+  ],
+  "candidate_fingerprint": "80469bbb664151116725c317a02c314abd78103aaab81cb094953156de594fe5",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Original printing native intrinsic/trigger equivalence",
+    "Bounce deathrattle and hand capacity interactions"
+  ]
+}

@@ -1,5 +1,7 @@
 """Historical dependencies use ordinary paid plays; no approved outcome pools."""
 import unittest
+from copy import deepcopy
+from unittest.mock import patch
 from expanded import Game,Action,random_deck
 from expanded.cards import registry,COLLECTIBLE_IDS,TOKEN_IDS
 from expanded.historical_vanilla import GENERATED_IDS
@@ -8,12 +10,14 @@ from expanded.generation_cards import pool
 from engine.cards import UnsupportedCard
 
 class HistoricalVanillaTests(unittest.TestCase):
- def game(self):
+ @classmethod
+ def setUpClass(cls):
   g=Game([random_deck('MAGE',1),random_deck('HUNTER',2)],seed=97)
   g.step(Action('mulligan'));g.step(Action('mulligan'));g.current=0
   for p in g.players:
    p.hand=[];p.board=[];p.deck=[];p.health=30;p.armor=0;p.mana=p.max_mana=p.mana_capacity=10
-  return g
+  cls.prototype=g
+ def game(self):return deepcopy(self.prototype)
  def play(self,g,cid):
   c=g._add(0,cid);g.step(next(a for a in g.legal_actions() if a.kind=='play' and a.source==c.uid))
   return next(m for m in g.players[0].minions if m.card_id==cid)
@@ -28,12 +32,20 @@ class HistoricalVanillaTests(unittest.TestCase):
  def test_historical_dependencies_do_not_enter_standard_decks(self):
   records=registry();self.assertEqual(len(GENERATED_IDS),170)
   self.assertTrue(GENERATED_IDS<=TOKEN_IDS);self.assertFalse(GENERATED_IDS&COLLECTIBLE_IDS)
-  validate_past_candidates(GENERATED_IDS,records)
+  # Bodies may serve fixed recipes; current Core aliases are not past outcomes.
+  current_aliases=frozenset('EX1_010 LOOT_137 ICC_038 CS2_200 CS2_179 DRG_079 NEW1_023 EX1_028 GVG_085 ULD_723'.split())
+  records=records
+  validate_past_candidates(GENERATED_IDS-current_aliases,records)
+  for cid in current_aliases:
+   with self.subTest(alias=cid):
+    with self.assertRaisesRegex(UnsupportedCard,'Standard cards'):validate_past_candidates((cid,),records)
   for hero in ('MAGE','HUNTER','DRUID','PALADIN','DEATHKNIGHT'):
    self.assertFalse(GENERATED_IDS&set(random_deck(hero,11).cards))
- def test_historical_membership_remains_unapproved_before_rng_or_state_changes(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.historical_generation_catalog.historical_contract',return_value=None)
+ def test_historical_membership_remains_unapproved_before_rng_or_state_changes(self,*contracts):
   g=self.game();before=g.rng.getstate()
-  with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):
+  with self.assertRaisesRegex(UnsupportedCard,'membership contract'):
    g._generation_candidates(pool(era='past',card_type='MINION'),0)
   self.assertEqual(before,g.rng.getstate());self.assertFalse(g.players[0].board)
  def test_charge_and_rush_have_different_first_turn_hero_legality(self):

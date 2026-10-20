@@ -1,0 +1,900 @@
+{
+  "scope": "Applied written bindings. Forty-four fixed historical Deathrattles reviewed from printed effects and pinned client collection-related identity links. Focused checks passed; full changed-source regression remains required. No runtime text inference or historical pool approval.",
+  "build": "251952",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "excluded_candidates": {
+    "EX1_577": "Opponent-side summon needs its own owner/placement binding.",
+    "TRL_363": "Opponent-side summon needs its own owner/placement binding.",
+    "TOY_814": "Random Bonus Effects are not a single fixed token.",
+    "TTN_900": "Earthen scaling is a stateful summon hook, not a textless body.",
+    "ETC_321": "Collection-related link points to an existing collectible Core card, not an independently pinned generated-only token.",
+    "TOY_670": "Collection-related link points to an existing collectible Core card, not an independently pinned generated-only token."
+  },
+  "recipes": [
+    {
+      "root": "AV_211",
+      "count": 1,
+      "root_text": "<b>Stealth</b>\n<b>Deathrattle:</b> Summon a 2/2 Wolf with <b>Stealth</b>.",
+      "child": "AV_211t",
+      "child_text": "<b>Stealth</b>",
+      "child_stats": [
+        2,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "STEALTH"
+      ],
+      "child_mechanics": [
+        "STEALTH"
+      ],
+      "parent_dbf_id": 67209,
+      "child_dbf_id": 72718,
+      "parent_metadata_sha256": "461d737cbd91936a7a25e50d4812309022ae17934daa2f6a81cd2c8fb50ab534",
+      "child_metadata_sha256": "0feb34265d353b37fa40a33270afa30723c8940e9ad34579498c205726a0e26b"
+    },
+    {
+      "root": "AV_309",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 4/1 Imp.",
+      "child": "AV_309t",
+      "child_text": null,
+      "child_stats": [
+        4,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 67753,
+      "child_dbf_id": 70303,
+      "parent_metadata_sha256": "051b5d487b916958b6616516813095896ba21d91853f41135d21855e5198cd44",
+      "child_metadata_sha256": "afa3b93e3ed31f27b953d1960460c22abcffd3aa9ebe84200638eed1e9a454a0"
+    },
+    {
+      "root": "BAR_072",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 5/8 Demonspawn\nwith <b>Taunt</b>.",
+      "child": "BAR_072t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        5,
+        8
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 62581,
+      "child_dbf_id": 62589,
+      "parent_metadata_sha256": "05129a4a87dac8ff4885d0af477a9c9b1e3d4311dbad62e2ed2ecf3228f0dad3",
+      "child_metadata_sha256": "7f35dd6679e23cfb2b6a425cbf29f59df3fcd1265e8ad96be894c892e3072817"
+    },
+    {
+      "root": "BAR_751",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 1/1 Tinyfin.",
+      "child": "BAR_751t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 63509,
+      "child_dbf_id": 63527,
+      "parent_metadata_sha256": "7481bdf8015a30e478b669e567b5e748cdbbac5bf0b82dface58ae34e0d32aa4",
+      "child_metadata_sha256": "7c300bd88397d76cf03615a665bd5a4cd45afd3086924e23ac82a529c119b392"
+    },
+    {
+      "root": "BOT_066",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 7/7 Mechanical Dragon.",
+      "child": "BOT_066t",
+      "child_text": null,
+      "child_stats": [
+        7,
+        7
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 47924,
+      "child_dbf_id": 48897,
+      "parent_metadata_sha256": "f6e898f75ffd60f899aa8b765556849ee4b1ee6d2c8f5b91af16ab3b208f430b",
+      "child_metadata_sha256": "2c3dbd490059aa68dc168d8f282bacfee5a7e997f9538bb28d62419bd315cd88"
+    },
+    {
+      "root": "BOT_445",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 1/1 Jo-E Bot.",
+      "child": "BOT_445t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 48886,
+      "child_dbf_id": 48885,
+      "parent_metadata_sha256": "77842f5ea707d7745f6e761d246410247b9d833d4ed6592b8d05d440dee1ced9",
+      "child_metadata_sha256": "345f73e6d7a7d896aac59b3a1969d7f0cd886bec65aafbdb3d85edcc25c9aeef"
+    },
+    {
+      "root": "BOT_537",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon an 8/8 Robosaur.",
+      "child": "BOT_537t",
+      "child_text": null,
+      "child_stats": [
+        8,
+        8
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 49169,
+      "child_dbf_id": 49168,
+      "parent_metadata_sha256": "1b5668727ae2e6937e5cc9c9ec99ee0a2419969dcaf0a5ed37555fdc18ec74d9",
+      "child_metadata_sha256": "9f2b146122c122751a3ff28131545d8c7c20462353627cf25a079d997968036f"
+    },
+    {
+      "root": "BOT_565",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 1/1 Ooze with <b>Poisonous</b> and <b>Rush</b>.",
+      "child": "BOT_565t",
+      "child_text": "<b>Poisonous</b>\n<b>Rush</b>",
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "POISONOUS",
+        "RUSH"
+      ],
+      "parent_dbf_id": 49361,
+      "child_dbf_id": 49360,
+      "parent_metadata_sha256": "d228b607f0556f22ac0de4bafe1d9ab974a12cb8a20e0554fb35f98e2e66bbd1",
+      "child_metadata_sha256": "b7342890200d4a43d537c5e79541c1bf202bede4095c2bdbc986e9b819392b39"
+    },
+    {
+      "root": "BT_008",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 1/1 Impcaster with\n<b>Spell Damage +1</b>.",
+      "child": "BT_008t",
+      "child_text": "<b>Spell Damage +1</b>",
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "SPELLPOWER"
+      ],
+      "parent_dbf_id": 56391,
+      "child_dbf_id": 57906,
+      "parent_metadata_sha256": "e228ec64a20b39e0319619d9fbc52d74b2b821cc1a8045874c7ed4e241a9a906",
+      "child_metadata_sha256": "da1ffe57f466729c95297c8e6b054d095a080291f9f09e9aceb4411019839a6c"
+    },
+    {
+      "root": "BT_155",
+      "count": 1,
+      "root_text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a \n7/7 Felcracked Colossus\nwith <b>Taunt</b>.",
+      "child": "BT_155t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        7,
+        7
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 56819,
+      "child_dbf_id": 59820,
+      "parent_metadata_sha256": "8e56b9f815f9279117e87620c66ecb59c636976f9654de30e5bbc43354f07604",
+      "child_metadata_sha256": "2dfda2146a0cfdbc6e3b703400cde9e777f3756224fca952ba4b652ab03d9ef9"
+    },
+    {
+      "root": "BT_304",
+      "count": 1,
+      "root_text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 5/5\nDreadlord with <b>Lifesteal</b>.",
+      "child": "BT_304t",
+      "child_text": "<b>Lifesteal</b>",
+      "child_stats": [
+        5,
+        5
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "LIFESTEAL"
+      ],
+      "parent_dbf_id": 56516,
+      "child_dbf_id": 57702,
+      "parent_metadata_sha256": "fdd6e777678473c9bc00b96705a550c74d2d850145f6c16b57427141d7a3fd8d",
+      "child_metadata_sha256": "d812c5c6c05767cc5b9a7077c20ad73b9bb544e474782cad758260f462c91333"
+    },
+    {
+      "root": "BT_703",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 7/5 Shadow with <b>Stealth</b>.",
+      "child": "BT_703t",
+      "child_text": "<b>Stealth</b>",
+      "child_stats": [
+        7,
+        5
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "STEALTH"
+      ],
+      "parent_dbf_id": 56379,
+      "child_dbf_id": 57498,
+      "parent_metadata_sha256": "b350b89d2d191a933a90b8dac8615b07a79c93b618bc6040063318856437e35a",
+      "child_metadata_sha256": "fb416145994e2be830cc09396cfa2c3317c299fc2506e59416696b0e220702cd"
+    },
+    {
+      "root": "BT_726",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 3/4 Dragonrider.",
+      "child": "BT_726t",
+      "child_text": null,
+      "child_stats": [
+        3,
+        4
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 57186,
+      "child_dbf_id": 57200,
+      "parent_metadata_sha256": "b8aeddbe848c8cf1c8b49147cbbc76acef4d2e8a8a5fdd3403636e45320b51b8",
+      "child_metadata_sha256": "17a5db0735bbbaa8d214d7eafc7cd6aa5d0634af84d951cab592ac02b0933455"
+    },
+    {
+      "root": "BT_728",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 9/1 Inquisitor.",
+      "child": "BT_728t",
+      "child_text": null,
+      "child_stats": [
+        9,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 57188,
+      "child_dbf_id": 57903,
+      "parent_metadata_sha256": "647f19a25cbeffd6660d88c70ab597be1b22e564bea037a1804ab5fa7d6e7e72",
+      "child_metadata_sha256": "b4ca7f865dbfdb6091cb3d07de378dd8198400fd963c34a9c1da87ca6752ec14"
+    },
+    {
+      "root": "BT_761",
+      "count": 1,
+      "root_text": "[x]<b>Rush</b>\n<b>Deathrattle:</b> Summon a\n 5/9 Warlord with <b>Taunt</b>.",
+      "child": "BT_761t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        5,
+        9
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "RUSH"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 60280,
+      "child_dbf_id": 60281,
+      "parent_metadata_sha256": "08dd0120d66e28dab945bcee2ea7772abfa4569ca6c4382c5a057ca71320a679",
+      "child_metadata_sha256": "d89f2174ad05d756eb9c906b6605da14bbdf20894fe95e10683249a92ddfcdb9"
+    },
+    {
+      "root": "DAL_088",
+      "count": 1,
+      "root_text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 0/5\nVault Safe with <b>Taunt</b>.",
+      "child": "DAL_088t2",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        0,
+        5
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 52288,
+      "child_dbf_id": 53013,
+      "parent_metadata_sha256": "c9fa5f4756c1b3a8ad0e33a34702da93b3513740bd261c0d7aead853d362b143",
+      "child_metadata_sha256": "00e4d7d0956f58252f27e15e663243d2390590a50e09795bcced371cfb5a5ad3"
+    },
+    {
+      "root": "DAL_566",
+      "count": 4,
+      "root_text": "<b>Deathrattle:</b> Summon\nfour 1/1 Vengeful Scrolls.",
+      "child": "DAL_566t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 52487,
+      "child_dbf_id": 52827,
+      "parent_metadata_sha256": "f86ce313c84c18c9412e4c736e5172defc6d63d85006dff9f4b64f57bed47185",
+      "child_metadata_sha256": "2b5f2cfc108c5e35830f139302455eb116730eec580b6270ee6465ba34bab9f6"
+    },
+    {
+      "root": "DAL_743",
+      "count": 1,
+      "root_text": "<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1 Murloc.",
+      "child": "DAL_743t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "RUSH"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 52935,
+      "child_dbf_id": 53202,
+      "parent_metadata_sha256": "7b361b1782839270633664407b536ed22c15df184d54b6fee90e36643da33bee",
+      "child_metadata_sha256": "9d76f97c950ac7af0fcbba19ed77208aee9f9578ac0091da2d7976e24a5e45b4"
+    },
+    {
+      "root": "DMF_223",
+      "count": 2,
+      "root_text": "[x]<b>Rush</b>\n<b>Deathrattle:</b> Summon two\n\u00a0\u00a01/1 Assistants with <b>Taunt</b>.\u00a0\u00a0",
+      "child": "DMF_223t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "RUSH"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 61129,
+      "child_dbf_id": 61150,
+      "parent_metadata_sha256": "4ac53b421b5b48122e3a7fc667290319dbc45370b02028b94b729f8f35f0a42a",
+      "child_metadata_sha256": "13bd7f24990723bb0a7d1f9446631b9077fd7b095267586bf8f46f095415f29e"
+    },
+    {
+      "root": "DMF_533",
+      "count": 2,
+      "root_text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon\ntwo 3/2 Imps.",
+      "child": "DMF_533t",
+      "child_text": null,
+      "child_stats": [
+        3,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 61884,
+      "child_dbf_id": 63273,
+      "parent_metadata_sha256": "9a0ef85805794355ed17ffaae9527e763900f96615ef0cf22b43577ea8d373b3",
+      "child_metadata_sha256": "6bf51a94994b711a42653f231da55f0b5c1a570c4772bb37617f6d173a628b75"
+    },
+    {
+      "root": "ETC_526",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon\na 9/9 Blight Boar with <b>Charge</b> and <b>Taunt</b>.",
+      "child": "ETC_526t",
+      "child_text": "<b>Charge</b>\n<b>Taunt</b>",
+      "child_stats": [
+        9,
+        9
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "CHARGE",
+        "TAUNT"
+      ],
+      "parent_dbf_id": 90497,
+      "child_dbf_id": 94197,
+      "parent_metadata_sha256": "c72e5619cedada5742375f7679ceeafc47eb552db278dd8e951457cf88c3277f",
+      "child_metadata_sha256": "f8b963e3041dd80ca775eb90a749ebdde2e2d1fb45188942cfcdd0bb54d90c6e"
+    },
+    {
+      "root": "KAR_005",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 3/2 Big Bad Wolf.",
+      "child": "KAR_005a",
+      "child_text": null,
+      "child_stats": [
+        3,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 39481,
+      "child_dbf_id": 39161,
+      "parent_metadata_sha256": "8b348dde2432e7890e708ad4915febfe53930a088a6db7086bcc4c084ce29601",
+      "child_metadata_sha256": "e8d26fba191c65327009540c74e571d49eea78bf3d4fa2320966f23bed585cbb"
+    },
+    {
+      "root": "LOOT_153",
+      "count": 7,
+      "root_text": "<b>Deathrattle:</b> Summon seven 1/1 Grubs.",
+      "child": "LOOT_153t1",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 43526,
+      "child_dbf_id": 43524,
+      "parent_metadata_sha256": "e1bb69784d062fd8b9dc4bc5a40cffef54aab1378872ed6497389cdd0eac1475",
+      "child_metadata_sha256": "582874e352bd0ea90c758d04eb732c9e179e7fe6204b2cfc80123601c4d54460"
+    },
+    {
+      "root": "LOOT_233",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 5/1 Revenant.",
+      "child": "LOOT_233t",
+      "child_text": null,
+      "child_stats": [
+        5,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 45594,
+      "child_dbf_id": 45592,
+      "parent_metadata_sha256": "bb369189aadc424f9e7ae92933fd8b8639518b313a0f8270fb8aa41732cb46b4",
+      "child_metadata_sha256": "d4b7c1105c0ca06679a89f696d8b6408bfbf1bd3826427fa7c602ff07d62d36f"
+    },
+    {
+      "root": "OG_216",
+      "count": 2,
+      "root_text": "<b>Deathrattle:</b> Summon two 1/1 Spiders.",
+      "child": "OG_216a",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 38734,
+      "child_dbf_id": 38735,
+      "parent_metadata_sha256": "7c0410a7a7422779a00e3a20c52c6267a016fa39bf0bdcbc755e01c030cd12c5",
+      "child_metadata_sha256": "3c67adc688afc9e64cc1b47b5553f5b410e72c596d69297be176e54787e0aa65"
+    },
+    {
+      "root": "OG_241",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 1/1 Shadowbeast.",
+      "child": "OG_241a",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 38774,
+      "child_dbf_id": 38773,
+      "parent_metadata_sha256": "f1f302e2544b53b84ee3131542ca47aea49ed122a89c5908982a81f88733f6a5",
+      "child_metadata_sha256": "817646527132a974860b921661ca508a9e350a95f07ccc2b564eb7bdc329de02"
+    },
+    {
+      "root": "OG_249",
+      "count": 1,
+      "root_text": "<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 2/2 Slime.",
+      "child": "OG_249a",
+      "child_text": null,
+      "child_stats": [
+        2,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 38784,
+      "child_dbf_id": 38783,
+      "parent_metadata_sha256": "78ffdae8d00038317431fd7d0ccf55891db35cb6a736461290573f7ac7ecba1e",
+      "child_metadata_sha256": "b8d1618e850b86e61006e95d77e035971d874cff0150e65fed73dd062e073e1a"
+    },
+    {
+      "root": "OG_272",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 5/5 Faceless Destroyer.",
+      "child": "OG_272t",
+      "child_text": null,
+      "child_stats": [
+        5,
+        5
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 38833,
+      "child_dbf_id": 38999,
+      "parent_metadata_sha256": "e5f44c0d9afa137f0f11e7aa0aa152ba38a55c3ece26ff6e661af3b58ec7b7d3",
+      "child_metadata_sha256": "580abaea45af4e9d28d76e619f12983e136e1a0945fce13a341747fe8558526c"
+    },
+    {
+      "root": "REV_012",
+      "count": 1,
+      "root_text": "[x]<b><b>Taunt</b></b> \n<b>Deathrattle:</b> Summon a 2/4 \nMuckmare with <b>Taunt</b>.",
+      "child": "REV_012t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        2,
+        4
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 79557,
+      "child_dbf_id": 79558,
+      "parent_metadata_sha256": "d430ebdc55bf6120fd647c6b6e86c870b0a68219b43a04bec49fd9d4d30fb608",
+      "child_metadata_sha256": "0e35317e646d1ecb3247910a40a0a8da2be18875f2805cfcb722e51eade820ed"
+    },
+    {
+      "root": "REV_356",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 2/1 Bat.",
+      "child": "REV_350t",
+      "child_text": null,
+      "child_stats": [
+        2,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 78273,
+      "child_dbf_id": 78265,
+      "parent_metadata_sha256": "973c8f33544e4cae12f54d72a1676588415e9a1490938f1f52ca597023280158",
+      "child_metadata_sha256": "20b8515da59efbbb8c64ba5eb604fdfbb4248656b23285bc7ccc611e46ecdf3d"
+    },
+    {
+      "root": "REV_375",
+      "count": 1,
+      "root_text": "[x]<b>Rush</b> \n\u00a0\u00a0<b>Deathrattle:</b> Summon an \n\u00a0\u00a0\u00a08/8 Gravewing with <b>Rush</b>.\u00a0",
+      "child": "REV_375t",
+      "child_text": "<b>Rush</b>",
+      "child_stats": [
+        8,
+        8
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "RUSH"
+      ],
+      "child_mechanics": [
+        "RUSH"
+      ],
+      "parent_dbf_id": 79532,
+      "child_dbf_id": 79533,
+      "parent_metadata_sha256": "9598d4882a4cee66493c9630af3ef9d9c6396e8be4786198778532135cf56237",
+      "child_metadata_sha256": "82a4c4d1af1042aaba47a495189b82979aa64606ede8727743c78118ef9faa65"
+    },
+    {
+      "root": "RLK_070",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 2/2 Undead Peasant.",
+      "child": "RLK_070t",
+      "child_text": null,
+      "child_stats": [
+        2,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 78607,
+      "child_dbf_id": 78608,
+      "parent_metadata_sha256": "0b53ed75e57712fd527b7f84577f2f2df001da579b7bff4d958d54ccdfa79492",
+      "child_metadata_sha256": "de8cee9b40b9e220ecd81292d7cc69d6a5b6d7449dbe1dc0cbf104d89b0bd1a9"
+    },
+    {
+      "root": "RLK_554",
+      "count": 1,
+      "root_text": "[x]<b><b>Taunt</b>, Reborn</b>\n<b>Deathrattle:</b> Summon a 4/4\nUndead with <b>Taunt</b>.",
+      "child": "RLK_554t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        4,
+        4
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "REBORN",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 86186,
+      "child_dbf_id": 90202,
+      "parent_metadata_sha256": "6db51e6ff599c81cb1e86050e4025cfe9317fab256787ceed1b8612b1b6e24e6",
+      "child_metadata_sha256": "bf2dc878f92c3d764f4d22b464e2014bf98f33b32ede70b806e6b87ac309b2ad"
+    },
+    {
+      "root": "RLK_833",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 3/3 Undead Chicken.",
+      "child": "RLK_833t",
+      "child_text": null,
+      "child_stats": [
+        3,
+        3
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 85152,
+      "child_dbf_id": 85153,
+      "parent_metadata_sha256": "6ddb3c3b75b07e7b6870e1c790d02f3e9fb7b34662e8701ea35bd155e5473072",
+      "child_metadata_sha256": "c571cb06cc161e3f5e29efb520c2f7db917121269ea0045623ca1ca07e8e4dca"
+    },
+    {
+      "root": "SCH_340",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 4/4 Hapless Handler.",
+      "child": "SCH_340t",
+      "child_text": null,
+      "child_stats": [
+        4,
+        4
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 59188,
+      "child_dbf_id": 61173,
+      "parent_metadata_sha256": "997cc010b12665ee1c586f03222f895383573af35699d92dd7433027c2126c4b",
+      "child_metadata_sha256": "0222fb3049224988f2179695b6ef68f7221e404eb11264b1e21d3febb5f8ffff"
+    },
+    {
+      "root": "SW_455",
+      "count": 5,
+      "root_text": "<b>Deathrattle:</b> Summon five 1/1 Rats.",
+      "child": "SW_455t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 64960,
+      "child_dbf_id": 64961,
+      "parent_metadata_sha256": "f9a057be2678a710657fb76f0d8c72746925379fe0d603007ff11ca3604a372c",
+      "child_metadata_sha256": "43a07b20ab5db94e119cc00dce3ee4b85cf09daa5d34b6a8c5d26f93f2f9410c"
+    },
+    {
+      "root": "TOY_914",
+      "count": 2,
+      "root_text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon two\n4/6 Knights with <b>Taunt</b>.",
+      "child": "TOY_914t",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        4,
+        6
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 104854,
+      "child_dbf_id": 106281,
+      "parent_metadata_sha256": "07858c7e5b6f74289890db02534f5ef2f8fa786651ee864ddad6ff41fee7ffd5",
+      "child_metadata_sha256": "9198574400260531678baa88a0c5dcef6c64fcc784826f90be8095228805d4b5"
+    },
+    {
+      "root": "TRL_503",
+      "count": 3,
+      "root_text": "<b>Deathrattle:</b> Summon three 1/1 Scarabs.",
+      "child": "TRL_503t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 50372,
+      "child_dbf_id": 50373,
+      "parent_metadata_sha256": "9864f0502ecc69315e15dbcc659a4f71f28ba914b73f667910587bd2cf771436",
+      "child_metadata_sha256": "c358e9894c844da5b681227e0fa0d42629198bd042ca177e76af156ce6a92fe6"
+    },
+    {
+      "root": "TRL_531",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 3/2 Rumbletusk Breaker.",
+      "child": "TRL_531t",
+      "child_text": null,
+      "child_stats": [
+        3,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 50427,
+      "child_dbf_id": 50428,
+      "parent_metadata_sha256": "799020136ccb5e57a2d4a184c152241d6929336a72490c55db115d320ab20e33",
+      "child_metadata_sha256": "c1b4f7ebc4e9a11df4ce95e09c8a2061336e9a8f1ac4434754664900dabedd0b"
+    },
+    {
+      "root": "TTN_861",
+      "count": 2,
+      "root_text": "[x]<b>Deathrattle:</b> Summon two\n2/2 Elementals with <b>Taunt</b>.",
+      "child": "TTN_862t4",
+      "child_text": "<b>Taunt</b>",
+      "child_stats": [
+        2,
+        2
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [
+        "TAUNT"
+      ],
+      "parent_dbf_id": 98330,
+      "child_dbf_id": 98348,
+      "parent_metadata_sha256": "d9d28fb238cab74cedf9340d8401b5b91cf4b33f082e94af50bdc1d453567574",
+      "child_metadata_sha256": "28094d82a953cb30e91a95107d148c6f2dc242d86c6183b834ca4e621bbbe8bd"
+    },
+    {
+      "root": "ULD_174",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 3/4 Sea Serpent.",
+      "child": "ULD_174t",
+      "child_text": null,
+      "child_stats": [
+        3,
+        4
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 54077,
+      "child_dbf_id": 54570,
+      "parent_metadata_sha256": "1a383e98e328c27cc90d0f60012c4b260c71da2fc39265fde5599b7f4665d4b1",
+      "child_metadata_sha256": "51c733e750048f28a3dc8faf92b347c42eaa1988093f8427f40d04b076a10e22"
+    },
+    {
+      "root": "UNG_010",
+      "count": 3,
+      "root_text": "<b>Taunt</b>\n<b>Deathrattle:</b> Summon three 1/1 Murlocs.",
+      "child": "UNG_201t",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE",
+        "TAUNT"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 41138,
+      "child_dbf_id": 41523,
+      "parent_metadata_sha256": "20fac282da62501081c6f53dd336c84f449af6d97b9251ee67bab04f1ec408e0",
+      "child_metadata_sha256": "899c0d04377992c45ec25ae73bd4cc35aa7462ae3a40999e6fe2f1b8243e1c24"
+    },
+    {
+      "root": "UNG_076",
+      "count": 2,
+      "root_text": "<b>Deathrattle:</b> Summon two 1/1 Raptors.",
+      "child": "UNG_076t1",
+      "child_text": null,
+      "child_stats": [
+        1,
+        1
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 41249,
+      "child_dbf_id": 41248,
+      "parent_metadata_sha256": "6b18ff5b59db8a6ce13187b77d9b6114aba74198bc1df2a5baf5b4819b27c438",
+      "child_metadata_sha256": "0e16a1845a5aee19503176f6615b2a4bd93d5bc8818c2cadcf4501563de7b081"
+    },
+    {
+      "root": "UNG_083",
+      "count": 1,
+      "root_text": "<b>Deathrattle:</b> Summon a 5/5 Devilsaur.",
+      "child": "UNG_083t1",
+      "child_text": null,
+      "child_stats": [
+        5,
+        5
+      ],
+      "root_mechanics": [
+        "DEATHRATTLE"
+      ],
+      "child_mechanics": [],
+      "parent_dbf_id": 41259,
+      "child_dbf_id": 41258,
+      "parent_metadata_sha256": "e9c31fc496d3eb47aa1047ece3fcc6dff550d19123eb2f4d315e5938dc50d7ec",
+      "child_metadata_sha256": "901457ec8795405790c108d488307c5515c2bc861b0a6fdaaa7ed616e96e6cdc"
+    }
+  ]
+}

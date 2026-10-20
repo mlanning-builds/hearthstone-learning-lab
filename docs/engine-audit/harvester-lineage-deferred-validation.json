@@ -1,0 +1,24 @@
+{
+  "scope": "Partial Harvester physical-copy ancestry infrastructure; no new root registration",
+  "implementation_complete": false,
+  "validated": false,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "checks": [
+    "AST syntax parsing of expanded sources",
+    "static inventory reconciliation"
+  ],
+  "written_minions": 3179,
+  "unwritten_minions": 22,
+  "candidate_fingerprint": "a14556fc9aca59118cd43824df2b7acef5a5a8b266e0900efa653710f906b060",
+  "deferred": [
+    "Harvester paid-play event plumbing",
+    "Original lookup and transfer across hand/deck/board/secret/weapon zones",
+    "Physical movement, transform, copy-of-copy and resurrection semantics",
+    "Gameplay and regression review only when explicitly authorized"
+  ],
+  "source_hashes": {
+    "historical_copy_lineage.py": "03456b298b1f885017b557ad1fd24849dbc3eb8c864d6b791701e2f4172fbd49",
+    "provenance.py": "c7cbd90d9f7d498d5a3b38c569739ac62ccf19b94f0a42909cac66bd764879c5"
+  }
+}

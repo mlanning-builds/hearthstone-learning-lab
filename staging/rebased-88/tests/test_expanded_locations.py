@@ -116,11 +116,11 @@ class LocationTests(unittest.TestCase):
         for _ in range(2):self.g.step(Action('end'))
         self.assertFalse(self.p.fire_spell_played)
 
-    def test_countered_fire_spell_does_not_enable_bonus_or_card_count(self):
+    def test_countered_fire_spell_counts_as_played_without_cast_bonus(self):
         location=self.place('CATA_584')
         self.q.secrets.append(Card(self.g._new_id(),'CORE_EX1_287'))
         self.play('CORE_CS2_029',-2)
-        self.assertFalse(self.p.fire_spell_played);self.assertEqual(self.p.cards_played,0)
+        self.assertFalse(self.p.fire_spell_played);self.assertEqual(self.p.cards_played,1)
         self.use(location);self.assertEqual(self.q.health,27)
 
     def test_underbelly_token_draws_on_death(self):
@@ -174,8 +174,8 @@ class LocationTests(unittest.TestCase):
             self.assertNotIn('health',board[1])
 
     def test_unknown_locations_stay_unsupported(self):
-        self.assertNotIn('EDR_520',COLLECTIBLE_IDS)
-        with self.assertRaises(UnsupportedCard):self.place('EDR_520')
+        self.assertNotIn('UNKNOWN_LOCATION_FIXTURE',COLLECTIBLE_IDS)
+        with self.assertRaises(UnsupportedCard):self.place('UNKNOWN_LOCATION_FIXTURE')
 
     def test_location_between_minions_survives_enemy_bounce_and_turn_changes(self):
         location=self.place(owner=1)

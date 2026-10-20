@@ -1,1 +1,2 @@
-jupyterlab>=4,<5
+# Compatibility entry point; dependencies are declared in pyproject.toml.
+-e .[notebook]

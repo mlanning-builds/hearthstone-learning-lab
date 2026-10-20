@@ -3,6 +3,7 @@
 These pools validate runtime behavior, not production pool membership or closure.
 """
 import copy,json,unittest
+from unittest.mock import patch
 import test_expanded_generation as fixtures
 from expanded import Action
 from expanded.cards import COLLECTIBLE_IDS
@@ -35,7 +36,7 @@ class DarkGiftGeneratorTests(unittest.TestCase):
  def test_all_twelve_declared_and_still_fail_closed(self):
   from expanded.pending_definitions import DEFINITIONS
   expected={cid for cid,d in DEFINITIONS.items() if d['family']=='dark_gift'}
-  self.assertEqual(set(RULES),expected);self.assertEqual(len(RULES),12);self.assertFalse(set(RULES)&COLLECTIBLE_IDS)
+  self.assertEqual(set(RULES)-COLLECTIBLE_IDS,expected);self.assertEqual(len(RULES),12);self.assertEqual(set(RULES)-COLLECTIBLE_IDS,set())
  def test_every_card_has_explicit_request(self):self.assertTrue(all(requests_for(cid) for cid in RULES))
  def test_all_standard_declarations_reach_choice(self):
   for cid in sorted(set(RULES)-{'END_027'}):
@@ -46,10 +47,13 @@ class DarkGiftGeneratorTests(unittest.TestCase):
     self.run_card(cid,-2 if cid=='FIR_939' else 0)
     self.assertEqual(self.g.pending_choice['kind'],'dark_global');self.choose(gift='EDR_100t');self.assertIsNone(self.g.pending_choice)
  def test_missing_contract_rejects_without_rng_or_hand_mutation(self):
+  del self.g.cards['CORE_EX1_162']
   before=self.g.rng.getstate()
-  with self.assertRaisesRegex(UnsupportedCard,'reviewed'):self.run_request(request())
+  with self.assertRaisesRegex(UnsupportedCard,'eligible effects not implemented'):self.run_request(request())
   self.assertEqual(before,self.g.rng.getstate());self.assertFalse(self.p.hand)
  def test_preflight_catches_later_pool_before_damage(self):
+  req=next(iter(requests_for('FIR_939')))
+  self.install(req,['UNIMPLEMENTED_WARRIOR_FIXTURE'])
   before=self.g.players[1].health
   with self.assertRaises(UnsupportedCard):self.run_card('FIR_939',-2)
   self.assertEqual(self.g.players[1].health,before)
@@ -116,7 +120,8 @@ class DarkGiftGeneratorTests(unittest.TestCase):
  def test_historical_request_never_falls_back_to_standard(self):
   req=next(iter(requests_for('END_027')))
   for r in req.alternatives:self.g._generation_pools={(r,self.p.hero_class):GenerationPool('fixture',(),'not historical')}
-  with self.assertRaisesRegex(UnsupportedCard,'Historical'):self.run_request(req)
+  with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.historical_generation_catalog.historical_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',side_effect=AssertionError('Historical request reached Standard fallback')):
+   with self.assertRaisesRegex(UnsupportedCard,'Historical'):self.run_request(req)
  def test_historical_contract_rejects_standard_outcomes(self):
   req=next(iter(requests_for('END_027')));self.install(req)
   with self.assertRaisesRegex(UnsupportedCard,'Standard'):self.run_request(req)

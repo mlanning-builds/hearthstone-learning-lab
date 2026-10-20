@@ -1,0 +1,57 @@
+{
+  "scope": "Generated death-history and resurrection spell outcomes",
+  "new_unvalidated_bodies": 11,
+  "new_ids": [
+    "ETC_208",
+    "ETC_424",
+    "JAM_008",
+    "RLK_536",
+    "RLK_652",
+    "RLK_812",
+    "TID_715",
+    "TOY_886",
+    "TTN_855",
+    "TTN_855t",
+    "WW_812"
+  ],
+  "new_collectible_spell_outcomes": 10,
+  "new_forged_spell_bodies": 1,
+  "prior_expansion_outcome_gap": 246,
+  "current_expansion_outcome_gap": 236,
+  "closed_outcome_ids": [
+    "ETC_208",
+    "ETC_424",
+    "JAM_008",
+    "RLK_536",
+    "RLK_652",
+    "RLK_812",
+    "TID_715",
+    "TOY_886",
+    "TTN_855t",
+    "WW_812"
+  ],
+  "candidate_fingerprint": "f345df0bf79d4e3030675413f2937c2199a094c2bd0cccf329752fc853ae689e",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Death instance weighting, resurrection order and canonical distinct-identity selection",
+    "Death-time printed versus constructed cost and class eligibility",
+    "Fresh compiled resurrection payloads, copied state and forced 2/2 stats",
+    "Dead Air confirmed-death handling, immunity and replacement effects",
+    "Shallow Grave continuation and inherited adjacent Deathrattle physical review gates",
+    "Shared Colossal identity to both hands and generation eligibility",
+    "Full recursive generation closure and all new behavior"
+  ]
+}

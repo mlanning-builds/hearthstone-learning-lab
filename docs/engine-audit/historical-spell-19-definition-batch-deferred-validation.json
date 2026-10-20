@@ -1,0 +1,150 @@
+{
+  "fingerprint": "2b98603d669ed94bbc29ac34e8b90f12bdd69a7e2e804772c2387e78a83467be",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 19,
+  "new_historical_spell_roots": 15,
+  "new_tokens_and_alternate_forms": 4,
+  "registry_records": 8047,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1298,
+    "remaining": 144
+  },
+  "new_implementations": [
+    {
+      "id": "GVG_045",
+      "name": "Imp-losion",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_045t",
+      "name": "Imp",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_010",
+      "name": "Dragonbane Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_014",
+      "name": "Keen Reflex",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_032",
+      "name": "Tooth of Nefarian",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_253",
+      "name": "Cycle of Hatred",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_253t",
+      "name": "Spirit of Vengeance",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_271",
+      "name": "Molten Blast",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_271t",
+      "name": "Molten Elemental",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_012",
+      "name": "Totemic Smash",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_347",
+      "name": "Baited Arrow",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_347t",
+      "name": "Devilsaur",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_526",
+      "name": "Char",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_952",
+      "name": "Felfire Bonfire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_021",
+      "name": "Unstable Shadow Blast",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_095",
+      "name": "Darkbomb",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_323",
+      "name": "Bane of Doom",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_008",
+      "name": "Fine Print",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_027",
+      "name": "Bola Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8047,
+    "edges": 803,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "144 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

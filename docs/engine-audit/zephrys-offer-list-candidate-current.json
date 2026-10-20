@@ -1,0 +1,995 @@
+{
+  "status": "historical_third_party_offer_list_candidate_not_certified_pinned_pool",
+  "candidate_fingerprint": "6fd4c937a5d9786fa5dd81b9203f9fd6a306737726a1a33c5b9b9c80260587d5",
+  "source": "https://github.com/mixj93/lodestone/blob/bf6ae0699b375ff9d4dca3a072f0e8aa9080dbac/src/constants/zephrys.js",
+  "source_sha256": "2be61040dee40179d6db6dfbb0be9aa6999c97855aee751e46eae3cac41d9690",
+  "identities": 139,
+  "written_identities": 139,
+  "missing_identities": 0,
+  "missing_ids": [],
+  "rows": [
+    {
+      "card_id": "CS2_008",
+      "dbf_id": 467,
+      "name": "Moonfire",
+      "written": true,
+      "metadata_sha256": "887bccebe12dcf666cd2a393d6865ae05d43f859817a3ad577161bc9889b3119"
+    },
+    {
+      "card_id": "CS2_072",
+      "dbf_id": 180,
+      "name": "Backstab",
+      "written": true,
+      "metadata_sha256": "aab283cf46fd57185a898c3d4c0d8da2b5be2cc13223f3f2b28e5bda7cd0e271"
+    },
+    {
+      "card_id": "EX1_332",
+      "dbf_id": 1189,
+      "name": "Silence",
+      "written": true,
+      "metadata_sha256": "e02062344987eb76460288169c1a661e1ee3eb743fb62a7ddb4a18d851c60dde"
+    },
+    {
+      "card_id": "CS2_004",
+      "dbf_id": 613,
+      "name": "Power Word: Shield",
+      "written": true,
+      "metadata_sha256": "4a6b5abb1d2e8ebb854fcdb03932a2dff1e955dcecf55e9dbc371c18f79d30ae"
+    },
+    {
+      "card_id": "EX1_607",
+      "dbf_id": 22,
+      "name": "Inner Rage",
+      "written": true,
+      "metadata_sha256": "84846b8c0f1460636db182ef6b1ba84dbfd851a6d8970d13da9465185f0a4ddb"
+    },
+    {
+      "card_id": "NEW1_003",
+      "dbf_id": 163,
+      "name": "Sacrificial Pact",
+      "written": true,
+      "metadata_sha256": "ad019fdece231844dfd7cbd276b8bd69a7ee0d39bab5b9ef9ae1f472d11a0df2"
+    },
+    {
+      "card_id": "NEW1_022",
+      "dbf_id": 878,
+      "name": "Dread Corsair",
+      "written": true,
+      "metadata_sha256": "b566fb7be7a2e34748065d80a5c502ed0c3bc70f0d908135f313dc440f0034a7"
+    },
+    {
+      "card_id": "EX1_586",
+      "dbf_id": 211,
+      "name": "Sea Giant",
+      "written": true,
+      "metadata_sha256": "8d799aff70dfb4dd764b21dabd6ad9abd57d85832e739e1abcf84389bd90bf75"
+    },
+    {
+      "card_id": "EX1_302",
+      "dbf_id": 1092,
+      "name": "Mortal Coil",
+      "written": true,
+      "metadata_sha256": "346422094ea0fc7e403face31f56f0274fa932b22d3606ecb9c7b3bc9e20cdb9"
+    },
+    {
+      "card_id": "CS2_037",
+      "dbf_id": 971,
+      "name": "Frost Shock",
+      "written": true,
+      "metadata_sha256": "6ea86001224c9e9f678c0d5076ac20620ba645ac854c6a1511e9e405ffcd9a39"
+    },
+    {
+      "card_id": "DS1_185",
+      "dbf_id": 877,
+      "name": "Arcane Shot",
+      "written": true,
+      "metadata_sha256": "a53736645cd75088634632a681fff13dfab750dd70d6bb208884eb4459340142"
+    },
+    {
+      "card_id": "CS1_130",
+      "dbf_id": 279,
+      "name": "Holy Smite",
+      "written": true,
+      "metadata_sha256": "865c0d4c5d91f165caf2914fd9adb96466e596bc5afca8ef9fd49cd164d55469"
+    },
+    {
+      "card_id": "EX1_238",
+      "dbf_id": 505,
+      "name": "Lightning Bolt",
+      "written": true,
+      "metadata_sha256": "88534516ecf26d4985d7d3522042e57196f304423f6d3f04da43fe0ceec2a268"
+    },
+    {
+      "card_id": "EX1_308",
+      "dbf_id": 974,
+      "name": "Soulfire",
+      "written": true,
+      "metadata_sha256": "489a1d82e623c79ba0b3eb7ba802c36a23279de724192d4845003a4314521a13"
+    },
+    {
+      "card_id": "EX1_245",
+      "dbf_id": 767,
+      "name": "Earth Shock",
+      "written": true,
+      "metadata_sha256": "c7303fa7bbef1919c1847a9f01b5277cd251e81260bc54007e536bdf0ebd93a9"
+    },
+    {
+      "card_id": "EX1_400",
+      "dbf_id": 636,
+      "name": "Whirlwind",
+      "written": true,
+      "metadata_sha256": "7402dc9543199c52527c7bc64be223116f673f5995d3a8d8f424fdc9297853b1"
+    },
+    {
+      "card_id": "EX1_251",
+      "dbf_id": 299,
+      "name": "Forked Lightning",
+      "written": true,
+      "metadata_sha256": "3dec7f9b4d4d3a2aec57282d32b08006a83e7bc441e9832fee2c11d8272ec174"
+    },
+    {
+      "card_id": "NEW1_017",
+      "dbf_id": 443,
+      "name": "Hungry Crab",
+      "written": true,
+      "metadata_sha256": "50622ce5da7181fc7587090db99cb4fd006769ba7e0027957e0422677bc5042f"
+    },
+    {
+      "card_id": "NEW1_025",
+      "dbf_id": 997,
+      "name": "Bloodsail Corsair",
+      "written": true,
+      "metadata_sha256": "847b0d31db52291cfaa01cf1b25b699531fe76460e7d27899b1740d4f1ad012f"
+    },
+    {
+      "card_id": "EX1_360",
+      "dbf_id": 854,
+      "name": "Humility",
+      "written": true,
+      "metadata_sha256": "b99385e60ec75d3e9ef2855a7984641907d9f5d4b56e03aa05378620674b6c1f"
+    },
+    {
+      "card_id": "EX1_578",
+      "dbf_id": 481,
+      "name": "Savagery",
+      "written": true,
+      "metadata_sha256": "d45c39a1e6de307793f382a5a1ce8b74ba7c13a0971e560103517ea4b50e1fd1"
+    },
+    {
+      "card_id": "EX1_410",
+      "dbf_id": 546,
+      "name": "Shield Slam",
+      "written": true,
+      "metadata_sha256": "17554a26aec13b3642328f8fca33bcebbfbee7a9ef6c092fe1e110d9ae05ab25"
+    },
+    {
+      "card_id": "EX1_192",
+      "dbf_id": 54865,
+      "name": "Radiance",
+      "written": true,
+      "metadata_sha256": "41b253f3cbe0ea1869cfb36ab5d3136dd7fef6693b5e5b0ef76594bc27efdeb7"
+    },
+    {
+      "card_id": "CS1_129",
+      "dbf_id": 376,
+      "name": "Inner Fire",
+      "written": true,
+      "metadata_sha256": "4db1aeed86d7b2857234360785c3f7b0e9bb9bfce467b1e1a38161aacd29d15f"
+    },
+    {
+      "card_id": "EX1_319",
+      "dbf_id": 1090,
+      "name": "Flame Imp",
+      "written": true,
+      "metadata_sha256": "c922b5e7ab68bebfe7a1cda549a81b7bef5983edd8255a6ec6953598757fb148"
+    },
+    {
+      "card_id": "CS2_065",
+      "dbf_id": 48,
+      "name": "Voidwalker",
+      "written": true,
+      "metadata_sha256": "286be7b1e3e6fd44465cbf5bdb1da93475695b1321fa6fb19e252f8aac9bfb7c"
+    },
+    {
+      "card_id": "EX1_124",
+      "dbf_id": 904,
+      "name": "Eviscerate",
+      "written": true,
+      "metadata_sha256": "a74d86b013f8bcdcd87d75bf276abc0ccd96f163bf82854d48ab70b940050e45"
+    },
+    {
+      "card_id": "EX1_581",
+      "dbf_id": 461,
+      "name": "Sap",
+      "written": true,
+      "metadata_sha256": "662acae49b5eea4b05e44c53742c6bb8e013a825b5fc65deaeb1946def42ac38"
+    },
+    {
+      "card_id": "CS2_108",
+      "dbf_id": 785,
+      "name": "Execute",
+      "written": true,
+      "metadata_sha256": "d79b1ebf078a45885de15ab52e59e2012183a9efc26990f6996afaa9022800b9"
+    },
+    {
+      "card_id": "EX1_126",
+      "dbf_id": 282,
+      "name": "Betrayal",
+      "written": true,
+      "metadata_sha256": "b5fb0b7914caa558633c1a9bf0a8d658a73325e763becab8b2e408fc8bce8e44"
+    },
+    {
+      "card_id": "CS2_114",
+      "dbf_id": 940,
+      "name": "Cleave",
+      "written": true,
+      "metadata_sha256": "0d793d3fc3ae17317819016a6cb1b977277d228ce13dc7cdc30fde1b255e1fb5"
+    },
+    {
+      "card_id": "CS2_234",
+      "dbf_id": 1367,
+      "name": "Shadow Word: Pain",
+      "written": true,
+      "metadata_sha256": "83fbc3fa683585810b36fd5de5d98caeb722658666d18f5f536868821a37e8e2"
+    },
+    {
+      "card_id": "EX1_622",
+      "dbf_id": 1363,
+      "name": "Shadow Word: Death",
+      "written": true,
+      "metadata_sha256": "024787f47d2d5bc09ab0bbcf3b70ef115730aef23608d404b73d12e4c4792379"
+    },
+    {
+      "card_id": "CS2_073",
+      "dbf_id": 268,
+      "name": "Cold Blood",
+      "written": true,
+      "metadata_sha256": "6951444f4b716c74ddfc0d413722d3add23846f6e5988a21060a659e48fca81d"
+    },
+    {
+      "card_id": "BT_035",
+      "dbf_id": 56791,
+      "name": "Chaos Strike",
+      "written": true,
+      "metadata_sha256": "e7bda3b6d63e7ed928ce5d14897f31768223d44d7ce5a124d66d67690fbabb27"
+    },
+    {
+      "card_id": "CS2_025",
+      "dbf_id": 447,
+      "name": "Arcane Explosion",
+      "written": true,
+      "metadata_sha256": "bd1efc543103c5de067a8e4a34c4c945ad8f1c6ff7aa852f605d05306d2bca88"
+    },
+    {
+      "card_id": "CS2_105",
+      "dbf_id": 1007,
+      "name": "Heroic Strike",
+      "written": true,
+      "metadata_sha256": "ecc51679403f881f26c702545d438995c8cfc8e1e48bceadbc08b04b017bc0ca"
+    },
+    {
+      "card_id": "CS2_039",
+      "dbf_id": 51,
+      "name": "Windfury",
+      "written": true,
+      "metadata_sha256": "8a88101f24f049fd4d62df7c7379ee544d153c0a1120a41bd83c8870b7649c70"
+    },
+    {
+      "card_id": "CS2_009",
+      "dbf_id": 213,
+      "name": "Mark of the Wild",
+      "written": true,
+      "metadata_sha256": "aa6902eebd153098f774025e34c915b3eda3762251c817ca6cf757c98749358c"
+    },
+    {
+      "card_id": "EX1_160",
+      "dbf_id": 503,
+      "name": "Power of the Wild",
+      "written": true,
+      "metadata_sha256": "3cee73acbd851e1db4118a6c4a5b55f3cf7b2562f0e87d49d15c3efef6eb4702"
+    },
+    {
+      "card_id": "EX1_195",
+      "dbf_id": 60068,
+      "name": "Kul Tiran Chaplain",
+      "written": true,
+      "metadata_sha256": "d81ff26c9330e8e63a15f18fbb020e4abcfb3840eba600a52058943d2a69631f"
+    },
+    {
+      "card_id": "EX1_059",
+      "dbf_id": 801,
+      "name": "Crazed Alchemist",
+      "written": true,
+      "metadata_sha256": "e856a1cc1fced495febb16f35f88b9d89ce185fddd77654f7f74dff035f45a27"
+    },
+    {
+      "card_id": "EX1_066",
+      "dbf_id": 906,
+      "name": "Acidic Swamp Ooze",
+      "written": true,
+      "metadata_sha256": "60bc535eaa6e0344fcdcc11dd333edfbd1c18e5e40e42fbbb35af609063dea20"
+    },
+    {
+      "card_id": "EX1_544",
+      "dbf_id": 896,
+      "name": "Flare",
+      "written": true,
+      "metadata_sha256": "397aea0bd27b26c0faa093d175855f359d97d72ee809d45a43b2b9cd2c6f1485"
+    },
+    {
+      "card_id": "EX1_096",
+      "dbf_id": 251,
+      "name": "Loot Hoarder",
+      "written": true,
+      "metadata_sha256": "2e0099c0308ca12f724b919cb6debbd838ab7e7e85832f00997cf00abc255ec3"
+    },
+    {
+      "card_id": "EX1_339",
+      "dbf_id": 30,
+      "name": "Thoughtsteal",
+      "written": true,
+      "metadata_sha256": "35456f5379193fbe44d4c327269cf5f190ad3fe8b147461ea8d06a76742235cf"
+    },
+    {
+      "card_id": "EX1_392",
+      "dbf_id": 400,
+      "name": "Battle Rage",
+      "written": true,
+      "metadata_sha256": "3e51595f5a77b03c5401cf325e0929ffa7f79a28769673cb091ce67acc2fe92c"
+    },
+    {
+      "card_id": "CS2_089",
+      "dbf_id": 291,
+      "name": "Holy Light",
+      "written": true,
+      "metadata_sha256": "7afd76fd2bcd25239489f025c2be208baa5f9512a1d9f7f0483ddc00f4cf85e1"
+    },
+    {
+      "card_id": "EX1_539",
+      "dbf_id": 296,
+      "name": "Kill Command",
+      "written": true,
+      "metadata_sha256": "ac1a0894744273ac28747791bc66fd5e334db2693aa17adc50aed0654075f4ce"
+    },
+    {
+      "card_id": "EX1_134",
+      "dbf_id": 1117,
+      "name": "SI:7 Agent",
+      "written": true,
+      "metadata_sha256": "0269769b0d3a157ae9823256ced2223fea4c1853317e48d7ed99f24162c2c5c8"
+    },
+    {
+      "card_id": "EX1_241",
+      "dbf_id": 864,
+      "name": "Lava Burst",
+      "written": true,
+      "metadata_sha256": "2a760800c0c38c33558b8dd62dadb7d1c188ae1a4ec5e108857ef3aa8f291d5b"
+    },
+    {
+      "card_id": "EX1_617",
+      "dbf_id": 1093,
+      "name": "Deadly Shot",
+      "written": true,
+      "metadata_sha256": "747e23ccfc91037d1ec931b165d373245364792acf872595b6aceb6e71c88fe7"
+    },
+    {
+      "card_id": "EX1_259",
+      "dbf_id": 629,
+      "name": "Lightning Storm",
+      "written": true,
+      "metadata_sha256": "dbe8808434356ddea40b66ce4a8e9fd0c8dbe68fd8db248a54588748bf3de069"
+    },
+    {
+      "card_id": "BT_740",
+      "dbf_id": 57732,
+      "name": "Soul Cleave",
+      "written": true,
+      "metadata_sha256": "e58c045134fcb72ee69e03a305f0c170f8688894bfd90d179d328357ee74c197"
+    },
+    {
+      "card_id": "BT_036",
+      "dbf_id": 56792,
+      "name": "Coordinated Strike",
+      "written": true,
+      "metadata_sha256": "cf15496bad1d3ca0e5d030e97428bff01d45d45c9f742bc49baadac2df149bb1"
+    },
+    {
+      "card_id": "BT_921",
+      "dbf_id": 56583,
+      "name": "Aldrachi Warblades",
+      "written": true,
+      "metadata_sha256": "46be75ef66cea821f1f6cbd7b3adb68018d103d85f60f94bb73d92fe2fd91f52"
+    },
+    {
+      "card_id": "EX1_536",
+      "dbf_id": 1662,
+      "name": "Eaglehorn Bow",
+      "written": true,
+      "metadata_sha256": "7448de4b715c6eadfd8e82410fa4267f6dad2dec0024d09c829cb07eec45d458"
+    },
+    {
+      "card_id": "EX1_129",
+      "dbf_id": 667,
+      "name": "Fan of Knives",
+      "written": true,
+      "metadata_sha256": "4324b0da26579f029bbdeae6917eb75d53bd8d7e3136e8f3cb9baa6d01db06ac"
+    },
+    {
+      "card_id": "EX1_334",
+      "dbf_id": 220,
+      "name": "Shadow Madness",
+      "written": true,
+      "metadata_sha256": "2ea6972b5ea6338a6d2aba5ba8b8ac6f838d9d3e4e23175f6a713785e3ad7c17"
+    },
+    {
+      "card_id": "CS2_203",
+      "dbf_id": 290,
+      "name": "Ironbeak Owl",
+      "written": true,
+      "metadata_sha256": "30db28a34d71f87771ce0227e57207e6d99320dac836b63cce0471d8891a12f3"
+    },
+    {
+      "card_id": "CS2_011",
+      "dbf_id": 742,
+      "name": "Savage Roar",
+      "written": true,
+      "metadata_sha256": "c5108f43cc6251327b96e77d7ef63a2eda7c6d815d7a9ff74eb06eaab9e69f83"
+    },
+    {
+      "card_id": "CS2_013",
+      "dbf_id": 1124,
+      "name": "Wild Growth",
+      "written": true,
+      "metadata_sha256": "bb1d478c672b06620cb7b692401c2a799484012254f5346f4108831eb1dd54c5"
+    },
+    {
+      "card_id": "CS2_026",
+      "dbf_id": 587,
+      "name": "Frost Nova",
+      "written": true,
+      "metadata_sha256": "84b1eae36e001921cf32f9dab461e07c15e42647f286505b24cc586d029747ba"
+    },
+    {
+      "card_id": "CS2_007",
+      "dbf_id": 773,
+      "name": "Healing Touch",
+      "written": true,
+      "metadata_sha256": "8d4e44b2bbfb8e42c7644502b1d1e4a05eec934ff36f37d91043946eb50d004e"
+    },
+    {
+      "card_id": "EX1_189",
+      "dbf_id": 54839,
+      "name": "Brightwing",
+      "written": true,
+      "metadata_sha256": "0414c8ce9fbf52c83744c7b26863d00971c9c5c77e511f882196ce9535880a2a"
+    },
+    {
+      "card_id": "NEW1_031",
+      "dbf_id": 437,
+      "name": "Animal Companion",
+      "written": true,
+      "metadata_sha256": "5d702adc6957720800f92dac0051c2676404b66b4aaa526d2ebf5a15a54522de"
+    },
+    {
+      "card_id": "EX1_613",
+      "dbf_id": 306,
+      "name": "Edwin VanCleef",
+      "written": true,
+      "metadata_sha256": "dedf2f6cf135ec6a179c8261d0b2ef528856b47ee76987ca860be2e2a002875c"
+    },
+    {
+      "card_id": "EX1_590",
+      "dbf_id": 755,
+      "name": "Blood Knight",
+      "written": true,
+      "metadata_sha256": "9a7e28d0d1b071ccb76c296ed06fc806fe0710a413aa9b5ee7e9796e74d8f0ed"
+    },
+    {
+      "card_id": "EX1_014",
+      "dbf_id": 1693,
+      "name": "King Mukla",
+      "written": true,
+      "metadata_sha256": "b3ba074fae205083aefe1f4c4d7912c4f9ee655079c94a399ebd0d4197faa66b"
+    },
+    {
+      "card_id": "CS2_023",
+      "dbf_id": 555,
+      "name": "Arcane Intellect",
+      "written": true,
+      "metadata_sha256": "98af50a7c398bd448516d36f0ef2a335313aeac8e9c8f290d77e71a6555fa9c3"
+    },
+    {
+      "card_id": "BT_352",
+      "dbf_id": 58489,
+      "name": "Satyr Overseer",
+      "written": true,
+      "metadata_sha256": "5b8a2f612242cd8dea70f63c209d26881311d90c6ba7f6fcfeedb9931de1ffc5"
+    },
+    {
+      "card_id": "NEW1_027",
+      "dbf_id": 680,
+      "name": "Southsea Captain",
+      "written": true,
+      "metadata_sha256": "bd6cb8e3d9e34c4505bdaae353252aff1a26358321e3ebd7ae2e64743cc43c3d"
+    },
+    {
+      "card_id": "EX1_507",
+      "dbf_id": 1063,
+      "name": "Murloc Warleader",
+      "written": true,
+      "metadata_sha256": "71a9f2e2f97018a9883e014d490dd6cb764f5d76e09dcfe98d8c7feb6ad917d8"
+    },
+    {
+      "card_id": "EX1_103",
+      "dbf_id": 453,
+      "name": "Coldlight Seer",
+      "written": true,
+      "metadata_sha256": "fce8a8a0a826d4f9c1da7eeca018388aaa6ed82ce8f2ab92b476e8ee7d45faf5"
+    },
+    {
+      "card_id": "EX1_197",
+      "dbf_id": 60070,
+      "name": "Shadow Word: Ruin",
+      "written": true,
+      "metadata_sha256": "57db4738e8ba2d59d992d412668d45f1794a03980295b385b83321c306da9568"
+    },
+    {
+      "card_id": "EX1_246",
+      "dbf_id": 766,
+      "name": "Hex",
+      "written": true,
+      "metadata_sha256": "a6eed254623be11e14f82998611831cb53af370f4dc19b7ca11982fc71f47a97"
+    },
+    {
+      "card_id": "CS1_112",
+      "dbf_id": 841,
+      "name": "Holy Nova",
+      "written": true,
+      "metadata_sha256": "d69cc4530e05dc85edf8e46f11d61cbc78212ef38bcc7dcf8c1191a821e7ce9c"
+    },
+    {
+      "card_id": "EX1_303",
+      "dbf_id": 147,
+      "name": "Shadowflame",
+      "written": true,
+      "metadata_sha256": "edad3fab08e843ccabf26af6ac832b8503892d421a8c4c692119a84ab3f71152"
+    },
+    {
+      "card_id": "CS2_062",
+      "dbf_id": 950,
+      "name": "Hellfire",
+      "written": true,
+      "metadata_sha256": "f9a8bf16875184473766f6960f1a80195789530e5839cd5334219bca1e3dc663"
+    },
+    {
+      "card_id": "CS2_029",
+      "dbf_id": 315,
+      "name": "Fireball",
+      "written": true,
+      "metadata_sha256": "bcc19545d8db4e95fdc8c67ed79314a52dba0dd27aa9f2349d074ea03ad4332c"
+    },
+    {
+      "card_id": "DS1_183",
+      "dbf_id": 292,
+      "name": "Multi-Shot",
+      "written": true,
+      "metadata_sha256": "bc55665bbca2555a524e942ffe2e0b8a44d74b6e5c8548ee2b3d56292861bf24"
+    },
+    {
+      "card_id": "CS2_012",
+      "dbf_id": 64,
+      "name": "Swipe",
+      "written": true,
+      "metadata_sha256": "d0f3c89b7dda6bcc54649d9cd66e94fcb9bae52f918ba78e66054a1310557e33"
+    },
+    {
+      "card_id": "CS2_097",
+      "dbf_id": 847,
+      "name": "Truesilver Champion",
+      "written": true,
+      "metadata_sha256": "45a403dcee00ccd568f0b096d55025fb6f71a1a18193b60e3a671f505399d57d"
+    },
+    {
+      "card_id": "EX1_626",
+      "dbf_id": 1366,
+      "name": "Mass Dispel",
+      "written": true,
+      "metadata_sha256": "d01e3427f51570fc877c65b4dc39b58352d20c7155eac16f9563ac55d713c96a"
+    },
+    {
+      "card_id": "EX1_158",
+      "dbf_id": 381,
+      "name": "Soul of the Forest",
+      "written": true,
+      "metadata_sha256": "22c37fd22a5191bb3d3b347ff35814e036a665600c3af97e5ad75e27d8ec26b0"
+    },
+    {
+      "card_id": "EX1_093",
+      "dbf_id": 763,
+      "name": "Defender of Argus",
+      "written": true,
+      "metadata_sha256": "a9ba61efdf7791081dc7726016aeae5152b7bccc942bc932a27bce6866aa24e9"
+    },
+    {
+      "card_id": "CS2_092",
+      "dbf_id": 943,
+      "name": "Blessing of Kings",
+      "written": true,
+      "metadata_sha256": "5e53371b00c61c315ff3a7348e110bd2dbb7ef4434b3cff7986fd14b7ed0af13"
+    },
+    {
+      "card_id": "EX1_043",
+      "dbf_id": 1037,
+      "name": "Twilight Drake",
+      "written": true,
+      "metadata_sha256": "5f8e7b89a7562998382ee2c3377aa5d7d4c33906f8f19a4a1798cb7b4cb0abda"
+    },
+    {
+      "card_id": "EX1_186",
+      "dbf_id": 54836,
+      "name": "SI:7 Infiltrator",
+      "written": true,
+      "metadata_sha256": "9f382f69ba682c5a41f72627481d3cd891b63459a13018a4bd01745ba258b271"
+    },
+    {
+      "card_id": "EX1_194",
+      "dbf_id": 60067,
+      "name": "Power Infusion",
+      "written": true,
+      "metadata_sha256": "20e32038785a85a97b2ef03775035899f5b99a87ab678f8cb2365abd22c2e5d8"
+    },
+    {
+      "card_id": "CS2_033",
+      "dbf_id": 395,
+      "name": "Water Elemental",
+      "written": true,
+      "metadata_sha256": "4414cbbb0b7f8b9ae0c31a7b2ff0821cbaca432b1d2befda739e6db488cad122"
+    },
+    {
+      "card_id": "DS1_070",
+      "dbf_id": 1003,
+      "name": "Houndmaster",
+      "written": true,
+      "metadata_sha256": "6be0523407b821a834d9525a2f20853eade47669c30b3c663c685af44b529512"
+    },
+    {
+      "card_id": "EX1_407",
+      "dbf_id": 75,
+      "name": "Brawl",
+      "written": true,
+      "metadata_sha256": "1dd276961d75ab4fecbbaa295d5759fbbae30f76c6b9e8a77d4e91360ec9e02e"
+    },
+    {
+      "card_id": "BT_235",
+      "dbf_id": 57847,
+      "name": "Chaos Nova",
+      "written": true,
+      "metadata_sha256": "f8c3a0bb96f96f48b08ef2a1aec115f1bc0a6fd2e49f560f1be147c6c6827312"
+    },
+    {
+      "card_id": "CS2_076",
+      "dbf_id": 345,
+      "name": "Assassinate",
+      "written": true,
+      "metadata_sha256": "c86d70971d6116c311094df2eadc531c31cec18f62da506718b29773fe1b3303"
+    },
+    {
+      "card_id": "EX1_537",
+      "dbf_id": 394,
+      "name": "Explosive Shot",
+      "written": true,
+      "metadata_sha256": "57f3aaed2beb4a27fb85c1dc4d3509adde48368ff3068e31863c572f11d27e58"
+    },
+    {
+      "card_id": "NEW1_007",
+      "dbf_id": 86,
+      "name": "Starfall",
+      "written": true,
+      "metadata_sha256": "45cf9b83e56bab0aec2afce0db2402bd96a3b88d16812f9704f9eeb6fc9f0086"
+    },
+    {
+      "card_id": "BT_495",
+      "dbf_id": 58494,
+      "name": "Glaivebound Adept",
+      "written": true,
+      "metadata_sha256": "d748732d0a707165e4b44e23e716a81c40988d47673445f6f97764a234fc13c0"
+    },
+    {
+      "card_id": "EX1_165",
+      "dbf_id": 692,
+      "name": "Druid of the Claw",
+      "written": true,
+      "metadata_sha256": "186d4077fc9bb12fa01d178260acd1c4f1c21b5c7ccfb2510935b2c7ceec2579"
+    },
+    {
+      "card_id": "NEW1_041",
+      "dbf_id": 1371,
+      "name": "Stampeding Kodo",
+      "written": true,
+      "metadata_sha256": "99c8c5ae1ed431e7be90ad5dfe6c0dafed101c74183f9d52602d8a630f2af005"
+    },
+    {
+      "card_id": "EX1_005",
+      "dbf_id": 1657,
+      "name": "Big Game Hunter",
+      "written": true,
+      "metadata_sha256": "8831ea3f59d53bbaea4067db89cf26dce837a67285c700d11b489e24f77f8d6d"
+    },
+    {
+      "card_id": "CS2_046",
+      "dbf_id": 1171,
+      "name": "Bloodlust",
+      "written": true,
+      "metadata_sha256": "a70e44bee4455705684a01c1db340b0757b9f60e199bdc407e2fb6fbe4980480"
+    },
+    {
+      "card_id": "CS2_080",
+      "dbf_id": 421,
+      "name": "Assassin's Blade",
+      "written": true,
+      "metadata_sha256": "4ea003eec8742d41def79cc5d9918f3106e248cb5a09462117eb032ab6762d83"
+    },
+    {
+      "card_id": "CS2_112",
+      "dbf_id": 304,
+      "name": "Arcanite Reaper",
+      "written": true,
+      "metadata_sha256": "99723d67fd73902a3c4e2fb5180fd732e92a5de817045909a16c053e09fa6346"
+    },
+    {
+      "card_id": "EX1_567",
+      "dbf_id": 352,
+      "name": "Doomhammer",
+      "written": true,
+      "metadata_sha256": "59d6f3098ed6986676c9b7a740ceeb38f961ebbe356e0e1cabbf9bf3657040d7"
+    },
+    {
+      "card_id": "EX1_623",
+      "dbf_id": 1364,
+      "name": "Temple Enforcer",
+      "written": true,
+      "metadata_sha256": "4935a097deb179756fcf58cfbbb9ea2675792495dc7a65c1d632932d4c8bf2b2"
+    },
+    {
+      "card_id": "EX1_564",
+      "dbf_id": 531,
+      "name": "Faceless Manipulator",
+      "written": true,
+      "metadata_sha256": "88705f7d2dbf3223928bb19a112d9c81f43e781914abcf24bb54be17eb4510fd"
+    },
+    {
+      "card_id": "EX1_558",
+      "dbf_id": 912,
+      "name": "Harrison Jones",
+      "written": true,
+      "metadata_sha256": "69a6b2e77d6f218273aed81a49f16885eb8500f44058f4b8d7e293a23fa7036d"
+    },
+    {
+      "card_id": "EX1_355",
+      "dbf_id": 1522,
+      "name": "Blessed Champion",
+      "written": true,
+      "metadata_sha256": "5be1db3d47df486245d89bb263ac9513ff1678151cc375d77a5eda30a267da0a"
+    },
+    {
+      "card_id": "EX1_250",
+      "dbf_id": 1141,
+      "name": "Earth Elemental",
+      "written": true,
+      "metadata_sha256": "f504bce9cb7efd5f019c85bb4d2d45c7a239e3c57b75d80b0f9745b96b868de9"
+    },
+    {
+      "card_id": "EX1_309",
+      "dbf_id": 1100,
+      "name": "Siphon Soul",
+      "written": true,
+      "metadata_sha256": "81d01a9013125a28b6514a809a9463308fbe6721f2ce2f99db60c9449ddca303"
+    },
+    {
+      "card_id": "CS2_028",
+      "dbf_id": 457,
+      "name": "Blizzard",
+      "written": true,
+      "metadata_sha256": "aff6dbfcc3ec49580dfc00e3207e03d8c20245508458b41e101eaf9fbf0df9f5"
+    },
+    {
+      "card_id": "EX1_384",
+      "dbf_id": 1174,
+      "name": "Avenging Wrath",
+      "written": true,
+      "metadata_sha256": "d1aa775e8435baf08f5d52c8ffdfe354dbb297d9695b9b821188a1cbd60c1e05"
+    },
+    {
+      "card_id": "CS2_042",
+      "dbf_id": 189,
+      "name": "Fire Elemental",
+      "written": true,
+      "metadata_sha256": "5327c0a620dad3bdcae265230635903c4e358515a2643764826ec7f70ea77ec2"
+    },
+    {
+      "card_id": "EX1_002",
+      "dbf_id": 1656,
+      "name": "The Black Knight",
+      "written": true,
+      "metadata_sha256": "f859186225d72aa382bf1e0a5df6a36b659214ee3793e2f64cedebdc61d2bb68"
+    },
+    {
+      "card_id": "EX1_091",
+      "dbf_id": 272,
+      "name": "Cabal Shadow Priest",
+      "written": true,
+      "metadata_sha256": "7c161629813054f681be94523a8661a479adbff240e9bd2fda9cef1440944037"
+    },
+    {
+      "card_id": "CS2_064",
+      "dbf_id": 1019,
+      "name": "Dread Infernal",
+      "written": true,
+      "metadata_sha256": "88e0c131e9889b7078bf551c74fcd8e9bcf3f2c7efc6bd238c6177985d3b1fa6"
+    },
+    {
+      "card_id": "EX1_534",
+      "dbf_id": 1261,
+      "name": "Savannah Highmane",
+      "written": true,
+      "metadata_sha256": "a5ab9fe738221132708257e2f9310b59c3f789cce9f15bfe90c5838b57a30151"
+    },
+    {
+      "card_id": "EX1_164",
+      "dbf_id": 95,
+      "name": "Nourish",
+      "written": true,
+      "metadata_sha256": "da5a4666c071024b61af15e7c9d435e062c616b98ffe3a59e62927744389775e"
+    },
+    {
+      "card_id": "CS2_032",
+      "dbf_id": 1004,
+      "name": "Flamestrike",
+      "written": true,
+      "metadata_sha256": "ebb10f531a90c30e5381c247dfd3cc816b169dbc5d8136f9eaa8a83ec482a022"
+    },
+    {
+      "card_id": "EX1_249",
+      "dbf_id": 336,
+      "name": "Baron Geddon",
+      "written": true,
+      "metadata_sha256": "9e73fbd34e192594849ebb046003bab8dc22a10c74a9251cf44e4d1d29c4a2f6"
+    },
+    {
+      "card_id": "CS2_088",
+      "dbf_id": 1068,
+      "name": "Guardian of Kings",
+      "written": true,
+      "metadata_sha256": "d71d41fe5feeee85b7d74ecdd92da41c55d91a1d5a3f9861861e6d050bd5b4ff"
+    },
+    {
+      "card_id": "EX1_411",
+      "dbf_id": 810,
+      "name": "Gorehowl",
+      "written": true,
+      "metadata_sha256": "c881a3d76f5153f8790ec77856ba12cc3d669665ce759151b1fe793431cb5b60"
+    },
+    {
+      "card_id": "DS1_188",
+      "dbf_id": 311,
+      "name": "Gladiator's Longbow",
+      "written": true,
+      "metadata_sha256": "fee4117577d995de815e84eb2b2ed0467a6e8e16d107e77640a49cb28560e186"
+    },
+    {
+      "card_id": "EX1_190",
+      "dbf_id": 54840,
+      "name": "High Inquisitor Whitemane",
+      "written": true,
+      "metadata_sha256": "b480a0a3ecc5cd53c5825d5a92cfa15b0fbb1efcd8b7fb3dac43e1562043112c"
+    },
+    {
+      "card_id": "EX1_178",
+      "dbf_id": 1035,
+      "name": "Ancient of War",
+      "written": true,
+      "metadata_sha256": "09d01a357989219b9954d1e1aa9796b7e1594312cad00a57f0382ece0e2e14ab"
+    },
+    {
+      "card_id": "CS2_077",
+      "dbf_id": 630,
+      "name": "Sprint",
+      "written": true,
+      "metadata_sha256": "556aa51b572080fb4241e1fbbc81065cb24d176346f696a04aa35f9b6b97070d"
+    },
+    {
+      "card_id": "EX1_312",
+      "dbf_id": 859,
+      "name": "Twisting Nether",
+      "written": true,
+      "metadata_sha256": "c6c50b75e85986bfe6e5699b0d139ea5fa332f39e457389d2cfd15061fc055e4"
+    },
+    {
+      "card_id": "EX1_198",
+      "dbf_id": 60071,
+      "name": "Natalie Seline",
+      "written": true,
+      "metadata_sha256": "5790d79357a8396d19cb3d68fe224fe4db8d66410994548248588603e132255e"
+    },
+    {
+      "card_id": "EX1_383",
+      "dbf_id": 890,
+      "name": "Tirion Fordring",
+      "written": true,
+      "metadata_sha256": "bc4a2b6daed37a8fa4ec764fe831f31913db52da4080200430fabd86a475fe1f"
+    },
+    {
+      "card_id": "EX1_354",
+      "dbf_id": 594,
+      "name": "Lay on Hands",
+      "written": true,
+      "metadata_sha256": "e5c56ffda88fbc0edaec082f17d44b62c6ad138deefbbf846af60cf241c246ce"
+    },
+    {
+      "card_id": "BT_512",
+      "dbf_id": 59867,
+      "name": "Inner Demon",
+      "written": true,
+      "metadata_sha256": "d05095811fa02bf29a7ef6e5d3a42a0577fdf3020dbb36951d72217f753b69ed"
+    },
+    {
+      "card_id": "EX1_561",
+      "dbf_id": 581,
+      "name": "Alexstrasza",
+      "written": true,
+      "metadata_sha256": "46eaa94bfb0685a079829ef41c0e1edc6107905364e592cf69c0f097f0cc351e"
+    },
+    {
+      "card_id": "EX1_323",
+      "dbf_id": 777,
+      "name": "Lord Jaraxxus",
+      "written": true,
+      "metadata_sha256": "d70092bd26b768fb7dcb8103c2b80b57c82900bdb2d52cb4f8ee1eab8e8ac61a"
+    },
+    {
+      "card_id": "EX1_572",
+      "dbf_id": 1186,
+      "name": "Ysera",
+      "written": true,
+      "metadata_sha256": "aaa3edf32feba0b55293e80b1f5550d4f7ed40555d66cf994df84dbd1738470a"
+    },
+    {
+      "card_id": "EX1_543",
+      "dbf_id": 1144,
+      "name": "King Krush",
+      "written": true,
+      "metadata_sha256": "eda0b79514bef41eb04438634cb178bf8e530839905346ffd61b64aec644fd14"
+    },
+    {
+      "card_id": "NEW1_030",
+      "dbf_id": 834,
+      "name": "Deathwing",
+      "written": true,
+      "metadata_sha256": "dcf7134d3b8a6f1fcc94979d6e84579c6f939081eb248404efba70d54830acc5"
+    },
+    {
+      "card_id": "CS1_113",
+      "dbf_id": 8,
+      "name": "Mind Control",
+      "written": true,
+      "metadata_sha256": "065d13d1b69ebe9794115ed5b659e383a2c293df3c5463b71666bf845302d9e3"
+    },
+    {
+      "card_id": "EX1_279",
+      "dbf_id": 1087,
+      "name": "Pyroblast",
+      "written": true,
+      "metadata_sha256": "b6a20dfbf7c4b51e4fd6ee78ab86d3aa318e25d87612ac5ea2658d72939b0f4d"
+    }
+  ],
+  "limitations": [
+    "Author-maintained offer list, not Blizzard selection implementation",
+    "Published list is historical and not established as exhaustive for build 36.6.0.251952",
+    "Frozen current printings can have changed cost or text since this list was authored",
+    "No score, projection function, category comparison or tie-breaking code is provided",
+    "No production offer filtering or default policy installed"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false
+}

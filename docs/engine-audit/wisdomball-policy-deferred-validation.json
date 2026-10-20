@@ -1,0 +1,26 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "d9fb1f7664483e4c27df2ec3f26b0e75539fe0be56af0edd7fee95f67704caaf",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Complete pinned typed Wisdomball policy contract",
+    "Detached public-state evaluator input",
+    "Full ten-spell pool required",
+    "Duplicate spell/target outcomes rejected before selection"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact usefulness evaluator and evidenced outcome weights are still missing",
+    "No production Khadgar admission",
+    "Ability/event and target timing"
+  ]
+}

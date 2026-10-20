@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "ULD_291",
+    "ULD_291p"
+  ],
+  "candidate_fingerprint": "383661d8fac8b14ad4bc2e1fedaed8747a19bb00b82d74dd2ac486e261ecf50f",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Battlecry-play progress and quest completion ordering",
+    "Repeated Hero Powers, turn scope and Battlecry repetition interactions"
+  ]
+}

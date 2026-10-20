@@ -1,0 +1,50 @@
+{
+  "scope": "Twelve Kazakusan treasure dependencies; root deck construction remains unwritten",
+  "new_unvalidated_bodies": 12,
+  "new_ids": [
+    "ONY_005ta1",
+    "ONY_005ta2",
+    "ONY_005ta4",
+    "ONY_005ta8",
+    "ONY_005tb2",
+    "ONY_005tb4",
+    "ONY_005tb5",
+    "ONY_005tb5t",
+    "ONY_005tb7",
+    "ONY_005tc1",
+    "ONY_005tc2",
+    "ONY_005tc6"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 7,
+  "current_expansion_outcome_gap": 7,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "85402053dd00637cfe00042f644b8bc909890920f0136aa94b4fcde28cc79e99",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Kazakusan root remains unregistered until all treasure programs and complete Discover/deck-construction contract are written",
+    "Silence-before-destroy ordering, immunity and simultaneous enemy deaths",
+    "Pure Cold damage/freeze ordering and prevention; Embers per-hit Spell Damage, target rechecks and death queues",
+    "Army Knife multiple keywords, Canopic Jars granted Deathrattle copies and complete Legendary dependency closure",
+    "Book of the Dead all-player death count, snapshot timing and dynamic cost interactions",
+    "QuelDelar Blade/Hilt auto-combination contract remains unwritten; Hilt buff program alone authored",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

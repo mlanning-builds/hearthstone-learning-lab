@@ -3,6 +3,7 @@
 Private objects stay off rule_state and scheduled-operation arguments. Public
 observations expose only explicit views; operations refer to opaque local IDs.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 
@@ -134,11 +135,7 @@ class StoredCards:
         elif name=='stored_release':
             bound=getattr(source,'_bound_minion',None)
             card=getattr(source,'_bound_card',None)
-            if bound is not None:
-                self._summon(owner,bound.card_id,ctx.get('death_position',-1),copy_from=bound,entry_origin='deathrattle',entry_site='stored_release')
-            elif card is not None:
-                self._summon(owner,card.card_id,ctx.get('death_position',-1),card.attack_bonus,card.health_bonus,
-                             entry_origin='recruit',entry_site='stored_release',entry_zone='hand',entry_source=card)
+            self._stored_release_value(owner,bound,card,ctx.get('death_position',-1))
         elif name=='stored_jars':
             for index,card in enumerate(p.hand):
                 if self.cards[card.card_id]['type']!='MINION':continue
@@ -169,7 +166,7 @@ class StoredCards:
             self._refresh_auras()
         elif name=='stored_future_return':
             for card in self._stored_payloads.pop(op[1])['values']:
-                card.attack_bonus+=5;card.health_bonus+=5;self._enter_hand(owner,card)
+                _saidan_add(card,'attack_bonus',5);_saidan_add(card,'health_bonus',5);self._enter_hand(owner,card)
             self._refresh_auras()
         elif name=='stored_reform':
             if source is None or source not in p.minions:return True
@@ -182,6 +179,13 @@ class StoredCards:
             self._summon(owner,'EDR_818',position,attack-7,health-7,entry_origin='effect',entry_site='stored_reform')
         else:return False
         return True
+
+    def _stored_release_value(self,owner,bound,card,position=-1):
+        if bound is not None:
+            self._summon(owner,bound.card_id,position,copy_from=bound,entry_origin='deathrattle',entry_site='stored_release')
+        elif card is not None:
+            self._summon(owner,card.card_id,position,card.attack_bonus,card.health_bonus,
+                         entry_origin='recruit',entry_site='stored_release',entry_zone='hand',entry_source=card)
 
     def _stored_view(self,value):
         result={}

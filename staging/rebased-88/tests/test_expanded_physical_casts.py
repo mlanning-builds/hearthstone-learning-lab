@@ -8,11 +8,19 @@ from expanded.cards import RULES,CHOICES
 from engine.cards import UnsupportedCard
 
 class PhysicalCastTests(unittest.TestCase):
+    def assert_guarded_paid_cast_rolls_back(self,g,cid):
+        trigger=g._add(0,'TLC_522')
+        action=next(a for a in g.legal_actions() if a.kind=='play' and a.source==trigger.uid)
+        before=g.observe(0);rng=g.rng.getstate()
+        with patch.dict(RULES,{'TLC_522':('none',[('cast_fixed_spell',cid,'random')])}):
+            with self.assertRaisesRegex(UnsupportedCard,'eligible effects not implemented'):g.step(action)
+        self.assertEqual(g.observe(0),before);self.assertEqual(g.rng.getstate(),rng)
+
     def game(self):
         g=Game([random_deck('DRUID',31),random_deck('MAGE',53)],seed=71,record=True)
         g.step(Action('mulligan'));g.step(Action('mulligan'))
         for p in g.players:
-            p.hand=[];p.board=[];p.deck=['CORE_CS2_029']*30;p.mana=p.max_mana=10;p.health=30;p.armor=0
+            p.hand=[];p.board=[];p.deck=[Card(g._new_id(),'CORE_CS2_029') for _ in range(30)];p.mana=p.max_mana=10;p.health=30;p.armor=0
         return g
     def cast(self,g,op,source=None):
         g._start_play_effects([op,('armor',3)],dict(owner=0,source=source,target=0,bonus=0,lifesteal=False))
@@ -52,7 +60,8 @@ class PhysicalCastTests(unittest.TestCase):
         self.assertEqual(g.players[0].hand,[a]);self.assertEqual(g.players[1].health,30)
     def test_unsupported_spell_rejected_before_removal(self):
         g=self.game();a=g._add(0,'CORE_RLK_567');state=g.rng.getstate()
-        with self.assertRaises(UnsupportedCard):self.cast(g,('cast_zone_spell','hand',a.uid,'enemies'))
+        with patch.dict(RULES,{'CORE_RLK_567':('none',[('future_unimplemented_effect',)])}):
+            with self.assertRaises(UnsupportedCard):self.cast(g,('cast_zone_spell','hand',a.uid,'enemies'))
         self.assertIn(a,g.players[0].hand);self.assertEqual(g.rng.getstate(),state)
     def test_fizzled_zone_spell_is_consumed(self):
         g=self.game();a=g._add(0,'CS2_029')
@@ -113,9 +122,15 @@ class PhysicalCastTests(unittest.TestCase):
             if probe.cards[cid]['type']!='SPELL':continue
             for index in range(len(branches)):
                 with self.subTest(card=cid,branch=index):
-                    g=self.game();m=g._summon(1,'CS3_020');m.health=10;m.max_health=20;g.players[0].corpses=5
-                    with patch.object(g.rng,'randrange',return_value=index):self.fixed(g,cid)
-                    casts=[e for e in g.events if e['event']=='internal_spell_cast']
+                    g=deepcopy(probe);m=g._summon(1,'CS3_020');m.health=10;m.max_health=20;g.players[0].corpses=5
+                    if cid=='EDR_463':m.attack=2  # Supply a legal small-Attack target for branch zero.
+                    # Force only the branch roll; keep subsequent generation random.
+                    roll=g.rng.randrange;calls=[]
+                    def branch_roll(*args,**kwargs):
+                        if not calls:calls.append(True);return index
+                        return roll(*args,**kwargs)
+                    with patch.object(g.rng,'randrange',side_effect=branch_roll):self.fixed(g,cid)
+                    casts=[e for e in g.events if e['event']=='internal_spell_cast' and e['card']==cid]
                     self.assertEqual(len(casts),1);self.assertEqual(casts[0]['branch'],index)
                     self.assertIsNone(g.pending_frame);self.assertIsNone(g.pending_choice)
     def test_failure_rolls_back_consumption_and_rng(self):
@@ -142,20 +157,62 @@ class PhysicalCastTests(unittest.TestCase):
         with patch.dict(RULES,{'CORE_CS2_029':('character',[('future_unimplemented_effect',)])}):
             self.assertFalse(g._supports_internal_spell('CORE_CS2_029'))
             with self.assertRaises(UnsupportedCard):self.fixed(g,'CORE_CS2_029')
-    def test_unplayable_empty_shadow_not_inferred_as_vanilla_spell(self):
-        g=self.game();self.assertFalse(g._supports_internal_spell('CORE_RLK_567'))
-    def test_all_admitted_spell_paths_complete_or_end_game(self):
+    def test_empty_shadow_has_explicit_internal_admission(self):
+        g=self.game();self.assertTrue(g._supports_internal_spell('CORE_RLK_567'))
+    def test_herald_internal_support_uses_casting_owner_not_active_player(self):
+        g=self.game();g.players[0].hero_class='MAGE';g.players[1].hero_class='DEMONHUNTER'
+        self.assertTrue(g._supports_internal_spell('CATA_530',0))
+        self.assertTrue(g._supports_internal_spell('CATA_530',1))
+        self.assertTrue(g._supports_internal_spell('CATA_561',0))
+    def test_herald_spell_runs_for_its_supported_army(self):
+        g=self.game();g.players[0].hero_class='DEMONHUNTER';self.fixed(g,'CATA_530')
+        self.assertEqual(g.players[0].herald_count,1)
+        self.assertIn('CATA_525t',[m.card_id for m in g.players[0].minions])
+    def test_incompatible_fel_autocast_pool_rejects_without_sampling(self):
+        from expanded.health_generation import FEL
+        g=self.game();g.players[0].hero_class='MAGE';before=g.rng.getstate()
+        with patch.dict(RULES,{'CATA_530':('none',[('future_unimplemented_effect',)])}):
+            with self.assertRaisesRegex(UnsupportedCard,'lacks internal support'):
+                g._autocast_candidates(FEL,0)
+        self.assertEqual(g.rng.getstate(),before)
+    def test_written_spell_paths_complete_or_reject_known_incomplete_outcomes(self):
         probe=self.game();ids=[cid for cid in probe.cards if probe._supports_internal_spell(cid)]
         self.assertGreater(len(ids),150)
         for cid in ids:
             with self.subTest(card=cid):
-                g=self.game();a=g._summon(0,'CS3_020');b=g._summon(1,'CS3_020')
+                g=deepcopy(probe);a=g._summon(0,'CS3_020');b=g._summon(1,'CS3_020')
                 for m in (a,b):m.health=15;m.max_health=20
                 g.players[0].corpses=10
-                if cid=='EDR_259e1':
+                if cid in ('CFM_621t','CFM_621t14','CFM_621t15','VAC_523t','CAP_405tb1','CAP_405tb2','CAP_405tb3','JAIL_504t3p'):
+                    token=Card(g._new_id(),cid);token.rule_state=dict(crafted_ops=(('armor',1),),crafted_target='none')
+                    self.cast(g,('cast_physical_spell',token,'random'))
+                elif cid in ('WW_052t2','WW_393t','WW_395t'):
+                    token=Card(g._new_id(),cid);token._historical_bottle_amount=2
+                    self.cast(g,('cast_physical_spell',token,'random'))
+                elif cid=='TOY_879t':
+                    token=Card(g._new_id(),cid);token._historical_resealed_cards=(Card(g._new_id(),'CS3_020'),)
+                    self.cast(g,('cast_physical_spell',token,'random'))
+                elif cid=='ULD_286t':
+                    token=Card(g._new_id(),cid);token._historical_shadow=deepcopy(a)
+                    self.cast(g,('cast_physical_spell',token,'random'))
+                elif cid=='YOP_024t':
+                    token=Card(g._new_id(),cid);token._historical_guidance_spells=('CORE_CS2_029','CORE_EX1_606')
+                    self.cast(g,('cast_physical_spell',token,'random'))
+                elif cid=='EDR_259e1':
                     token=Card(g._new_id(),cid);token.stored_spell=Card(g._new_id(),'CORE_EX1_606');token.aura_duration=3
                     self.cast(g,('cast_physical_spell',token,'random'))
                 else:self.fixed(g,cid)
                 self.assertTrue(g.terminal or g.pending_frame is None)
                 self.assertIsNone(g.pending_choice)
                 self.assertEqual(g.players[0].cards_played,0)
+
+    def test_closed_historical_pools_still_reject_a_deliberate_missing_identity(self):
+        for cid in ('NX2_001','TIME_857','WON_040'):
+            with self.subTest(card=cid):
+                g=self.game()
+                # Alter Time uses this Druid's historical Arcane pool; the
+                # other generators use historical Mage/Secret membership.
+                # Remove one genuine eligible identity, without narrowing pools.
+                missing_id='AT_043' if cid=='TIME_857' else 'AT_002'
+                del g.cards[missing_id]
+                self.assert_guarded_paid_cast_rolls_back(g,cid)

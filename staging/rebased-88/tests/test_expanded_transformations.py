@@ -33,14 +33,18 @@ class TransformationTests(unittest.TestCase):
  def test_family_accounted_for_without_false_admission(self):
   from expanded.pending_definitions import DEFINITIONS
   from expanded.genn import RULES as SHARED_RULES
-  self.assertEqual(set(RULES)|set(UNRESOLVED)|set(SHARED_RULES),{cid for cid,d in DEFINITIONS.items() if d['family']=='transformation'})
-  self.assertFalse(set(SHARED_RULES)&cards.COLLECTIBLE_IDS)
-  self.assertFalse(set(RULES)&cards.COLLECTIBLE_IDS)
- def test_missing_pool_before_board_mutation(self):
+  self.assertEqual((set(RULES)|set(UNRESOLVED)|set(SHARED_RULES))-cards.COLLECTIBLE_IDS,{cid for cid,d in DEFINITIONS.items() if d['family']=='transformation'})
+  self.assertEqual(set(SHARED_RULES)&cards.COLLECTIBLE_IDS,{'CATA_615'})
+  self.assertTrue(set(RULES)<=cards.COLLECTIBLE_IDS)
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_missing_pool_before_board_mutation(self,*unused):
   m=self.g._summon(0,'CORE_CS2_188');before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.run_card('CATA_567')
   self.assertEqual(self.p.minions,[m]);self.assertEqual(before,self.g.rng.getstate())
- def test_later_member_pool_checked_before_first_transform(self):
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_later_member_pool_checked_before_first_transform(self,*unused):
   a=self.g._summon(0,'CORE_CS2_188');b=self.g._summon(0,'CORE_EX1_012');self.install(cost_pool(2),['CORE_EX1_012'])
   with self.assertRaises(UnsupportedCard):self.run_card('CATA_567')
   self.assertEqual(self.p.minions,[a,b])
@@ -51,6 +55,30 @@ class TransformationTests(unittest.TestCase):
  def test_ascendance_attaches_original_deathrattle(self):
   self.g._summon(0,'CORE_CS2_188');self.install(cost_pool(2),['CORE_EX1_012']);self.run_card('CATA_567')
   self.p.minions[0].health=0;self.g._settle();self.assertEqual([m.card_id for m in self.p.minions],['CORE_CS2_188'])
+ def test_ascendance_restores_learned_definition_then_shuffle_and_play(self):
+  from expanded.transformations import evolve_pool
+  m=self.g._summon(0,'MEND_046t');m._learned_spell='CORE_EX1_606'
+  self.install(evolve_pool(2,1),['CORE_EX1_012'])
+  self.run_card('CATA_567');self.p.minions[0].health=0;self.g._settle()
+  restored=self.p.minions[0]
+  self.assertEqual(restored.card_id,'MEND_046t')
+  self.assertEqual(restored._learned_spell,'CORE_EX1_606')
+  self.g._start_play_effects([('b60_shuffle_all',)],dict(owner=0,source=None,target=0,bonus=0,lifesteal=False))
+  self.g._settle()
+  found=[(i,c) for i,p in enumerate(self.g.players) for c in p.deck if getattr(c,'card_id',None)=='MEND_046t']
+  self.assertEqual(len(found),1);owner,card=found[0]
+  self.assertEqual(card._learned_spell,'CORE_EX1_606')
+  self.g.players[owner].deck.remove(card);self.g._enter_hand(owner,card)
+  self.g.current=owner;self.g.phase='main';self.g.players[owner].mana=10
+  action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==card.uid)
+  self.g.step(action)
+  self.assertTrue(any(e['event']=='internal_spell_cast' and e['card']=='CORE_EX1_606' for e in self.g.events))
+ def test_fresh_replay_preserves_learned_definition_not_board_buffs(self):
+  m=self.g._summon(0,'MEND_046t');m._learned_spell='CORE_EX1_606';self.g._buff(m,4,4)
+  physical=Card(self.g._new_id(),'CORE_EX1_606');m._learned_card=physical
+  fresh=self.g._fresh_replay_card(m)
+  self.assertEqual(fresh._learned_spell,'CORE_EX1_606');self.assertEqual(fresh.attack_bonus,0)
+  self.assertIsNot(fresh._learned_card,physical)
  def test_transform_not_summon_or_death(self):
   self.g._summon(0,'CORE_CS2_188');self.install(cost_pool(2),['CORE_EX1_012']);before=len(self.g.events);self.run_card('CATA_567')
   self.assertFalse(self.p.death_history);self.assertFalse(any(e['event']=='summon' for e in self.g.events[before:]))
@@ -63,7 +91,9 @@ class TransformationTests(unittest.TestCase):
   self.install(cost_pool(2),['CORE_EX1_012']);self.run_card('CATA_567');self.assertEqual(len(self.p.minions),7);self.assertTrue(all(m.card_id=='CORE_EX1_012' for m in self.p.minions))
  def test_podling_redirects_intended_cost_plus_two(self):
   m=self.g._summon(0,'EDR_529');self.install(cost_pool(4),[self.fake('FIX_FOUR',4)]);result=self.g._transform(m,'CORE_EX1_012');self.assertEqual(result.card_id,'FIX_FOUR')
- def test_podling_missing_pool_preserves_original(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_podling_missing_pool_preserves_original(self,*contracts):
   m=self.g._summon(0,'EDR_529');before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.g._transform(m,'CORE_EX1_012')
   self.assertIn(m,self.p.minions);self.assertEqual(before,self.g.rng.getstate())
@@ -85,7 +115,8 @@ class TransformationTests(unittest.TestCase):
   self.run_card('TLC_235',b.uid);self.assertEqual([m.card_id for m in self.q.minions],['CORE_CS2_188',replacement,'CORE_CS2_188']);self.assertEqual([m.uid for m in self.q.minions][::2],[a.uid,c.uid]);self.assertIn(b.card_id,self.q.death_history)
  def test_life_cycle_requires_pool_before_destroy(self):
   m=self.g._summon(1,'CORE_CS2_188')
-  with self.assertRaises(UnsupportedCard):self.run_card('TLC_235',m.uid)
+  with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+   with self.assertRaises(UnsupportedCard):self.run_card('TLC_235',m.uid)
   self.assertIn(m,self.q.minions);self.assertEqual(m.health,1)
  def test_life_cycle_empty_pool_still_destroys(self):
   m=self.g._summon(1,'CORE_CS2_188');self.install(cost_pool(1),[],1);self.run_card('TLC_235',m.uid);self.assertFalse(self.q.minions)
@@ -101,7 +132,9 @@ class TransformationTests(unittest.TestCase):
   two=self.fake('FIX_TWO',2);three=self.fake('FIX_THREE',3)
   for owner in (0,1):self.install(cost_pool(2),[two],owner)
   self.install(cost_pool(3),[three]);self.run_card('JAIL_EVENT_102');self.assertEqual([m.card_id for m in self.p.minions],[three]*2);self.assertEqual([m.card_id for m in self.q.minions],[two]*2)
- def test_bribe_missing_opponent_pool_before_summons(self):
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_bribe_missing_opponent_pool_before_summons(self,*unused):
   self.install(cost_pool(2),['CORE_EX1_012']);self.install(cost_pool(3),[])
   with self.assertRaises(UnsupportedCard):self.run_card('JAIL_EVENT_102')
   self.assertFalse(self.p.minions+self.q.minions)
@@ -112,7 +145,8 @@ class TransformationTests(unittest.TestCase):
   self.install(cost_pool(10),[]);self.install(cost_pool(1),['CORE_CS2_188']);self.run_card('TIME_859');self.assertEqual(len(self.p.minions),7)
  def test_anomalize_requires_both_pools_before_summoning(self):
   a=self.fake('FIX_TEN',10);self.install(cost_pool(10),[a])
-  with self.assertRaises(UnsupportedCard):self.run_card('TIME_859')
+  with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+   with self.assertRaises(UnsupportedCard):self.run_card('TIME_859')
   self.assertFalse(self.p.minions)
  def test_alchemist_choice_includes_every_held_type(self):
   a=self.add('CORE_CS2_188');b=self.add('CORE_CS2_029');self.install(cost_pool(6,'SPELL'),[]);self.install(cost_pool(9,'SPELL'),[]);self.run_card('JAIL_313');self.assertEqual({o['uid'] for o in self.g.pending_choice['options']},{a.uid,b.uid})
@@ -136,11 +170,15 @@ class TransformationTests(unittest.TestCase):
 
  def test_hand_podling_redirects_transform(self):
   c=self.add('EDR_529');self.install(cost_pool(4),[self.fake('FIX_FOUR',4)]);self.g._b60_transform_card(c,'CORE_EX1_012');self.assertEqual(c.card_id,'FIX_FOUR')
- def test_alarashi_checks_podling_outcomes_before_changing_hand(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_alarashi_checks_podling_outcomes_before_changing_hand(self,*contracts):
   self.add('CORE_CS2_188');self.add('EDR_529');demon=self.fake('FIX_DEMON',7,races=['DEMON']);self.install(pool(card_type='MINION',tribe='DEMON'),[demon]);before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.run_card('EDR_493')
   self.assertEqual([c.card_id for c in self.p.hand],['CORE_CS2_188','EDR_529']);self.assertEqual(before,self.g.rng.getstate())
- def test_paid_dynamic_pool_failure_rolls_back_mana_and_hand(self):
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_paid_dynamic_pool_failure_rolls_back_mana_and_hand(self,*unused):
   c=self.add('CATA_567');self.g._summon(0,'CORE_CS2_188');before=self.g.rng.getstate();mana=self.p.mana
   action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
   with self.assertRaises(UnsupportedCard):self.g.step(action)
@@ -152,7 +190,9 @@ class TransformationTests(unittest.TestCase):
  def test_tribute_copy_obeys_podling_replacement(self):
   target=self.g._summon(0,'EDR_529');model=self.g._summon(1,'CORE_EX1_012');self.install(cost_pool(4),[self.fake('FIX_FOUR',4)])
   self.g._entity_choice(dict(kind='entity_tribute',target_uid=target.uid),dict(uid=model.uid));self.assertEqual(self.p.minions[0].card_id,'FIX_FOUR')
- def test_ascendance_podling_checks_redirect_before_rng(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_ascendance_podling_checks_redirect_before_rng(self,*contracts):
   m=self.g._summon(0,'EDR_529');self.install(cost_pool(2),['CORE_EX1_012']);before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.run_card('CATA_567')
   self.assertEqual(before,self.g.rng.getstate());self.assertEqual(self.p.minions,[m])

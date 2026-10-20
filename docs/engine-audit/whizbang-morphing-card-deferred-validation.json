@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "TOY_700t13"
+  ],
+  "candidate_fingerprint": "d5f6bd470ec7e83e9bd0f1e83e2adf40ca2a08ee84de850286b4a42da40f4c08",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Initial hand entry versus draw/start timing and counterfactual legality",
+    "Printed cost bound versus full effective affordability; transformations and retained discounts"
+  ]
+}

@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 from engine.cards import UnsupportedCard
 from .generation_cards import pool, random_cards
+from .selectors import classes
 
 VALUES=json.loads(Path(__file__).with_name('herald_values.json').read_text())['values']
 SOLDIERS={'WARRIOR':'CATA_580t','DEMONHUNTER':'CATA_525t','SHAMAN':'CATA_565t',
@@ -76,7 +77,7 @@ class Herald:
         picks=choice['picks']+(selected['card_id'],)
         remaining=choice['remaining']-1
         if remaining:
-            self.pending_choice=dict(choice,picks=picks,remaining=remaining)
+            self.pending_choice=dict(choice,picks=picks,remaining=remaining,options=[o for o in choice['options'] if o['card_id']!=selected['card_id']])
             self.phase='choice'
         else:
             # Cataclysms are Battlecry operations, not spell casts or Discover.
@@ -113,19 +114,21 @@ class Herald:
         self._rule_events.append(('captured_effects',dict(operations=operations,
             context=dict(owner=m.owner,source=m,target=0,bonus=0,lifesteal=False)),[]))
 
-    def _herald(self,owner,keyword=None):
+    def _herald(self,owner,keyword=None,source_card_id=None):
         p=self.players[owner];cid=SOLDIERS.get(p.hero_class)
-        if cid is None:raise UnsupportedCard('Off-class Herald army selection requires reviewed routing')
+        if cid is None and source_card_id in self.cards:
+            armies=classes(self.cards[source_card_id])&set(SOLDIERS)
+            if len(armies)==1:cid=SOLDIERS[next(iter(armies))]
+        if cid is None:raise UnsupportedCard('Off-class Herald army selection requires reviewed routing for an ambiguous source: owner_class='+p.hero_class+' source_card_id='+str(source_card_id)+' eligible_armies='+','.join(sorted(classes(self.cards.get(source_card_id,{}))&set(SOLDIERS))))
         if self.cards.get(cid,{}).get('type')!='MINION':raise UnsupportedCard('Missing Herald Soldier: '+cid)
         self._herald_entry_preflight(owner,cid)
-        soldier=self._summon(owner,cid,entry_origin='herald',entry_site='herald.action')
-        if soldier is not None and keyword is not None:soldier.keywords.add(keyword)
+        soldier=self._summon(owner,cid,entry_origin='herald',entry_site='herald.action',entry_keywords=(keyword,) if keyword is not None else ())
         p.herald_count+=1
         self._log('herald',player=owner,count=p.herald_count,soldier=soldier.uid if soldier else None)
 
     def _herald_effect(self,op,ctx):
         name=op[0];owner=ctx['owner'];p=self.players[owner];source=ctx.get('source')
-        if name=='herald':self._herald(owner,op[1] if len(op)>1 else None)
+        if name=='herald':self._herald(owner,op[1] if len(op)>1 else None,ctx.get('card_id') or getattr(source,'card_id',None))
         elif name=='herald_deathwing_discount':p.deathwing_discount+=op[1]
         elif name=='herald_cataclysms':
             required=set(CATACLYSMS)|{'CATA_190t14','CATA_190p'}

@@ -1,0 +1,44 @@
+{
+  "status": "written_exact_source_constraints_unvalidated",
+  "candidate_fingerprint": "a3cd11e94e4e321160e42821b36342972c2a92a21d05a99771a4218cbc4f8877",
+  "historical_written": 3192,
+  "historical_remaining": 9,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "corrected_hand_orders": [
+    "DEMONHUNTER",
+    "DRUID",
+    "MAGE",
+    "PRIEST",
+    "ROGUE",
+    "SHAMAN",
+    "WARRIOR"
+  ],
+  "all_hand_orders_recorded": 13,
+  "card_slots": 104,
+  "first_edition_ids": [
+    "TOY_400t3",
+    "TOY_401t",
+    "TOY_400t7",
+    "TOY_401t2",
+    "TOY_400t6",
+    "TOY_400t4",
+    "TOY_400t5",
+    "TOY_400t8"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Eight literal first-edition metadata/name/registry checks",
+    "Thirteen source name-set and order reconciliation",
+    "Candidate inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact class/hand selection probabilities remain unresolved",
+    "Non-Demon-Hunter Core/original printings remain candidates",
+    "Pinned-client source and effect fidelity review"
+  ],
+  "new_root_admissions": 0
+}

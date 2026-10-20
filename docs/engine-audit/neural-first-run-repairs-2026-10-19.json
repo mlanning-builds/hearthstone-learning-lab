@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-19",
+  "owner_authorization": "take over and do it: configured one iteration of eight games in Jupyter",
+  "engine_fingerprint": "245c5073fdcfd14eb82e68f1185720522e15984848a4a5622b386e0183b329c5",
+  "previous_full_engine_receipt": "1835ac39c646097302be3043ff3c11885ec629f8c3ec3933e61b08f14a160a56",
+  "previous_full_receipt_validates_current_source": false,
+  "fixes": [
+    {
+      "issue": "Ascendance lost a taught Runed Treant definition; Typhoon later returned an unbound card",
+      "repair": "Keep an immutable original learned definition, restore it on Deathrattle, and carry it on physical entry/replay"
+    },
+    {
+      "issue": "Inline weapon Discover suspended lethal combat without a resumable event frame",
+      "repair": "Route weapon trigger operations through the existing captured-effects event pipeline; keep the invariant unchanged"
+    }
+  ],
+  "checks": [
+    {
+      "modules": [
+        "test_expanded_transformations",
+        "test_expanded_learned_spells"
+      ],
+      "tests": 75,
+      "success": true
+    },
+    {
+      "modules": [
+        "test_expanded_inherited_memory",
+        "test_expanded_effect_schema",
+        "test_expanded_remaining_eight_approximations"
+      ],
+      "tests": 38,
+      "success": true
+    },
+    {
+      "modules": [
+        "test_expanded_combat_resolver",
+        "test_expanded_combat_sequences",
+        "test_expanded_historical_weapons",
+        "test_expanded_weapon_identity"
+      ],
+      "tests": 36,
+      "success": true
+    },
+    {
+      "modules": [
+        "test_expanded_choice_generators",
+        "test_expanded_weapon_discover_checkpoint"
+      ],
+      "tests": 63,
+      "success": true
+    }
+  ],
+  "full_regression_after_repairs": "not run",
+  "training_run": "8917daca7a65408abf918ee8740b9dea",
+  "status": "completed",
+  "fidelity_note": "Internal regression repairs, not independently verified client behavior. Preserve the existing approximation and fidelity disclosures.",
+  "games_completed": 8,
+  "capped_games": 0,
+  "learner_samples": 588,
+  "optimizer_steps": 7,
+  "changed_parameter_tensors": 50,
+  "kl_early_stop": true,
+  "checkpoint_verified": true,
+  "checkpoint": {
+    "path": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/runs/neural_ppo/8917daca7a65408abf918ee8740b9dea/training-000001.pt",
+    "sha256": "3f3345052f5989c4d7b1701fff609fddeee52275fd9ca247eb10308b842dc9f0"
+  },
+  "playing_strength": "not established"
+}

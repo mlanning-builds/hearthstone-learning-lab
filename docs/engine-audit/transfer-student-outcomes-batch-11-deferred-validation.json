@@ -1,0 +1,57 @@
+{
+  "scope": "Timed generated spell effects, expiry and public observation state",
+  "new_unvalidated_bodies": 11,
+  "new_ids": [
+    "ETC_335",
+    "JAM_006",
+    "MAW_021",
+    "MAW_024",
+    "MAW_026",
+    "REV_504",
+    "RLK_923",
+    "TOY_808",
+    "TTN_726",
+    "TTN_830",
+    "TTN_854"
+  ],
+  "new_collectible_spell_outcomes": 11,
+  "prior_expansion_outcome_gap": 236,
+  "current_expansion_outcome_gap": 225,
+  "closed_outcome_ids": [
+    "ETC_335",
+    "JAM_006",
+    "MAW_021",
+    "MAW_024",
+    "MAW_026",
+    "REV_504",
+    "RLK_923",
+    "TOY_808",
+    "TTN_726",
+    "TTN_830",
+    "TTN_854"
+  ],
+  "candidate_fingerprint": "e0c0dc9b0d9d72bb6f830c2b57d922a0d9114f85fe0f82171eba2e27f036266c",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Owner-turn aura expiry, stacking and duration modifiers",
+    "Love Everlasting first paid spell accounting, repeated copies and no-spell expiry",
+    "Solid Alibi damage cap after modifiers, armor and redirection interactions",
+    "Tar Slick multiplicative layers, damage cap order and immunity",
+    "Dew Process normal/additional draw ordering and permanent stack order",
+    "Opponent-turn Elusive, Silence and control-change rules",
+    "Full recursive generation closure and all new behavior"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "12c6e1b8cc4eea4d6cb0e853fe63e80c36c298063db6fab9878fd641183832aa",
+  "new_card_ids": [
+    "RLK_214",
+    "RLK_214t"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "student_expansion_missing_ids": [
+    "REV_022",
+    "TOY_373",
+    "TOY_700",
+    "WW_0700"
+  ],
+  "implemented": [
+    "Opening selection of up to three canonical-distinct original-owner minions",
+    "Consumption and Soul replacement after other currently implemented opening effects and before opening draws",
+    "Per-owner physical consumed pool",
+    "Bound Soul offers remaining own minions, consumes selected reward and stops when exhausted",
+    "Stolen/generated Souls use caster pool",
+    "Owner-only consumed identities in observation and feature state"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Strict root/token schemas",
+    "Metadata hashes",
+    "Seven-expansion closure across all eleven classes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact selection weighting with duplicate physical copies",
+    "Opening timing versus anomaly/mulligan-specific effects and copied opening providers",
+    "Foreign starting insertions and missing selected minions",
+    "Quality/compiled provenance and hand burn interactions"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Souleater%27s_Scythe",
+    "https://outof.games/news/5691-souleaters-scythe-demon-hunters-first-ever-legendary-weapon-hearthstone-developer-insights-on-card-mechanics-decks-and-other-featured-notes/"
+  ]
+}

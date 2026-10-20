@@ -1,5 +1,7 @@
 """Shared explicit effects for the 200-card milestone; no rules-text execution."""
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
+from .identities import canonical_identity,identity_resolver
 from engine.game import Card
 from .selectors import has_tribe, shares_tribe, has_school, effective_tribes, TRIBES, CARD_TYPES, SCHOOLS
 from .pools import require_fixed_cards
@@ -7,7 +9,7 @@ from .pools import require_fixed_cards
 
 class BatchEffects:
     def _kindred(self,cid,owner):
-        p=self.players[owner];d=self.cards[cid]
+        p=self.players[owner];d=self._card_data(cid)
         if d['type']=='SPELL':return bool(d.get('spellSchool') and d['spellSchool'] in p.previous_schools)
         if d['type']!='MINION':return False
         kinds=effective_tribes(d)
@@ -16,23 +18,38 @@ class BatchEffects:
 
     def _recruit_from_zone(self,owner,zone_name,filters,*,position=-1,keyword=None,
                            site="batch_effects._batch_effect:name == 'summon_from_zone'"):
-        if zone_name not in ('hand','deck'):raise ValueError('Invalid summon source zone')
-        filters=self._validate_filters(filters)
-        p=self.players[owner];zone=getattr(p,zone_name)
-        choices=[i for i,card in enumerate(zone) if self._card_data(card)['type']=='MINION'
-                 and self._matches_filter(card,filters,hand_owner=owner if zone_name=='hand' else None,zone_owner=owner)]
-        if not choices or len(p.board)>=7:return None
-        card=zone.pop(self.rng.choice(choices))
-        summoned=self._summon(owner,self._card_data(card)['id'],position=position,
-            attack_bonus=getattr(card,'attack_bonus',0),health_bonus=getattr(card,'health_bonus',0),
-            entry_origin='recruit',entry_site=site,entry_zone=zone_name,entry_source=card)
-        if summoned is not None and not summoned.dormant and keyword:summoned.keywords.add(keyword)
-        self._refresh_auras()
-        self._trace_entity('recruit_initialized',summoned,owner=owner,zone=zone_name)
-        return summoned
+        return self._zone_manager.recruit_from_zone(self,owner=owner,zone_name=zone_name,filters=filters,position=position,keyword=keyword,site=site)
 
     def _card_data(self,value):
-        return self.cards[value.card_id if isinstance(value,Card) else value]
+        data=self.cards[getattr(value,'card_id',value)]
+        if hasattr(value,'_suspicious_overlay'):data=dict(data,**value._suspicious_overlay)
+        ship=getattr(value,'_historical_ship_definition',None)
+        if ship is not None:
+            from .historical_starships import BATTLECRIES
+            mechanics=set(ship['keywords'])
+            if any(cid in BATTLECRIES for cid in ship['parts']):mechanics.add('BATTLECRY')
+            return dict(data,attack=ship['attack'],health=ship['health'],mechanics=tuple(sorted(mechanics)))
+        student=getattr(value,'_historical_student_definition',None)
+        if student is not None and data['id']=='SCH_523t':return dict(data,**student)
+        jade=getattr(value,'_historical_jade_definition',None)
+        if jade is not None:return dict(data,**jade)
+        state=getattr(value,'rule_state',{})
+        if 'forge_tribes' not in state:
+            state=getattr(value,'_crafted_definition',{}).get('state',{})
+        if data['id'] not in ('CATA_470t1','ICC_828t') or 'forge_tribes' not in state:return data
+        # Compiled printed properties belong to the physical definition, so
+        # Silence and temporary hand discounts do not erase them. Never
+        # change the shared token's catalog record.
+        result=dict(data,races=tuple(state['forge_tribes']),race=None)
+        definition=getattr(value,'_crafted_definition',{})
+        if definition.get('cost') is not None:result['cost']=definition['cost']
+        stats=definition.get('stats')
+        if stats is not None:result.update(attack=stats[0],health=stats[1])
+        return result
+
+    def _event_card_data(self,event):
+        data=self.cards[event['card_id']]
+        return dict(data,races=tuple(event['printed_tribes']),race=None) if 'printed_tribes' in event else data
 
     @staticmethod
     def _set_card_cost(card,cost):
@@ -46,12 +63,18 @@ class BatchEffects:
         if key in ('attack','health') and self._card_data(value)['type']=='MINION':
             from .base_stats import base_stats
             base=base_stats(self,value,owner)[0 if key=='attack' else 1]
+        if isinstance(value,Card) and cid=='WON_144' and owner is not None and key in ('attack','health'):
+            from .historical_ritual_batches import totals
+            base+=totals(self,owner)[0 if key=='attack' else 1]
         if cid=='JAIL_501' and owner is not None and key in ('attack','health','cost') and any(c is value for c in self.players[owner].hand):base=max(1,self.players[owner].mana)
         if cid=='CATA_493' and owner is not None and key in ('attack','health'):
             base+=2*len(self.players[owner].discard_history)
         if owner is not None and key in ('attack','health') and self._is_recruit(cid):
             base+=getattr(self.players[owner],'recruit_'+key+'_bonus')
-        if not isinstance(value,Card):return base
+        if isinstance(value,Card) and key=='attack' and owner is not None:
+            from .historical_copy_batches import ZERG_IDS
+            if cid in ZERG_IDS:base+=getattr(self.players[owner],'historical_zerg_attack_bonus',0)
+        if not isinstance(value,Card):return getattr(value,'set_cost',base) if key=='cost' else base
         if key=='cost':base=getattr(value,'set_cost',base)
         bonus={'attack':'attack_bonus','health':'health_bonus','cost':'cost_delta'}.get(key)
         return max(0,base+getattr(value,bonus,0)) if bonus else base
@@ -128,7 +151,9 @@ class BatchEffects:
 
     def _clone_hand_card(self,owner,card,*,source_owner=None):
         p=self.players[owner]
-        if len(p.hand)>=10:
+        if len(p.hand)>=getattr(p,'hand_capacity',10):
+            from .historical_movements import record
+            record(self,'destroyed')
             self._log('burn_generated',player=owner,card=card.card_id);return
         clone=self._copy_card(card,source_owner=source_owner);return self._enter_hand(owner,clone)
 
@@ -148,13 +173,13 @@ class BatchEffects:
                 self._spend_corpses(owner,op[3])
                 for m in summoned:m.keywords.add(op[4])
         elif name=='held_tribe_summon':
-            if any(has_tribe(self.cards[c.card_id],op[1]) for c in p.hand):
+            if any(has_tribe(self._card_data(c),op[1]) for c in p.hand):
                 require_fixed_cards((op[2],),self.cards)
                 for _ in range(op[3]):self._summon(owner,op[2], entry_origin='effect', entry_site="batch_effects._batch_effect:name == 'held_tribe_summon'", entry_source=ctx.get('source'))
         elif name=='buff_shared_type':
             if target:
                 chosen=self._find(target)
-                selected=[m for m in p.minions if m is chosen or shares_tribe(self.cards[chosen.card_id],self.cards[m.card_id])]
+                selected=[m for m in p.minions if m is chosen or shares_tribe(self._card_data(chosen),self._card_data(m))]
                 for m in selected:self._buff(m,op[1],op[2])
         elif name=='buff_random_hand_minion':
             owners={'friendly':(owner,), 'enemy':(1-owner,), 'both':(owner,1-owner)}[op[1]]
@@ -162,14 +187,15 @@ class BatchEffects:
                 candidates=[c for c in self.players[recipient].hand if self.cards[c.card_id]['type']=='MINION']
                 if candidates:
                     card=self.rng.choice(candidates)
-                    card.attack_bonus+=op[2];card.health_bonus+=op[3]
+                    _saidan_add(card,'attack_bonus',op[2]);_saidan_add(card,'health_bonus',op[3])
         elif name=='buff_random_hand_tribe':
-            candidates=[c for c in p.hand if has_tribe(self.cards[c.card_id],op[1])]
+            candidates=[c for c in p.hand if has_tribe(self._card_data(c),op[1])]
             if candidates:
                 card=self.rng.choice(candidates)
-                card.attack_bonus+=op[2];card.health_bonus+=op[3]
+                _saidan_add(card,'attack_bonus',op[2]);_saidan_add(card,'health_bonus',op[3])
         elif name=='refresh_mana':
-            p.mana=max(p.mana,min(max(0,p.max_mana-p.locked_mana),p.mana+op[1]))
+            from .mana_accounting import refresh_permanent
+            refresh_permanent(p,op[1])
         elif name=='damage_lowest_health_enemy':
             candidates=[(self.hero_id(1-owner),q.health)]+[(m.uid,m.health) for m in q.minions]
             lowest=min(health for _,health in candidates)
@@ -186,32 +212,37 @@ class BatchEffects:
                 m.temporary_attack=0
                 m.health=m.max_health=health+m.aura_health
         elif name=='resurrect_distinct_min_cost':
-            distinct={}
+            distinct={}; canonical=identity_resolver(self.cards)
             for cid in p.death_history:
                 card=self.cards[cid]
                 if card['cost']>=op[1]:
-                    identity=card.get('countAsCopyOfDbfId',card.get('dbfId',cid))
+                    identity=canonical(card)
                     distinct.setdefault(identity,cid)
             choices=list(distinct.values());self.rng.shuffle(choices)
             for cid in choices:
                 if len(p.board)>=7:break
                 self._summon(owner,cid, entry_origin='resurrection', entry_site="batch_effects._batch_effect:name == 'resurrect_distinct_min_cost'", entry_source=ctx.get('source'))
         elif name=='resurrect_highest':
-            choices=[cid for cid in p.death_history if op[1] is None or has_tribe(self.cards[cid],op[1])]
+            from .death_definitions import definitions,cost,summon
+            choices=[value for value in definitions(self,owner) if op[1] is None or has_tribe(self._card_data(value),op[1])]
             if choices:
-                highest=max(self.cards[cid]['cost'] for cid in choices)
-                self._summon(owner,self.rng.choice([cid for cid in choices if self.cards[cid]['cost']==highest]), entry_origin='resurrection', entry_site="batch_effects._batch_effect:name == 'resurrect_highest'", entry_source=ctx.get('source'))
+                highest=max(cost(self,value) for value in choices)
+                summon(self,owner,self.rng.choice([value for value in choices if cost(self,value)==highest]),ctx,'batch_effects.resurrect_highest')
         elif name=='resurrect_costs_reborn':
-            for cost in op[1]:
-                choices=[cid for cid in p.death_history if self.cards[cid]['cost']==cost]
+            from .death_definitions import definitions,cost,summon
+            for wanted_cost in op[1]:
+                choices=[value for value in definitions(self,owner) if cost(self,value)==wanted_cost]
                 if choices:
-                    m=self._summon(owner,self.rng.choice(choices), entry_origin='resurrection', entry_site="batch_effects._batch_effect:name == 'resurrect_costs_reborn'", entry_source=ctx.get('source'))
+                    m=summon(self,owner,self.rng.choice(choices),ctx,'batch_effects.resurrect_costs_reborn')
                     if m and not m.dormant:m.keywords.add('REBORN')
         elif name=='resurrect_deathrattle_copies':
-            choices=[cid for cid in p.death_history if 'DEATHRATTLE' in self.cards[cid].get('mechanics',[]) and op[1]<=self.cards[cid]['cost']<=op[2] and (not op[3] or cid!=source.card_id)]
+            from .death_definitions import definitions,cost,summon,has_deathrattle
+            choices=[value for value in definitions(self,owner) if has_deathrattle(self,value)
+                     and op[1]<=cost(self,value)<=op[2]
+                     and (not op[3] or getattr(value,'card_id',value)!=getattr(source,'card_id',None))]
             if choices:
-                cid=self.rng.choice(choices)
-                for _ in range(2):self._summon(owner,cid, entry_origin='resurrection', entry_site="batch_effects._batch_effect:name == 'resurrect_deathrattle_copies'", entry_source=ctx.get('source'))
+                value=self.rng.choice(choices)
+                for _ in range(2):summon(self,owner,value,ctx,'batch_effects.resurrect_deathrattle_copies')
         elif name=='return_last_turn_spells':
             for cid in p.spells_previous:self._add(owner,cid)
         elif name=='summon_played_one_cost':
@@ -223,7 +254,10 @@ class BatchEffects:
         elif name=='permanent_end_damage':p.permanent_end_damage.append(op[1])
         elif name=='return_remembered_discards':
             for cid in source.remembered_discards:
-                if len(p.hand)>=10:self._log('burn_generated',player=owner,card=cid)
+                if len(p.hand)>=getattr(p,'hand_capacity',10):
+                    from .historical_movements import record
+                    record(self,'destroyed')
+                    self._log('burn_generated',player=owner,card=cid)
                 else:
                     card=Card(self._new_id(),cid);card.cost_delta=-op[1];self._enter_hand(owner,card)
             self._refresh_auras()
@@ -346,7 +380,7 @@ class BatchEffects:
                     if data['type']!='MINION' or (len(op)>4 and data.get('rarity')!=op[4]):continue
                     if not isinstance(value,Card):
                         value=Card(self._new_id(),value);cards[index]=value
-                    value.attack_bonus+=op[2];value.health_bonus+=op[3]
+                    _saidan_add(value,'attack_bonus',op[2]);_saidan_add(value,'health_bonus',op[3])
         elif name=='set_bottom_cost':
             for index in range(min(op[1],len(p.deck))):
                 value=p.deck[index]
@@ -371,27 +405,27 @@ class BatchEffects:
             drawn=[self._draw_filtered(owner,(('type','eq','MINION'),)) for _ in range(op[1])]
             if p.max_mana>=op[2]:
                 for c in drawn:
-                    if c:c.attack_bonus+=op[3];c.health_bonus+=op[4]
+                    if c:_saidan_add(c,'attack_bonus',op[3]);_saidan_add(c,'health_bonus',op[4])
         elif name=='barnabus_draw':
             c=self._draw_filtered(owner,(('type','eq','MINION'),))
-            if c and self._card_stat(c,'attack',owner)>=5:c.health_bonus+=5;self._gain_armor(owner,5)
+            if c and self._card_stat(c,'attack',owner)>=5:_saidan_add(c,'health_bonus',5);self._gain_armor(owner,5)
         elif name=='all_zone_tribe_buff':
             tribe,attack,health=op[1:]
             for c in p.hand:
-                if has_tribe(self.cards[c.card_id],tribe):c.attack_bonus+=attack;c.health_bonus+=health
+                if has_tribe(self._card_data(c),tribe):_saidan_add(c,'attack_bonus',attack);_saidan_add(c,'health_bonus',health)
             for i,v in enumerate(p.deck):
                 if has_tribe(self._card_data(v),tribe):
                     c=v if isinstance(v,Card) else Card(self._new_id(),v)
-                    c.attack_bonus+=attack;c.health_bonus+=health;p.deck[i]=c
+                    _saidan_add(c,'attack_bonus',attack);_saidan_add(c,'health_bonus',health);p.deck[i]=c
             for m in p.minions:
-                if has_tribe(self.cards[m.card_id],tribe):self._buff(m,attack,health)
+                if has_tribe(self._card_data(m),tribe):self._buff(m,attack,health)
         elif name=='top_deck_minion_buff':
             left=op[1]
             for i in range(len(p.deck)-1,-1,-1):
                 v=p.deck[i]
                 if self._card_data(v)['type']!='MINION':continue
                 c=v if isinstance(v,Card) else Card(self._new_id(),v)
-                c.attack_bonus+=op[2];c.health_bonus+=op[3];p.deck[i]=c
+                _saidan_add(c,'attack_bonus',op[2]);_saidan_add(c,'health_bonus',op[3]);p.deck[i]=c
                 left-=1
                 if not left:break
         elif name=='shuffle_matching_enemy_hand':
@@ -471,7 +505,7 @@ class BatchEffects:
                 self._clone_hand_card(owner,chosen,source_owner=1-owner)
                 self._refresh_auras()
         elif name=='copy_lowest_hand_tribe':
-            choices=[c for c in p.hand if has_tribe(self.cards[c.card_id],op[1])]
+            choices=[c for c in p.hand if has_tribe(self._card_data(c),op[1])]
             if choices:
                 cost=min(self._cost(c,owner) for c in choices)
                 self._clone_hand_card(owner,self.rng.choice([c for c in choices if self._cost(c,owner)==cost]))
@@ -482,7 +516,7 @@ class BatchEffects:
                 if not self.terminal:self._draw(other)
         elif name=='tribe_board_buff':
             for m in p.minions:
-                if has_tribe(self.cards[m.card_id],op[1]):self._buff(m,op[2],op[3])
+                if has_tribe(self._card_data(m),op[1]):self._buff(m,op[2],op[3])
         elif name=='source_health_damage':
             self._deal_effect(target,max(0,source.health),ctx)
         elif name=='source_health_heal':
@@ -590,7 +624,7 @@ class BatchEffects:
         elif name=='hand_attack_types':
             if not set(op[1]) <= {'MINION','WEAPON'}:raise ValueError('Unsupported hand Attack card type')
             for card in p.hand:
-                if self.cards[card.card_id]['type'] in op[1]:card.attack_bonus+=op[2]
+                if self.cards[card.card_id]['type'] in op[1]:_saidan_add(card,'attack_bonus',op[2])
         elif name=='if_holding':
             filters=self._validate_filters(op[1])
             if self._holding_matches(owner,filters):self._effect(op[2],ctx)
@@ -608,7 +642,7 @@ class BatchEffects:
         elif name=='tribal_damage':
             if target:
                 chosen=self._find(target);tribes=set(self.cards[chosen.card_id].get('races',[]))
-                targets=[m.uid for player in self.players for m in player.minions if m is chosen or shares_tribe(self.cards[chosen.card_id],self.cards[m.card_id])]
+                targets=[m.uid for player in self.players for m in player.minions if m is chosen or shares_tribe(self._card_data(chosen),self._card_data(m))]
                 with self._damage_batch():
                     for uid in targets:self._deal_effect(uid,op[1],ctx)
         elif name=='excess_draw':
@@ -655,6 +689,20 @@ class BatchEffects:
         elif name=='freeze_random_enemies':
             selected=self.rng.sample(q.minions,min(len(q.minions),op[1]))
             for m in selected:self._freeze(m.uid)
+        elif name=='historical_dredge_stats':
+            self._open_zone_choice(owner,owner,'deck','dredge')
+            if self.pending_choice is not None:
+                self.pending_choice['dredge_buff']=(source.attack,source.health) if source is not None else (0,0)
+        elif name=='historical_held_mech_windfury':
+            if source is not None and any(has_tribe(self._card_data(c),'MECHANICAL') for c in p.hand):
+                source.keywords.add('WINDFURY')
+        elif name=='historical_one_attack_buff':
+            targets=tuple(m for m in p.minions if m.attack==1 and m.health>0)
+            for m in targets:self._buff(m,1,1)
+        elif name=='historical_other_mech_keywords':
+            for m in p.minions:
+                if m is not source and has_tribe(self._card_data(m),'MECHANICAL'):
+                    m.keywords.update(('DIVINE_SHIELD','TAUNT'))
         elif name=='frail_ghoul':
             self._summon(owner,op[1],expires=True, entry_origin='effect', entry_site="batch_effects._batch_effect:name == 'frail_ghoul'", entry_source=ctx.get('source'))
         else:return False

@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_009"
+  ],
+  "candidate_fingerprint": "a53682f9ad567c81b32ed781113795e2b5be048f18f87d6570d36d82526dba47",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Hand end-turn upgrade timing and multiplier exclusion",
+    "Copied physical counters, fresh replay reset and area damage settlement"
+  ]
+}

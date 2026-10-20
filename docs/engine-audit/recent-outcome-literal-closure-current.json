@@ -1,0 +1,54 @@
+{
+  "scope": "Explicit literal generation operation arguments only",
+  "complete_dependency_coverage": false,
+  "checked_operations": [
+    "add",
+    "add_spell_damage",
+    "add_to_player",
+    "archmage_cast",
+    "at_current_end_add",
+    "bonus_summon",
+    "bounce_then_summon",
+    "cast_fixed_spell",
+    "choose_fixed_summon",
+    "combo_cast_fixed_spell",
+    "combo_summon",
+    "damage_then_summon_if_dead",
+    "death_summon",
+    "death_summon_group",
+    "equip",
+    "evolving_advance",
+    "fill_board_summon",
+    "force_summon_group",
+    "insert_fixed",
+    "local_enemy_summon",
+    "local_fill_enemy_coins",
+    "local_spell_treant",
+    "on_draw_shuffle",
+    "raise_corpses",
+    "store_highest_spell_aura",
+    "summon",
+    "summon_death_identity",
+    "summon_fixed_random",
+    "summon_identity_buff",
+    "summon_opponent",
+    "tomb_guardians"
+  ],
+  "roots_checked": 205,
+  "edges": 680,
+  "missing_ids": [
+    "UNG_851"
+  ],
+  "missing_paths": [
+    {
+      "root": "UNG_851",
+      "missing": "UNG_851",
+      "path": [
+        "UNG_851"
+      ]
+    }
+  ],
+  "limitation": "Dynamic pools, computed IDs, legacy/helper behavior and executable fidelity still require review.",
+  "candidate_fingerprint": "f89624c28a92e439cfa78dd928b32e1e517fe1dee69d04f6b6ea1bdcecebcb6f",
+  "runtime_validated": false
+}

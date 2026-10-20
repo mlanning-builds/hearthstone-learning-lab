@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "SCH_270"
+  ],
+  "candidate_fingerprint": "5164f2aa0e70f2f5de00eb47a70672e2a70c63046f82d0cf6602e74d03223a0a",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Spell Damage pool eligibility and stacked discount consumption",
+    "Discover continuation and next-card discount timing"
+  ]
+}

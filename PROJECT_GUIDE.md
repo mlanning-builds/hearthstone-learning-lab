@@ -1,5 +1,7 @@
 # Hearthstone learning lab
 
+For the new Transformer/PPO trainer, use [notebook 15](notebooks/15_transformer_ppo.ipynb) and the [neural training guide](docs/NEURAL_TRAINING.md). It uses fixed sourced decks and checkpoint opponents. It starts no learning until explicitly enabled by the owner. Notebook 11 remains the older linear baseline.
+
 > Current work: [all-card completion queue](docs/engine-audit/completion-queue.md) and [candidate status](staging/rebased-88/STATUS.md). Full card integration, production generation pools and independent rules validation remain unfinished.
 
 A hobby project to recreate regular Hearthstone Standard for local self-play learning and deck search. The intended scope is all 11 classes and the full pinned card pool, excluding Mercenaries and Battlegrounds. **Full Standard simulation and an all-card learning player are not finished.** No current result establishes the best Standard deck or strategy.
@@ -8,7 +10,7 @@ Current [scope ledger and shared-rule backlog](docs/engine-audit/scope-2026-09-2
 
 Run [notebook 13](notebooks/13_shared_rules_checks.ipynb) for candidate rules checks. Local validation receipts and their exact source fingerprints are recorded in the [candidate status](staging/rebased-88/STATUS.md).
 
-The latest production integrations connect Khadgar, the Gnomeregan/Silvermoon location chains, Beatrix, Azalina, Warptooth, Husk, Champion, Godfrey, Chef, the Blood Fighter bundle, Irida and Primalfin Challenger. Their independent interaction review remains provisional; staged recipes are excluded from training decks. See the [location admission evidence](docs/engine-audit/closed-admission-2026-10-06.json) and [construction/zone admission evidence](docs/engine-audit/constructed-zone-admission-2026-10-06.json).
+The latest local Standard integrations include Genn, Cursed King and Battle at the End Time (including its Tick Tock token). Inspector Murloc Holmes, Gnawing Greenfin, Submerged Map and Cultist Map are also connected. Their reviews are recorded in `docs/engine-audit/`; validation remains bound to the exact candidate fingerprint. Earlier integrations connect Khadgar, the Gnomeregan/Silvermoon location chains, Beatrix, Azalina, Warptooth, Husk, Champion, Godfrey, Chef, the Blood Fighter bundle, Irida and Primalfin Challenger. Their independent interaction review remains provisional; staged recipes are excluded from training decks. See the [location admission evidence](docs/engine-audit/closed-admission-2026-10-06.json) and [construction/zone admission evidence](docs/engine-audit/constructed-zone-admission-2026-10-06.json).
 
 A bounded candidate experiment completed eleven self-play games with eleven learning updates across all classes. Its [saved manifest](runs/candidate_training/68f0ff76cc7542a9bca40a993b6a8b32/manifest.json) records the source fingerprint and immutable checkpoints. A [ten-game deck search](runs/deck_search/7d55346e0a0742b583b4700fb3fa5451/manifest.json) exercised Beatrix and Azalina construction inputs, including a separate held-out evaluation. These archived runs precede the Blood Fighter admission and remain tied to their recorded source fingerprint. These are pipeline checks, not evidence of playing strength or deck optimality.
 
@@ -32,10 +34,8 @@ The frozen snapshot contains 1,185 collectible records at patch **36.6.0.251952*
 From this project folder:
 
 ```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m jupyterlab notebooks/09_candidate_random_validation.ipynb
+make install
+make notebook
 ```
 
 The code has been exercised locally with Python 3.9.6. The [observed environment snapshot](environment/README.md) records exact installed versions and provides a drift check; it is not yet a verified fresh-install lockfile. The simulator and validation tools use Python's standard library; JupyterLab is needed for the notebook interface. A fresh online Jupyter installation on another computer has not yet been verified. Restart the notebook kernel after code updates.
@@ -48,7 +48,8 @@ Candidate random-play validation, from the project root:
 
 ```sh
 .venv/bin/python tools/stress_candidate.py --engine-root staging/rebased-88 --seeds 1 --max-actions 500
-.venv/bin/python -m unittest discover -s tests/tools
+.venv/bin/python tools/check_without_training.py --suite supporting
+.venv/bin/python -m unittest discover -s tools/tests
 ```
 
 The complete candidate rules suite must run from the candidate folder to import the correct engine:
@@ -66,7 +67,7 @@ Run `tools/record_candidate_progress.py` from the project root after a passing c
 
 The candidate shares the frozen data through a **relative** `../../data` link. Preserve the repository layout when copying it; the candidate is not a standalone package. Snapshot provenance and data hashes live in `data/standard/manifest.json`.
 
-This folder has not been published as a repository. Remaining publication work includes a software license decision, cross-platform dependency verification (same-platform fresh installation and bounded notebook relocation checks pass), and selecting reproducible reports to distribute. The project contains Blizzard game data and is an unofficial fan experiment; a software license has not been chosen. [HearthstoneJSON documentation](https://hearthstonejson.com/docs/cards.html) describes the data source.
+An earlier source snapshot was published as `mlanning-builds/hearthstone-learning-lab`. GitHub work is now paused at the owner's request; the current continuation is local. Project source uses MIT, while third-party game data retains its original rights as described in `NOTICE`. Cross-platform dependency verification remains unfinished; same-platform fresh installation and bounded notebook relocation checks pass. This is an unofficial fan experiment. [HearthstoneJSON documentation](https://hearthstonejson.com/docs/cards.html) describes the data source.
 
 ## Historical subset experiment guide
 
@@ -150,4 +151,4 @@ global deck optimality remain unproven.
 
 Notebook `14_search_candidate_decks.ipynb` connects local deck proposals to frozen-policy evaluation. Set two training receipt paths, search and held-out seeds, neighbor/round counts, and the total game budget. The runner reserves both starting-player orders for every round and the final baseline comparison before playing. It keeps the incumbent on tied scores and withholds a completed selection if any required game is capped. Each run saves its input plan, round reports, held-out evaluation and source-bound manifest under `runs/deck_search`.
 
-The candidate also registers 229 generated-only historical identities. These are excluded from Standard decks and do not enable historical generation pools. See the [historical membership planning inventory](docs/engine-audit/historical-outcome-planning-2026-10-06.json) and [Blood Fighter admission evidence](docs/engine-audit/blood-fighter-admission-2026-10-06.json).
+The candidate also registers 289 generated-only historical identities. These are excluded from Standard decks and do not enable historical generation pools. See the [historical membership planning inventory](docs/engine-audit/historical-outcome-planning-2026-10-06.json) and [Blood Fighter admission evidence](docs/engine-audit/blood-fighter-admission-2026-10-06.json).

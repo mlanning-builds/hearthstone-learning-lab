@@ -1,4 +1,5 @@
 """Rogue Quest, reward and physical filtered-draw integration."""
+from expanded.identities import canonical_identity
 import unittest
 from unittest.mock import patch
 from expanded import Game,Action,random_deck
@@ -25,24 +26,24 @@ class DuskTests(unittest.TestCase):
     def card(self,cid,started=False):
         c=Card(self.g._new_id(),cid)
         if started:
-            c._starting_owner=0;c._starting_identity=self.g.cards[cid].get('dbfId',cid)
+            c._starting_owner=0;c._starting_identity=canonical_identity(self.g.cards[cid],self.g.cards)
         return c
 
     def test_quest_counts_events_not_number_of_cards(self):
         self.play('TLC_513')
-        self.g._record_deck_insertion(0,0,10,'shuffle')
+        self.g._record_deck_insertion(0,0,10,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(10)))
         self.assertEqual(self.p.quest['progress'],1)
-        for _ in range(4):self.g._record_deck_insertion(0,0,1,'shuffle')
+        for _ in range(4):self.g._record_deck_insertion(0,0,1,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(1)))
         self.assertIsNone(self.p.quest);self.assertEqual([c.card_id for c in self.p.hand],['TLC_513t'])
 
     def test_trade_enemy_actor_and_enemy_destination_do_not_count(self):
         self.play('TLC_513')
         for dest,actor,kind in ((0,0,'trade'),(0,1,'shuffle'),(1,0,'shuffle')):
-            self.g._record_deck_insertion(dest,actor,1,kind)
+            self.g._record_deck_insertion(dest,actor,1,kind,cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(1)))
         self.assertEqual(self.p.quest['progress'],0)
 
     def test_prior_shuffle_not_retroactive(self):
-        self.g._record_deck_insertion(0,0,1,'shuffle');self.play('TLC_513')
+        self.g._record_deck_insertion(0,0,1,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(1)));self.play('TLC_513')
         self.assertEqual(self.p.quest['progress'],0)
 
     def test_actual_multi_card_shuffle_gives_one_progress(self):
@@ -53,7 +54,7 @@ class DuskTests(unittest.TestCase):
     def test_reward_waits_for_hand_space(self):
         self.play('TLC_513')
         for _ in range(10):self.g._add(0,'TOKEN_COIN')
-        for _ in range(5):self.g._record_deck_insertion(0,0,1,'shuffle')
+        for _ in range(5):self.g._record_deck_insertion(0,0,1,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(1)))
         self.assertEqual(self.p.quest['progress'],5);self.assertEqual(len(self.p.hand),10)
         self.assertNotIn('TLC_513t',[c.card_id for c in self.p.hand])
         self.p.hand.pop();self.g._settle()
@@ -144,7 +145,7 @@ class DuskTests(unittest.TestCase):
         self.assertTrue(self.g.observe(1)['players'][0]['ninja_returns'])
         rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']))
         self.assertTrue(any('ninja_returns' in str(row) for row in rows))
-        self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertEqual(SCHEMA,'visible-action-features-v62')
 
     def test_summon_deaths_before_final_battlecry_operation_do_not_return(self):
         self.g._summon(1,'EDR_815');self.q.corpses=4
@@ -166,5 +167,5 @@ class DuskTests(unittest.TestCase):
     def test_countered_quest_never_becomes_active(self):
         self.q.secrets=[self.card('CORE_EX1_287')]
         self.play('TLC_513');self.assertIsNone(self.p.quest)
-        self.g._record_deck_insertion(0,0,10,'shuffle')
+        self.g._record_deck_insertion(0,0,10,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(10)))
         self.assertEqual(self.p.hand,[])

@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 import unittest
 from unittest.mock import patch
 import test_expanded_generation as fixtures
@@ -11,7 +12,8 @@ class DormantGenerationTests(unittest.TestCase):
     def generate(self,**mods):
         return self.g._generation_place('CS3_025','board',tuple(mods.items()),dict(owner=0))
     def test_staged_declaration_requires_pool(self):
-        self.assertNotIn('TIME_058',cards.COLLECTIBLE_IDS)
+        self.assertIn('TIME_058',cards.COLLECTIBLE_IDS)
+        self.helper.install(self.g,dg.TWO,['UNIMPLEMENTED_DORMANT_MINION'])
         with self.assertRaises(UnsupportedCard):self.helper.run_ops(self.g,dg.DEATH_EFFECTS['TIME_058'])
     def test_inactive_before_summon_event(self):
         seen=[]
@@ -46,7 +48,7 @@ class DormantGenerationTests(unittest.TestCase):
         from pathlib import Path
         from copy import deepcopy
         self.g.cards['TIME_058']=next(d for d in json.loads(Path('data/standard/cards.json').read_text()) if d['id']=='TIME_058')
-        outcome=deepcopy(self.g.cards['CS3_025']);outcome.update(id='DORMANT_TEST_OUTCOME',cost=2,dbfId=-98001)
+        outcome=thaw(self.g.cards['CS3_025']);outcome.update(id='DORMANT_TEST_OUTCOME',cost=2,dbfId=-98001)
         self.g.cards[outcome['id']]=outcome
         self.helper.install(self.g,dg.TWO,[outcome['id']])
         with patch.dict(cards.DEATH_EFFECTS,dg.DEATH_EFFECTS):

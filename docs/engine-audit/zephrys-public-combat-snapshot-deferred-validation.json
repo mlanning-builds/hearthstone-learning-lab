@@ -1,0 +1,27 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "ab7fc704ad2425706f276240256903cf118079f82bde72267d1f262c0081fb85",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Public evaluator snapshot now includes hero attack, attacks used, immunity, stealth, freeze and shield",
+    "Added used Hero Power, future Overload, visible quests and minion readiness fields",
+    "Snapshot version 2 remains detached, excludes hidden identities and exposes no live game objects"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Zephrys_the_Great"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Exact Zephrys eligibility/ranking policy and full public field parity",
+    "Runtime snapshot and evaluator integration"
+  ]
+}

@@ -1,3 +1,4 @@
+from unittest.mock import patch
 """Synthetic contracts exercise power semantics, never certify Standard pools."""
 import json
 import unittest
@@ -35,6 +36,11 @@ class ImbueGenerationPowerTests(unittest.TestCase):
         self.contract(g,pool(card_type='MINION',tribe='DRAGON',minimum=cost,maximum=cost),() if empty else (cid,),owner)
     def draw_portal(self,g,owner=0):
         g.players[owner].deck.append('EDR_445pt3');g._draw(owner);g._settle(allow_event_choices=True)
+    def test_portal_rejects_colossal_before_random_selection(self):
+        g=self.game('PALADIN',10);self.portal(g,10)
+        g.cards['DRAGON10']['mechanics']=['COLOSSAL'];before=g.rng.getstate()
+        with self.assertRaisesRegex(UnsupportedCard,'ineligible'):self.draw_portal(g)
+        self.assertEqual(g.rng.getstate(),before);self.assertFalse(g.players[0].minions)
     def test_paladin_shuffles_two_physical_portals_and_pays_once(self):
         g=self.game('PALADIN',4);old=len(g.players[0].deck);g.step(Action('power'))
         portals=[c for c in g.players[0].deck if g._card_data(c)['id']=='EDR_445pt3']
@@ -66,10 +72,12 @@ class ImbueGenerationPowerTests(unittest.TestCase):
         g=self.game('PALADIN');self.portal(g,1);c=g._enter_hand(0,Card(g._new_id(),'EDR_445pt3'))
         g.step(next(a for a in g.legal_actions() if a.kind=='play' and a.source==c.uid))
         self.assertEqual(len(g.players[0].minions),1);self.assertFalse(g.players[0].hand)
-    def test_portal_missing_pool_rolls_back_paid_draw(self):
+    @patch("expanded.generation_families.reviewed_contract",return_value=None)
+    @patch("expanded.generation_catalog.standard_contract",return_value=None)
+    def test_portal_missing_pool_rolls_back_paid_draw(self,*unused):
         g=self.game('PALADIN');g.players[0].deck=['EDR_445pt3'];c=g._enter_hand(0,Card(g._new_id(),'CORE_CS2_023'))
         before=g.observe(0);rng=g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):
+        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership contract|eligible effects not implemented'):
             g.step(next(a for a in g.legal_actions() if a.kind=='play' and a.source==c.uid))
         self.assertEqual(g.observe(0),before);self.assertEqual(g.rng.getstate(),rng)
     def test_priest_offers_one_of_each_type_after_payment(self):
@@ -92,15 +100,17 @@ class ImbueGenerationPowerTests(unittest.TestCase):
     def test_priest_single_nonempty_group(self):
         g=self.priest();self.contract(g,pool(card_type='SPELL',classes='PRIEST'),())
         g.step(Action('power'));self.assertEqual(len(g.pending_choice['options']),1)
-    def test_priest_checks_both_contracts_before_random(self):
+    @patch("expanded.generation_families.reviewed_contract",return_value=None)
+    @patch("expanded.generation_catalog.standard_contract",return_value=None)
+    def test_priest_checks_both_contracts_before_random(self,*unused):
         g=self.priest();del g._generation_pools[pool(card_type='SPELL',classes='PRIEST'),'PRIEST']
         before=g.observe(0);rng=g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):g.step(Action('power'))
+        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership contract|eligible effects not implemented'):g.step(Action('power'))
         self.assertEqual(g.observe(0),before);self.assertEqual(g.rng.getstate(),rng)
     def test_priest_choices_private_and_feature_encodable(self):
         g=self.priest();g.step(Action('power'));view=g.observe(0)
         self.assertEqual(g.observe(1)['pending_choice'],{'owner':0,'waiting':True})
-        self.assertNotIn('snapshot',json.dumps(view))
+        self.assertNotIn('"snapshot":',json.dumps(view))
         self.assertTrue(encode_decision(dict(actor=0,observation=view,actions=view['legal_actions'])))
     def test_priest_full_hand_choice_burns_result(self):
         g=self.priest();g.players[0].hand=[Card(g._new_id(),'AT_037t') for _ in range(10)]
@@ -130,9 +140,11 @@ class ImbueGenerationPowerTests(unittest.TestCase):
         g=self.rogue();g.players[0].hand=[Card(g._new_id(),'AT_037t') for _ in range(10)]
         g.step(Action('power'));g.step(Action('choose',choices=(1,)))
         self.assertEqual(len(g.players[0].hand),10);self.assertEqual(g.players[0].hero_power_uses,1)
-    def test_rogue_missing_pool_is_atomic(self):
+    @patch('expanded.generation_families.reviewed_contract',return_value=None)
+    @patch('expanded.generation_catalog.standard_contract',return_value=None)
+    def test_rogue_missing_pool_is_atomic(self,*contracts):
         g=self.game('ROGUE');before=g.observe(0);rng=g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):g.step(Action('power'))
+        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership contract|eligible effects not implemented'):g.step(Action('power'))
         self.assertEqual(g.observe(0),before);self.assertEqual(g.rng.getstate(),rng)
     def test_rogue_refresh_starts_new_rewind_budget(self):
         g=self.rogue();g.step(Action('power'));g.step(Action('choose',choices=(1,)))
@@ -140,12 +152,14 @@ class ImbueGenerationPowerTests(unittest.TestCase):
         g.step(Action('choose',choices=(0,)));self.assertEqual(g.players[0].hero_power_uses,2)
     def test_rogue_snapshot_is_not_observed(self):
         g=self.rogue();g.step(Action('power'));view=g.observe(0)
-        self.assertNotIn('snapshot',json.dumps(view));self.assertNotIn('options',g.observe(1)['pending_choice'])
+        self.assertNotIn('"snapshot":',json.dumps(view));self.assertNotIn('options',g.observe(1)['pending_choice'])
         self.assertTrue(encode_decision(dict(actor=0,observation=view,actions=view['legal_actions'])))
-    def test_rogue_free_trigger_rejects_unverified_timing(self):
-        g=self.rogue()
-        with self.assertRaisesRegex(UnsupportedCard,'conformance'):
-            g._imbue_consumer_split(('imbue_trigger_power',),dict(owner=0))
+    def test_rogue_free_trigger_generates_without_rewind_or_payment(self):
+        g=self.rogue();p=g.players[0];mana=p.mana;used=p.power_used
+        g._start_play_effects((('imbue_trigger_power',),),dict(owner=0,source=None,target=0,bonus=0,lifesteal=False))
+        g._settle(allow_event_choices=True)
+        self.assertEqual(len(p.hand),1);self.assertIsNone(g.pending_choice)
+        self.assertEqual((p.mana,p.power_used),(mana,used))
     def test_rogue_after_use_listener_runs_once_after_either_choice(self):
         for choice in (0,1):
             g=self.rogue();g._summon(0,'EDR_470');hp=g.players[0].minions[0].max_health

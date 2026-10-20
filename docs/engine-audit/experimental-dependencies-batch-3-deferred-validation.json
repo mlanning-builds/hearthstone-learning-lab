@@ -1,0 +1,27 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_234",
+    "EX1_622",
+    "SW_040"
+  ],
+  "candidate_fingerprint": "39c29c28338e775197f4bfcaa57fee1c42511f2510c887dcdbb51e92a77e6188",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Target attack threshold and target visibility",
+    "Repeated lowest-health damage, ties, Spell Damage and death processing",
+    "Complete experimental opening integration remains unfinished"
+  ]
+}

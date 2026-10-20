@@ -1,0 +1,2060 @@
+{
+  "status": "all_eleven_current_source_candidates_unvalidated",
+  "candidate_fingerprint": "4838a1cb8f89110ee30f0cb07cf90c851a7f94a437ca9dc95e5dccd845783ebf",
+  "source": "https://hearthstone.wiki.gg/wiki/Splendiferous_Whizbang",
+  "recipes": [
+    {
+      "hero_class": "DEATHKNIGHT",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Shimmer Shot",
+          "count": 2,
+          "candidate_ids": [
+            "DEEP_003"
+          ],
+          "resolved_id": "DEEP_003",
+          "written_candidates": [
+            "DEEP_003"
+          ]
+        },
+        {
+          "name": "Darkbomb",
+          "count": 1,
+          "candidate_ids": [
+            "GVG_015"
+          ],
+          "resolved_id": "GVG_015",
+          "written_candidates": [
+            "GVG_015"
+          ]
+        },
+        {
+          "name": "Fel Barrage",
+          "count": 2,
+          "candidate_ids": [
+            "SW_040"
+          ],
+          "resolved_id": "SW_040",
+          "written_candidates": [
+            "SW_040"
+          ]
+        },
+        {
+          "name": "Primordial Glyph",
+          "count": 2,
+          "candidate_ids": [
+            "UNG_941"
+          ],
+          "resolved_id": "UNG_941",
+          "written_candidates": [
+            "UNG_941"
+          ]
+        },
+        {
+          "name": "Shadowflame Suffusion",
+          "count": 2,
+          "candidate_ids": [
+            "FIR_939"
+          ],
+          "resolved_id": "FIR_939",
+          "written_candidates": [
+            "FIR_939"
+          ]
+        },
+        {
+          "name": "Thrive in the Shadows",
+          "count": 2,
+          "candidate_ids": [
+            "CS3_028",
+            "LEG_CS3_028"
+          ],
+          "resolved_id": null,
+          "written_candidates": []
+        },
+        {
+          "name": "Wild Growth",
+          "count": 2,
+          "candidate_ids": [
+            "CS2_013"
+          ],
+          "resolved_id": "CS2_013",
+          "written_candidates": [
+            "CS2_013"
+          ]
+        },
+        {
+          "name": "Consecration",
+          "count": 2,
+          "candidate_ids": [
+            "CS2_093"
+          ],
+          "resolved_id": "CS2_093",
+          "written_candidates": [
+            "CS2_093"
+          ]
+        },
+        {
+          "name": "Hellfire",
+          "count": 1,
+          "candidate_ids": [
+            "CS2_062"
+          ],
+          "resolved_id": "CS2_062",
+          "written_candidates": [
+            "CS2_062"
+          ]
+        },
+        {
+          "name": "Hagatha the Fabled",
+          "count": 1,
+          "candidate_ids": [
+            "TOY_504"
+          ],
+          "resolved_id": "TOY_504",
+          "written_candidates": [
+            "TOY_504"
+          ]
+        },
+        {
+          "name": "Inquisitive Creation",
+          "count": 2,
+          "candidate_ids": [
+            "TTN_478"
+          ],
+          "resolved_id": "TTN_478",
+          "written_candidates": [
+            "TTN_478"
+          ]
+        },
+        {
+          "name": "Multicaster",
+          "count": 2,
+          "candidate_ids": [
+            "DED_524"
+          ],
+          "resolved_id": "DED_524",
+          "written_candidates": [
+            "DED_524"
+          ]
+        },
+        {
+          "name": "Coral Keeper",
+          "count": 2,
+          "candidate_ids": [
+            "TSC_648"
+          ],
+          "resolved_id": "TSC_648",
+          "written_candidates": [
+            "TSC_648"
+          ]
+        },
+        {
+          "name": "Frosty D\u00e9cor",
+          "count": 2,
+          "candidate_ids": [
+            "VAC_305"
+          ],
+          "resolved_id": "VAC_305",
+          "written_candidates": [
+            "VAC_305"
+          ]
+        },
+        {
+          "name": "Sif",
+          "count": 1,
+          "candidate_ids": [
+            "TTN_071"
+          ],
+          "resolved_id": "TTN_071",
+          "written_candidates": [
+            "TTN_071"
+          ]
+        },
+        {
+          "name": "Razzle-Dazzler",
+          "count": 2,
+          "candidate_ids": [
+            "VAC_301"
+          ],
+          "resolved_id": "VAC_301",
+          "written_candidates": [
+            "VAC_301"
+          ]
+        },
+        {
+          "name": "Snatch and Grab",
+          "count": 2,
+          "candidate_ids": [
+            "VAC_700"
+          ],
+          "resolved_id": "VAC_700",
+          "written_candidates": [
+            "VAC_700"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Thrive in the Shadows"
+      ]
+    },
+    {
+      "hero_class": "DEMONHUNTER",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Wish",
+          "count": 3,
+          "candidate_ids": [
+            "TOY_700t9t2"
+          ],
+          "resolved_id": "TOY_700t9t2",
+          "written_candidates": [
+            "TOY_700t9t2"
+          ],
+          "implementation_fidelity": "approximate_unvalidated"
+        },
+        {
+          "name": "Illidari Studies",
+          "count": 2,
+          "candidate_ids": [
+            "YOP_001"
+          ],
+          "resolved_id": "YOP_001",
+          "written_candidates": [
+            "YOP_001"
+          ]
+        },
+        {
+          "name": "Red Card",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_644"
+          ],
+          "resolved_id": "TOY_644",
+          "written_candidates": [
+            "TOY_644"
+          ]
+        },
+        {
+          "name": "Chaos Strike",
+          "count": 2,
+          "candidate_ids": [
+            "BT_035"
+          ],
+          "resolved_id": "BT_035",
+          "written_candidates": [
+            "BT_035"
+          ]
+        },
+        {
+          "name": "Spirit of the Team",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_028"
+          ],
+          "resolved_id": "TOY_028",
+          "written_candidates": [
+            "TOY_028"
+          ]
+        },
+        {
+          "name": "Aldrachi Warblades",
+          "count": 2,
+          "candidate_ids": [
+            "BT_921"
+          ],
+          "resolved_id": "BT_921",
+          "written_candidates": [
+            "BT_921"
+          ]
+        },
+        {
+          "name": "Ci'Cigi",
+          "count": 1,
+          "candidate_ids": [
+            "TOY_913"
+          ],
+          "resolved_id": "TOY_913",
+          "written_candidates": [
+            "TOY_913"
+          ]
+        },
+        {
+          "name": "Eye Beam",
+          "count": 2,
+          "candidate_ids": [
+            "BT_801"
+          ],
+          "resolved_id": "BT_801",
+          "written_candidates": [
+            "BT_801"
+          ]
+        },
+        {
+          "name": "Ball Hog",
+          "count": 1,
+          "candidate_ids": [
+            "TOY_642"
+          ],
+          "resolved_id": "TOY_642",
+          "written_candidates": [
+            "TOY_642"
+          ]
+        },
+        {
+          "name": "Raging Felscreamer",
+          "count": 2,
+          "candidate_ids": [
+            "BT_416"
+          ],
+          "resolved_id": "BT_416",
+          "written_candidates": [
+            "BT_416"
+          ]
+        },
+        {
+          "name": "Umpire's Grasp",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_641"
+          ],
+          "resolved_id": "TOY_641",
+          "written_candidates": [
+            "TOY_641"
+          ]
+        },
+        {
+          "name": "Workshop Mishap",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_640"
+          ],
+          "resolved_id": "TOY_640",
+          "written_candidates": [
+            "TOY_640"
+          ]
+        },
+        {
+          "name": "Chaos Nova",
+          "count": 2,
+          "candidate_ids": [
+            "BT_235"
+          ],
+          "resolved_id": "BT_235",
+          "written_candidates": [
+            "BT_235"
+          ]
+        },
+        {
+          "name": "Window Shopper",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_652"
+          ],
+          "resolved_id": "TOY_652",
+          "written_candidates": [
+            "TOY_652"
+          ]
+        },
+        {
+          "name": "Illidari Inquisitor",
+          "count": 2,
+          "candidate_ids": [
+            "CS3_020"
+          ],
+          "resolved_id": "CS3_020",
+          "written_candidates": [
+            "CS3_020"
+          ]
+        },
+        {
+          "name": "Magtheridon, Unreleased",
+          "count": 1,
+          "candidate_ids": [
+            "TOY_647"
+          ],
+          "resolved_id": "TOY_647",
+          "written_candidates": [
+            "TOY_647"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": []
+    },
+    {
+      "hero_class": "DRUID",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Moment of Discovery",
+          "count": 15,
+          "candidate_ids": [
+            "TOY_700t"
+          ],
+          "resolved_id": "TOY_700t",
+          "written_candidates": [
+            "TOY_700t"
+          ]
+        },
+        {
+          "name": "The Forbidden Sequence",
+          "count": 1,
+          "candidate_ids": [
+            "TLC_460"
+          ],
+          "resolved_id": "TLC_460",
+          "written_candidates": [
+            "TLC_460"
+          ]
+        },
+        {
+          "name": "Invigorate",
+          "count": 2,
+          "candidate_ids": [
+            "WON_014"
+          ],
+          "resolved_id": "WON_014",
+          "written_candidates": [
+            "WON_014"
+          ]
+        },
+        {
+          "name": "Wild Growth",
+          "count": 2,
+          "candidate_ids": [
+            "CS2_013"
+          ],
+          "resolved_id": "CS2_013",
+          "written_candidates": [
+            "CS2_013"
+          ]
+        },
+        {
+          "name": "Overgrowth",
+          "count": 2,
+          "candidate_ids": [
+            "BT_130"
+          ],
+          "resolved_id": "BT_130",
+          "written_candidates": [
+            "BT_130"
+          ]
+        },
+        {
+          "name": "Nourish",
+          "count": 2,
+          "candidate_ids": [
+            "EX1_164"
+          ],
+          "resolved_id": "EX1_164",
+          "written_candidates": [
+            "EX1_164"
+          ]
+        },
+        {
+          "name": "Crystal Cluster",
+          "count": 1,
+          "candidate_ids": [
+            "DEEP_028"
+          ],
+          "resolved_id": "DEEP_028",
+          "written_candidates": [
+            "DEEP_028"
+          ]
+        },
+        {
+          "name": "Convoke the Spirits",
+          "count": 1,
+          "candidate_ids": [
+            "REV_365"
+          ],
+          "resolved_id": "REV_365",
+          "written_candidates": [
+            "REV_365"
+          ]
+        },
+        {
+          "name": "Eonar, the Life-Binder",
+          "count": 1,
+          "candidate_ids": [
+            "TTN_903"
+          ],
+          "resolved_id": "TTN_903",
+          "written_candidates": [
+            "TTN_903"
+          ]
+        },
+        {
+          "name": "Kun the Forgotten King",
+          "count": 1,
+          "candidate_ids": [
+            "CFM_308"
+          ],
+          "resolved_id": "CFM_308",
+          "written_candidates": [
+            "CFM_308"
+          ]
+        },
+        {
+          "name": "Ultimate Infestation",
+          "count": 1,
+          "candidate_ids": [
+            "ICC_085"
+          ],
+          "resolved_id": "ICC_085",
+          "written_candidates": [
+            "ICC_085"
+          ]
+        },
+        {
+          "name": "Yogg-Saron, Master of Fate",
+          "count": 1,
+          "candidate_ids": [
+            "DMF_004"
+          ],
+          "resolved_id": "DMF_004",
+          "written_candidates": [
+            "DMF_004"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": []
+    },
+    {
+      "hero_class": "HUNTER",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Patches the Pilot",
+          "count": 2,
+          "candidate_ids": [
+            "VAC_933"
+          ],
+          "resolved_id": "VAC_933",
+          "written_candidates": [
+            "VAC_933"
+          ]
+        },
+        {
+          "name": "Reliquary of Souls",
+          "count": 2,
+          "candidate_ids": [
+            "BT_197"
+          ],
+          "resolved_id": "BT_197",
+          "written_candidates": [
+            "BT_197"
+          ]
+        },
+        {
+          "name": "Astromancer Solarian",
+          "count": 2,
+          "candidate_ids": [
+            "BT_028"
+          ],
+          "resolved_id": "BT_028",
+          "written_candidates": [
+            "BT_028"
+          ]
+        },
+        {
+          "name": "Infinitize the Maxitude",
+          "count": 2,
+          "candidate_ids": [
+            "ETC_206"
+          ],
+          "resolved_id": "ETC_206",
+          "written_candidates": [
+            "ETC_206"
+          ]
+        },
+        {
+          "name": "Ranger Captain Alleria",
+          "count": 2,
+          "candidate_ids": [
+            "TIME_609t1"
+          ],
+          "resolved_id": "TIME_609t1",
+          "written_candidates": [
+            "TIME_609t1"
+          ]
+        },
+        {
+          "name": "Ranger General Sylvanas",
+          "count": 2,
+          "candidate_ids": [
+            "TIME_609"
+          ],
+          "resolved_id": "TIME_609",
+          "written_candidates": [
+            "TIME_609"
+          ]
+        },
+        {
+          "name": "Ranger Initiate Vereesa",
+          "count": 2,
+          "candidate_ids": [
+            "TIME_609t2"
+          ],
+          "resolved_id": "TIME_609t2",
+          "written_candidates": [
+            "TIME_609t2"
+          ]
+        },
+        {
+          "name": "Velarok Windblade",
+          "count": 2,
+          "candidate_ids": [
+            "WW_364"
+          ],
+          "resolved_id": "WW_364",
+          "written_candidates": [
+            "WW_364"
+          ]
+        },
+        {
+          "name": "Elise the Navigator",
+          "count": 2,
+          "candidate_ids": [
+            "TLC_100"
+          ],
+          "resolved_id": "TLC_100",
+          "written_candidates": [
+            "TLC_100"
+          ]
+        },
+        {
+          "name": "Emperor Thaurissan",
+          "count": 2,
+          "candidate_ids": [
+            "BRM_028"
+          ],
+          "resolved_id": "BRM_028",
+          "written_candidates": [
+            "BRM_028"
+          ]
+        },
+        {
+          "name": "Mister Mukla",
+          "count": 2,
+          "candidate_ids": [
+            "ETC_836"
+          ],
+          "resolved_id": "ETC_836",
+          "written_candidates": [
+            "ETC_836"
+          ]
+        },
+        {
+          "name": "Anachronos",
+          "count": 2,
+          "candidate_ids": [
+            "RLK_919"
+          ],
+          "resolved_id": "RLK_919",
+          "written_candidates": [
+            "RLK_919"
+          ]
+        },
+        {
+          "name": "Beastmaster Leoroxx",
+          "count": 2,
+          "candidate_ids": [
+            "BT_214"
+          ],
+          "resolved_id": "BT_214",
+          "written_candidates": [
+            "BT_214"
+          ]
+        },
+        {
+          "name": "King Krush",
+          "count": 2,
+          "candidate_ids": [
+            "EX1_543",
+            "HERO_05am_KingKrush_h"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "EX1_543"
+          ]
+        },
+        {
+          "name": "Tortolla",
+          "count": 2,
+          "candidate_ids": [
+            "EDR_471"
+          ],
+          "resolved_id": "EDR_471",
+          "written_candidates": [
+            "EDR_471"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "King Krush"
+      ]
+    },
+    {
+      "hero_class": "MAGE",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Morphing Card",
+          "count": 30,
+          "candidate_ids": [
+            "TOY_700t13"
+          ],
+          "resolved_id": "TOY_700t13",
+          "written_candidates": [
+            "TOY_700t13"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": []
+    },
+    {
+      "hero_class": "PALADIN",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Beaming Sidekick",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_191"
+          ],
+          "resolved_id": "ULD_191",
+          "written_candidates": [
+            "ULD_191"
+          ]
+        },
+        {
+          "name": "Righteous Protector",
+          "count": 1,
+          "candidate_ids": [
+            "ICC_038"
+          ],
+          "resolved_id": "ICC_038",
+          "written_candidates": [
+            "ICC_038"
+          ]
+        },
+        {
+          "name": "Sir Finley, Sea Guide",
+          "count": 1,
+          "candidate_ids": [
+            "TSC_908"
+          ],
+          "resolved_id": "TSC_908",
+          "written_candidates": [
+            "TSC_908"
+          ]
+        },
+        {
+          "name": "Crystalsmith Kangor",
+          "count": 1,
+          "candidate_ids": [
+            "BOT_236"
+          ],
+          "resolved_id": "BOT_236",
+          "written_candidates": [
+            "BOT_236"
+          ]
+        },
+        {
+          "name": "Equality",
+          "count": 1,
+          "candidate_ids": [
+            "EX1_619"
+          ],
+          "resolved_id": "EX1_619",
+          "written_candidates": [
+            "EX1_619"
+          ]
+        },
+        {
+          "name": "Flash of Light",
+          "count": 1,
+          "candidate_ids": [
+            "TRL_307"
+          ],
+          "resolved_id": "TRL_307",
+          "written_candidates": [
+            "TRL_307"
+          ]
+        },
+        {
+          "name": "Hand of A'dal",
+          "count": 1,
+          "candidate_ids": [
+            "BT_292"
+          ],
+          "resolved_id": "BT_292",
+          "written_candidates": [
+            "BT_292"
+          ]
+        },
+        {
+          "name": "Potion of Heroism",
+          "count": 1,
+          "candidate_ids": [
+            "LOOT_088"
+          ],
+          "resolved_id": "LOOT_088",
+          "written_candidates": [
+            "LOOT_088"
+          ]
+        },
+        {
+          "name": "Sir Finley of the Sands",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_500"
+          ],
+          "resolved_id": "ULD_500",
+          "written_candidates": [
+            "ULD_500"
+          ]
+        },
+        {
+          "name": "Zephrys the Great",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_003"
+          ],
+          "resolved_id": "ULD_003",
+          "written_candidates": [
+            "ULD_003"
+          ],
+          "implementation_fidelity": "approximate_unvalidated"
+        },
+        {
+          "name": "Aldor Peacekeeper",
+          "count": 1,
+          "candidate_ids": [
+            "EX1_382"
+          ],
+          "resolved_id": "EX1_382",
+          "written_candidates": [
+            "EX1_382"
+          ]
+        },
+        {
+          "name": "Brann Bronzebeard",
+          "count": 1,
+          "candidate_ids": [
+            "LOE_077"
+          ],
+          "resolved_id": "LOE_077",
+          "written_candidates": [
+            "LOE_077"
+          ]
+        },
+        {
+          "name": "Bronze Explorer",
+          "count": 1,
+          "candidate_ids": [
+            "DRG_229"
+          ],
+          "resolved_id": "DRG_229",
+          "written_candidates": [
+            "DRG_229"
+          ]
+        },
+        {
+          "name": "Consecration",
+          "count": 1,
+          "candidate_ids": [
+            "CS2_093"
+          ],
+          "resolved_id": "CS2_093",
+          "written_candidates": [
+            "CS2_093"
+          ]
+        },
+        {
+          "name": "Theldurin the Lost",
+          "count": 1,
+          "candidate_ids": [
+            "WW_815"
+          ],
+          "resolved_id": "WW_815",
+          "written_candidates": [
+            "WW_815"
+          ]
+        },
+        {
+          "name": "Truesilver Champion",
+          "count": 1,
+          "candidate_ids": [
+            "CS2_097"
+          ],
+          "resolved_id": "CS2_097",
+          "written_candidates": [
+            "CS2_097"
+          ]
+        },
+        {
+          "name": "Doctor Holli'dae",
+          "count": 1,
+          "candidate_ids": [
+            "WW_010"
+          ],
+          "resolved_id": "WW_010",
+          "written_candidates": [
+            "WW_010"
+          ]
+        },
+        {
+          "name": "Elise the Enlightened",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_139"
+          ],
+          "resolved_id": "ULD_139",
+          "written_candidates": [
+            "ULD_139"
+          ]
+        },
+        {
+          "name": "Gunslinger Kurtrus",
+          "count": 1,
+          "candidate_ids": [
+            "HERO_10ag_Kurtrus",
+            "WW_401"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "WW_401"
+          ]
+        },
+        {
+          "name": "Protect the Innocent",
+          "count": 1,
+          "candidate_ids": [
+            "AV_342"
+          ],
+          "resolved_id": "AV_342",
+          "written_candidates": [
+            "AV_342"
+          ]
+        },
+        {
+          "name": "Solemn Vigil",
+          "count": 1,
+          "candidate_ids": [
+            "BRM_001"
+          ],
+          "resolved_id": "BRM_001",
+          "written_candidates": [
+            "BRM_001"
+          ]
+        },
+        {
+          "name": "Deepminer Brann",
+          "count": 1,
+          "candidate_ids": [
+            "DEEP_020"
+          ],
+          "resolved_id": "DEEP_020",
+          "written_candidates": [
+            "DEEP_020"
+          ]
+        },
+        {
+          "name": "Reno Jackson",
+          "count": 1,
+          "candidate_ids": [
+            "LOE_011"
+          ],
+          "resolved_id": "LOE_011",
+          "written_candidates": [
+            "LOE_011"
+          ]
+        },
+        {
+          "name": "Reno the Relicologist",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_238"
+          ],
+          "resolved_id": "ULD_238",
+          "written_candidates": [
+            "ULD_238"
+          ]
+        },
+        {
+          "name": "Dinotamer Brann",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_156"
+          ],
+          "resolved_id": "ULD_156",
+          "written_candidates": [
+            "ULD_156"
+          ]
+        },
+        {
+          "name": "Elise, Badlands Savior",
+          "count": 1,
+          "candidate_ids": [
+            "WW_392"
+          ],
+          "resolved_id": "WW_392",
+          "written_candidates": [
+            "WW_392"
+          ]
+        },
+        {
+          "name": "Ragnaros, Lightlord",
+          "count": 1,
+          "candidate_ids": [
+            "OG_229"
+          ],
+          "resolved_id": "OG_229",
+          "written_candidates": [
+            "OG_229"
+          ]
+        },
+        {
+          "name": "Tirion Fordring",
+          "count": 1,
+          "candidate_ids": [
+            "EX1_383",
+            "HERO_04ay"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "EX1_383"
+          ]
+        },
+        {
+          "name": "Dragonqueen Alexstrasza",
+          "count": 1,
+          "candidate_ids": [
+            "DRG_089",
+            "HERO_06bw",
+            "HERO_08ch"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "DRG_089"
+          ]
+        },
+        {
+          "name": "The Amazing Reno",
+          "count": 1,
+          "candidate_ids": [
+            "YOD_009"
+          ],
+          "resolved_id": "YOD_009",
+          "written_candidates": [
+            "YOD_009"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Gunslinger Kurtrus",
+        "Tirion Fordring",
+        "Dragonqueen Alexstrasza"
+      ]
+    },
+    {
+      "hero_class": "PRIEST",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Astral Automaton",
+          "count": 9,
+          "candidate_ids": [
+            "TTN_401"
+          ],
+          "resolved_id": "TTN_401",
+          "written_candidates": [
+            "TTN_401"
+          ]
+        },
+        {
+          "name": "Crimson Clergy",
+          "count": 2,
+          "candidate_ids": [
+            "CS3_014"
+          ],
+          "resolved_id": "CS3_014",
+          "written_candidates": [
+            "CS3_014"
+          ]
+        },
+        {
+          "name": "Fan Club",
+          "count": 2,
+          "candidate_ids": [
+            "ETC_449"
+          ],
+          "resolved_id": "ETC_449",
+          "written_candidates": [
+            "ETC_449"
+          ]
+        },
+        {
+          "name": "Holy Smite",
+          "count": 2,
+          "candidate_ids": [
+            "CS1_130"
+          ],
+          "resolved_id": "CS1_130",
+          "written_candidates": [
+            "CS1_130"
+          ]
+        },
+        {
+          "name": "Psychic Conjurer",
+          "count": 1,
+          "candidate_ids": [
+            "EX1_193"
+          ],
+          "resolved_id": "EX1_193",
+          "written_candidates": [
+            "EX1_193"
+          ]
+        },
+        {
+          "name": "Celestial Projectionist",
+          "count": 2,
+          "candidate_ids": [
+            "TTN_742"
+          ],
+          "resolved_id": "TTN_742",
+          "written_candidates": [
+            "TTN_742"
+          ]
+        },
+        {
+          "name": "Shadow Word: Death",
+          "count": 1,
+          "candidate_ids": [
+            "EX1_622"
+          ],
+          "resolved_id": "EX1_622",
+          "written_candidates": [
+            "EX1_622"
+          ]
+        },
+        {
+          "name": "Shadow Word: Pain",
+          "count": 2,
+          "candidate_ids": [
+            "CS2_234"
+          ],
+          "resolved_id": "CS2_234",
+          "written_candidates": [
+            "CS2_234"
+          ]
+        },
+        {
+          "name": "Thrive in the Shadows",
+          "count": 2,
+          "candidate_ids": [
+            "CS3_028",
+            "LEG_CS3_028"
+          ],
+          "resolved_id": null,
+          "written_candidates": []
+        },
+        {
+          "name": "Holy Nova",
+          "count": 2,
+          "candidate_ids": [
+            "CS1_112"
+          ],
+          "resolved_id": "CS1_112",
+          "written_candidates": [
+            "CS1_112"
+          ]
+        },
+        {
+          "name": "Love Everlasting",
+          "count": 1,
+          "candidate_ids": [
+            "ETC_335"
+          ],
+          "resolved_id": "ETC_335",
+          "written_candidates": [
+            "ETC_335"
+          ]
+        },
+        {
+          "name": "Pip the Potent",
+          "count": 1,
+          "candidate_ids": [
+            "WW_394"
+          ],
+          "resolved_id": "WW_394",
+          "written_candidates": [
+            "WW_394"
+          ]
+        },
+        {
+          "name": "Zola the Gorgon",
+          "count": 1,
+          "candidate_ids": [
+            "LOOT_516"
+          ],
+          "resolved_id": "LOOT_516",
+          "written_candidates": [
+            "LOOT_516"
+          ]
+        },
+        {
+          "name": "Lightbomb",
+          "count": 2,
+          "candidate_ids": [
+            "GVG_008"
+          ],
+          "resolved_id": "GVG_008",
+          "written_candidates": [
+            "GVG_008"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Thrive in the Shadows"
+      ]
+    },
+    {
+      "hero_class": "ROGUE",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Shadowstep",
+          "count": 2,
+          "candidate_ids": [
+            "EX1_144"
+          ],
+          "resolved_id": "EX1_144",
+          "written_candidates": [
+            "EX1_144"
+          ]
+        },
+        {
+          "name": "Breakdance",
+          "count": 2,
+          "candidate_ids": [
+            "ETC_076"
+          ],
+          "resolved_id": "ETC_076",
+          "written_candidates": [
+            "ETC_076"
+          ]
+        },
+        {
+          "name": "Dig for Treasure",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_510"
+          ],
+          "resolved_id": "TOY_510",
+          "written_candidates": [
+            "TOY_510"
+          ]
+        },
+        {
+          "name": "Filletfighter",
+          "count": 2,
+          "candidate_ids": [
+            "TSC_963"
+          ],
+          "resolved_id": "TSC_963",
+          "written_candidates": [
+            "TSC_963"
+          ]
+        },
+        {
+          "name": "Patches the Pirate",
+          "count": 1,
+          "candidate_ids": [
+            "CFM_637",
+            "HERO_03ak_Patches"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "CFM_637"
+          ]
+        },
+        {
+          "name": "Swashburglar",
+          "count": 2,
+          "candidate_ids": [
+            "KAR_069"
+          ],
+          "resolved_id": "KAR_069",
+          "written_candidates": [
+            "KAR_069"
+          ]
+        },
+        {
+          "name": "Kaja'mite Creation",
+          "count": 2,
+          "candidate_ids": [
+            "TTN_925"
+          ],
+          "resolved_id": "TTN_925",
+          "written_candidates": [
+            "TTN_925"
+          ]
+        },
+        {
+          "name": "Quick Pick",
+          "count": 2,
+          "candidate_ids": [
+            "DEEP_014"
+          ],
+          "resolved_id": "DEEP_014",
+          "written_candidates": [
+            "DEEP_014"
+          ]
+        },
+        {
+          "name": "Hench-Clan Burglar",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_416"
+          ],
+          "resolved_id": "DAL_416",
+          "written_candidates": [
+            "DAL_416"
+          ]
+        },
+        {
+          "name": "Watercannon",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_522"
+          ],
+          "resolved_id": "TOY_522",
+          "written_candidates": [
+            "TOY_522"
+          ]
+        },
+        {
+          "name": "Sandbox Scoundrel",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_521"
+          ],
+          "resolved_id": "TOY_521",
+          "written_candidates": [
+            "TOY_521"
+          ]
+        },
+        {
+          "name": "Pirate Admiral Hooktusk",
+          "count": 1,
+          "candidate_ids": [
+            "TSC_934"
+          ],
+          "resolved_id": "TSC_934",
+          "written_candidates": [
+            "TSC_934"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Patches the Pirate"
+      ],
+      "treasure_setup": {
+        "count": 8,
+        "distinct": true,
+        "pool_ids": [
+          "ONY_005ta1",
+          "ONY_005ta10",
+          "ONY_005ta12",
+          "ONY_005ta13",
+          "ONY_005ta3",
+          "ONY_005ta5",
+          "ONY_005ta6",
+          "ONY_005ta7",
+          "ONY_005ta8",
+          "ONY_005ta9",
+          "ONY_005tb1",
+          "ONY_005tb12",
+          "ONY_005tb13",
+          "ONY_005tb14",
+          "ONY_005tb2",
+          "ONY_005tb4",
+          "ONY_005tb5",
+          "ONY_005tb7",
+          "ONY_005tb8",
+          "ONY_005tb9",
+          "ONY_005tc1",
+          "ONY_005tc2",
+          "ONY_005tc3",
+          "ONY_005tc5",
+          "ONY_005tc6"
+        ],
+        "excluded_ids": [
+          "ONY_005ta11",
+          "ONY_005ta2",
+          "ONY_005ta4"
+        ],
+        "selection_distribution": "not independently pinned-client certified"
+      }
+    },
+    {
+      "hero_class": "SHAMAN",
+      "deck_size": 40,
+      "starting_health": 40,
+      "entries": [
+        {
+          "name": "Lightning Bloom",
+          "count": 2,
+          "candidate_ids": [
+            "SCH_427"
+          ],
+          "resolved_id": "SCH_427",
+          "written_candidates": [
+            "SCH_427"
+          ]
+        },
+        {
+          "name": "Finders Keepers",
+          "count": 2,
+          "candidate_ids": [
+            "CFM_313"
+          ],
+          "resolved_id": "CFM_313",
+          "written_candidates": [
+            "CFM_313"
+          ]
+        },
+        {
+          "name": "Murloc Growfin",
+          "count": 2,
+          "candidate_ids": [
+            "MIS_307"
+          ],
+          "resolved_id": "MIS_307",
+          "written_candidates": [
+            "MIS_307"
+          ]
+        },
+        {
+          "name": "Overdraft",
+          "count": 2,
+          "candidate_ids": [
+            "SW_114"
+          ],
+          "resolved_id": "SW_114",
+          "written_candidates": [
+            "SW_114"
+          ]
+        },
+        {
+          "name": "Quest Accepted!",
+          "count": 1,
+          "candidate_ids": [
+            "TOY_700t14"
+          ],
+          "resolved_id": "TOY_700t14",
+          "written_candidates": [
+            "TOY_700t14"
+          ]
+        },
+        {
+          "name": "Sludge Slurper",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_433"
+          ],
+          "resolved_id": "DAL_433",
+          "written_candidates": [
+            "DAL_433"
+          ]
+        },
+        {
+          "name": "Spawnpool Forager",
+          "count": 2,
+          "candidate_ids": [
+            "BAR_751"
+          ],
+          "resolved_id": "BAR_751",
+          "written_candidates": [
+            "BAR_751"
+          ]
+        },
+        {
+          "name": "Ancestral Knowledge",
+          "count": 2,
+          "candidate_ids": [
+            "AT_053"
+          ],
+          "resolved_id": "AT_053",
+          "written_candidates": [
+            "AT_053"
+          ]
+        },
+        {
+          "name": "Primalfin Lookout",
+          "count": 2,
+          "candidate_ids": [
+            "UNG_937"
+          ],
+          "resolved_id": "UNG_937",
+          "written_candidates": [
+            "UNG_937"
+          ]
+        },
+        {
+          "name": "South Coast Chieftain",
+          "count": 2,
+          "candidate_ids": [
+            "BAR_040"
+          ],
+          "resolved_id": "BAR_040",
+          "written_candidates": [
+            "BAR_040"
+          ]
+        },
+        {
+          "name": "Call in the Finishers",
+          "count": 2,
+          "candidate_ids": [
+            "CFM_310"
+          ],
+          "resolved_id": "CFM_310",
+          "written_candidates": [
+            "CFM_310"
+          ]
+        },
+        {
+          "name": "Charged Call",
+          "count": 2,
+          "candidate_ids": [
+            "SW_035"
+          ],
+          "resolved_id": "SW_035",
+          "written_candidates": [
+            "SW_035"
+          ]
+        },
+        {
+          "name": "Clownfish",
+          "count": 2,
+          "candidate_ids": [
+            "TID_004"
+          ],
+          "resolved_id": "TID_004",
+          "written_candidates": [
+            "TID_004"
+          ]
+        },
+        {
+          "name": "Hot Spring Glider",
+          "count": 2,
+          "candidate_ids": [
+            "TLC_428"
+          ],
+          "resolved_id": "TLC_428",
+          "written_candidates": [
+            "TLC_428"
+          ]
+        },
+        {
+          "name": "Nofin Can Stop Us",
+          "count": 1,
+          "candidate_ids": [
+            "BAR_041"
+          ],
+          "resolved_id": "BAR_041",
+          "written_candidates": [
+            "BAR_041"
+          ]
+        },
+        {
+          "name": "Prince Renathal",
+          "count": 1,
+          "candidate_ids": [
+            "HERO_01w",
+            "REV_018"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "REV_018"
+          ]
+        },
+        {
+          "name": "Serpentshrine Portal",
+          "count": 2,
+          "candidate_ids": [
+            "BT_100"
+          ],
+          "resolved_id": "BT_100",
+          "written_candidates": [
+            "BT_100"
+          ]
+        },
+        {
+          "name": "Turn the Tides",
+          "count": 2,
+          "candidate_ids": [
+            "TTN_722"
+          ],
+          "resolved_id": "TTN_722",
+          "written_candidates": [
+            "TTN_722"
+          ]
+        },
+        {
+          "name": "Twin-fin Fin Twin",
+          "count": 2,
+          "candidate_ids": [
+            "TSC_960"
+          ],
+          "resolved_id": "TSC_960",
+          "written_candidates": [
+            "TSC_960"
+          ]
+        },
+        {
+          "name": "Vessina",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_173"
+          ],
+          "resolved_id": "ULD_173",
+          "written_candidates": [
+            "ULD_173"
+          ]
+        },
+        {
+          "name": "Command of Neptulon",
+          "count": 2,
+          "candidate_ids": [
+            "TID_005"
+          ],
+          "resolved_id": "TID_005",
+          "written_candidates": [
+            "TID_005"
+          ]
+        },
+        {
+          "name": "Cumulo-Maximus",
+          "count": 2,
+          "candidate_ids": [
+            "DRG_223"
+          ],
+          "resolved_id": "DRG_223",
+          "written_candidates": [
+            "DRG_223"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Prince Renathal"
+      ]
+    },
+    {
+      "hero_class": "WARLOCK",
+      "deck_size": 20,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Fracking",
+          "count": 2,
+          "candidate_ids": [
+            "WW_092"
+          ],
+          "resolved_id": "WW_092",
+          "written_candidates": [
+            "WW_092"
+          ]
+        },
+        {
+          "name": "Scarab Keychain",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_006"
+          ],
+          "resolved_id": "TOY_006",
+          "written_candidates": [
+            "TOY_006"
+          ]
+        },
+        {
+          "name": "Tar Slime",
+          "count": 2,
+          "candidate_ids": [
+            "TOY_000"
+          ],
+          "resolved_id": "TOY_000",
+          "written_candidates": [
+            "TOY_000"
+          ]
+        },
+        {
+          "name": "Blood Shard Bristleback",
+          "count": 1,
+          "candidate_ids": [
+            "BAR_916"
+          ],
+          "resolved_id": "BAR_916",
+          "written_candidates": [
+            "BAR_916"
+          ]
+        },
+        {
+          "name": "Furnace Fuel",
+          "count": 2,
+          "candidate_ids": [
+            "WW_441"
+          ],
+          "resolved_id": "WW_441",
+          "written_candidates": [
+            "WW_441"
+          ]
+        },
+        {
+          "name": "Waste Remover",
+          "count": 2,
+          "candidate_ids": [
+            "WW_042"
+          ],
+          "resolved_id": "WW_042",
+          "written_candidates": [
+            "WW_042"
+          ]
+        },
+        {
+          "name": "Neeru Fireblade",
+          "count": 1,
+          "candidate_ids": [
+            "BAR_919"
+          ],
+          "resolved_id": "BAR_919",
+          "written_candidates": [
+            "BAR_919"
+          ]
+        },
+        {
+          "name": "Rin, Orchestrator of Doom",
+          "count": 1,
+          "candidate_ids": [
+            "ETC_071"
+          ],
+          "resolved_id": "ETC_071",
+          "written_candidates": [
+            "ETC_071"
+          ]
+        },
+        {
+          "name": "Barrens Scavenger",
+          "count": 2,
+          "candidate_ids": [
+            "BAR_917"
+          ],
+          "resolved_id": "BAR_917",
+          "written_candidates": [
+            "BAR_917"
+          ]
+        },
+        {
+          "name": "Chaos Creation",
+          "count": 2,
+          "candidate_ids": [
+            "DEEP_031"
+          ],
+          "resolved_id": "DEEP_031",
+          "written_candidates": [
+            "DEEP_031"
+          ]
+        },
+        {
+          "name": "Chef Nomi",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_554"
+          ],
+          "resolved_id": "DAL_554",
+          "written_candidates": [
+            "DAL_554"
+          ]
+        },
+        {
+          "name": "Archivist Elysiana",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_736"
+          ],
+          "resolved_id": "DAL_736",
+          "written_candidates": [
+            "DAL_736"
+          ]
+        },
+        {
+          "name": "Fanottem, Lord of the Opera",
+          "count": 1,
+          "candidate_ids": [
+            "JAM_030"
+          ],
+          "resolved_id": "JAM_030",
+          "written_candidates": [
+            "JAM_030"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": []
+    },
+    {
+      "hero_class": "WARRIOR",
+      "deck_size": 30,
+      "starting_health": 30,
+      "entries": [
+        {
+          "name": "Whispers of EVIL",
+          "count": 2,
+          "candidate_ids": [
+            "DRG_301"
+          ],
+          "resolved_id": "DRG_301",
+          "written_candidates": [
+            "DRG_301"
+          ]
+        },
+        {
+          "name": "Sinister Deal",
+          "count": 2,
+          "candidate_ids": [
+            "ULD_160"
+          ],
+          "resolved_id": "ULD_160",
+          "written_candidates": [
+            "ULD_160"
+          ]
+        },
+        {
+          "name": "Togwaggle's Scheme",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_010"
+          ],
+          "resolved_id": "DAL_010",
+          "written_candidates": [
+            "DAL_010"
+          ]
+        },
+        {
+          "name": "EVIL Cable Rat",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_400"
+          ],
+          "resolved_id": "DAL_400",
+          "written_candidates": [
+            "DAL_400"
+          ]
+        },
+        {
+          "name": "EVIL Conscripter",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_413"
+          ],
+          "resolved_id": "DAL_413",
+          "written_candidates": [
+            "DAL_413"
+          ]
+        },
+        {
+          "name": "EVIL Totem",
+          "count": 2,
+          "candidate_ids": [
+            "ULD_276"
+          ],
+          "resolved_id": "ULD_276",
+          "written_candidates": [
+            "ULD_276"
+          ]
+        },
+        {
+          "name": "EVIL Miscreant",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_415"
+          ],
+          "resolved_id": "DAL_415",
+          "written_candidates": [
+            "DAL_415"
+          ]
+        },
+        {
+          "name": "EVIL Quartermaster",
+          "count": 2,
+          "candidate_ids": [
+            "DRG_020"
+          ],
+          "resolved_id": "DRG_020",
+          "written_candidates": [
+            "DRG_020"
+          ]
+        },
+        {
+          "name": "EVIL Recruiter",
+          "count": 2,
+          "candidate_ids": [
+            "ULD_162"
+          ],
+          "resolved_id": "ULD_162",
+          "written_candidates": [
+            "ULD_162"
+          ]
+        },
+        {
+          "name": "Livewire Lance",
+          "count": 2,
+          "candidate_ids": [
+            "ULD_708"
+          ],
+          "resolved_id": "ULD_708",
+          "written_candidates": [
+            "ULD_708"
+          ]
+        },
+        {
+          "name": "Madame Lazul",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_729",
+            "HERO_09b"
+          ],
+          "resolved_id": null,
+          "written_candidates": [
+            "DAL_729"
+          ]
+        },
+        {
+          "name": "Weaponized Wasp",
+          "count": 2,
+          "candidate_ids": [
+            "ULD_170"
+          ],
+          "resolved_id": "ULD_170",
+          "written_candidates": [
+            "ULD_170"
+          ]
+        },
+        {
+          "name": "Grand Lackey Erkh",
+          "count": 1,
+          "candidate_ids": [
+            "YOD_035"
+          ],
+          "resolved_id": "YOD_035",
+          "written_candidates": [
+            "YOD_035"
+          ]
+        },
+        {
+          "name": "Dark Pharaoh Tekahn",
+          "count": 1,
+          "candidate_ids": [
+            "ULD_168"
+          ],
+          "resolved_id": "ULD_168",
+          "written_candidates": [
+            "ULD_168"
+          ]
+        },
+        {
+          "name": "Hagatha's Scheme",
+          "count": 2,
+          "candidate_ids": [
+            "DAL_009"
+          ],
+          "resolved_id": "DAL_009",
+          "written_candidates": [
+            "DAL_009"
+          ]
+        },
+        {
+          "name": "Heistbaron Togwaggle",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_417"
+          ],
+          "resolved_id": "DAL_417",
+          "written_candidates": [
+            "DAL_417"
+          ]
+        },
+        {
+          "name": "Arch-Villain Rafaam",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_422"
+          ],
+          "resolved_id": "DAL_422",
+          "written_candidates": [
+            "DAL_422"
+          ]
+        },
+        {
+          "name": "Dr. Boom, Mad Genius",
+          "count": 1,
+          "candidate_ids": [
+            "BOT_238"
+          ],
+          "resolved_id": "BOT_238",
+          "written_candidates": [
+            "BOT_238"
+          ]
+        },
+        {
+          "name": "Swampqueen Hagatha",
+          "count": 1,
+          "candidate_ids": [
+            "DAL_431"
+          ],
+          "resolved_id": "DAL_431",
+          "written_candidates": [
+            "DAL_431"
+          ]
+        }
+      ],
+      "missing_unambiguous_ids": [],
+      "ambiguous_names": [
+        "Madame Lazul"
+      ],
+      "special_setup": "All seven Lackey identities cost zero this game"
+    }
+  ],
+  "missing_recipe_classes": [],
+  "notes": [
+    "Current table incorporates 34.6 changes; exact pinned-client printings remain unconfirmed",
+    "Original collectible candidate resolution does not substitute Core printings",
+    "Copycat deck was scrapped before release and is not an eligible twelfth outcome",
+    "Shaman starts with forty health; Quest Accepted has opening hand priority",
+    "No distribution inferred and no root admission"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Nine iconic-hand repeating/infection/weapon/Secret dependency definitions; unvalidated",
+  "new_dependency_definitions": 9,
+  "new_unvalidated_bodies": 9,
+  "new_ids": [
+    "CORE_KAR_004",
+    "ICC_041",
+    "KAR_004",
+    "KAR_004a",
+    "LOOT_392",
+    "LOOT_420",
+    "RLK_730",
+    "YOP_011",
+    "YOP_011t"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "434d55adfd4f3f3a44d086fac9a0c7a91ee1101350c0e1825a17318ecfee3305",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan",
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Nine new dependencies: Defile, Blood Boil, Twig, Skull, both Judgment forms, both Cat Trick printings and Panther",
+    "Defile reuses resumable death-sensitive area loop; actual recast bookkeeping and dynamic Spell Damage require deferred client review",
+    "Blood Boil physical target marks survive control changes and are removed by Silence; repeated infections, trigger order, Lifesteal and end-trigger multipliers remain unvalidated",
+    "Skull checks physical equipped weapon before hand recruitment; full-board, death, and start-trigger timing need deferred review",
+    "Judgment uses native Corrupt transformation, Libram discount and printed Lifesteal; Twig uses frozen refresh text",
+    "Harth, Rexxar and remaining source roots still gated; no gameplay/regressions/training run"
+  ]
+}

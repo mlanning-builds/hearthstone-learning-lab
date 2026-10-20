@@ -1,0 +1,42 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "9e99157f93bf52c86a6c5e129f0c809cb48cec59c6d4b2d7804419d50ce05e7a",
+  "new_definitions": 4,
+  "card_ids": [
+    "UNG_024",
+    "UNG_061",
+    "UNG_916",
+    "UNG_929"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "elise_unwritten_after": 3,
+  "elise_unwritten_ids": [
+    "UNG_111",
+    "UNG_832",
+    "UNG_851"
+  ],
+  "implemented": [
+    "Mana Bind copies the actual physical opponent spell at native before-spell Secret priority and sets cost zero",
+    "Stampede stacks turn-scoped grants and adds a random Beast for each Beast played",
+    "Obsidian Shard uses already recorded non-Rogue-class hand additions for dynamic cost",
+    "Molten Blade preserves physical held-card identity through full weapon-pool transformation each turn"
+  ],
+  "checks": [
+    "AST parsing",
+    "Strict root declaration schemas",
+    "Static native handler bindings",
+    "Metadata hashes and inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Secret Counterspell order, copied spell enchantments and hand burns",
+    "Stampede source Beast identity and simultaneous play event interactions",
+    "Obsidian Shard hand-entry counting and cost modifier ordering",
+    "Molten Blade buffs, copies, returned cards and full generated weapon behavior"
+  ]
+}

@@ -1,11 +1,25 @@
 import importlib.util
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 spec=importlib.util.spec_from_file_location('completion_queue',Path(__file__).resolve().parents[1]/'build_completion_queue.py')
 queue=importlib.util.module_from_spec(spec);spec.loader.exec_module(queue)
 
 class CompletionQueueTests(unittest.TestCase):
+ def assert_registered_families(self,module_names):
+  import importlib,json
+  root=Path(__file__).resolve().parents[2]/'staging/rebased-88'
+  report=queue.build(root);pending={row['card_id'] for row in report['cards']}
+  from expanded.cards import COLLECTIBLE_IDS
+  gaps=json.loads((root/'expanded/fidelity_gaps.json').read_text())['gaps']
+  self.assertTrue(any(g['id']=='large_recipe_registration_scope' and g['status']=='incomplete' for g in gaps))
+  for name in module_names:
+   with self.subTest(family=name):
+    rules=importlib.import_module('expanded.'+name).RULES
+    self.assertTrue(rules);self.assertTrue(set(rules)<=COLLECTIBLE_IDS)
+    self.assertFalse(set(rules)&pending)
+
  def test_cycle_is_one_group(self):
   self.assertEqual(queue.components({'a':{'b'},'b':{'a'},'c':set()}),[['a','b'],['c']])
  def test_no_cycle_in_dependency_chain(self):
@@ -31,113 +45,62 @@ class CompletionQueueTests(unittest.TestCase):
   self.assertEqual(len(ids),len(set(ids)));self.assertEqual(len(ids),r['remaining_collectibles'])
   self.assertEqual(r['live_collectibles']+len(ids),r['catalog_size'])
   self.assertEqual(sum(row['remaining'] for row in r['family_queue']),len(ids))
-  self.assertTrue(all(row['blockers'] for row in r['cards']))
-  dark=next(row for row in r['family_queue'] if row['family']=='dark_gift')
-  self.assertEqual(dark['staged_runtime_declarations'],dark['remaining'])
+  self.assertTrue(all(row['blockers'] and row['unresolved'] for row in r['cards']))
 
  def test_new_shared_systems_remain_review_gated(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  rows={row['card_id']:row for row in r['cards']}
-  from expanded import evolving_locations,temporary_control,zone_triggers,starting_rules
-  from expanded.cards import COLLECTIBLE_IDS
-  for cid in (set(evolving_locations.RULES)|set(temporary_control.RULES)|set(zone_triggers.RULES)|set(starting_rules.STAGED_RULES)) - COLLECTIBLE_IDS:
-   self.assertTrue(rows[cid]['runtime_declaration_present'])
-   self.assertIn('integration_validation',rows[cid]['blockers'])
-   self.assertNotIn('runtime_declaration_missing',rows[cid]['blockers'])
-  for cid,stages in evolving_locations.TIMELINES.items():
-   if cid in rows:self.assertTrue(set(stages)<=set(rows[cid]['explicit_references']))
-  self.assertIn('CATA_527t2',rows['CATA_527']['explicit_references'])
-  requests=rows['CATA_527']['candidate_pool_contexts']
-  self.assertTrue(any(r['selector'].get('excluded_mechanic')=='COLOSSAL' for r in requests))
+  self.assert_registered_families(('evolving_locations','temporary_control','zone_triggers'))
 
  def test_stored_families_have_runtime_and_review_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  rows={row['card_id']:row for row in r['cards']}
-  from expanded.cards import COLLECTIBLE_IDS
-  for cid in set(('MEND_046','MEND_100','TIME_704','JAIL_719','TIME_861')) - COLLECTIBLE_IDS:
-   self.assertTrue(rows[cid]['runtime_declaration_present']);self.assertIn('integration_validation',rows[cid]['blockers'])
-  for cid in ('MEND_046','MEND_100','TIME_704'):self.assertIn(cid+'t',rows[cid]['explicit_references'])
-  for family in ('stored_cards','stored_spells'):
-   row=next(x for x in r['family_queue'] if x['family']==family);self.assertEqual(row['remaining'],row['staged_runtime_declarations'])
+  self.assert_registered_families(('learned_spells','stored_obligations'))
 
  def test_transformation_runtime_and_exception_accounting(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  family=next(row for row in r['family_queue'] if row['family']=='transformation')
-  self.assertEqual(family['remaining'],14);self.assertEqual(family['staged_runtime_declarations'],14)
-  rows=[row for row in r['cards'] if row['family']=='transformation']
-  self.assertTrue(all('transformation_pool_and_interaction_review' in row['blockers'] for row in rows if row['runtime_declaration_present']))
-  self.assertTrue(all(row['unresolved'] for row in rows if not row['runtime_declaration_present']))
+  self.assert_registered_families(('transformations',))
 
  def test_rewind_runtime_and_explicit_keyword_dependencies(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  family=next(row for row in r['family_queue'] if row['family']=='rewind')
-  self.assertEqual(family['remaining'],12);self.assertEqual(family['staged_runtime_declarations'],12)
-  machine=next(row for row in r['cards'] if row['card_id']=='TIME_035')
-  self.assertIn('TIME_038',machine['missing_candidate_collectibles']);self.assertNotIn('TIME_035',machine['missing_candidate_collectibles'])
-  morchie=next(row for row in r['cards'] if row['card_id']=='END_036');self.assertTrue(morchie['runtime_declaration_present']);self.assertIn('rewind_pool_and_interaction_review',morchie['blockers'])
+  self.assert_registered_families(('rewind_generators','morchie'))
+  from expanded.rewind_generators import DEATH_EFFECTS
+  self.assertTrue(DEATH_EFFECTS['TIME_035'])
 
  def test_all_imbue_consumers_staged_with_class_power_gate(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  family=next(row for row in r['family_queue'] if row['family']=='imbue');self.assertEqual(family['remaining'],19);self.assertEqual(family['staged_runtime_declarations'],19)
-  self.assertTrue(all('imbue_class_powers_pool_and_interaction_review' in row['blockers'] for row in r['cards'] if row['family']=='imbue'))
+  self.assert_registered_families(('imbue_consumers',))
 
  def test_rune_selector_normalizes_and_remains_explicit(self):
   result,unknown=queue.selector_request({'rune':'BLOOD'},lambda **kw:kw)
   self.assertEqual(result,dict(rune='blood'));self.assertFalse(unknown)
 
  def test_33_choice_generation_declarations_keep_review_gate(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
+  self.assert_registered_families(('choice_generators',))
   from expanded.choice_generators import RULES
-  rows={row['card_id']:row for row in r['cards']}
   self.assertEqual(len(RULES),33)
-  self.assertTrue(all(rows[c]['runtime_declaration_present'] for c in RULES))
-  self.assertTrue(all('choice_generation_pool_and_interaction_review' in rows[c]['blockers'] for c in RULES))
-  self.assertTrue(any(p['selector']['rune']=='blood' for p in rows['CORE_RLK_066']['candidate_pool_contexts']))
 
  def test_historical_selector_remains_explicit(self):
   result,unknown=queue.selector_request({'era':'past'},lambda **kw:kw)
   self.assertEqual(result,dict(era='past'));self.assertFalse(unknown)
 
  def test_historical_and_health_declarations_keep_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  from expanded import historical_generation as hg, health_generation as hp
-  rows={row['card_id']:row for row in r['cards']}
-  for cid in hg.RULES:
-   self.assertTrue(rows[cid]['runtime_declaration_present'])
-   self.assertIn('historical_membership_and_behavior_review',rows[cid]['blockers'])
-   self.assertTrue(rows[cid]['unresolved'])
-  for cid in hp.RULES:
-   self.assertTrue(rows[cid]['runtime_declaration_present'])
-   self.assertIn('health_payment_generation_review',rows[cid]['blockers'])
+  self.assert_registered_families(('historical_generation','health_generation'))
+  from expanded.historical_generation_catalog import load_universe,historical_contract
+  from expanded.generation_cards import pool
+  from expanded.cards import registry
+  contract=historical_contract(pool(era='past',card_type='MINION'),'MAGE',load_universe())
+  self.assertTrue(contract.card_ids)
+  self.assertFalse(set(contract.card_ids)-registry().keys())
 
  def test_generation_families_have_bodies_but_keep_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  for family in ('generation','discover','leyline','map'):
-   row=next(row for row in r['family_queue'] if row['family']==family)
-   self.assertEqual(row['remaining'],row['staged_runtime_declarations'])
-  self.assertNotIn('TLC_479',[row['card_id'] for row in r['cards']])
+  self.assert_registered_families(('generation_cards','generation_extensions','leylines','maps'))
 
  def test_automatic_casting_bodies_and_exceptions(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  family=next(row for row in r['family_queue'] if row['family']=='automatic_casting')
-  self.assertEqual((family['remaining'],family['staged_runtime_declarations']),(7,7))
-  rows=[row for row in r['cards'] if row['family']=='automatic_casting']
-  self.assertTrue(all('automatic_cast_pool_and_interaction_review' in row['blockers'] for row in rows if row['runtime_declaration_present'] and row['card_id']!='TIME_009'))
-  self.assertTrue(all(row['unresolved'] for row in rows if not row['runtime_declaration_present']))
+  self.assert_registered_families(('automatic_casting',))
+  from expanded.cards import COLLECTIBLE_IDS
+  self.assertIn('FIR_959',COLLECTIBLE_IDS)
 
  def test_dynamic_transformation_cost_dependencies_are_visible(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  rows={row['card_id']:row for row in r['cards']}
-  for cid in ('CATA_567','EDR_529','TLC_235'):
-   self.assertTrue(rows[cid]['unresolved']);self.assertIn('CATA_139',rows[cid]['missing_candidate_collectibles'])
+  request,unknown=queue.selector_request({'type':'MINION','cost':('target_cost',1)},lambda **kw:kw)
+  self.assertIsNone(request);self.assertEqual(unknown,['cost'])
+  self.assert_registered_families(('transformations',))
 
  def test_future_summon_families_have_all_bodies_with_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  for family in ('animal_companion','void_soul'):
-   row=next(row for row in r['family_queue'] if row['family']==family)
-   self.assertEqual(row['remaining'],3 if family=='animal_companion' else 4)
-   self.assertEqual(row['remaining'],row['staged_runtime_declarations'])
-   self.assertTrue(all('future_summon_pool_and_scaling_review' in c['blockers'] for c in r['cards'] if c['family']==family))
+  self.assert_registered_families(('future_summons',))
 
  def test_colossal_entry_layouts_expose_tokens_without_completion_credit(self):
   root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
@@ -145,31 +108,25 @@ class CompletionQueueTests(unittest.TestCase):
   from expanded.colossal_bodies import RULES as BODY_RULES
   rows={row['card_id']:row for row in r['cards']}
   for cid,layout in LAYOUTS.items():
+   if cid not in rows:continue
    row=rows[cid]
    self.assertEqual(row['runtime_declaration_present'],cid in BODY_RULES)
    self.assertTrue({limb for limb,side in layout}<=set(row['explicit_references']))
    self.assertIn('colossal_body_pool_and_order_review' if cid in BODY_RULES else 'colossal_entry_only_body_and_limb_abilities_pending',row['blockers'])
 
  def test_herald_sources_have_bodies_but_keep_review_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  from expanded.herald import RULES,SOLDIERS,UNRESOLVED
-  rows={row['card_id']:row for row in r['cards']}
-  family=next(row for row in r['family_queue'] if row['family']=='herald')
-  self.assertEqual((family['remaining'],family['staged_runtime_declarations']),(15,15))
-  for cid in RULES:
-   self.assertTrue(rows[cid]['runtime_declaration_present'])
-   self.assertIn('herald_army_timing_offclass_and_pool_review',rows[cid]['blockers'])
-   if cid!='CATA_190h':self.assertTrue(set(SOLDIERS.values())<=set(rows[cid]['explicit_references']))
-  for cid in UNRESOLVED:
-   self.assertFalse(rows[cid]['runtime_declaration_present']);self.assertTrue(rows[cid]['unresolved'])
+  self.assert_registered_families(('herald',))
+  from expanded.herald import SOLDIERS
+  from expanded.cards import registry
+  self.assertTrue(set(SOLDIERS.values())<=registry().keys())
 
  def test_all_colossal_bodies_have_runtime_but_keep_review_gates(self):
-  root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  family=next(row for row in r['family_queue'] if row['family']=='colossal')
-  self.assertEqual((family['remaining'],family['staged_runtime_declarations']),(11,11))
-  rows={row['card_id']:row for row in r['cards']}
-  for cid in ('CATA_154','CATA_300'):
-   self.assertTrue(rows[cid]['runtime_declaration_present']);self.assertIn('colossal_body_pool_and_order_review',rows[cid]['blockers'])
+  self.assert_registered_families(('colossal_bodies',))
+  from expanded.colossals import LAYOUTS
+  from expanded.cards import registry
+  records=registry()
+  for cid in ('CATA_153','CATA_154','CATA_155','CATA_488'):
+   self.assertTrue({limb for limb,side in LAYOUTS[cid]}<=records.keys())
 
  def test_fabled_runtime_keeps_companion_and_review_dependencies(self):
   root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
@@ -180,30 +137,28 @@ class CompletionQueueTests(unittest.TestCase):
    self.assertTrue(rows[cid]['runtime_declaration_present'])
    self.assertTrue(set(BUNDLES[cid])<=set(rows[cid]['explicit_references']))
    self.assertIn('fabled_bundle_effects_and_interactions_review',rows[cid]['blockers'])
-  self.assertIn('TIME_005t9t',rows['TIME_005']['explicit_references'])
-  self.assertTrue({'TIME_020t5','TIME_020t5t'}<=set(rows['TIME_020']['explicit_references']))
-  self.assertTrue({'TIME_009t1','TIME_009t2','EDR_259e1'}<=set(rows['TIME_009']['explicit_references']))
-  self.assertTrue(rows['TIME_209']['runtime_declaration_present'])
+  from expanded.cards import TOKEN_IDS,PLAYABLE_TOKENS
+  self.assertTrue({'TIME_005','TIME_020','TIME_209'}<=COLLECTIBLE_IDS)
+  self.assertTrue({'TIME_005t9t','TIME_020t5','TIME_020t5t'}<=TOKEN_IDS & PLAYABLE_TOKENS)
+  self.assertNotIn('TIME_009',rows)
+  self.assertIn('TIME_009',COLLECTIBLE_IDS)
+  self.assertTrue({'TIME_009t1','TIME_009t2'}<=TOKEN_IDS & PLAYABLE_TOKENS)
+  self.assertNotIn('TIME_209',rows)
 
- def test_compound_quest_keeps_all_reward_dependencies(self):
+ def test_integrated_compound_quest_and_rewards_leave_pending_queue(self):
   root=Path(__file__).resolve().parents[2]/'staging/rebased-88';r=queue.build(root)
-  row=next(c for c in r['cards'] if c['card_id']=='TLC_817')
-  self.assertTrue(row['runtime_declaration_present'])
-  self.assertTrue({'TLC_817t','TLC_817t2','TLC_817t3','TLC_817t4','TLC_817t5'}<=set(row['explicit_references']))
-  self.assertIn('compound_quest_reward_review',row['blockers'])
+  from expanded.cards import COLLECTIBLE_IDS,TOKEN_IDS,PLAYABLE_TOKENS
+  self.assertNotIn('TLC_817',{c['card_id'] for c in r['cards']});self.assertIn('TLC_817',COLLECTIBLE_IDS)
+  self.assertTrue({'TLC_817t','TLC_817t2','TLC_817t3','TLC_817t4','TLC_817t5'}<=TOKEN_IDS & PLAYABLE_TOKENS)
 
- def test_final_paths_do_not_admit_incomplete_contracts(self):
+ def test_completed_final_paths_leave_pending_queue(self):
   root=Path(__file__).resolve().parents[2]/'staging/rebased-88';report=queue.build(root)
   rows={r['card_id']:r for r in report['cards']}
-  self.assertTrue(all(r['runtime_declaration_present'] for r in rows.values()))
   from expanded.cards import COLLECTIBLE_IDS
   self.assertEqual(report['live_collectibles'],len(COLLECTIBLE_IDS))
   self.assertEqual(report['live_collectibles']+report['remaining_collectibles'],1185)
-  self.assertTrue({'JAIL_397','JAIL_430','JAIL_421','TIME_618','TIME_850','JAIL_719','TLC_251'}<=COLLECTIBLE_IDS)
-  for cid in ('CATA_470','TLC_EVENT_400','CORE_WON_145','JAIL_EVENT_100','FIR_959'):
-   self.assertIn('incomplete_runtime_or_production_contract',rows[cid]['blockers'])
-   self.assertTrue(rows[cid]['unresolved'])
-
+  self.assertFalse(rows)
+  self.assertTrue({'CATA_470','TLC_EVENT_400','CORE_WON_145'}<=COLLECTIBLE_IDS)
 
 class RuntimeBindingTests(unittest.TestCase):
  def report(self):
@@ -214,6 +169,7 @@ class RuntimeBindingTests(unittest.TestCase):
   from expanded.colossals import LAYOUTS
   from expanded.cards import COLLECTIBLE_IDS
   for cid,layout in LAYOUTS.items():
+   if cid not in rows:continue
    row=rows[cid]
    mapped=next(m for m in row['mapped_dependencies'] if m['operation']=='summon_appendages_by_dependency')
    self.assertEqual(mapped['card_ids'],[limb for limb,side in layout])
@@ -225,21 +181,63 @@ class RuntimeBindingTests(unittest.TestCase):
 
  def test_named_tokens_have_exact_runtime_bindings_and_stay_staged(self):
   rows={r['card_id']:r for r in self.report()['cards']}
-  for cid,expected in (('CATA_561',{'CATA_561t'}),('CATA_615',{'CATA_615t'}),('JAIL_443',{'JAIL_443t'})):
-   mapped={c for m in rows[cid]['mapped_dependencies'] for c in m['card_ids']}
-   self.assertEqual(mapped,expected)
-   self.assertTrue(expected<=set(rows[cid]['explicit_references']))
-   self.assertIn('recipe_behavior_review',rows[cid]['blockers'])
+  from expanded.cards import COLLECTIBLE_IDS,registry
+  self.assertIn('JAIL_443',COLLECTIBLE_IDS);self.assertNotIn('JAIL_443',rows)
+  self.assertIn('JAIL_443t',registry())
+  self.assertIn('CATA_561',COLLECTIBLE_IDS);self.assertNotIn('CATA_561',rows)
+  self.assertIn('CATA_561t',registry())
 
- def test_unmapped_tokens_and_historical_pool_gates_remain_unresolved(self):
+ def test_closed_genn_family_is_removed_from_pending_queue(self):
   rows={r['card_id']:r for r in self.report()['cards']}
-  self.assertTrue(any(u['operation']=='shuffle_token_by_dependency' for u in rows['JAIL_879']['unresolved']))
-  self.assertTrue(any(u['operation']=='historical_generation' for u in rows['END_027']['unresolved']))
+  from expanded.cards import COLLECTIBLE_IDS,registry
+  from expanded.genn import POWERS
+  self.assertNotIn('CATA_615',rows);self.assertIn('CATA_615',COLLECTIBLE_IDS)
+  records=registry()
+  self.assertTrue({'CATA_615t','AT_132_ROGUEt',*POWERS.values()}<=set(records))
 
- def test_compound_quest_rewards_are_bound_to_their_distinct_halves(self):
-  row=next(r for r in self.report()['cards'] if r['card_id']=='TLC_817')
-  mapped=[m for m in row['mapped_dependencies'] if m['operation']=='add_reward_by_dependency']
-  self.assertEqual([m['card_ids'] for m in mapped],[['TLC_817t3'],['TLC_817t4']])
-  self.assertTrue(all(not m['interaction_review_complete'] for m in mapped))
-  self.assertIn('compound_quest_reward_review',row['blockers'])
-  self.assertIn('integration_validation',row['blockers'])
+ def test_historical_pool_does_not_shrink_when_runtime_identity_is_missing(self):
+  from expanded.cards import registry,on_draw_cards
+  from expanded.historical_generation_catalog import load_universe,historical_contract
+  from expanded.generation_cards import pool
+  records=registry()
+  self.assertIn('JAIL_879t',records);self.assertTrue(on_draw_cards.CAST_EFFECTS['JAIL_879t'])
+  self.assertIn('END_027',records)
+  contract=historical_contract(pool(era='past',card_type='MINION',tribe='DRAGON',classes='own_or_neutral'),'MAGE',load_universe())
+  self.assertTrue(contract.card_ids)
+  self.assertFalse(set(contract.card_ids)-records.keys())
+  # Completed production pools should pass. Inject a real missing identity
+  # to retain the negative audit case without requiring an unfinished engine.
+  victim=next(cid for cid in contract.card_ids if 'COLOSSAL' not in records[cid].get('mechanics',()))
+  with patch('expanded.cards.registry',return_value={cid:c for cid,c in records.items() if cid!=victim}):
+   report=self.report()
+  self.assertIn(victim,report['historical_generation']['unwritten_card_ids'])
+  self.assertIn(victim,contract.card_ids)
+
+ def test_compound_quest_rewards_keep_distinct_live_rules(self):
+  from expanded.cards import RULES,DEATH_EFFECTS
+  self.assertEqual(RULES['TLC_817t3'][1],[('copy_self_right',1)])
+  self.assertEqual(RULES['TLC_817t4'][1],[])
+  self.assertEqual(DEATH_EFFECTS['TLC_817t4'],[('soletos_damage',)])
+
+
+class HistoricalScopeTests(unittest.TestCase):
+ def test_standard_registration_count_cannot_hide_historical_backlog(self):
+  root=Path(__file__).resolve().parents[2]/'staging/rebased-88'
+  from expanded.cards import registry
+  from expanded.historical_generation import requests_for
+  from expanded.historical_generation_catalog import historical_contract,load_universe
+  request,=requests_for('TIME_052')
+  contract=historical_contract(request,'DEATHKNIGHT',load_universe())
+  records=registry();victim=contract.card_ids[0]
+  with patch('expanded.cards.registry',return_value={cid:c for cid,c in records.items() if cid!=victim}):
+   report=queue.build(root)
+  history=report['historical_generation']
+  self.assertEqual(history['unwritten_card_ids'],[victim])
+  self.assertEqual(history['eligible_minions'],len(contract.card_ids))
+  self.assertGreater(history['unwritten_minions'],report['remaining_collectibles'])
+  self.assertEqual(history['written_minions']+history['unwritten_minions'],history['eligible_minions'])
+  self.assertEqual(len(history['unwritten_card_ids']),history['unwritten_minions'])
+  self.assertFalse(history['recursive_closure_verified'])
+  self.assertIn(str(history['unwritten_minions']),queue.markdown(report))
+ def test_missing_historical_measurement_is_not_reported_as_zero(self):
+  self.assertIn('not been measured',queue.historical_summary({}))

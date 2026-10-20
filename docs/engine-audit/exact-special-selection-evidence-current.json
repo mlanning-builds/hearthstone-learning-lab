@@ -1,0 +1,119 @@
+{
+  "status": "exact_fidelity_unresolved_runtime_approximations_authorized_and_written",
+  "date": "2026-10-16",
+  "candidate_fingerprint": "1f27a003aad0b50217c9407bfb04365e8cf4afc86662c53b1451cb9e400a3ae3",
+  "historical_written": 3201,
+  "historical_remaining": 0,
+  "standard_written": 1185,
+  "standard_remaining": 0,
+  "cards": [
+    {
+      "card_id": "BOT_914",
+      "name": "Whizbang the Wonderful",
+      "missing_evidence": "Complete pinned 22-recipe contents and selection policy",
+      "existing_implementation": "Typed full-class opening replacement exists; no default recipe contract installed",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "DAL_800",
+      "name": "Zayle, Shadow Cloak",
+      "missing_evidence": "Pinned confirmation of the five candidate recipes and selection distribution",
+      "existing_implementation": "Five sourced candidate lists and compiler exist; candidate evidence dates to 2020",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "GDB_854",
+      "name": "Uluu, the Everdrifter",
+      "missing_evidence": "Complete pinned exclusions and parent/branch pair sampling probabilities",
+      "existing_implementation": "Physical turn refresh, native branches, canonical exclusions for nine self-transforming parents and Fatespinner, and two-target restriction written. Original designer posts directly read; exact sampler still unresolved.",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "GIFT_01",
+      "name": "Harth Stonebrew",
+      "missing_evidence": "Exact non-Demon-Hunter printings and class/hand selection distribution",
+      "existing_implementation": "Thirteen ordered source hands and literal first-edition Demon Hunter tokens checked; wiki class-first odds explicitly citation-needed",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "REV_022",
+      "name": "Murloc Holmes",
+      "missing_evidence": "Exact correct-answer sampling and distractor generation/distribution",
+      "existing_implementation": "Three-stage clues, snapshots, failure and reward delivery exist",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "SCH_199",
+      "name": "Transfer Student",
+      "missing_evidence": "Exact board selection configuration and complete remaining expansion-generated dependencies",
+      "existing_implementation": "Thirty-eight board forms staged; generated pool still reaches unfinished specials and Reno",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "TOY_373",
+      "name": "Puzzlemaster Khadgar",
+      "missing_evidence": "Complete usefulness predicates and spell/target selection behavior",
+      "existing_implementation": "Ten-spell pool and casting/wear pipeline exist; public examples are insufficient to define all predicates",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "TOY_700",
+      "name": "Splendiferous Whizbang",
+      "missing_evidence": "Pinned recipe printings and deck/treasure sampling distributions",
+      "existing_implementation": "All eleven source candidate lists plus exceptional opening setup implemented",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "UNG_851",
+      "name": "Elise the Trailblazer",
+      "missing_evidence": "Exact five-card joint rarity/identity distribution and overflow generation behavior",
+      "existing_implementation": "All 126 non-Quest identities retained; Epic-or-better guarantee and explicit distribution models implemented",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    },
+    {
+      "card_id": "CORE_WON_145",
+      "name": "Avatar of Hearthstone",
+      "missing_evidence": "Exact in-game pack eligibility and joint rarity/identity distribution",
+      "existing_implementation": "Detached five-card automatic-play path exists; shop odds not adopted",
+      "runtime_status": "owner_authorized_approximation_written_unvalidated"
+    }
+  ],
+  "research": [
+    {
+      "source": "https://hearthstone.wiki.gg/wiki/Elise_the_Trailblazer",
+      "finding": "Notes guarantee five non-Quest cards and at least one Epic or better; no numerical joint distribution stated. Cited reveal livestream is 2017-03-17."
+    },
+    {
+      "source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew",
+      "finding": "Current thirteen ordered hands read; class-first selection odds are explicitly tagged citation needed."
+    },
+    {
+      "source": "https://outof.games/news/7092-all-whizbangs-workshop-day-2-hearthstone-card-reveals-february-20/",
+      "finding": "Relays developer explanation: evaluate usefulness, randomly select a useful spell. Does not disclose complete usefulness predicate implementation."
+    },
+    {
+      "source": "https://github.com/HearthSim/hsdata/tree/5212f4e1783b54dca934f65174b9e3798107c6e7",
+      "finding": "Pinned build 251952 tree inspected. Exported CardDefs/strings do not provide deck recipe tables or in-game pack probability code; examined root Entity metadata has no such distributions."
+    }
+  ],
+  "constraints": {
+    "no_new_approximations": true,
+    "no_regressions": true,
+    "no_training": true,
+    "no_gameplay_experiments": true,
+    "no_publication": true
+  },
+  "not_claimed": [
+    "That no undiscovered public evidence exists",
+    "That observed samples alone would prove exact equality for all game states",
+    "That retail card-pack probabilities equal in-game pack probabilities",
+    "That code declaration counts establish gameplay fidelity"
+  ],
+  "needed_to_resolve": [
+    "Additional authoritative selection/probability specifications or matching implementation evidence",
+    "Existing pinned-build complete client observations where obtainable without conducting prohibited gameplay experiments",
+    "For undocumented behavior, controlled client observation would require an explicit change to the current no-gameplay-experiments constraint; finite observations still cannot guarantee full exactness"
+  ],
+  "work_this_pass": "Focused selection/probability research and consolidated evidence audit; no simulator code edited, no cards newly admitted, no gameplay run",
+  "approximation_report": "special-approximations-deferred-validation.json"
+}

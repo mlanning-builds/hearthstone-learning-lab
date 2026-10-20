@@ -1,0 +1,44 @@
+{
+  "status": "full_ranking_not_established",
+  "investigation_date": "2026-10-16",
+  "findings": [
+    {
+      "source": "https://github.com/mixj93/lodestone",
+      "finding": "README offers a possible-card list, not a game-state ranking implementation"
+    },
+    {
+      "source": "https://github.com/play-boardgames-together/fireplace-core",
+      "finding": "README explicitly lists Zephrys as not implemented; not a source for exact behavior"
+    },
+    {
+      "source": "https://github.com/siva-msft/RosettaStone/blob/master/Documents/CardList.md",
+      "finding": "Checked card list leaves Zephrys implementation blank; not a source for exact behavior"
+    },
+    {
+      "source": "https://www.youtube.com/watch?v=df6S9Q0ogRo",
+      "finding": "Primary developer interview located; video/transcript inaccessible through available web reader; not treated as reviewed testimony"
+    },
+    {
+      "source": "https://articles.hsreplay.net/2019/08/23/the-history-of-zephrys-hearthstone-interview-with-celestalon/",
+      "finding": "Confirms interview provenance and development history; does not publish ranking equations"
+    }
+  ],
+  "established": [
+    "Public-information boundary",
+    "Fixed manually developed selection behavior, not agent training",
+    "Documented replay exclusions and historical patch corrections",
+    "A concrete 139-identity third-party historical offer-list candidate"
+  ],
+  "not_established": [
+    "Complete pinned offer eligibility",
+    "Exact projected state evaluation per card",
+    "Category scoring, thresholds and ties",
+    "Exact output for arbitrary states"
+  ],
+  "next_evidence_needed": [
+    "Accessible primary interview transcript or other developer algorithm disclosure",
+    "Pinned-client complete public-state and three-offer observations to constrain behavior",
+    "Independent evaluation against client outcomes before claiming fidelity"
+  ],
+  "owner_constraints": "No gameplay experiments/regressions/training executed; exactness has not been replaced by a heuristic"
+}

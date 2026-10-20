@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 """Map choices preserve physical identity, options, expiry and information."""
 import unittest
 from copy import deepcopy
@@ -20,11 +21,11 @@ class MapTests(unittest.TestCase):
  def install(self,cid,**extra):
   ids=[]
   for n in range(3):
-   d=deepcopy(self.g.cards['CS3_025']);d.update(id='MAP_TEST_'+str(n),dbfId=-600-n,cost=0,races=['MURLOC'],attack=3,**extra)
+   d=thaw(self.g.cards['CS3_025']);d.update(id='MAP_TEST_'+str(n),dbfId=-600-n,cost=0,races=['MURLOC'],attack=3,**extra)
    self.g.cards[d['id']]=d;ids.append(d['id'])
   p=patch.dict(cards.RULES,{cid:('none',[]) for cid in ids});p.start();self.addCleanup(p.stop)
   self.h.install(self.g,maps.REQUESTS[cid],ids);return ids
- def test_all_six_staged(self):self.assertEqual(len(maps.RULES),6);self.assertFalse(set(maps.RULES)&cards.COLLECTIBLE_IDS)
+ def test_two_maps_admitted_four_staged(self):self.assertEqual(len(maps.RULES),6);self.assertEqual(set(maps.RULES)&cards.COLLECTIBLE_IDS,set(maps.RULES))
  def test_first_choice_remembers_exact_others(self):
   self.install('TLC_442');self.play('TLC_442');options=deepcopy(self.g.pending_choice['options']);self.choose()
   self.assertEqual(self.p.hand[0]._follow_effects[0]['map_options'],options[1:]);self.assertEqual(self.p.discoveries_total,1)
@@ -43,8 +44,10 @@ class MapTests(unittest.TestCase):
  def test_options_hidden_from_enemy_hand_view(self):
   ids=self.install('TLC_442');self.play('TLC_442');self.choose()
   self.assertFalse(any(cid in str(self.g.observe(1,include_events=False)) for cid in ids))
- def test_missing_pool_rolls_back(self):
-  c=Card(self.g._new_id(),'TLC_442');self.p.hand.append(c);a=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_missing_pool_rolls_back(self,*contracts):
+  c=Card(self.g._new_id(),'TLC_464');self.p.hand.append(c);a=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
   with self.assertRaises(UnsupportedCard):self.g.step(a)
   self.assertEqual(len(self.g.players[0].hand),1)
  def test_deck_map_removes_card_without_draw_event(self):

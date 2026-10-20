@@ -1,0 +1,555 @@
+{
+  "status": "static identity closure only; runtime unvalidated",
+  "candidate_fingerprint": "12c6e1b8cc4eea4d6cb0e853fe63e80c36c298063db6fab9878fd641183832aa",
+  "classes_checked": [
+    "DEATHKNIGHT",
+    "DEMONHUNTER",
+    "DRUID",
+    "HUNTER",
+    "MAGE",
+    "PALADIN",
+    "PRIEST",
+    "ROGUE",
+    "SHAMAN",
+    "WARLOCK",
+    "WARRIOR"
+  ],
+  "missing_ids": [
+    "REV_022",
+    "TOY_373",
+    "TOY_700",
+    "WW_0700"
+  ],
+  "missing_count": 4,
+  "rows": [
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 40,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "DRUID",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "HUNTER",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "MAGE",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "PALADIN",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "PRIEST",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "ROGUE",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "SHAMAN",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "WARLOCK",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "THE_SUNKEN_CITY",
+      "hero_class": "WARRIOR",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 40,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "DRUID",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "HUNTER",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "MAGE",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "PALADIN",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "PRIEST",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "ROGUE",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "SHAMAN",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "WARLOCK",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "REVENDRETH",
+      "hero_class": "WARRIOR",
+      "eligible": 53,
+      "missing": [
+        "REV_022"
+      ]
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "DRUID",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "HUNTER",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "MAGE",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "PALADIN",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "PRIEST",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "ROGUE",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "SHAMAN",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "WARLOCK",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "RETURN_OF_THE_LICH_KING",
+      "hero_class": "WARRIOR",
+      "eligible": 53,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 54,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "DRUID",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "HUNTER",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "MAGE",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "PALADIN",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "PRIEST",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "ROGUE",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "SHAMAN",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "WARLOCK",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "BATTLE_OF_THE_BANDS",
+      "hero_class": "WARRIOR",
+      "eligible": 55,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "DRUID",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "HUNTER",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "MAGE",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "PALADIN",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "PRIEST",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "ROGUE",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "SHAMAN",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "WARLOCK",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "TITANS",
+      "hero_class": "WARRIOR",
+      "eligible": 51,
+      "missing": []
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "DRUID",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "HUNTER",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "MAGE",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "PALADIN",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "PRIEST",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "ROGUE",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "SHAMAN",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "WARLOCK",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WILD_WEST",
+      "hero_class": "WARRIOR",
+      "eligible": 55,
+      "missing": [
+        "WW_0700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "DRUID",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "HUNTER",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "MAGE",
+      "eligible": 53,
+      "missing": [
+        "TOY_373",
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "PALADIN",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "PRIEST",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "ROGUE",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "SHAMAN",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "WARLOCK",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    },
+    {
+      "expansion": "WHIZBANGS_WORKSHOP",
+      "hero_class": "WARRIOR",
+      "eligible": 53,
+      "missing": [
+        "TOY_700"
+      ]
+    }
+  ]
+}

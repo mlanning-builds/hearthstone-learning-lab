@@ -47,8 +47,8 @@ class ChoiceGeneratorTests(unittest.TestCase):
         action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==target and (choice is None or a.choices==(choice,)))
         self.g.step(action);return c
     def choose(self,index=0):self.g.step(Action('choose',choices=(index,)))
-    def test_all_33_definitions_remain_staged(self):
-        self.assertEqual(len(cg.RULES),33);self.assertFalse(set(cg.RULES)&cards.COLLECTIBLE_IDS)
+    def test_all_33_reviewed_definitions_are_bound(self):
+        self.assertEqual(len(cg.RULES),33);self.assertTrue(set(cg.RULES)<=cards.COLLECTIBLE_IDS)
     def test_rune_selector_requires_requested_rune_without_deck_rune_filter(self):
         for rune in ('blood','frost','unholy'):
             self.assertTrue(request_matches(pool(rune=rune),dict(cost=1,runeCost={rune:2}),'MAGE'))
@@ -60,8 +60,9 @@ class ChoiceGeneratorTests(unittest.TestCase):
     def test_hematurge_without_corpse_needs_no_pool(self):
         self.play('CORE_RLK_066');self.assertIsNone(self.g.pending_choice)
     def test_hematurge_missing_pool_rolls_back_payment_and_corpse(self):
+        self.install(cg.BLOOD,['UNIMPLEMENTED_BLOOD_RUNE_CARD'])
         self.p.corpses=1;c=self.g._enter_hand(0,Card(self.g._new_id(),'CORE_RLK_066'));before=self.g.observe(0)
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):self.g.step(next(a for a in self.g.legal_actions() if a.source==c.uid and a.kind=='play'))
+        with self.assertRaisesRegex(UnsupportedCard,'missing card data'):self.g.step(next(a for a in self.g.legal_actions() if a.source==c.uid and a.kind=='play'))
         self.assertEqual(self.g.observe(0),before)
     def test_mortician_requires_recent_friendly_undead(self):
         self.all_pools('CORE_RLK_116');self.p.last_turn_ended=self.g.turn-1
@@ -222,9 +223,9 @@ class ChoiceGeneratorTests(unittest.TestCase):
         self.all_pools('TLC_434');self.play('TLC_434');view=self.g.observe(0)
         self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True})
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertIn('undead_died_since_last_turn',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertIn('undead_died_since_last_turn',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_source_and_canonical_alias_cannot_discover_themselves(self):
-        source='TLC_434';self.g.cards['alias']=dict(self.g.cards[source],id='alias',countAsCopyOfDbfId=self.g.cards[source]['dbfId'])
+        source='TLC_434';self.g.cards['alias']=dict(self.g.cards[source],id='alias',dbfId=-501,countAsCopyOfDbfId=self.g.cards[source]['dbfId'])
         r=pool();self.install(r,[source]);self.helper.run_ops(self.g,[discover(r)],card_id='alias')
         self.assertIsNone(self.g.pending_choice)
     def test_private_choice_clone_resumes_same_outcome(self):
@@ -233,8 +234,9 @@ class ChoiceGeneratorTests(unittest.TestCase):
     def test_low_wing_placement_does_not_generate_until_activated(self):
         self.play('JAIL_987');self.assertFalse(self.p.hand);self.assertEqual(self.p.locations[0].durability,3)
     def test_low_wing_missing_pool_restores_charge_and_cooldown(self):
+        self.install(next(iter(cg.requests_for('JAIL_987'))),['UNIMPLEMENTED_SHAMAN_MINION'])
         self.play('JAIL_987');before=self.g.observe(0);rng=self.g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):
+        with self.assertRaisesRegex(UnsupportedCard,'missing card data'):
             self.g.step(next(a for a in self.g.legal_actions() if a.kind=='activate'))
         self.assertEqual(self.g.observe(0),before);self.assertEqual(self.g.rng.getstate(),rng)
     def test_locked_card_exposes_relative_unlock_progress(self):
@@ -256,8 +258,9 @@ class ChoiceGeneratorTests(unittest.TestCase):
         for _ in range(7):self.g._summon(0,'AT_037t')
         self.play('JAIL_451');self.choose();self.assertEqual(len(self.p.minions),7);self.assertEqual(self.p.corpses,0)
     def test_relic_missing_contract_does_not_destroy_top_or_pay(self):
+        self.install(pool(rarity=self.g.cards['CORE_EX1_012']['rarity'],classes='own_or_neutral'),['UNIMPLEMENTED_SAME_RARITY_CARD'])
         self.p.deck.append('CORE_EX1_012');c=self.g._enter_hand(0,Card(self.g._new_id(),'TLC_109'));before=self.g.observe(0)
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):
+        with self.assertRaisesRegex(UnsupportedCard,'missing card data'):
             self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
         self.assertEqual(self.g.observe(0),before);self.assertEqual(self.p.deck[-1],'CORE_EX1_012')
     def test_solitude_with_deck_minion_leaves_hand_costs_unchanged(self):

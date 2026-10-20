@@ -3,6 +3,7 @@
 Membership comes from the frozen PALADIN_AURA XML tag. Historical/context-only
 members are recognized and rejected until their effects are connected.
 """
+from .identities import canonical_identity,identity_resolver
 from engine.game import Card
 from engine.cards import UnsupportedCard
 
@@ -29,7 +30,7 @@ class Gelbin:
    if cid not in AURA_RULES:raise UnsupportedCard('Aura placement is not implemented: '+cid)
    if cid=='EDR_259e1':
     stored=getattr(card,'stored_spell',None);duration=getattr(card,'aura_duration',None)
-    if stored is None or type(duration) is not int or duration<1 or not self._supports_internal_spell(stored.card_id):
+    if stored is None or type(duration) is not int or duration<1 or not self._supports_internal_spell(stored.card_id,owner):
      raise UnsupportedCard('Aura placement lacks an executable stored spell payload')
    if cid=='TIME_700' and 'TIME_700t' not in self.cards:raise UnsupportedCard('Missing Chronological Aura Dragon')
   return candidates
@@ -42,7 +43,7 @@ class Gelbin:
   if op[0]=='gelbin_auras':
    groups={}
    for card in self._gelbin_candidates(owner):
-    data=self._card_data(card);key=data.get('countAsCopyOfDbfId',data.get('dbfId',data['id']))
+    data=self._card_data(card);key=canonical_identity(data,self.cards)
     groups.setdefault(key,[]).append(card)
    selected=[copies[0] if len(copies)==1 else self.rng.choice(copies) for copies in groups.values()]
    # Convert synthetic string fixtures to physical cards before capturing refs.
@@ -71,3 +72,12 @@ class Gelbin:
   if minions:
    m=self.rng.choice(minions);self._buff(m,op[1],op[2]);m.keywords.add('DIVINE_SHIELD')
   return True
+
+from .historical_aura_finish_batch import TOKEN_RULES as AURA_FINISH_RULES
+AURA_RULES.update({cid:AURA_FINISH_RULES[cid] for cid in ('LEG_TTN_908','VAC_922')})
+
+from .historical_timed_spells import TOKEN_RULES as _TIMED_AURA_RULES
+AURA_RULES.update({cid:_TIMED_AURA_RULES[cid] for cid in ('WW_341','TTN_854','TOY_808')})
+AURA_RULES['TTN_908']=AURA_FINISH_RULES['LEG_TTN_908']
+
+AURA_RULES['GDB_140']=('none',[('historical_utility_aura_finish_aura','celestial')])

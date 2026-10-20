@@ -6,7 +6,7 @@ An ordinary choice never becomes Discover just because it returns a Card.
 class Discovery:
     def _defer_discover_followups(self, owner, result):
         listeners=tuple(m.uid for m in self.players[owner].minions
-                        if m.card_id=='TLC_483' and not m.silenced and m.health>0)
+                        if m.card_id in ('TLC_483','GDB_841') and not m.silenced and m.health>0)
         if result is None or not listeners:return
         op=('discover_after',owner,result,listeners)
         # Choose the innermost suspended resolution scope. Its remaining
@@ -31,7 +31,13 @@ class Discovery:
         # copy, even when it shares the selected card's printed identity.
         present=any(result is value for p in self.players for value in p.hand+p.deck+p.board)
         if not present:return
-        active={m.uid for m in self.players[owner].minions
-                if m.card_id=='TLC_483' and not m.silenced and m.health>0}
-        count=sum(uid in active for uid in listeners)
-        if count:result.cost_delta=getattr(result,'cost_delta',0)-count
+        active={m.uid:m for m in self.players[owner].minions
+                if m.card_id in ('TLC_483','GDB_841') and not m.silenced and m.health>0}
+        from engine.game import Card
+        for uid in listeners:
+            listener=active.get(uid)
+            if listener is None:continue
+            if listener.card_id=='TLC_483':result.cost_delta=getattr(result,'cost_delta',0)-1
+            else:
+                copy=self._copy_card(result,source_owner=owner) if isinstance(result,Card) else self._fresh_replay_card(result)
+                self._enter_hand(owner,copy)

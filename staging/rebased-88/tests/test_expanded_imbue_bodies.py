@@ -1,3 +1,4 @@
+from unittest.mock import patch
 """Candidate Imbue bodies: scaling, targeting, payment and ownership."""
 import unittest
 from expanded import Game, Action, random_deck
@@ -77,9 +78,11 @@ class ImbueBodyTests(unittest.TestCase):
         self.assertEqual(powers,[Action('power',target=friendly.uid)])
     def test_shaman_no_minions_no_activation(self):
         g=self.game('SHAMAN');self.assertFalse(any(a.kind=='power' for a in g.legal_actions()))
-    def test_shaman_missing_pool_rolls_back_everything(self):
+    @patch("expanded.generation_families.reviewed_contract",return_value=None)
+    @patch("expanded.generation_catalog.standard_contract",return_value=None)
+    def test_shaman_missing_pool_rolls_back_everything(self,*unused):
         g=self.game('SHAMAN');m=g._summon(0,'EDR_851t');before=g.observe(0);rng=g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):
+        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership contract|eligible effects not implemented'):
             g.step(Action('power',target=m.uid))
         self.assertEqual(g.observe(0),before);self.assertEqual(g.rng.getstate(),rng)
     def test_shaman_transform_uses_base_cost_and_retains_position(self):

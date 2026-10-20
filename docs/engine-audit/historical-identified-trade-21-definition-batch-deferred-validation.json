@@ -1,0 +1,165 @@
+{
+  "fingerprint": "a4c421cee00aa5dbfd3427ed6e941b4b4bc832cc0fb437e9357b34ddfed01783",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 21,
+  "new_historical_spell_roots": 6,
+  "new_tokens_and_alternate_forms": 15,
+  "registry_records": 8166,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1380,
+    "remaining": 62
+  },
+  "new_implementations": [
+    {
+      "id": "CORE_GIL_191t",
+      "name": "Imp",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_366",
+      "name": "Unidentified Contract",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_366t1",
+      "name": "Assassin's Contract",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_366t2",
+      "name": "Recruitment Contract",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_366t3",
+      "name": "Lucrative Contract",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_366t4",
+      "name": "Turncoat Contract",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_009",
+      "name": "Doggie Biscuit",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_504",
+      "name": "Wicked Shipment",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_512",
+      "name": "Amulet of Undying",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_278",
+      "name": "Unidentified Elixir",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_278t1",
+      "name": "Elixir of Life",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_278t2",
+      "name": "Elixir of Purity",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_278t3",
+      "name": "Elixir of Shadows",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_278t4",
+      "name": "Elixir of Hope",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285",
+      "name": "Unidentified Shield",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t",
+      "name": "Tower Shield +10",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t2",
+      "name": "Serrated Shield",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t3",
+      "name": "Runed Shield",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t3t",
+      "name": "Iron Golem",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t4",
+      "name": "Spiked Shield",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_285t4t",
+      "name": "Spiked Shield",
+      "collectible": false,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8166,
+    "edges": 842,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false,
+    "focused_rules_passed": 79,
+    "full_regressions_current_source": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "62 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source.",
+    "79 focused family/Mage/physical-cast rule tests pass. The complete 5,505-case receipt predates these repairs and fails; no full-suite pass is claimed for this source."
+  ]
+}

@@ -1,0 +1,11 @@
+# Submerged Map and Cultist Map
+
+The ordinary candidate registry now provisionally admits `TLC_442` and `TLC_515`. Four other Maps retain explicit pool gates.
+
+Submerged Map uses the complete frozen 22-identity Standard Murloc universe, including multi-type and All-type minions. Blizzard's [33.0.2 hotfix](https://eu.forums.blizzard.com/en/hearthstone/t/3302-hotfix-patch/12124) explicitly corrected the card to Discover all Murlocs. Its first choice offers up to three distinct identities. The selected physical card retains the original unchosen options until the owner's turn ends; playing it opens one follow-up choice. That follow-up does not issue another Discover event.
+
+Cultist Map selects from the actual physical deck, moves the selected card to hand without a draw event, and retains the unchosen entity IDs. Follow-up choices locate those entities after shuffling or drawing and omit cards that have left the deck. Another physical copy of Cultist Map is eligible: Blizzard's [18.0.1 clarification](https://us.forums.blizzard.com/en/hearthstone/t/1801-server-hotfix/39314) explicitly permits discovering another copy from the deck, unlike generating the creator.
+
+Transforming a selected Cultist Map result into a Coin clears its Cultist follow-up. The production fixture uses paid Agent of the Old Ones, selects the actual physical result, and then plays the Coin. This matches the documented [36.0 fix](https://news.blizzard.com/en-us/article/24287396/36-0-patch-notes). The existing Agent choice replaces the physical hand card and does not copy follow attachments; this fixture verifies that path. Other transformations remain a separate conformance boundary.
+
+Checks cover legal starting decks, paid costs, the real Murloc pool, original follow-up choices, physical copy selection, shuffle stability, expiry, private hand attachments, Coin transformation and empty-deck behavior. Existing controlled Map fixtures also cover removed options and duplicate physical cards. Independent pinned-client traces are still needed for transferred/copied follow attachments, transformations of unchosen deck options, and second-choice event attribution. Written implementations are not client certification.

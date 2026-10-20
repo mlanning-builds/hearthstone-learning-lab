@@ -1,0 +1,26 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "d1cf96a95b374ea02aaea4af404000d03cb9f7f9e017083d8609560a5e4108ea",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Automatic Runic Carvings first branch now avoids printed Overload",
+    "Paid first branch no longer publishes a false Overload-card event",
+    "Combined branch preserves two ordered summon groups and second-branch Overload"
+  ],
+  "sources": [
+    "https://us.forums.blizzard.com/en/hearthstone/t/possible-runic-carving-bug/38520"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Runtime branch/combined casting and Overload event ordering"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "Complete explicit Zombeast production contracts, Rexxar, Scourge Tamer, Maestra and Storm source admission; unvalidated",
+  "zombeast_text_components": 32,
+  "zombeast_keyword_components": 34,
+  "new_unvalidated_bodies": 7,
+  "new_ids": [
+    "CORE_ICC_828",
+    "ICC_828",
+    "ICC_828p",
+    "ICC_828t",
+    "RLK_821",
+    "TLC_EVENT_400",
+    "VAC_336"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 2,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 5,
+  "closed_outcome_ids": [
+    "RLK_821"
+  ],
+  "candidate_fingerprint": "59f48e93f9f518bcfbbcb6524191dabb6af83f138e55f4e60de082116fbefc89",
+  "historical_minions_written": 3189,
+  "historical_minions_remaining": 12,
+  "standard_written": 1183,
+  "standard_remaining": 2,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Template%3ADeathstalker_Rexxar_notes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Production membership is literal and based on the complete frozen Standard candidate census and explicit historical keyword table, never coverage filtering",
+    "Exact client-curated membership, especially newer Prepare/Rewind components, canonical identities and historical keyword exceptions, still requires independent client comparison",
+    "Rexxar and both Hero printings plus Build a Beast, Scourge Tamer, Storm the Gates and Maestra now have executable source paths",
+    "All eleven Maestra past Hero pools statically close over written identities; no outcomes narrowed",
+    "Inherited triggers, choices, All types, copying, Silence, resurrections, turn timing and sidequest repetition remain unvalidated",
+    "Harth still needs exact ordered hand printing/selection data; broader goal remains active",
+    "No gameplay/regressions/training run"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "ULD_140",
+    "ULD_140p"
+  ],
+  "candidate_fingerprint": "b152ffe6057d4192999032d34efb1020a38e81455250aca6d91651b6e708af91",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Draw progress timing including cast-on-draw, burn and completion",
+    "Hero Power draw modifiers and reward replacement timing"
+  ]
+}

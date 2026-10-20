@@ -2,6 +2,7 @@
 
 Explicit effect declarations select these operations; card text is never run.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 from .pools import require_fixed_cards
@@ -16,7 +17,12 @@ class SharedBatch30:
         if condition=='no_neutral_in_deck':return not any(self._card_data(c).get('cardClass')=='NEUTRAL' for c in p.deck)
         if condition=='aura_active':
             from .gelbin import AURA_IDS
-            return self._end_trigger_count(owner)>1 or any(e.get('source_card_id') in AURA_IDS|{'EDR_259'} for e in p.scheduled_effects) or any(e.get('aura_owner')==owner for e in self.players[1-owner].timed_cost_increases)
+            return (self._end_trigger_count(owner)>1
+                    or any(e.get('source_card_id') in AURA_IDS|{'EDR_259'} for e in p.scheduled_effects)
+                    or any(e.get('aura_owner')==owner for e in self.players[1-owner].timed_cost_increases)
+                    or bool(getattr(p,'historical_deputization_auras',()))
+                    or bool(getattr(p,'historical_inventor_auras',()))
+                    or any(e.get('card_id') in AURA_IDS for e in getattr(p,'historical_finish_auras',())))
         raise ValueError('Unknown state condition: '+condition)
 
     def _batch30_effect(self,op,ctx):
@@ -38,10 +44,10 @@ class SharedBatch30:
             for c in p.hand:
                 if self.cards[c.card_id]['type']=='MINION':
                     attack=self._card_stat(c,'attack',owner);health=self._card_stat(c,'health',owner);value=max(attack,health)
-                    c.attack_bonus+=value-attack;c.health_bonus+=value-health
+                    _saidan_add(c,'attack_bonus',value-attack);_saidan_add(c,'health_bonus',value-health)
         elif name=='reset_hand_costs':
             for player in self.players:
-                for c in player.hand:self._set_card_cost(c,self.cards[c.card_id]['cost'])
+                for c in player.hand:self._set_card_cost(c,self._card_data(c)['cost'])
         elif name=='copy_deck_spells':
             copies=[]
             for value in list(p.deck):
@@ -49,7 +55,7 @@ class SharedBatch30:
                     card=self._copy_card(value);copies.append(card)
             if copies:
                 p.deck.extend(copies);self.rng.shuffle(p.deck)
-                self._record_deck_insertion(owner,owner,len(copies),'shuffle')
+                self._record_deck_insertion(owner,owner,len(copies),'shuffle',cards=copies)
         elif name=='insert_fixed':
             require_fixed_cards((op[1],),self.cards)
             cards=[Card(self._new_id(),op[1]) for _ in range(op[2])]
@@ -58,7 +64,7 @@ class SharedBatch30:
             if op[3]=='bottom':p.deck[0:0]=cards
             elif op[3]=='shuffle':
                 p.deck.extend(cards);self.rng.shuffle(p.deck)
-                if cards:self._record_deck_insertion(owner,owner,len(cards),'shuffle')
+                if cards:self._record_deck_insertion(owner,owner,len(cards),'shuffle',cards=cards)
             else:raise ValueError('Unknown insertion mode')
         elif name=='batch30_noop':
             pass

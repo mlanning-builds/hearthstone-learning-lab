@@ -1,7 +1,7 @@
 """Explicit Dormant identities and fixed Dreadseed pool for the pinned patch."""
 INITIAL = {'CORE_BT_156': 2, 'EDR_416t': 2, 'EDR_469': -1,
            'EDR_840t': 2, 'EDR_840t1': 1, 'EDR_840t2': 3, 'EDR_979': 2,
-           'MEND_040': -1, 'TIME_046': 3, 'TIME_063': 5, 'TLC_253': -1}
+           'MEND_040': -1, 'TIME_046': 3, 'TIME_063': 5, 'TLC_253': -1, 'TSC_647': 1}
 DREADSEEDS = ('EDR_840t', 'EDR_840t1', 'EDR_840t2')
 RULES = {cid: ('none', []) for cid in INITIAL if cid not in DREADSEEDS and cid != 'EDR_416t'}
 RULES.update({
@@ -29,3 +29,11 @@ TRIGGERS = {
     'TIME_063': ('dormant_newest_played', [('dormant_reduce',)]),
 }
 WEAPON_TRIGGERS = {'EDR_416': [('summon', 'EDR_416t', 1)]}
+
+from .historical_event_batches import DORMANT_INITIAL
+INITIAL.update(DORMANT_INITIAL)
+
+INITIAL['TSC_007']=1
+
+from .historical_sleep_batches import DORMANT_INITIAL as HISTORICAL_SLEEP_INITIAL
+INITIAL.update(HISTORICAL_SLEEP_INITIAL)

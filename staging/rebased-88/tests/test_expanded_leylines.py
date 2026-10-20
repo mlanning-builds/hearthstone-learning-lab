@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 import json,unittest
 from copy import deepcopy
 from pathlib import Path
@@ -23,7 +24,7 @@ class LeylineTests(unittest.TestCase):
   tags=json.loads(Path('data/standard/card_tags.json').read_text())
   self.assertEqual(ley.BASE,{cid:int(tags[cid]['TAG_SCRIPT_DATA_NUM_1']) for cid in ley.LEYLINES})
  def test_seven_bodies_four_admitted(self):
-  self.assertEqual(len(ley.RULES),7);self.assertEqual(set(ley.RULES)&cards.COLLECTIBLE_IDS,{'MEND_500','MEND_503','MEND_504','MEND_506'})
+  self.assertEqual(len(ley.RULES),7);self.assertEqual(set(ley.RULES)&cards.COLLECTIBLE_IDS,set(ley.RULES))
  def test_cost_upgrade_applies_to_future_cards_not_other_spells(self):
   self.play('MEND_501');c=Card(990,'MEND_500');self.assertEqual(self.g._cost(c,0),3)
   self.assertEqual(self.g._cost(Card(991,'CORE_CS2_029'),0),4)
@@ -49,10 +50,11 @@ class LeylineTests(unittest.TestCase):
   self.play('MEND_504');self.assertEqual(len(self.p.hand),10);self.assertEqual(len(self.p.deck),9)
  def test_crystallized_requires_exact_upgraded_pool(self):
   self.p.leyline_effect=1
+  self.h.install(self.g,pool(card_type="MINION",minimum=7,maximum=7),["MISSING_REVIEWED_SEVEN"])
   with self.assertRaises(UnsupportedCard):self.play('MEND_502')
   self.assertFalse(self.g.players[0].board)
  def test_crystallized_repeated_summons(self):
-  d=deepcopy(self.g.cards['CS3_025']);d.update(id='LEY_FIX',dbfId=-811,cost=7);self.g.cards[d['id']]=d
+  d=thaw(self.g.cards['CS3_025']);d.update(id='LEY_FIX',dbfId=-811,cost=7);self.g.cards[d['id']]=d
   self.h.install(self.g,pool(card_type='MINION',minimum=7,maximum=7),['LEY_FIX'])
   self.p.leyline_effect=1;self.p.leyline_repeats=2;self.play('MEND_502');self.assertEqual(len(self.p.board),3)
  def test_burst_excess_hits_hero(self):

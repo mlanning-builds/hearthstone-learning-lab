@@ -32,8 +32,8 @@ class ColossalEntryTests(unittest.TestCase):
                 self.board.clear();body=self.summon(cid)
                 self.assertEqual(len(self.board),count+1)
                 self.assertEqual(len(body.rule_state['colossal_appendages']),count)
-    def test_layouts_do_not_admit_incomplete_cards(self):
-        self.assertFalse(set(LAYOUTS)&COLLECTIBLE_IDS)
+    def test_all_reviewed_standard_colossals_are_admitted(self):
+        self.assertEqual(set(LAYOUTS)&COLLECTIBLE_IDS,{"CATA_139","CATA_150","CATA_151","CATA_300","CATA_432","CATA_550","CATA_726","CATA_153","CATA_154","CATA_155","CATA_488"})
     def test_right_appendages_preserve_order_and_existing_neighbors(self):
         self.fill(2);old=list(self.board)
         body=self.summon('CATA_139',position=1)
@@ -62,11 +62,11 @@ class ColossalEntryTests(unittest.TestCase):
         with self.assertRaises(UnsupportedCard):self.summon()
         self.assertEqual(len(self.board),7)
     def test_non_minion_dependency_rejected(self):
-        self.g.cards['CATA_150t']['type']='SPELL'
+        self.g.cards['CATA_150t']=dict(self.g.cards['CATA_150t'],type='SPELL')
         with self.assertRaises(UnsupportedCard):self.summon()
         self.assertFalse(self.board)
     def test_unknown_colossal_not_silently_a_plain_minion(self):
-        self.g.cards['NEW1_034']['mechanics']=['COLOSSAL']
+        self.g.cards['NEW1_034']=dict(self.g.cards['NEW1_034'],mechanics=['COLOSSAL'])
         with self.assertRaisesRegex(UnsupportedCard,'explicit layout'):self.summon('NEW1_034')
     def test_magmaw_not_truncated_to_six_appendages(self):
         body=self.summon('CATA_550')
@@ -87,13 +87,17 @@ class ColossalEntryTests(unittest.TestCase):
         self.fill(7);body=self.g._summon(1,'CATA_150')
         self.assertEqual(len(self.board),7);self.assertEqual(len(self.g.players[1].board),3)
         self.assertEqual(body.owner,1)
-    def test_silenced_copy_rejected_before_mutation(self):
-        body=self.summon();body.silenced=True;before=list(self.board)
-        with self.assertRaisesRegex(UnsupportedCard,'silenced'):self.summon(copy_from=body)
-        self.assertEqual(self.board,before)
-    def test_dormant_entry_rejected_before_mutation(self):
-        with self.assertRaisesRegex(UnsupportedCard,'dormant'):self.summon(dormant_turns=2)
-        self.assertFalse(self.board)
+    def test_silenced_copy_has_no_appendage_text(self):
+        body=self.summon();self.g._silence(body);before=len(self.board)
+        copied=self.summon(copy_from=body)
+        self.assertTrue(copied.silenced);self.assertEqual(len(self.board),before+1)
+        self.assertEqual(copied.rule_state['colossal_appendages'],[])
+    def test_dormant_entry_does_not_trigger_colossal(self):
+        body=self.summon(dormant_turns=2)
+        self.assertEqual(self.board,[body]);self.assertEqual(body.dormant,2)
+        self.assertEqual(body.rule_state['colossal_appendages'],[])
+        self.g._awaken(body)
+        self.assertEqual(self.board,[body])
     def test_transform_emits_limb_notifications_but_not_body_summon(self):
         old=self.summon('NEW1_034')
         with patch.object(self.g,'_capture_summon_event',wraps=self.g._capture_summon_event) as capture:

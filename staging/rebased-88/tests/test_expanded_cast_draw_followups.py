@@ -1,4 +1,5 @@
 """Post-draw continuation and provenance/discard casting integration."""
+from expanded.identities import canonical_identity
 import unittest
 from unittest.mock import patch
 from expanded import Game,Action,random_deck
@@ -14,7 +15,7 @@ class CastDrawFollowupsTests(unittest.TestCase):
     def card(self,g,cid,original=False):
         c=Card(g._new_id(),cid)
         if original:
-            c._starting_owner=0;d=g.cards[cid];c._starting_identity=d.get('countAsCopyOfDbfId',d.get('dbfId',cid))
+            c._starting_owner=0;d=g.cards[cid];c._starting_identity=canonical_identity(d,g.cards)
         return c
     def cast(self,g,cid):
         g._start_play_effects([('cast_fixed_spell',cid,'random')],dict(owner=0,source=None,target=0,bonus=0,lifesteal=False))

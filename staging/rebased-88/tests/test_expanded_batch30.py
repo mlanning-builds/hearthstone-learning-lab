@@ -55,7 +55,7 @@ class ThirtyCardBatchTests(unittest.TestCase):
         g=self.game();g.players[0].death_history=['CS2_033']*2;m=g._summon(1,'CS2_033')
         self.play(g,'EDR_941',m.uid);self.assertEqual(m.health,3)
     def test_knockback_shuffle_history(self):
-        g=self.game();g._record_deck_insertion(0,0,10,'shuffle');m=g._summon(1,'CS2_033')
+        g=self.game();g._record_deck_insertion(0,0,10,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(10)));m=g._summon(1,'CS2_033')
         self.play(g,'TLC_517',m.uid);self.assertEqual(m.health,4)
     def test_moonkin_counts_wisps(self):
         g=self.game();self.play(g,'EDR_940');g._summon(0,'EDR_851t');g.step(Action('end'))

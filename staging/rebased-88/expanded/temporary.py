@@ -32,11 +32,11 @@ class TemporaryCards:
         for p in self.players:
             for c in p.hand+p.deck:
                 if hasattr(c,'_follow_effects'):
-                    c._follow_effects[:]=[e for e in c._follow_effects if e['end']>self.turn]
+                    c._follow_effects[:]=[e for e in c._follow_effects if e['end'] is None or e['end']>self.turn]
 
     def _capture_follow(self,owner,card):
         self._pending_follow=dict(owner=owner,card_id=card.card_id,
-            effects=deepcopy([e for e in getattr(card,'_follow_effects',[]) if e['end']>=self.turn]))
+            effects=deepcopy([e for e in getattr(card,'_follow_effects',[]) if e['end'] is None or e['end']>=self.turn]))
 
     def _publish_follow(self,owner,source=None):
         pending=getattr(self,'_pending_follow',None);self._pending_follow=None
@@ -51,9 +51,9 @@ class TemporaryCards:
         owner=data['owner'];is_spell=self.cards[data['card_id']]['type']=='SPELL'
         source=data['source'] if not is_spell and hasattr(data['source'],'owner') else None
         ctx=dict(owner=owner,source=source,target=0,spell=is_spell,
-                 bonus=self._spell_damage(owner) if is_spell else 0,lifesteal=False)
+                 bonus=self._spell_damage(owner,data['card_id']) if is_spell else 0,lifesteal=False)
         ops=tuple(op for e in data['effects'] for op in
-                  ((('map_follow_choice',e),) if 'map_options' in e else FOLLOW_RULES[e['card_id']]))
+                  ((('map_follow_choice',e),) if 'map_options' in e else (('historical_copy_follow_mode',e),) if 'historical_mode' in e else FOLLOW_RULES[e['card_id']]))
         return dict(kind=kind,data=data,listeners=[],listener=0,operations=ops,
                     operation=0,context=ctx,key=None,allow_choices=allow_choices,post_operation=False)
 
@@ -86,9 +86,12 @@ class TemporaryCards:
             # Full action legality, including target, capacity, cost and locks.
             playable={a.source for a in self._hand_actions(owner) if a.kind=='play'}
             candidates=[c for c in p.hand if c.uid in playable and
-                        (cid!='CAP_101' or has_tribe(self.cards[c.card_id],'PIRATE'))]
+                        (cid!='CAP_101' or has_tribe(self._card_data(c),'PIRATE'))]
             if candidates:
                 c=self.rng.choice(candidates)
                 c._follow_effects=getattr(c,'_follow_effects',[])+[dict(card_id=cid,end=self.turn)]
         else:return False
         return True
+
+from .historical_discover_spells import FOLLOW_RULES as GENERATED_FOLLOW_RULES
+FOLLOW_RULES.update(GENERATED_FOLLOW_RULES)

@@ -28,8 +28,9 @@ class GeneratedAttackTests(unittest.TestCase):
         self.run_body();new=self.g.players[0].minions[-1]
         self.assertEqual(self.g.players[1].health,30-new.attack)
     def test_missing_pool_does_not_summon_or_consume_rng(self):
+        self.helper.install(self.g,self.request,['UNIMPLEMENTED_ATTACK_BEAST'])
         rng=self.g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):self.run_body()
+        with self.assertRaisesRegex(UnsupportedCard,'missing card data'):self.run_body()
         self.assertEqual(self.g.rng.getstate(),rng);self.assertFalse(self.g.players[0].minions)
     def test_dead_bound_attacker_does_not_choose_another(self):
         self.g._summon(0,'EX1_tk34');rng=self.g.rng.getstate()

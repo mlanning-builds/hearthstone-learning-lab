@@ -1,0 +1,58 @@
+{
+  "scope": "Physical deck, hand, draw and history choice spells",
+  "new_unvalidated_bodies": 12,
+  "new_ids": [
+    "ETC_074",
+    "ETC_205",
+    "MAW_002",
+    "NX2_015",
+    "REV_253",
+    "REV_311",
+    "REV_311t",
+    "REV_311t2",
+    "REV_507",
+    "REV_948",
+    "RLK_533",
+    "WW_092"
+  ],
+  "new_collectible_outcomes": 10,
+  "new_required_generated_spell_forms": 2,
+  "prior_expansion_outcome_gap": 122,
+  "current_expansion_outcome_gap": 112,
+  "closed_outcome_ids": [
+    "ETC_074",
+    "ETC_205",
+    "MAW_002",
+    "NX2_015",
+    "REV_253",
+    "REV_311",
+    "REV_507",
+    "REV_948",
+    "RLK_533",
+    "WW_092"
+  ],
+  "candidate_fingerprint": "25dd98d9beb2032b181a101b26364a92507afda676d11452bddf0e60c92ca792",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Physical card identity/canonical grouping, history copies and Discover versus non-Discover counting",
+    "Draw and overdraw offer membership, selected result follow-ups and multiple-copy draw sequencing",
+    "Fracking bottom-three draw/destruction and Dispose hand shuffle snapshots",
+    "Nightshade Bud internal cast admission, Choose One and combined choices",
+    "Faithful Companions recruit/copy checkpoints, Manathirst and summon multipliers",
+    "Habeas Corpses death-record weighting, Rush and end-turn expiry",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

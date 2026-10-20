@@ -39,14 +39,15 @@ class FabledDeckTests(unittest.TestCase):
  def test_secondary_portals_and_empowered_locations_are_not_starting_companions(self):
   self.assertNotIn('TIME_020t3',COMPANION_ROOT);self.assertNotIn('TIME_211t1t',COMPANION_ROOT)
  def test_unimplemented_root_not_admitted_by_bundle_metadata(self):
-  d=Deck('MAGE',('TIME_852',)+random_deck('MAGE',11).cards[:27]);errors=validate(d,self.archive)
+  d=Deck('MAGE',('TIME_852',)+random_deck('MAGE',11).cards[:27])
+  with patch('expanded.decks.COLLECTIBLE_IDS',set(cards.COLLECTIBLE_IDS)-{'TIME_852'}):errors=validate(d,self.archive)
   self.assertTrue(any('Effect not implemented: TIME_852' in e for e in errors))
  def fixture_deck(self):
   d=Deck('MAGE',('TIME_852',)+random_deck('MAGE',11).cards[:27]);metadata=cards.registry();metadata.update({cid:self.archive[cid] for cid in ('TIME_852',)+BUNDLES['TIME_852']})
   return d,metadata
  def test_metadata_only_companions_still_rejected(self):
   d,metadata=self.fixture_deck()
-  with patch('expanded.decks.COLLECTIBLE_IDS',set(cards.COLLECTIBLE_IDS)|{'TIME_852'}):
+  with patch.dict(cards.RULES,{cid:rule for cid,rule in cards.RULES.items() if cid not in BUNDLES['TIME_852']},clear=True),patch('expanded.decks.PLAYABLE_TOKENS',set(cards.PLAYABLE_TOKENS)-set(BUNDLES['TIME_852'])):
    errors=validate(d,metadata)
   self.assertTrue(any('Effect not implemented: TIME_852t1' in e for e in errors))
  def test_controlled_executable_bundle_validates(self):

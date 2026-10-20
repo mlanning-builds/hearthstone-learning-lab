@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DRG_204"
+  ],
+  "candidate_fingerprint": "cb7085c6366bd7e192a6e17c77b978de438d0c6b19f8115c172a0c151590a4c9",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Captured repeat count and per-hit spell damage",
+    "Death settlement and target reselection between repetitions"
+  ]
+}

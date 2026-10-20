@@ -1,0 +1,42 @@
+{
+  "status": "focused_checks_passed_full_suite_running",
+  "goal_turn_classification": "progress",
+  "fingerprint": "68296a3e5351872b44d31534d75a7b430eed7bb84a933941dbc73e8a1f2a6c0b",
+  "repair": "Use existing ZERG_IDS faction membership for Spawning Pool aura Attack and Rush; do not query ZERG as a minion tribe.",
+  "checks": {
+    "core_rule_module": {
+      "tests_run": 43,
+      "failures": 0,
+      "errors": 0,
+      "log": "/private/tmp/hearthstone-core-recheck.log",
+      "sha256": "385baff187c86c39bb23bef089921e251e2bb10a4491b67a3d4b8cb9999211e9"
+    },
+    "supporting": {
+      "tests_run": 75,
+      "failures": 0,
+      "errors": 0,
+      "log": "/private/tmp/hearthstone-supporting-recheck.log",
+      "sha256": "094c8f905d981b1af10853b1dcf8620e25c81bab8fd63b1e8cf964f1e02ac3d9"
+    },
+    "focused_zerg_aura": {
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "source": "/private/tmp/test_hearthstone_zerg_aura_repair.py",
+      "sha256": "8b654c385e4832f88a56bfe2783d999f272a47833452f5f789f799dadb995819"
+    }
+  },
+  "full_regression": {
+    "status": "running",
+    "session_id": 27679,
+    "log": "/private/tmp/hearthstone-repaired-regressions.log"
+  },
+  "training_run": false,
+  "learning_run": false,
+  "deck_search_run": false,
+  "notebook_cells_run": false,
+  "github_published": false,
+  "card_counts_changed": false,
+  "implementation_complete": false,
+  "independent_fidelity_certified": false
+}

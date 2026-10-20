@@ -1,0 +1,41 @@
+{
+  "status": "written_unvalidated_partial_card_no_admission",
+  "candidate_fingerprint": "a8666dbfa98590456f69facc53b8d6ad2f2cd6bc56aa83495a9185bbc3da3828",
+  "changes": [
+    "Uluu rejects the nine frozen self-transforming Choose One parent identities and Fatespinner, using canonical identities for Core equivalents. Entire parents are excluded, including otherwise non-transforming branches. Ancient of Growth remains eligible because it transforms other minions."
+  ],
+  "sources": [
+    {
+      "url": "https://x.com/mynty_phresh/status/1847706068899729845",
+      "inspection": "Original designer post directly read in browser; confirms self-transforming parent and Fatespinner exclusions."
+    },
+    {
+      "url": "https://x.com/mynty_phresh/status/1847706071139533125",
+      "inspection": "Original designer post directly read in browser; confirms combined effects and no two targeted choices."
+    },
+    {
+      "url": "https://x.com/RidiculousHat/status/1760007675977277514",
+      "inspection": "Original post and spell-list reply directly read in browser; confirms useful-spell filtering followed by random selection, but does not enumerate the predicates."
+    }
+  ],
+  "checks": [
+    "AST syntax",
+    "Static registry: all ten excluded parent definitions present",
+    "Inventory consistency",
+    "Historical inventory and completion queue reconciliation"
+  ],
+  "remaining": [
+    "Uluu exact pair-selection procedure still unestablished; no default sampler added",
+    "Khadgar full usefulness predicates still unestablished",
+    "Zayle current wiki repeats the five 2020 recipes but supplies no independent pinned-build trace or explicit sampling odds",
+    "Pack-probability search yielded no new exact distribution"
+  ],
+  "historical_written": 3192,
+  "historical_unwritten": 9,
+  "standard_written": 1184,
+  "standard_unwritten": 1,
+  "new_root_admissions": 0,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false
+}

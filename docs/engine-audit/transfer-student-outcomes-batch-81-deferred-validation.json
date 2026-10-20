@@ -1,0 +1,41 @@
+{
+  "scope": "Victor Nefarius curated component pool integration and physical Creation body; unvalidated",
+  "nefarius_dragon_components": 19,
+  "nefarius_undead_components": 20,
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "CATA_470",
+    "CATA_470t1"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 5,
+  "current_expansion_outcome_gap": 5,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "c14bc53a0d4a7f0cfc5512a888f6d0f6b3953a011aa17c53398ff45838c78832",
+  "historical_minions_written": 3189,
+  "historical_minions_remaining": 12,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Victor_Nefarius"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Nefarius now uses literal observed nineteen-Dragon/twenty-Undead tables with complete explicit recipes and no line-count or implementation filtering",
+    "Observed source is updated after the pinned client release; independent exact client/server membership confirmation remains deferred",
+    "Combined baseline cost bound applies before three-mana holding-Dragon reduction; target selection, duplicate keywords, inherited triggers/cost rules/stats and All types need gameplay review",
+    "Compiled Creation body rejects missing physical definitions; copy/Silence/resurrection and death operations remain unvalidated",
+    "Historical backlog and Avatar remain unfinished; no gameplay/regressions/training run"
+  ]
+}

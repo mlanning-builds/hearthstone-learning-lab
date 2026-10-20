@@ -1,0 +1,120 @@
+{
+  "fingerprint": "526b9b7e5a4f459178b82a9273e928f7daa12a9a6a03b805f924e80624b6c842",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 14,
+  "new_historical_spell_roots": 11,
+  "new_tokens_and_alternate_forms": 3,
+  "registry_records": 8145,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1374,
+    "remaining": 68
+  },
+  "new_implementations": [
+    {
+      "id": "DRG_302",
+      "name": "Grave Rune",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_137",
+      "name": "Headcrack",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_849",
+      "name": "Embrace Darkness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LEG_RLK_039",
+      "name": "Plagued Grain",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_007",
+      "name": "Curse of Rafaam",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_007t",
+      "name": "Cursed!",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_111",
+      "name": "Excavated Evil",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_344",
+      "name": "Primal Talismans",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_034",
+      "name": "Curse of Agony",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_034t",
+      "name": "Agony",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_039t",
+      "name": "Grain Crate",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_082",
+      "name": "Big Bad Voodoo",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_416",
+      "name": "Death Roll",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_417",
+      "name": "Sensory Deprivation",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8145,
+    "edges": 825,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "68 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

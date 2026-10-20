@@ -1,0 +1,330 @@
+{
+  "status": "metadata_observation_not_approved_pool",
+  "format": "pinned Standard 36.6.0.251952",
+  "parent_count": 21,
+  "observed_branch_count": 42,
+  "parents": [
+    {
+      "id": "CORE_AT_037",
+      "name": "Living Roots",
+      "type": "SPELL",
+      "metadata_sha256": "8ede09a682bfb2b5e2e55faee55f0da333a8071b9aa5d4644b6525ddc77694e9",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Living Roots: damage",
+        "Living Roots: Saplings"
+      ],
+      "branch_target_modes": [
+        "character",
+        "none"
+      ]
+    },
+    {
+      "id": "CORE_EX1_154",
+      "name": "Wrath",
+      "type": "SPELL",
+      "metadata_sha256": "db3d2975b9998ce6c4d9a002d42d950d41002bea11d3c056b3dc819b6f9214ac",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Wrath: damage",
+        "Wrath: draw"
+      ],
+      "branch_target_modes": [
+        "minion",
+        "minion"
+      ]
+    },
+    {
+      "id": "CORE_EX1_160",
+      "name": "Power of the Wild",
+      "type": "SPELL",
+      "metadata_sha256": "b627f18e6e3c401d9c0026706efd2ef938375099e47987a96ea434b04d97498d",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Power: buff",
+        "Power: Panther"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "CORE_OG_047",
+      "name": "Feral Rage",
+      "type": "SPELL",
+      "metadata_sha256": "37b585fed429d666c8102dcf2a0cf8ff57f592ff76e82f649811cb4f4bfb9082",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Feral Rage: Attack",
+        "Feral Rage: Armor"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "CORE_ONY_018",
+      "name": "Boomkin",
+      "type": "MINION",
+      "metadata_sha256": "5a201995d197ceb2b2faec1d45a40214bfa3c31c39b4d88be3cc393e3afe2c90",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Boomkin: heal",
+        "Boomkin: damage"
+      ],
+      "branch_target_modes": [
+        "none",
+        "character"
+      ]
+    },
+    {
+      "id": "CORE_TSC_650",
+      "name": "Flipper Friends",
+      "type": "SPELL",
+      "metadata_sha256": "67ec1ec9577bf37a247f698498dae9f5a00be52b17e98a996f34e6bf5b9e0672",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Flipper Friends: Orca",
+        "Flipper Friends: Otters"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "Core_LOE_115",
+      "name": "Raven Idol",
+      "type": "SPELL",
+      "metadata_sha256": "82e5385770494b40528c56604b711a12b57671411f2d15cebceb672e1dd6413a",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Discover a minion",
+        "Discover a spell"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_233",
+      "name": "Spirits of the Forest",
+      "type": "SPELL",
+      "metadata_sha256": "2f5ee64d74c373c8cec47d21e1c793ec964fd31737e741467e10115e1ac5456d",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Spirits: Wolves",
+        "Spirits: Falcons"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_257",
+      "name": "Lightmender",
+      "type": "MINION",
+      "metadata_sha256": "eddcdf3dff2c0b618fe11d4e79a749ab43de28424f3b52104c4820a0b5d706dc",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Lightmender: Attack and Shield",
+        "Lightmender: Health and Lifesteal"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_263",
+      "name": "Grace of the Greatwolf",
+      "type": "SPELL",
+      "metadata_sha256": "fdb8a2579b571b705e377a09685cfc0f7b3bf87d797c5610cfe137942d0163b6",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Greatwolf damage",
+        "Greatwolf wolves"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_463",
+      "name": "Twilight Influence",
+      "type": "SPELL",
+      "metadata_sha256": "b84a98586479e6d1ec4aae2709256045958f15047786625de2ca649888d1a274",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Constricting Thorns",
+        "Controlling Vines"
+      ],
+      "branch_target_modes": [
+        "small_attack_minion",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_490",
+      "name": "Sleep Paralysis",
+      "type": "SPELL",
+      "metadata_sha256": "be18c03828a70c294c7ac9d338d30dd3cca443697f4b32ae25345185c7518746",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Night Terrors",
+        "Destroy"
+      ],
+      "branch_target_modes": [
+        "none",
+        "enemy_minion"
+      ]
+    },
+    {
+      "id": "EDR_525",
+      "name": "Barbed Thorn",
+      "type": "WEAPON",
+      "metadata_sha256": "958be40d76819ee08db29fa003ca2859d8ed869913bdfc306dfca3a9ce11c7a5",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Barbed Thorn: Poisonous",
+        "Barbed Thorn: Deathrattle"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_570",
+      "name": "Ominous Nightmares",
+      "type": "SPELL",
+      "metadata_sha256": "452921657494d1860a696e6fca0a6fd741df76654fdc80d406562a63417084fb",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Nightmares: damage",
+        "Nightmares: buff"
+      ],
+      "branch_target_modes": [
+        "none",
+        "damaged_minion"
+      ]
+    },
+    {
+      "id": "EDR_813",
+      "name": "Morbid Swarm",
+      "type": "SPELL",
+      "metadata_sha256": "6627b6c69e7b8599323ca740b4519b3035250f7ef83f4fe1db9c02f78d8cbe5d",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Ants",
+        "Bug bites"
+      ],
+      "branch_target_modes": [
+        "none",
+        "minion"
+      ]
+    },
+    {
+      "id": "EDR_820",
+      "name": "Wyvern's Slumber",
+      "type": "SPELL",
+      "metadata_sha256": "4cf7ae2d692d73307502adb546bd98ed23d7b153504a1ed117bd440428657f3d",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Dreadseeds",
+        "Damage"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_843",
+      "name": "Reforestation",
+      "type": "SPELL",
+      "metadata_sha256": "df4f6dec1f95c11a49acb31f8b9f67a19b4b0db3231ca992ae69710ec15c2677",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Draw a spell",
+        "Draw a minion"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "EDR_872",
+      "name": "Spark of Life",
+      "type": "SPELL",
+      "metadata_sha256": "1f4444ea610406ab684dba34038fec8191e3e13a9d4ac52337f56a508532de8c",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Mage spell",
+        "Druid spell"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "END_010",
+      "name": "Twilight Timereaver",
+      "type": "MINION",
+      "metadata_sha256": "9a2e91c8b7ddcf7717e9161018e353c1eef1e71609c1216a4a63ffbf3b5f1ea9",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Timereaver: Attack",
+        "Timereaver: Health"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "JAIL_201",
+      "name": "Secret Ingredient",
+      "type": "SPELL",
+      "metadata_sha256": "6e9cc4f539f288d0b763de6c3df84d19fd842b0812d5137fc4c8dfc24f5dfe8d",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Hero Attack",
+        "Druid card"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "id": "TIME_211",
+      "name": "Lady Azshara",
+      "type": "MINION",
+      "metadata_sha256": "cfe2302fc6ca8cf9fe0d04c702ac989b3d7481237e75a13c608b8eacbfb35276",
+      "declared_branch_count": 2,
+      "branch_labels": [
+        "Empower Zin-Azshari",
+        "Empower the Well"
+      ],
+      "branch_target_modes": [
+        "none",
+        "none"
+      ]
+    }
+  ],
+  "limitations": [
+    "CHOOSE_ONE mechanic alone does not certify Uluu eligibility",
+    "Fabled and weapon choices require explicit eligibility and source-context review",
+    "Source branch labels are internal descriptions, not certified dynamic choice-card text",
+    "No pair-selection weighting or duplicate policy certified",
+    "No implemented-only pool was installed"
+  ]
+}

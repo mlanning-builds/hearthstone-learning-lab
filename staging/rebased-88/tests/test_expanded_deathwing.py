@@ -26,16 +26,19 @@ class DeathwingTests(unittest.TestCase):
  def test_zero_herald_one_choice_summons_dragon(self):
   self.play('CATA_190h');self.choose(0)
   self.assertEqual([m.card_id for m in self.p.minions],['CATA_190t14']);self.assertIsNone(self.g.pending_choice)
- def test_two_heralds_allow_two_repeated_choices(self):
-  self.p.herald_count=2;self.play('CATA_190h');self.choose(0);self.choose(0)
-  self.assertEqual(len(self.p.minions),2)
- def test_four_heralds_allow_four_repeated_choices(self):
+ def test_two_heralds_allow_two_distinct_choices(self):
+  self.p.herald_count=2;self.play('CATA_190h');self.choose(0)
+  self.assertNotIn('CATA_190t10',[c['card_id'] for c in self.g.pending_choice['options']]);self.choose(0)
+  self.assertEqual(len(self.p.minions),1)
+ def test_four_heralds_allow_four_distinct_choices(self):
   self.p.herald_count=4;self.play('CATA_190h')
-  for _ in range(4):self.choose(0)
-  self.assertEqual(len(self.p.minions),4);self.assertEqual(self.p.herald_count,4)
+  for remaining in (4,3,2,1):
+   self.assertEqual(len(self.g.pending_choice["options"]),remaining);self.choose(0)
+  self.assertEqual(len(self.p.minions),1);self.assertEqual(self.p.herald_count,4)
+  self.assertEqual(len([c for c in self.p.deck if isinstance(c,Card) and c.card_id=="CS3_036"]),5)
  def test_count_is_snapshotted_when_offer_opens(self):
   self.p.herald_count=2;self.play('CATA_190h');self.p.herald_count=4;self.choose(0);self.choose(0)
-  self.assertIsNone(self.g.pending_choice);self.assertEqual(len(self.p.minions),2)
+  self.assertIsNone(self.g.pending_choice);self.assertEqual(len(self.p.minions),1)
  def test_full_board_summon_choice_does_not_overflow(self):
   for _ in range(7):self.g._summon(0,'NEW1_034')
   self.play('CATA_190h');self.choose(0);self.assertEqual(len(self.p.board),7)
@@ -53,7 +56,7 @@ class DeathwingTests(unittest.TestCase):
  def test_cataclysms_are_not_cast_spells_or_discoveries(self):
   self.play('CATA_190h');self.choose(2);self.assertFalse(self.p.spells_turn);self.assertEqual(self.p.discoveries_total,0)
  def test_missing_pool_rolls_back_hero_play(self):
-  self.g._generation_pools.clear();self.p.mana=10;c=self.g._enter_hand(0,Card(self.g._new_id(),'CATA_190h'))
+  self.contract(LEGENDARY_DRAGONS,["MISSING_REVIEWED_DRAGON"]);self.p.mana=10;c=self.g._enter_hand(0,Card(self.g._new_id(),'CATA_190h'))
   with self.assertRaises(UnsupportedCard):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
   self.assertIsNone(self.p.hero_card_id);self.assertEqual(self.p.armor,0);self.assertEqual(self.p.mana,10)
  def test_replacement_power_grants_five_attack_once_per_turn(self):
@@ -90,8 +93,8 @@ class DeathwingTests(unittest.TestCase):
   self.assertEqual(view['pending_choice']['remaining'],1);self.assertEqual(view['pending_choice']['picks'],['CATA_190t10'])
   self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True})
   rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']));self.assertIn('cataclysm_context',str(rows))
- def test_two_topples_resolve_against_updated_board(self):
-  self.p.herald_count=2;self.g._summon(1,'CATA_190t14');self.g._summon(1,'CATA_190t14')
+ def test_topple_then_raze_resolves_against_updated_board(self):
+  self.p.herald_count=2;self.g._summon(1,'CATA_190t14');self.g._summon(1,'CATA_190t14').health=4
   self.play('CATA_190h');self.choose(1);self.choose(1);self.assertFalse(self.q.board)
  def test_cataclysm_selection_order_controls_results(self):
   self.p.herald_count=2;enemy=self.g._summon(1,'CATA_190t14');enemy.health=4

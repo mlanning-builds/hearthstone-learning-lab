@@ -4,7 +4,7 @@ RULES={'JAIL_860':('none',[]),'TLC_602':('none',[('lost_city_start',)])}
 class TurnDeadlines:
  def _deadline_start_game(self):
   for owner,p in enumerate(self.players):
-   if 'JAIL_860' in self._opening_effect_ids(owner) and all(self.cards[cid]['cost']<=3 for cid in p.starting_deck):
+   if 'JAIL_860' in self._opening_effect_ids(owner) and all(self._starting_card_data(owner,cid)['cost']<=3 for cid in p.starting_deck):
     self._schedule_turn_effect(owner,'end',5,1,(('chef_set_mana',),),source_card_id='JAIL_860')
  def _deadline_turn_entries(self,phase):
   if phase!='end':return []
@@ -15,7 +15,7 @@ class TurnDeadlines:
  def _deadline_effect(self,op,ctx):
   owner=ctx['owner'];p=self.players[owner]
   if op[0]=='chef_set_mana':
-   p.max_mana=min(10,p.mana_capacity);p.mana=max(0,p.max_mana-p.locked_mana)
+   p.temporary_mana_available=0;p.max_mana=min(10,p.mana_capacity);p.mana=max(0,p.max_mana-p.locked_mana)
   elif op[0]=='lost_city_start':
    if p.quest is not None or len(p.secrets)>=5:return True
    if 'TLC_602t' not in self.cards:raise UnsupportedCard('Missing Lost City reward')

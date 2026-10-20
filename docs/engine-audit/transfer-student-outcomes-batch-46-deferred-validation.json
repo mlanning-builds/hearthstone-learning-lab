@@ -1,0 +1,41 @@
+{
+  "scope": "Stargazing physical same-turn repeat and Domino Effect directional damage",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "MIS_027",
+    "WW_425"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 17,
+  "current_expansion_outcome_gap": 15,
+  "closed_outcome_ids": [
+    "MIS_027",
+    "WW_425"
+  ],
+  "candidate_fingerprint": "bac5886c9053b1ce0c2e56c9e6222642313736c56b7bbada9f674ebab35eff0b",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Stargazing original/canonical self exclusion, complete Arcane deck selection and physical draw capture",
+    "Same-turn repeat stacking, copied enchantment, countered plays, changed ownership and internal casts",
+    "Domino initial random direction, Locations/Dormant gaps and original board snapshot versus dynamic death/summon movement",
+    "Spell Damage per hit, prevention and resumable damage/death sequencing",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

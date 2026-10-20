@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "card_id": "CATA_470",
+  "source": "https://hearthstone.wiki.gg/wiki/Victor_Nefarius",
+  "source_page_updated": "2026-09-29",
+  "observed_on": "2026-10-15",
+  "evidence": "Expanded Dragon and Undead tables, described by the source as observed through repeated play.",
+  "approved_for_runtime": false,
+  "limitations": [
+    "Community observed membership is not an independently certified complete pool.",
+    "Compatibility with the pinned simulator patch still requires review.",
+    "Standalone implementation does not establish complete composite behavior."
+  ],
+  "stages": {
+    "dragon": ["END_022", "CORE_NEW1_023", "EDR_571", "TTN_924", "TIME_056", "TIME_045", "CATA_305", "CATA_898", "DRG_211", "CORE_EX1_043", "TIME_856", "TRL_526", "TIME_720", "TIME_051", "BOT_066", "DEEP_006", "BRM_025", "CATA_723", "SCH_711"],
+    "undead": ["RLK_503", "RLK_538", "RLK_958", "CORE_EX1_012", "CORE_WON_096", "RLK_511", "JAM_021", "ICC_913", "ULD_185", "CORE_NEW1_020", "ULD_205", "ICC_700", "CORE_OG_149", "END_031", "ULD_275", "ICC_820", "TIME_617", "JAM_007", "CATA_898", "DINO_435"]
+  }
+}

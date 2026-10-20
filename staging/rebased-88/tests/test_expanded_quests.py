@@ -141,7 +141,7 @@ class QuestTests(unittest.TestCase):
     def test_progress_visible_to_opponent_without_hand_identity(self):
         g=self.game();self.start(g);g.players[0].corpses=2;g._spend_corpses(0,2)
         view=g.observe(1);self.assertEqual(view['players'][0]['quest']['progress'],2)
-        self.assertNotIn('hand',view['players'][0]);self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertNotIn('hand',view['players'][0]);self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_progress_changes_features(self):
         g=self.game();self.start(g);g.players[0].corpses=2
         def features():

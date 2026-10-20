@@ -1,0 +1,165 @@
+{
+  "scope": "Three unadmitted pinned Standard collectibles only; this is not the complete remaining-work inventory.",
+  "remaining_collectibles": 3,
+  "cards": [
+    {
+      "id": "CATA_470",
+      "name": "Victor Nefarius",
+      "runtime": "expanded/minion_forge.py",
+      "status": "staged_not_admitted",
+      "blockers": [
+        "Verify the observed 19-Dragon/20-Undead membership against the pinned patch and independent completeness evidence",
+        "Resolve four explicitly gated physical-link inherited effects (Muradin hammer return, Broxigar return, Gigafin disposal and weapon shuffle); independently verify copied memory and new-bearer history behavior",
+        "Review complete composite behavior including ALL-type inheritance and generated dependency closure",
+        "Close the Drakeadon-to-Victor and Dark-Peddler-to-Storm outcome dependencies without removing those outcomes"
+      ],
+      "evidence_url": "https://hearthstone.wiki.gg/wiki/Victor_Nefarius",
+      "evidence_limit": "Community-described curated pool; printed text and generic tribe filters do not establish complete membership",
+      "observed_component_manifest": "data/review/nefarius-components.json",
+      "coverage_report": "docs/engine-audit/nefarius-component-coverage.json",
+      "written_composite_support": [
+        "Explicit intrinsic property contracts",
+        "Spell Damage and damaged-state Attack/Spell Damage",
+        "Cost rules and continuous cost floors",
+        "Enemy Taunt and turn-draw suppression",
+        "Spell/death triggers and end-turn effects",
+        "Overload on paid play",
+        "Physical recipe preservation through copy, Silence and Reborn"
+      ],
+      "downstream_blockers": [
+        {
+          "component": "CATA_723",
+          "unregistered_outcome": "CATA_470",
+          "request": "Standard random 4-Cost minion"
+        },
+        {
+          "component": "CORE_WON_096",
+          "unregistered_outcome": "TLC_EVENT_400",
+          "request": "Standard 1-Cost card, own class or neutral"
+        }
+      ],
+      "all_type_review": {
+        "source": "https://hearthstone.wiki.gg/wiki/Victor_Nefarius",
+        "observed_on": "2026-10-15",
+        "documented_rule": "Creation is Undead/Dragon unless either component has All types, in which case Creation has All types.",
+        "implementation_gap": "Physical identity/events, highest-cost/cost-slot, Deathrattle-copy and Oathstone resurrection validated by 5,300 checks. Distinct and Discover/history selectors still require review.",
+        "certified": false,
+        "focused_tests_passed": 11
+      }
+    },
+    {
+      "id": "TLC_EVENT_400",
+      "name": "Storm the Gates",
+      "runtime": "expanded/minion_forge.py",
+      "status": "staged_not_admitted",
+      "blockers": [
+        "Complete Standard text-component and historical keyword-component Zombeast pools",
+        "Full component behavior and keyword eligibility for pinned patch",
+        "Composite generated-token identity and interaction review"
+      ],
+      "evidence_url": "https://hearthstone.wiki.gg/wiki/Storm_the_Gates",
+      "evidence_limit": "Standard restriction alone does not close the historical keyword pool",
+      "pool_source_discrepancies": {
+        "reviewed_on": "2026-10-15",
+        "sources": [
+          "https://hearthstone.wiki.gg/wiki/Deathstalker_Rexxar",
+          "https://hearthstone.wiki.gg/wiki/Storm_the_Gates"
+        ],
+        "details": [
+          "Live combined pool includes Core Witchwood Grizzly and Core Halazzi; Rexxar notes exclude obstructive keyword-plus-text combinations and explicitly name Witchwood Grizzly.",
+          "Rexxar notes explicitly allow All-type Zombeasts; Storm notes summarize resulting type as always Undead/Beast without stating the All exception.",
+          "Source query includes six later-set identities absent from pinned build 251952.",
+          "Combined Wild view contains 191 visible entries and bans original GIL_623, while the Standard view permits CORE_GIL_623. This is not evidence that all 191 are keyword-stage candidates."
+        ],
+        "complete_stage_membership_established": false,
+        "raptor_patch_review": {
+          "source": "https://us.forums.blizzard.com/en/hearthstone/t/3403-hotfix-patch/154571",
+          "patch": "34.0.3",
+          "reported_rule": "Raptor Herald excluded from Zombeast offers.",
+          "limitation": "The post predates the distinct CORE_EDR_004_2026 identity; current combined query includes that version. Do not assume exclusion inheritance or approval without version-matched evidence."
+        }
+      },
+      "written_component_recipes": 34,
+      "new_standalone_dependencies": [
+        "DMF_532",
+        "GIL_681",
+        "NX2_050",
+        "TSC_647"
+      ],
+      "written_text_component_recipes": 32,
+      "wild_combined_observation": "data/review/storm-wild-pool-observation.json",
+      "component_recipe_coverage": "docs/engine-audit/storm-component-recipe-coverage.json",
+      "observed_pinned_standard_identities_with_recipe": 36,
+      "dormant_battlecry_review": {
+        "source": "https://us.forums.blizzard.com/en/hearthstone/t/zombeast-dormant-battlecry/98303",
+        "reported_on": "2022-11-29",
+        "reported_behavior": "Pelican Diver composition immediately enters Dormant and skips the other component Battlecry.",
+        "status": "Historical player report; pinned behavior unverified. No runtime policy changed from this report."
+      }
+    },
+    {
+      "id": "CORE_WON_145",
+      "name": "Avatar of Hearthstone",
+      "runtime": "expanded/exceptional_finish.py",
+      "status": "staged_not_admitted",
+      "blockers": [
+        "Reviewed in-game pack rarity and ordering distribution",
+        "Finish pinned release/membership conformance; 16 special-acquisition cases reviewed, including Golden-only Ysera. 863 identity candidates are not yet a certified joint pack distribution.",
+        "Automatic play coverage for every eligible outcome"
+      ],
+      "evidence_url": "https://hearthstone.wiki.gg/wiki/Avatar_of_Hearthstone",
+      "evidence_limit": "Ordinary collection pack odds are not established as Avatar in-game odds",
+      "distribution_research": {
+        "reviewed_on": "2026-10-15",
+        "result": "No authoritative numeric distribution found. Community sources disagree between equal per-card sampling and equal rarity sampling; neither is an accepted runtime contract.",
+        "sources": [
+          "https://www.reddit.com/r/hearthstone/comments/1mnz8ej",
+          "https://www.reddit.com/r/wildhearthstone/comments/1idl7t0"
+        ],
+        "next_evidence": "Version-matched developer statement, client-side rule evidence or an independently reviewed empirical distribution; ordinary shop-pack odds are insufficient."
+      },
+      "acquisition_review": "docs/engine-audit/avatar-pack-acquisition-review.json",
+      "acquisition_cases_resolved": 16,
+      "identity_candidates_after_acquisition_review": 863
+    }
+  ],
+  "completed_this_change": [
+    "Registered Devourer of Souls and Plagued Protodrake standalone paths; source-bound inheritance retains an explicit gate",
+    "Wrote explicit recipes for all 38 observed Nefarius component identities",
+    "Added intrinsic composite execution and construction checks for all 361 affordable observed pairs",
+    "Implemented eleven explicit private Deathrattle memory bindings and new-bearer damage/combat references; 18 focused checks and all 5,281 regression checks pass"
+  ],
+  "not_completed": [
+    "Production pool contracts",
+    "Production admission of these three cards"
+  ],
+  "next_work": [
+    "Obtain versioned complete component lists and map every member to full intrinsic runtime behavior",
+    "Audit pack eligibility against pinned metadata independently of executable coverage",
+    "Admit each card only once its production outcomes and required behavior are closed"
+  ],
+  "validation": {
+    "fingerprint": "7edd6e6c7d37a10ad5bd91098c26e3f3c46adc34bbef0daf30648adade59cc4a",
+    "tests_run": 5402,
+    "success": true,
+    "receipt": "staging/rebased-88/runs/expanded_validation/validation-88908af35dcc4f769a6ace3d11912ca0.json",
+    "scope": "Passing 5,402-check source predates twenty implementation-only passes (1,595 eligible historical minions); current source remains unvalidated. Regressions deferred by owner instruction.",
+    "latest_attempt": {
+      "tests_run": 5402,
+      "passed": 5402,
+      "errors": 0,
+      "failures": 0,
+      "receipt": "staging/rebased-88/runs/expanded_validation/validation-88908af35dcc4f769a6ace3d11912ca0.json",
+      "scope": "Completed before current implementation-only pass; no current-source validation claimed."
+    },
+    "current_working_tree_validated": false
+  },
+  "broader_historical_backlog": {
+    "report": "docs/engine-audit/historical-minion-remaining-current.json",
+    "source_card_id": "TIME_052",
+    "eligible_minions": 3201,
+    "written_minions": 2326,
+    "unwritten_minions": 875,
+    "recursive_closure_verified": false
+  }
+}

@@ -1,0 +1,45 @@
+"""Exact historical Deathrattle primitives; no generated pool membership claim."""
+DEATH_EFFECTS={
+ 'BAR_026':[('heal_own_hero',4)],
+ 'BAR_027':[('damage_own_hero',5)],
+ 'BAR_535':[('armor',5)],
+ 'BT_014':[('filtered_draw',(('type','eq','SPELL'),),1)],
+ 'BOT_509':[('filtered_draw',(('type','eq','MINION'),('mechanic','eq','DEATHRATTLE')),1)],
+ 'BAR_330':[('filtered_draw',(('type','eq','MINION'),('mechanic','eq','DEATHRATTLE')),1)],
+ 'AV_328':[('filtered_draw',(('type','eq','SPELL'),('school','eq','HOLY')),1),('filtered_draw',(('type','eq','SPELL'),('school','eq','SHADOW')),1)],
+ 'DAL_604':[('filtered_draw',(('type','eq','MINION'),('tribe','eq','MECHANICAL')),1)],
+ 'DMF_194':[('filtered_draw',(('type','eq','MINION'),('tribe','eq','DRAGON')),1)],
+ 'GIL_557':[('filtered_draw',(('mechanic','eq','COMBO'),),1)],
+ 'TRL_520':[('filtered_draw',(('type','eq','MINION'),('tribe','eq','MURLOC')),2)],
+ 'WW_344':[('filtered_draw',(('type','eq','SPELL'),('school','eq','HOLY')),1)],
+ 'ULD_438':[('filtered_draw',(('type','eq','MINION'),('health','eq',1)),2)],
+ 'GIL_118':[('heal_own_hero',8)],
+ 'GIL_667':[('heal_own_hero',6)],
+ 'DAL_775':[('area_damage','all_minions',3)],
+ 'EX1_097':[('area_damage','all_characters',2)],
+ 'FP1_021':[('area_damage','all_minions',1)],
+ 'FP1_024':[('area_damage','all_minions',1)],
+ 'ICC_021':[('area_damage','enemy_minions',2)],
+ 'ICC_064':[('area_damage','all_minions',1)],
+ 'ETC_086':[('area_damage','enemy_minions',3)],
+ 'NX2_024':[('damage_own_hero',4)],
+ 'TSC_938':[('draw',1)],
+ 'YOD_016':[('draw',1)],
+ 'AV_704':[('damage_random_enemy',8)],
+ 'BOT_606':[('damage_random_enemy_minion',4)],
+ 'LOE_046':[('damage_random_enemy',1)],
+ 'OG_179':[('damage_random_enemy',1)],
+ 'REV_845':[('damage_random_enemy',2)],
+ 'RLK_029':[('damage_random_enemy',4)],
+ 'TOY_356':[('damage_random_enemy',7)],
+ 'UNG_818':[('damage_random_enemy_minion',3)],
+ 'DEEP_030':[('draw',1),('damage_own_hero',2)],
+ 'LOE_089':[('death_summon_group',('LOE_089t','LOE_089t2','LOE_089t3'))],
+ 'WORK_018':[('death_summon','WORK_018t',2)],
+}
+RULES={cid:('none',[]) for cid in DEATH_EFFECTS}
+RULES['ICC_064']=('none',[('area_damage','all_minions',1)])
+RULES['DEEP_030']=('none',[('draw',1),('damage_own_hero',2)])
+TOKEN_RULES={cid:('none',[]) for cid in ('LOE_089t','LOE_089t2','LOE_089t3','WORK_018t')}
+GENERATED_IDS=frozenset(RULES)
+FIXED_TOKEN_IDS=frozenset(TOKEN_RULES)

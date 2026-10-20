@@ -6,9 +6,9 @@ COINS=('JAIL_504t','JAIL_504t2','JAIL_504t3')
 POTION='JAIL_504t3p'
 DEMONS=pool(card_type='MINION',tribe='DEMON')
 # Effect resolution order is explicit, distinct from randomized ingredient picks.
-INGREDIENTS=(('damage',3),('area_damage','all_minions',2),('freeze_random_enemies',1),
- ('summon','CFM_621_m2',1),('counterfeit_resurrect',),('board_buff',0,2),
- ('draw',1),random_cards(DEMONS),('armor',4))
+from .historical_potion_crafting import PARTS,ORDER
+INGREDIENTS=tuple(operation for key in ORDER if key in PARTS[1] for operation in PARTS[1][key][2])
+
 RULES={'JAIL_504':('none',[('counterfeit_choose',)])}
 TOKEN_RULES={COINS[0]:('none',[('temporary_mana',1),('counterfeit_jade',)]),
  COINS[1]:('none',[('temporary_mana',1),('damage_random_enemy_minion',2)]),
@@ -37,15 +37,14 @@ class Counterfeits:
    self.pending_choice=dict(owner=owner,kind='counterfeit',options=[dict(card_id=cid) for cid in COINS]);self.phase='choice'
   elif name=='counterfeit_potion':
    self._generation_candidates(DEMONS,owner)
-   if POTION not in self.cards or 'CFM_621_m2' not in self.cards:raise UnsupportedCard('Missing Kazakus potion dependencies')
+   if POTION not in self.cards or 'CFM_621_m4' not in self.cards:raise UnsupportedCard('Missing Kazakus potion dependencies')
    selected=sorted(self.rng.sample(range(len(INGREDIENTS)),2))
    card=Card(self._new_id(),POTION)
    card.rule_state=dict(crafted_ops=tuple(INGREDIENTS[i] for i in selected),crafted_target='character' if 0 in selected else 'none')
    self._enter_hand(owner,card)
   elif name=='counterfeit_jade':
-   size=min(30,getattr(p,'jade_size',0)+1);p.jade_size=size
-   m=self._summon(owner,'JAIL_504tt01',attack_bonus=size-1,health_bonus=size-1,entry_origin='effect',entry_site='counterfeit_jade')
-   if m:m.base_stat_override=(size,size)
+   from .historical_ritual_batches import jade
+   jade(self,owner,counterfeit=True)
   elif name=='counterfeit_resurrect':
    if p.death_history:self._summon(owner,self.rng.choice(p.death_history),entry_origin='resurrection',entry_site='counterfeit_potion')
   elif name=='crafted_spell':

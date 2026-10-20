@@ -1,0 +1,179 @@
+{
+  "build": "36.6.0.251952",
+  "source": "https://hearthstone.wiki.gg/wiki/Victor_Nefarius",
+  "source_observed": "2026-10-15",
+  "source_page_updated": "2026-09-29",
+  "source_stage_counts": {
+    "dragon": 19,
+    "undead": 20
+  },
+  "stages": {
+    "dragon": [
+      {
+        "card_id": "END_022",
+        "metadata_sha256": "5c3216f5e465e39028574522203b7efdf86c8c3e26ecd1903143470617bdfa0f"
+      },
+      {
+        "card_id": "CORE_NEW1_023",
+        "metadata_sha256": "e48defb6d70efa2ad59ba2e563e2fbd5b5d15ef8f535cc5ded61aac5a35d1c55"
+      },
+      {
+        "card_id": "EDR_571",
+        "metadata_sha256": "336a08161b0914ccf51bd11fbfc1ae135d9c70246d59fced9999a94e816ac546"
+      },
+      {
+        "card_id": "TTN_924",
+        "metadata_sha256": "546261dd1f6a8552e2c4bef445ec57f6c8a07b04b4d587255d3888fe4cadb950"
+      },
+      {
+        "card_id": "TIME_056",
+        "metadata_sha256": "84aa71d636b1a41c0b187ab9b73df930ca512884be5f2ccc2e15dcd0826a1a6b"
+      },
+      {
+        "card_id": "TIME_045",
+        "metadata_sha256": "0e83046b50d0a222b819e117b8bd89e2f75c981df25fe8fd25b86dc9ca8283cb"
+      },
+      {
+        "card_id": "CATA_305",
+        "metadata_sha256": "a449a10f4ad40cfbee922ebb491bf05f51fb27a88b127ae966c133aed8c6977b"
+      },
+      {
+        "card_id": "CATA_898",
+        "metadata_sha256": "aeeca9a08284c98f64c92c7ea4490956763c23bf7e01a0ef17fef5b61f61ab17"
+      },
+      {
+        "card_id": "DRG_211",
+        "metadata_sha256": "cb210baea586df06499b801691e56316116c049b6df8d5449f04b1ac2fd29986"
+      },
+      {
+        "card_id": "CORE_EX1_043",
+        "metadata_sha256": "d419e0e418597120edf506d0aaf3f6dccef4755069102e73f6c2161d39c7558c"
+      },
+      {
+        "card_id": "TIME_856",
+        "metadata_sha256": "5cb855f527a982c12d9949f2725d65767a74c77606d5df7b78a59f015d921120"
+      },
+      {
+        "card_id": "TRL_526",
+        "metadata_sha256": "962abe80681f6b981aa43130b83da0dc2d3c80db8a690dcba15a921e17b3c69b"
+      },
+      {
+        "card_id": "TIME_720",
+        "metadata_sha256": "ed0cd4b9641d5d7693d117f43b27be78c64c878ce8fd49158935acec28d89a67"
+      },
+      {
+        "card_id": "TIME_051",
+        "metadata_sha256": "b5f54153af8f458e9d06ac69c3a90a31d05631e70b2fe4cf23316baafd3f3518"
+      },
+      {
+        "card_id": "BOT_066",
+        "metadata_sha256": "f6e898f75ffd60f899aa8b765556849ee4b1ee6d2c8f5b91af16ab3b208f430b"
+      },
+      {
+        "card_id": "DEEP_006",
+        "metadata_sha256": "3b4168d0886f799a300d3e671a878ac7a52f433857e10115a331cf44b8c05030"
+      },
+      {
+        "card_id": "BRM_025",
+        "metadata_sha256": "821f0ccfecdf0039f507dd3a77de2fe81da733c86b18f0ff7d04243ffd3625ca"
+      },
+      {
+        "card_id": "CATA_723",
+        "metadata_sha256": "b26fc5fcf66a24bb049134d81a7f790661f199b7e9a6a5534bc0533a2d8caccf"
+      },
+      {
+        "card_id": "SCH_711",
+        "metadata_sha256": "35c64b4e12b55c5dbf5b5f981e87a242e842661a720c32c61ec1832df51ed819"
+      }
+    ],
+    "undead": [
+      {
+        "card_id": "RLK_503",
+        "metadata_sha256": "31b27415b8e9ab85f846796af709b25bd33b9a58d771f24af23f35067542da12"
+      },
+      {
+        "card_id": "RLK_538",
+        "metadata_sha256": "8e6d70359bd10876b70d4cba8ba601a6371a575e0b6b8a44b0098fa068546146"
+      },
+      {
+        "card_id": "RLK_958",
+        "metadata_sha256": "0e01d121bdc44658371a7260994c4ede048e1e8fb4e0bc229656c878cea60d5d"
+      },
+      {
+        "card_id": "CORE_EX1_012",
+        "metadata_sha256": "7b3b0a8b0279fd5c798d13d033103e44e5ffe81069c9d6eb4bb45dd0ac300c8c"
+      },
+      {
+        "card_id": "CORE_WON_096",
+        "metadata_sha256": "dd274fe4e9695168b9c0a265ea375977c06fb7c21e327b2e8b08fef873440aa5"
+      },
+      {
+        "card_id": "RLK_511",
+        "metadata_sha256": "844532b6b31908a066848f44c0860346d7146cedaf1a07a4b794b4c5cd0ee610"
+      },
+      {
+        "card_id": "JAM_021",
+        "metadata_sha256": "4c2de14a7af531d8028c63c59748b074e8779de8510f8f8f5bec58f1295cf8ca"
+      },
+      {
+        "card_id": "ICC_913",
+        "metadata_sha256": "6656596e8c508861b301a0ac6168103830bd657ce805212a9f25c2dbde128a0d"
+      },
+      {
+        "card_id": "ULD_185",
+        "metadata_sha256": "e7bb2f29e44243476e9a6cf32aa551841a042bb6802ba8c2f7eef8c99f89e700"
+      },
+      {
+        "card_id": "CORE_NEW1_020",
+        "metadata_sha256": "de1f052ce2451e2534aa3efc9c50a2ffccf7c40ae787d970153a5ae8c71f744b"
+      },
+      {
+        "card_id": "ULD_205",
+        "metadata_sha256": "e7fbe4ba4729fbbed3d10ee450c111be4e5f018e5de99cf221efe7d37a2f2cea"
+      },
+      {
+        "card_id": "ICC_700",
+        "metadata_sha256": "7d4b96a903bf0ff2c9ea3d3b262823c773e20d664e92c7280c9e41e7e5e09420"
+      },
+      {
+        "card_id": "CORE_OG_149",
+        "metadata_sha256": "73de87ce2d63ccf382518760667b0c5f0b748b5d078d050253048575f2e544b2"
+      },
+      {
+        "card_id": "END_031",
+        "metadata_sha256": "284585b9cfdf143ff63d01b20b0c1874f6afe60f1ea31926b1042d7efaac68a4"
+      },
+      {
+        "card_id": "ULD_275",
+        "metadata_sha256": "db8096eca8d490f760224b6896fb0f036b25893aeff55cfed240e24ef59f01a9"
+      },
+      {
+        "card_id": "ICC_820",
+        "metadata_sha256": "7beb1cd6136c104cc2a8a8d70b963997792cafec29b57af7dca04ac817696c9d"
+      },
+      {
+        "card_id": "TIME_617",
+        "metadata_sha256": "7d63be38160f98cc66ea4b180285f872c00c928cb0f5189f1a32eb9003e010ab"
+      },
+      {
+        "card_id": "JAM_007",
+        "metadata_sha256": "08d1a0fb533f17bf1dabcaf103f9599b3f72dee35d9bdc6e97ae83f909c228c2"
+      },
+      {
+        "card_id": "CATA_898",
+        "metadata_sha256": "aeeca9a08284c98f64c92c7ea4490956763c23bf7e01a0ef17fef5b61f61ab17"
+      },
+      {
+        "card_id": "DINO_435",
+        "metadata_sha256": "641127b659a322a010a3ea598b8ed3baebbd6b335f57378558af34f4cd2d7d4a"
+      }
+    ]
+  },
+  "selection": "Three unique uniform candidates per stage; combined printed mana cost at most ten before holding-Dragon discount",
+  "fidelity_validated": false,
+  "review_pending": [
+    "Current observed source membership versus pinned client/server revision",
+    "All inherited operations, duplicate keywords, conditional stats, Silence, copy, resurrection and target modes",
+    "Class-independent curated pool, dynamic combined cost bound, holding-Dragon discount timing"
+  ]
+}

@@ -20,9 +20,11 @@ class Garona:
   owner=ctx['owner'];p=self.players[owner];q=self.players[1-owner];name=op[0]
   if name=='garona_assassinate':
    kings=[c for c in q.hand if c.card_id=='TIME_875t']
-   if len(kings)>1:raise UnsupportedCard('Multiple held King Llane copies require independent resolution evidence')
+   if len(kings)>1:
+    from .approximation_policy import mark
+    mark(self,'garona');kings=[self.rng.choice(kings)]
    if kings:
-    q.hand.remove(kings[0]);q.health//=2;q.hero_health_changed_turn=True
+    q.hand.remove(kings[0]);self._zone_card_removed(1-owner,kings[0],'hand','destroy');q.health//=2;q.hero_health_changed_turn=True
     self._log('destroy_hand_card',player=1-owner,card='TIME_875t')
     self._refresh_auras()
   elif name=='garona_king_shuffle':
@@ -30,7 +32,7 @@ class Garona:
    if source is not None and source in p.minions:
     p.board.remove(source);card=Card(self._new_id(),source.card_id);self._carry_origin(source,card)
     p.deck.append(card);self.rng.shuffle(p.deck)
-    self._record_deck_insertion(owner,owner,1,'shuffle');self._refresh_auras()
+    self._record_deck_insertion(owner,owner,1,'shuffle',cards=(card,));self._refresh_auras()
     self._log('shuffle_from_board',player=owner,card=source.card_id)
   elif name=='garona_kingslayers':
    # Weapon triggers may be dispatched without a play frame. Queue one so a

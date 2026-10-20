@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "aadcd3ea7441b0a0fb565ea56c79bc528753c791249b47e9229d0ff9a7ddf159",
+  "new_card_ids": [
+    "TOY_700t14"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Simultaneous quest completion and intermediate reward scheduling",
+    "Quest capacity, duplicate normal quest overlap and opening priority",
+    "Draw tutor filter and public observation parity"
+  ]
+}

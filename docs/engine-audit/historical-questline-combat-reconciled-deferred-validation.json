@@ -1,0 +1,91 @@
+{
+  "fingerprint": "52da3173768f37c4460dd783025bba55389da7ed4639323227cd50c40b91008e",
+  "status": "written_unvalidated",
+  "new_combat_definitions": 6,
+  "new_combat_spell_roots": 5,
+  "reconciled_questline_definitions": 39,
+  "reconciled_questline_spell_roots": 8,
+  "registry_records": 8238,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1414,
+    "remaining": 28
+  },
+  "new_combat_ids": [
+    "DAL_062",
+    "EX1_625",
+    "ONY_023",
+    "SW_311",
+    "SW_311t",
+    "WORK_022"
+  ],
+  "questline_ids": [
+    "SW_028",
+    "SW_028t",
+    "SW_028t2",
+    "SW_028t5",
+    "SW_028t6",
+    "SW_039",
+    "SW_039t",
+    "SW_039t3",
+    "SW_039t3_t",
+    "SW_052",
+    "SW_052t",
+    "SW_052t2",
+    "SW_052t3",
+    "SW_052t4",
+    "SW_052t5",
+    "SW_052t6",
+    "SW_052t7",
+    "SW_052t8_t",
+    "SW_091",
+    "SW_091t",
+    "SW_091t3",
+    "SW_091t4",
+    "SW_313",
+    "SW_313t",
+    "SW_313t2",
+    "SW_313t4",
+    "SW_322",
+    "SW_322t",
+    "SW_322t2",
+    "SW_322t4",
+    "SW_428",
+    "SW_428t",
+    "SW_428t2",
+    "SW_428t4",
+    "SW_433",
+    "SW_433t",
+    "SW_433t2",
+    "SW_433t3",
+    "SW_433t3a"
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8238,
+    "edges": 888,
+    "missing_ids": []
+  },
+  "checks": {
+    "ast_parse": true,
+    "strict_schemas": true,
+    "frozen_hash_integrity": true,
+    "literal_dependencies": true,
+    "inventory_reconciled": true,
+    "regressions": true,
+    "gameplay": false,
+    "training": false,
+    "focused_rule_checks": {
+      "module": "tests.test_expanded_final_combat_spells",
+      "passed": 5,
+      "failed": 0
+    },
+    "regression_scope": "Five focused rule checks only; no full suite or gameplay experiment."
+  },
+  "deferred_review": [
+    "Questline progress, reward delivery, nested draw/cast and full-hand timing.",
+    "Garrote Spell Damage and replacement draw timing.",
+    "Cleave simultaneous damage, copying and Silence; temporary hero grants and attack restrictions.",
+    "Feature schema v61 differs from saved models; old models are preserved, not migrated.",
+    "Computed recursive pools and all other unresolved fidelity gaps."
+  ]
+}

@@ -31,7 +31,7 @@ class GelbinTests(unittest.TestCase):
   a=Card(self.g._new_id(),'TIME_009t1');b=Card(self.g._new_id(),'TIME_009t1');c=Card(self.g._new_id(),'TIME_009t2');self.p.deck=[a,b,c,'CORE_CS2_029']
   self.play('TIME_009');self.assertEqual(len(self.p.deck),2);self.assertIn('CORE_CS2_029',self.p.deck);self.assertEqual(sum(x is a or x is b for x in self.p.deck),1);self.assertEqual(len(self.p.scheduled_effects),2)
  def test_all_five_standard_auras_and_two_companions_place(self):
-  self.p.deck=[cid for cid in rules.AURA_RULES if cid!='EDR_259e1'];self.play('TIME_009')
+  self.p.deck=[cid for cid in ('CATA_480','END_011','JAIL_327','TIME_700','TTN_851','TIME_009t1','TIME_009t2','LEG_TTN_908','VAC_922')];self.play('TIME_009')
   self.assertFalse(self.p.deck);self.assertEqual(len(self.p.scheduled_effects),5);self.assertEqual(self.g._end_trigger_count(0),2);self.assertEqual(len(self.q.timed_cost_increases),1)
  def test_placement_is_not_paid_cast_draw_or_repeat(self):
   self.p.deck=['TIME_009t1','CORE_CS2_029'];self.p.spell_repeat_charges=2;auctioneer=self.g._summon(0,'JAIL_718');self.q.secrets.append(Card(self.g._new_id(),'CORE_EX1_287'))
@@ -42,8 +42,11 @@ class GelbinTests(unittest.TestCase):
   c=Card(self.g._new_id(),'TIME_009t1');c.rule_state={'aura_duration_delta':2};self.p.deck=[c];self.play('TIME_009');self.assertEqual(self.p.scheduled_effects[0]['remaining'],5)
  def test_generated_name_does_not_define_membership(self):
   self.g.cards['TEST_FAKE_AURA']=dict(id='TEST_FAKE_AURA',name='Fake Aura',type='SPELL',cost=1,cardClass='PALADIN');self.p.deck=['TEST_FAKE_AURA'];self.play('TIME_009');self.assertEqual(self.p.deck,['TEST_FAKE_AURA']);self.assertFalse(self.p.scheduled_effects)
- def test_unsupported_historical_aura_rejects_before_payment_or_rng(self):
-  self.p.deck=['TIME_009t1','TTN_908'];c=self.g._add(0,'TIME_009');before=deepcopy(self.g.observe(0));rng=self.g.rng.getstate();action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
+ def test_missing_historical_aura_recipe_rejects_before_payment_or_rng(self):
+  from unittest.mock import patch
+  active=patch.dict(rules.AURA_RULES);active.start();self.addCleanup(active.stop)
+  del rules.AURA_RULES['GDB_140']
+  self.p.deck=['TIME_009t1','GDB_140'];c=self.g._add(0,'TIME_009');before=deepcopy(self.g.observe(0));rng=self.g.rng.getstate();action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
   with self.assertRaisesRegex(UnsupportedCard,'not implemented'):self.g.step(action)
   self.assertEqual(self.g.observe(0),before);self.assertEqual(self.g.rng.getstate(),rng)
  def test_missing_stored_payload_rejects_before_other_aura_moves(self):

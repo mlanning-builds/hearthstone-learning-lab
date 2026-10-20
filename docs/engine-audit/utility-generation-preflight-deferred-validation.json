@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "b2f42fa42e1af59195171c91894a1f71279715eb1b39bd3f26423ff407a04c2d",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Shared before-play preflight now walks embedded utility PoolRequests",
+    "Explicit helper pool declarations for Boom Squad, Earthen Might and Storm Bringer",
+    "State-dependent Charged Call and transformation pool preflight, retaining runtime rechecks"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Dynamic board changes between payment and effect resolution",
+    "Helper dependencies outside the explicitly declared consumers",
+    "Runtime preflight ordering and complete pool/client eligibility"
+  ]
+}

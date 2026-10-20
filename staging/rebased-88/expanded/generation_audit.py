@@ -30,10 +30,13 @@ def build_report(catalog, implemented, card_ids=None):
             for request in sorted(requests_for(cid) | extensions.requests_for(cid), key=repr):
                 ids = sorted(k for k, value in metadata.items() if request_matches(request, value, owner))
                 missing = sorted(set(ids) - implemented)
+                from .generation_families import reviewed_contract
+                contract=reviewed_contract(request,owner)
+                reviewed=bool(contract and set(contract.card_ids)==set(ids))
                 card_missing.update(missing)
                 contexts.append(dict(hero_class=owner, request=asdict(request),
                                      candidate_ids=ids, missing_ids=missing,
-                                     membership_reviewed=False))
+                                     membership_reviewed=reviewed))
         impact.update(card_missing)
         rows.append(dict(card_id=cid, name=card['name'],
                          record_sha256=hashlib.sha256(json.dumps(card, sort_keys=True).encode()).hexdigest(),
@@ -43,11 +46,12 @@ def build_report(catalog, implemented, card_ids=None):
                          historical_pool_review_required=cid=='CATA_EVENT_000',
                          pool_contexts=contexts,
                          missing_candidate_count=len(card_missing), missing_candidate_ids=sorted(card_missing)))
-    return dict(schema=1, scope='Pinned regular Standard catalog only; no Mercenaries/Battlegrounds',
-                staged_cards=len(rows), newly_playable_cards=0,
-                catalog_cards=len(metadata), playable_catalog_cards=len(set(metadata) & implemented),
-                membership_reviewed=False,
-                limitation='Metadata matches are conservative planning candidates, NOT approved generation pools. Self-generation exclusions, canonical copies, special eligibility and per-class rules still require review. A zero missing count does not authorize registration.',
+    return dict(schema=2, scope='Pinned regular Standard catalog only; no Mercenaries/Battlegrounds',
+                reviewed_cards=len(rows),staged_cards=len(selected-implemented),
+                registered_recipe_cards=len(selected&implemented),
+                catalog_cards=len(metadata), registered_catalog_cards=len(set(metadata) & implemented),
+                membership_reviewed=bool(rows) and all(row['pool_contexts'] and all(c['membership_reviewed'] for c in row['pool_contexts']) for row in rows),
+                limitation='Registered recipe counts measure written bindings, not complete executable closure or independent fidelity. Metadata matches are conservative planning candidates, NOT approved generation pools. Self-generation exclusions, canonical copies, special eligibility and per-class rules still require review. A zero missing count does not authorize registration.',
                 cards=rows,
                 blockers_by_affected_generators=[dict(card_id=cid, name=metadata[cid]['name'], affected_generators=count)
                                                 for cid, count in sorted(impact.items(), key=lambda item: (-item[1], item[0]))])
@@ -66,10 +70,10 @@ def main():
     if selected:
         report['batch_cards']=len(selected)
         report['batch_live_registered']=len(set(selected)&COLLECTIBLE_IDS)
-        report['newly_playable_cards']=report['batch_live_registered']
+        report['registered_recipe_cards']=report['batch_live_registered']
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2)+'\n')
-    print(json.dumps({k: report[k] for k in ('staged_cards', 'newly_playable_cards', 'playable_catalog_cards')}))
+    print(json.dumps({k: report[k] for k in ('staged_cards', 'registered_recipe_cards', 'registered_catalog_cards')}))
 
 
 if __name__ == '__main__':

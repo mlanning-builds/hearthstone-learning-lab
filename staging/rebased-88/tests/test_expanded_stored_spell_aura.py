@@ -55,7 +55,8 @@ class StoredSpellAuraTests(unittest.TestCase):
         # Remove caster so the only random targets are the two heroes.
         g.players[0].board.clear();before=sum(p.health for p in g.players)
         self.next_owner(g);self.assertEqual(sum(p.health for p in g.players),before-8)
-        with patch.object(g,'_spell_damage',return_value=1):self.next_owner(g)
+        original=g._spell_damage
+        with patch.object(g,'_spell_damage',side_effect=lambda *args,**kw:original(*args,**kw)+1):self.next_owner(g)
         self.assertEqual(sum(p.health for p in g.players),before-17)
         self.assertEqual(c.spell_damage_bonus,2)
     def test_automatic_discover_completes_end_turn(self):
@@ -78,7 +79,9 @@ class StoredSpellAuraTests(unittest.TestCase):
     def test_unsupported_highest_is_not_replaced_by_supported_lower(self):
         g=self.game();c=g._add(0,'CORE_RLK_567');c.set_cost=9;g._add(0,'CORE_EX1_606');u=g._add(0,'EDR_259')
         action=next(a for a in g.legal_actions() if a.kind=='play' and a.source==u.uid);before=g.observe(0)
-        with self.assertRaises(UnsupportedCard):g.step(action)
+        from expanded.cards import RULES
+        with patch.dict(RULES,{'CORE_RLK_567':('none',[('future_unimplemented_effect',)])}):
+            with self.assertRaises(UnsupportedCard):g.step(action)
         self.assertEqual(g.observe(0),before)
     def test_two_auras_store_separate_spells(self):
         g=self.game();g._add(0,'CORE_EX1_606');self.ursol(g);g._add(0,'CORE_EX1_606');self.ursol(g)

@@ -1,0 +1,462 @@
+{
+  "build": "36.6.0.251952",
+  "scope": "Complete frozen Standard collectible Hunter/neutral Beast candidates costing at most five; not a production pool",
+  "source": "https://hearthstone.wiki.gg/wiki/Template%3ADeathstalker_Rexxar_notes",
+  "candidate_count": 45,
+  "complete_production_contract": true,
+  "candidates": [
+    {
+      "card_id": "CATA_206",
+      "name": "Twisted Monstrosity",
+      "text": "[x]<b>{0}, {1}</b>\nEach turn this is in your\nhand, swap between two\n\u00a0random <b>Bonus Effects</b>.",
+      "metadata_sha256": "166c57bfe116b028a81ca6802b89b2e16df8f94251c824ebe7042e72206f0099",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Frozen Taunt/Elusive plus obstructive held-card text",
+      "admitted": false
+    },
+    {
+      "card_id": "CORE_BT_201",
+      "name": "Augmented Porcupine",
+      "text": "[x]<b>Deathrattle</b>: Deal this\nminion's Attack damage\nrandomly split among\nall enemies.",
+      "metadata_sha256": "c728727aa8d1e6ae57f740495c36e872cdec1519d89d0f7e50f755b9da1c70b2",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_EDR_004_2026",
+      "name": "Raptor Herald",
+      "text": "[x]<b>Rewind</b>\n<b>Battlecry:</b> <b>Discover</b> a Beast\nwith a <b>Dark Gift</b>. <b>Kindred:</b>\nIt costs (1) less.",
+      "metadata_sha256": "c9d01300805ed0030df79cb9d80e3ed48b4d1cc517719b8b1135be0dd45acf1a",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_EX1_014",
+      "name": "King Mukla",
+      "text": "<b>Battlecry:</b> Give your opponent 2 Bananas.",
+      "metadata_sha256": "4b66edaa3f20846ec0e5f891a606207cfcdba63a6237f860d87254749cfd99ec",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_EX1_028",
+      "name": "Stranglethorn Tiger",
+      "text": "<b>Stealth</b>",
+      "metadata_sha256": "f9f49ca34408368341183b9bd0b724273d4fa51f0efeef611a2e26b688b12a26",
+      "behavior_recipe": "keyword",
+      "stage_membership": "keyword_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_EX1_162",
+      "name": "Dire Wolf Alpha",
+      "text": "Adjacent minions have +1\u00a0Attack.",
+      "metadata_sha256": "decf7a2d21c8202ede11baf531d2a19a5975989c58e5a6045d89d008ee9b63d2",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_GIL_558",
+      "name": "Swamp Leech",
+      "text": "<b>Lifesteal</b>",
+      "metadata_sha256": "b268d3f442e818e33e000a7c9cdb3a4accee4bf0eda14ab1e22cd6f334cdad76",
+      "behavior_recipe": "keyword",
+      "stage_membership": "keyword_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_GIL_622",
+      "name": "Lifedrinker",
+      "text": "[x]<b>Battlecry:</b> Deal 3 damage to\nthe enemy hero. Restore\n#3 Health to your hero.",
+      "metadata_sha256": "9b110f2dcdaeeb7c8d12ebf8747c63853fc13ef059dfd51cd35f70321305f26b",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_GIL_623",
+      "name": "Witchwood Grizzly",
+      "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Lose 1 Health\nfor each card in your\nopponent's hand.",
+      "metadata_sha256": "cfcc9e8ffc4ac8de8a9930fa769cf54a7d24171e7a99a433d2f8574ebbec2375",
+      "behavior_recipe": "text",
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Witchwood Grizzly explicitly excluded in Rexxar rules notes",
+      "admitted": false
+    },
+    {
+      "card_id": "CORE_LOE_039",
+      "name": "Gorillabot A-3",
+      "text": "<b>Battlecry:</b> If you control another Mech, <b>Discover</b> a Mech.",
+      "metadata_sha256": "1c3a872833c229c81c2db25261fa53c04baf186ea540ef1af5afd44310565d8d",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_LOOT_413",
+      "name": "Plated Beetle",
+      "text": "<b>Deathrattle:</b> Gain 3 Armor.",
+      "metadata_sha256": "bf5dc0f88d95516f99af83facda8714ff74c37cd81ecb0155752d89f3a418076",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_SCH_605",
+      "name": "Lake Thresher",
+      "text": "Also damages the minions next to whomever\nthis attacks.",
+      "metadata_sha256": "42874c01cef79b6b35533bae916aaab768f6cc449f6e986c01e2a27c0fd69092",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_SW_072",
+      "name": "Rustrot Viper",
+      "text": "[x]<b>Tradeable</b>\n<b>Battlecry:</b> Destroy your\nopponent's weapon.",
+      "metadata_sha256": "13370c165cfd178719bad8177b647e5ef3a56c8c8ac16d73c677bf455dc12b8f",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_TRL_900",
+      "name": "Halazzi, the Lynx",
+      "text": "<b>Rush</b>. <b>Battlecry:</b> Fill your hand with 1/1 Lynxes\nthat have <b>Rush</b>.",
+      "metadata_sha256": "4ad23cdbd99aa7249cc6e6269bb2fc3377bf34b6698ed75657628044392f05d6",
+      "behavior_recipe": "text",
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Rush plus obstructive Battlecry text",
+      "admitted": false
+    },
+    {
+      "card_id": "CORE_UNG_084",
+      "name": "Fire Plume Phoenix",
+      "text": "<b>Battlecry:</b> Deal 3 damage.",
+      "metadata_sha256": "15635cc100eecbcf6dbf7008aaf25eda616573d97f1a2a44567340b0f7ee1c5a",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "CORE_UNG_912",
+      "name": "Jeweled Macaw",
+      "text": "<b>Battlecry:</b> Add a random Beast to your hand.",
+      "metadata_sha256": "7f7ec0b32f29ce3b7c2d8f56d8a4b2c7d1bd86184e6639244ff4b981b84c581c",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "DINO_435",
+      "name": "Crater Experiment",
+      "text": "<b>Kindred:</b> Summon a\ncopy of this.",
+      "metadata_sha256": "641127b659a322a010a3ea598b8ed3baebbd6b335f57378558af34f4cd2d7d4a",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "EDR_014",
+      "name": "Verdant Dreamsaber",
+      "text": "<b>Battlecry:</b> If this costs (3)\nor less, attack two random enemy minions.",
+      "metadata_sha256": "1cef15fe65d5c166256a607113129df9552c4e9a9f46145d50077650f5336e4b",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "EDR_227",
+      "name": "Umbraclaw",
+      "text": "<b>Rush</b>\n<b>Deathrattle:</b> <b>Imbue</b> your Hero Power.",
+      "metadata_sha256": "4e347b054f71d0579b600da49d9505e898acba457a3805761507960943e95080",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Rush plus obstructive Deathrattle text",
+      "admitted": false
+    },
+    {
+      "card_id": "EDR_481",
+      "name": "Mythical Runebear",
+      "text": "<b>Taunt</b>. <b>Battlecry:</b> If this has 4 or more Attack, summon a copy of this.",
+      "metadata_sha256": "2b7ff623f027d13f402669bf29168ca0902bd18f5af5025e698c455cb15bc22e",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Taunt plus obstructive Battlecry text",
+      "admitted": false
+    },
+    {
+      "card_id": "EDR_492",
+      "name": "Mother Duck",
+      "text": "<b>Battlecry:</b> Summon three 1/1 Ducklings with <b>Rush</b>.",
+      "metadata_sha256": "e0f447c9fa606bf5ad730475e219807ecb9c35679f282ac29831fb41924202ae",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "EDR_849",
+      "name": "Dreambound Raptor",
+      "text": "After you play a minion, give it a random\n<b>Bonus Effect</b>.",
+      "metadata_sha256": "a4ce9186663127acda388c271c29d158c92dc70f39b32bcb0c974b9fe1d0c752",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "END_013",
+      "name": "Brutish Endmaw",
+      "text": "<b>Battlecry:</b> <b>Discover</b> a\n1-Cost minion with a <b>Dark\u00a0Gift</b>.",
+      "metadata_sha256": "93392db2b8bdef3273b069a31881ba57626fc3562beb695d37969b6166ffca70",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "END_015",
+      "name": "Triennium Rex",
+      "text": "[x]<b>Kindred and Deathrattle:</b>\nGet a random <b>Deathrattle</b>\n\u00a0minion. It costs (2) less.",
+      "metadata_sha256": "9bb6057fa9706f6fbf71ef425accf12f632e2e1c64859887baef5ddca5d30e1e",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "JAIL_395",
+      "name": "Sewer Swimmer",
+      "text": "[x]<b>Prepare</b>\n<b>Battlecry:</b> Trigger a friendly\n\u00a0minion's <b>Deathrattle.</b>",
+      "metadata_sha256": "793a6686b992f9daf8ca5e58083f5a97901bc2d8867c317815ddd31af1bf27ac",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "JAIL_453",
+      "name": "Jailbird",
+      "text": "[x]<b>Taunt</b>. When you\n\u00a0<b>Prepare</b> while holding this,\nreduce this card's Cost by\n\u00a0the same amount.",
+      "metadata_sha256": "b3cf2e9d397da0a0884bfcd45f8eaa0a229953edf951c73db3539ed7602ef55e",
+      "behavior_recipe": "text",
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Taunt plus obstructive held-card text",
+      "admitted": false
+    },
+    {
+      "card_id": "JAIL_878",
+      "name": "Guard Dog",
+      "text": "[x]<b>Deathrattle:</b> Summon\na random 1-Cost\n\u00a0<b>Deathrattle</b> minion.",
+      "metadata_sha256": "0ad2edd167739b5b0604ab58c8d1389b5c7bc7f9d1bb8a4e46c411ca2772c6db",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "JAIL_EVENT_100",
+      "name": "Watfin",
+      "text": "<b>Battlecry:</b> <b>Discover</b> a minion. Pick the <i>suspicious</i> one to gain +1/+1.",
+      "metadata_sha256": "0bf79469b93e83c02f9b546066beddcfe9c19c59ee6429e7c45b6fd5ce8e9c65",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "MEND_303",
+      "name": "Migrating Elekk",
+      "text": "[x]<b>Taunt. Battlecry:</b> Replace your\nfuture Animal Companions\nwith random Beasts that\ncost (1) more.",
+      "metadata_sha256": "f48d9bc9be38a7f4dd74819d036bd7f229a29f1c785a3318d5b06cd3c4afdf21",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Taunt plus obstructive Battlecry text",
+      "admitted": false
+    },
+    {
+      "card_id": "TIME_042",
+      "name": "King Maluk",
+      "text": "<b>Battlecry:</b> Discard\nyour hand. Get an\nInfinite Banana.",
+      "metadata_sha256": "2d5854ca6c7f949b3545a5d28572672f5dd5f7ab1bbcc5a0d050e09b7eee1d6f",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TIME_046",
+      "name": "Cyborg Patriarch",
+      "text": "<b>Dormant</b> for 3 turns.\n<b>Taunt</b>",
+      "metadata_sha256": "5256b06fd83919ffdb814e630d1cff12ab0fb6d1a7a2e21f6af50935688bff82",
+      "behavior_recipe": "keyword",
+      "stage_membership": "keyword_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TIME_047",
+      "name": "Devious Coyote",
+      "text": "[x]<b>Stealth</b>. Costs (1) less for\neach time the enemy hero\ntook damage this turn.",
+      "metadata_sha256": "2c837d05501e787213b288544667a148c2837074f3bfa68200f9bd2a196b5570",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Stealth plus obstructive cost text",
+      "admitted": false
+    },
+    {
+      "card_id": "TIME_053",
+      "name": "Sandmaw",
+      "text": "",
+      "metadata_sha256": "8f76bfaf2976232a8b28a1bb41049ca7d5bb263e5926b3a44221b787564e9eea",
+      "behavior_recipe": "keyword",
+      "stage_membership": "keyword_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TIME_058",
+      "name": "Paltry Flutterwing",
+      "text": "[x]<b>Deathrattle:</b> Summon a\nrandom 2-Cost minion that\nis <b>Dormant</b> for 2 turns.",
+      "metadata_sha256": "ec60644747a8341169a40eb96bfc44884669d6dd6f73692767d417d7c7403465",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TIME_601",
+      "name": "Arrow Retriever",
+      "text": "<b>Battlecry:</b> Draw until you have 3 cards.",
+      "metadata_sha256": "aac641b85cf610f113c4ec8c0c685ca40dfc38e1b4b62907dddc8caeb0ee5995",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_102",
+      "name": "Torga",
+      "text": "<b>Battlecry:</b> Draw a <b>Kindred</b> card and another card that activates it.",
+      "metadata_sha256": "fc032ae47d70c8cbfefc3c7719fcc741e5557d6f1e52e8a6e1f772faf94ad0a1",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_242",
+      "name": "Ancient Stegodon",
+      "text": "<b>Battlecry:</b> Choose to\ngain <b>Taunt</b>, <b>Poisonous</b>,\nor +1/+1.",
+      "metadata_sha256": "4645c631d58815c49780efe4ec0e61cae44ea1853b033f5b3e38b758a57a2fdb",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_245",
+      "name": "Ancient Raptor",
+      "text": "[x]<b>Battlecry:</b> Choose to gain\n+3 Attack, <b>Divine Shield</b>,\nor \"<b>Deathrattle:</b> Summon\ntwo 1/1 Plants.\"",
+      "metadata_sha256": "6c1699143c77150e1839c390c9e77a5cd1a606f4ece673100606c6bc2239ee73",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_246",
+      "name": "Ancient Pterrordax",
+      "text": "[x]<b>Battlecry:</b> Choose to gain\n<b>Stealth</b> until your next turn,\n<b>Elusive</b>, or <b>Windfury</b>.",
+      "metadata_sha256": "02bfc45dd175000369f9637f77949c0d5faddbf00f4a2f0b5cdec5a3448882b5",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_247",
+      "name": "Primal Sabretooth",
+      "text": "[x]<b>Stealth</b>\nAfter this attacks and kills a\nminion, get a copy of it.",
+      "metadata_sha256": "bb88c9812476ae2440ea459f8130ad85ef6829427f790bbc9d1da07073e73dd7",
+      "behavior_recipe": null,
+      "stage_membership": "excluded_by_cited_rule",
+      "exclusion_reason": "Stealth plus obstructive trigger text",
+      "admitted": false
+    },
+    {
+      "card_id": "TLC_250",
+      "name": "Crater Gator",
+      "text": "[x]<b>Battlecry:</b> Until the start of\nyour next turn, the enemy\nhero can't be healed.",
+      "metadata_sha256": "7ef37ea8802481d4da1209930845730146f13d4f92b3628b5afb8f21444eb2a3",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_256",
+      "name": "Marshland Thresher",
+      "text": "After you cast a spell,\ngain <b>Divine Shield</b>.",
+      "metadata_sha256": "e216196e6575cadb0c50eba1a4f5d972a64c2c668635b383266fb2cd4a927d34",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_603",
+      "name": "Platysaur",
+      "text": "<b>Battlecry:</b> Draw a card. <b>Deathrattle:</b> Discard it.",
+      "metadata_sha256": "9b9d477cb27aa3ca1b00819881016a21e71d7d990ca0303cca02a1c05274a2ee",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_825",
+      "name": "Ravasaur Matriarch",
+      "text": "[x]<b>Kindred:</b> Deal damage to\nan enemy minion equal to\nthis minion's Attack.",
+      "metadata_sha256": "8c82c02ae248a2860adc245265599373db2d87cb38cb91399fc9bbac4c093e9d",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    },
+    {
+      "card_id": "TLC_827",
+      "name": "Grazing Stegodon",
+      "text": "At the end of your turn, gain +1 Attack <i>(even while in hand or deck)</i>.",
+      "metadata_sha256": "3bf8b820c8f92d8362b2f20713b4c5cb762619ea28401df89ee1fee1c910bb64",
+      "behavior_recipe": "text",
+      "stage_membership": "text_stage",
+      "exclusion_reason": null,
+      "admitted": true
+    }
+  ],
+  "text_stage_count": 32,
+  "keyword_stage_count": 34,
+  "fidelity_validated": false
+}

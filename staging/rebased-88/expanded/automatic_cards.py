@@ -6,7 +6,7 @@ placement does not execute a hand-play Battlecry. Spells reuse internal casting.
 from engine.game import Card
 from engine.cards import UnsupportedCard
 
-def validate_automatic_card(game,card):
+def validate_automatic_card(game,card,owner=None):
  if not isinstance(card,Card):raise ValueError('Automatic execution requires a physical card')
  data=game.cards.get(card.card_id)
  if data is None:raise UnsupportedCard('Missing automatic card metadata')
@@ -14,7 +14,7 @@ def validate_automatic_card(game,card):
  from .cards import RULES,COLLECTIBLE_IDS,TOKEN_IDS
  from .locations import LOCATION_RULES
  from .hero_powers import HERO_POWERS
- if kind=='SPELL':supported=game._supports_internal_spell(card.card_id)
+ if kind=='SPELL':supported=game._supports_internal_spell(card.card_id,owner)
  elif kind=='LOCATION':supported=card.card_id in LOCATION_RULES
  elif kind=='HERO':supported=card.card_id in HERO_POWERS
  else:supported=kind in ('MINION','WEAPON') and card.card_id in (set(RULES)|COLLECTIBLE_IDS|TOKEN_IDS)
@@ -27,7 +27,7 @@ def split_automatic_card(game,op,ctx):
   if source is None or source not in game.players[ctx['owner']].minions or source.silenced:return ('batch30_noop',),()
   stored=source.rule_state.get('prison_cards',[])
   if not stored:return ('batch30_noop',),()
-  for value in stored:validate_automatic_card(game,value)
+  for value in stored:validate_automatic_card(game,value,ctx['owner'])
   value=stored.pop(game.rng.randrange(len(stored)))
   # The discarded physical card is gone; this is a new automatic execution.
   card=game._copy_card(value)
@@ -37,7 +37,7 @@ def split_automatic_card(game,op,ctx):
   records=plays_for_turn(game.players[ctx['owner']],game.turn)
   sources=[r.card for r in records if r.card.card_id!='JAIL_500']
   # Validate the entire captured set before consuming RNG or replaying anything.
-  for card in sources:validate_automatic_card(game,card)
+  for card in sources:validate_automatic_card(game,card,ctx['owner'])
   game.rng.shuffle(sources)
   operations=tuple(('automatic_card',game._fresh_replay_card(card),'prefer_enemies') for card in sources)
   return ('batch30_noop',),operations
@@ -45,15 +45,18 @@ def split_automatic_card(game,op,ctx):
   remaining=op[1]
   if type(remaining) is not int or remaining<0:raise ValueError('Invalid automatic deck count')
   if not remaining or not game.players[ctx['owner']].deck:return ('batch30_noop',),()
-  value=game.players[ctx['owner']].deck[0]
+  # All deck operations use the final element as the top; index zero is
+  # the bottom (including Dredge). Consume the same end as an ordinary draw.
+  value=game.players[ctx['owner']].deck[-1]
+  candidate=value if isinstance(value,Card) else Card(0,value)
+  validate_automatic_card(game,candidate,ctx['owner'])
   card=value if isinstance(value,Card) else Card(game._new_id(),value)
-  validate_automatic_card(game,card)
   return ('automatic_detach_top',value), (('automatic_card',card,'random'),('automatic_top',remaining-1))
  if op[0]!='automatic_card':return None
  card=op[1];policy=op[2] if len(op)>2 else 'random'
  if policy not in ('random','enemies','prefer_enemies'):raise ValueError('Invalid automatic targeting policy')
  if any(card is c for p in game.players for c in p.hand+p.deck):raise UnsupportedCard('Automatic card must be detached from its source zone')
- kind=validate_automatic_card(game,card)
+ kind=validate_automatic_card(game,card,ctx['owner'])
  if kind=='SPELL':return game._cast_spell_split(('cast_physical_spell',card,policy),ctx)
  return ('automatic_place',card),()
 
@@ -65,8 +68,8 @@ def place_automatic_card(game,op,ctx):
   return True
  if op[0]=='automatic_detach_top':
   deck=game.players[ctx['owner']].deck
-  if not deck or (deck[0] is not op[1] and deck[0]!=op[1]):raise UnsupportedCard('Automatic source changed before consumption')
-  deck.pop(0);game._refresh_auras();return True
+  if not deck or (deck[-1] is not op[1] and deck[-1]!=op[1]):raise UnsupportedCard('Automatic source changed before consumption')
+  deck.pop();game._refresh_auras();return True
  if op[0]!='automatic_place':return False
  card=op[1];owner=ctx['owner'];data=game.cards[card.card_id];kind=data['type']
  if kind=='MINION':

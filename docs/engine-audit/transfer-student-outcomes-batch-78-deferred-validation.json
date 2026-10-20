@@ -1,0 +1,41 @@
+{
+  "scope": "Soul Mirror deferred-death roster copying and resumable counterpart combat; unvalidated",
+  "new_dependency_definitions": 1,
+  "new_unvalidated_bodies": 1,
+  "new_ids": [
+    "BT_198"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "eb04d3db2fe08c52293e2005fac2b8f9398327ef3b017a5a2e25c6d61fac6762",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Soul_Mirror"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Soul Mirror uses existing balanced repetition/death guard across all summons and counterpart attacks; all behavior unvalidated",
+    "Original left-to-right enemy roster snapshots and pairings persist across trigger choices; dynamic donor transformations and copy aura/enchantment semantics need client comparison",
+    "All copies are summoned before attacks; native forced begin/resolve handles attack replacements and trigger pauses, then records one spent attack",
+    "Mortally wounded counterpart or attacker is skipped, and deaths settle after the shared end guard; nested cast/repetition/hero lethal handling requires deferred review",
+    "Board-space exhaustion and entry-trigger-created minions need deferred gameplay review",
+    "Rexxar remains the final missing Harth hand dependency; source hand order/printing/distribution contract remains unfinished",
+    "No gameplay/regressions/training run"
+  ]
+}

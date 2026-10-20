@@ -10,7 +10,7 @@ class PassiveAdmissionTests(unittest.TestCase):
   records=registry()
   ids=[c for c in sorted(COLLECTIBLE_IDS) if c not in BUNDLES and c not in ('JAIL_397','JAIL_430',root) and eligible(records[c],hero,(0,0,0)) and (not cheap or records[c]['cost']<=3)]
   self.assertGreaterEqual(len(ids),29)
-  d=Deck(hero,(root,)+tuple(ids[:29]));self.assertEqual(validate(d),[]);return d
+  d=Deck(hero,(root,)+tuple(ids[:29]));self.assertEqual(validate(d,records),[]);return d
  def game(self,hero,root,cheap=False,opposing_root='CORE_CS2_122'):
   g=Game([self.deck(hero,root,cheap),self.deck('WARRIOR',opposing_root)],seed=98)
   g.step(Action('mulligan'));g.step(Action('mulligan'));return g

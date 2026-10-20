@@ -125,7 +125,7 @@ class DormantTests(unittest.TestCase):
         g=self.game();r=g._summon(0,'EDR_849');g._sleep_minion(r,2);m=self.play(g,'EDR_851t');self.assertEqual(m.keywords,set(g.cards[m.card_id].get('mechanics',[])))
     def test_public_dormant_state_and_version(self):
         g=self.game();m=g._summon(0,'CORE_BT_156');view=g.observe(1)
-        entity=view['players'][0]['board'][0];self.assertEqual((entity['type'],entity['dormant']),('DORMANT',2));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        entity=view['players'][0]['board'][0];self.assertEqual((entity['type'],entity['dormant']),('DORMANT',2));self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_silenced_minion_still_completes_external_dormancy(self):
         g=self.game();m=g._summon(0,'CS2_033');g._silence(m);g._sleep_minion(m,1);self.cycle(g)
         self.assertFalse(m.dormant);self.assertTrue(m.silenced)

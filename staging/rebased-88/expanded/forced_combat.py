@@ -12,11 +12,15 @@ class ForcedCombat:
         window={'source':source}
         if not hasattr(self,'_attack_windows'):self._attack_windows=[]
         self._attack_windows.append(window)
+        minion=self._force_live(source)
+        if minion is not None and minion.card_id=='TID_080':self._refresh_auras()
         return window
 
     def _close_attack_window(self,window):
         if window is None:return
         self._attack_windows[:]=[entry for entry in self._attack_windows if entry is not window]
+        minion=self._force_live(window['source'])
+        if minion is not None and minion.card_id=='TID_080':self._refresh_auras()
 
     def _force_live(self,uid):
         return next((m for p in self.players for m in p.minions if m.uid==uid and m.health>0),None)
@@ -60,9 +64,14 @@ class ForcedCombat:
             self.rng.shuffle(targets)
             ops=[('force_pair',source.uid,uid) for uid in targets]
         elif name=='force_resurrect_kills':
-            identities=list(source.rule_state.get('combat_kills',())) if source else []
-            self.rng.shuffle(identities)
-            ops=[('summon',cid,1) for cid in identities]
+            history=getattr(self,'_combat_kill_history',{})
+            if source is not None and source.uid in history:
+                victims=list(history[source.uid]);self.rng.shuffle(victims)
+                ops=[('resurrect_attacking_victim',victim) for victim in victims]
+            else:
+                identities=list(source.rule_state.get('combat_kills',())) if source else []
+                self.rng.shuffle(identities)
+                ops=[('summon',cid,1) for cid in identities]
         elif name=='force_source_excess':
             target=self._force_target(owner,'random')
             if source is None or not target:return ('batch30_noop',),()
@@ -101,7 +110,10 @@ class ForcedCombat:
 
     def _force_effect(self,op,ctx):
         owner=ctx['owner'];source=ctx.get('source');name=op[0]
-        if name=='force_shadow_heal_attack':
+        if name=='resurrect_attacking_victim':
+            victim=op[1]
+            self._summon(owner,victim.card_id,entry_origin='resurrection',entry_site='attacking_kill_history',entry_source=victim)
+        elif name=='force_shadow_heal_attack':
             attacker=self._force_live(op[1])
             if attacker and not attacker.silenced and attacker.owner==owner:self._force_attack(attacker.uid,op[2])
         elif name=='force_finish_heal':
@@ -112,9 +124,13 @@ class ForcedCombat:
             if attacker is None or attacker.uid==target or (target>0 and self._force_live(target) is None):return True
             state['listeners']=self._event_listeners()
             state['window']=self._open_attack_window(attacker.uid)
-            if self._secret_event('attack',attacker.owner,source=attacker.uid,target=target) or self._force_live(attacker.uid) is None:
+            from .historical_forgetful import plan
+            target=plan(self,attacker.uid,target,forced=True);state['target']=target
+            if target is None or self._force_live(attacker.uid) is None:
                 self._close_attack_window(state['window']);return True
             state['ready']=True
+            from .historical_aura_finish_batch import before_attack as aura_finish_before_attack
+            aura_finish_before_attack(self,attacker.uid)
             self._rule_events.append(('before_minion_attack',dict(owner=attacker.owner,source=attacker.uid,target=target,stealthed=self._b60_pre_attack(attacker.uid)),self._event_listeners()))
         elif name=='force_resolve':
             state=op[1];attacker=self._force_live(state['source']);target=state['target']

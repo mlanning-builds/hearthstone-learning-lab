@@ -13,7 +13,7 @@ class GenerationExtensionTests(unittest.TestCase):
     def run_body(self,cid,death=False,**ctx):
         self.helper.run_ops(self.g,DEATH_EFFECTS[cid] if death else RULES[cid][1],**ctx)
     def test_only_closed_families_registered(self):
-        self.assertEqual(set(RULES)&COLLECTIBLE_IDS,{'CATA_621','DINO_427'})
+        self.assertTrue(set(RULES)<=COLLECTIBLE_IDS)
     def test_temporary_generated_minions_expire(self):
         cid='TLC_469';self.install(cid,['CORE_EX1_012']);self.run_body(cid,death=True)
         p=self.g.players[0];self.assertEqual(len(p.hand),2)
@@ -40,8 +40,9 @@ class GenerationExtensionTests(unittest.TestCase):
         m=self.g._summon(1,'EDR_851t');self.run_body('TIME_712',target=m.uid,combo=False)
         self.assertFalse(self.g.players[1].minions);self.assertFalse(self.g.players[0].minions)
     def test_active_combo_without_pool_rejects(self):
+        self.install('TIME_712',['UNIMPLEMENTED_COMBO_MINION'])
         m=self.g._summon(1,'EDR_851t')
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):
+        with self.assertRaisesRegex(UnsupportedCard,'missing card data'):
             self.run_body('TIME_712',target=m.uid,combo=True)
 
     def test_guard_dog_summons_deathrattle_minion(self):

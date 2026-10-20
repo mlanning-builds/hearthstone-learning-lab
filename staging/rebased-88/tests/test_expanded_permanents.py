@@ -156,7 +156,7 @@ class PermanentTests(unittest.TestCase):
         self.assertEqual(view['players'][0]['board'][0]['type'],'PERMANENT')
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']));self.assertTrue(rows)
         self.activate(g,obj,c);enemy=g.observe(1)
-        self.assertNotIn('DREAM_03',json.dumps(enemy));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertNotIn('DREAM_03',json.dumps(enemy));self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_fel_beast_printed_keywords_work(self):
         g=self.game();a=g._summon(0,'TLC_446t2');b=g._summon(0,'TLC_446t3');c=g._summon(0,'TLC_446t4')
         self.assertEqual((a.attack,a.health),(5,3));self.assertTrue({'RUSH','LIFESTEAL'}<=g._effective_keywords(a))

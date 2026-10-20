@@ -51,9 +51,12 @@ class CastConditionsTests(unittest.TestCase):
         g=self.game();c=Card(g._new_id(),'TIME_600')
         self.run_cast(g,('cast_physical_spell',c,'enemies'),hand_center=True)
         self.assertEqual(g.players[1].health,27)
-    def test_untransformed_shadow_is_still_rejected(self):
+    def test_untransformed_shadow_casts_without_copying_an_effect(self):
         g=self.game()
-        with self.assertRaises(UnsupportedCard):self.run_cast(g,('cast_fixed_spell','CORE_RLK_567','random'))
+        before=[(p.health,p.mana,len(p.hand),len(p.deck),len(p.board),p.cards_played) for p in g.players]
+        self.run_cast(g,('cast_fixed_spell','CORE_RLK_567','random'))
+        self.assertEqual([(p.health,p.mana,len(p.hand),len(p.deck),len(p.board),p.cards_played) for p in g.players],before)
+        self.assertIsNone(g.pending_choice)
     def test_generated_self_damage_spells_hit_cast_owner(self):
         for cid,amount in [('JAIL_443t',2),('TIME_025t',3)]:
             with self.subTest(cid=cid):

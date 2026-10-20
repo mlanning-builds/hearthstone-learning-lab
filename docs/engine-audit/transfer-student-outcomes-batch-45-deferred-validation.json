@@ -1,0 +1,47 @@
+{
+  "scope": "Riot captured damage floor and complete physical Seedling blossom families",
+  "new_unvalidated_bodies": 6,
+  "new_ids": [
+    "REV_337",
+    "TTN_930",
+    "TTN_930t",
+    "TTN_950",
+    "TTN_950t",
+    "TTN_950t3"
+  ],
+  "new_collectible_outcomes": 3,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 20,
+  "current_expansion_outcome_gap": 17,
+  "closed_outcome_ids": [
+    "REV_337",
+    "TTN_930",
+    "TTN_950"
+  ],
+  "candidate_fingerprint": "bfdf92dc67cebb940cf342aac91b02a358928398947bd31a836043202f88c460",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Riot damage floor layering, Poisonous, destruction versus damage, silence and forced attack ordering",
+    "Riot captured current minions versus newly summoned ones and subsequent control changes",
+    "Frozen Frost Lotus threshold 3 versus wiki note 2; archive preserved without altering metadata",
+    "Seedling owner-start ticking phase, mulligan cards, draw-after-start, stolen cards and copied partial progress",
+    "Blossom transformation enchantment/cost preservation and no fresh reset of copied physical countdowns",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

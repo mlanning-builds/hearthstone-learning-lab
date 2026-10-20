@@ -26,7 +26,7 @@ class EntityEffects:
                 if bound is not None and bound not in active:
                     p.hand.remove(card);changed=True
             for source in sources:
-                if len(p.hand)<10 and not any(getattr(c,'_provided_by',None)==source.uid for c in p.hand):
+                if len(p.hand)<getattr(p,'hand_capacity',10) and not any(getattr(c,'_provided_by',None)==source.uid for c in p.hand):
                     card=Card(self._new_id(),'TLC_241t');card._provided_by=source.uid
                     self._enter_hand(owner,card);changed=True
         return changed
@@ -35,7 +35,8 @@ class EntityEffects:
         if dealt<=0:return
         if getattr(minion,'_fragile_illusion',False) and not minion.silenced:
             minion.health=0
-        if minion.card_id=='CATA_185' and minion.health<=0 and isinstance(source,Minion):
+        from .death_inheritance import bearer_uses
+        if (minion.card_id=='CATA_185' or minion.attached_death_effects and bearer_uses(self,minion,'entity_replicate_killer')) and minion.health<=0 and isinstance(source,Minion):
             minion.rule_state['killed_by_minion']=source.uid
 
     def _entity_choice(self,choice,selected):

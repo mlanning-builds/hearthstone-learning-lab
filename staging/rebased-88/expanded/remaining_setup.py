@@ -16,11 +16,15 @@ class RemainingSetup:
         self.turn_time_limit=15 if all('CS3_035' in self._opening_effect_ids(i) for i in range(2)) else None
         self.turn_time_elapsed=0
         for p,deck in zip(self.players,decks):p.contraband_beasts=tuple(deck.contraband_beasts)
+    def _turn_clock_limit(self):
+        limit=getattr(self,'turn_time_limit',None)
+        if any(self._active('EX1_560',owner) for owner in (0,1)):return min(limit,15) if limit is not None else 15
+        return limit
     def elapse_decision_time(self,seconds):
         if not isinstance(seconds,(int,float)) or not math.isfinite(seconds) or seconds<0:raise ValueError('Invalid elapsed seconds')
         if self.phase!='play' or self.terminal:raise ValueError('Turn clock requires an actionable play phase')
         self.turn_time_elapsed=getattr(self,'turn_time_elapsed',0)+seconds
-        limit=getattr(self,'turn_time_limit',None)
+        limit=self._turn_clock_limit()
         if limit is not None and self.turn_time_elapsed>=limit:
             from engine.game import Action
             self.step(Action('end'))
@@ -42,7 +46,10 @@ class RemainingSetup:
             self._effect(discover(pool(card_type='SPELL',classes=k)),ctx)
         elif name=='contraband_discover':
             ids=getattr(p,'contraband_beasts',())
-            if not ids:raise UnsupportedCard('Generated Underbelly has no reviewed fallback contraband pool')
+            # Like an empty E.T.C. band, absent submitted contraband has no
+            # choice to offer. The card is excluded from random generation;
+            # explicit stolen/copied cards still use the controller's band.
+            if not ids:return True
             if any(cid not in self.cards for cid in ids):raise UnsupportedCard('Contraband selection lacks executable dependency')
             self.pending_choice=dict(owner=owner,kind='contraband_discover',discover=True,options=[dict(card_id=cid) for cid in ids]);self.phase='choice'
         else:return False

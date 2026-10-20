@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "OG_027",
+    "CFM_696",
+    "BOT_245"
+  ],
+  "candidate_fingerprint": "35fe85e89a7c337ca7c56e286d050139f79be79c907c9d37620f36b001877afa",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Transformation ordering, summon multipliers and pending events",
+    "Cost-dependent pool closure and Legendary generation exclusions"
+  ]
+}

@@ -68,8 +68,9 @@ class LatorviusRewardTests(unittest.TestCase):
   self.fx.install(self.g,quest_families.MURLOCS,['CORE_EX1_509'])
   for _ in range(10):self.g._add(0,'TOKEN_COIN')
   self.fx.run_ops(self.g,quest_families.TOKEN_RULES['UNG_942t'][1]);self.assertEqual(len(self.p.hand),10);self.assertTrue(all(c.card_id=='TOKEN_COIN' for c in self.p.hand))
- def test_megafin_rejects_missing_pool(self):
+ def test_megafin_rejects_incomplete_reviewed_pool(self):
   from engine.cards import UnsupportedCard
+  self.g.cards.pop('TLC_429')
   with self.assertRaises(UnsupportedCard):self.play('UNG_942t')
  def test_megafin_pool_dependency_declared(self):
   self.assertEqual(quest_families.requests_for('UNG_942t'),{quest_families.MURLOCS})
@@ -110,9 +111,9 @@ class LatorviusRewardTests(unittest.TestCase):
   self.fx.install(self.g,quest_families.MURLOCS,['CORE_EX1_509']);self.g.cards.pop('UNG_829t2');before=self.g.rng.getstate();hand=list(self.p.hand);deck=list(self.p.deck)
   with self.assertRaises(UnsupportedCard):self.fx.run_ops(self.g,[('latorvius_rewards',)])
   self.assertEqual(self.g.rng.getstate(),before);self.assertEqual(self.p.hand,hand);self.assertEqual(self.p.deck,deck)
- def test_latorvius_missing_murloc_contract_rejects(self):
+ def test_latorvius_incomplete_murloc_contract_rejects(self):
   from engine.cards import UnsupportedCard
-  before=self.g.rng.getstate()
+  self.g.cards.pop('TLC_429');before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.fx.run_ops(self.g,[('latorvius_rewards',)])
   self.assertEqual(self.g.rng.getstate(),before)
  def test_latorvius_repeat_has_fresh_nine_reward_set(self):

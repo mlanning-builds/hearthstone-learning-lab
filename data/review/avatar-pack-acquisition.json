@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "patch": "36.6.0.251952",
+  "observed_on": "2026-10-15",
+  "approved_for_runtime": false,
+  "cards": [
+    {
+      "id": "BE_036",
+      "name": "M.O.T.H.E.R.",
+      "source": "https://hearthstone.wiki.gg/wiki/M.O.T.H.E.R.",
+      "record_sha256": "a5a1a5dfe84cb282971a60ade93a48c3ba0ed63f31f2b7c941fb2e4df7037fa9",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "CATA_615",
+      "name": "Genn, Cursed King",
+      "source": "https://hearthstone.wiki.gg/wiki/Genn,_Cursed_King",
+      "record_sha256": "9c306cdce9317fb2cd850a9d4a093eae41587b62fb0a1cd3fea40193c016d42a",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "CATA_720",
+      "name": "Warmaster Blackhorn",
+      "source": "https://hearthstone.wiki.gg/wiki/Warmaster_Blackhorn",
+      "record_sha256": "6559c2a0aed3b8df2362765ac8cd2c47db8f60e6a33836b08f452a87752c2d4c",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "EDR_000",
+      "name": "Ysera, Emerald Aspect",
+      "source": "https://hearthstone.wiki.gg/wiki/Ysera,_Emerald_Aspect",
+      "record_sha256": "720f34c02b27024dd8c4ebdfb75953f114a3f0ca1efede62e43832009a51eb46",
+      "pack_qualities": [
+        "GOLDEN"
+      ],
+      "evidence": "Acquisition table explicitly permits the Golden version in Standard packs; Regular/Signature unavailable from packs."
+    },
+    {
+      "id": "EDR_105",
+      "name": "Creature of Madness",
+      "source": "https://hearthstone.wiki.gg/wiki/Creature_of_Madness",
+      "record_sha256": "36747ab2957b91a3a3b1cc40efcb6b1ba37569f263fad6c37a1a2addcffd6207",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "EDR_844",
+      "name": "Naralex, Herald of the Flights",
+      "source": "https://hearthstone.wiki.gg/wiki/Naralex,_Herald_of_the_Flights",
+      "record_sha256": "84b2fe687081fd205276640dbb1255aadc6500673d6308f518abc734781eb4eb",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "JAIL_407",
+      "name": "Vanessa the Ringleader",
+      "source": "https://hearthstone.wiki.gg/wiki/Vanessa_the_Ringleader",
+      "record_sha256": "900e98ff4c29c33105d1c582ae78ea58bc547b1f0bd3ff51b7a04575d46a37f8",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "JAIL_850",
+      "name": "Warden Maiev",
+      "source": "https://hearthstone.wiki.gg/wiki/Warden_Maiev",
+      "record_sha256": "2d518f1aecb13708243bf573810f1c1aaf28f7de6353f2a2ba31ba703148b1c6",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TIME_000",
+      "name": "Semi-Stable Portal",
+      "source": "https://hearthstone.wiki.gg/wiki/Semi-Stable_Portal",
+      "record_sha256": "3aafd4370902d96da4f102ac9225268cba0c06c567ceab57d22aa8340f7e9e94",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TIME_003",
+      "name": "Portal Vanguard",
+      "source": "https://hearthstone.wiki.gg/wiki/Portal_Vanguard",
+      "record_sha256": "f252f063d7ed96bb96e6b5e4b45a1874a164f6c0554f78454feb650bbd17898d",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TIME_038",
+      "name": "Mister Clocksworth",
+      "source": "https://hearthstone.wiki.gg/wiki/Mister_Clocksworth",
+      "record_sha256": "4beff640488e16826d6e8fe540532c0858b165f8ad7bca255c4d4d29dbb86106",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TIME_064",
+      "name": "Chrono-Lord Deios",
+      "source": "https://hearthstone.wiki.gg/wiki/Chrono-Lord_Deios",
+      "record_sha256": "205890a4b054fb39ff53febf6f696522d3f7b42bf389997584ba03b5c090f8a9",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TLC_106",
+      "name": "Endbringer Umbra",
+      "source": "https://hearthstone.wiki.gg/wiki/Endbringer_Umbra",
+      "record_sha256": "aaabbb555465735cf358b8f44a3ee138a9c985ac92fa55f78b5c092aa42dece6",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TLC_110",
+      "name": "City Chief Esho",
+      "source": "https://hearthstone.wiki.gg/wiki/City_Chief_Esho",
+      "record_sha256": "d2809f1acf1bb4403ff98f8d72be8cf8c8a42ecf18dc735082ec5a99dab3aafb",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TLC_252",
+      "name": "Dissolving Ooze",
+      "source": "https://hearthstone.wiki.gg/wiki/Dissolving_Ooze",
+      "record_sha256": "7c570c826759300aaa507dd5d95b8e9f573757822d80267576b2310da4aa12f6",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    },
+    {
+      "id": "TLC_468",
+      "name": "Blob of Tar",
+      "source": "https://hearthstone.wiki.gg/wiki/Blob_of_Tar",
+      "record_sha256": "43ff04a386bf5ca1dce9cd25d66aae051112744ccc9231f5315bf41949775edc",
+      "pack_qualities": [],
+      "evidence": "Acquisition section explicitly excludes pack opening for the listed collectible qualities."
+    }
+  ],
+  "limitation": "Review resolves special acquisition identities, not Avatar rarity or quality distribution."
+}

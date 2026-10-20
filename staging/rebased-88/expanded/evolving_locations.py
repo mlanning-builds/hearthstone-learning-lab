@@ -5,7 +5,7 @@ Pool closure and client timing review gate admission. No text interpretation.
 from engine.cards import UnsupportedCard
 from copy import deepcopy
 from engine.game import Card
-from .generation_cards import pool,random_cards,discover
+from .generation_cards import board_pool,pool,random_cards,discover
 from .selectors import has_school
 DRAGONS=pool(card_type='MINION',tribe='DRAGON',minimum=5)
 NAGAS=pool(card_type='MINION',tribe='NAGA',excluded_mechanic='COLOSSAL')
@@ -47,14 +47,14 @@ class EvolvingLocations:
     if stage:ops.append(('evolving_attach_death_damage',2))
     if stage==2:ops.append(('keyword','DIVINE_SHIELD'))
    elif root=='TIME_436':
-    self._generation_candidates(DRAGONS,owner)
+    self._generation_candidates(board_pool(DRAGONS),owner)
     ops=[random_cards(DRAGONS,destination='board')] if stage==0 else [('evolving_dragon_choice',stage==2)]
    else:ops=[('evolving_silvermoon',stage)]
    if stage<2:ops.append(('evolving_advance',TIMELINES[root][stage+1]))
    return ops
   if cid=='FIR_907':
    amount=1+location.rule_state.get('uses',0)
-   request=pool(card_type='MINION',minimum=amount,maximum=amount)
+   request=board_pool(pool(card_type='MINION',minimum=amount,maximum=amount))
    self._generation_candidates(request,owner)
    location.rule_state['uses']=amount
    return [random_cards(request,destination='board'),('armor',amount),('draw',amount),('evolving_refresh',amount)]
@@ -101,7 +101,7 @@ class EvolvingLocations:
     m=self.rng.choice(targets);health=m.health;dealt=self._deal_effect(m.uid,5,dict(ctx,source=None))
     if op[1] and dealt>health:self._deal_effect(self.hero_id(1-owner),dealt-health,dict(ctx,source=None))
   elif name=='evolving_dragon_choice':
-   values=self._generation_candidates(DRAGONS,owner)
+   values=self._generation_candidates(board_pool(DRAGONS),owner)
    if values:
     self.pending_choice=dict(owner=owner,kind='evolving_dragon',copy=op[1],
      options=[dict(card_id=cid) for cid in self.rng.sample(list(values),min(3,len(values)))])

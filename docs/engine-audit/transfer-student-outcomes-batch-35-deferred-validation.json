@@ -1,0 +1,41 @@
+{
+  "scope": "Rhythm and Roots secret delayed Choose One branches and generated Giant",
+  "new_unvalidated_bodies": 5,
+  "new_ids": [
+    "ETC_387",
+    "ETC_387b",
+    "ETC_387c",
+    "ETC_387ct",
+    "ETC_387t"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 40,
+  "current_expansion_outcome_gap": 39,
+  "closed_outcome_ids": [
+    "ETC_387"
+  ],
+  "candidate_fingerprint": "a3eb7ff94d051ecf411aa8e913f886f75e9f0e58807d289541b17a24d3ea31e7",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Exact owner-turn start-phase countdown against client reference",
+    "Choose-both branch composition and repeated casts with independent timers",
+    "Opponent observation privacy of countdowns and internal branch events; broader action/history serializers",
+    "Delayed summon source context, board capacity and summon multipliers",
+    "Display-wrapper versus actual generated physical spell identity",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

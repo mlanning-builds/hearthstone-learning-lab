@@ -90,7 +90,7 @@ class LocalFamily:
                 # deck enchantments or private physical IDs are exposed/copied.
                 source.attached_death_effects.append(('add', self._card_data(card)['id'], 1))
         elif name == 'local_fill_enemy_coins':
-            for _ in range(10-len(q.hand)):
+            for _ in range(getattr(q,'hand_capacity',10)-len(q.hand)):
                 self._add(1-owner, op[1])
         elif name == 'local_fire_event':
             self._queue_event('local_cannoneers_fire', owner=owner)

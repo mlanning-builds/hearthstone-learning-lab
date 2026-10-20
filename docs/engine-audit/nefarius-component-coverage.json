@@ -1,0 +1,1206 @@
+{
+  "card_id": "CATA_470",
+  "source": "https://hearthstone.wiki.gg/wiki/Victor_Nefarius",
+  "stage_counts": {
+    "dragon": 19,
+    "undead": 20
+  },
+  "distinct_components": 38,
+  "components": [
+    {
+      "card_id": "BOT_066",
+      "name": "Mechanical Whelp",
+      "cost": 6,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "BRM_025",
+      "name": "Volcanic Drake",
+      "cost": 6,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CATA_305",
+      "name": "Incensed Matriarch",
+      "cost": 4,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CATA_723",
+      "name": "Drakeadon Mongrel",
+      "cost": 7,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CATA_898",
+      "name": "Scaled Lancer",
+      "cost": 4,
+      "stages": [
+        "dragon",
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_EX1_012",
+      "name": "Bloodmage Thalnos",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_EX1_043",
+      "name": "Twilight Drake",
+      "cost": 4,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_NEW1_020",
+      "name": "Wild Pyromancer",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_NEW1_023",
+      "name": "Faerie Dragon",
+      "cost": 2,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_OG_149",
+      "name": "Ravaging Ghoul",
+      "cost": 3,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "CORE_WON_096",
+      "name": "Dark Peddler",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "DEEP_006",
+      "name": "Stone Drake",
+      "cost": 6,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "DINO_435",
+      "name": "Crater Experiment",
+      "cost": 5,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "DRG_211",
+      "name": "Squallhunter",
+      "cost": 4,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "EDR_571",
+      "name": "Fae Trickster",
+      "cost": 3,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "END_022",
+      "name": "Time-Twisted Seer",
+      "cost": 1,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "END_031",
+      "name": "Shade of the End Time",
+      "cost": 3,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ICC_700",
+      "name": "Happy Ghoul",
+      "cost": 3,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ICC_820",
+      "name": "Chillblade Champion",
+      "cost": 4,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ICC_913",
+      "name": "Tainted Zealot",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "JAM_007",
+      "name": "Cool Ghoul",
+      "cost": 4,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "JAM_021",
+      "name": "One Hit Wonder",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "RLK_503",
+      "name": "Body Bagger",
+      "cost": 1,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "RLK_511",
+      "name": "Harbinger of Winter",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "RLK_538",
+      "name": "Devourer of Souls",
+      "cost": 1,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "RLK_958",
+      "name": "Skeletal Sidekick",
+      "cost": 1,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "SCH_711",
+      "name": "Plagued Protodrake",
+      "cost": 8,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_045",
+      "name": "Whelp of the Infinite",
+      "cost": 3,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_051",
+      "name": "Soldier of the Infinite",
+      "cost": 5,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_056",
+      "name": "Whelp of the Bronze",
+      "cost": 3,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_617",
+      "name": "Chronochiller",
+      "cost": 4,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_720",
+      "name": "Soldier of the Bronze",
+      "cost": 5,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TIME_856",
+      "name": "Algeth'ar Instructor",
+      "cost": 5,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TRL_526",
+      "name": "Dragonmaw Scorcher",
+      "cost": 5,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "TTN_924",
+      "name": "Razorscale",
+      "cost": 3,
+      "stages": [
+        "dragon"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ULD_185",
+      "name": "Temple Berserker",
+      "cost": 2,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ULD_205",
+      "name": "Candletaker",
+      "cost": 3,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    },
+    {
+      "card_id": "ULD_275",
+      "name": "Bone Wraith",
+      "cost": 4,
+      "stages": [
+        "undead"
+      ],
+      "standalone_registered": true,
+      "composite_recipe_declared": true,
+      "composite_behavior_reviewed": false
+    }
+  ],
+  "composite_recipes_declared": 38,
+  "missing_standalone_ids": [],
+  "affordable_ordered_pairs": 361,
+  "first_parts_without_completion": [],
+  "full_support_certified": false,
+  "runtime_activated": false,
+  "limitations": [
+    "Community observed membership is not an independently certified complete pool.",
+    "Compatibility with the pinned simulator patch still requires review.",
+    "Standalone implementation does not establish complete composite behavior."
+  ],
+  "downstream_generation": [
+    {
+      "component": "CATA_723",
+      "hero_class": "DEATHKNIGHT",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "DEMONHUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "DRUID",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "HUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "MAGE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "PALADIN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "PRIEST",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "ROGUE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "SHAMAN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "WARLOCK",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CATA_723",
+      "hero_class": "WARRIOR",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 4,
+        "maximum": 4,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: CATA_470"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "DEATHKNIGHT",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "DEMONHUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "DRUID",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "HUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "MAGE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "PALADIN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "PRIEST",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "ROGUE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "SHAMAN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "WARLOCK",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "CORE_WON_096",
+      "hero_class": "WARRIOR",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "",
+        "tribe": "",
+        "school": "",
+        "minimum": 1,
+        "maximum": 1,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "own_or_neutral",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "known_membership_checks_passed": false,
+      "blocker": "pinned Standard generation: eligible effects not implemented: TLC_EVENT_400"
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "DEATHKNIGHT",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "DEMONHUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "DRUID",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "HUNTER",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "MAGE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "PALADIN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "PRIEST",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "ROGUE",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "SHAMAN",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "WARLOCK",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    },
+    {
+      "component": "SCH_711",
+      "hero_class": "WARRIOR",
+      "request": {
+        "era": "",
+        "rune": "",
+        "card_type": "MINION",
+        "tribe": "",
+        "school": "",
+        "minimum": 7,
+        "maximum": 7,
+        "rarity": "",
+        "mechanic": "",
+        "excluded_mechanic": "COLOSSAL",
+        "family": "",
+        "minimum_tribes": 0,
+        "classes": "any",
+        "attack_minimum": null,
+        "attack_maximum": null
+      },
+      "eligible_registered_outcomes": 44,
+      "known_membership_checks_passed": true
+    }
+  ],
+  "downstream_checks_passed": false,
+  "engine_fingerprint": "4c99e79607864b42c572e888ad089eda3de58d038b10d614cfee447bafdd9413",
+  "manifest_sha256": "a54a5ef479d6c90051432f9376719f3a4873b6b9655445e3aed2c2eca4f3b7c9",
+  "metadata_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661"
+}

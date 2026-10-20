@@ -1,0 +1,53 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "ffbbf1e39f5eebc803b40374f9f4839ccc9e4b443073d38fdca9ffc696c1e572",
+  "new_card_ids": [
+    "CS1_113",
+    "CS2_011",
+    "CS2_012",
+    "CS2_028",
+    "EX1_124",
+    "EX1_246",
+    "EX1_303",
+    "EX1_308",
+    "EX1_312",
+    "EX1_334",
+    "EX1_354",
+    "EX1_383",
+    "EX1_384",
+    "EX1_407",
+    "EX1_408",
+    "EX1_626",
+    "NEW1_007",
+    "WORK_027",
+    "WORK_027t1",
+    "WORK_027t2",
+    "WORK_027t3"
+  ],
+  "new_definitions": 21,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "pools": {
+    "WORK_027t1": 19,
+    "WORK_027t2": 13,
+    "WORK_027t3": 14
+  },
+  "checks": [
+    "AST parsing",
+    "Strict rules/choices/death declarations",
+    "All explicit tour outcomes present in registry",
+    "Metadata hash and inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact pinned-client pool membership and duplicate draw policy",
+    "Temporary/permanent control priorities, deaths and Shadowflame batching",
+    "Spell Damage, Combo, shields, Brawl and silence behavior",
+    "Public tour announcement versus hidden generated cards",
+    "Full recursive generated dependency fidelity"
+  ]
+}

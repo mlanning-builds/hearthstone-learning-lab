@@ -1,50 +1,31 @@
+## Current full historical generation backlog — October 18, 2026
+
+**28 direct historical spell outcomes remain**, plus their required generated dependencies. This is the unrestricted pool used by `TIME_861`; expensive historical spell requirements are a subset. Exact identities: `historical-generated-spell-backlog-current.json`.
+
+The latest recorded work reconciles 39 existing Questline definitions (eight historical roots) and adds six combat/spell definitions (five historical roots), all **unvalidated**. The original five named pools and all 19 directly declared historical request inventories have complete registered membership across eleven classes. Standard roots: 1,185/1,185. Historical minion roots: 3,201/3,201. These counts do not certify fidelity or full recursive closure.
+
+Current owner instruction: **run non-training regressions and fix failures**, as explicitly requested after the implementation batches. Do not run training or publish GitHub. Keep the full goal active and preserve complete outcome pools.
+
+## Current historical spell pool checkpoint — October 18, 2026
+
+The original five named historical pools have complete direct registered membership. The broader computed historical spell census now has **28 missing direct identities**, listed in `historical-generated-spell-backlog-current.json`; required recursive dependencies remain separately tracked. The last full suite found five assertion failures and three runtime errors. Repairs passed 79 affected checks on the prior source; those results do not validate the latest 27-definition batch. Do not run training or publish GitHub.
+
 # All-card completion queue
 
-890 live collectibles; 295 pending. No card-count batch limit.
+1185 registered collectibles; 0 unadmitted. This is not the total remaining-work count.
+
+Amber Warden's pinned candidate historical pool has 3201 minion outcomes: 3201 have explicit bindings and **0 remain unwritten**. Pool membership, recursive dependencies and behavior fidelity still need review. This backlog is separate from the unadmitted Standard card count.
 
 Generated output: run `tools/build_completion_queue.py --engine-root staging/rebased-88` from the project root. JSON contains every card, selector, explicit token and unresolved dependency.
 
 **Planning candidates, not approved pools.** A missing edge does not prove no dependency; unresolved selectors and named tokens remain blockers. Runtime declaration presence is not completed behavior. Explicit mapped dependencies resolve identity only; behavior, timing, complete pools and live admission remain separate gates.
 
-56 cards have unresolved selector/dependency mappings. 2 candidate cyclic groups require coordinated review and admission; the largest has 202 cards.
+0 cards have unresolved selector/dependency mappings. 0 candidate cyclic groups require coordinated review and admission; the largest has 0 cards.
 
 The priority score is (family size + distinct external generators affected) / relative effort. Effort is an explicit engineering estimate, not a delivery estimate. Break ties and dependency cycles using reviewed mechanics; do not enable incomplete pools.
 
 | Priority | Family | Pending | Runtime declarations present | External generators affected | Relative effort | Score |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 1 | generation | 101 | 101 | 105 | 4 | 51.5 |
-| 2 | discover | 34 | 34 | 128 | 4 | 40.5 |
-| 3 | dark_gift | 12 | 12 | 104 | 3 | 38.67 |
-| 4 | rewind | 12 | 12 | 131 | 5 | 28.6 |
-| 5 | transformation | 14 | 14 | 128 | 5 | 28.4 |
-| 6 | imbue | 19 | 19 | 137 | 6 | 26.0 |
-| 7 | void_soul | 4 | 4 | 73 | 3 | 25.67 |
-| 8 | secret | 1 | 1 | 44 | 2 | 22.5 |
-| 9 | control | 1 | 1 | 39 | 2 | 20.0 |
-| 10 | infinity | 3 | 3 | 56 | 3 | 19.67 |
-| 11 | animal_companion | 3 | 3 | 75 | 4 | 19.5 |
-| 12 | herald | 15 | 15 | 117 | 7 | 18.86 |
-| 13 | hidden_state | 1 | 1 | 54 | 3 | 18.33 |
-| 14 | leyline | 3 | 3 | 70 | 4 | 18.25 |
-| 15 | hidden_choice | 2 | 2 | 70 | 4 | 18.0 |
-| 16 | persistent | 2 | 2 | 66 | 4 | 17.0 |
-| 17 | colossal | 11 | 11 | 90 | 7 | 14.43 |
-| 18 | automatic_casting | 7 | 7 | 79 | 6 | 14.33 |
-| 19 | map | 6 | 6 | 46 | 4 | 13.0 |
-| 20 | replacement_effect | 5 | 5 | 54 | 5 | 11.8 |
-| 21 | automatic_play | 3 | 3 | 79 | 7 | 11.71 |
-| 22 | deathrattle | 1 | 1 | 31 | 3 | 10.67 |
-| 23 | setup | 5 | 5 | 63 | 7 | 9.71 |
-| 24 | stored_cards | 1 | 1 | 37 | 4 | 9.5 |
-| 25 | deck_construction | 1 | 1 | 45 | 5 | 9.2 |
-| 26 | quest | 8 | 8 | 44 | 6 | 8.67 |
-| 27 | custom_creation | 3 | 3 | 63 | 8 | 8.25 |
-| 28 | stored_spells | 3 | 3 | 42 | 7 | 6.43 |
-| 29 | location | 3 | 3 | 8 | 4 | 2.75 |
-| 30 | custom_choice | 1 | 1 | 7 | 4 | 2.0 |
-| 31 | fabled | 8 | 8 | 0 | 7 | 1.14 |
-| 32 | timeline | 1 | 1 | 4 | 6 | 0.83 |
-| 33 | conditional_aura | 1 | 1 | 0 | 2 | 0.5 |
 
 ## Completion gates
 

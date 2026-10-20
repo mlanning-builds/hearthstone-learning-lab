@@ -1,0 +1,308 @@
+{
+  "scope": "Explicit recipe mapping for pinned identities in the observed combined Standard query, not production offer membership or complete behavior",
+  "engine_fingerprint": "40b3cd6884137ab1efe4495f93195e072598cbc48bcb788cdcbc08a9daf4deed",
+  "full_validation_pending": true,
+  "text_recipes": 32,
+  "keyword_special_recipes": 34,
+  "combined_recipe_identities": 66,
+  "observed_pinned_standard_identities": 36,
+  "observed_pinned_identities_with_recipe": 36,
+  "unmapped_observed_titles": [
+    "Bloatray",
+    "Primordial Wyrm",
+    "Shadewing",
+    "F3TCH3R",
+    "Primal Rockfang",
+    "Assimilating Ooze"
+  ],
+  "missing_recipes": [],
+  "rows": [
+    {
+      "observed_title": "Bloatray",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Dreambound Raptor",
+      "pinned_standard_ids": [
+        "EDR_849"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Jeweled Macaw (Core)",
+      "pinned_standard_ids": [
+        "CORE_UNG_912"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Paltry Flutterwing",
+      "pinned_standard_ids": [
+        "TIME_058"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Platysaur",
+      "pinned_standard_ids": [
+        "TLC_603"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Primordial Wyrm",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Swamp Leech (Core)",
+      "pinned_standard_ids": [
+        "CORE_GIL_558"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Ancient Raptor",
+      "pinned_standard_ids": [
+        "TLC_245"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Arrow Retriever",
+      "pinned_standard_ids": [
+        "TIME_601"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Dire Wolf Alpha (Core)",
+      "pinned_standard_ids": [
+        "CORE_EX1_162"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Guard Dog",
+      "pinned_standard_ids": [
+        "JAIL_878"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Plated Beetle (Core)",
+      "pinned_standard_ids": [
+        "CORE_LOOT_413"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Shadewing",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Watfin",
+      "pinned_standard_ids": [
+        "JAIL_EVENT_100"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Ancient Stegodon",
+      "pinned_standard_ids": [
+        "TLC_242"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Augmented Porcupine (Core)",
+      "pinned_standard_ids": [
+        "CORE_BT_201"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Brutish Endmaw",
+      "pinned_standard_ids": [
+        "END_013"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Cyborg Patriarch",
+      "pinned_standard_ids": [
+        "TIME_046"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "F3TCH3R",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Gorillabot A-3 (Core)",
+      "pinned_standard_ids": [
+        "CORE_LOE_039"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Grazing Stegodon",
+      "pinned_standard_ids": [
+        "TLC_827"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "King Mukla (Core)",
+      "pinned_standard_ids": [
+        "CORE_EX1_014"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Marshland Thresher",
+      "pinned_standard_ids": [
+        "TLC_256"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Primal Rockfang",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Raptor Herald (Core)",
+      "pinned_standard_ids": [
+        "CORE_EDR_004_2026"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Sandmaw",
+      "pinned_standard_ids": [
+        "TIME_053"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Ancient Pterrordax",
+      "pinned_standard_ids": [
+        "TLC_246"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Assimilating Ooze",
+      "pinned_standard_ids": [],
+      "recipe_present": false
+    },
+    {
+      "observed_title": "Crater Gator",
+      "pinned_standard_ids": [
+        "TLC_250"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Fire Plume Phoenix (Core)",
+      "pinned_standard_ids": [
+        "CORE_UNG_084"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Halazzi, the Lynx (Core)",
+      "pinned_standard_ids": [
+        "CORE_TRL_900"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "King Maluk",
+      "pinned_standard_ids": [
+        "TIME_042"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Lifedrinker (Core)",
+      "pinned_standard_ids": [
+        "CORE_GIL_622"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Mother Duck",
+      "pinned_standard_ids": [
+        "EDR_492"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Ravasaur Matriarch",
+      "pinned_standard_ids": [
+        "TLC_825"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Torga",
+      "pinned_standard_ids": [
+        "TLC_102"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Crater Experiment",
+      "pinned_standard_ids": [
+        "DINO_435"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Lake Thresher (Core)",
+      "pinned_standard_ids": [
+        "CORE_SCH_605"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Stranglethorn Tiger (Core)",
+      "pinned_standard_ids": [
+        "CORE_EX1_028"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Triennium Rex",
+      "pinned_standard_ids": [
+        "END_015"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Verdant Dreamsaber",
+      "pinned_standard_ids": [
+        "EDR_014"
+      ],
+      "recipe_present": true
+    },
+    {
+      "observed_title": "Witchwood Grizzly (Core)",
+      "pinned_standard_ids": [
+        "CORE_GIL_623"
+      ],
+      "recipe_present": true
+    }
+  ],
+  "source_report_sha256": "740e2c9cf87931b5b15ccb33b75298ffa39432ea3164e5e063c67e5131233c67",
+  "runtime_activated": false,
+  "stage_membership_established": false,
+  "full_support_certified": false,
+  "declared_text_keyword_pairs_constructed_in_test": 1088
+}

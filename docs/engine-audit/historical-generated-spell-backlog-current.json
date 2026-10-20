@@ -1,0 +1,237 @@
+{
+  "fingerprint": "52da3173768f37c4460dd783025bba55389da7ed4639323227cd50c40b91008e",
+  "source_cards": [
+    "TIME_861",
+    "TIME_704"
+  ],
+  "eligible_unique_historical_spells": 1442,
+  "written_unique_historical_spells": 1414,
+  "missing_unique_historical_spells": 28,
+  "cards": [
+    {
+      "id": "AV_119",
+      "name": "To the Front!",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Your minions cost (2) less this turn <i>(but not less than 1)</i>."
+    },
+    {
+      "id": "AV_269",
+      "name": "Flanking Maneuver",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Summon a 4/2 Demon with <b>Rush</b>. If it dies this turn, summon another."
+    },
+    {
+      "id": "AV_400",
+      "name": "Snowfall Graveyard",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "[x]Your <b>Deathrattles</b>\ntrigger twice.\nLasts 3 turns."
+    },
+    {
+      "id": "AV_405",
+      "name": "Contraband Stash",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Replay 5 cards from other classes you've played this game."
+    },
+    {
+      "id": "BAR_323",
+      "name": "Yoink!",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "<b>Discover</b> a Hero Power and set its Cost to (0). Swap back after 2 uses."
+    },
+    {
+      "id": "BOT_912",
+      "name": "Kangor's Endless Army",
+      "classes": [
+        "PALADIN"
+      ],
+      "text": "Resurrect 3 friendly Mechs. They keep any <b>Magnetic</b> upgrades."
+    },
+    {
+      "id": "BT_753",
+      "name": "Mana Burn",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Your opponent has 2 fewer Mana Crystals next turn."
+    },
+    {
+      "id": "DMF_224",
+      "name": "Expendable Performers",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Summon seven 1/1 Illidari with <b>Rush</b>. If\u00a0they all die this turn, summon seven more."
+    },
+    {
+      "id": "DMF_249",
+      "name": "Acrobatics",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Draw 2 cards. If you play both this turn, draw 2 more."
+    },
+    {
+      "id": "GDB_140",
+      "name": "Celestial Aura",
+      "classes": [
+        "PALADIN"
+      ],
+      "text": "While you have exactly 1 minion in play, its Attack and Health are 10. Lasts 3 turns."
+    },
+    {
+      "id": "GDB_233",
+      "name": "Dwarf Planet",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Fill your board\nwith random 2-Cost minions that attack\nrandom enemies."
+    },
+    {
+      "id": "GDB_873",
+      "name": "Lucky Comet",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "<b>Discover</b> a <b>Combo</b> minion. The next one\nyou play triggers its <b>Combo</b> twice."
+    },
+    {
+      "id": "ICC_201",
+      "name": "Roll the Bones",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Draw a card.\nIf it has <b>Deathrattle</b>, cast this again."
+    },
+    {
+      "id": "ICC_233",
+      "name": "Doomerang",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Throw your weapon at a minion. It deals its damage, then returns to\u00a0your hand."
+    },
+    {
+      "id": "NEW1_036",
+      "name": "Commanding Shout",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Your minions can't be reduced below 1 Health this turn. Draw a card."
+    },
+    {
+      "id": "OG_118",
+      "name": "Renounce Darkness",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Replace your Hero Power and Warlock cards with another class's. The cards cost (1) less."
+    },
+    {
+      "id": "ONY_033",
+      "name": "Impfestation",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Summon a 3/3\nDread Imp to attack each enemy minion."
+    },
+    {
+      "id": "SCH_305",
+      "name": "Secret Passage",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Replace your hand with 4 cards from your deck. Swap back next turn."
+    },
+    {
+      "id": "ULD_286",
+      "name": "Shadow of Death",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Choose a minion. Shuffle 3 'Shadows' into your deck that summon a copy when drawn."
+    },
+    {
+      "id": "VAC_408",
+      "name": "Birdwatching",
+      "classes": [
+        "HUNTER"
+      ],
+      "text": "[x]<b>Discover</b> a minion\nfrom your deck. Give all\ncopies of it +2/+1\n<i>(wherever they are)</i>."
+    },
+    {
+      "id": "VAC_528",
+      "name": "All You Can Eat",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Draw three minions of different minion types."
+    },
+    {
+      "id": "VAC_931",
+      "name": "Skirting Death",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Choose a minion.\nThis turn, your hero steals 4 Attack from it."
+    },
+    {
+      "id": "VAC_941",
+      "name": "Announce Darkness",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Replace your Hero Power and non-Warlock cards with Warlock ones.\nThey cost (1) less."
+    },
+    {
+      "id": "WON_078",
+      "name": "Jade Telegram",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "[x]Look at 3 cards in your\nopponent's hand and shuffle\none of them into their deck.\nSummon a{1} {0} <b>Jade Golem</b>."
+    },
+    {
+      "id": "WON_113",
+      "name": "Champions of Azeroth",
+      "classes": [
+        "NEUTRAL"
+      ],
+      "text": "[x]Choose Alliance or Horde.\nGet 2 of their <b>Legendary</b>\nChampions and reduce\ntheir Costs by (2)."
+    },
+    {
+      "id": "WORK_017",
+      "name": "Silvermoon Brochure",
+      "classes": [
+        "PRIEST"
+      ],
+      "text": "Give a minion <b>Immune</b> this turn and +2/+2. <i>(Flips each turn.)</i>"
+    },
+    {
+      "id": "WORK_030",
+      "name": "Icecrown Brochure",
+      "classes": [
+        "SHAMAN"
+      ],
+      "text": "Deal $3 damage to a minion and <b>Freeze</b> its neighbors.\n<i>(Flips each turn.)</i>"
+    },
+    {
+      "id": "YOP_024",
+      "name": "Guidance",
+      "classes": [
+        "DRUID",
+        "SHAMAN"
+      ],
+      "text": "Look at two spells. Add one to your hand or <b>Overload:</b> (1) to get both."
+    }
+  ]
+}

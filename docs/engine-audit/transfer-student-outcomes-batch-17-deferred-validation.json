@@ -1,0 +1,62 @@
+{
+  "scope": "Captured damage, destruction, healing and non-death movement spell outcomes",
+  "new_unvalidated_bodies": 13,
+  "new_ids": [
+    "DEEP_013",
+    "DEEP_032",
+    "ETC_069",
+    "JAM_025",
+    "MAW_013",
+    "REV_248",
+    "REV_248t",
+    "REV_840",
+    "RLK_537",
+    "TID_920",
+    "TTN_460",
+    "TTN_463",
+    "WW_377"
+  ],
+  "new_collectible_outcomes": 12,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 167,
+  "current_expansion_outcome_gap": 155,
+  "closed_outcome_ids": [
+    "DEEP_013",
+    "DEEP_032",
+    "ETC_069",
+    "JAM_025",
+    "MAW_013",
+    "REV_248",
+    "REV_840",
+    "RLK_537",
+    "TID_920",
+    "TTN_460",
+    "TTN_463",
+    "WW_377"
+  ],
+  "candidate_fingerprint": "c8281f8769bc7a4e77782b42197ea343d90de2184caf93646c5ca619b2e171f3",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Soulfreeze immunity and already-frozen counting; self-damage modifiers",
+    "Delayed Fel Fissure source, spell bonus and start-turn ordering",
+    "Actual lethal damage/death confirmations, resurrection and damage-trigger interruption",
+    "Boon stat snapshots, Tether death confirmation and hand stat layers",
+    "Funnel Cake overheal replacements and mana restoration timing",
+    "Drown and Life Sentence non-death removal, reset semantics and deck insertion ownership",
+    "Wing Welding discard cost snapshot and discard-trigger sequencing",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

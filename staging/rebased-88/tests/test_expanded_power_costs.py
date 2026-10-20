@@ -7,7 +7,9 @@ from expanded.game import Card
 
 class PowerCostTests(unittest.TestCase):
     def setUp(self):
-        self.g=Game([random_deck('WARRIOR',31),random_deck('WARRIOR',53)],seed=71)
+        from test_expanded_passive_admission import PassiveAdmissionTests
+        helper=PassiveAdmissionTests()
+        self.g=Game([helper.deck('WARRIOR','CORE_DRG_403'),helper.deck('WARRIOR','CORE_EX1_162')],seed=71)
         self.g.step(Action('mulligan'));self.g.step(Action('mulligan'))
         self.p,self.q=self.g.players
         for p in self.g.players:

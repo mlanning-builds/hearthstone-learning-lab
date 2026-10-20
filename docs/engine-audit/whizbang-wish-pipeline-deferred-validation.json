@@ -1,0 +1,27 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "94507c1dc634f73b5a487478fce90896973b9f64af6cf76f4ff35f4e91bfb37c",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Staged Wish source uses exact Zephrys evaluator and full preflighted pool",
+    "Wish bypasses only the deck duplicate gate",
+    "Ordinary Zephrys retains duplicate requirement; no guessed heuristic installed"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Splendiferous_Whizbang"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Exact Zephrys candidate eligibility and ranking evaluator",
+    "Wish and Zephrys remain unadmitted"
+  ]
+}

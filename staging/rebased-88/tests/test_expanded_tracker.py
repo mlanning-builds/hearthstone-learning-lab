@@ -11,11 +11,11 @@ class TrackerTests(unittest.TestCase):
         return g
     def test_batch_counts_once_and_cost_floors_at_zero(self):
         g=self.game();c=Card(g._new_id(),'TLC_520');self.assertEqual(g._cost(c,0),6)
-        g._record_deck_insertion(0,0,10,'shuffle');self.assertEqual(g._cost(c,0),5)
-        for _ in range(7):g._record_deck_insertion(0,0,1,'shuffle')
+        g._record_deck_insertion(0,0,10,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(10)));self.assertEqual(g._cost(c,0),5)
+        for _ in range(7):g._record_deck_insertion(0,0,1,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(1)))
         self.assertEqual(g._cost(c,0),0)
     def test_trade_and_other_actor_destination_excluded(self):
-        g=self.game();g._record_deck_insertion(0,0,1,'trade');g._record_deck_insertion(0,1,1,'shuffle');g._record_deck_insertion(1,0,1,'shuffle')
+        g=self.game();g._record_deck_insertion(0,0,1,'trade',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(1)));g._record_deck_insertion(0,1,1,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(1)));g._record_deck_insertion(1,0,1,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(1)))
         self.assertEqual(g._own_shuffle_count(0),0)
     def test_real_shuffle_reorders_entire_deck_and_counts(self):
         g=self.game();g.players[0].deck=['CORE_CS2_029','CS3_025'];c=Card(g._new_id(),'CORE_WON_351');c.attack_bonus=2;g.players[0].hand=[c]
@@ -27,7 +27,7 @@ class TrackerTests(unittest.TestCase):
         g=self.game();c=Card(g._new_id(),'CORE_SW_066');g.players[0].hand=[c];g.step(Action('trade',source=c.uid))
         self.assertEqual(g._cost(Card(g._new_id(),'TLC_520'),0),6)
     def test_discounted_play_retains_rush_and_pays_cost(self):
-        g=self.game();g._record_deck_insertion(0,0,1,'shuffle');c=Card(g._new_id(),'TLC_520');g.players[0].hand=[c];g.players[0].mana=5
+        g=self.game();g._record_deck_insertion(0,0,1,'shuffle',cards=tuple(Card(g._new_id(),'CORE_CS2_029') for _ in range(1)));c=Card(g._new_id(),'TLC_520');g.players[0].hand=[c];g.players[0].mana=5
         enemy=g._summon(1,'CS3_025');g.step(Action('play',c.uid,position=0));m=g.players[0].minions[0]
         self.assertEqual(g.players[0].mana,0);self.assertIn(Action('attack',m.uid,enemy.uid),g.legal_actions())
         self.assertNotIn(Action('attack',m.uid,-2),g.legal_actions())

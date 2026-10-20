@@ -1,0 +1,56 @@
+{
+  "scope": "Persistent play effects, damage-bound enchantments and physical forced-attack copies",
+  "new_unvalidated_bodies": 8,
+  "new_ids": [
+    "ETC_330",
+    "ETC_367",
+    "JAM_031",
+    "MIS_714",
+    "REV_506",
+    "RLK_823",
+    "RLK_911",
+    "TOY_603"
+  ],
+  "new_collectible_outcomes": 8,
+  "new_required_generated_bodies": 0,
+  "prior_expansion_outcome_gap": 90,
+  "current_expansion_outcome_gap": 82,
+  "closed_outcome_ids": [
+    "ETC_330",
+    "ETC_367",
+    "JAM_031",
+    "MIS_714",
+    "REV_506",
+    "RLK_823",
+    "RLK_911",
+    "TOY_603"
+  ],
+  "candidate_fingerprint": "3869e9012f28ca6dca1ae256c1a9f578194893d723e00e2b75b02eb12ffc6f41",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Melomania full Shaman spell closure, stacked effects, paid versus actual cast and turn expiry",
+    "Undying Allies after-play Reborn timing and effective tribe identity",
+    "Starlight Groove Holy play timing, counters and permanent shield refresh",
+    "Sinful Brand caster/control semantics and damage/death listener ordering",
+    "Reverberations copied enchantment visibility, immunity, silence and damage-trigger destruction",
+    "Forced copy attacks, all-hand capture/summon/attack/death phases, board space and summon multipliers",
+    "New persistent public-state observation and copied physical state require fidelity review",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

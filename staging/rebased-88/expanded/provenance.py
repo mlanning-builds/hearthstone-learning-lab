@@ -4,6 +4,7 @@ Private lineage stays off dataclass serialization. Owner-visible predicates are
 published deliberately, never opponent deck identities or physical origin IDs.
 """
 from copy import deepcopy
+from .identities import canonical_identity,identity_resolver
 from engine.game import Card
 
 
@@ -26,7 +27,29 @@ class Provenance:
         if definition['stats'] is not None:card.base_stat_override=deepcopy(definition['stats'])
 
     def _fresh_replay_card(self, source):
-        card=Card(self._new_id(),source.card_id)
+        card=Card(self._new_id(),source if isinstance(source,str) else source.card_id)
+        if isinstance(source,str):return card
+        # Learned spells belong to generated definitions, not removable buffs.
+        if hasattr(source,'_learned_spell'):card._learned_spell=source._learned_spell
+        if hasattr(source,'_learned_card'):card._learned_card=deepcopy(source._learned_card)
+        if hasattr(source,'_historical_shadow'):card._historical_shadow=deepcopy(source._historical_shadow)
+        if hasattr(source,'_historical_guidance_spells'):card._historical_guidance_spells=deepcopy(source._historical_guidance_spells)
+        if getattr(source,'_golden',False):card._golden=True
+        from .historical_bottle_spells import preserve as preserve_bottle
+        preserve_bottle(source,card)
+        if card.card_id=='TOY_879t' and hasattr(source,'_historical_resealed_cards'):card._historical_resealed_cards=deepcopy(source._historical_resealed_cards)
+        if hasattr(source,'_historical_ship_definition'):
+            card._historical_ship_definition=deepcopy(source._historical_ship_definition)
+            card.base_stat_override=(card._historical_ship_definition['attack'],card._historical_ship_definition['health'])
+        if getattr(source,'_historical_permanent_stats',False):
+            card._historical_permanent_stats=True;card.base_stat_override=deepcopy(source.base_stat_override)
+        if hasattr(source,'_historical_student_definition'):
+            card._historical_student_definition=deepcopy(source._historical_student_definition)
+            card.set_cost=card._historical_student_definition['cost']
+            card.base_stat_override=(card._historical_student_definition['attack'],card._historical_student_definition['health'])
+        if hasattr(source,'_historical_jade_definition'):
+            card._historical_jade_definition=deepcopy(source._historical_jade_definition)
+            card.base_stat_override=(card._historical_jade_definition['attack'],card._historical_jade_definition['health'])
         if hasattr(source,'_crafted_definition'):
             card._crafted_definition=deepcopy(source._crafted_definition)
             self._restore_crafted(card)
@@ -36,10 +59,27 @@ class Provenance:
     def _carry_origin(source, target, *, copied=False, source_owner=None):
         if target is None:
             return
+        if getattr(source,'card_id',None)==getattr(target,'card_id',None) and hasattr(source,'_suspicious_overlay'):
+            target._suspicious_overlay=deepcopy(source._suspicious_overlay)
+        if getattr(source,'_golden',False):target._golden=True
+        from .historical_copy_lineage import carry
+        carry(source, target, copied=copied, source_owner=source_owner)
+        if getattr(source,'card_id',None)==getattr(target,'card_id',None) and hasattr(source,'_historical_ship_definition'):
+            target._historical_ship_definition=deepcopy(source._historical_ship_definition)
+        links=getattr(source,'_historical_kologarn_links',None)
+        if hasattr(target,'_historical_kologarn_links'):delattr(target,'_historical_kologarn_links')
+        if not copied and getattr(source,'card_id',None)==getattr(target,'card_id',None) and links is not None:
+            target._historical_kologarn_links=tuple(links)
+        if getattr(source,'card_id',None)==getattr(target,'card_id',None) and hasattr(source,'_brox_chain'):
+            target._brox_chain=source._brox_chain
         if getattr(source,'card_id',None)==getattr(target,'card_id',None) and hasattr(source,'_learned_spell'):
             target._learned_spell=source._learned_spell
+            if hasattr(source,'_learned_card'):target._learned_card=deepcopy(source._learned_card)
         if getattr(source,'card_id',None)==getattr(target,'card_id',None) and hasattr(source,'_crafted_definition'):
             target._crafted_definition=deepcopy(source._crafted_definition)
+        if getattr(source,'card_id',None)=='NX2_033' and getattr(target,'card_id',None)=='NX2_033':
+            if not hasattr(target,'rule_state'):target.rule_state={}
+            target.rule_state['historical_thaddius_parity']=getattr(source,'rule_state',{}).get('historical_thaddius_parity',1)
         for key in ('_starting_owner', '_starting_identity', '_copied_from_owner'):
             if hasattr(target, key):delattr(target, key)
         if not copied:
@@ -49,35 +89,38 @@ class Provenance:
         if ancestry is not None:target._copied_from_owner = ancestry
 
     def _started_in_deck(self, card, owner):
-        if not isinstance(card, Card):return False
+        if not hasattr(card,'card_id'):return False
         data = self._card_data(card)
-        identity = data.get('countAsCopyOfDbfId', data.get('dbfId', data['id']))
+        identity = canonical_identity(data,self.cards)
+        from .historical_starships import TERRAN_ORIGINS
+        if data['id'] in TERRAN_ORIGINS:identity=canonical_identity(self.cards[TERRAN_ORIGINS[data['id']]],self.cards)
+        if data['id'] in ('UNG_027t2','UNG_027t4'):identity=canonical_identity(self.cards['UNG_027'],self.cards)
+        from .historical_galakrond_batches import FORMS
+        if data['id'] in FORMS:identity=canonical_identity(self.cards[FORMS[data['id']][0]],self.cards)
+        from .historical_infuse_batches import INFUSED_ORIGINS
+        if data['id'] in INFUSED_ORIGINS:identity=canonical_identity(self.cards[INFUSED_ORIGINS[data['id']]],self.cards)
         return getattr(card, '_starting_owner', None) == owner and getattr(card, '_starting_identity', None) == identity
 
     @staticmethod
     def _copied_from_opponent(card, owner):
         return getattr(card, '_copied_from_owner', None) == 1-owner
 
-    def _enter_hand(self, owner, card):
-        self._quest_deliver_ready(owner)
-        if not isinstance(card, Card):card = Card(self._new_id(), card)
-        if len(self.players[owner].hand) >= 10:
-            self._log('burn_generated', player=owner, card=card.card_id)
-            return None
-        self._remember_crafted(card)
-        if self.players[owner].crystal_core and self._card_data(card)['type']=='MINION':card.base_stat_override=(5,5)
-        self._replace_coin(owner,card)
-        if card.card_id=='TLC_452':self._osk_roll(card)
-        card._hand_entry_turn = self.turn
-        self.players[owner].hand.append(card)
-        self._quest_hand_state(owner)
-        return card
+    def _enter_hand(self, owner, card, *, creator_uid=None):
+        return self._zone_manager.enter_hand(self,owner=owner,card=card,creator_uid=creator_uid)
 
     def _copy_card(self, value, *, source_owner=None):
         card = deepcopy(value) if isinstance(value, Card) else Card(self._new_id(), value)
         card.uid = self._new_id()
+        # Newly inserted deck cards may carry the source player's effective
+        # Crystal Core base without a stored override on the physical card yet.
+        if (source_owner in (0,1) and self.players[source_owner].crystal_core
+                and self._card_data(value)['type']=='MINION'):
+            card.base_stat_override=(5,5)
         self._carry_origin(value, card, copied=True, source_owner=source_owner)
+        from .historical_ritual_batches import CTHUN_IDS
+        if card.card_id in CTHUN_IDS and source_owner in (0,1):card._historical_ritual_rebase=True
         if hasattr(card, '_hand_entry_turn'):del card._hand_entry_turn
+        if hasattr(card, '_drawn_turn'):del card._drawn_turn
         return card
 
     def _origin_played(self, owner, card):
@@ -101,6 +144,8 @@ class Provenance:
             self.current = 1-self.current
         else:
             self._add(1-self.first_player, 'TOKEN_COIN')
+            from .historical_anomalies import apply_start as apply_anomalies
+            apply_anomalies(self)
             for player in self.players:player._starting_hand=deepcopy(player.hand)
             self.phase = 'play';self.current = self.first_player
             self._shatter_update()

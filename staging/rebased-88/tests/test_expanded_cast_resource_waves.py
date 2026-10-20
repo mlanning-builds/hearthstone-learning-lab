@@ -43,9 +43,15 @@ class CastResourceWaveTests(unittest.TestCase):
     def test_partial_armor_limits_wave_count(self):
         g=self.game();m=self.enemy(g);g.players[0].armor=2;self.cast(g,'TLC_601')
         self.assertEqual(m.health,18);self.assertEqual(g.players[0].armor,0)
-    def test_spell_damage_applies_each_wave(self):
+    def test_spell_damage_immune_tentacles_ignore_bonus(self):
         g=self.game();m=self.enemy(g);bonus=g._summon(0,'END_022');bonus.health=bonus.max_health=30;bonus.health-=1
-        self.cast(g,'CATA_491');self.assertEqual(m.health,8)
+        self.assertIn('ImmuneToSpellpower',g.cards['CATA_491']['mechanics'])
+        self.cast(g,'CATA_491');self.assertEqual(m.health,14)
+    def test_shellnado_applies_spell_damage_each_wave(self):
+        g=self.game();m=self.enemy(g);bonus=g._summon(0,'END_022');bonus.health=bonus.max_health=30;bonus.health-=1
+        g.players[0].armor=5
+        self.cast(g,'TLC_601');self.assertEqual(m.health,5)
+        self.assertEqual(g.players[0].armor,0)
     def test_deathrattle_summon_can_be_hit_by_next_wave(self):
         g=self.game();m=g._summon(1,'CORE_EX1_110');m.health=3;self.cast(g,'CATA_491')
         baine=next(m for m in g.players[1].minions if m.card_id=='TOKEN_BAINE')

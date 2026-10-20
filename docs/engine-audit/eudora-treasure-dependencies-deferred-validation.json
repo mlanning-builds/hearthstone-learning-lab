@@ -1,0 +1,69 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "3bcc835ab55880abd1654011da73d4f365de2e8b5dba8b7ca97faffee40f0d31",
+  "generated_definitions_added": 31,
+  "card_ids": [
+    "VAC_464t10",
+    "VAC_464t11",
+    "VAC_464t12",
+    "VAC_464t14",
+    "VAC_464t15",
+    "VAC_464t16",
+    "VAC_464t17",
+    "VAC_464t18",
+    "VAC_464t19",
+    "VAC_464t2",
+    "VAC_464t20",
+    "VAC_464t21",
+    "VAC_464t22",
+    "VAC_464t23",
+    "VAC_464t24",
+    "VAC_464t25",
+    "VAC_464t26",
+    "VAC_464t27",
+    "VAC_464t27t",
+    "VAC_464t28",
+    "VAC_464t29",
+    "VAC_464t3",
+    "VAC_464t30",
+    "VAC_464t31",
+    "VAC_464t31t",
+    "VAC_464t4",
+    "VAC_464t5",
+    "VAC_464t6",
+    "VAC_464t7",
+    "VAC_464t8",
+    "VAC_464t9"
+  ],
+  "historical_written": 3189,
+  "historical_remaining": 12,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "All expanded Python files parsed",
+    "31 explicit rules passed strict schema validation",
+    "Eudora native hook declarations passed strict schema validation",
+    "Metadata hashes recorded",
+    "Inventories reconciled across all eleven classes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Treasure_Hunter_Eudora",
+    "Pinned all_cards.json.gz build 36.6.0.251952; each mapped printing has identical name, type and text to its Kazakusan counterpart"
+  ],
+  "deferred": [
+    "Eudora root and sidequest progression/reward flow remain unwritten",
+    "Exact discover membership and repeat selection semantics require frozen pool verification",
+    "Runtime treasure behavior and cross-family Quel Delar forging remain unvalidated",
+    "Treasure effect programs share existing Kazakusan dependencies, whose full recursive closure remains unvalidated"
+  ],
+  "files_sha256": {
+    "historical_utility_spells.py": "6354e4ecc2f443f1317ec1bc469983fdc52dad22b5fd5394910993b87851efb6",
+    "cards.py": "97ee72e82ee8aab75fcae489b08485289ab00c924f7c1325d908c57b5219eeff",
+    "systems.py": "92ad18525341cebf441f8fc6666f5e017efba14039c59fdeca80348e74b94116",
+    "historical_attack_weapons.py": "1c7d64ba7071e2d34b16b026ed460a09ee720aad70d426b8456dec4b6eba3baf",
+    "historical_conditional_spells.py": "8d44ede6842a74726facd22763bf092cdb5f4c6c502f580cd204463bdb5a14f9"
+  }
+}

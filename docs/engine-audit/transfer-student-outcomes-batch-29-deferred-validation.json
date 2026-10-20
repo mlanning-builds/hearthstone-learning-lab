@@ -1,0 +1,54 @@
+{
+  "scope": "Complete Concoction Discover, repeatable healing, tribal draw, shield conversion and preferred-target location casts",
+  "new_unvalidated_bodies": 7,
+  "new_ids": [
+    "DEEP_017",
+    "ETC_320",
+    "ETC_320t",
+    "ETC_372",
+    "RLK_569",
+    "TSC_952",
+    "TTN_090"
+  ],
+  "new_collectible_outcomes": 6,
+  "new_required_minion_bodies": 1,
+  "internal_operation_admissions": 246,
+  "internal_declaration_modules": 29,
+  "prior_expansion_outcome_gap": 66,
+  "current_expansion_outcome_gap": 60,
+  "closed_outcome_ids": [
+    "DEEP_017",
+    "ETC_320",
+    "ETC_372",
+    "RLK_569",
+    "TSC_952",
+    "TTN_090"
+  ],
+  "candidate_fingerprint": "984118b8fb7bfe2fbc1a4fca398172d4cbc0dd1ce8598bb2e5b79cf64d0edfa3",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Potion Belt complete five-Concoction offers, mixing identity, hand overflow and Discover follow-ups",
+    "Holy Maki Roll paid-play temporary copies, repeat/counter behavior and zero-cost versus Echo floor",
+    "Roaring Applause maximum distinct minion-type assignment, dual/ALL types and board snapshots",
+    "Mining Casualties granted Deathrattle entry, summon multipliers, Frail Ghoul Charge/expiry and Recruit modifiers",
+    "Spotlight shield conversion, effective/temporary shields, interrupts and board capacity",
+    "Prison preferred-target fallback, all-eligible internal spell closure and location final-charge ordering",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

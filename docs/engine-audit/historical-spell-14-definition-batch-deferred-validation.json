@@ -1,0 +1,120 @@
+{
+  "fingerprint": "ab9b80780d1cc1bfed81cc688bc8894c50fa86ea64fa44eecca0c56b8a0ec5c1",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 14,
+  "new_historical_spell_roots": 12,
+  "new_tokens_and_alternate_forms": 2,
+  "registry_records": 8061,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1310,
+    "remaining": 132
+  },
+  "new_implementations": [
+    {
+      "id": "BOT_429",
+      "name": "Flark's Boom-Zooka",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_731",
+      "name": "Duel!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_508",
+      "name": "Proving Grounds",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_056",
+      "name": "Unholy Frenzy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_023",
+      "name": "Provoke",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_460",
+      "name": "Devouring Swarm",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_119",
+      "name": "The Beast Within",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_258",
+      "name": "Mass Hysteria",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_134",
+      "name": "BEEEES!!!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_134t",
+      "name": "Bee",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_410",
+      "name": "Furious Fowls",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_410t",
+      "name": "Angry Bird",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_926",
+      "name": "Cliff Dive",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_006",
+      "name": "Hysteria",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8061,
+    "edges": 803,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "132 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

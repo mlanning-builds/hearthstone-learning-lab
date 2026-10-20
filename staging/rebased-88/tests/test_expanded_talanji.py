@@ -54,7 +54,8 @@ class TalanjiTests(unittest.TestCase):
   self.boon('TIME_619t5');m=self.g._summon(0,'TIME_619t');m.health=0;self.g._settle();self.assertEqual(self.p.minions[0].card_id,'TEST_BOON_6');self.assertIn('RUSH',self.g._effective_keywords(self.p.minions[0]))
  def test_missing_pool_is_not_silently_filtered(self):
   self.g._generation_pools.clear();before=self.g.rng.getstate()
-  with self.assertRaises(UnsupportedCard):self.run_ops([('bwonsamdi_summon',)])
+  with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+   with self.assertRaises(UnsupportedCard):self.run_ops([('bwonsamdi_summon',)])
   self.assertEqual(before,self.g.rng.getstate());self.assertFalse(self.p.board)
  def test_full_board_resurrection_still_offers_boon(self):
   for _ in range(6):self.g._summon(0,'NEW1_034')
@@ -71,12 +72,12 @@ class TalanjiTests(unittest.TestCase):
  def test_public_boons_are_visible_to_both_players(self):
   self.boon('TIME_619t3')
   for viewer in (0,1):self.assertEqual(self.g.observe(viewer)['players'][0]['bwonsamdi_boons'],['TIME_619t3'])
-  self.assertEqual(SCHEMA,'visible-action-features-v58')
+  self.assertEqual(SCHEMA,'visible-action-features-v62')
  def test_controller_changes_boon_aura_without_changing_owner_state(self):
   self.boon('TIME_619t3');m=self.g._summon(0,'TIME_619t');self.p.board.remove(m);m.owner=1;self.q.board.append(m)
   self.assertNotIn('TAUNT',self.g._effective_keywords(m));self.assertEqual(self.p.bwonsamdi_boons,['TIME_619t3'])
- def test_root_stays_staged_and_all_cost_pools_are_declared(self):
-  self.assertNotIn('TIME_619',cards.COLLECTIBLE_IDS);self.assertEqual(len(rules.requests_for('TIME_619')),4)
+ def test_root_is_reviewed_and_all_cost_pools_are_declared(self):
+  self.assertIn('TIME_619',cards.COLLECTIBLE_IDS);self.assertEqual(len(rules.requests_for('TIME_619')),4)
 
  def test_internal_zandalar_resolves_random_boon_without_paid_history(self):
   self.run_ops([('cast_fixed_spell','TIME_619t2','random')]);self.assertEqual(self.q.health,28);self.assertEqual(len(self.p.bwonsamdi_boons),1);self.assertIsNone(self.g.pending_choice);self.assertFalse(self.p.played_history)

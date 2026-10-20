@@ -211,7 +211,7 @@ class StoredCardTests(unittest.TestCase):
         view=self.g.observe(0)
         rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']))
         self.assertIn('set_aside_cards',str(rows));self.assertIn('reborn_history',str(rows))
-        self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_clone_retains_private_delayed_hand_and_timer(self):
         c=self.add('CORE_CS2_188');self.play('TIME_EVENT_998');clone=copy.deepcopy(self.g)
         for g in (self.g,clone):

@@ -1,4 +1,5 @@
 """Physical origin and hand transitions, tested through shared paths and card plays."""
+from expanded.identities import canonical_identity
 import unittest
 from copy import deepcopy
 from expanded import Game, Action, random_deck
@@ -15,7 +16,7 @@ class ProvenanceTests(unittest.TestCase):
     def card(self,g,cid='CORE_CS2_029',original=None,copied=None):
         c=Card(g._new_id(),cid)
         if original is not None:
-            c._starting_owner=original;d=g.cards[cid];c._starting_identity=d.get('countAsCopyOfDbfId',d.get('dbfId',cid))
+            c._starting_owner=original;d=g.cards[cid];c._starting_identity=canonical_identity(d,g.cards)
         if copied is not None:c._copied_from_owner=copied
         return c
     def play(self,g,cid=None,card=None,target=None):
@@ -29,14 +30,14 @@ class ProvenanceTests(unittest.TestCase):
     def test_initial_cards_are_physical_originals(self):
         g=self.game(True)
         for owner,p in enumerate(g.players):
-            self.assertEqual(len(p.deck)+len(p.hand),30)
+            self.assertEqual(len(p.deck)+len(p.hand),len(p.starting_deck)+(10 if 'JAIL_397' in p.starting_deck else 0))
             self.assertTrue(all(g._started_in_deck(c,owner) for c in p.deck+p.hand))
     def test_mulligan_preserves_originals_coin_is_generated(self):
         g=self.game(True);ids=[c.uid for c in g.players[0].hand]
         g.step(Action('mulligan',choices=tuple(ids)));g.step(Action('mulligan'))
         for owner,p in enumerate(g.players):
             cards=p.deck+p.hand
-            self.assertEqual(sum(g._started_in_deck(c,owner) for c in cards),30)
+            self.assertEqual(sum(g._started_in_deck(c,owner) for c in cards),len(p.starting_deck)+(10 if 'JAIL_397' in p.starting_deck else 0))
         coin=next(c for c in g.players[1].hand if c.card_id=='TOKEN_COIN')
         self.assertFalse(g._started_in_deck(coin,1))
     def test_generated_same_identity_is_not_original(self):
@@ -172,4 +173,4 @@ class ProvenanceTests(unittest.TestCase):
         g=self.game();g._enter_hand(0,self.card(g,original=0));view=g.observe(0)
         self.assertTrue(view['players'][0]['hand'][0]['started_in_deck']);self.assertNotIn('hand',view['players'][1])
         encoded=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertTrue(encoded);self.assertIn('started_in_deck',str(encoded));self.assertEqual('visible-action-features-v58',SCHEMA)
+        self.assertTrue(encoded);self.assertIn('started_in_deck',str(encoded));self.assertEqual('visible-action-features-v62',SCHEMA)

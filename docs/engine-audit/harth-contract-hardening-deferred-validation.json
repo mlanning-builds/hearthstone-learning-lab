@@ -1,0 +1,24 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "a61250cc4b306b99b4b5c7a4da28fa85365555c293449fec2b2a5ffc3be782dd",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Reject non-pinned Harth builds before selecting a hand",
+    "Require immutable typed hand/card sequences before inspecting fields",
+    "Resolve written registry once for full 104-slot preflight"
+  ],
+  "checks": [
+    "AST parsing all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Exact ordered iconic hands and sourced weights",
+    "Runtime historical printing fidelity"
+  ]
+}

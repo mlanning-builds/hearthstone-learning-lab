@@ -1,0 +1,23 @@
+{
+  "status": "static_inventory_only",
+  "candidate_fingerprint": "d7bb2106542a1f9b023fae32afe5dd9be7293844121490d025d3e248d2735f41",
+  "new_card_admissions": 0,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "declarations_checked": 6748,
+  "weapon_triggers_checked": 47,
+  "missing_named_dependencies": [],
+  "change": "Include all weapon trigger programs in shared literal dependency extraction, and reconcile every written declaration rather than Standard-only roots.",
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "not_proven": [
+    "Complete dynamic outcome pools",
+    "Computed identities inside Python helpers",
+    "Exact probabilities and closed client selection policies",
+    "Runtime implementation correctness",
+    "Remaining ten historical roots and Avatar"
+  ]
+}

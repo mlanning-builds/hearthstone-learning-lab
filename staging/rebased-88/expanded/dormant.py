@@ -22,8 +22,14 @@ class Dormancy:
         minion.attacks = 0
         self._refresh_auras()
         self._log('awaken', player=minion.owner, entity=minion.uid)
+        from .historical_event_batches import AWAKEN_EFFECTS
+        operations=list(AWAKEN_EFFECTS.get(minion.card_id,()))
+        path=minion.rule_state.pop('historical_dungar_path',None)
+        if path is not None:operations.append(('historical_sleep_dungar_reward',path))
+        if operations and not minion.silenced:
+            self._rule_events.append(('captured_effects',dict(operations=tuple(operations),context=dict(owner=minion.owner,source=minion,target=0,bonus=0,lifesteal=False)),[]))
         if minion.card_id == 'EDR_840t' and not minion.silenced:
-            self.players[minion.owner].temporary_attack += 3
+            self._gain_hero_attack(minion.owner,3)
 
     def _dormant_full_board(self):
         for p in self.players:
@@ -45,17 +51,24 @@ class Dormancy:
                     ops.append(('dormant_ogre',))
             elif m.card_id == 'EDR_979' and not m.silenced:
                 ops = [('armor', 3), ('draw', 1)]
+            if phase == 'end' and not m.silenced:
+                from .historical_event_batches import DORMANT_END_EFFECTS
+                ops.extend(DORMANT_END_EFFECTS.get(m.card_id,()))
             if ops:
                 entries.append(dict(source=m, operations=tuple(ops), dormant_entry=True))
         return entries
 
     def _dormant_trigger_matches(self, wanted, kind, data, minion):
+        from .historical_sleep_batches import matches
+        historical=matches(self,wanted,kind,data,minion)
+        if historical is not None:return historical
         if wanted == 'dormant_power_used':
             return bool(minion.dormant and kind == 'hero_power_used' and data['owner'] == minion.owner)
         if wanted == 'dormant_newest_played':
+            from .expansion_rules import NEWEST_EXPANSION
             return bool(minion.dormant and kind in ('minion_played', 'spell_cast', 'dormant_other_card_played')
                         and data['owner'] == minion.owner
-                        and self.cards[data['card_id']]['set'] == 'ESCAPEFROM_VIOLET_HOLD')
+                        and self.cards[data['card_id']]['set'] == NEWEST_EXPANSION)
         return None
 
     def _dormant_effect(self, op, ctx):
@@ -87,7 +100,7 @@ class Dormancy:
                 self._sleep_minion(target, 1)
         elif name == 'dormant_confinement':
             if target is not None and not target.dormant:
-                if target.owner == owner and has_tribe(self.cards[target.card_id], 'DEMON'):
+                if target.owner == owner and has_tribe(self._card_data(target), 'DEMON'):
                     self._buff(target, 3, 3)
                 else:
                     self._sleep_minion(target, 2)

@@ -9,6 +9,9 @@ from engine.cards import UnsupportedCard
 
 # Ordered (card identity, side). Never infer playable dependencies from prefixes.
 LAYOUTS = {
+    'TSC_026': (('TSC_026t','right'),),
+    'TSC_029': (('TSC_029t','left'),('TSC_029t2','right')),
+    'TSC_030': (('TSC_030t2','right'),),
     'CATA_139': tuple((cid, 'right') for cid in ('CATA_139t','CATA_139t2','CATA_139t3','CATA_139t4')),
     'CATA_150': (('CATA_150t','left'), ('CATA_150t1','right')),
     'CATA_151': (('CATA_151t','right'), ('CATA_151t1','right')),
@@ -29,8 +32,6 @@ class ColossalEntries:
             if cid == 'CATA_550' or 'COLOSSAL' in record.get('mechanics', ()):
                 raise UnsupportedCard('Colossal entry needs an explicit layout/replenishment rule: '+cid)
             return
-        if dormant_turns or (copy_from is not None and (copy_from.dormant or copy_from.silenced)):
-            raise UnsupportedCard('Colossal dormant/silenced-copy entry requires reviewed semantics')
         # Validate every dependency before creating the body, even on a full board.
         for limb, side in LAYOUTS[cid]:
             if owner is not None:self._herald_entry_preflight(owner,limb)
@@ -49,6 +50,11 @@ class ColossalEntries:
         board = self.players[body.owner].board
         # Never inherit links from a copied parent. Each entry owns fresh limbs.
         body.rule_state['colossal_appendages'] = []
+        if body.silenced or body.dormant:
+            # Inactive or silenced copied text has no Colossal summon trigger.
+            # Awakening is a distinct event and does not resummon the body.
+            body.rule_state.pop('colossal_remaining',None)
+            return
         if body.card_id=='CATA_550':
             body.rule_state['colossal_remaining']=99
             self._colossal_refill(body)
@@ -93,3 +99,7 @@ class ColossalEntries:
                             if m.card_id=='CATA_550'],key=lambda m:m.uid):
             changed=self._colossal_refill(body) or changed
         return changed
+
+# Explicit retired layouts; roots remain generated-only through the registry.
+from .historical_colossal import LAYOUTS as HISTORICAL_LAYOUTS
+LAYOUTS.update(HISTORICAL_LAYOUTS)

@@ -1,3 +1,4 @@
+from expanded.identities import canonical_identity
 import unittest,gzip,json
 from pathlib import Path
 from copy import deepcopy
@@ -24,7 +25,7 @@ class BroxigarTests(unittest.TestCase):
   card=self.g._add(self.g.current,cid);self.g.players[self.g.current].mana=10
   self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==card.uid));return card
  def original(self,owner=0):
-  c=Card(self.g._new_id(),'TIME_020');c._starting_owner=owner;c._starting_identity=self.records[c.card_id]['dbfId'];return c
+  c=Card(self.g._new_id(),'TIME_020');c._starting_owner=owner;c._starting_identity=canonical_identity(self.records[c.card_id],self.g.cards);return c
  def hide(self):
   c=self.original();self.p.deck.append(c);self.g._brox_start();return c
  def kill(self,m):m.health=0;self.g._settle(allow_event_choices=True)

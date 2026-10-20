@@ -1,0 +1,43 @@
+{
+  "scope": "Multi-Strike minion-only hero attack grants and Going Down Swinging forced attacks",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "ETC_413",
+    "TSC_006"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 12,
+  "current_expansion_outcome_gap": 10,
+  "closed_outcome_ids": [
+    "ETC_413",
+    "TSC_006"
+  ],
+  "candidate_fingerprint": "63c24bee2a1429e32c846fca374c38ed99dfac83b8061ed4fc3dfdefdca31482",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Multi-Strike consumption ordering with prior attacks, multiple grants and Windfury/weapon replacement",
+    "Normal legal-action face restriction versus direct command guards and cancelled attacks",
+    "Forced hero attacks do not spend normal allowance; weapon durability, attack events and Spellstone counters remain active",
+    "Swing enemy snapshot/order, summons/deaths between attacks, Frozen/Stealth/Taunt and redirection",
+    "Turn-long Immune duration and interactions with weapon breakage/healing conversion",
+    "Nested forced hero combat settling and choice continuation remain unvalidated",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

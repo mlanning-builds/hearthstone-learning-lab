@@ -22,6 +22,8 @@ DEATH_EFFECTS={
  'TLC_469':[random_cards(pool(card_type='MINION',minimum=2,maximum=2),2,temporary=True)],
 }
 def requests_for(card_id):
+    from .historical_printing_aliases import ALIASES
+    card_id=ALIASES.get(card_id,card_id)
     from .generation_cards import PoolRequest
     result=set()
     def walk(value):

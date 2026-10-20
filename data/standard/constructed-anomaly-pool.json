@@ -1,0 +1,137 @@
+{
+  "build": "36.6.0.251952",
+  "source": "CardDefs build 251952 active-anomaly tag 2895=1",
+  "carddefs_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "pool_complete": true,
+  "effects_complete": true,
+  "source_card_registered": true,
+  "outcomes": [
+    {
+      "card_id": "TTN_002t1",
+      "name": "Surging Inspiration",
+      "text": "Both players start with\nupgraded Hero Powers.",
+      "metadata_sha256": "b61a172a451b84b04404daf13b3b2449529428816712743cb9c827a4f34c6191"
+    },
+    {
+      "card_id": "TTN_002t11",
+      "name": "Uncontrollable Growth",
+      "text": "Both players start with an extra Mana Crystal.",
+      "metadata_sha256": "afdc35b13a8074b245f7fa3466838ffad610efa171a5d3d163c3a24c55b37012"
+    },
+    {
+      "card_id": "TTN_002t14",
+      "name": "Approaching Nightmare",
+      "text": "Both players start with\nYogg-Saron, Hope's End\nin their hand.",
+      "metadata_sha256": "0732abf171405eb32ff2d94deb6a018ac821082394000da4c20107b94d045aad"
+    },
+    {
+      "card_id": "TTN_002t15",
+      "name": "Driven to Excess",
+      "text": "Whenever a player ends their turn with unspent Mana, they draw a card.",
+      "metadata_sha256": "afd4b2254b7946af7be3c47744fcd177883599b5865d6e9b112f9c184fb080c9"
+    },
+    {
+      "card_id": "TTN_002t20",
+      "name": "Driven to Greed",
+      "text": "Whenever a player ends their turn with unspent Mana, they get a Coin.",
+      "metadata_sha256": "e42890c69843f55ecebe4fc8efe6d3a267c193deabcc065cef875bc71fa59a86"
+    },
+    {
+      "card_id": "TTN_002t21",
+      "name": "Twist Reality",
+      "text": "[x]The first time a player\nplays a card on their\nturn, shuffle a copy of\nit into their deck.",
+      "metadata_sha256": "d23d3e4dd29ca6cc9bdc5aad4a85d3045cc20e348d48b65725900bc12abe3761"
+    },
+    {
+      "card_id": "TTN_002t22",
+      "name": "Seeing Double",
+      "text": "Both players start with\n2 cards copied from the other player's hand.",
+      "metadata_sha256": "47bf9ca354bb777cec0b7d90ecdd3aba8fa43ffebedb89d8adb875b6e6031161"
+    },
+    {
+      "card_id": "TTN_002t24",
+      "name": "Severed Souls",
+      "text": "Both heroes start\nwith +5 Health.",
+      "metadata_sha256": "f0f0150c4fcece29b3937b5d0be8a8e9aa07675c86a52c2bd2bd0fb395a16e05"
+    },
+    {
+      "card_id": "TTN_002t30",
+      "name": "Fortifications",
+      "text": "At the end of each players' turns, give a random one of their minions +1 Health.",
+      "metadata_sha256": "3329f23f021d107cfb53c49f799d0d6d8210239b32b0979354ed16fbad708cee"
+    },
+    {
+      "card_id": "TTN_002t32",
+      "name": "Fast Track",
+      "text": "Reduce the Cost of all cards in both player's starting hands by (1).",
+      "metadata_sha256": "6dff2900aa73c06769bfd7b29fe27f8f3c6d72ff28a08193e2a319ae66b03a53"
+    },
+    {
+      "card_id": "TTN_002t35",
+      "name": "Your Eyes Betray You",
+      "text": "Both players' cards are Golden.",
+      "metadata_sha256": "c163dc50e02ec222ec31a273ec83a4c66d905f7a231dc1e4df2e64675b22604a"
+    },
+    {
+      "card_id": "TTN_002t36",
+      "name": "Shifting Futures",
+      "text": "Both players start with 2 copies of Shifter Zerus in their hand.",
+      "metadata_sha256": "affdeb78bac0dc4baea022392ae21a079894fe5cb5436b71de17f46898868eae"
+    },
+    {
+      "card_id": "TTN_002t41",
+      "name": "Control the Makers",
+      "text": "Both heroes have +1 Attack on their turns.",
+      "metadata_sha256": "539bce789c16461ca0f229190ddbbc7a4d2415f20ec8149e02e49ad9ad67e203"
+    },
+    {
+      "card_id": "TTN_002t43",
+      "name": "Army of the Corrupted",
+      "text": "The first minion played on each player's turns costs (1) less.",
+      "metadata_sha256": "c7d478575f0fff160c974a713d159e4582c1bcc932a3ebd37a3aedc6d00482aa"
+    },
+    {
+      "card_id": "TTN_002t44",
+      "name": "Opportunity Knocks",
+      "text": "The first card drawn on a player's turn is one they can afford to play.",
+      "metadata_sha256": "6315ce926026ef7a7d8395064872dd2dcefae8d613c4aa3d95914ae3d53077e8"
+    },
+    {
+      "card_id": "TTN_002t45",
+      "name": "Spread of Corruption",
+      "text": "The first spell cast on each player's turns costs (1) less.",
+      "metadata_sha256": "50b2f893152c5a65009b8a9077c9e27af24f4a6d4470d95c7ec30cb1843ab4c4"
+    },
+    {
+      "card_id": "TTN_002t5",
+      "name": "Gift of Gluttony",
+      "text": "Both players start with two more drawn cards.",
+      "metadata_sha256": "a4c0b83edd96b71bbc91b4ce19dd8756e78f63710dac1fcef46637a854a63cb9"
+    },
+    {
+      "card_id": "TTN_002t50",
+      "name": "Shifting Fate",
+      "text": "[x]Both players start with\nGear Shift in their hand.",
+      "metadata_sha256": "596bd8d4a3006d427f5bccd41ffe143f4f1b0674ad0331911f0d8206b3536a6f"
+    },
+    {
+      "card_id": "TTN_002t9",
+      "name": "Light in the Dark",
+      "text": "Both players' Hero Powers cost (1) less.",
+      "metadata_sha256": "af699b77dc97668f4d7d3bab0841dd3d0036c17775c39b34bd307ad504222059"
+    }
+  ],
+  "unwritten_effect_ids": [],
+  "written_effect_count": 19,
+  "fidelity_validated": false,
+  "selection_sources": [
+    "https://hearthstone.blizzard.com/en-gb/news/23999071",
+    "https://hearthstone.wiki.gg/wiki/Cho%27gall%2C_Twilight_Chieftain"
+  ],
+  "review_pending": [
+    "Seeing Double selection/copy simultaneity and Coin participation",
+    "Legacy start-of-game ordering relative to post-mulligan anomalies",
+    "Opportunity Knocks targeted draws and payment alternatives",
+    "Multiple-anomaly interactions remain unvalidated"
+  ]
+}

@@ -47,7 +47,7 @@ class EvolvingLocationTests(unittest.TestCase):
   self.g.step(Action('choose',choices=(0,)));self.assertEqual(loc.card_id,'TIME_436t2');self.activate(loc);self.g.step(Action('choose',choices=(0,)))
   self.assertEqual(len(self.p.minions),3);self.assertEqual([c.card_id for c in self.p.hand],['TEST_DRAGON']);self.assertEqual(self.p.discoveries_total,2)
  def test_conflux_missing_pool_preserves_charge(self):
-  loc=self.place('TIME_436')
+  loc=self.place('TIME_436');self.contract(rules.DRAGONS,["MISSING_REVIEWED_DRAGON"])
   with self.assertRaises(UnsupportedCard):self.activate(loc)
   self.assertEqual(self.p.locations[0].durability,3)
  def test_conflux_choice_clone_resumes_same_stage(self):

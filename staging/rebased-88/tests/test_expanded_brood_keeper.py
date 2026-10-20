@@ -15,7 +15,7 @@ class BroodKeeperTests(unittest.TestCase):
         self.play('EDR_457');self.assertIsNone(self.p.weapon)
     def test_held_dragon_equips_two_two(self):
         self.give('TIME_856');self.play('EDR_457')
-        self.assertEqual(self.p.weapon,dict(card_id='EDR_457t',attack=2,durability=2))
+        self.assertEqual(self.p.weapon,dict(card_id='EDR_457t',attack=2,durability=2,aura_attack=0))
         self.assertEqual(self.p.mana,8)
     def test_board_dragon_does_not_count(self):
         self.g._summon(0,'TIME_856');self.play('EDR_457');self.assertIsNone(self.p.weapon)

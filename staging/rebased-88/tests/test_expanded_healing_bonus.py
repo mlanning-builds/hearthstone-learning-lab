@@ -1,3 +1,4 @@
+import test_expanded_passive_admission as admission
 import unittest
 from expanded import Game, Action, random_deck
 from expanded.game import Card
@@ -5,7 +6,7 @@ from expanded.game import Card
 
 class PersistentHealingTests(unittest.TestCase):
     def game(self):
-        g=Game([random_deck('PRIEST',31),random_deck('MAGE',53)],seed=71)
+        g=Game([admission.PassiveAdmissionTests().deck('PRIEST','CORE_CS2_122'),admission.PassiveAdmissionTests().deck('MAGE','CORE_CS2_122')],seed=71)
         g.step(Action('mulligan'));g.step(Action('mulligan'))
         for p in g.players:
             p.hand=[];p.board=[];p.deck=['CORE_CS2_029']*20;p.health=10;p.mana=p.max_mana=10

@@ -4,7 +4,7 @@ Runtime paths are not live registration. Dynamic summons require a complete
 exact-cost generation contract and all generated behavior.
 """
 from engine.cards import UnsupportedCard
-from .generation_cards import pool
+from .generation_cards import board_pool,pool
 LEYLINES=('MEND_500','MEND_502','MEND_504')
 # Frozen data/standard/card_tags.json TAG_SCRIPT_DATA_NUM_1.
 BASE={'MEND_500':4,'MEND_502':6,'MEND_504':1}
@@ -28,7 +28,7 @@ class Leylines:
   value=BASE[cid]+p.leyline_effect
   if cid=='MEND_500':effect=('leyline_burst',value)
   elif cid=='MEND_502':
-   request=pool(card_type='MINION',minimum=value,maximum=value)
+   request=board_pool(pool(card_type='MINION',minimum=value,maximum=value))
    self._generation_candidates(request,ctx['owner']);effect=('generate_one',request,'board',())
   else:effect=('draw_discount',value)
   # Snapshot repetition/value for this cast. Every repetition has a checkpoint.

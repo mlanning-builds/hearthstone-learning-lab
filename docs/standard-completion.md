@@ -1,5 +1,9 @@
 # Full Standard completion tracker
 
+Current work is in `staging/rebased-88`: 1,182 of 1,185 pinned Standard cards have written bindings, with 3 source cards still unbound. See [the current completion queue](engine-audit/completion-queue.md) and [candidate status](../staging/rebased-88/STATUS.md) for current validation. The version entries below describe the preserved original engine and are historical records. Passing rule fixtures do not establish complete client fidelity. Training remains owner-run in Jupyter; GitHub publication is paused.
+
+The [latest implementation review](engine-audit/historical-862-review.md) explains why these counts do not mean training readiness: `TIME_052` alone reaches 2,536 minion identities without bindings in the actual normalized frozen request, and production distribution/interaction guards remain even on some bound Standard recipes.
+
 The user requested a complete card implementation before serious training. That remains the target. This engine is **not yet full Standard**. No unspecified card is approximated or silently treated as a vanilla minion.
 
 The pinned September 18 catalog contains 1,185 collectible records. Version 0.10 has 291 explicit effect implementations; **894 are still missing**. All eleven base hero powers remain implemented. The card inventory in expanded/catalog_audit.json includes every record, its full rules text, its current implementation state, and dependency hints for organizing the remaining work. Those hints do not execute card text and are not a certification of completeness.

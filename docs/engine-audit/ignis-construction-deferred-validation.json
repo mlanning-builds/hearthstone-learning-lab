@@ -1,0 +1,52 @@
+{
+  "scope": "Partial Ignis construction implementation; not a completed or admitted card",
+  "implementation_complete": false,
+  "root_registered": false,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "unvalidated": true,
+  "written_minions": 3181,
+  "unwritten_minions": 20,
+  "candidate_fingerprint": "9af78f3940f9f54b3645fe6db24be84309cb2a7edabe59396a9308881dc598b6",
+  "checks": [
+    "AST parsing of expanded sources",
+    "AST literal inspection of all 23 option identities",
+    "Frozen weapon size/Attack/durability metadata",
+    "Static inventory reconciliation"
+  ],
+  "frozen_option_hashes": {
+    "TTN_060t": "4274002e7badf779c4ba3bc774d275e082a8635da73b8e08d8a18c30a1c1d138",
+    "TTN_060t1": "06ba8ad3146f4ad7db6c78a5777652c2c2cc308b3aed156b2e46afd7da03a543",
+    "TTN_060t2": "2f30f8ac90a15d2f309dbdd7455f0264d06cafb0c331ef520f1497b3b5b2fdf5",
+    "TTN_060t3": "7043e18c3049387dca28dab43d335a751c3f0715314dccfcd97fae94c044e580",
+    "TTN_060t4": "5740fd3667f4985035de180de4f477b597ca3f41715bf4a8aae08df0b5c072a1",
+    "TTN_060t5": "519deba06fe85c58e8a5d9036af5ba61a641b6480c66e2e582f2c69969b34b06",
+    "TTN_060t6": "37c7b0de36423b8fb003140a69a7f1407964ed1aee4c07f86cf30d1d467fe461",
+    "TTN_060t9": "268aca4700c3654af278e6f246352b7e539ef0c3c6b1d4dbe8436f70f6fac7e4",
+    "TTN_060t7": "00c4f9bbc902b36f5480ddcbfcd61e1e8218eb0a40312395024fc71e651fcb75",
+    "TTN_060t8": "fb211d3be688909d7897278d2e29c69be81bd2b0ab0e8f2c1d6b0848ad8a1669",
+    "TTN_060t10": "786580a1226a88665db86aecacd0ef75ee67387353621bb45688a1f5b4902733",
+    "TTN_060t12": "c78f0ff3f30a6eb2ab5582db37338d6c59e7ce692acf1b0bd5e952cf815cc99f",
+    "TTN_060t13": "28e5151b4bb623a930a676f60850276b75dc0e8d93b40b9d7b3610d0dc006c68",
+    "TTN_060t7t": "b9fce66ae81cf581df8d8216346a55c3165d1c5725c75e615b383d802b5441f6",
+    "TTN_060t8t": "bd3158238405c8e385d9231f7fbfeae457fa19a4f2529651a8e0e20e63e60322",
+    "TTN_060t10t": "6c558160fcce6ab15e143b3990cd8943db13fdc10dfe401b2a404ee29060797f",
+    "TTN_060t12t": "8e2da46b3a5168c88f9708a6b15ef837ce731d9c0ef3dc0904d78363811c58c6",
+    "TTN_060t13t": "bba85bf5266f5040c918e29b1b0543a719989b48164dbc5a196cd979ca7de1be",
+    "TTN_060t7t1": "c06016e785e3fcf2145aef680e8093b71c1db4676568d5744e5e0403eb3b9780",
+    "TTN_060t8t1": "93aa10ad0d13bed34cd52c0cbc30931debb0d14f03f9db0466ca86cef6f34c94",
+    "TTN_060t10t1": "cc286eb5703d4069e76432cf70d2fe11157771a9c23e895f01656f5c88d6a78e",
+    "TTN_060t12t1": "0573e251b6cd8ecdebf180cd3018c015a240b303defc579a985024df9acaf6dc",
+    "TTN_060t13t1": "b01ffee4ff9edfd249f17f61f4efcbb3500ac9ea7bfeeb8a68813b550f6915ba"
+  },
+  "remaining": [
+    "Wire choice and root dispatch only after custom weapon consumers are complete",
+    "Equip keyword/cleave/Deathrattle payload and copy/resurrection definitions",
+    "Battlecry Pain damage with keyword attribution and actual legal targets",
+    "After-attack Armor, full-pool minion summon and draw continuations",
+    "Immune while attacking, Windfury/cleave and weapon death consumers",
+    "Choice/pool eligibility and full outcome distribution review; all gameplay validation deferred"
+  ],
+  "superseded_by": "implementation-pass-191-deferred-validation.json",
+  "construction_consumers_now_written": true
+}

@@ -1,0 +1,25 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "937a9775f42dce105103dc2a935848fce8c865e8ec3c1c185d63bdfec4ea7461",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Ordinary quest start now counts exceptional active quests against shared five slots",
+    "Quest Accepted recognizes all Command the Elements stages as one active questline"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Splendiferous_Whizbang"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Runtime shared capacity, duplicate quest and reward ordering fidelity"
+  ]
+}

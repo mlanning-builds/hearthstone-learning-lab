@@ -1,0 +1,821 @@
+{
+  "patch": "36.6.0.251952",
+  "status": "complete pinned Standard CHOOSE_ONE candidate census; eligibility and distribution unreviewed",
+  "parent_count": 21,
+  "branch_count": 42,
+  "root_admitted": false,
+  "source": "Frozen Standard catalog and explicit CHOICES declarations",
+  "cards": [
+    {
+      "parent_id": "CORE_AT_037",
+      "name": "Living Roots",
+      "parent_sha256": "d83e620cbbbef9acfd01cbb7bff628f1f65df73682c6b1e26214c2465e03b40b",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Living Roots: damage",
+          "target": "character",
+          "operations": [
+            [
+              "damage",
+              2
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Living Roots: Saplings",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "AT_037t",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "CORE_EX1_154",
+      "name": "Wrath",
+      "parent_sha256": "1ac28dbf4a9f726e2bbdc5ad940d222a4b3babdc457cf011e60bdc18d9e66c0e",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Wrath: damage",
+          "target": "minion",
+          "operations": [
+            [
+              "damage",
+              3
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Wrath: draw",
+          "target": "minion",
+          "operations": [
+            [
+              "damage",
+              1
+            ],
+            [
+              "draw",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "CORE_EX1_160",
+      "name": "Power of the Wild",
+      "parent_sha256": "8d1ebc8c5883142a1cb25455fbc639b0f18500c16cf45fce137245f52dd5f5a8",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Power: buff",
+          "target": "none",
+          "operations": [
+            [
+              "board_buff",
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Power: Panther",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EX1_160t",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "CORE_OG_047",
+      "name": "Feral Rage",
+      "parent_sha256": "d315fabdd31da4353af2fc41febffe7abb714b2f6d1de3650065f720d680dad8",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Feral Rage: Attack",
+          "target": "none",
+          "operations": [
+            [
+              "hero_attack",
+              4
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Feral Rage: Armor",
+          "target": "none",
+          "operations": [
+            [
+              "armor",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "CORE_ONY_018",
+      "name": "Boomkin",
+      "parent_sha256": "57768fab99b44c6922c0df7584706134e0fb1de0146ad07cc0a2d24e826effee",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Boomkin: heal",
+          "target": "none",
+          "operations": [
+            [
+              "heal_own_hero",
+              8
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Boomkin: damage",
+          "target": "character",
+          "operations": [
+            [
+              "damage",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "CORE_TSC_650",
+      "name": "Flipper Friends",
+      "parent_sha256": "850a42b360bebbec820c0710524274c397f4e9533a12087d49297cee0e8ea85e",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Flipper Friends: Orca",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "TSC_650t",
+              1
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Flipper Friends: Otters",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "TSC_650t4",
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "Core_LOE_115",
+      "name": "Raven Idol",
+      "parent_sha256": "53e42d937f0fdaa84b4f568cb870d7e51cbaefb339602c588c02a7d64fedf7f5",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Discover a minion",
+          "target": "none",
+          "operations": [
+            [
+              "generate_discover",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "MINION",
+                "tribe": "",
+                "school": "",
+                "minimum": 0,
+                "maximum": null,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "own_or_neutral",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              "hand",
+              []
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Discover a spell",
+          "target": "none",
+          "operations": [
+            [
+              "generate_discover",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "SPELL",
+                "tribe": "",
+                "school": "",
+                "minimum": 0,
+                "maximum": null,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "own_or_neutral",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              "hand",
+              []
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_233",
+      "name": "Spirits of the Forest",
+      "parent_sha256": "4f8177f7b1bb0113fcb262093f1bd21dab54aa3c170d38990119e00e124bf6e6",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Spirits: Wolves",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EX1_tk11",
+              3
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Spirits: Falcons",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EDR_233t2",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_257",
+      "name": "Lightmender",
+      "parent_sha256": "66ca39e65003c60f5ddc783a759bf56d164a42a1f0d807a2581bb34eced58534",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Lightmender: Attack and Shield",
+          "target": "none",
+          "operations": [
+            [
+              "buff_self",
+              3,
+              0
+            ],
+            [
+              "keyword_self",
+              "DIVINE_SHIELD"
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Lightmender: Health and Lifesteal",
+          "target": "none",
+          "operations": [
+            [
+              "buff_self",
+              0,
+              3
+            ],
+            [
+              "keyword_self",
+              "LIFESTEAL"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_263",
+      "name": "Grace of the Greatwolf",
+      "parent_sha256": "108f670d773bfaafe57cbf035f2c80c0757aca33c7e77370f9edb1d8b779c11c",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Greatwolf damage",
+          "target": "none",
+          "operations": [
+            [
+              "damage_enemy_hero",
+              4
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Greatwolf wolves",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EDR_850pe",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_463",
+      "name": "Twilight Influence",
+      "parent_sha256": "25172da5c9389aef2992a8e70cd92ef72e20df46f37c401b351cf47e80e426b9",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Constricting Thorns",
+          "target": "small_attack_minion",
+          "operations": [
+            [
+              "destroy"
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Controlling Vines",
+          "target": "none",
+          "operations": [
+            [
+              "generate_random",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "MINION",
+                "tribe": "",
+                "school": "",
+                "minimum": 2,
+                "maximum": 2,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "COLOSSAL",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "any",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              1,
+              "board",
+              []
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_490",
+      "name": "Sleep Paralysis",
+      "parent_sha256": "e9d026d4efb848d37b36fac0449f1d87932e327361d046b44b8b5345af2380b7",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Night Terrors",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EDR_490t",
+              2
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Destroy",
+          "target": "enemy_minion",
+          "operations": [
+            [
+              "destroy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_525",
+      "name": "Barbed Thorn",
+      "parent_sha256": "6150ee330e7d8f8542024cc09beda77fc6d0c52949b64854e13b93b10725ac71",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Barbed Thorn: Poisonous",
+          "target": "none",
+          "operations": [
+            [
+              "lasting_weapon_poison"
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Barbed Thorn: Deathrattle",
+          "target": "none",
+          "operations": [
+            [
+              "lasting_weapon_death"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_570",
+      "name": "Ominous Nightmares",
+      "parent_sha256": "805b246d041691775616bd6fd7d059d28ed8daeb3dc0bf3abbc02badb01b0697",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Nightmares: damage",
+          "target": "none",
+          "operations": [
+            [
+              "area_damage",
+              "all_minions",
+              1
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Nightmares: buff",
+          "target": "damaged_minion",
+          "operations": [
+            [
+              "buff",
+              2,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_813",
+      "name": "Morbid Swarm",
+      "parent_sha256": "ae144789c1bffb35bf6417358960e3d29abe18e407daed782bb0270d48e4d49d",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Ants",
+          "target": "none",
+          "operations": [
+            [
+              "summon",
+              "EDR_813at",
+              2
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Bug bites",
+          "target": "minion",
+          "operations": [
+            [
+              "corpse_target_damage",
+              2,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_820",
+      "name": "Wyvern's Slumber",
+      "parent_sha256": "c03a64b1f3168029a44d331e7ba45b3264f9141f7f88b7751340135f5d922687",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Dreadseeds",
+          "target": "none",
+          "operations": [
+            [
+              "summon_fixed_random",
+              [
+                "EDR_840t",
+                "EDR_840t1",
+                "EDR_840t2"
+              ]
+            ],
+            [
+              "summon_fixed_random",
+              [
+                "EDR_840t",
+                "EDR_840t1",
+                "EDR_840t2"
+              ]
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Damage",
+          "target": "none",
+          "operations": [
+            [
+              "area_damage",
+              "all_minions",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_843",
+      "name": "Reforestation",
+      "parent_sha256": "d543d53b75d5e1a7e3f9ab83c825fde5f5cf713452600b38e9a3c0d133de39f9",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Draw a spell",
+          "target": "none",
+          "operations": [
+            [
+              "filtered_draw",
+              [
+                [
+                  "type",
+                  "eq",
+                  "SPELL"
+                ]
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Draw a minion",
+          "target": "none",
+          "operations": [
+            [
+              "filtered_draw",
+              [
+                [
+                  "type",
+                  "eq",
+                  "MINION"
+                ]
+              ],
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "EDR_872",
+      "name": "Spark of Life",
+      "parent_sha256": "23a9419a55e2088e95962c034548781228fb9d1536094d88ff45bc73a2ac9e9c",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Mage spell",
+          "target": "none",
+          "operations": [
+            [
+              "generate_discover",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "SPELL",
+                "tribe": "",
+                "school": "",
+                "minimum": 0,
+                "maximum": null,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "MAGE",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              "hand",
+              []
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Druid spell",
+          "target": "none",
+          "operations": [
+            [
+              "generate_discover",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "SPELL",
+                "tribe": "",
+                "school": "",
+                "minimum": 0,
+                "maximum": null,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "DRUID",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              "hand",
+              []
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "END_010",
+      "name": "Twilight Timereaver",
+      "parent_sha256": "6ad113e13bf4064928958b2d6e36cce1731ceeeb23d028461fa6f441e5b4f37e",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Timereaver: Attack",
+          "target": "none",
+          "operations": [
+            [
+              "set_others_attack",
+              1
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Timereaver: Health",
+          "target": "none",
+          "operations": [
+            [
+              "set_others_health",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "JAIL_201",
+      "name": "Secret Ingredient",
+      "parent_sha256": "9c0e04d6e5d7d0f4400f6ea798a6ec98e74c5d42893b9e19b8adcf53b23f36b3",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Hero Attack",
+          "target": "none",
+          "operations": [
+            [
+              "hero_attack",
+              2
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Druid card",
+          "target": "none",
+          "operations": [
+            [
+              "generate_random",
+              {
+                "era": "",
+                "rune": "",
+                "card_type": "",
+                "tribe": "",
+                "school": "",
+                "minimum": 0,
+                "maximum": null,
+                "rarity": "",
+                "mechanic": "",
+                "excluded_mechanic": "",
+                "family": "",
+                "minimum_tribes": 0,
+                "classes": "DRUID",
+                "attack_minimum": null,
+                "attack_maximum": null
+              },
+              1,
+              "hand",
+              []
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "parent_id": "TIME_211",
+      "name": "Lady Azshara",
+      "parent_sha256": "315878030bfde73090839a3bae29d69f275a0509d2480a59e1c300c74405cdb3",
+      "eligibility_review": "pending; candidate census does not establish Uluu pool eligibility",
+      "branches": [
+        {
+          "branch_index": 0,
+          "label": "Empower Zin-Azshari",
+          "target": "none",
+          "operations": [
+            [
+              "azshara_empower",
+              [
+                "TIME_211t2",
+                "TIME_211t2t"
+              ],
+              [
+                "TIME_211t1",
+                "TIME_211t1t"
+              ]
+            ]
+          ]
+        },
+        {
+          "branch_index": 1,
+          "label": "Empower the Well",
+          "target": "none",
+          "operations": [
+            [
+              "azshara_empower",
+              [
+                "TIME_211t1",
+                "TIME_211t1t"
+              ],
+              [
+                "TIME_211t2",
+                "TIME_211t2t"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    "Transforming/self-modifying parent exclusions",
+    "Non-Druid weapon choice behavior and eligibility",
+    "Fabled Lady Azshara source dependencies",
+    "Distinct choices and both-targeted prohibition do not establish exact pair probabilities"
+  ],
+  "source_reference": "https://hearthstone.wiki.gg/wiki/Uluu%2C_the_Everdrifter"
+}

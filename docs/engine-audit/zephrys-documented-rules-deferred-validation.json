@@ -1,0 +1,21 @@
+{
+  "status": "partial_written_unvalidated",
+  "candidate_fingerprint": "6fd4c937a5d9786fa5dd81b9203f9fd6a306737726a1a33c5b9b9c80260587d5",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "new_root_admissions": 0,
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact offer pool and evaluator remain missing",
+    "Snapshot baseline does not simulate next-turn special triggers",
+    "Historical developer rules require pinned-client verification"
+  ]
+}

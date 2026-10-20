@@ -1,0 +1,121 @@
+{
+  "status": "original_developer_stream_located_and_transcript_reviewed_exact_models_still_unresolved",
+  "date": "2026-10-16",
+  "candidate_fingerprint": "a3cd11e94e4e321160e42821b36342972c2a92a21d05a99771a4218cbc4f8877",
+  "new_findings": [
+    {
+      "subject": "Elise pack historical numeric report",
+      "source": "https://blizzpro.com/2017/03/17/ungoro-card-reveal-stream-the-new-cards-are-awesome/",
+      "archive": "https://web.archive.org/web/20250821192558/https://blizzpro.com/2017/03/17/ungoro-card-reveal-stream-the-new-cards-are-awesome/",
+      "archive_sha256": "7ca41f5aec3396e82fbfdb59782999e5cd3694789dd7e3dd094ba7be7e5fb1ff",
+      "reported_facts": [
+        "Guaranteed Epic",
+        "Mean of one Legendary per pack",
+        "25 percent golden-card chance"
+      ],
+      "evidence_level": "Contemporaneous secondary account of Peter Whalen reveal livestream; wording verified in an archived capture",
+      "corroboration": [
+        "https://www.icy-veins.com/forums/topic/29472-live-stream-reveals-eleven-new-cards/",
+        "https://esportsedition.com/hearthstone/designing-hearthstone-cards/amp/"
+      ],
+      "not_established": [
+        "Full Common/Rare/Epic/Legendary slot probabilities",
+        "Rarity correlations, guaranteed-slot selection and ordering",
+        "Conditional identity probabilities",
+        "Whether historical figures remain unchanged in pinned build 251952"
+      ],
+      "not_inferred": [
+        "Independent 20-percent Legendary chance per slot",
+        "Retail pack or pity-timer behavior",
+        "A replacement joint distribution"
+      ],
+      "primary_source_resolution": "Original official stream transcript uses approximate Legendary mean and approximate individual-card golden frequency; neither was an exact probability disclosure."
+    },
+    {
+      "subject": "Fireplace Elise implementation",
+      "source": "https://github.com/play-boardgames-together/fireplace-core/blob/a89377fdf2c808f9457aacd9d5678ff0f53fcbb0/fireplace/cards/ungoro/neutral_legendary.py",
+      "source_sha256": "13bcced15e6d121750dcd1a800822b96722fc1f32157796461ccca376ce10edb",
+      "supporting_picker": "https://github.com/play-boardgames-together/fireplace-core/blob/a89377fdf2c808f9457aacd9d5678ff0f53fcbb0/fireplace/dsl/random_picker.py",
+      "finding": "Five repeated generic collectible-UnGoro generation actions; no explicit Epic guarantee or pack rarity model at the card declaration. Picker uses default combined-pool weighting when no weighted filters are supplied.",
+      "conclusion": "Not accepted as evidence for exact Blizzard pack probabilities; no code copied or executed"
+    },
+    {
+      "subject": "RosettaStone Elise implementation",
+      "source": "https://github.com/utilForever/RosettaStone/blob/e10749b5f0c08d3a6135bce317cb11d1738846ad/Sources/Rosetta/PlayMode/CardSets/UngoroCardsGen.cpp",
+      "source_sha256": "3598863840143ace73941503e044974fe91b3ba0304919676f08d7853983a708",
+      "finding": "Checked generated file contains descriptive comment sections for UNG_851 and UNG_851t1 without behavior implementation there.",
+      "conclusion": "Does not establish a probability implementation; no claim about every fork or branch"
+    },
+    {
+      "subject": "Fireplace Whizbang recipe lists",
+      "source": "https://github.com/play-boardgames-together/fireplace-core/blob/a89377fdf2c808f9457aacd9d5678ff0f53fcbb0/fireplace/cards/boomsday/whizbang_decks.py",
+      "finding": "Multiple historical recipe assignments; final assignment cites Descent of Dragons recipes.",
+      "conclusion": "Historical reference only; not substituted for pinned 2026 eleven-class recipes"
+    },
+    {
+      "subject": "Holmes developer interview",
+      "source": "https://gamerwk.com/wawancara-eksklusif-hearthstone-murder-at-castle-nathria-dengan-cora-georgiou-dan-edward-goodwin/",
+      "finding": "Cora Georgiou explains a discarded ten-suspect/clue prototype; does not specify the shipped three-clue distractor distribution.",
+      "conclusion": "Prototype behavior not implemented as current rules"
+    },
+    {
+      "subject": "SabberStone explicit Elise probability implementation",
+      "source": "https://github.com/HearthSim/SabberStone/blob/1db6e2711a13b9061a5de2cd6fc4a00827203d6b/SabberStoneCore/src/Tasks/SpecificTask.cs#L277",
+      "source_sha256": "23c52c7dacbae1f0774054f9e5bc27e36e8c3da05acdbbb5a85fc47a5a63709c",
+      "finding": "UngoroPack lines 277-329 explicitly labels rarity thresholds empirical: Legendary 19%, Epic 24%, Rare 28%, Common 29%. Samples each generated card separately; excludes Quests; caps generation at free hand space. Checked routine has no Epic-or-better guarantee.",
+      "conclusion": "Empirical model, not an exact Blizzard implementation. Independent sampling permits no Epic or Legendary, conflicting with the historical developer guarantee. No code copied or executed; these probabilities were not installed."
+    }
+  ],
+  "historical_written": 3192,
+  "historical_remaining": 9,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "new_admissions": 0,
+  "simulator_code_changed": false,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "next_research": [
+    "Locate a primary publication of full joint pack rarity law; original stream only states approximate marginal frequencies and a guarantee",
+    "Resolve actual pinned recipe identities and selection policies for deck/hand specials",
+    "Find complete shipped Khadgar usefulness predicates and Holmes distractor algorithm; do not substitute prototypes or empirical simulators"
+  ],
+  "original_stream": {
+    "announcement": "https://hearthstone.blizzard.com/en-us/news/20585204/journey-to-ungoro-card-reveal-kick-off-livestream-3-15-2017",
+    "broadcast_date": "2017-03-17",
+    "original_twitch": "https://www.twitch.tv/videos/129302430",
+    "official_upload": "https://www.youtube.com/watch?v=owgLGub8gt4",
+    "upload_date": "2017-03-20",
+    "participants": [
+      "Peter Whalen",
+      "Sean Day9 Plott"
+    ],
+    "inspection": "Official verified Hearthstone upload; expanded description and opened full YouTube transcript in browser. Transcript wording is automatically transcribed; no claim of audio verification.",
+    "findings": [
+      {
+        "timestamp": "19:40-20:12",
+        "summary": "Whalen explains that ordinary packs were weak in gameplay, so Elise packs were improved. Describes approximately one Legendary on average and at least an Epic guaranteed. Approximate mean is not an exact slot probability."
+      },
+      {
+        "timestamp": "44:22-44:35",
+        "summary": "Whalen describes golden outcomes for individual cards, including from a nongolden pack, at approximately one quarter on average. This resolves the per-card versus per-pack wording ambiguity, but not an exact probability or independence."
+      }
+    ],
+    "not_established": [
+      "Complete joint rarity distribution",
+      "Exact conditional identity probabilities",
+      "Rarity and golden correlations",
+      "Guaranteed-slot placement and ordering",
+      "Pinned-build continuity",
+      "Avatar sharing the Elise algorithm"
+    ]
+  },
+  "primary_selection_source_leads": {
+    "khadgar": "https://twitter.com/RidiculousHat/status/1760007675977277514",
+    "uluu_options": "https://x.com/MyntyPhresh/status/1847706064772616571",
+    "uluu_exclusions": "https://x.com/MyntyPhresh/status/1847706068899729845",
+    "uluu_target_pair_constraint": "https://x.com/MyntyPhresh/status/1847706071139533125",
+    "access": "Original post URLs recovered from contemporaneous linked reporting. Readers returned empty/error/403 responses; not represented as directly inspected post contents.",
+    "missing": "Neither retrieved material nor reporting specifies Uluu parent-versus-branch sampling and rejection policy, or all Khadgar helpfulness predicates."
+  }
+}

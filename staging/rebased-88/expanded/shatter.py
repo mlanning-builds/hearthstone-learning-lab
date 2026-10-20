@@ -68,7 +68,7 @@ class Shatter:
                 player.hand.remove(original)
                 left=deepcopy(original);left.uid=self._new_id();left.card_id=left_id
                 player.hand.insert(0,left)
-                if len(player.hand)<10:
+                if len(player.hand)<getattr(player,'hand_capacity',10):
                     right=deepcopy(original);right.uid=self._new_id();right.card_id=right_id
                     player.hand.append(right)
                 # Capture listener membership at the actual split; later

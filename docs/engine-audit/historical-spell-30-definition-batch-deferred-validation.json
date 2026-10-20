@@ -1,0 +1,216 @@
+{
+  "fingerprint": "a66f95cd16d7352537c1483cf64fe1a45887336c272328426a073fea89be8b6c",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 30,
+  "new_historical_spell_roots": 24,
+  "new_tokens_and_alternate_forms": 6,
+  "registry_records": 7963,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1242,
+    "remaining": 200
+  },
+  "new_implementations": [
+    {
+      "id": "DED_502",
+      "name": "Righteous Defense",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_706",
+      "name": "Deathmatch Pavilion",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_706t",
+      "name": "Pavilion Duelist",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_102",
+      "name": "Starship Schematic",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_465",
+      "name": "Barrel Roll",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_467",
+      "name": "Quasar",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_474",
+      "name": "Warp Drive",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_476",
+      "name": "Suffocate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_845",
+      "name": "Laser Barrage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_010",
+      "name": "Velen's Chosen",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_012",
+      "name": "Light of the Naaru",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "KAR_026",
+      "name": "Protect the King!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "KAR_026t",
+      "name": "Pawn",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_113",
+      "name": "Everyfin is Awesome",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_061",
+      "name": "On the Hunt",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_061t",
+      "name": "Mastiff",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_101",
+      "name": "Forbidden Shaping",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_114",
+      "name": "Forbidden Ritual",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_114a",
+      "name": "Icky Tentacle",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_314",
+      "name": "Blood To Ichor",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_314b",
+      "name": "Slime",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_136",
+      "name": "Power Word: Feast",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_138",
+      "name": "Blessing of Authority",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_609",
+      "name": "Survival of the Fittest",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_305",
+      "name": "A New Challenger...",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_003",
+      "name": "Sigil of Summoning",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_003t",
+      "name": "Wailing Demon",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_051",
+      "name": "Timeless Blessing",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_015",
+      "name": "Dark Prophecy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_029",
+      "name": "Resizing Pouch",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7963,
+    "edges": 783,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "200 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

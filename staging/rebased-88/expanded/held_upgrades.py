@@ -5,7 +5,7 @@ from opponent turns, or repeatedly from end-turn multipliers.
 """
 MANA_THRESHOLDS={'CATA_131':4,'CATA_132':8,'CATA_140':25}
 SMOLDERING={'FIR_911','FIR_914','FIR_916'}
-TURN_UPGRADES=SMOLDERING|{'CATA_498','CATA_206'}
+TURN_UPGRADES=SMOLDERING|{'CATA_498','CATA_206','DAL_009','DAL_010'}
 
 class HeldUpgrades:
     def _held_spend(self,owner,amount):
@@ -33,7 +33,7 @@ class HeldUpgrades:
 
     def _held_effect(self,op,ctx):
         name=op[0]
-        if not name.startswith('held_') or name not in ('held_tick','held_ramp','held_buff','held_area','held_cleave','held_picklock'):return False
+        if not name.startswith('held_') or name not in ('held_tick','held_ramp','held_buff','held_area','held_cleave','held_picklock','held_scheme_area'):return False
         owner=ctx['owner'];p=self.players[owner];card=ctx.get('physical_card')
         if name=='held_tick':
             card=next((c for c in p.hand if c.uid==op[1] and c.card_id==op[2]),None)
@@ -54,6 +54,7 @@ class HeldUpgrades:
             age=self._b60_state(card).get('held_turn_ends',0)
             if name=='held_buff':self._effect(('buff',1+age,1+age),ctx)
             elif name=='held_area':self._effect(('area_damage','enemy_minions',1+age),ctx)
+            elif name=='held_scheme_area':self._effect(('area_damage','all_minions',1+age),ctx)
             elif name=='held_cleave':
                 enemies=self.players[1-owner].minions
                 victims=self.rng.sample(enemies,min(2,len(enemies)))

@@ -1,0 +1,26 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "5f80d61aba1d568afb9e68b4cf84870559afb8ab52e6e7e89c13102f0d3a6834",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Morphing Card discount is applied once to its physical card, not once per hand reroll",
+    "Native hand transformation preserves unrelated cost enchantments"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Patch_34.6.0.235290"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "remaining": [
+    "Physical copy and fresh replay discount reset",
+    "Full effective affordability and initial transform timing"
+  ]
+}

@@ -117,7 +117,7 @@ def named_runtime_bindings():
 def build(engine_root):
     sys.path.insert(0,str(engine_root))
     from expanded.pending_definitions import DEFINITIONS
-    from expanded.cards import COLLECTIBLE_IDS,registry
+    from expanded.cards import COLLECTIBLE_IDS,registry,RULES
     from expanded.generation_cards import PoolRequest,pool,requests_for
     from expanded import exceptional_finish,minion_forge,custom_builders,morchie,random_targets,counterfeits,dragon_soul,titanographer,kindred,remaining_setup,hand_investigations,tiny_pal,healing_replacement,stat_rules,genn,replacements,turn_deadlines,infinity,deck_setup,fabled_effects,stored_obligations,learned_spells,zone_triggers,temporary_control,starting_rules,evolving_locations,colossal_bodies,herald,colossals,generation_cards,generation_extensions,dark_gift_generators,transformations,rewind_generators,imbue_consumers,choice_generators,historical_generation,health_generation,dormant_generation,conditional_discover,attack_generation,event_generation,exceptional_generation,leylines,maps,automatic_casting,future_summons
     from expanded.generation import request_matches
@@ -127,6 +127,17 @@ def build(engine_root):
     archive={d['id']:d for d in json.load(gzip.open(engine_root/'data/standard/all_cards.json.gz','rt'))}
     live=set(COLLECTIBLE_IDS)&catalog.keys();pending=set(catalog)-live;registered=set(registry())
     if set(DEFINITIONS)!=pending:raise ValueError('Every pending collectible must have exactly one staged recipe')
+    # Registered Standard declarations do not measure required historical
+    # outcome closure. Keep this broad generator visible even when registered.
+    from expanded.historical_generation_catalog import load_universe,historical_contract
+    universe=load_universe();past_request,=historical_generation.requests_for('TIME_052')
+    past_contract=historical_contract(past_request,'DEATHKNIGHT',universe)
+    past_missing=sorted(set(past_contract.card_ids)-(registered&set(RULES)))
+    historical_work=dict(source_card_id='TIME_052',source_name='Amber Warden',
+        eligible_minions=len(past_contract.card_ids),written_minions=len(past_contract.card_ids)-len(past_missing),
+        unwritten_minions=len(past_missing),unwritten_card_ids=past_missing,
+        eligibility_independently_certified=False,recursive_closure_verified=False,
+        scope='Actual pinned candidate pool; declaration coverage only, not completed behavior.')
     rows=[];graph={cid:set() for cid in pending};impact=Counter()
     from expanded import quest_families
     declarations=set(exceptional_finish.RULES)|set(minion_forge.RULES)|set(custom_builders.RULES)|set(morchie.RULES)|set(random_targets.RULES)|set(counterfeits.RULES)|set(dragon_soul.RULES)|set(titanographer.RULES)|set(kindred.RULES)|set(remaining_setup.RULES)|set(hand_investigations.RULES)|set(tiny_pal.RULES)|set(healing_replacement.RULES)|set(stat_rules.RULES)|set(genn.RULES)|set(replacements.RULES)|set(turn_deadlines.RULES)|set(infinity.RULES)|set(deck_setup.RULES)|set(quest_families.RULES)|set(fabled_effects.RULES)|set(stored_obligations.RULES)|set(learned_spells.RULES)|set(zone_triggers.RULES)|set(temporary_control.RULES)|set(starting_rules.RULES)|set(starting_rules.STAGED_RULES)|set(evolving_locations.RULES)|set(generation_cards.RULES)|set(generation_extensions.RULES)|set(dark_gift_generators.RULES)|set(transformations.RULES)|set(rewind_generators.RULES)|set(imbue_consumers.RULES)|set(choice_generators.RULES)|set(historical_generation.RULES)|set(health_generation.RULES)|set(dormant_generation.RULES)|set(conditional_discover.RULES)|set(attack_generation.RULES)|set(event_generation.RULES)|set(exceptional_generation.RULES)|set(leylines.RULES)|set(maps.RULES)|set(automatic_casting.RULES)|set(future_summons.RULES)|set(herald.RULES)|set(colossal_bodies.RULES)
@@ -288,16 +299,27 @@ def build(engine_root):
     for rank,row in enumerate(families,1):row['priority']=rank
     return dict(schema=1,scope='All frozen Standard collectibles; generated dependencies included, historical pools explicitly unresolved.',
         catalog_size=len(catalog),live_collectibles=len(live),remaining_collectibles=len(pending),
+        historical_generation=historical_work,
         completion_target='Zero unsupported collectible behavior and required generated outcomes, followed by fidelity gates.',
         methodology='Conservative candidate graph. Explicit runtime identity bindings resolve named dependencies only; independent behavior review and pool gates remain. Scores are relative effort and fan-out, not measured time.',
-        source_sha256=hashlib.sha256(Path(__file__).read_bytes()+b''.join((engine_root/path).read_bytes() for path in ('expanded/exceptional_finish.py','expanded/minion_forge.py','expanded/custom_builders.py','expanded/morchie.py','expanded/random_targets.py','expanded/counterfeits.py','expanded/dragon_soul.py','expanded/titanographer.py','expanded/kindred.py','expanded/remaining_setup.py','expanded/hand_investigations.py','expanded/tiny_pal.py','expanded/healing_replacement.py','expanded/stat_rules.py','expanded/genn.py','expanded/replacements.py','expanded/turn_deadlines.py','expanded/infinity.py','expanded/deck_setup.py','expanded/historical_vanilla.py','expanded/historical_simple.py','expanded/historical_numeric.py','expanded/historical_death.py','expanded/automatic_cards.py','expanded/discover_offer.py','expanded/adapt.py','expanded/quest_families.py','expanded/quest_progress.py','expanded/muradin.py','expanded/azshara.py','expanded/fabled_decks.py','expanded/fabled_effects.py','expanded/gelbin.py','expanded/broxigar.py','expanded/rafaam.py','expanded/garona.py','expanded/stored_obligations.py','expanded/learned_spells.py','expanded/zone_triggers.py','expanded/temporary_control.py','expanded/starting_rules.py','expanded/evolving_locations.py','expanded/pending_definitions.py','expanded/cards.py','expanded/generation_cards.py','expanded/generation_extensions.py','expanded/dark_gift_generators.py','expanded/transformations.py','expanded/rewind_generators.py','expanded/imbue_consumers.py','expanded/choice_generators.py','expanded/historical_generation.py','expanded/health_generation.py','expanded/dormant_generation.py','expanded/conditional_discover.py','expanded/attack_generation.py','expanded/event_generation.py','expanded/exceptional_generation.py','expanded/leylines.py','expanded/maps.py','expanded/automatic_casting.py','expanded/future_summons.py','expanded/colossals.py','expanded/herald.py','expanded/colossal_bodies.py','expanded/herald_values.json','expanded/generation.py','data/standard/cards.json'))).hexdigest(),
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes()+b''.join((engine_root/path).read_bytes() for path in ('expanded/exceptional_finish.py','expanded/minion_forge.py','expanded/custom_builders.py','expanded/morchie.py','expanded/random_targets.py','expanded/counterfeits.py','expanded/dragon_soul.py','expanded/titanographer.py','expanded/kindred.py','expanded/remaining_setup.py','expanded/hand_investigations.py','expanded/tiny_pal.py','expanded/healing_replacement.py','expanded/stat_rules.py','expanded/genn.py','expanded/replacements.py','expanded/turn_deadlines.py','expanded/infinity.py','expanded/deck_setup.py','expanded/historical_vanilla.py','expanded/historical_simple.py','expanded/historical_numeric.py','expanded/historical_power_primitives.py','expanded/historical_generation_primitives.py','expanded/historical_board_primitives.py','expanded/historical_condition_batches.py','expanded/historical_zone_batches.py','expanded/historical_draw_batches.py','expanded/historical_keyword_batches.py','expanded/historical_event_batches.py','expanded/historical_form_batches.py','expanded/historical_prime_batches.py','expanded/historical_infuse_batches.py','expanded/historical_tribal_batches.py','expanded/historical_treasure_batches.py','expanded/historical_galakrond_batches.py','expanded/historical_ritual_batches.py','expanded/historical_secret_batches.py','expanded/historical_resource_batches.py','expanded/historical_sleep_batches.py','expanded/historical_arsenal_batches.py','expanded/historical_hand_batches.py','expanded/historical_play_batches.py','expanded/historical_resurrection_batches.py','expanded/historical_drawn_batches.py','expanded/historical_upgrade_batches.py','expanded/historical_copy_batches.py','expanded/historical_family_batches.py','expanded/historical_mutation_batches.py','expanded/historical_death.py','expanded/historical_spellpower.py','expanded/historical_hand_primitives.py','expanded/historical_triggers.py','expanded/historical_death_primitives.py','expanded/historical_battlecry_buffs.py','expanded/historical_scaling.py','expanded/historical_passive_stats.py','expanded/historical_tutors.py','expanded/historical_removal.py','expanded/historical_fixed_summons.py','expanded/historical_conditional_battlecries.py','expanded/murloc_generation.py','expanded/identities.py','expanded/core_identities.json','expanded/automatic_cards.py','expanded/discover_offer.py','expanded/adapt.py','expanded/quest_families.py','expanded/quest_progress.py','expanded/muradin.py','expanded/azshara.py','expanded/fabled_decks.py','expanded/fabled_effects.py','expanded/gelbin.py','expanded/broxigar.py','expanded/rafaam.py','expanded/garona.py','expanded/stored_obligations.py','expanded/learned_spells.py','expanded/zone_triggers.py','expanded/temporary_control.py','expanded/starting_rules.py','expanded/evolving_locations.py','expanded/pending_definitions.py','expanded/cards.py','expanded/generation_cards.py','expanded/generation_extensions.py','expanded/dark_gift_generators.py','expanded/transformations.py','expanded/rewind_generators.py','expanded/imbue_consumers.py','expanded/choice_generators.py','expanded/historical_generation.py','expanded/health_generation.py','expanded/dormant_generation.py','expanded/conditional_discover.py','expanded/attack_generation.py','expanded/event_generation.py','expanded/exceptional_generation.py','expanded/leylines.py','expanded/maps.py','expanded/automatic_casting.py','expanded/future_summons.py','expanded/colossals.py','expanded/herald.py','expanded/colossal_bodies.py','expanded/herald_values.json','expanded/generation.py','data/standard/cards.json'))).hexdigest(),
         unresolved_cards=sum(bool(row['unresolved']) for row in rows),
         cyclic_candidate_groups=cyclic,family_queue=families,cards=rows)
 
 
+def historical_summary(report):
+    history=report.get('historical_generation')
+    if history is None:return 'Historical outcome coverage has not been measured in this report.'
+    return (f"Amber Warden's pinned candidate historical pool has {history['eligible_minions']} minion outcomes: "
+            f"{history['written_minions']} have explicit bindings and **{history['unwritten_minions']} remain unwritten**. "
+            'Pool membership, recursive dependencies and behavior fidelity still need review. '
+            'This backlog is separate from the unadmitted Standard card count.')
+
+
 def markdown(report):
     out=['# All-card completion queue','',
-         f"{report['live_collectibles']} live collectibles; {report['remaining_collectibles']} pending. No card-count batch limit.",'',
+         f"{report['live_collectibles']} registered collectibles; {report['remaining_collectibles']} unadmitted. This is not the total remaining-work count.",'',
+         historical_summary(report),'',
          'Generated output: run `tools/build_completion_queue.py --engine-root staging/rebased-88` from the project root. JSON contains every card, selector, explicit token and unresolved dependency.','',
          '**Planning candidates, not approved pools.** A missing edge does not prove no dependency; unresolved selectors and named tokens remain blockers. Runtime declaration presence is not completed behavior. Explicit mapped dependencies resolve identity only; behavior, timing, complete pools and live admission remain separate gates.','',
          f"{report['unresolved_cards']} cards have unresolved selector/dependency mappings. {len(report['cyclic_candidate_groups'])} candidate cyclic groups require coordinated review and admission; the largest has {max(map(len,report['cyclic_candidate_groups']),default=0)} cards.",'',
@@ -322,6 +344,7 @@ def main():
     (out/'completion-queue.json').write_text(json.dumps(report,indent=2)+'\n')
     (out/'completion-queue.md').write_text(markdown(report))
     print(json.dumps({k:report[k] for k in ('live_collectibles','remaining_collectibles','unresolved_cards')}))
+    print(json.dumps({'historical_generation':{key:report['historical_generation'][key] for key in ('eligible_minions','written_minions','unwritten_minions')}}))
     print(json.dumps([{'family':r['family'],'remaining':r['remaining'],'score':r['priority_score']} for r in report['family_queue'][:6]]))
 
 if __name__=='__main__':main()

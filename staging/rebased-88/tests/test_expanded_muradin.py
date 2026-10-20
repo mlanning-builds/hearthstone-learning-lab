@@ -64,10 +64,37 @@ class MuradinTests(unittest.TestCase):
   self.g._add(0,rules.HAMMER);m=self.take();self.p.board.remove(m);self.q.board.append(m);m.owner=1;m.health=0;self.g._settle();self.assertFalse(self.p.hand);self.assertEqual(self.q.hand[0].card_id,rules.HAMMER)
  def test_repeated_return_moves_only_once(self):
   self.g._add(0,rules.HAMMER);m=self.take();self.run_ops([('muradin_return',),('muradin_return',)],source=m);self.assertEqual(len(self.p.hand),1)
- def test_second_distinct_binding_rejects(self):
-  self.g._add(0,rules.HAMMER);m=self.take();c=self.g._add(0,rules.HAMMER)
-  with self.assertRaises(UnsupportedCard):self.run_ops([('muradin_take',)],source=m)
-  self.assertIn(c,self.p.hand)
+ def test_repeated_battlecry_holds_and_returns_three_physical_hammers(self):
+  originals=[self.g._add(0,rules.HAMMER) for _ in range(3)]
+  m=self.take();self.run_ops([('muradin_take',),('muradin_take',)],source=m)
+  self.assertEqual((m.attack,m.max_health),(12,14));self.assertFalse(self.p.hand)
+  held=[m._muradin_hammer]+m._muradin_extra_hammers
+  self.run_ops([('muradin_return',),('muradin_return',)],source=m)
+  self.assertEqual([c.uid for c in self.p.hand],[h['card'].uid for h in held])
+  self.assertEqual(set(c.uid for c in self.p.hand),set(c.uid for c in originals))
+  self.assertTrue(all(any(c is original for original in originals) for c in self.p.hand))
+ def test_multiple_hammers_return_to_current_controller_and_burn_at_limit(self):
+  originals=[self.g._add(0,rules.HAMMER) for _ in range(3)]
+  m=self.take();self.run_ops([('muradin_take',),('muradin_take',)],source=m)
+  self.p.board.remove(m);self.q.board.append(m);m.owner=1
+  for _ in range(9):self.g._add(1,'NEW1_034')
+  held=[m._muradin_hammer]+m._muradin_extra_hammers
+  self.run_ops([('muradin_return',),('muradin_return',)],source=m,owner=1)
+  self.assertEqual(len(self.q.hand),10);self.assertIs(self.q.hand[-1],held[0]['card'])
+  self.assertFalse(hasattr(m,'_muradin_hammer'));self.assertFalse(hasattr(m,'_muradin_extra_hammers'))
+  self.assertFalse(self.p.hand)
+ def test_multiple_hammer_external_stats_survive_silence(self):
+  for _ in range(2):self.g._add(0,rules.HAMMER)
+  m=self.take();self.run_ops([('muradin_take',)],source=m);self.g._silence(m)
+  self.assertEqual((m.attack,m.max_health),(9,10));self.assertIn('WINDFURY',self.g._effective_keywords(m))
+ def test_copy_of_multiple_hammers_has_independent_physical_identities(self):
+  originals=[self.g._add(0,rules.HAMMER) for _ in range(2)]
+  m=self.take();self.run_ops([('muradin_take',)],source=m)
+  copied=self.g._summon(0,m.card_id,copy_from=m)
+  self.assertEqual((copied.attack,copied.max_health),(9,10))
+  self.run_ops([('muradin_return',)],source=copied)
+  self.assertEqual(len(self.p.hand),2)
+  self.assertFalse(set(c.uid for c in originals)&set(c.uid for c in self.p.hand))
  def test_equipped_hammer_windfury_allows_two_attacks(self):
   self.play(rules.HAMMER);self.attack(-1);self.attack(-1);self.assertEqual(self.q.health,24);self.assertFalse(any(a.kind=='attack' and a.source==-1 for a in self.g.legal_actions()))
  def test_hammer_break_upgrades_original_and_can_be_equipped_again(self):
@@ -110,8 +137,8 @@ class MuradinTests(unittest.TestCase):
   self.g._add(0,rules.HAMMER);m=self.take();m._muradin_hammer['card'].rule_state={'private_marker':123};self.avatar(-1)
   for viewer in (0,1):
    view=self.g.observe(viewer);self.assertEqual(view['players'][0]['avatar_form'],1);self.assertEqual(view['players'][0]['board'][0]['held_hammer']['attack'],3);self.assertNotIn('private_marker',json.dumps(view))
-  view=self.g.observe(0);rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']));self.assertIn('avatar_form',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
- def test_root_remains_staged(self):self.assertNotIn('TIME_209',cards.COLLECTIBLE_IDS)
+  view=self.g.observe(0);rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']));self.assertIn('avatar_form',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
+ def test_root_registered(self):self.assertIn('TIME_209',cards.COLLECTIBLE_IDS)
  def test_durability_enchantment_survives_damage_and_shuffle(self):
   c=self.play(rules.HAMMER);self.g._buff_weapon(0,2,3);self.p.weapon['durability']=1;self.attack(-1);self.assertEqual((c.attack_bonus,c.health_bonus),(4,3))
   self.p.deck.remove(c);self.g._equip(0,rules.HAMMER,attack_bonus=c.attack_bonus,physical_card=c);self.assertEqual(self.p.weapon['durability'],7)

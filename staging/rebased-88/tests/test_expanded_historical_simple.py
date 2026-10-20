@@ -1,3 +1,4 @@
+from engine.cards import UnsupportedCard
 """Frozen primitive historical bodies, paid without registry or pool patches."""
 import json
 from pathlib import Path
@@ -16,11 +17,17 @@ class HistoricalSimpleTests(unittest.TestCase):
   return g
  def test_explicit_declarations_match_reviewed_source_behavior(self):
   audit=json.loads((Path(__file__).resolve().parents[1]/'../../docs/engine-audit/historical-simple-admission-2026-10-06.json').read_text())
-  self.assertEqual(set(audit['card_ids']),GENERATED_IDS);self.assertEqual(len(GENERATED_IDS),40)
+  # Preserve the original 40-card review. Healing and the four explicit
+  # type/Dormant bodies have separate production behavior checks.
+  healing_ids=set('BOT_447 CFM_061 CS2_088 DAL_078 DAL_544 DS1_055 LOOT_014 LOOT_388 UNG_938'.split())
+  separate_ids=healing_ids|{'DMF_532','GIL_681','NX2_050','TSC_647'}
+  self.assertEqual(set(audit['card_ids']),GENERATED_IDS-separate_ids)
+  self.assertEqual(GENERATED_IDS-set(audit['card_ids']),separate_ids)
+  self.assertEqual(len(GENERATED_IDS),53)
   for row in audit['records']:
    cid=row['card_id'];mode,ops=cards.RULES[row['source_card_id']]
    self.assertEqual(RULES[cid],(mode,ops))
- def test_all_forty_bodies_complete_actual_paid_play(self):
+ def test_all_reviewed_bodies_complete_actual_paid_play(self):
   for cid in sorted(GENERATED_IDS):
    with self.subTest(cid=cid):
     g=self.game();c=g._add(0,cid);cost=g._cost(c,0)
@@ -29,7 +36,13 @@ class HistoricalSimpleTests(unittest.TestCase):
     self.assertNotIn(c,g.players[0].hand);g.assert_invariants()
  def test_generated_only_ids_do_not_enter_standard_decks(self):
   self.assertTrue(GENERATED_IDS<=cards.TOKEN_IDS);self.assertFalse(GENERATED_IDS&cards.COLLECTIBLE_IDS)
-  validate_past_candidates(GENERATED_IDS,cards.registry())
+  # Bodies may serve fixed recipes; current Core aliases are not past outcomes.
+  current_aliases=frozenset('UNG_848 EX1_619 CS2_093 BT_292 ICC_055 CS2_076 EX1_309 EX1_169 EX1_606 SW_066 EX1_011 EX1_319 SW_442 ULD_191 EX1_197 AT_064 CS2_062 CS2_094 UNG_205 CS2_032 CS2_189 EX1_362 CS1_130 DS1_185 CS2_024 AT_055 EX1_259 CS1_112 CS2_042 CS2_009 EX1_238 BOT_222 TRL_307 BT_035 CS2_023 BT_801'.split())
+  records=cards.registry()
+  validate_past_candidates(GENERATED_IDS-current_aliases,records)
+  for cid in current_aliases:
+   with self.subTest(alias=cid):
+    with self.assertRaisesRegex(UnsupportedCard,'Standard cards'):validate_past_candidates((cid,),records)
  def test_old_eye_beam_uses_printed_outcast_cost_and_lifesteal(self):
   g=self.game();p=g.players[0];p.hand=[];p.health=20;c=g._add(0,'BT_801');enemy=g.players[1].minions[0]
   self.assertEqual(g._cost(c,0),1)

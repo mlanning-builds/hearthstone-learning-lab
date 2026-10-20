@@ -1,3 +1,4 @@
+from expanded.identities import canonical_identity
 import unittest,gzip,json
 from pathlib import Path
 from copy import deepcopy
@@ -23,7 +24,7 @@ class GaronaTests(unittest.TestCase):
   card=self.g._add(0,cid);self.p.mana=10
   self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==card.uid));return card
  def original(self,owner):
-  c=Card(self.g._new_id(),'TIME_875t');c._starting_owner=owner;c._starting_identity=self.records[c.card_id]['dbfId'];return c
+  c=Card(self.g._new_id(),'TIME_875t');c._starting_owner=owner;c._starting_identity=canonical_identity(self.records[c.card_id],self.g.cards);return c
  def test_opening_transfer_preserves_physical_origin(self):
   c=self.original(0);self.p.deck=[c];self.q.deck=[];self.g._garona_start()
   self.assertFalse(self.p.deck);self.assertIs(self.q.deck[0],c);self.assertTrue(self.g._started_in_deck(c,0));self.assertFalse(self.g._started_in_deck(c,1));self.assertFalse(self.q.shuffle_history)
@@ -41,10 +42,11 @@ class GaronaTests(unittest.TestCase):
   self.g._summon(1,'TIME_875t');self.q.deck=['TIME_875t'];self.play('TIME_875');self.assertEqual(self.q.health,30)
  def test_own_king_does_not_qualify(self):
   self.g._add(0,'TIME_875t');self.play('TIME_875');self.assertEqual(self.q.health,30)
- def test_duplicate_held_kings_reject_paid_play_and_rollback(self):
-  self.g._add(1,'TIME_875t');self.g._add(1,'TIME_875t');card=self.g._add(0,'TIME_875');before=deepcopy(self.g.observe(0));action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==card.uid)
-  with self.assertRaises(UnsupportedCard):self.g.step(action)
-  self.assertEqual(self.g.observe(0),before)
+ def test_duplicate_held_kings_remove_exactly_one_and_halve_once(self):
+  kings=[self.g._add(1,'TIME_875t'),self.g._add(1,'TIME_875t')]
+  self.play('TIME_875')
+  self.assertEqual(len(self.q.hand),1);self.assertIn(self.q.hand[0],kings)
+  self.assertEqual(self.q.health,15)
  def test_king_draws_before_reshuffling_from_board(self):
   self.p.deck=['CORE_CS2_029'];self.play('TIME_875t');self.assertFalse(self.p.board);self.assertEqual([c.card_id for c in self.p.hand],['CORE_CS2_029']);self.assertEqual([c.card_id for c in self.p.deck],['TIME_875t']);self.assertEqual(len(self.p.shuffle_history),1);self.assertFalse(self.p.death_history)
  def test_king_shuffle_drops_buffs_preserves_starting_origin(self):

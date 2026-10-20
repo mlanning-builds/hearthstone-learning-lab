@@ -1,0 +1,41 @@
+{
+  "scope": "Barrel of Monkeys depletion chain and Galactic Projection Orb cost-group recasts",
+  "new_unvalidated_bodies": 4,
+  "new_ids": [
+    "ETC_207",
+    "ETC_207t",
+    "ETC_207t2",
+    "TOY_378"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 36,
+  "current_expansion_outcome_gap": 34,
+  "closed_outcome_ids": [
+    "ETC_207",
+    "TOY_378"
+  ],
+  "candidate_fingerprint": "039cd01fb7d5119b9bae28f3600a84f9a8db8aec341a19624099aec65f636537",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Monkey source identity CS2_127, summon capacity/multipliers and depleted-form hand overflow",
+    "Orb original-cost grouping for constructed and mutable definitions",
+    "Orb cost ordering, repeated-instance selection weighting and cast-history snapshot boundaries",
+    "Orb fresh replay construction, self-exclusion, supported-operation admission and per-cast enemy targeting rechecks",
+    "Random-generation exclusion policy for Orb remains independently uncertified; no outcome pools narrowed",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

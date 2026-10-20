@@ -1,0 +1,60 @@
+{
+  "scope": "Physical improving weapons, hero power discount and equipped-event effects",
+  "new_unvalidated_bodies": 10,
+  "new_ids": [
+    "ETC_312",
+    "ETC_317",
+    "ETC_405",
+    "ETC_518",
+    "ETC_520",
+    "ETC_521",
+    "ETC_521t",
+    "ETC_832",
+    "MIS_101",
+    "WW_347"
+  ],
+  "new_collectible_outcomes": 9,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 107,
+  "current_expansion_outcome_gap": 98,
+  "closed_outcome_ids": [
+    "ETC_312",
+    "ETC_317",
+    "ETC_405",
+    "ETC_518",
+    "ETC_520",
+    "ETC_521",
+    "ETC_832",
+    "MIS_101",
+    "WW_347"
+  ],
+  "candidate_fingerprint": "230afcea9c5de16d0974ee4d5880bc3bf4829ad63089c9d85a34a1c1d5039d5c",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz",
+    "https://www.vicioussyndicate.com/the-comprehensive-festival-of-legends-preview/12/"
+  ],
+  "review_pending": [
+    "Paid minion/Outcast/Combo counting including counters, physical weapon replacement and copied counters",
+    "Drumkit armor-event increments and Jungle Jammer actual spell casts/full cost-specific Beast closure",
+    "Cosmic Keyboard cost snapshots, summoned stats and durability loss ordering",
+    "Idol Hero Power set-cost layering and after-use durability ordering",
+    "Foamrender before-attack corpse spending, weapon destruction protection and interruption",
+    "Battlepickaxe Taunt state at play completion and cross-listener ordering",
+    "Broken weapon counter snapshots, death-repeat modifiers and failure rollback",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

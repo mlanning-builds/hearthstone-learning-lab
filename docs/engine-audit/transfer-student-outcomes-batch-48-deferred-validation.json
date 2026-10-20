@@ -1,0 +1,40 @@
+{
+  "scope": "Return Policy played-card Discover and detached Deathrattle replay",
+  "new_unvalidated_bodies": 1,
+  "new_ids": [
+    "MIS_102"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 14,
+  "current_expansion_outcome_gap": 13,
+  "closed_outcome_ids": [
+    "MIS_102"
+  ],
+  "candidate_fingerprint": "ab09e5649db74309dd3b4eb9ad036ccd0af22b48370c3d61129938c324d7fd45",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Played-history admission includes only completed replay records; countered plays require independent eligibility reference",
+    "Discover weighting/deduplication, generated definitions and native versus granted Deathrattle eligibility",
+    "Fresh base copy versus paid physical upgrades and weapon death context including growing weapons",
+    "Detached source, Baron/trigger repetition, death prevention auras, hand overflow and memory-bound Deathrattles",
+    "Non-minion/non-weapon Deathrattle card types remain explicitly unsupported if introduced",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

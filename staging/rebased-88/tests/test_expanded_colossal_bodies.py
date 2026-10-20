@@ -34,7 +34,7 @@ class ColossalBodyTests(unittest.TestCase):
  def play(self,cid,target=0):
   self.p.mana=10;c=Card(self.g._new_id(),cid);self.g._enter_hand(0,c)
   self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==target));return c
- def test_body_declarations_remain_staged(self):self.assertFalse(set(colossal_bodies.RULES)&cards.COLLECTIBLE_IDS)
+ def test_all_colossal_bodies_are_bound(self):self.assertEqual(set(colossal_bodies.RULES)-cards.COLLECTIBLE_IDS,set())
  def test_ragnaros_triggers_both_hands_without_killing_them(self):
   body=self.summon('CATA_150');self.g._end_turn()
   self.assertEqual(self.q.health,26);self.assertEqual(len(self.p.minions),3);self.assertIn(body,self.p.board)
@@ -83,6 +83,7 @@ class ColossalBodyTests(unittest.TestCase):
  def test_recruited_alakir_does_not_execute_battlecry(self):
   self.summon('CATA_153');self.g._settle(allow_event_choices=True);self.assertFalse(self.p.hand)
  def test_missing_exact_cost_pool_rolls_back_play_and_limbs(self):
+  self.contract(pool(card_type='MINION',minimum=self.records['CATA_153']['attack']+1,maximum=self.records['CATA_153']['attack']+1),['MISSING_REVIEWED_OUTCOME'])
   c=Card(self.g._new_id(),'CATA_153');self.g._enter_hand(0,c);before=(self.p.mana,self.g.rng.getstate())
   with self.assertRaises(UnsupportedCard):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
   self.assertFalse(self.p.board);self.assertEqual((self.p.mana,self.g.rng.getstate()),before)
@@ -99,6 +100,7 @@ class ColossalBodyTests(unittest.TestCase):
  def test_silenced_plume_does_not_generate(self):
   m=self.summon('CATA_488t');self.g._silence(m);self.g._damage(m.uid,1);self.g._settle(allow_event_choices=True);self.assertFalse(self.p.hand)
  def test_missing_fire_contract_fails_instead_of_filtering(self):
+  self.contract(colossal_bodies.FIRE,['MISSING_REVIEWED_OUTCOME'])
   m=self.summon('CATA_488t');self.g._damage(m.uid,1)
   with self.assertRaises(UnsupportedCard):self.g._settle(allow_event_choices=True)
  def test_deathrattle_group_resumes_after_choice_without_repeating(self):
@@ -142,14 +144,14 @@ class ColossalBodyTests(unittest.TestCase):
   for values in ({'cardClass':'ROGUE'},{'cardClass':'NEUTRAL'},{'classes':['ROGUE','MAGE']}):
    self.g.cards['TEST_SPELL']=dict(id='TEST_SPELL',type='SPELL',cost=0,**values)
    self.assertFalse(self.g._colossal_repeats_spell(0,'TEST_SPELL'))
- def test_sinestra_multiple_sources_fail_closed_until_reviewed(self):
+ def test_sinestra_multiple_sources_share_two_cast_limit(self):
   self.sinestra();self.summon('CATA_154');self.g._settle(allow_event_choices=True);self.p.hand=[]
-  with self.assertRaisesRegex(UnsupportedCard,'stacking'):self.play('CORE_CS2_029',-2)
-  self.assertEqual(self.q.health,30);self.assertEqual(self.p.mana,10)
- def test_sinestra_other_double_effect_fails_closed_until_reviewed(self):
+  self.play('CORE_CS2_029',-2)
+  self.assertEqual(self.q.health,18);self.assertEqual(len(self.p.played_history),1)
+ def test_sinestra_overlapping_twice_effect_consumes_one_charge(self):
   self.sinestra();self.p.spell_repeat_charges=1
-  with self.assertRaisesRegex(UnsupportedCard,'stacking'):self.play('CORE_CS2_029',-2)
-  self.assertEqual(self.q.health,30);self.assertEqual(self.p.spell_repeat_charges,1)
+  self.play('CORE_CS2_029',-2)
+  self.assertEqual(self.q.health,18);self.assertEqual(self.p.spell_repeat_charges,0)
  def test_black_blood_actual_heal_attacks_once_without_spending_attack(self):
   body=self.summon('CATA_300');target=self.target_dummy();self.p.health=20
   self.g._heal(-1,3,healer=0);self.g._settle(allow_event_choices=True)

@@ -35,7 +35,7 @@ def requests_for(cid):
 class AutomaticCasting:
  def _autocast_candidates(self,request,owner):
   values=self._generation_candidates(request,owner)
-  unsupported=[cid for cid in values if not self._supports_internal_spell(cid)]
+  unsupported=[cid for cid in values if not self._supports_internal_spell(cid,owner)]
   if unsupported:raise UnsupportedCard('Automatic spell pool lacks internal support: '+', '.join(unsupported))
   return values
  def _autocast_split(self,op,ctx):
@@ -65,7 +65,7 @@ class AutomaticCasting:
   if name=='autocast_holy_history':
    values=[cid for cid in p.spells_turn if has_school(self.cards[cid],'HOLY')]
    if not values:return ('batch30_noop',),()
-   if any(not self._supports_internal_spell(cid) for cid in values):raise UnsupportedCard('Holy history contains unsupported internal spell')
+   if any(not self._supports_internal_spell(cid,owner) for cid in values):raise UnsupportedCard('Holy history contains unsupported internal spell')
    return self._cast_spell_split(('cast_fixed_spell',self.rng.choice(values),'prefer_source'),ctx)
   return None
  def _autocast_effect(self,op,ctx):
@@ -75,6 +75,7 @@ class AutomaticCasting:
    values=self._autocast_candidates(SECRETS,owner)
    # Validate the opponent's execution of every outcome too; ownership changes
    # target legality, not the Secret identities offered by this card.
+   self._autocast_candidates(SECRETS,1-owner)
    if not values:return True
    if self.pending_choice is not None:raise UnsupportedCard('Cannot replace a pending Secret choice')
    options=[dict(card_id=cid) for cid in self.rng.sample(list(values),min(2,len(values)))]

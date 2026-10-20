@@ -1,0 +1,96 @@
+{
+  "fingerprint": "f3df9d334ccf548c2a600ef6e6c4202c2e739dfdb6c6ec0493ea5d3909a5ea32",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 10,
+  "new_historical_spell_roots": 10,
+  "new_tokens_and_alternate_forms": 0,
+  "registry_records": 7993,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1264,
+    "remaining": 178
+  },
+  "new_implementations": [
+    {
+      "id": "AV_317",
+      "name": "Tamsin's Phylactery",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_377",
+      "name": "Nine Lives",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_213",
+      "name": "Eternal Servitude",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_026",
+      "name": "Anyfin Can Happen",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_187",
+      "name": "Twilight's Call",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_514",
+      "name": "Raise Dead",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_566",
+      "name": "Revenge of the Wild",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_457",
+      "name": "Rest in Peace",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_948",
+      "name": "Hydration Station",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_009",
+      "name": "Rally!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7993,
+    "edges": 794,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "178 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

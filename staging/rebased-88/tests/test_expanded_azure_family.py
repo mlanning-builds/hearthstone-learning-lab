@@ -51,13 +51,13 @@ class AzureFamilyTests(unittest.TestCase):
   queen,king=self.pair();self.g._silence(king);self.play('TEST_ARCANE',-2);self.assertEqual(self.q.health,24)
  def test_internal_arcane_cast_repeats_without_paid_history(self):
   self.pair();self.run_ops([('cast_fixed_spell','TEST_ARCANE','selected')],target=-2);self.assertEqual(self.q.health,18);self.assertFalse(self.p.played_history)
- def test_competing_repeat_rejects_and_rolls_back(self):
-  self.pair();self.p.spell_repeat_charges=1;c=self.g._add(0,'TEST_ARCANE');before=deepcopy(self.g.observe(0));rng=self.g.rng.getstate()
-  with self.assertRaisesRegex(UnsupportedCard,'Malygos repetition stacking'):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==-2))
-  self.assertEqual(self.g.observe(0),before);self.assertEqual(self.g.rng.getstate(),rng)
- def test_multiple_kings_reject_unknown_repeat_stacking(self):
+ def test_competing_twice_effect_casts_only_twice_and_consumes_charge(self):
+  self.pair();self.p.spell_repeat_charges=1;self.play('TEST_ARCANE',-2)
+  self.assertEqual(self.q.health,18);self.assertEqual(self.p.spell_repeat_charges,0)
+  self.assertEqual(len(self.p.played_history),1)
+ def test_multiple_kings_share_the_two_cast_limit(self):
   self.g._summon(0,'TIME_852t1');self.g._summon(0,'TIME_852t1')
-  with self.assertRaisesRegex(UnsupportedCard,'Malygos repetition stacking'):self.play('TEST_ARCANE',-2)
+  self.play('TEST_ARCANE',-2);self.assertEqual(self.q.health,18)
  def test_oathstone_resurrects_duplicates_and_all_tribe_not_enemy_deaths(self):
   self.p.death_history=['TIME_852','TIME_852','TEST_ALL','NEW1_034'];self.q.death_history=['TIME_852t1'];self.play('TIME_852t3')
   self.assertCountEqual([m.card_id for m in self.p.minions],['TIME_852','TIME_852','TEST_ALL'])
@@ -69,4 +69,5 @@ class AzureFamilyTests(unittest.TestCase):
  def test_oathstone_empty_and_internal_cast(self):
   self.play('TIME_852t3');self.assertFalse(self.p.minions)
   self.p.death_history=['TIME_852'];self.run_ops([('cast_fixed_spell','TIME_852t3','random')]);self.assertEqual(self.p.minions[0].card_id,'TIME_852')
- def test_root_remains_staged(self):self.assertNotIn('TIME_852',cards.COLLECTIBLE_IDS)
+ def test_root_and_companions_registered(self):
+  self.assertIn('TIME_852',cards.COLLECTIBLE_IDS);self.assertTrue({'TIME_852t1','TIME_852t3'}<=cards.PLAYABLE_TOKENS)

@@ -1,0 +1,426 @@
+{
+  "source": "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+  "commit": "5212f4e1783b54dca934f65174b9e3798107c6e7",
+  "build": "251952",
+  "sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "count": 83,
+  "members": [
+    {
+      "id": "AT_021",
+      "dbfId": 2777,
+      "sha256": "abada4b8b9c5d6e8e2d4e5094b4b6b655c4e4b5557e7587bfffff204fd83b75e"
+    },
+    {
+      "id": "AV_309",
+      "dbfId": 67753,
+      "sha256": "051b5d487b916958b6616516813095896ba21d91853f41135d21855e5198cd44"
+    },
+    {
+      "id": "AV_309t",
+      "dbfId": 70303,
+      "sha256": "afa3b93e3ed31f27b953d1960460c22abcffd3aa9ebe84200638eed1e9a454a0"
+    },
+    {
+      "id": "AV_316t",
+      "dbfId": 67773,
+      "sha256": "e662baf77819a14ff6a48c8cf095a1aa031f94cd7179641f2d67f6ff6b709649"
+    },
+    {
+      "id": "BAR_914t3",
+      "dbfId": 63194,
+      "sha256": "0032a01942cb3dcc5fd64e7a9ebfd8a8132182aa457187aaad5ebbd1ad73582e"
+    },
+    {
+      "id": "BG_BT_258",
+      "dbfId": 129674,
+      "sha256": "bfc39ee6d42e2352df9374f8ad962e2c84e1efd3d7d30b2492e1a878612793aa"
+    },
+    {
+      "id": "BG_BT_258_G",
+      "dbfId": 129677,
+      "sha256": "732a565c1b01a55ca37623c483d8e6775eccd436b145fa9b1a112dfe783825aa"
+    },
+    {
+      "id": "BOT_224",
+      "dbfId": 48116,
+      "sha256": "4b15c003d9bc0b5cf7fb1b23dc23c017eb84c2a8b87606b0ff645427ee9d9001"
+    },
+    {
+      "id": "BRM_006",
+      "dbfId": 2288,
+      "sha256": "f4062f8443abf059d7a6935bd330dedc2dbc9613040ec899dfaf21edb92bba4d"
+    },
+    {
+      "id": "BRM_006t",
+      "dbfId": 2779,
+      "sha256": "8e7856b6ea9bafd7e2fa1e9f4d86ab2f84f3178265e6dbec2fabd36d67e714f9"
+    },
+    {
+      "id": "BT_008t",
+      "dbfId": 57906,
+      "sha256": "da1ffe57f466729c95297c8e6b054d095a080291f9f09e9aceb4411019839a6c"
+    },
+    {
+      "id": "BT_160t",
+      "dbfId": 56851,
+      "sha256": "8333854604d679257d6cb8a2793bc3fac2453ce9e5657861fb3bbb3ef6a4aefa"
+    },
+    {
+      "id": "BT_258",
+      "dbfId": 56624,
+      "sha256": "01310535760b4476c3d0148f123b3acb30e0017ec7ebcf3fbb95429c8e06d2b8"
+    },
+    {
+      "id": "BT_305",
+      "dbfId": 56519,
+      "sha256": "49b436aaaf8e36cc46021ea118d28f3fb967de3103fa05a8062799ecde2ec1c3"
+    },
+    {
+      "id": "CAP_400t2t",
+      "dbfId": 127024,
+      "sha256": "566cde508a52dd3e741f00c6855673384260885d32116e392359e2d80b401832"
+    },
+    {
+      "id": "CATA_612",
+      "dbfId": 123383,
+      "sha256": "408415ff581da39173a24c3108296224979bd86a851b973d3b98873ddfafeb75"
+    },
+    {
+      "id": "CFM_039",
+      "dbfId": 40213,
+      "sha256": "11dd783ad4215915c5249569e3e8db4f62740303389bbaa3ac1be617d72827ac"
+    },
+    {
+      "id": "CFM_900",
+      "dbfId": 40598,
+      "sha256": "863319f7bc50449782a6270c17b97f61d0d41b8dbf553dce51ad45084a6c29d0"
+    },
+    {
+      "id": "CORE_AT_021",
+      "dbfId": 69729,
+      "sha256": "83698413b99b7a83f2ef02f7c50d7d19890a81fe8adf8d682299064beef8062a"
+    },
+    {
+      "id": "CORE_BRM_006",
+      "dbfId": 76282,
+      "sha256": "bbf3acf5ed1fde972b3fd29aa6da94570490792f68599811a39c2492c3735430"
+    },
+    {
+      "id": "CORE_EX1_319",
+      "dbfId": 69636,
+      "sha256": "c717de7e5dc6f422ec40229f9361148856ab9bc9697f86388c46e3a80647bbee"
+    },
+    {
+      "id": "CORE_FIX_SW_084",
+      "dbfId": 113309,
+      "sha256": "7346064646d7bf146b6d7a52e2882cb88a54be97cd4c823b39e29b5cafb75908"
+    },
+    {
+      "id": "CORE_GIL_191t",
+      "dbfId": 71812,
+      "sha256": "1162843a3d563c0c2efa5227aa87b2cc621a209c2e61e582d9c9a466ff28ceeb"
+    },
+    {
+      "id": "CORE_LOOT_013",
+      "dbfId": 117060,
+      "sha256": "13210be4e371044e7ab2f1061367c865f1c0db1395edbd1754c0c2ebc8acd834"
+    },
+    {
+      "id": "CORE_MAW_000",
+      "dbfId": 118011,
+      "sha256": "76eb4c642c2cb0ed24d417dbbd6eddc0f8a0b1de6824c514d6e6afbc41c88c72"
+    },
+    {
+      "id": "CORE_REV_244",
+      "dbfId": 118064,
+      "sha256": "b72e360c66eae4fbb35c114761e95de3d459c605eaf5ce0548600f387fe5bdce"
+    },
+    {
+      "id": "Core_SW_084",
+      "dbfId": 113110,
+      "sha256": "85da631f624edb52e1404f895cdfa1691bd82ab70d6630797efd513fb7fd0417"
+    },
+    {
+      "id": "CS2_059",
+      "dbfId": 469,
+      "sha256": "6b5ee0a1a366c0df0e3061e4e6265edc3f9693de4d9fd273ab4130d05ba554a2"
+    },
+    {
+      "id": "DAL_561",
+      "dbfId": 52480,
+      "sha256": "457c336e71cce1002f248786088113a74c78bd97976a79cb29827943d577285f"
+    },
+    {
+      "id": "DAL_751t",
+      "dbfId": 53305,
+      "sha256": "3af890ffa1370c14fafa1d910e4e2b0f3db1bae25885bd94b8f273a0fcb1678b"
+    },
+    {
+      "id": "DALA_Warlock_HP2t",
+      "dbfId": 53298,
+      "sha256": "871b427d85ac0383b2521a0120f54356243db4ddcc718c1e92c60604b676dbae"
+    },
+    {
+      "id": "DMF_533",
+      "dbfId": 61884,
+      "sha256": "9a0ef85805794355ed17ffaae9527e763900f96615ef0cf22b43577ea8d373b3"
+    },
+    {
+      "id": "DMF_533t",
+      "dbfId": 63273,
+      "sha256": "6bf51a94994b711a42653f231da55f0b5c1a570c4772bb37617f6d173a628b75"
+    },
+    {
+      "id": "DRG_238t12t2",
+      "dbfId": 55366,
+      "sha256": "393d6ee1561cee9003669c728668d51e9b38d8e3bc2333d594bc9af98e920189"
+    },
+    {
+      "id": "ETC_034",
+      "dbfId": 87681,
+      "sha256": "448863db255d4f327ca78143dc2a3c4192d456f899618baef6ce87b703df72d0"
+    },
+    {
+      "id": "ETC_068",
+      "dbfId": 90439,
+      "sha256": "5aa51a2bfd872afbac06d39e0f814dd135c0cf03f7ceef12442701f70935074f"
+    },
+    {
+      "id": "ETC_070t",
+      "dbfId": 90988,
+      "sha256": "b5c4593bd9c1e927b9c9e828c6f08cd3d35a030e47305845ca137fb4c7e83f50"
+    },
+    {
+      "id": "EX1_317t",
+      "dbfId": 1723,
+      "sha256": "b1b679d25ccc6278ad335d7f22e07a5889a86c73dce2457e899a88fc09a44276"
+    },
+    {
+      "id": "EX1_319",
+      "dbfId": 1090,
+      "sha256": "c922b5e7ab68bebfe7a1cda549a81b7bef5983edd8255a6ec6953598757fb148"
+    },
+    {
+      "id": "EX1_598",
+      "dbfId": 76,
+      "sha256": "7bff58f763b4dda517e36444eb8c764c7074871b66d41fac1eb0a6beb364ac27"
+    },
+    {
+      "id": "GIL_191t",
+      "dbfId": 47502,
+      "sha256": "228a6c133cd34d460da59c8bed91aafafb9db132f05a22214b3f4a80bc1bc483"
+    },
+    {
+      "id": "GIL_608",
+      "dbfId": 47262,
+      "sha256": "f19794e75962ed85b0656b4d24def0a491ffa4a2cad54b3a543472402aec6e74"
+    },
+    {
+      "id": "GVG_045t",
+      "dbfId": 2270,
+      "sha256": "268693685eae96bcd382377e1f7329aa16a5f4ce0c1a90bdc8c24ae59e8a0ed7"
+    },
+    {
+      "id": "JAIL_007",
+      "dbfId": 123995,
+      "sha256": "ef3043db69d49b02661f749dac4064c65451350e39794bf87393cad79a44be8f"
+    },
+    {
+      "id": "JAIL_398",
+      "dbfId": 125918,
+      "sha256": "2f4fa2029699c4d2be3390de885d26ba2a8dbf44b1f1921b2a427520c6cf7e62"
+    },
+    {
+      "id": "JAIL_399",
+      "dbfId": 125917,
+      "sha256": "9c242878f1c5ec6db7f118e74d5b52b44cddc2b39fd02f1752dcb0766116cd1f"
+    },
+    {
+      "id": "JAIL_399t1",
+      "dbfId": 127507,
+      "sha256": "f58a9a1df9fe1ca5baf6668fe212f7a9fbee5c7ac0a411b887756e20c294198c"
+    },
+    {
+      "id": "JAM_032",
+      "dbfId": 94852,
+      "sha256": "9cc754fcd72a7f036eb3cbf45d09441b9236f61f40720df21508972a4bedf701"
+    },
+    {
+      "id": "KAR_089",
+      "dbfId": 39740,
+      "sha256": "1df762071282422f8592b315611624405b2dc0b66ff133199f1dd1109601d838"
+    },
+    {
+      "id": "KARA_09_03a",
+      "dbfId": 39643,
+      "sha256": "8f4b292bfef11f8473f8c142db8bda892f8a2ecfbf8f55d9edcd020599e9d4c4"
+    },
+    {
+      "id": "KARA_09_03a_heroic",
+      "dbfId": 40320,
+      "sha256": "d409e30c9b7c5f2e3afb839a1b173f41e088c1a7a740ef3fd20fb2f36f61dbc6"
+    },
+    {
+      "id": "LOOT_013",
+      "dbfId": 43121,
+      "sha256": "2e1f92cf89f060837d5c130114e6a877743756c21730833ec84db9e70d3c2a4d"
+    },
+    {
+      "id": "LOOT_136",
+      "dbfId": 43493,
+      "sha256": "33c8f274232ed2540a2202ccb3eb6ba4b8a6a1ac638c86ff068afd97b12bea61"
+    },
+    {
+      "id": "MAW_000",
+      "dbfId": 79537,
+      "sha256": "fb747048c9dafb0e5866975979bd89ec87274a55ed82479b065ee1a03710ad17"
+    },
+    {
+      "id": "NX2_016t",
+      "dbfId": 86596,
+      "sha256": "0284f4190d4a59b0e2378b81597ed52436895349c666baf3764f24fbcf57c9a6"
+    },
+    {
+      "id": "PVPDR_022",
+      "dbfId": 63579,
+      "sha256": "5f1055cae2ac17c583ed85ea0ea460d052064bd31464fa7277e0edf7ffdc80a0"
+    },
+    {
+      "id": "PVPDR_SCH_Warlockt2",
+      "dbfId": 64276,
+      "sha256": "4856178640fe9e96bd59697d239d330d8db3a4ed60d5ed051db8be75548ade2a"
+    },
+    {
+      "id": "PVPDR_SCH_Warlockt5",
+      "dbfId": 64406,
+      "sha256": "984f6fb8f09daf4886b4c8ad7310561c2d8b37ea92b253c88c31b00c9257aca2"
+    },
+    {
+      "id": "REV_244",
+      "dbfId": 77056,
+      "sha256": "3c271f29235750aaf1a48b643962c113c7f301fc75acc2d53f3c153bcfe053a0"
+    },
+    {
+      "id": "REV_244t",
+      "dbfId": 78361,
+      "sha256": "2806f7954f45de6fb4c837e074e9e6e8ea5a7a76c182f8fb92217ce091b44c8d"
+    },
+    {
+      "id": "RLK_Prologue_EX1_319",
+      "dbfId": 100687,
+      "sha256": "bbcbb134cf45964d77a2a1f711ecae2b9eb3278c5aa91f67862413a6764b2201"
+    },
+    {
+      "id": "RLK_Prologue_LOOT_013",
+      "dbfId": 100697,
+      "sha256": "0c3eaad84ca39e0748403cdf6f8e0d9aaef09f0b0e9b7f7e5e336a369ac4609c"
+    },
+    {
+      "id": "SCH_145",
+      "dbfId": 59599,
+      "sha256": "c01af078da3a2f5dbdc7880cad2dc83e804e44675a2879ef7d0301787e040256"
+    },
+    {
+      "id": "Story_09_FlameImp",
+      "dbfId": 75934,
+      "sha256": "c9c20e629b1c80e0f36d2f9e4b66bb84218697cce6f4f689f5e821124281a666"
+    },
+    {
+      "id": "Story_09_Imp",
+      "dbfId": 75912,
+      "sha256": "09d87a1696e2d04bd80167840853f364eb214ec585944d06898a30bf67d741cb"
+    },
+    {
+      "id": "Story_09_JumboImpPuzzle",
+      "dbfId": 75965,
+      "sha256": "d59ff50c7f3a4887a7440657f14c198ca6c1c4793a116aa3e568adedcc1a3885"
+    },
+    {
+      "id": "Story_09_WorthlessImpPuzzle",
+      "dbfId": 75919,
+      "sha256": "44ce3c553fb2deb20b62adc4203e0787b7acf87802740def1e4cb419bef3432f"
+    },
+    {
+      "id": "SW_084",
+      "dbfId": 64893,
+      "sha256": "c0c375608395bbca191f4ea064721a4a3cb05ac7b5f76385b8b8dc2ca63e787f"
+    },
+    {
+      "id": "SW_085t",
+      "dbfId": 67810,
+      "sha256": "cbfe96de9bbaa6c7dc853a5b75959a68412f665886776bfabb2b5fc7fea29392"
+    },
+    {
+      "id": "TB_BaconUps_309t",
+      "dbfId": 67729,
+      "sha256": "c4cb239c6476ffac7ba9edc7bc45652cc9b01800dfc348d3c8dcd2e88d2e4ada"
+    },
+    {
+      "id": "TOY_914",
+      "dbfId": 104854,
+      "sha256": "07858c7e5b6f74289890db02534f5ef2f8fa786651ee864ddad6ff41fee7ffd5"
+    },
+    {
+      "id": "TTN_960t6",
+      "dbfId": 101511,
+      "sha256": "0fa38a29947b77b9fc535222bfa51bade3a4d0cea0ba6eabafe0ce5af5dfd964"
+    },
+    {
+      "id": "ULD_324t",
+      "dbfId": 56265,
+      "sha256": "2ce2280753d1450653a362030cae94764428df367655a54affe05dbd70eb4e2a"
+    },
+    {
+      "id": "UNG_829t3",
+      "dbfId": 42753,
+      "sha256": "2ac5f7490a9535c697175fbbe83be20f91b1f9baf1269c9e7c493036fa2fb210"
+    },
+    {
+      "id": "VAC_943",
+      "dbfId": 107813,
+      "sha256": "8b26437b65334268035633c755843997d18a11ad461eb0292534e021c46bda27"
+    },
+    {
+      "id": "VAC_943t",
+      "dbfId": 107814,
+      "sha256": "0c56aad6a5274d4bdea00faadd16ce13fc3d14178e22c5c2581abef75d220339"
+    },
+    {
+      "id": "VAN_CS2_059",
+      "dbfId": 69751,
+      "sha256": "fc9e6ff1028dd388bfd58973261f875b456899c9485110fb1f5b6f6868b9bed7"
+    },
+    {
+      "id": "VAN_EX1_319",
+      "dbfId": 69923,
+      "sha256": "963eeade8fdde89e96323b8c0e2ebf414ac9eb626ecf8a06b8abcc26f9c95f8d"
+    },
+    {
+      "id": "VAN_EX1_598",
+      "dbfId": 70044,
+      "sha256": "7e51b5980f697f53ad7a9fc27f3acf5cd585dbe3f7c4f8c31f3f0b7caa2a2162"
+    },
+    {
+      "id": "WON_099",
+      "dbfId": 102642,
+      "sha256": "15ffcc72d452d796611ac159eeee4e48878fcf1cb39cbe00056bc1fc2a73d6aa"
+    },
+    {
+      "id": "WON_365",
+      "dbfId": 106568,
+      "sha256": "63d6b6641ccd772faed264f7419ecb26678742aaf8cb080faeccfc3b45f5269f"
+    },
+    {
+      "id": "WORK_009",
+      "dbfId": 110761,
+      "sha256": "a10ae0fd4d8978a95698b312d3978cf7d08e5702b9a9d2b3e554a6c62a0ad4b9"
+    },
+    {
+      "id": "YOP_004",
+      "dbfId": 61942,
+      "sha256": "211cd90386cdf5a72d9a76369ba6623433d9cf4ea7cf1fe334b3c02c5cb456df"
+    }
+  ],
+  "scope": "Every IMP=1 minion in the exact pinned client CardDefs; includes non-Constructed identities but does not admit them to generation pools.",
+  "fidelity_verified": false
+}

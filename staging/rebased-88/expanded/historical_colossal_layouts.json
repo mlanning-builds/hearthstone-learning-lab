@@ -1,0 +1,127 @@
+{
+  "source": "https://raw.githubusercontent.com/HearthSim/hsdata/5212f4e1783b54dca934f65174b9e3798107c6e7/CardDefs.xml",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "scope": "Exact historical appendage left-position tags. Absence means candidate default right, pending client conformance; no text/name inference.",
+  "members": [
+    {
+      "id": "NX2_037t",
+      "dbfId": 87330,
+      "left_marker": false
+    },
+    {
+      "id": "NX2_037t2",
+      "dbfId": 94607,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t",
+      "dbfId": 75581,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t2",
+      "dbfId": 85862,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t3",
+      "dbfId": 85863,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t4",
+      "dbfId": 85864,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t5",
+      "dbfId": 85865,
+      "left_marker": false
+    },
+    {
+      "id": "TID_711t6",
+      "dbfId": 85866,
+      "left_marker": false
+    },
+    {
+      "id": "TID_712t",
+      "dbfId": 75584,
+      "left_marker": false
+    },
+    {
+      "id": "TID_712t2",
+      "dbfId": 80016,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_216t",
+      "dbfId": 72489,
+      "left_marker": true
+    },
+    {
+      "id": "TSC_219t",
+      "dbfId": 73727,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_219t2",
+      "dbfId": 85853,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_219t3",
+      "dbfId": 85854,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_219t4",
+      "dbfId": 85855,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_639t",
+      "dbfId": 72554,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_639t2",
+      "dbfId": 85860,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_639t3",
+      "dbfId": 85861,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_660t",
+      "dbfId": 74895,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_937t",
+      "dbfId": 72537,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_937t3",
+      "dbfId": 85859,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_950t",
+      "dbfId": 72937,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_950t2",
+      "dbfId": 85857,
+      "left_marker": false
+    },
+    {
+      "id": "TSC_962t",
+      "dbfId": 74742,
+      "left_marker": false
+    }
+  ]
+}

@@ -1,0 +1,1301 @@
+{
+  "fingerprint": "4e3b2815a79f226cc17fdb59af3ff3739c9d5c94dca854a9195723711f73fb0e",
+  "status": "written_unvalidated",
+  "new_definitions": 210,
+  "new_historical_spell_roots": 187,
+  "new_tokens_and_alternate_forms": 23,
+  "registry_records": 7783,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1070,
+    "remaining": 372
+  },
+  "new_implementations": [
+    {
+      "id": "AT_015",
+      "name": "Convert",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_016",
+      "name": "Confuse",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_022",
+      "name": "Fist of Jaraxxus",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_024",
+      "name": "Demonfuse",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_025",
+      "name": "Dark Bargain",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_033",
+      "name": "Burgle",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_035",
+      "name": "Beneath the Grounds",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_035t",
+      "name": "Nerubian Ambush!",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_056",
+      "name": "Powershot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_061",
+      "name": "Lock and Load",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_068",
+      "name": "Bolster",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AT_078",
+      "name": "Enter the Coliseum",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_108",
+      "name": "Shield Shatter",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_109",
+      "name": "Frozen Buckler",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_147",
+      "name": "Dun Baldar Bunker",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_213",
+      "name": "Vitality Surge",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_224",
+      "name": "Spring the Trap",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_259",
+      "name": "Frostbite",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_268",
+      "name": "Wildpaw Cavern",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_277",
+      "name": "Seeds of Destruction",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_281",
+      "name": "Felfire in the Hole!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_285",
+      "name": "Full-Blown Evil",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_292",
+      "name": "Heart of the Wild",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_315",
+      "name": "Deliverance",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_322",
+      "name": "Snowed In",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_324",
+      "name": "Shadow Word: Devour",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_329",
+      "name": "Bless",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_330",
+      "name": "Gift of the Naaru",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_338",
+      "name": "Hold the Bridge",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_360",
+      "name": "Frostwolf Kennels",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_657",
+      "name": "Desecrated Graveyard",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_657t",
+      "name": "Desecrated Shade",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_660",
+      "name": "Iceblood Garrison",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_664",
+      "name": "Stormpike Aid Station",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "AV_710",
+      "name": "Reconnaissance",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_032",
+      "name": "Piercing Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_306",
+      "name": "Sigil of Flame",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_308",
+      "name": "Power Word: Fortitude",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_705",
+      "name": "Sigil of Silence",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_841",
+      "name": "Bulk Up",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_845",
+      "name": "Rancor",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_881",
+      "name": "Invigorating Sermon",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_910",
+      "name": "Grimoire of Sacrifice",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_911",
+      "name": "Soul Rend",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BAR_913",
+      "name": "Altar of Fire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_042",
+      "name": "Weapons Project",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_042t",
+      "name": "Gearblade",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_084",
+      "name": "Violet Haze",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_087",
+      "name": "Academic Espionage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_099",
+      "name": "Eureka!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_219",
+      "name": "Extra Arms",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_219t",
+      "name": "More Arms!",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_234",
+      "name": "Shrink Ray",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_242",
+      "name": "Myra's Unstable Element",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_263",
+      "name": "Soul Infusion",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_299",
+      "name": "Omega Assembly",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_402",
+      "name": "Secret Plan",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_437",
+      "name": "Goblin Prank",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_438",
+      "name": "Cybertech Chip",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_508",
+      "name": "Necrium Vial",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_517",
+      "name": "Topsy Turvy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_521",
+      "name": "Ectomancy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_529",
+      "name": "Power Word: Replicate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_568",
+      "name": "The Soularium",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_909",
+      "name": "Crystology",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BRM_005",
+      "name": "Demonwrath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BRM_011",
+      "name": "Lava Shock",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BRM_015",
+      "name": "Revenge",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BRM_017",
+      "name": "Resurrect",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_113",
+      "name": "Totemic Reflection",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_124",
+      "name": "Corsair Cache",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_134",
+      "name": "Bogbeam",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_135",
+      "name": "Glowfly Swarm",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_135t",
+      "name": "Glowfly",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_163",
+      "name": "Nagrand Slam",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_163t",
+      "name": "Clefthoof",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_199",
+      "name": "Unstable Felbolt",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_205",
+      "name": "Scrap Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_213",
+      "name": "Scavenger's Ingenuity",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_233",
+      "name": "Sword and Board",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_252",
+      "name": "Renew",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_300",
+      "name": "Hand of Gul'dan",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_302",
+      "name": "The Dark Portal",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_354",
+      "name": "Blade Dance",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_427",
+      "name": "Feast of Souls",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_488",
+      "name": "Soul Split",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_490",
+      "name": "Consume Magic",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_514",
+      "name": "Immolation Aura",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BT_752",
+      "name": "Blur",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_630",
+      "name": "Counterfeit Coin",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_690",
+      "name": "Jade Shuriken",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_716",
+      "name": "Sleep with the Fishes",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_752",
+      "name": "Stolen Goods",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_905",
+      "name": "Small-Time Recruits",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_940",
+      "name": "I Know a Guy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_003",
+      "name": "Mind Vision",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_038",
+      "name": "Ancestral Spirit",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_061",
+      "name": "Drain Life",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_063",
+      "name": "Corruption",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_084",
+      "name": "Hunter's Mark",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_103",
+      "name": "Charge",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_104",
+      "name": "Rampage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_236",
+      "name": "Divine Spirit",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS3_009",
+      "name": "War Cache",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS3_029",
+      "name": "Pursuit of Justice",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_141",
+      "name": "Desperate Measures",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_141ts",
+      "name": "Desperate Measures",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_371",
+      "name": "Marked Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_373",
+      "name": "Rapid Fire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_373ts",
+      "name": "Rapid Fire",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_568",
+      "name": "Lightforged Blessing",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_568ts",
+      "name": "Lightforged Blessing",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_589",
+      "name": "Hunting Party",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_605",
+      "name": "Impferno",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_710",
+      "name": "Soul of the Murloc",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_724",
+      "name": "Mass Resurrection",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_727",
+      "name": "Call to Adventure",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_728",
+      "name": "Daring Escape",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_769",
+      "name": "Improve Morale",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_506",
+      "name": "Need for Greed",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DED_518",
+      "name": "Man the Cannons",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_054",
+      "name": "Insight",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_054t",
+      "name": "Insight",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_086",
+      "name": "Petting Zoo",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_086e",
+      "name": "Darkmoon Strider",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_090",
+      "name": "Don't Feed the Animals",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_090t",
+      "name": "Don't Feed the Animals",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_113",
+      "name": "Free Admission",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_117",
+      "name": "Cascading Disaster",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_117t",
+      "name": "Cascading Disaster",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_117t2",
+      "name": "Cascading Disaster",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_186",
+      "name": "Auspicious Spirits",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_186a",
+      "name": "Auspicious Spirits",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_187",
+      "name": "Palm Reading",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_195",
+      "name": "Snack Run",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_219",
+      "name": "Relentless Pursuit",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_225",
+      "name": "Throw Glaive",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_244",
+      "name": "Day at the Faire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_244t",
+      "name": "Day at the Faire",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_512",
+      "name": "Cloak of Shadows",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_515",
+      "name": "Swindle",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_518",
+      "name": "Malevolent Strike",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_522",
+      "name": "Minefield",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_526",
+      "name": "Stage Dive",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_526a",
+      "name": "Stage Dive",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_530",
+      "name": "Feat of Strength",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_534",
+      "name": "Deck of Chaos",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_730",
+      "name": "Moontouched Amulet",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_730t",
+      "name": "Moontouched Amulet",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_028",
+      "name": "Dragon's Hoard",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_033",
+      "name": "Candle Breath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_205",
+      "name": "Nether Breath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_233",
+      "name": "Sand Breath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_307",
+      "name": "Breath of the Infinite",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DRG_500",
+      "name": "Molten Breath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_128",
+      "name": "Conceal",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_181",
+      "name": "Call of the Void",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_182",
+      "name": "Pilfer",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_244",
+      "name": "Totemic Might",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_316",
+      "name": "Power Overwhelming",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_317",
+      "name": "Sense Demons",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_320",
+      "name": "Bane of Doom",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_349",
+      "name": "Divine Favor",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_365",
+      "name": "Holy Wrath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_409",
+      "name": "Upgrade!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_409t",
+      "name": "Heavy Axe",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_538",
+      "name": "Unleash the Hounds",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_538t",
+      "name": "Hound",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_549",
+      "name": "Bestial Wrath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_596",
+      "name": "Demonfire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_621",
+      "name": "Circle of Healing",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_624",
+      "name": "Holy Fire",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_125",
+      "name": "Healthstone",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_126",
+      "name": "Black Hole",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_227",
+      "name": "Jettison",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_228",
+      "name": "Captain's Log",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_237",
+      "name": "Alien Encounters",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_237t",
+      "name": "Snacking Scrunguk",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_457",
+      "name": "Lightspeed",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_460",
+      "name": "Divine Star",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_464",
+      "name": "Gravity Lapse",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_844",
+      "name": "Detailed Notes",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_864",
+      "name": "First Contact",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_881",
+      "name": "Pressure Points",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_902",
+      "name": "Infiltrate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_134",
+      "name": "Holy Water",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_145",
+      "name": "Sound the Bells!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_203",
+      "name": "Rebuke",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_506",
+      "name": "Cheap Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_518",
+      "name": "Wing Blast",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_537",
+      "name": "Deadly Arsenal",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_543",
+      "name": "Dark Possession",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_571",
+      "name": "Witching Hour",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_637",
+      "name": "Ferocious Howl",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_654",
+      "name": "Warpath",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_661",
+      "name": "Divine Hymn",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_665",
+      "name": "Curse of Weakness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_687",
+      "name": "WANTED!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LEG_RLK_034",
+      "name": "Heart Strike",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LEG_RLK_101",
+      "name": "Defrost",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LEG_RLK_705",
+      "name": "Graveyard Shift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LEG_RLK_715",
+      "name": "Runeforging",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_038",
+      "name": "Icy Touch",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_122",
+      "name": "The Scourge",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_705t",
+      "name": "Shambling Zombie",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_427",
+      "name": "Corpsicle",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_445",
+      "name": "Ghouls' Night",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_445t",
+      "name": "Slumbering Ghoul",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_513",
+      "name": "Slippery Slope",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_028",
+      "name": "Eternal Layover",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7783,
+    "edges": 737,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not validate executable behavior, timing, probabilities or independent client fidelity.",
+    "372 direct historical spell identities remain; their generated dependencies and computed helper closure remain tracked.",
+    "Previous regression receipts are preserved and stale for this fingerprint."
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/jleclanche/fireplace/blob/47a2572a000db66645bb74a425a090d51f1004fa/fireplace/cards/tgt/rogue.py",
+      "fact": "Beneath the Grounds shuffles AT_035t; its cast summons AT_036t for the opponent. Public source inspected; external code was not executed."
+    }
+  ]
+}

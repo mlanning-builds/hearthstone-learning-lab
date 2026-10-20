@@ -1,3 +1,4 @@
+from expanded.identities import canonical_identity
 import unittest,gzip,json
 from pathlib import Path
 from copy import deepcopy
@@ -28,7 +29,7 @@ class StoredObligationTests(unittest.TestCase):
   self.assertEqual({c.uid for c in self.p.deck+self.void()['values']},{c.uid for c in original});self.assertFalse(self.p.hand)
  def test_irida_returns_finite_cards_once_preserving_identity_and_modifiers(self):
   original=[Card(self.g._new_id(),'CORE_CS2_029') for _ in range(4)]
-  for c in original:c.cost_delta=-1;c._starting_owner=0;c._starting_identity=self.g.cards[c.card_id].get('countAsCopyOfDbfId',self.g.cards[c.card_id].get('dbfId',c.card_id))
+  for c in original:c.cost_delta=-1;c._starting_owner=0;c._starting_identity=canonical_identity(self.g.cards[c.card_id],self.g.cards)
   self.p.deck=original[:];self.run_ops([('obligation_void',)])
   for _ in range(8):self.take()
   self.assertEqual(len(self.p.hand),3);self.assertTrue(all(c.cost_delta==-1 and self.g._started_in_deck(c,0) for c in self.p.hand));self.assertFalse(self.void()['values'])
@@ -89,5 +90,6 @@ class StoredObligationTests(unittest.TestCase):
  def test_opponent_cannot_see_toki_private_progress(self):
   self.toki();self.assertNotIn('toki_tasks_remaining',self.g.observe(1)['players'][0]);self.assertEqual(self.g.observe(0)['players'][0]['toki_tasks_remaining'],[3])
  def test_missing_toki_contract_preserves_hand(self):
+  self.g.cards.pop('BOT_257') # Deliberately incomplete eligible pool.
   with self.assertRaises(UnsupportedCard):self.run_ops([('obligation_toki',)])
   self.assertFalse(self.p.hand)

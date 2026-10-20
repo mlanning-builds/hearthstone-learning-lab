@@ -119,7 +119,7 @@ class RepeatableQuestTests(unittest.TestCase):
         self.assertEqual(self.g.observe(1)['players'][0]['murloc_summon_bonus'],1)
         self.assertEqual(self.g.observe(1)['players'][0]['quest']['completions'],1)
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertTrue(any('murloc_summon_bonus' in str(row) for row in rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertTrue(any('murloc_summon_bonus' in str(row) for row in rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
 
     def test_copy_game_preserves_repeat_progress(self):
         self.quest();self.complete();other=copy.deepcopy(self.g)

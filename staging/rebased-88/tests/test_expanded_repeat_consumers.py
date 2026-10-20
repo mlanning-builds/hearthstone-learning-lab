@@ -80,4 +80,4 @@ class RepeatConsumerTests(unittest.TestCase):
         self.assertEqual(view['players'][0]['spell_repeat_charges'],3)
         self.assertEqual(g.observe(1)['players'][0]['spell_repeat_charges'],3)
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertIn('spell_repeat_charges',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertIn('spell_repeat_charges',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')

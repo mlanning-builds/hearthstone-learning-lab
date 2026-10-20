@@ -4,7 +4,7 @@ The immediate goal is completing the frozen Standard simulator and its generated
 
 ## Set up
 
-Create a virtual environment and install requirements.txt. Preserve the repository layout and frozen data. Use notebooks 09–14 for current candidate work.
+Run `make install` to create a virtual environment and install the project with notebook dependencies from `pyproject.toml`. Use `make install-core` if you only need the simulator and checks. `make help` lists available commands. Preserve the repository layout and frozen data. Use notebooks 09–14 for current candidate work.
 
 ## Change a rule
 
@@ -35,3 +35,9 @@ From staging/rebased-88, using the repository virtual environment:
 Training and deck-search experiments are run manually by the project owner in Jupyter. Do not launch them as part of checks or CI. Never commit local model files, run folders, credentials, or notebook outputs.
 
 Pull requests should explain the changed behavior, the scenarios checked, and any remaining fidelity limits. Keep changes focused and preserve the original experiment for provenance.
+
+## Architecture changes
+
+Use `hearthstone_sim` for new active-simulator callers. Begin from a fresh process or kernel when changing between original and candidate packages. Keep component extraction small: preserve action/event ordering, pending-choice continuations, rollback, hidden information and RNG state; run focused checks and the full rule suite before recording validation. Do not move old models or rewrite original experiment code.
+
+Add operand schemas when introducing or touching declarative effect operations. Structural validity, executable support and independent card-rule accuracy are different claims. Keep uncovered schemas visible. Use `make smoke` and `make quality` as fast development gates, and compare fingerprint-bound benchmarks after meaningful refactors.

@@ -58,7 +58,7 @@ class FinalCardPathsTests(unittest.TestCase):
  def test_vyranoth_wrong_total_no_stats(self):
   self.p.starting_deck=['CORE_EX1_162'];self.ops(('vyranoth_stats',));self.assertTrue(all(isinstance(c,str) for c in self.p.deck))
  def test_vyranoth_distributes_one_hundred_stats(self):
-  self.p.starting_deck=['TIME_064']*10;self.g.cards['TIME_064']=dict(self.g.cards['TIME_064'],cost=10);self.p.deck=[Card(self.g._new_id(),'CORE_EX1_162') for _ in range(4)];self.ops(('vyranoth_stats',));self.assertEqual(sum(c.attack_bonus+c.health_bonus for c in self.p.deck),100)
+  self.p.starting_deck=['TIME_064']*10;self.g.cards['TIME_064']=dict(self.g.cards['TIME_064'],cost=10);self.p.deck=[Card(self.g._new_id(),'CORE_EX1_162') for _ in range(5)];self.ops(('vyranoth_stats',));self.assertEqual(sum(c.attack_bonus+c.health_bonus for c in self.p.deck),100)
  def test_tiny_pal_preserves_weapon_identity(self):
   self.play('JAIL_458');uid=self.p.equipped_card.uid;self.choose();self.assertEqual(self.p.equipped_card.uid,uid);self.assertEqual(self.p.weapon['card_id'],'JAIL_458t1')
  def test_tiny_pal_excludes_previous_ammunition(self):
@@ -84,8 +84,9 @@ class FinalCardPathsTests(unittest.TestCase):
   with self.assertRaises(ValueError):self.g.elapse_decision_time(float('nan'))
  def test_underbelly_choice_discount(self):
   self.p.contraband_beasts=('CORE_EX1_162',);self.ops(('contraband_discover',));self.choose();self.assertEqual(self.p.hand[0].cost_delta,-3);self.assertEqual(self.p.discoveries_total,1)
- def test_generated_underbelly_fails_without_contract(self):
-  with self.assertRaises(UnsupportedCard):self.ops(('contraband_discover',))
+ def test_generated_underbelly_without_submitted_band_offers_nothing(self):
+  before=self.g.rng.getstate();self.ops(('contraband_discover',))
+  self.assertIsNone(self.g.pending_choice);self.assertEqual(self.g.rng.getstate(),before)
  def test_informant_swap_changes_class(self):
   c=self.g._add(0,'CATA_614');self.ops(('informant_swap',c.uid));self.assertNotEqual(c.rule_state['informant_class'],'MAGE')
  def test_kindred_wrapper_doubles_only_kindred(self):
@@ -113,7 +114,7 @@ class FinalCardPathsTests(unittest.TestCase):
  def test_jade_grows_and_silence_keeps_base(self):
   self.ops(('counterfeit_jade',),('counterfeit_jade',));m=self.p.minions[-1];self.g._silence(m);self.assertEqual((m.attack,m.health),(2,2))
  def test_noggenfogger_never_attacks_self(self):
-  m=self.g._summon(0,'CORE_CFM_670');targets={self.g._random_attack_target(m.uid,-2) for _ in range(40)};self.assertNotIn(m.uid,targets);self.assertIn(-1,targets)
+  m=self.g._summon(0,'CORE_CFM_670');targets={self.g._random_attack_target(m.uid,-2) for _ in range(40)};self.assertNotIn(m.uid,targets);self.assertNotIn(-1,targets);self.assertIn(-2,targets)
  def test_morchie_does_not_offer_rewind_or_repay(self):
   from expanded import rewind
   change=patch.dict(cards.RULES,rewind.RULES);change.start();self.addCleanup(change.stop)
@@ -128,10 +129,12 @@ class FinalCardPathsTests(unittest.TestCase):
  def test_elise_predicate_uses_distinct_costs(self):
   self.p.starting_deck=['CORE_EX1_162']*10;self.ops(('craft_location',));self.assertIsNone(self.g.pending_choice)
  def test_elise_low_tier_excludes_copy(self):
-  for _ in range(10):self.g._craft_location_parts(0,1,[]);self.assertNotIn('TLC_100t17',[o['card_id'] for o in self.g.pending_choice['options']])
+  for _ in range(10):
+   self.g.pending_choice=None;self.g._craft_location_parts(0,1,[]);self.assertNotIn('TLC_100t17',[o['card_id'] for o in self.g.pending_choice['options']])
  def test_custom_location_carries_operations_and_deathrattle(self):
   c=Card(self.g._new_id(),'TLC_100t1');c.rule_state=dict(crafted_location_ops=(('armor',3),),crafted_location_death=(('area_damage','enemies',1),));self.g._enter_hand(0,c);self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid));loc=self.p.locations[0];self.g.step(Action('activate',loc.uid));self.assertEqual(self.p.armor,3);self.g._remove_location(loc);self.g._settle();self.assertEqual(self.q.health,29)
  def test_forge_without_full_contract_fails(self):
+  self.g.forge_contracts={}
   with self.assertRaises(UnsupportedCard):self.ops(('forge_dragon',))
  def test_forge_combines_stats_and_silence_preserves_them(self):
   part=minion_forge.ForgePart('CORE_EX1_162',source='fixture')
@@ -139,28 +142,30 @@ class FinalCardPathsTests(unittest.TestCase):
  def test_sidequest_counts_dual_tribe_once(self):
   self.ops(('forge_sidequest',));c=Card(self.g._new_id(),'ICC_828t');self.g._forge_played(0,c);self.assertEqual(self.p.forge_sidequests[0]['progress'],1)
  def test_pack_requires_distribution_before_rng(self):
+  self.g.standard_pack_contract=None
   before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.ops(('standard_pack',))
   self.assertEqual(before,self.g.rng.getstate())
  def test_pack_plays_generated_cards_without_paying(self):
   self.g.standard_pack_contract=dict(source='fixture',outcomes=((1,('CORE_EX1_162',)*5),));mana=self.p.mana;self.ops(('standard_pack',));self.assertEqual(len(self.p.minions),5);self.assertFalse(self.p.hand);self.assertEqual(self.p.mana,mana)
- def test_pack_full_hand_burns_generated_cards(self):
+ def test_pack_full_hand_still_plays_generated_cards(self):
   for _ in range(10):self.g._add(0,'TOKEN_COIN')
-  self.g.standard_pack_contract=dict(source='fixture',outcomes=((1,('CORE_EX1_162',)*5),));self.ops(('standard_pack',));self.assertEqual(len(self.p.hand),10);self.assertFalse(self.p.minions)
+  self.g.standard_pack_contract=dict(source='fixture',outcomes=((1,('CORE_EX1_162',)*5),));self.ops(('standard_pack',));self.assertEqual(len(self.p.hand),10);self.assertEqual(len(self.p.minions),5)
  def test_fire_damage_immunity_and_silence(self):
   m=self.g._summon(1,'FIR_959');health=m.health;ctx=dict(card_id='CORE_CS2_029',spell=True,target=m.uid);self.ops(('damage',6),**ctx);self.assertEqual(m.health,health);self.g._silence(m);self.ops(('damage',1),**ctx);self.assertEqual(m.health,health-1)
  def test_fire_nondamage_target_immunity(self):
   m=self.g._summon(1,'FIR_959');self.ops(('destroy',),card_id='CORE_CS2_029',spell=True,target=m.uid);self.assertGreater(m.health,0)
- def test_fire_unreviewed_bulk_replacement_fails(self):
-  self.g._summon(1,'FIR_959')
+ def test_fire_bulk_transformation_preserves_immune_fyrakk(self):
+  immune=self.g._summon(1,'FIR_959');health=immune.health
   self.g._summon(0,'NEW1_034')
-  with self.assertRaises(UnsupportedCard):self.ops(('mutation_board',1,True),card_id='CORE_CS2_029',spell=True)
+  self.ops(('mutation_board',1,True),card_id='CORE_CS2_029',spell=True)
+  self.assertIn(immune,self.q.minions);self.assertEqual(immune.card_id,'FIR_959');self.assertEqual(immune.health,health)
  def test_fyrakk_budget_does_not_spend_player_mana(self):
   self.fx.install(self.g,exceptional_finish.FIRE,['CORE_CS2_029']);mana=self.p.mana;self.ops(('fyrakk_budget',8,0));self.assertEqual(self.q.health,18);self.assertEqual(self.p.mana,mana)
  def test_suspicious_option_exposes_modified_stats_privately(self):
-  self.fx.install(self.g,exceptional_finish.MINIONS,['CORE_EX1_162']);self.g.suspicious_mutation_contract=dict(source='fixture',mutations=({'field':'attack','delta':1},));m=self.g._summon(0,'JAIL_EVENT_100');a=m.attack;self.ops(('suspicious_discover',),source=m);self.assertEqual(self.g.observe(0)['pending_choice']['options'][0]['attack'],3);self.assertTrue(self.g.observe(1)['pending_choice']['waiting']);self.choose();self.assertEqual(self.p.hand[0].attack_bonus,1);self.assertEqual(m.attack,a+1)
+  self.fx.install(self.g,exceptional_finish.MINIONS,['CORE_EX1_162']);self.g.suspicious_mutation_contract=dict(source='fixture',mutations=({'field':'attack','delta':1},));m=self.g._summon(0,'JAIL_EVENT_100');a=m.attack;self.ops(('suspicious_discover',),source=m);self.assertEqual(self.g.observe(0)['pending_choice']['options'][0]['attack'],3);self.assertTrue(self.g.observe(1)['pending_choice']['waiting']);self.choose();self.assertEqual(self.g._card_stat(self.p.hand[0],'attack',0),3);self.assertEqual(m.attack,a+1)
  def test_suspicious_unsupported_mutations_fail_explicitly(self):
-  self.fx.install(self.g,exceptional_finish.MINIONS,['CORE_EX1_162']);self.g.suspicious_mutation_contract=dict(source='fixture',mutations=({'field':'name','delta':1},))
+  self.fx.install(self.g,exceptional_finish.MINIONS,['CORE_EX1_162']);self.g.suspicious_mutation_contract=dict(source='fixture',mutations=({'field':'not_a_mutation','delta':1},))
   with self.assertRaises(UnsupportedCard):self.ops(('suspicious_discover',))
  def test_public_observations_still_serialize(self):
   self.g._add(0,'TLC_452');self.ops(('kindred_twice_next',),('ruby_sanctum',));json.dumps(self.g.observe(0),allow_nan=False);json.dumps(self.g.observe(1),allow_nan=False)

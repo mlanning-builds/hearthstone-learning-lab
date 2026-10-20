@@ -1,0 +1,43 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "fe41c390b2bca81456ce304eed959c962cb2fd4dde3e9862124ac1a8e1790d25",
+  "new_card_ids": [
+    "UNG_111",
+    "UNG_111t1"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "elise_unwritten_ids": [
+    "UNG_851"
+  ],
+  "implemented": [
+    "Available temporary mana recorded on temporary_mana effects",
+    "Shared ordinary spend path consumes temporary mana first",
+    "Temporary ledger cleared at turn resource reset",
+    "Living Mana destroys min(permanent crystals, initial free board slots) crystals before summoning",
+    "Separate native summon continuations",
+    "Mana Treant Deathrattle gains empty crystal for its controller"
+  ],
+  "checks": [
+    "All expanded modules parsed",
+    "Strict Living Mana and Mana Treant declarations",
+    "Exact metadata hashes and inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Resource integration is unvalidated and broader than one card",
+    "Overload lock destruction ordering and future overload debt",
+    "Temporary mana from any nonstandard grant path or direct mana mutations",
+    "Refresh, cap changes and involuntary mana removal",
+    "Sequential summon triggers, deaths and summon multipliers",
+    "Elise joint pack distribution still unresolved"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Living_Mana",
+    "https://hearthstone.fandom.com/wiki/Mana"
+  ]
+}

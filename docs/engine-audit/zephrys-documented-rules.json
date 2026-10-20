@@ -1,0 +1,61 @@
+{
+  "status": "partial_documented_behavior_not_complete_evaluator",
+  "sources": [
+    {
+      "url": "https://us.forums.blizzard.com/en/hearthstone/t/1702-balance-patch/30521",
+      "kind": "official_patch_notes",
+      "rules": [
+        "Large hero Attack must not be truncated",
+        "Sacrificial Pact must reflect the friendly-Demon restriction"
+      ]
+    },
+    {
+      "url": "https://twitter.com/Celestalon/status/1156626815789780995",
+      "kind": "developer_statement_original_unavailable",
+      "transcript": "https://outof.games/news/247-everything-you-need-to-know-about-the-perfect-card-zephrys-the-great/",
+      "rules": [
+        "Only public information; hand and deck identities are unknown"
+      ]
+    },
+    {
+      "url": "https://twitter.com/Celestalon/status/1156638516614455296",
+      "kind": "developer_statement_original_unavailable",
+      "transcript": "https://outof.games/news/247-everything-you-need-to-know-about-the-perfect-card-zephrys-the-great/",
+      "rules": [
+        "Shadowstep and both Brewmasters excluded"
+      ]
+    },
+    {
+      "url": "https://twitter.com/Celestalon/status/1156692376523595776",
+      "kind": "developer_statement_original_unavailable",
+      "transcript": "https://outof.games/news/247-everything-you-need-to-know-about-the-perfect-card-zephrys-the-great/",
+      "rules": [
+        "Conditional damage understood",
+        "RNG-dependent wins are not evaluated as guaranteed lethal"
+      ]
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Patch_15.0.4.33402",
+      "kind": "secondary_patch_transcription",
+      "rules": [
+        "Hero Power current cost and used state considered"
+      ]
+    }
+  ],
+  "implemented": [
+    "Canonical replay exclusions",
+    "Public-only snapshot with no concealed card identities",
+    "Hero Power current cost and used state",
+    "Unbounded integer hero Attack",
+    "Spell Damage and public hero attack budget",
+    "Explicit baseline next-turn mana with capacity and pending Overload"
+  ],
+  "unresolved": [
+    "Complete eligible interesting-card list",
+    "Per-card projected-state evaluators",
+    "Category comparisons, scoring and tie breaking",
+    "All lethal search cases",
+    "Pinned-build compatibility of historical statements"
+  ],
+  "no_default_policy_installed": true
+}

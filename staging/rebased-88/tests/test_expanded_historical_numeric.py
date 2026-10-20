@@ -1,21 +1,28 @@
 import unittest
+from copy import deepcopy
 import test_expanded_generation as fixtures
 from expanded import Action,cards
 from expanded.historical_numeric import GENERATED_IDS
+from expanded.historical_power_primitives import GENERATED_IDS as POWER_PRIMITIVES
 from expanded.historical_generation import validate_past_candidates
 
 class HistoricalNumericTests(unittest.TestCase):
+ @classmethod
+ def setUpClass(cls):
+  cls.prototype=fixtures.GenerationTests().game()
  def game(self):
-  g=fixtures.GenerationTests().game()
+  g=deepcopy(self.prototype)
   for p in g.players:p.mana_capacity=p.mana=p.max_mana=10;p.overload_next=p.locked_mana=0
-  g._summon(0,'CS2_182');g._summon(1,'CS2_182')
+  g._summon(0,'CS2_182');g._summon(1,'CS2_182');g._equip(0,'CS2_082')
   return g
  def play(self,g,cid,target=0):
   c=g._add(0,cid);cost=g._cost(c,0)
   g.step(next(a for a in g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==target))
   self.assertEqual(g.players[0].last_paid_cost,cost)
- def test_all_nineteen_identities_complete_paid_play(self):
-  self.assertEqual(len(GENERATED_IDS),19)
+ def test_all_reviewed_identities_complete_paid_play(self):
+  # Includes sixteen subsequently implemented generated dependencies.
+  self.assertEqual(len(GENERATED_IDS-POWER_PRIMITIVES),219)
+  self.assertEqual(len(POWER_PRIMITIVES),14)
   for cid in sorted(GENERATED_IDS):
    with self.subTest(cid=cid):
     g=self.game();c=g._add(0,cid);cost=g._cost(c,0)
@@ -24,7 +31,13 @@ class HistoricalNumericTests(unittest.TestCase):
  def test_generated_only_registry_excludes_standard_decks(self):
   self.assertTrue(GENERATED_IDS<=cards.TOKEN_IDS)
   self.assertFalse(GENERATED_IDS&cards.COLLECTIBLE_IDS)
-  validate_past_candidates(GENERATED_IDS,cards.registry())
+  from expanded.identities import identity_resolver
+  from standard.catalog import load_catalog
+  records=cards.registry();canonical=identity_resolver(records)
+  standard={canonical(d) for d in load_catalog()}
+  current_aliases={cid for cid in GENERATED_IDS if canonical(records[cid]) in standard}
+  collectible={cid for cid in GENERATED_IDS if records[cid].get('collectible')}
+  validate_past_candidates(collectible-current_aliases,records)
  def test_pyroblast_spell_damage_and_kraken_battlecry_differ(self):
   g=self.game();g._summon(0,'CORE_EX1_012');self.play(g,'EX1_279',g.hero_id(1))
   self.assertEqual(g.players[1].health,19)

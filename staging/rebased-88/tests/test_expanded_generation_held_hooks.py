@@ -86,7 +86,10 @@ class GenerationHeldHooksTests(unittest.TestCase):
         self.assertEqual((source.attack,source.health),(before[0]+self.g.cards[cid]['attack'],before[1]+self.g.cards[cid]['health']))
         self.assertFalse(self.g.players[0].hand)
         source.health=0;self.g._settle(allow_event_choices=True)
-        self.assertEqual([m.card_id for m in self.g.players[0].minions],[cid])
+        self.assertEqual(sum(m.card_id==cid for m in self.g.players[0].minions),1)
+        from expanded.colossals import LAYOUTS
+        if cid in LAYOUTS:
+            self.assertCountEqual([m.card_id for m in self.g.players[0].minions],[cid]+[limb for limb,side in LAYOUTS[cid]][:6])
     def test_absorb_missing_source_does_not_buff_replacement(self):
         source=self.g._summon(0,'DINO_430');self.install(RULES['DINO_430'][1][0][1])
         self.run_card('DINO_430',source=source);self.g.players[0].board.remove(source)

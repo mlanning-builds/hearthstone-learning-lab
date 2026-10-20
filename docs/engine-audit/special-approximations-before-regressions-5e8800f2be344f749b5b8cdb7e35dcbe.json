@@ -1,0 +1,59 @@
+{
+  "status": "owner_authorized_approximations_written_unvalidated",
+  "candidate_fingerprint": "1f27a003aad0b50217c9407bfb04365e8cf4afc86662c53b1451cb9e400a3ae3",
+  "profile": "special-approximations-v1",
+  "historical_written": 3201,
+  "historical_total": 3201,
+  "historical_unwritten": 0,
+  "standard_written": 1185,
+  "standard_total": 1185,
+  "standard_unwritten": 0,
+  "new_historical_root_bindings": 9,
+  "new_standard_root_bindings": 1,
+  "policies": {
+    "BOT_914": "Synthetic Standard class recipes (two deterministic mana-curve variants per class), NOT Blizzard deck recipes; uniform selection.",
+    "DAL_800": "Five documented 2020 decks; uniform deck selection; pinned-build continuity unverified.",
+    "GDB_854": "Uniform distinct eligible branch pairs, rejecting pairs with two targeted choices; canonical parent deduplication.",
+    "GIFT_01": "Uniform class, uniform DK rune hand; prefer original collectible printings; documented hand order and DH tokens.",
+    "REV_022": "Uniform physical correct answer; two distinct Standard class/neutral distractors absent from the answer zone; shuffled offers.",
+    "SCH_199": "Uniform choice among all 38 board forms once per match unless explicitly configured.",
+    "TOY_373": "Public-state usefulness thresholds, then uniform useful spell and uniform legal enemy target.",
+    "TOY_700": "Eleven documented experimental recipes; uniform classes and distinct Rogue treasures; collectible original printings; rainbow DK.",
+    "UNG_851": "Independent conditional rarity slots, C29/R28/E24/L19 weights; last slot E24/L19 guarantees Epic-or-better; uniform identities.",
+    "CORE_WON_145": "Same boosted five-slot model as Elise, full pinned pack-eligible Standard expansion pool; no shop pity or collection protection.",
+    "WW_0700": "Uniform initial bullet; uniform different next bullet, no consecutive repeats.",
+    "ULD_003": "Existing 139-offer public-state heuristic.",
+    "TOY_700t9t2": "Existing shared Zephrys heuristic."
+  },
+  "extra_dependencies": [
+    "Reno Lone Ranger, including approximate bullet rotation",
+    "Original Avatar of Hearthstone automatic pack play",
+    "Thrive in the Shadows original and Legacy physical Discover/draw definitions"
+  ],
+  "static_checks": [
+    "All expanded Python files AST parsed",
+    "Registry frozen metadata hashes reconcile",
+    "Every new binding passes strict operand schema",
+    "All 1185 Standard definitions present",
+    "All eligible Standard Uluu parent choices present",
+    "All 13 ordered Harth hand contracts compile",
+    "All 22 proxy and 5 Zayle and 11 experimental opening recipes compile",
+    "All 126 Elise outcomes retained",
+    "Every Avatar declared pack identity present",
+    "Completion queue reconciled with zero unadmitted Standard cards"
+  ],
+  "limitations": [
+    "No Game constructed, no evaluator sampled, no effect execution or regression run; runtime correctness unvalidated",
+    "Wonderful Whizbang uses 22 synthetic legal proxy decks, NOT the actual Blizzard recipes; low opening-deck fidelity",
+    "Selected Harth and experimental printings are explicit original-printing approximations",
+    "Pack rarity weights and slot independence/ordering are approximate; cosmetics are not newly modeled",
+    "Holmes distractors and Khadgar thresholds are approximate and can bias learned decisions",
+    "Full strict namespace scan still encounters pre-existing uncovered discard_highest_cost in END_016 weapon triggers; new bindings were checked separately",
+    "Prior passing gameplay receipts remain bound to old source fingerprints; broad simulator fidelity gaps remain"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "learning_run": false,
+  "deck_search_run": false
+}

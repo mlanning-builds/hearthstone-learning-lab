@@ -26,7 +26,7 @@ TOKEN_RULES={
 TOKEN_IDS=set(DREAMS+CORRUPTED)
 
 class Dreams:
-    def _hero_elusive(self,owner):return self._active('EDR_846t3',owner)
+    def _hero_elusive(self,owner):return self._active('LOOT_382',owner) or self._active('EDR_846t3',owner) or getattr(self.players[owner],'historical_elusive_until',-1)>self.turn
 
     def _dream_higher_play(self,owner,played,cost):
         # Called after shared one-use discounts are consumed, but before the
@@ -71,7 +71,7 @@ class Dreams:
                 p.board.remove(m)
                 card=Card(self._new_id(),m.card_id);self._carry_origin(m,card)
                 p.deck.append(card);self.rng.shuffle(p.deck)
-                self._record_deck_insertion(m.owner,owner,1,'shuffle')
+                self._record_deck_insertion(m.owner,owner,1,'shuffle',cards=(card,))
                 self._refresh_auras()
         elif name=='dream_nightmare':
             if target:

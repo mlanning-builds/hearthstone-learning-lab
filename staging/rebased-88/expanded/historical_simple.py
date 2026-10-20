@@ -45,3 +45,22 @@ RULES={'AT_055': ('character', [('heal', 5)]),
  'UNG_205': ('enemy_character', [('freeze',)]),
  'UNG_848': ('none', [('area_damage', 'other_minions', 2)])}
 GENERATED_IDS=frozenset(RULES)
+
+# Exact printed healing Battlecries; extra clauses are explicit, not discarded.
+RULES.update({
+ 'BOT_447':('none',[('damage_own_hero',5),('armor',5)]),
+ 'CFM_061':('character',[('heal',6)]),
+ 'CS2_088':('none',[('heal_own_hero',6)]),
+ 'DAL_078':('character',[('heal',3)]),
+ 'DAL_544':('none',[('area_heal',2)]),
+ 'DS1_055':('none',[('area_heal',2)]),
+ 'LOOT_014':('none',[('draw',1),('damage_own_hero',2)]),
+ 'LOOT_388':('none',[('area_heal',2)]),
+ 'UNG_938':('character',[('heal',3)]),
+})
+GENERATED_IDS=frozenset(RULES)
+
+# Explicit minion types/keywords are carried by the pinned metadata. Pelican
+# Diver's timed dormancy is installed before board-entry notifications.
+RULES.update({cid:('none',[]) for cid in ('DMF_532','GIL_681','NX2_050','TSC_647')})
+GENERATED_IDS=frozenset(RULES)

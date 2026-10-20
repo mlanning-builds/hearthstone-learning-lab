@@ -33,10 +33,10 @@ class FoodChainTests(unittest.TestCase):
   self.play('TLC_830t')
   for n in (8,6,4):
    self.assertEqual(self.g.pending_choice['options'][0]['card_id'],'TEST_BEAST_'+str(n));self.g.step(Action('choose',choices=(0,)))
-  self.assertIsNone(self.g.pending_choice);self.assertEqual([c.card_id for c in self.p.hand],['TEST_BEAST_8','TEST_BEAST_6','TEST_BEAST_4']);self.assertTrue(all(c.cost_delta==2 for c in self.p.hand))
+  self.assertIsNone(self.g.pending_choice);self.assertEqual([c.card_id for c in self.p.hand],['TEST_BEAST_8','TEST_BEAST_6','TEST_BEAST_4']);self.assertTrue(all(self.g._cost(c,0)==2 for c in self.p.hand))
  def test_missing_later_pool_rejects_before_first_choice(self):
-  del self.g._generation_pools[(quest_families.SHOKK_POOLS[-1],self.p.hero_class)]
+  self.fx.install(self.g,quest_families.SHOKK_POOLS[-1],["MISSING_REVIEWED_BEAST"])
   with self.assertRaises(UnsupportedCard):self.play('TLC_830t')
   self.assertIsNone(self.g.pending_choice)
- def test_root_still_staged(self):
-  self.assertNotIn('TLC_830',cards.COLLECTIBLE_IDS)
+ def test_root_is_reviewed(self):
+  self.assertIn('TLC_830',cards.COLLECTIBLE_IDS)

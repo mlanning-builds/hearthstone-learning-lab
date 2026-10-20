@@ -1,0 +1,71 @@
+{
+  "scope": "Pinned past regular Constructed collectible Colossal minions, excluding canonical identities in the frozen Standard catalog. Complete metadata membership only; separate behavior and fidelity gates still apply.",
+  "count": 13,
+  "members": [
+    {
+      "id": "NX2_037",
+      "dbfId": 87329,
+      "sha256": "45ad0270fef4bf58799897c2e13344304aae8dbed77fee8883c14ee598576af1"
+    },
+    {
+      "id": "TID_711",
+      "dbfId": 75580,
+      "sha256": "0a1059022ab5d58245c31831e474a4fdb2fe2c0cce64c30af5307d8ba9953456"
+    },
+    {
+      "id": "TID_712",
+      "dbfId": 75583,
+      "sha256": "6112d2b281d6cb894e6c4403f538b90f174777b6d9fe495c5d1bec86158d9291"
+    },
+    {
+      "id": "TSC_026",
+      "dbfId": 71712,
+      "sha256": "d217c6af5d2c53537fb38a9e5398716b4a33f85247b0ac960df8015ea2ae0820"
+    },
+    {
+      "id": "TSC_029",
+      "dbfId": 71841,
+      "sha256": "bca5d571090e90c6c23f23207f82b25555f3a43910133f26f09f447518f27fb6"
+    },
+    {
+      "id": "TSC_030",
+      "dbfId": 71984,
+      "sha256": "f102552a3085d66090e32009cadd1ae70e2ae68e5bb4936ed33ef0ec679d3612"
+    },
+    {
+      "id": "TSC_216",
+      "dbfId": 72488,
+      "sha256": "3580118e20dfbc0acbb651bdd0abc89bb544e67768d5f63e766881af0512a479"
+    },
+    {
+      "id": "TSC_219",
+      "dbfId": 73726,
+      "sha256": "1d96ee5dab673424507e61ea393b81a9adec48109fde8f98ba2b49c3ec2ad869"
+    },
+    {
+      "id": "TSC_639",
+      "dbfId": 72553,
+      "sha256": "1f04d63835f8eee2d856d970538c3578126b571c08e49690a03db5068c97361f"
+    },
+    {
+      "id": "TSC_660",
+      "dbfId": 74894,
+      "sha256": "7fcec78458f1cb003f366eec291615f692a814bc7ba31d62db90583778605f82"
+    },
+    {
+      "id": "TSC_937",
+      "dbfId": 72536,
+      "sha256": "1a895391f2573f1f5ef7d648dee51a8a44f72e6001b691faebe3f4e25252cee8"
+    },
+    {
+      "id": "TSC_950",
+      "dbfId": 72935,
+      "sha256": "31d730176ef748b3064dd021ae823afb36ea9c3f84c62219d67698001bff86db"
+    },
+    {
+      "id": "TSC_962",
+      "dbfId": 74741,
+      "sha256": "116ca6b337b22fedf5ef0feea0c0742b33d5d9c658834f5010a1aa177dc616d6"
+    }
+  ]
+}

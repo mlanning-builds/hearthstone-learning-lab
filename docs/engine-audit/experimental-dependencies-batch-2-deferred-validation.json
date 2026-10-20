@@ -1,0 +1,30 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "EX1_193",
+    "KAR_069",
+    "YOP_001",
+    "BT_416",
+    "BT_921",
+    "LOOT_088"
+  ],
+  "candidate_fingerprint": "d379d4ae4c6514f6017d6c7b6d1816116f352df7d77f6820cfb972c1041f7d77",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Native original printing parity",
+    "Weapon Lifesteal, shield/draw order and next-card discount consumption",
+    "Complete experimental opening integration remains unfinished"
+  ]
+}

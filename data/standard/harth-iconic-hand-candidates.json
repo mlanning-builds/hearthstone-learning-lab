@@ -1,0 +1,2389 @@
+{
+  "scope": "Source-backed candidate hand inventory, not an admitted runtime contract",
+  "complete": false,
+  "build": "36.6.0.251952",
+  "source": "https://outof.games/realms/hearthstone/guides/367-a-guide-to-harth-stonebrews-iconic-hands/",
+  "source_limitations": [
+    "All thirteen ordered lists read from current source page last edited 2026-09-21; pinned-client trace review remains deferred",
+    "Demon Hunter uses actual first-edition tokens from the frozen archive, not altered current cards",
+    "Exact selection weights remain unsourced; wiki class-first probability statement explicitly marked citation needed",
+    "Non-Demon-Hunter exact Core/original printing choices remain explicit candidates"
+  ],
+  "hand_count": 13,
+  "card_slots": 104,
+  "hands": [
+    {
+      "key": "DEATHKNIGHT_BLOOD",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Blood Boil",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_730",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "a9075a7d81dac678e8c8133fe5fe968e12f48dd9391aba093da24c277a9a68c0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Soulstealer",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_741",
+              "card_set": "CORE_HIDDEN",
+              "cost": 8,
+              "written": true,
+              "metadata_sha256": "c63a0fa31ac2eeb39ba67f89e2f5178bba8dd18d897ac6663d5fb24ff35409e9"
+            },
+            {
+              "card_id": "RLK_741",
+              "card_set": "RETURN_OF_THE_LICH_KING",
+              "cost": 8,
+              "written": true,
+              "metadata_sha256": "874b7f36e0e401c79147453089c24aa37f0cd00179b38d0dac79a97a905f65b4"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Gnome Muncher",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_720",
+              "card_set": "CORE",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "110c3e511e0b0df551baaa0bb294bd1252d9a33090f8c59e236143d6d5d9e6a3"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Alexandros Mograine",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_706",
+              "card_set": "CORE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "76db35a40fbb3a9b774437fd276d7f4f138609f5750af0c1f19484ce5d0e4f4e"
+            },
+            {
+              "card_id": "RLK_706",
+              "card_set": "RETURN_OF_THE_LICH_KING",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "3415a029b16122b06c4f7b540aa72e1418f29eebe39d17860805b728e4a41e35"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Vampiric Blood",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_051",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "db0fdfd3c978aef1adacf669f24a1ccbbbe003959a294d8200debbcefdf5ac81"
+            },
+            {
+              "card_id": "RLK_051",
+              "card_set": "RETURN_OF_THE_LICH_KING",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "3523c50df0592f24b0edaaebc3acf7979c1c0ccd323b2989785d53f45d6be4b2"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Obliterate",
+          "candidate_printings": [
+            {
+              "card_id": "LEG_RLK_125",
+              "card_set": "LEGACY",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "8068007e454b0ab8c15725928db92540556fa0834dd3d2915c4b9b230114fe0f"
+            },
+            {
+              "card_id": "RLK_125",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "f27725fb380cf82aa6c3e26a34bcd61a4c7f5ed4719de282a131601c6b2be998"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Asphyxiate",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_087",
+              "card_set": "CORE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "0331bc9adf1ea15e48c30d8fda3596c226dc602a89d02f1dee83624646a6e435"
+            },
+            {
+              "card_id": "RLK_087",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "0d8141954f27bfe147d0dd0879370ecdb088d7a34e11fd58850a4e770a50b600"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Patchwerk",
+          "candidate_printings": [
+            {
+              "card_id": "LEG_RLK_071",
+              "card_set": "LEGACY",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "015a3ec8cac9eebe36a8089257624cfc6e840d285be133d1d5e96b0f7847a098"
+            },
+            {
+              "card_id": "RLK_071",
+              "card_set": "CORE_HIDDEN",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "9e53db55b061aaec0bec5929ba160f7571506856c98fb43b0cb43700e1376453"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "DEATHKNIGHT_FROST",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Glacial Advance",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_512",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "81f2d59b5c59e1e107354ee13261fb50a93d3d0549ff600075d3e16d78604798"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Lady Deathwhisper",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_713",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "8fbf01e6babfe489e50aa403b4f3d85efcc4a90369b87e0a8964ca3ff67237a3"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "School Teacher",
+          "candidate_printings": [
+            {
+              "card_id": "TSC_052",
+              "card_set": "THE_SUNKEN_CITY",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "f7f1a752e3a3e376f9fcad4d8bb86895ae465459fd5b97e5dc89fa918a3a1db0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Frostwyrm's Fury",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_063",
+              "card_set": "CORE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "576cdcf662ce4d9521e0498b09da92bc1f0a95ee0b4f057b3c21ce64faad3ecc"
+            },
+            {
+              "card_id": "RLK_063",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "89143121e2474873134b94ec4be636ac6846a98def348caa095f691d90daf7bb"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Howling Blast",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_015",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "1efa8271aea0c80a922918fee2039ab23799d4ad7e2260b85662a46bdf8d571d"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Frost Strike",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_025",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "f15488ae2678d2815c9b7b5a493ceb72ede116135ec1dd7c98c76d53f5bcb581"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Thassarian",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_223",
+              "card_set": "CORE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "c1a620966b835c246ef534d9e66d638e8f823097b3e738cb0cd4f7c611add8bf"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Horn of Winter",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_042",
+              "card_set": "CORE_HIDDEN",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "0d7dddd85f26e0d75285710333a0c033b831ccb84ca0a0c0272fe6c7527adf46"
+            },
+            {
+              "card_id": "RLK_042",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "838c0b6354a3cf3ed18b7b1d5bb2bf9b6c8da419b9ec2bffc8a8b2c001d49471"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "DEATHKNIGHT_UNHOLY",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Amalgam of the Deep",
+          "candidate_printings": [
+            {
+              "card_id": "TSC_069",
+              "card_set": "THE_SUNKEN_CITY",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "35d6d65d72f802206f39cecef5efc2fb157f20dba4cfe8cd0251d970d8a051c2"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Grave Strength",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_707",
+              "card_set": "CORE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "5f34747ae673754aecdb1e6184d80a57b4c4015239a514701e74ebd091450bc7"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Nerubian Swarmguard",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_RLK_062",
+              "card_set": "CORE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "81579086aa84253faa9eb36ab046590130e52d93e26e5600482e680f56c16cd9"
+            },
+            {
+              "card_id": "RLK_062",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "99b8ad523e6aeedcca4fa4ef13a75e110ca92b53dc4076d0c56f1d8a8ea8f6b0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Hawkstrider Rancher",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_970",
+              "card_set": "RETURN_OF_THE_LICH_KING",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "ddc97fd156225bd20bdfeedde7fc76ea6ea62b29a381f43a391db2d6ab33e040"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Skeletal Sidekick",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_958",
+              "card_set": "CORE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "0e01d121bdc44658371a7260994c4ede048e1e8fb4e0bc229656c878cea60d5d"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Blightfang",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_225",
+              "card_set": "RETURN_OF_THE_LICH_KING",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "5cd25f4ca338f23dbf650c7ab4184cbafa3efcd5a7787643add9342ad3bb6161"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Plague Strike",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_018",
+              "card_set": "PATH_OF_ARTHAS",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "42729e26992c5f2b856ad797d7021177bbc3dee91de0402b7f13d9d2148cdc7b"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Battlefield Necromancer",
+          "candidate_printings": [
+            {
+              "card_id": "RLK_061",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "e7629e80cf21ffd7f0f7155727d6dd370810f12ced1423654bbf240d8f838da8"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "DEMONHUNTER",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Twin Slice",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t3",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "7d57718f4b13f618945887add00fb66441db979f55340060e30c3bca7fcb3c8d"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_175",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "13074ef978b48425b7eff323e249e1f1546da221918de8e0718b4d8132737c0c"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Skull of Gul'dan",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_401t",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "6ee70d58b5655b40e09b55b6d58d8cdf57168573c058d2fa70e5097ec15ce043"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_601",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "f869ee836fc3fc28fa2bf79784c9550e621bf270c210a726ee708c6ea533f6dd"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Warglaives of Azzinoth",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t7",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "48d6e699955b43b2bcbc4bc73410ecfa11168c571bdad4aabee7e3791d9a4527"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_430",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "5cefa8a6e5cf2b78a85e451a73be5151ff7c65fb4bf0d07b90973af8d5e1066f"
+            },
+            {
+              "card_id": "CORE_BT_430",
+              "card_set": "CORE_HIDDEN",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "bceb6fd6466e8951a304889dd7788017da6dfb16755448e524d524f9f8df9299"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Altruis the Outcast",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_401t2",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "09f5a7277afcbca7d1583e108ac78fc630821560e4aa9472f4262b67a9b092a0"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_937",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "e18282b8fbcdf7acd350aedd1a4da5d3f71e2da80768e0b67829abaa58b53fa4"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Metamorphosis",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t6",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "270cf5db37d23c025d5f576447699dc63ba4232074cf050d9a3ad2ff8e305f0b"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_429",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "c72e67444443e07b0af444b583418865b16f68b2597a0a140050676484a3b510"
+            },
+            {
+              "card_id": "CORE_BT_429",
+              "card_set": "CORE_HIDDEN",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "45814beaf913a66c56a32bd1efd42012cf5d9d4da10a4dad3aa1dfff9a3d8dea"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Imprisoned Antaen",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t4",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "c2a719eb0043bceb9b1a4ea7cd951303c2e45cd7bad9fbe53b533cb478e775f5"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_934",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "091d69bbe234ff298627c8f9bfc96e457eff9dcc7e29caf11356954a02129cd7"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Priestess of Fury",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t5",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "0dc4635fd0d6f2e852442ce413105fc4f8aea49db1c1dc483203396b8a8e1193"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_493",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "fa2869ef225732efcff716556a1d97d2218129b6a676451246ee20cc0cc5ae65"
+            },
+            {
+              "card_id": "CORE_BT_493",
+              "card_set": "CORE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "cfd9a577f9bdf5c7cc47c5a0709fec8f41ebddf80f9d394eac55d6d18db7b3b0"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Eye Beam",
+          "candidate_printings": [
+            {
+              "card_id": "TOY_400t8",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "92f73f4cbdc32a17ab332ca0554c11236632c1da92c6a3775375b3ddf0c13e9e"
+            }
+          ],
+          "exact_printing_reviewed": true,
+          "has_written_candidate": true,
+          "previous_candidate_printings": [
+            {
+              "card_id": "BT_801",
+              "card_set": "DEMON_HUNTER_INITIATE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "a9ea9785b4b2e9c5a0c5206d99e8acb6a2033b0435de2231a4d00ffaca4e81fc"
+            },
+            {
+              "card_id": "CORE_BT_801",
+              "card_set": "CORE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "2292072e7183604986a9f42d51a0f8a4931b0ffb40e99087e806cb5f661d3fb3"
+            }
+          ],
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "DRUID",
+      "slots": [
+        {
+          "position": 0,
+          "name": "King Togwaggle",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_541",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 8,
+              "written": true,
+              "metadata_sha256": "5bbcb9c29a75233b596aedaf0c10f554496340c70fc3e7fa0721e76ecef3e534"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Twig of the World Tree",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_392",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "ff4cf5b9e278c2210dcb5cdb46ef35ca3cb58029d1d8e3111a84d193c445ecbf"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Malfurion the Pestilent",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_832",
+              "card_set": "CORE_HIDDEN",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "9d5ef127b521762c4ad9eedd8f0936ccb106f5321e7111dc8e7464cd283e627e"
+            },
+            {
+              "card_id": "ICC_832",
+              "card_set": "ICECROWN",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "08afaff763a36b68929f43f3c5e6adc07827555f54bcbed24746d7d810030faa"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Naturalize",
+          "candidate_printings": [
+            {
+              "card_id": "EX1_161",
+              "card_set": "EXPERT1",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "c38f60df885a42faa2b0e8e772a30d875dad38935ee1305fccd4aca8c0a3bd54"
+            },
+            {
+              "card_id": "VAN_EX1_161",
+              "card_set": "VANILLA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "c77635fc90fe72a222719b6cf9647daa720a6bc47ffeb2812c0198c41b041649"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Azalina Soulthief",
+          "candidate_printings": [
+            {
+              "card_id": "GIL_198",
+              "card_set": "GILNEAS",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "0e138cd1891fca4c0961f9989a8dc27acafb801b39043afca37387a973bb382f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Lesser Jasper Spellstone",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOOT_051",
+              "card_set": "CORE_HIDDEN",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "b29654e650bf56921ef0d9623f902774bb81f8c63eb41ebefc4294793def714c"
+            },
+            {
+              "card_id": "LOOT_051",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "5221875a4b85b7505c7368774736271b6faa17fdc3de8c891e6010a90da35ce9"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Spreading Plague",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_054",
+              "card_set": "CORE_HIDDEN",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "0d57ffc2bcf9aa08ebc542b0d79e58bce2eaac34262c100b0a7535913386b475"
+            },
+            {
+              "card_id": "ICC_054",
+              "card_set": "ICECROWN",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "3208cde706dbe502b1cb66e653699b128ab65eac802adc64e6883c04761df44f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Branching Paths",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_054",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "1bc6cd7798b1cb3274c0b659a4dfbf27662262b13d5aae8fcaf7f63ae8b0dfb7"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "HUNTER",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Lesser Emerald Spellstone",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_FB_Champs_LOOT_080",
+              "card_set": "CORE_HIDDEN",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "e9ab83362f4363c26ba99eee41d6df4ba7ddec2907d8454a8957032b30dccba5"
+            },
+            {
+              "card_id": "LOOT_080",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "8bded9ecaf1f85c70e1e6831af401ada83b460ef47148d2348964e067c7b1c72"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Wandering Monster",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOOT_079",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "c23a9aa3bc67397f8875df3516534e6a9b21df929f7fddfac2935a6fbe5258ff"
+            },
+            {
+              "card_id": "LOOT_079",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "a12536b0f6749ac6c2211276803318fea0a0712ebb0504f082684f17ce77d61f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Misdirection",
+          "candidate_printings": [
+            {
+              "card_id": "EX1_533",
+              "card_set": "EXPERT1",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "6361d4168323d8d3aa301300bd0574b2aaaba8aa36553abf28005438ab371d39"
+            },
+            {
+              "card_id": "VAN_EX1_533",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "5b58cc230cd0fe7a47598e4ad9acb2fd04c4ea526c044004095097734766f8e3"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Explosive Trap",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_610",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "150468d5745c7c4fc4f09ea4d4e17dd197ddbf2fa50b7136f56bbcfd3b0edf6b"
+            },
+            {
+              "card_id": "EX1_610",
+              "card_set": "EXPERT1",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "40c73b843b34b0dd989a0cfdbe35bc14e84b13c4ab0cd18a64778464921ca42c"
+            },
+            {
+              "card_id": "VAN_EX1_610",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "22f0b8085002d8fecea18a2a0e310cba8da9b02c5cd624bb4fce401f99db98d4"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Cat Trick",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_KAR_004",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "a9c8e310a1a82e93c1330f514b7122380f978726042d3cc1b754d9b78ad2de23"
+            },
+            {
+              "card_id": "KAR_004",
+              "card_set": "KARA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "cc32c6e0981d412834b6e9eb568481af81080789cedf977cff63c191c0723ea9"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Deathstalker Rexxar",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_828",
+              "card_set": "CORE_HIDDEN",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "77022cfc92d715f96a3ef7576b57b9171b1a202943b376a6db770c9660b4e18d"
+            },
+            {
+              "card_id": "ICC_828",
+              "card_set": "ICECROWN",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "ee6ce12759c4957694dfc4133ea13ba56fb2d67a4e26020fe3d793de4f7d6dfc"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Cloaked Huntress",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_KAR_006",
+              "card_set": "CORE_HIDDEN",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "0a81a36e0d919a89dad5cedde0145b0454b44d3082a2d0b46fcd463926c28823"
+            },
+            {
+              "card_id": "KAR_006",
+              "card_set": "KARA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "fdab01f6e9d4c81727afb44a843ae352506052fe0428cb835f67f2638e0b87fd"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Freezing Trap",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_611",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "18354d3bad4bfc64afb07c821ee6cf94c3886a90d30b0e08856ecffdc8ca2470"
+            },
+            {
+              "card_id": "EX1_611",
+              "card_set": "EXPERT1",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "1fa1e3e76164add023bf79bdd2286edbac667955ae5c4caca8fc0e06204bba7d"
+            },
+            {
+              "card_id": "VAN_EX1_611",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "e4e5e904cee8ad3f025e8c02525238df8f6bb60918281496859d7459883fe432"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "MAGE",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Alexstrasza",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_VAN_EX1_561",
+              "card_set": "CORE_HIDDEN",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "868e63e45f49c807870af7096541e9e6edd7f2a31380827cbcabef4d7572ac57"
+            },
+            {
+              "card_id": "EX1_561",
+              "card_set": "EXPERT1",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "46eaa94bfb0685a079829ef41c0e1edc6107905364e592cf69c0f097f0cc351e"
+            },
+            {
+              "card_id": "VAN_EX1_561",
+              "card_set": "VANILLA",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "4455b7adda7c5c917783779414ae1eb78ebd83de32a9e64184a2584142fc943e"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Ice Block",
+          "candidate_printings": [
+            {
+              "card_id": "EX1_295",
+              "card_set": "EXPERT1",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "e188d948044df1277082359269f1aa4e6f635475d00967ea93a809b5b64a154b"
+            },
+            {
+              "card_id": "VAN_EX1_295",
+              "card_set": "VANILLA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "25128d20a025c9f2bdf5e262405cb3388354a45387b998b2c9791b4312dbbd3e"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Frost Nova",
+          "candidate_printings": [
+            {
+              "card_id": "CS2_026",
+              "card_set": "LEGACY",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "84b1eae36e001921cf32f9dab461e07c15e42647f286505b24cc586d029747ba"
+            },
+            {
+              "card_id": "VAN_CS2_026",
+              "card_set": "VANILLA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "c43b248cd036c6b49f7fa71e193a6ee6c1a4fe5ecd29c5ed8c561de36163b52c"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Doomsayer",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_NEW1_021",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "bc9610474249cf7042c8165bcc389520b3aaaf21ccf5d3ab5632f045d8cbd891"
+            },
+            {
+              "card_id": "NEW1_021",
+              "card_set": "EXPERT1",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "1369497eefacb8866cbea9c823959103e697eae55f8300f2897e59ba06844e83"
+            },
+            {
+              "card_id": "VAN_NEW1_021",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "8c41256a5a8b9ec61b41446f22c491612fb58b3af5c84c089b0ce919676754d5"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Ice Lance",
+          "candidate_printings": [
+            {
+              "card_id": "CS2_031",
+              "card_set": "EXPERT1",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "36ab9fe36cf974ef8e3da2388ab149447601038b6c58f26960e82366a0bd7a48"
+            },
+            {
+              "card_id": "VAN_CS2_031",
+              "card_set": "VANILLA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "f2b220f0e21f4c02f8acdd8c95498eb38b8b86fceaf81de9b0c047a0f0fcd5d2"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Fireball",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_CS2_029",
+              "card_set": "CORE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "6978f5eb7c4b2c16fec30046cf1028debf901a288901d2d6afb5aa554e9bb82d"
+            },
+            {
+              "card_id": "CS2_029",
+              "card_set": "LEGACY",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "bcc19545d8db4e95fdc8c67ed79314a52dba0dd27aa9f2349d074ea03ad4332c"
+            },
+            {
+              "card_id": "VAN_CS2_029",
+              "card_set": "VANILLA",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "2ea4b2d74ff50bb2f02a8f9514e0a9136c25438f4b9d30d1c6bf7ba524e9dbb0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Frostbolt",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_CS2_024",
+              "card_set": "CORE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "198d0e2cf6b2f458735d4ad807c729e35206933d30454286ad3163dfc4136b41"
+            },
+            {
+              "card_id": "CS2_024",
+              "card_set": "LEGACY",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "bad00dea613d494e468dd234c119e345ad644723984f65ff6d62360e6cfa8e1d"
+            },
+            {
+              "card_id": "VAN_CS2_024",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "e306e97716bd1b54f678ad299eb25cbbe690708b445de2897c45402953adcac0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Archmage Antonidas",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_559",
+              "card_set": "CORE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "864c021b66f63d8eea70c161ab5a5199748f985ebe9d4d7b7f48b8b345838854"
+            },
+            {
+              "card_id": "EX1_559",
+              "card_set": "EXPERT1",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "103dccf95b7051376d708210c4108e0e278ba55cf5f107a59a0b629a26b3f9ea"
+            },
+            {
+              "card_id": "VAN_EX1_559",
+              "card_set": "VANILLA",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "d8a2fff95f239a8fe5e96fa99abf2ca79ebc3b76ee91cc19410457e11ac4040d"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "PALADIN",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Lady Liadrin",
+          "candidate_printings": [
+            {
+              "card_id": "BT_334",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "bfef1d780814f10771495bad22fb9cc7da66a154d7dc17fa29800e966ac5eb6d"
+            },
+            {
+              "card_id": "CORE_BT_334",
+              "card_set": "CORE_HIDDEN",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "e5e0611a507af1b8cfadddd5bccf181a0720500b143e34d714cf87b4804a29f8"
+            },
+            {
+              "card_id": "HERO_04a",
+              "card_set": "HERO_SKINS",
+              "cost": null,
+              "written": false,
+              "metadata_sha256": "2936c55733b33c0c28f54253964f38664c40a739a3e75a87a496717d2ef77cc4",
+              "candidate_limitation": "Hero skin name collision; not a collectible minion printing."
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Aldor Truthseeker",
+          "candidate_printings": [
+            {
+              "card_id": "BT_026",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "785d8b3ff1d54f7b6fae7a4c1ad6bb31396969acb744dbee683c7ad6ea791ad5"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Libram of Hope",
+          "candidate_printings": [
+            {
+              "card_id": "BT_024",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "093327d9fb48bcacc5936ca18fe7dc9179b2546fdd8bf2d13f393fac2602ccf3"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Pen Flinger",
+          "candidate_printings": [
+            {
+              "card_id": "SCH_248",
+              "card_set": "SCHOLOMANCE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "66c298c763c008a53c0736727557f5dff14bce6a17e81c0037e40edfec24024c"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Libram of Judgment",
+          "candidate_printings": [
+            {
+              "card_id": "YOP_011",
+              "card_set": "DARKMOON_FAIRE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "eb4bd6658dd3568391cd4a0bfe887cc32a89c4dcd20f0e1f74d5bcdba05da5a0"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Libram of Justice",
+          "candidate_printings": [
+            {
+              "card_id": "BT_011",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "8eae9e816c8898bff9cab817e58f7e29b6047fcecde69959e22985829f1c42fb"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Libram of Wisdom",
+          "candidate_printings": [
+            {
+              "card_id": "BT_025",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "743c7fedb045efc7b082fa499febdf5b4c3850caae73902521aad55b53a0dafb"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Aldor Attendant",
+          "candidate_printings": [
+            {
+              "card_id": "BT_020",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "100bf47618d51e2fe25a112f2163b1cf398da8baa09472080cd6ed26ca297546"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "PRIEST",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Galakrond, the Unspeakable",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_660",
+              "card_set": "DRAGONS",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "4f23582f2d7d6c39ce0167ab91a17ec3762fe8ad9135cfc749abd94c8b6fd697"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Soul Mirror",
+          "candidate_printings": [
+            {
+              "card_id": "BT_198",
+              "card_set": "BLACK_TEMPLE",
+              "cost": 7,
+              "written": true,
+              "metadata_sha256": "9a312df3daeca355c122ac6a8aca4cb024d00b33b22ebd4c8eaed6a93e38b413"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Kronx Dragonhoof",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_099",
+              "card_set": "DRAGONS",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "02c18a547251df56402bbbad4e1f46913ce0e0eae8894f7795791ecabd330d48"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Devoted Maniac",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_050",
+              "card_set": "DRAGONS",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "572ea423ee49d1b0458b65a2e156b86b21e4c97758749c17c91007cbf40ab366"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Shield of Galakrond",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_242",
+              "card_set": "DRAGONS",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "a9fda3658e04f064ee010aa93107fd2489b8efd33173370e02734e15f6bf77fc"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Disciple of Galakrond",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_303",
+              "card_set": "DRAGONS",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "9199ae0a01eb6beaf5b6499ed0ecbc9b1f0e2ae9f6f2dba36a6ee621c3db03db"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Fate Weaver",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_300",
+              "card_set": "DRAGONS",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "388c63fee25010730ecb86f8aead78140163d43b34b661b7c2c74cd9cc0c126b"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Time Rip",
+          "candidate_printings": [
+            {
+              "card_id": "DRG_246",
+              "card_set": "DRAGONS",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "314d4d85f0e5419a468c3248bc48aa391b9aedd897c04527289ebadfa1703358"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "ROGUE",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Youthful Brewmaster",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_049",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "3b1f7be154c7e92543354fcb6473c61899fe9b1effcc257d343f97f6f2ca43d5"
+            },
+            {
+              "card_id": "EX1_049",
+              "card_set": "EXPERT1",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "a7972f75477105287b51b6a0a7235eecbb41c3a522600a8afcbdc5567de3bbe9"
+            },
+            {
+              "card_id": "VAN_EX1_049",
+              "card_set": "VANILLA",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "bb15d0922fd96ada1998bae27a8db8e6f9a37c3dd32e5999b925e0ce7ca1fc1f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Gang Up",
+          "candidate_printings": [
+            {
+              "card_id": "BRM_007",
+              "card_set": "BRM",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "e6463814ed497b11c142bce184e1d5c9a03a16e5df93a121e97b7af922b0c875"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Preparation",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_145",
+              "card_set": "CORE",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "b0ddcde20ead7053ffde2cfc1115d0b0e8dbe719d268579053853ae432c3b38e"
+            },
+            {
+              "card_id": "EX1_145",
+              "card_set": "EXPERT1",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "ecb2183be73864942dd89d7163c494cd2a31a8beb56c3b58d0f0f9d14ac77e33"
+            },
+            {
+              "card_id": "VAN_EX1_145",
+              "card_set": "VANILLA",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "d2ae1167d71373aa51894fbc9b71783c9f995b2baa8f5a43b5017766121563a2"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Coldlight Oracle",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_050",
+              "card_set": "CORE_HIDDEN",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "a62671db110e277291adeb6bcc142fa99e45ceef05fd1554efe8e93c7a5021b6"
+            },
+            {
+              "card_id": "EX1_050",
+              "card_set": "EXPERT1",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "72c65ad54690006344c2f94a1c2ec98d1717d17d4410c76074f92ef8ba6a87d1"
+            },
+            {
+              "card_id": "VAN_EX1_050",
+              "card_set": "VANILLA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "599e8cccfd613eefe4b0733b47712b848efee9601e644b41c0a11304d7bb4931"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Brann Bronzebeard",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOE_077",
+              "card_set": "CORE_HIDDEN",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "184750733a52c97425b9fcb4c38f88bd9c40ecb64753fc08dc6938222fdf22df"
+            },
+            {
+              "card_id": "LOE_077",
+              "card_set": "LOE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "e3af2c86066c99c59d4f7d225ed30981e33050e2e37c63c53f567a5f04af5993"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Antique Healbot",
+          "candidate_printings": [
+            {
+              "card_id": "GVG_069",
+              "card_set": "GVG",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "196576ee79bf2f4882d2746bc317869830bfc26f1298a421c5743a1d539f3d74"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Shadowstep",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_144",
+              "card_set": "CORE_HIDDEN",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "bb3add8dbedee9824f365d727480c48d33bbc03c55c5221c37b3e6f964eacbb9"
+            },
+            {
+              "card_id": "EX1_144",
+              "card_set": "EXPERT1",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "11812c56543abd710aeea8045684bcd51520988d35b25c79caf2b975f8d84184"
+            },
+            {
+              "card_id": "VAN_EX1_144",
+              "card_set": "VANILLA",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "b4ee52f40a8e161f1ec46425ce17ff7319c3673f0bc1522077c38a33c49e1469"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Vanish",
+          "candidate_printings": [
+            {
+              "card_id": "NEW1_004",
+              "card_set": "LEGACY",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "ec2bf063d1cfa8e074d13581a5267e753e229806f0996094bf386504fb9df268"
+            },
+            {
+              "card_id": "VAN_NEW1_004",
+              "card_set": "VANILLA",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "9ad546e50e31a0bd15d146657316e4d61ac39bbc82aa3b09f3b844491006f292"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "SHAMAN",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Healing Rain",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOOT_373",
+              "card_set": "CORE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "5d3148396e861bb44383db5aad7222372628413d6244870b447f7242c1c86fd4"
+            },
+            {
+              "card_id": "LOOT_373",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "d1248265ab1020444f2c0eaea5aa98fe7b8c1d105b30188ef3940d82e1969ff8"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Saronite Chain Gang",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_466",
+              "card_set": "CORE_HIDDEN",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "8186a67066fa48909f7275f16bcc23a91662a2244833e44b3130b37a8cde9cc2"
+            },
+            {
+              "card_id": "ICC_466",
+              "card_set": "ICECROWN",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "dd30039db1e0cfd3b316cc90200e3af3be1dd258ce606c10ce3444a0cc5a2b11"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Grumble, Worldshaker",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_358",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 6,
+              "written": true,
+              "metadata_sha256": "5893ee687199e2b926f47f36ae8a22805b17fc63e6bd7b16ac2a5723c2e3b443"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Glacial Shard",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_UNG_205",
+              "card_set": "CORE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "b5e93ccfb69206dd9afd70219c40006fcbf2621acac1ea485ea6f8c0e7493e99"
+            },
+            {
+              "card_id": "UNG_205",
+              "card_set": "UNGORO",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "1c1156b0dc5052b1f3c812ad3fbc34d9e36c70ccc338527fc29916a99a528989"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Zola the Gorgon",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOOT_516",
+              "card_set": "CORE_HIDDEN",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "b95ed0b7e17f4cf7edd6c9fe11cd9e5103e0f78033ca8ab2572a54e98f3c0ecb"
+            },
+            {
+              "card_id": "LOOT_516",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "bc4a491c95f473eb8764d614acdeef34044ff9595ae7c8904581b2231203feeb"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Lifedrinker",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_GIL_622",
+              "card_set": "CORE",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "9b110f2dcdaeeb7c8d12ebf8747c63853fc13ef059dfd51cd35f70321305f26b"
+            },
+            {
+              "card_id": "GIL_622",
+              "card_set": "GILNEAS",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "e342bb4088b37363ae56452c1c2f759008b52a3c26dfac99623d6e67d72a9a81"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Shudderwock",
+          "candidate_printings": [
+            {
+              "card_id": "GIL_820",
+              "card_set": "GILNEAS",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "b945e5b31c8b66abe5829af7720f95a07a98a3b0b9a31a81a761132d56bb3c04"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Volcano",
+          "candidate_printings": [
+            {
+              "card_id": "UNG_025",
+              "card_set": "UNGORO",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "721d823d41be3cc52da9e826b987f7eb90389c557bb5d201a83224e7324a6a39"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "WARLOCK",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Skull of the Man'ari",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_420",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "1bd66797e33b176f96b0ed56827df0d913e49d1f05df1cd915c6e4c48f6455ab"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Carnivorous Cube",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_161",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "ce0db7cc641c45102b6582b8d78aff8cc848c9881ee56aecad504cfb1e2108b9"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Bloodreaver Gul'dan",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_831",
+              "card_set": "CORE_HIDDEN",
+              "cost": 10,
+              "written": true,
+              "metadata_sha256": "7b33efb29b3f9fde77424cdb1a1681403f31c501374f0f77c8a9c36c9bc41d71"
+            },
+            {
+              "card_id": "ICC_831",
+              "card_set": "ICECROWN",
+              "cost": 10,
+              "written": true,
+              "metadata_sha256": "3270cc1f6cd687661db225af1bc563aadcb0c53eac79ba6def78d40d1232bb79"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Faceless Manipulator",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_564",
+              "card_set": "CORE_HIDDEN",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "fdee007bba62e3d09c919d33ea486fab57d40105c403d1e53c4a02d61899ae7b"
+            },
+            {
+              "card_id": "EX1_564",
+              "card_set": "EXPERT1",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "88705f7d2dbf3223928bb19a112d9c81f43e781914abcf24bb54be17eb4510fd"
+            },
+            {
+              "card_id": "VAN_EX1_564",
+              "card_set": "VANILLA",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "ac02ca2380e9789d6ac672d59c34a2dffe738410631e68251749affd512e8729"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Doomguard",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_310",
+              "card_set": "CORE",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "881fd7345866f5c6b5c9ceacdad32425d6459eb5b46961566cc3ef847dc0d580"
+            },
+            {
+              "card_id": "EX1_310",
+              "card_set": "EXPERT1",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "6f632065e2a2a4aadcd09c6f791006c50f6334a0fda37307d255c6a18daf724f"
+            },
+            {
+              "card_id": "VAN_EX1_310",
+              "card_set": "VANILLA",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "5d5fe2661b3bc1be3ffbebed3350c3c45a66d543acf920e101e2f8d6c388e705"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Voidlord",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_LOOT_368",
+              "card_set": "CORE",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "19898b6643bf1fe58f76428cac2783239c8ab248071622c6cc053f34d4829599"
+            },
+            {
+              "card_id": "LOOT_368",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 9,
+              "written": true,
+              "metadata_sha256": "3bb77491bd94da1d314c5398d5668a5573540dc4961445b6fceeb5b988ff8967"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Defile",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_ICC_041",
+              "card_set": "CORE_HIDDEN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "573440867ffbec76ee92fc5418ce7db14d966e5770ac1024a6515b5ac3bdbf78"
+            },
+            {
+              "card_id": "ICC_041",
+              "card_set": "ICECROWN",
+              "cost": 2,
+              "written": true,
+              "metadata_sha256": "7af079304ce7da624158b7702b1eb30ad450c4d138966217605beefefdcee326"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Dark Pact",
+          "candidate_printings": [
+            {
+              "card_id": "LOOT_017",
+              "card_set": "LOOTAPALOOZA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "0ffebaead9efce978d7f2b788ac84f8f2f2b5068a5d3065efe2b32bedf37bf4f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    },
+    {
+      "key": "WARRIOR",
+      "slots": [
+        {
+          "position": 0,
+          "name": "Whirlwind",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_400",
+              "card_set": "CORE_HIDDEN",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "d46ded9111d274019f28aebcacb1e2c7847a60db9a87ddc874ad0b6bf80baca4"
+            },
+            {
+              "card_id": "EX1_400",
+              "card_set": "LEGACY",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "7402dc9543199c52527c7bc64be223116f673f5995d3a8d8f424fdc9297853b1"
+            },
+            {
+              "card_id": "VAN_EX1_400",
+              "card_set": "VANILLA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "628486f37ee09eca6461c8dea30ba0cf3d8c4f5ee2f6fe7e8bd04b2291ac698f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 1,
+          "name": "Grim Patron",
+          "candidate_printings": [
+            {
+              "card_id": "BRM_019",
+              "card_set": "BRM",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "d5bb9bd8eb83a0236f00ac28e4591e3f76cebd0aadde779dc640949a755263e4"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 2,
+          "name": "Inner Rage",
+          "candidate_printings": [
+            {
+              "card_id": "EX1_607",
+              "card_set": "EXPERT1",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "84846b8c0f1460636db182ef6b1ba84dbfd851a6d8970d13da9465185f0a4ddb"
+            },
+            {
+              "card_id": "VAN_EX1_607",
+              "card_set": "VANILLA",
+              "cost": 0,
+              "written": true,
+              "metadata_sha256": "5cc9db2bc839470c4c28e7284a29ba6f2622e47d63918cd618c859c222308e22"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 3,
+          "name": "Execute",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_CS2_108",
+              "card_set": "CORE",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "8245359b14da8ded247f8b5e3ebd71c68be1723969879b6652c1e3d8d8646598"
+            },
+            {
+              "card_id": "CS2_108",
+              "card_set": "LEGACY",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "d79b1ebf078a45885de15ab52e59e2012183a9efc26990f6996afaa9022800b9"
+            },
+            {
+              "card_id": "VAN_CS2_108",
+              "card_set": "VANILLA",
+              "cost": 1,
+              "written": true,
+              "metadata_sha256": "28a965dd8ee211852d22781a5ae9b5fdb7e618cf6f31d361cb5a8280bdaf7b0c"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 4,
+          "name": "Frothing Berserker",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_604",
+              "card_set": "CORE",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "a5c486be5aa6f8ec3255400ff2ee996592d4ec4c0781e401f1189b2c93aeb2d3"
+            },
+            {
+              "card_id": "EX1_604",
+              "card_set": "EXPERT1",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "b0a4b935dc90b5c492679138668d5d1037b7756b6a7e2ab6fa3398884ab5b17a"
+            },
+            {
+              "card_id": "VAN_EX1_604",
+              "card_set": "VANILLA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "3b9dc7a614545b2748355d4e19f7c4a87d46155b66b014e951e94e1347853f4f"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 5,
+          "name": "Death's Bite",
+          "candidate_printings": [
+            {
+              "card_id": "FP1_021",
+              "card_set": "NAXX",
+              "cost": 4,
+              "written": true,
+              "metadata_sha256": "d0a9009f36d166776f32fa94adcace47646dc9326d290f49429bca7eb66026df"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 6,
+          "name": "Emperor Thaurissan",
+          "candidate_printings": [
+            {
+              "card_id": "BRM_028",
+              "card_set": "BRM",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "00ae080d600e08cca87f264ec05f4b0edf2319712d039954725ed91f9b17165f"
+            },
+            {
+              "card_id": "WON_133",
+              "card_set": "WONDERS",
+              "cost": 5,
+              "written": true,
+              "metadata_sha256": "8bced21b203c81c71bcf91ccb1d4b168db0f793f51c54298505395c3e3306483"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        },
+        {
+          "position": 7,
+          "name": "Warsong Commander",
+          "candidate_printings": [
+            {
+              "card_id": "CORE_EX1_084",
+              "card_set": "CORE_HIDDEN",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "e01e816686c6985b31946fe88c736ab3e28c123c6ab46248130a7915cc0cba56"
+            },
+            {
+              "card_id": "EX1_084",
+              "card_set": "LEGACY",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "de6f48ef91b19f2db37e23819881c8c88d2613e2882efb67cd093ba0c3569cb6"
+            },
+            {
+              "card_id": "VAN_EX1_084",
+              "card_set": "VANILLA",
+              "cost": 3,
+              "written": true,
+              "metadata_sha256": "fbb40c8837e4a939514b9b587ca1fb06b2a9f4f6baac9fdad50a22cdba86594b"
+            }
+          ],
+          "exact_printing_reviewed": false,
+          "has_written_candidate": true,
+          "order_source": "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands"
+        }
+      ],
+      "order_reviewed_for_pinned_build": false,
+      "selection_weight": null,
+      "order_observed_current_source": true
+    }
+  ],
+  "unmatched_names": [],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "written_name_slots": 104,
+  "unwritten_candidate_ids": [
+    "HERO_04a"
+  ],
+  "remaining_invalid_name_collisions": [
+    "HERO_04a"
+  ],
+  "current_sources": [
+    "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Possible_hands",
+    "https://hearthstone.wiki.gg/wiki/Harth_Stonebrew#Notes"
+  ]
+}

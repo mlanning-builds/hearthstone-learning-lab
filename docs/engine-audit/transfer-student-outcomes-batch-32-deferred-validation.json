@@ -1,0 +1,53 @@
+{
+  "scope": "Captured excess Bottles, Lightbug family and actual damage-cost Shimmer Shot",
+  "new_unvalidated_bodies": 8,
+  "new_ids": [
+    "DEEP_003",
+    "WW_052",
+    "WW_052t",
+    "WW_052t2",
+    "WW_393",
+    "WW_393t",
+    "WW_395",
+    "WW_395t"
+  ],
+  "new_collectible_outcomes": 4,
+  "new_required_minion_bodies": 1,
+  "new_required_generated_spell_forms": 3,
+  "internal_operation_admissions": 254,
+  "native_secret_placement_bindings": 32,
+  "prior_expansion_outcome_gap": 49,
+  "current_expansion_outcome_gap": 45,
+  "closed_outcome_ids": [
+    "DEEP_003",
+    "WW_052",
+    "WW_393",
+    "WW_395"
+  ],
+  "candidate_fingerprint": "83994d88200e6abdea33fa94b0b31b86feeddca33daf7a06965c725b9543c272",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Lightbug summon-count multiplier snapshot, per-entry board capacity and excess saved versus bottle overflow",
+    "Shadeleaf Spellpower immunity, actual damage/overkill/prevention and bottled damage modifiers",
+    "Springwater damaged-character targets, healing replacement/multipliers and hero excess receipts",
+    "Positive captured Bottle definitions, copying, replay construction, transformation clearing and owner observations",
+    "Shimmer Shot actual dealt-damage cost including Shield/prevention/overkill and complete cost-specific minion closure",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

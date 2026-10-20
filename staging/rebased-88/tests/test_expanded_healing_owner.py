@@ -1,9 +1,10 @@
+import test_expanded_passive_admission as admission
 import unittest
 from expanded import Game,Action,random_deck
 
 class HealingOwnerTests(unittest.TestCase):
     def setUp(self):
-        self.g=Game([random_deck('PRIEST',31),random_deck('WARRIOR',53)],seed=71)
+        self.g=Game([admission.PassiveAdmissionTests().deck('PRIEST','CORE_CS2_122'),admission.PassiveAdmissionTests().deck('WARRIOR','CORE_CS2_122')],seed=71)
         self.g.step(Action('mulligan'));self.g.step(Action('mulligan'))
         self.p,self.q=self.g.players;self.p.mana=self.p.max_mana=10
     def test_heal_enemy_counts_for_healer(self):

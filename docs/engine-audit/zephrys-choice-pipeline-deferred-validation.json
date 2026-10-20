@@ -1,0 +1,38 @@
+{
+  "status": "staged_execution_unvalidated",
+  "candidate_fingerprint": "12c99e66271e054607040e1a3361cd17411c69971d381a5e7d1dc1dcaa90039c",
+  "root_id": "ULD_003",
+  "root_admitted": false,
+  "new_card_admissions": 0,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "implemented": [
+    "Canonical current-deck duplicate check",
+    "Complete explicit original Basic/Classic candidate pool validation",
+    "Detached public-state-only policy input: board, weapon, resources, hero information and zone counts",
+    "No hand identities, deck identities, Secret identities or live Game object passed to evaluator",
+    "Three distinct canonical offers validated against the complete declared source pool",
+    "Native hand reward insertion and automatic-choice flag"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Strict staged rule schema",
+    "Inventory reconciliation all eleven classes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact candidate exclusions and closed-source ranking/selection algorithm",
+    "All public-state fields needed for exact evaluation",
+    "Three-card offer ordering and timing",
+    "Choice/reward/duplicate conditions in actual matches"
+  ],
+  "sources": [
+    "https://hearthstone.blizzard.com/en-us/news/23620129/introducing-the-core-set-and-classic-format",
+    "https://outof.games/news/247-everything-you-need-to-know-about-the-perfect-card-zephrys-the-great/"
+  ],
+  "source_sha256": "9262b8cf7a76c40c15194835a741baada71147c033a959c345cc087895fc7c07"
+}

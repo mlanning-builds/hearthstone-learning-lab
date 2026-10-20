@@ -1,0 +1,38 @@
+{
+  "scope": "Staged Harth complete-contract hand replacement; no root registration",
+  "new_unvalidated_bodies": 0,
+  "new_ids": [],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 7,
+  "current_expansion_outcome_gap": 7,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "3aa78c58bed935fbd4cf866320ecb56876ac024ce68979db8a78d0cd77919d7f",
+  "historical_minions_written": 3185,
+  "historical_minions_remaining": 16,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Yogg-Saron%2C_Master_of_Fate",
+    "https://hearthstone.blizzard.com/en-us/cards/60445-yogg-saron-master-of-fate"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Harth root remains unregistered; exact thirteen ordered eight-card hands and class/rune selection weights must be sourced",
+    "Launch-version Demon Hunter physical definitions require complete behavior review",
+    "Compiled contract fields and all component effect definitions require structural validation before admission",
+    "Hand replacement versus discard/draw semantics, entry callbacks, capacity and once-per-game ownership",
+    "No default recipes or distribution invented; all eleven classes and all three Death Knight hands required",
+    "All staged behavior remains unvalidated"
+  ]
+}

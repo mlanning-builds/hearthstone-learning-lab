@@ -1,0 +1,42 @@
+{
+  "status": "staged_opening_integration_unvalidated",
+  "candidate_fingerprint": "639d8ff92b8d336b3aac3091d047a4543c7f1e9291c671c3a5c311ee48bf32f2",
+  "root_ids": [
+    "BOT_914",
+    "DAL_800"
+  ],
+  "root_admitted": false,
+  "new_card_admissions": 0,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "implemented": [
+    "Typed immutable sourced recipes and complete-contract declarations",
+    "Validate every outcome for both owners before consuming randomness",
+    "Full class coverage: two recipes per eleven classes for Wonderful Whizbang; five distinct EVIL classes for Zayle",
+    "Explicit positive selection weights; no built-in guessed distribution",
+    "Canonical copy limits, rune/class/type/metadata and recursive-provider checks",
+    "Replace single submitted source card before physical deck construction, opening effects and mulligan",
+    "Selected recipe provenance retained internally; not added to opponent observations",
+    "Existing seeded RNG sequence retained when no opening provider used"
+  ],
+  "checks": [
+    "AST all modules",
+    "Static constructor parameter and integration inspection",
+    "Inventory reconciliation all eleven classes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Complete exact pinned recipe lists and source-backed weights missing",
+    "Recipe-specific compiled physical setup, Fabled companions and other custom builder dependencies",
+    "Splendiferous Whizbang experimental decks and special setup remain tracked separately",
+    "Opening setup order, singleton predicates and class-power initialization need runtime review"
+  ],
+  "files_sha256": {
+    "historical_starting_decks.py": "af8636e00a5624746a753c69ff91b56185bfa857188b7c04f7ed39c07004c50f",
+    "game.py": "87919a55abe99029cce3419e43a147a534f8ff162747fead266e025e06803629"
+  }
+}

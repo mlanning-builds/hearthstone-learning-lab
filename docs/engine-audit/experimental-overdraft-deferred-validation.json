@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "SW_114"
+  ],
+  "candidate_fingerprint": "a6a0cd6936322ad9587af59484a5ee3e7233fe7adba75a3d6205fb8a6b588105",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Current/pending excess Overload and unlocked resource cap handling",
+    "Repeated and off-turn casts, Spell Damage and Tradeable"
+  ]
+}

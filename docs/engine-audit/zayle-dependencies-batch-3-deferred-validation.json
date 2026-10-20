@@ -1,0 +1,23 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_063"
+  ],
+  "candidate_fingerprint": "8b51e1106b2d480b89f4ee4dff3c7fa0c96aaedcf5760e80b19a21945ffdf26a",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Weapon attack trigger timing and cast-on-draw Bomb interactions"
+  ]
+}

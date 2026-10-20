@@ -1,0 +1,103 @@
+{
+  "scope": "Zilliax eight-module composition and shared intrinsic implementation; source admission incomplete",
+  "implementation_complete": false,
+  "root_registered": true,
+  "unvalidated": true,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "candidate_fingerprint": "aebd51a1532e275584e6a62e6252199de0764a3a7e59ac39e2221cb907efb2e4",
+  "written_minions": 3182,
+  "unwritten_minions": 19,
+  "checks": [
+    "AST parsing",
+    "Strict all-eight module Battlecry/Deathrattle/intrinsic schemas",
+    "Frozen module numeric stats and printed keywords",
+    "Static enumeration of all 28 distinct pairs",
+    "Static inventory reconciliation",
+    "AST parsing after setup changes",
+    "Deck dataclass field inspection",
+    "All nine frozen cosmetic identities inspected",
+    "AST parsing after original-deck copy changes",
+    "Frozen XML Zilliax generation/customization tags inspected"
+  ],
+  "metadata_hashes": {
+    "TOY_330t92": "4041cd834094fa584386179814462bd70e9336bd0313c1297ae8a68e2f1e723b",
+    "TOY_330t93": "ffdb6fca715995d8346f0ea6c76e4bb584bbfd50a877f28779edf170edfadc4b",
+    "TOY_330t94": "1ac122cc2095231d185bb34d82bb98566961ab9bd28bcd2037a77a8540b5ec7a",
+    "TOY_330t95": "154e61af035a45c200d93b7f34c23debee32d933c69896a9453d07b48f728bad",
+    "TOY_330t96": "50bc03802b171775d948524dabd3f504e2201dc406e23408ffcbf3a2522d4c39",
+    "TOY_330t97": "9cde34ff6d2808c3e31c59cb01c45f859ed26636e22292a7252ba6f41d0c596d",
+    "TOY_330t98": "a3538655c7c9c61dbaabcea0a6e33e0690a2723b12e0b2a1aeae3a796f7bf156",
+    "TOY_330t99": "29ff74fc633985889d6f85ba4f03d5252739d8b4fe1d293fd629d69bb796d32a"
+  },
+  "remaining": [
+    "Production admission, complete metadata pinning and explicit generation-ban handling",
+    "Complete cosmetic/constructed identity semantics and remaining original-deck consumers",
+    "All 28 pairs and copy/Silence/Reborn/Recursive shuffle interactions unvalidated; gameplay/regressions deferred"
+  ],
+  "explicit_deck_selection_written": true,
+  "physical_setup_written": true,
+  "starting_cost_predicates_written": [
+    "Genn",
+    "Baku",
+    "Chef deadline",
+    "Vyranoth original-deck cost total",
+    "Elise distinct starting costs"
+  ],
+  "cosmetic_identity_metadata": [
+    {
+      "id": "TOY_330",
+      "sha256": "902dd8c8db60578c0857299985714a0ddac8610d22b967b8aeea94ca10a3fd55"
+    },
+    {
+      "id": "TOY_330t5",
+      "sha256": "d32dbab58aa424b175a108905eb0e22c24aacd1c2ecafc827ede4aadf698cd8e"
+    },
+    {
+      "id": "TOY_330t6",
+      "sha256": "45cdb1506a0112740a5d5561ceae634c5b2316d5d5e9a5cd0f3718c68aa190ea"
+    },
+    {
+      "id": "TOY_330t7",
+      "sha256": "54fcfdb67c5e3ff2e7c2845debf43d2c526b8ac57d062311ad6d3f0e689c4136"
+    },
+    {
+      "id": "TOY_330t8",
+      "sha256": "8a2348ea1e279b63c6b4e9dd1a98df32b915299c4a96bb44249c4d89ee476111"
+    },
+    {
+      "id": "TOY_330t9",
+      "sha256": "89e1f152a136890759eb969655796ff9231240b4770d3c5ed1a2b1a10a277def"
+    },
+    {
+      "id": "TOY_330t10",
+      "sha256": "71e6a9f6e66e8f7e369380d371f1f11bf2671040845cb51c68d194d2d500268b"
+    },
+    {
+      "id": "TOY_330t11",
+      "sha256": "27cf7c3f2bd82e9338ef6daf0b661d7f7eb59a607676f49a23954371197b7925"
+    },
+    {
+      "id": "TOY_330t12",
+      "sha256": "1c381e7c40e72195d3c6789c27eb03bea6ff56e40351001cb777052d6cef974f"
+    }
+  ],
+  "starting_definition_copy_consumers_written": [
+    "JAIL_384 starting Legendary duplication",
+    "JAIL_430 Azalina copied opening deck"
+  ],
+  "generation_evidence": {
+    "source": "https://hearthstone.wiki.gg/wiki/Zilliax_Deluxe_3000",
+    "reported_rule": "Hard-coded card generation ban; no random module distribution should be invented",
+    "frozen_client_tags": {
+      "DONT_PICK_FROM_SUBSETS": "1",
+      "SIDEBOARD_TYPE": "2",
+      "MIN_SIDEBOARD_CARDS": "3",
+      "MAX_SIDEBOARD_CARDS": "3"
+    },
+    "scope_limit": "No historical candidate membership changed in this pass; complete eligibility policy remains independently uncertified"
+  },
+  "physical_module_implementation_written": true,
+  "validated": false,
+  "superseded_by": "implementation-pass-193-deferred-validation.json"
+}

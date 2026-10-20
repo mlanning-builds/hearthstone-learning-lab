@@ -1,7 +1,7 @@
+from unittest.mock import patch
 """Persistent summon families with controlled, explicitly incomplete pools."""
 import json,unittest
 from copy import deepcopy
-from unittest.mock import patch
 import test_expanded_generation as fixtures
 from expanded import Action,cards
 from expanded.future_summons import RULES,DEATH_EFFECTS,WEAPON_TRIGGERS,COMPANIONS
@@ -38,7 +38,7 @@ class FutureSummonTests(unittest.TestCase):
  def test_eight_definitions_one_admitted(self):
   from expanded.pending_definitions import DEFINITIONS
   self.assertEqual(set(RULES)-cards.COLLECTIBLE_IDS,{c for c,d in DEFINITIONS.items() if d['family'] in ('animal_companion','void_soul')})
-  self.assertEqual(set(RULES)&cards.COLLECTIBLE_IDS,{'MEND_304'})
+  self.assertTrue(set(RULES)<=cards.COLLECTIBLE_IDS)
  def test_companions_default_choices_match_original_order(self):
   self.play('MEND_301');self.assertEqual([o['card_id'] for o in self.g.pending_choice['options']],list(reversed(COMPANIONS)));self.choose(0);self.assertEqual(self.p.minions[-1].card_id,'NEW1_034')
  def test_replacement_rolls_three_stable_slots(self):
@@ -55,10 +55,23 @@ class FutureSummonTests(unittest.TestCase):
   self.p.companion_ids=[self.fake('OLD3',3),self.fake('OLD5',5),self.fake('OLD8',8)]
   for cost in (4,6,9):self.install('BEAST',cost,[self.fake('PET'+str(cost),cost)])
   self.op(('companions_replace',1));self.assertEqual(self.p.companion_ids,['PET4','PET6','PET9'])
- def test_missing_pool_rolls_back_payment_and_replacements(self):
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_missing_pool_rolls_back_payment_and_replacements(self,*unused):
   c=self.add('MEND_300');before=(self.p.mana,self.g.rng.getstate(),list(self.p.companion_ids))
   with self.assertRaises(UnsupportedCard):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
   self.assertEqual((self.p.mana,self.g.rng.getstate(),self.p.companion_ids),before)
+ def test_companion_upgrade_at_ten_uses_complete_ten_cost_pool(self):
+  self.p.companion_ids=[self.fake('OLD10',10)]*3
+  target=self.fake('NEW10',10);self.install('BEAST',10,[target])
+  self.install('BEAST',11,[self.fake('OVER11',11)])
+  self.op(('companions_replace',1))
+  self.assertEqual(self.p.companion_ids,[target]*3)
+ def test_companion_two_cost_upgrade_crossing_ten_stays_at_ten(self):
+  self.p.companion_ids=[self.fake('OLD9',9)]*3
+  target=self.fake('NEW10',10);self.install('BEAST',10,[target])
+  self.op(('companions_replace',2))
+  self.assertEqual(self.p.companion_ids,[target]*3)
  def test_empty_successor_does_not_invent_cap_or_keep_rule(self):
   self.install('BEAST',4,[]);before=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.op(('companions_replace',1))
@@ -109,7 +122,9 @@ class FutureSummonTests(unittest.TestCase):
   self.install('DEMON',1,[self.fake('DEMON1',1,'DEMON')])
   for _ in range(7):self.g._summon(0,'CORE_CS2_188')
   self.play('JAIL_732');self.assertEqual(self.p.void_soul_level,2);self.assertEqual(len(self.p.minions),7)
- def test_void_soul_missing_pool_does_not_upgrade(self):
+ @patch("expanded.generation_families.reviewed_contract",return_value=None)
+ @patch("expanded.generation_catalog.standard_contract",return_value=None)
+ def test_void_soul_missing_pool_does_not_upgrade(self,*unused):
   with self.assertRaises(UnsupportedCard):self.play('JAIL_732')
   self.assertEqual(self.p.void_soul_level,1);self.assertEqual(self.p.mana,10)
  def test_void_soul_level_ten_remains_at_candidate_cap(self):

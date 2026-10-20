@@ -1,5 +1,6 @@
 """Physical recruits followed by one friendly combat, through shared checkpoints."""
 import copy
+from expanded.identities import canonical_identity
 import unittest
 from unittest.mock import patch
 from expanded import Game,Action,random_deck
@@ -57,7 +58,7 @@ class HerennTests(unittest.TestCase):
 
     def test_recruits_preserve_deck_buffs_and_physical_origin(self):
         self.p.deck=[self.card('CORE_LOOT_413',health=4),self.card('CORE_LOOT_413',health=4)]
-        for c in self.p.deck:c._starting_owner=0;c._starting_identity=self.g.cards[c.card_id]['dbfId']
+        for c in self.p.deck:c._starting_owner=0;c._starting_identity=canonical_identity(self.g.cards[c.card_id],self.g.cards)
         self.play();ms=self.recruits()
         self.assertEqual([m.health for m in ms],[5,5])
         self.g._bounce(ms[0]);self.assertTrue(self.g._started_in_deck(self.p.hand[0],0))

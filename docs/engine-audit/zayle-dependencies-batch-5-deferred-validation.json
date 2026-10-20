@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "YOD_023"
+  ],
+  "candidate_fingerprint": "822711df1a39f4794b0242bbd81e6253d370f0ecd7d88fe74da74d4f68ee28c7",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Pinned category selection and duplicate cross-category offers",
+    "Class-legal generation and Discover hand delivery"
+  ]
+}

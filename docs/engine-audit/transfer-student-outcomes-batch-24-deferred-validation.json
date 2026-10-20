@@ -1,0 +1,56 @@
+{
+  "scope": "Full-pool transformations, hand/deck copies, Demon Infuse and granted Deathrattles",
+  "new_unvalidated_bodies": 9,
+  "new_ids": [
+    "MAW_012",
+    "MAW_012t",
+    "MIS_701",
+    "NX2_008",
+    "REV_240",
+    "REV_924",
+    "TSC_209",
+    "TTN_485",
+    "WW_811"
+  ],
+  "new_collectible_outcomes": 8,
+  "new_required_generated_spell_forms": 1,
+  "prior_expansion_outcome_gap": 98,
+  "current_expansion_outcome_gap": 90,
+  "closed_outcome_ids": [
+    "MAW_012",
+    "MIS_701",
+    "NX2_008",
+    "REV_240",
+    "REV_924",
+    "TSC_209",
+    "TTN_485",
+    "WW_811"
+  ],
+  "candidate_fingerprint": "f64d2bd6e7e5d19d138cd0d3d25f36d0e60e583d6c0eb6f6fd12576f3b97f9da",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Full historical Legendary outcome and recursive behavior closure remains explicit and unfinished",
+    "Shared evolve cost bounds, zero-cost no-op, Discover class restrictions and hand cost retention require fidelity review",
+    "Whirlpool canonical identity scope, Dormant protection and death/zone destruction order",
+    "Tome Tampering copied physical state, cost setting, deck insertion listeners and subsequent discard ordering",
+    "Demon Infuse death-type filtering, resurrection instance weighting and summon checkpoints",
+    "Granted physical Deathrattles including copy/silence/reset, hand mechanics and summon/recruit entry",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

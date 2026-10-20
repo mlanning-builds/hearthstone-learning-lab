@@ -23,9 +23,16 @@ class ShuffleHistoryTests(unittest.TestCase):
         self.assertEqual(set(history[0]),{'turn','actor','destination','count','kind'})
         history[0]['count']=99;self.assertEqual(p.shuffle_history[0]['count'],1)
     def test_batch_count_is_one_event(self):
-        self.g._record_deck_insertion(0,0,10,'shuffle')
+        self.g._record_deck_insertion(0,0,10,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(10)))
         self.assertEqual(len(self.g.players[0].shuffle_history),1)
         self.assertEqual(self.g.players[0].shuffle_history[0]['count'],10)
     def test_invalid_event_rejected_without_history_mutation(self):
-        with self.assertRaises(ValueError):self.g._record_deck_insertion(0,0,0,'shuffle')
+        with self.assertRaises(ValueError):self.g._record_deck_insertion(0,0,0,'shuffle',cards=tuple(Card(self.g._new_id(),'CORE_CS2_029') for _ in range(0)))
         self.assertEqual(self.g.players[0].shuffle_history,[])
+
+    def test_invalid_physical_payload_leaves_history_unchanged(self):
+        for payload in ((), ('CORE_CS2_029',)):
+            with self.subTest(payload=payload):
+                with self.assertRaises(ValueError):
+                    self.g._record_deck_insertion(0,0,1,'shuffle',cards=payload)
+                self.assertEqual(self.g.players[0].shuffle_history,[])

@@ -1,0 +1,71 @@
+{
+  "scope": "Four Forge spell pairs and generated enchantment/Deathrattle spells",
+  "new_unvalidated_bodies": 17,
+  "new_ids": [
+    "ETC_305",
+    "ETC_417",
+    "NX2_016",
+    "NX2_016t",
+    "RLK_909",
+    "RLK_910",
+    "TOY_527",
+    "TOY_805",
+    "TTN_753",
+    "TTN_753t",
+    "TTN_865",
+    "TTN_865t",
+    "TTN_951",
+    "TTN_951t",
+    "YOG_502",
+    "YOG_502t",
+    "YOG_505"
+  ],
+  "new_collectible_spell_outcomes": 12,
+  "new_forged_spell_bodies": 4,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 292,
+  "current_expansion_outcome_gap": 280,
+  "closed_outcome_ids": [
+    "ETC_305",
+    "ETC_417",
+    "NX2_016",
+    "RLK_909",
+    "RLK_910",
+    "TOY_527",
+    "TOY_805",
+    "TTN_753",
+    "TTN_865",
+    "TTN_951",
+    "YOG_502",
+    "YOG_505"
+  ],
+  "forge_pairs": {
+    "TTN_753": "TTN_753t",
+    "TTN_865": "TTN_865t",
+    "TTN_951": "TTN_951t",
+    "YOG_502": "YOG_502t"
+  },
+  "candidate_fingerprint": "655692825a73564fdd273d48a944a2a85d47472f1edc04b990fa814fc1074ed1",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Physical Forge eligibility, cost/UID retention and source copying",
+    "Draw-match snapshot, burned filtered draws and Choose Both retention",
+    "Armor damage, Spell Damage and post-damage splitting",
+    "Deck cost/stat buff layering and negative Attack",
+    "Attached Deathrattle ownership, Silence, death multipliers and recursive dormant copies",
+    "Full recursive generation closure and all new behavior"
+  ]
+}

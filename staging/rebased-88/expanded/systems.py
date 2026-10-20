@@ -7,9 +7,7 @@ from collections import deque
 from copy import deepcopy
 from dataclasses import asdict
 from engine.game import Card, Action
-from .selectors import TRIBES, has_tribe, has_school
-from .pools import deck_choice_options
-from .discover_offer import capture_offer
+from .selectors import TRIBES, SCHOOLS, has_tribe, has_school
 from .locations import Location
 from .permanents import Permanent
 from engine.cards import UnsupportedCard
@@ -19,21 +17,47 @@ from .cards import (AURAS, CONDITIONAL_ATTACK, TRIGGERS, WEAPON_TRIGGERS,
 
 class Systems:
     def _discount_matches(self,effect,card):
-        d=self.cards[card.card_id]; wanted=effect['selector']
+        d=self._card_data(card); wanted=effect['selector']
+        if wanted.startswith('HISTORICAL_PROTOSS_'):
+            from .historical_copy_batches import PROTOSS_CARDS,PROTOSS_MINIONS,PROTOSS_SPELLS
+            members={'HISTORICAL_PROTOSS_CARD':PROTOSS_CARDS,'HISTORICAL_PROTOSS_MINION':PROTOSS_MINIONS,'HISTORICAL_PROTOSS_SPELL':PROTOSS_SPELLS}
+            return card.card_id in members[wanted]
         if wanted=='RAFAAM':
             from .rafaam import FAMILY
             return card.card_id in FAMILY
+        if wanted=='HISTORICAL_FOREIGN':
+            from .selectors import has_class
+            return not has_class(d,self.players[effect['owner']].hero_class) and not has_class(d,'NEUTRAL')
         if wanted=='TEMPORARY':return self._is_temporary(card)
         return (wanted=='ALL' or wanted==d['type'] or
                 (wanted in TRIBES and has_tribe(d,wanted)) or
+                (wanted in SCHOOLS and has_school(d,wanted)) or
                 wanted in d.get('mechanics',[]))
 
     def _active(self, cid, owner):
-        return any(m.card_id == cid and not m.silenced and m.health > 0
+        from .forge_intrinsics import values
+        property_name={'CATA_898':'enemy_taunt','TIME_617':'suppress_draw'}.get(cid)
+        return any(not m.silenced and m.health>0 and
+                   (m.card_id==cid or property_name is not None and any(values(m,property_name)))
                    for m in self.players[owner].minions)
+
+    def _hero_stealth(self,owner):
+        from .historical_valeera import stealth
+        return stealth(self,owner)
 
     def _hero_immune(self,owner):
         from .cards import HERO_IMMUNE_AURAS
+        attacking=any(w['source']==self.hero_id(owner) for w in getattr(self,'_attack_windows',()))
+        if attacking and self._active('SCH_538',owner):return True
+        if attacking and self.players[owner].weapon and self.players[owner].weapon['card_id']=='DS1_188':return True
+        if attacking and self.players[owner].weapon and self.players[owner].weapon['card_id'] in ('ONY_005tb1','VAC_464t14'):return True
+        if attacking and self.current==owner and self.players[owner].weapon and 'IMMUNE_WHILE_ATTACKING' in self.players[owner].weapon.get('historical_keywords',()):return True
+        if attacking and self.current==owner and self.players[owner].weapon and self.players[owner].weapon.get('historical_paralytic',False):return True
+        if getattr(self.players[owner],'historical_lumia_immune_turn',None)==self.turn:return True
+        if getattr(self.players[owner],'historical_swing_immune_turn',None)==self.turn:return True
+        if getattr(self.players[owner],'historical_ice_block_turn',None)==self.turn:return True
+        if getattr(self.players[owner],'historical_evasion_immune_turn',None)==self.turn:return True
+        if self.current==owner and (self._active('ETC_081',owner) or self._active('KAR_712',owner)):return True
         return bool(self.players[owner].hero_immune_expiry_players) or any(self._active(cid,owner) for cid in HERO_IMMUNE_AURAS)
 
     def _effective_keywords(self, minion):
@@ -44,53 +68,174 @@ class Systems:
         """
         if minion.dormant:return set()
         keywords=set(minion.keywords)
+        from .historical_timed_spells import deputization_layers
+        if deputization_layers(self,minion):keywords.add('LIFESTEAL')
+        if minion.card_id=='AT_109' and not minion.silenced and minion.rule_state.get('historical_inspire_attack_turn')==self.turn:
+            keywords.discard('CANT_ATTACK')
+        from .historical_passive_stats import attack_keywords
+        keywords.update(attack_keywords(self,minion))
+        if not minion.silenced and minion.card_id in ('TID_712t','TID_712t2','GDB_230','TSC_218','TID_080') and any(w['source']==minion.uid for w in getattr(self,'_attack_windows',[])):
+            keywords.add('IMMUNE')
         if hasattr(minion,'_muradin_hammer'):keywords.update(('WINDFURY','DEATHRATTLE'))
         if minion.card_id=='TIME_619t':
             from .fabled_effects import BOONS
             keywords.update(BOONS[cid] for cid in self.players[minion.owner].bwonsamdi_boons)
         if getattr(minion,'_control_no_attack_until',-1)>=self.turn:keywords.add('CANT_ATTACK')
-        if self.players[minion.owner].dragons_have_rush and has_tribe(self.cards[minion.card_id],'DRAGON'):keywords.add('RUSH')
+        if getattr(self.players[minion.owner],'historical_jaina_elementals_lifesteal',False) and has_tribe(self._card_data(minion),'ELEMENTAL'):keywords.add('LIFESTEAL')
+        if getattr(self.players[minion.owner],'historical_boom_mechs_rush',False) and has_tribe(self._card_data(minion),'MECHANICAL'):keywords.add('RUSH')
+        if self.players[minion.owner].dragons_have_rush and has_tribe(self._card_data(minion),'DRAGON'):keywords.add('RUSH')
+        if not minion.silenced:
+            if minion.card_id=='GIL_685' and minion.attack>=3:keywords.update(('TAUNT','LIFESTEAL'))
+            if minion.card_id=='WC_015' and not any(m is not minion and m.health>0 for m in self.players[minion.owner].minions):keywords.add('POISONOUS')
+            if minion.card_id=='BT_713t':keywords.add('STEALTH')
+            if minion.card_id=='BT_197t' and self.current!=minion.owner:keywords.add('ELUSIVE')
         if minion.attached_death_effects:keywords.add('DEATHRATTLE')
+        if minion.rule_state.get('historical_spell_damage',0):keywords.add('SPELLPOWER')
+        if minion.rule_state.get('historical_fire_spell_damage',0):keywords.add('SPELLPOWER')
         keywords.update(e['keyword'] for e in minion.temporary_keywords)
+        from .historical_passive_stats import continuous_keywords
+        keywords.update(continuous_keywords(self,minion,keywords))
+        from .historical_aura_finish_batch import keywords as aura_finish_keywords
+        keywords.update(aura_finish_keywords(self,minion))
         if ('IMMUNE_WHILE_ATTACKING' in keywords and
                 any(window['source']==minion.uid for window in getattr(self,'_attack_windows',[]))):
             keywords.add('IMMUNE')
         from .cards import FRIENDLY_KEYWORD_AURAS
         if minion in self.players[minion.owner].minions:
-            for cid,keyword in FRIENDLY_KEYWORD_AURAS.items():
-                if self._active(cid,minion.owner):keywords.add(keyword)
+            for cid,rule in FRIENDLY_KEYWORD_AURAS.items():
+                if isinstance(rule,tuple):
+                    group,keyword=rule
+                    if group!='others':raise UnsupportedCard('Unknown friendly keyword aura scope: '+str(group))
+                    active=any(source is not minion and source.card_id==cid and not source.silenced and source.health>0
+                               for source in self.players[minion.owner].minions)
+                else:
+                    keyword=rule;active=self._active(cid,minion.owner)
+                if active:keywords.add(keyword)
         if (not minion.silenced and minion.card_id=='CATA_613'
                 and not any(m is not minion for m in self.players[minion.owner].minions)):
             keywords.add('IMMUNE')
         if self._active('CATA_898',1-minion.owner):keywords.add('TAUNT')
         # Pinned Migrating Elekk text has intrinsic Taunt but omits its tag.
         if minion.card_id=='MEND_303' and not minion.silenced:keywords.add('TAUNT')
+        if minion.card_id=='TSC_026' and not minion.silenced and any(m.card_id=='TSC_026t' and m.health>0 for m in self.players[minion.owner].all_minions):keywords.add('IMMUNE')
+        if minion.rule_state.get('historical_opponent_elusive') and minion.owner!=self.current:keywords.add('ELUSIVE')
+        from .forge_intrinsics import values as intrinsic_values
+        if has_tribe(self._card_data(minion),'BEAST') and any(
+                source.health>0 and intrinsic_values(source,'beast_charge')
+                for source in self.players[minion.owner].minions):
+            keywords.add('CHARGE')
         return keywords
 
     def _event_listeners(self):
-        return [(m, TRIGGERS[m.card_id]) for m in sorted([m for p in self.players for m in p.all_minions],key=lambda m:m.uid)
+        base=[(m, TRIGGERS[m.card_id]) for m in sorted([m for p in self.players for m in p.all_minions],key=lambda m:m.uid)
                      if not m.silenced and m.card_id in TRIGGERS and
                      (not m.dormant or str(TRIGGERS[m.card_id][0]).startswith('dormant_'))]
+        from .historical_sleep_batches import listeners as historical_sleep_listeners
+        base.extend(historical_sleep_listeners(self))
+        from .historical_starships import listeners as starship_listeners
+        base.extend(starship_listeners(self))
+        from .forge_intrinsics import listeners
+        from .historical_keyword_batches import listeners as keyword_listeners
+        return sorted(base+self._magnetic_listeners()+listeners(self)+keyword_listeners(self),key=lambda item:item[0].uid)
 
     def _queue_event(self, kind, **data):
+        from .historical_obligation_spells import event as obligation_event
+        obligation_event(self,kind,data)
+        from .historical_stormwind_questline_finish import event as stormwind_event
+        stormwind_event(self,kind,data)
+        from .historical_condition_spell_batch import event as condition_batch_event
+        condition_batch_event(self,kind,data)
+        from .historical_sidequest_spell_batch import event as sidequest_batch_event
+        sidequest_batch_event(self,kind,data)
+        from .historical_spellstone_finish import event as stone_finish_event
+        stone_finish_event(self,kind,data)
+        from .historical_spell_archive_batch import event as archive_event
+        archive_event(self,kind,data)
+        from .historical_hand_batches import held_event
+        from .historical_infuse_batches import held_death
+        held_death(self,kind,data)
+        held_event(self,kind,data)
         self._quest_family_event(kind,data)
+        from .historical_nature_pool import event as nature_event
+        nature_event(self,kind,data)
+        from .historical_mage_quests import event as mage_quest_event
+        mage_quest_event(self,kind,data)
         self._evolving_event(kind,data)
         self._imbue_consumer_event(kind,data)
         self._b60_event(kind,data)
+        from .historical_keyword_batches import tag_event
+        tag_event(self,kind,data)
+        from .historical_harvester import tag_event as tag_harvester_event
+        tag_harvester_event(self,kind,data)
         listeners=self._event_listeners()
         self._rule_events.append((kind, data, listeners))
+        from .historical_copy_batches import pirate_zone_event
+        pirate_zone_event(self,kind,data)
+        from .historical_copy_batches import persistent_spell_event
+        persistent_spell_event(self,kind,data)
+        from .historical_dark_heroes import event as dark_hero_event
+        dark_hero_event(self,kind,data)
+        from .historical_frozen_heroes import event as frozen_hero_event
+        frozen_hero_event(self,kind,data)
+        from .historical_masquerade import event as masquerade_event
+        masquerade_event(self,kind,data)
         self._autocast_event(kind,data)
         self._obligation_event(kind,data)
+        from .historical_growing_weapons import event as growing_weapon_event
+        growing_weapon_event(self,kind,data)
+        from .historical_lingering_spells import event as lingering_spell_event
+        lingering_spell_event(self,kind,data)
+        from .historical_secret_archive import event as archive_secret_event
+        archive_secret_event(self,kind,data)
         self._trace_phase("event_queued", event_kind=kind, listener_uids=[m.uid for m,_ in listeners])
+
+    def _record_hero_stat_gain(self,owner,kind,amount):
+        if amount<=0:return
+        player=self.players[owner];state=getattr(player,'historical_hero_stat_gains',{})
+        if state.get('turn')!=self.turn:state=dict(turn=self.turn,attack=0,armor=0)
+        state[kind]+=amount;player.historical_hero_stat_gains=state
+        if kind=='attack':self._queue_event('historical_hero_attack_gained',owner=owner,amount=amount)
+
+    def _gain_hero_attack(self,owner,amount):
+        before=self._hero_attack(owner)
+        self.players[owner].temporary_attack+=amount
+        self._record_hero_stat_gain(owner,'attack',self._hero_attack(owner)-before)
 
     def _gain_armor(self,owner,amount):
         if amount<=0:return 0
+        amount+=2*sum(m.card_id=='ETC_355' and not m.silenced and not m.dormant and m.health>0 for m in self.players[owner].minions)
+        previous_attack=self._hero_attack(owner)
         self.players[owner].armor+=amount
+        self._record_hero_stat_gain(owner,'attack',self._hero_attack(owner)-previous_attack)
+        self._record_hero_stat_gain(owner,'armor',amount)
+        player=self.players[owner]
+        player.historical_armor_gained=getattr(player,'historical_armor_gained',0)+amount
+        from .historical_held_upgrades import progress as held_spellstone_progress
+        held_spellstone_progress(self,owner,'jasper',amount)
+        player.historical_armor_changed_turn=self.turn
+        self._gain_hero_attack(owner,amount*getattr(player,'historical_odyn',0))
         self._log('armor',player=owner,amount=amount)
         self._queue_event('armor_gained',owner=owner,amount=amount)
         return amount
 
     def _trigger_matches(self, wanted, kind, data, m):
+        from .historical_starships import matches as starship_matches
+        starship_result=starship_matches(self,wanted,kind,data,m)
+        if starship_result is not None:return starship_result
+        from .historical_upgrade_batches import matches as historical_upgrade_matches
+        upgrade_match=historical_upgrade_matches(self,wanted,kind,data,m)
+        if upgrade_match is not None:return upgrade_match
+        from .historical_copy_batches import matches as historical_copy_matches
+        copy_match=historical_copy_matches(self,wanted,kind,data,m)
+        if copy_match is not None:return copy_match
+        from .historical_event_batches import matches as historical_event_matches
+        event_result=historical_event_matches(self,wanted,kind,data,m)
+        if event_result is not None:return event_result
+        from .historical_keyword_batches import matches as keyword_matches
+        result=keyword_matches(self,wanted,kind,data,m)
+        if result is not None:return result
+        magnetic=self._magnetic_trigger_matches(wanted,kind,data,m)
+        if magnetic is not None:return magnetic
         if wanted=='after_owner_card_played':
             return (kind in ('minion_played','spell_cast','dormant_other_card_played')
                     and data['owner']==m.owner and data.get('source')!=m.uid
@@ -109,6 +254,9 @@ class Systems:
         if isinstance(wanted,str):
             result=self._b60_trigger_matches(wanted,kind,data,m)
             if result is not None:return result
+        if isinstance(wanted,tuple) and wanted[0]=='friendly_tribe_attacked':
+            attacker=self._find(data.get('source',0)) if kind=='minion_attack' else None
+            return attacker is not None and data['owner']==m.owner and has_tribe(self._card_data(attacker),wanted[1])
         if isinstance(wanted,tuple) and wanted[0]=='summon':
             return self._summon_trigger_matches(wanted,kind,data,m)
         if wanted=='self_shield_lost':return kind=='shield_lost' and data['target']==m.uid and m.health>0
@@ -122,11 +270,11 @@ class Systems:
             return (kind=='minion_played' and data['owner']==m.owner and
                     data.get('cost')==wanted[1] and data.get('source')!=m.uid and m.health>0)
         if isinstance(wanted,tuple) and len(wanted)==2 and wanted[0]=='minion_mechanic_played':
-            return kind=='minion_played' and data['owner']==m.owner and wanted[1] in self.cards[data['card_id']].get('mechanics',[])
+            return kind=='minion_played' and data['owner']==m.owner and wanted[1] in self._event_card_data(data).get('mechanics',[])
         if isinstance(wanted,tuple) and len(wanted)==2 and wanted[0]=='spell_school_played':
-            return kind=='spell_played' and data['owner']==m.owner and has_school(self.cards[data['card_id']],wanted[1])
+            return kind=='spell_played' and data['owner']==m.owner and has_school(self._event_card_data(data),wanted[1])
         if isinstance(wanted,tuple) and len(wanted)==2 and wanted[0]=='spell_school_cast':
-            return kind=='spell_cast' and data['owner']==m.owner and has_school(self.cards[data['card_id']],wanted[1])
+            return kind=='spell_cast' and data['owner']==m.owner and has_school(self._event_card_data(data),wanted[1])
         return (
             (wanted=='any_spell_played' and kind=='spell_played') or
             (wanted=='spell_played' and kind=='spell_played' and data['owner']==m.owner) or
@@ -151,7 +299,7 @@ class Systems:
              data['owner']==m.owner and data['source']!=m.uid and data.get('previously_played',False)) or
             (wanted == 'elemental_played' and kind == 'minion_played' and
              data['owner'] == m.owner and data['source'] != m.uid and
-             has_tribe(self.cards[data['card_id']], 'ELEMENTAL')))
+             has_tribe(self._event_card_data(data), 'ELEMENTAL')))
 
     def _event_frame(self, event, allow_choices):
         if event[0]=='captured_effects':
@@ -188,14 +336,16 @@ class Systems:
         while frame['listener'] < len(frame['listeners']):
             m, (wanted, operations) = frame['listeners'][frame['listener']]
             frame['listener'] += 1
-            if m not in self.players[m.owner].board or m.silenced:
+            if m not in self.players[m.owner].board or (m.silenced and not (isinstance(wanted,tuple) and wanted[0]=='magnetic_attack')):
                 continue
             if not self._trigger_matches(wanted, frame['kind'], frame['data'], m):
                 continue
             key = (m.uid, wanted)
             if any(f['key'] == key for f in self._event_frames) and not (
                     (m.card_id=='DINO_400' and wanted=='friendly_armor_gained') or
-                    (m.card_id=='EDR_471' and wanted=='damaged_self')):
+                    (m.card_id=='EDR_471' and wanted=='damaged_self') or
+                    (m.card_id=='REV_377' and wanted==('historical_copy_event','courier')) or
+                    (m.card_id=='TOY_511' and wanted==('summon','friendly','PIRATE'))):
                 raise UnsupportedCard('Re-entrant trigger compensation is not supported')
             frame.update(operations=tuple(operations), operation=0, key=key,
                          context=dict(owner=m.owner,source=m,target=0,bonus=0,
@@ -235,10 +385,14 @@ class Systems:
                 self.pending_frame = None
                 self.pending_play = None
 
-    @staticmethod
-    def _set_minion_attack(m,amount):
+    def _set_minion_attack(self,m,amount):
+        from .historical_saidan import gain as saidan_gain
+        before=m.attack+m.attack_deficit
+        if m.health>0 and any(m is value for value in self.players[m.owner].minions):amount=before+saidan_gain(m,amount-before)
         m.attack=max(0,amount)
         m.attack_deficit=min(0,amount)
+        if amount>before and m.health>0 and m in self.players[m.owner].minions:
+            self._queue_event('historical_minion_attack_gained',owner=m.owner,source=m.uid,amount=amount-before)
 
     def _adjust_minion_attack(self,m,amount):
         self._set_minion_attack(m,m.attack+m.attack_deficit+amount)
@@ -246,17 +400,47 @@ class Systems:
     def _buff(self,m,attack,health):
         if self._fire_immune_target(m.uid):return
         if m.dormant:return
+        from .historical_saidan import gain as saidan_gain
+        health=saidan_gain(m,health)
         self._adjust_minion_attack(m,attack)
         m.health+=health
         m.max_health+=health
         self._colossal_stat_checkpoint()
+        for player in self.players:
+            for minion in player.minions:
+                if minion.rule_state.get('historical_permanent_frozen') and minion.frozen_until<0 and not self._active('DRG_068',minion.owner):self._freeze(minion.uid)
         self._champion_checkpoint()
 
     def _refresh_auras(self):
+        self._observe_control_changes()
+        from .historical_student_spells import refresh_hand_ranks
+        refresh_hand_ranks(self)
+        from .historical_starships import refresh_terran
+        refresh_terran(self)
+        from .historical_copy_batches import refresh_fortunes
+        refresh_fortunes(self)
+        from .historical_copy_batches import check_star_collisions
+        check_star_collisions(self)
         self._recover_overdraw()
+        from .historical_utility_spells import forge_quel_delar
+        for owner in (0,1):forge_quel_delar(self,owner)
         board = [m for p in self.players for m in p.all_minions]
         desired = {m.uid: [0, 0] for m in board}
         for owner, p in enumerate(self.players):
+            from .historical_tribal_batches import aura as tribal_aura
+            for target in p.minions:
+                a,h=tribal_aura(self,target);desired[target.uid][0]+=a;desired[target.uid][1]+=h
+                from .historical_aura_finish_batch import attack_bonus as aura_finish_attack_bonus
+                desired[target.uid][0]+=aura_finish_attack_bonus(self,target)
+                from .historical_timed_spells import deputization_layers
+                desired[target.uid][0]+=2*deputization_layers(self,target)
+                if target.card_id in ('ONY_005ta11','VAC_464t11') and not target.silenced:
+                    count=len(getattr(p,'_historical_cast_records',()))
+                    desired[target.uid][0]+=count;desired[target.uid][1]+=count
+            from .historical_copy_batches import ZERG_IDS
+            for target in p.minions:
+                if target.card_id in ZERG_IDS:
+                    desired[target.uid][0]+=getattr(p,'historical_zerg_attack_bonus',0)
             for i, source in enumerate(p.board):
                 if isinstance(source,(Location,Permanent)) or source.dormant: continue
                 if source.health <= 0 or source.silenced:
@@ -265,6 +449,29 @@ class Systems:
                     bonus=2*len(p.discard_history)
                     desired[source.uid][0]+=bonus
                     desired[source.uid][1]+=bonus
+                historical_attack,historical_health=self._historical_passive_aura_values(source)
+                desired[source.uid][0]+=historical_attack
+                desired[source.uid][1]+=historical_health
+                from .forge_intrinsics import values as intrinsic_values
+                friendly_attack=sum(intrinsic_values(source,'friendly_attack'))
+                if friendly_attack:
+                    for other in p.minions:
+                        if other is not source and other.health>0:desired[other.uid][0]+=friendly_attack
+                beast_attack=sum(intrinsic_values(source,'beast_attack'))
+                if beast_attack:
+                    for other in p.minions:
+                        if other is not source and other.health>0 and has_tribe(self._card_data(other),'BEAST'):
+                            desired[other.uid][0]+=beast_attack
+                adjacent_attack=sum(intrinsic_values(source,'adjacent_attack'))
+                if adjacent_attack:
+                    for j,m in enumerate(p.board):
+                        if (abs(i-j)==1 and not isinstance(m,(Location,Permanent))
+                                and not m.dormant and m.health>0):
+                            desired[m.uid][0]+=adjacent_attack
+                from .historical_passive_stats import aura_bonuses
+                if source.card_id in ('AT_075','ETC_337','ULD_173','ULD_179','ETC_107'):
+                    for target,extra_attack,extra_health in aura_bonuses(self,source):
+                        desired[target.uid][0]+=extra_attack;desired[target.uid][1]+=extra_health
                 aura = AURAS.get(source.card_id)
                 if source.card_id in ('CATA_565t','CATA_153t','CATA_153t1'):aura=('adjacent',self._herald_value(source),0)
                 if aura:
@@ -274,7 +481,7 @@ class Systems:
                         matches = m is not source and (
                             group == 'others' or
                             (group == 'adjacent' and abs(i-j) == 1) or
-                            (group in TRIBES and has_tribe(self.cards[m.card_id],group)))
+                            (group in TRIBES and has_tribe(self._card_data(m),group)))
                         if matches:
                             desired[m.uid][0] += attack
                             desired[m.uid][1] += health
@@ -286,31 +493,76 @@ class Systems:
                         (condition == 'large_deck' and len(p.deck)>=25) or
                         (condition == 'weapon' and p.weapon is not None)):
                         desired[source.uid][0] += amount
+        for owner,p in enumerate(self.players):
+            bonus=self._historic_crabatoa_aura(owner)
+            for m in p.minions:
+                if m.card_id in ('TSC_937t','TSC_937t3') and not m.dormant:desired[m.uid][0]+=bonus
+            if p.weapon:
+                from .historical_arsenal_batches import weapon_aura
+                weapon_bonus=(bonus if p.weapon['card_id']=='TSC_937t2' else 0)+weapon_aura(self,owner)
+                previous_attack=self._hero_attack(owner)
+                p.weapon['attack']+=weapon_bonus-p.weapon.get('aura_attack',0)
+                p.weapon['aura_attack']=weapon_bonus
+                self._record_hero_stat_gain(owner,'attack',self._hero_attack(owner)-previous_attack)
+        from .historical_final_spell_roots import celestial_bonuses
+        celestial_bonuses(self,desired)
         for m in board:
             if not m.dormant and hasattr(m,'_muradin_hammer'):
-                desired[m.uid][0]+=m._muradin_hammer['attack']
-                desired[m.uid][1]+=m._muradin_hammer['durability']
+                for held in [m._muradin_hammer]+list(getattr(m,'_muradin_extra_hammers',())):
+                    desired[m.uid][0]+=held['attack']
+                    desired[m.uid][1]+=held['durability']
             attack, health = desired[m.uid]
             self._adjust_minion_attack(m,attack-m.aura_attack)
-            delta = health-m.aura_health
+            from .historical_saidan import gain as saidan_gain
+            delta = saidan_gain(m,health-m.aura_health)
             m.max_health += delta
-            if delta > 0 and m.health > 0:
+            if delta > 0 and (m.health > 0 or getattr(m,'_historical_zero_health_entry',False)):
                 m.health += delta
             elif delta < 0:
                 m.health = min(m.health, m.max_health)
             m.aura_attack, m.aura_health = attack, health
+            if m.card_id=='EX1_335' and not m.silenced and not m.dormant:self._set_minion_attack(m,max(0,m.health))
         self._colossal_stat_checkpoint()
+        for player in self.players:
+            for minion in player.minions:
+                if minion.rule_state.get('historical_permanent_frozen') and minion.frozen_until<0 and not self._active('DRG_068',minion.owner):self._freeze(minion.uid)
 
-    def _damage(self, target, amount, poisonous=False, *, damage_source=..., damage_owner=None, damage_cause=None):
+        # Track continuous hero Attack separately from weapon activation;
+        # simply entering a turn with a weapon does not count as a gain.
+        for owner,player in enumerate(self.players):
+            weapon_attack=(player.armor if player.weapon['card_id']=='CORE_LOOT_044' else player.weapon['attack']) if player.weapon else 0
+            aura=self._hero_attack(owner)-player.temporary_attack-weapon_attack
+            previous=getattr(player,'historical_hero_aura_attack',0)
+            player.historical_hero_aura_attack=aura
+            self._record_hero_stat_gain(owner,'attack',aura-previous)
+
+        from .historical_tribal_batches import watch_hands
+        watch_hands(self)
+
+    def _damage(self, target, amount, poisonous=False, *, damage_source=..., damage_owner=None, damage_cause=None, _historical_redirected=frozenset(), _historical_source_modified=False):
         from .cards import INCOMING_DAMAGE_MODIFIERS
         source=getattr(self,'_damage_origin',None) if damage_source is ... else damage_source
         if damage_owner is None and damage_source is not ... and source is not None:damage_owner=source.owner
         if damage_owner is not None and (type(damage_owner) is not int or damage_owner not in (0,1)):
             raise ValueError('Invalid damage controller')
+        context=getattr(self,'_active_effect_context',{})
+        blocked_uid=context.get('historical_shudderblock_uid')
+        if (blocked_uid is not None and not context.get('spell') and
+                not any(window['source']==blocked_uid for window in getattr(self,'_attack_windows',())) and
+                getattr(source,'uid',None)==blocked_uid and target==self.hero_id(1-context['owner'])):
+            return 0
         if amount<=0:return 0
+        from .historical_damage_modifiers import incoming
+        if not _historical_source_modified:amount=incoming(self,target,amount,source)
         if self._replace_plague_damage(target,amount,source):return 0
         if target>0 and self._permanent_entity(target) is not None:return 0
         if target>0 and (self._dormant_entity(target) is not None and self._dormant_entity(target).dormant):return 0
+        if target>0:
+            victim=next((m for player in self.players for m in player.minions if m.uid==target),None)
+            if victim is not None:
+                amount*=2**sum(m.card_id=='RLK_952' and not m.silenced and m.health>0 for m in self.players[self.current].minions if m.owner!=victim.owner)
+            if victim is not None and victim.health==victim.max_health:
+                amount*=2**sum(m.card_id=='GDB_472' and not m.silenced and not m.dormant and m.health>0 for m in self.players[1-victim.owner].minions)
         if target<0 and self._hero_immune(-target-1):return 0
         if target<0 and self.players[-target-1].divine_shield:
             owner=-target-1
@@ -322,22 +574,53 @@ class Systems:
         if target<0:
             from .cards import HERO_DAMAGE_WEAPON_REPLACEMENTS
             owner=-target-1;weapon=self.players[owner].weapon
-            if weapon and HERO_DAMAGE_WEAPON_REPLACEMENTS.get(weapon['card_id'])=='lose_durability':
-                weapon['durability']-=1
-                self._log('prevent_damage',player=owner,card=weapon['card_id'],amount=amount)
-                if weapon['durability']<=0:self._break_weapon(owner)
+            if weapon and weapon['card_id']=='ETC_084' and owner==self.current:
+                from .historical_arsenal_batches import lose_durability
+                lose_durability(self,owner,1)
+                self._heal(target,2,healer=owner)
+                self._log('prevent_damage',player=owner,card='ETC_084',amount=amount)
                 return 0
+            if weapon and HERO_DAMAGE_WEAPON_REPLACEMENTS.get(weapon['card_id'])=='lose_durability':
+                from .historical_arsenal_batches import lose_durability
+                lose_durability(self,owner,1)
+                self._log('prevent_damage',player=owner,card=weapon['card_id'],amount=amount)
+                return 0
+        from .historical_damage_modifiers import redirected_target
+        redirection=redirected_target(self,target,_historical_redirected)
+        if redirection is not None:
+            destination,bearer=redirection
+            self._log('historical_damage_redirected',target=target,destination=destination,bearer=bearer,amount=amount)
+            return self._damage(destination,amount,poisonous,damage_source=source,damage_owner=damage_owner,damage_cause=damage_cause,
+                                _historical_redirected=_historical_redirected|{bearer},_historical_source_modified=True)
         if target>0:
             minion=self._find(target)
+            target_health_before=minion.health
+            target_attack_before=minion.attack
             if 'IMMUNE' in self._effective_keywords(minion):return 0
+            amount*=2**minion.rule_state.get('historical_hallucination_layers',0)
             modifier=INCOMING_DAMAGE_MODIFIERS.get(minion.card_id)
             if modifier and not minion.silenced:
                 multiplier,extra=modifier
                 amount=amount*multiplier+extra
+        if target>0:
+            tar=getattr(self,'historical_tar_slick',{})
+            if tar.get('turn')==self.turn:amount*=2**tar.get('layers',0)
+        if target>0 and not minion.silenced and minion.card_id in ('YOP_035','VAC_527'):amount=min(1,amount)
+        if target>0 and minion.rule_state.get('historical_riot_turn')==self.turn and not minion.silenced:
+            amount=min(amount,max(0,minion.health-1));poisonous=False
+            if amount<=0:return 0
+        if target>0 and minion.rule_state.get('historical_shout_turn')==self.turn:
+            amount=min(amount,max(0,minion.health-1))
+            if amount<=0:return 0
         shielded=target>0 and 'DIVINE_SHIELD' in minion.keywords
         if shielded and self._lasting_shield_hit(minion,minion.owner):return 0
+        if target<0 and self.players[-target-1].turns_taken<getattr(self.players[-target-1],'historical_alibi_until',-1):amount=min(amount,1)
+        if target<0:
+            from .historical_iconic_followups import prevent_fatal
+            if prevent_fatal(self,-target-1,amount):return 0
         target_owner=-target-1 if target<0 else minion.owner
         before_health=self.players[-target-1].health if target<0 else None
+        before_armor=self.players[-target-1].armor if target<0 else None
         was_alive=target>0 and minion.health>0
         if target<0 and self._onyxia_active(-target-1):
             owner=-target-1;p=self.players[owner];absorbed=min(p.armor,amount)
@@ -347,15 +630,29 @@ class Systems:
             if dealt:self._log('damage',target=target,amount=dealt)
         else:
             dealt = super()._damage(target, amount, poisonous)
-        if target<0 and self.players[-target-1].health!=before_health:self.players[-target-1].hero_health_changed_turn=True
+        if target<0 and self.players[-target-1].health!=before_health:
+            self.players[-target-1].hero_health_changed_turn=True
+            if -target-1==self.current:
+                self.players[-target-1].historical_own_health_changes=getattr(self.players[-target-1],'historical_own_health_changes',0)+1
+                from .historical_growing_weapons import hero_health_changed
+                hero_health_changed(self,-target-1)
+        if target<0 and self.players[-target-1].armor!=before_armor:self.players[-target-1].historical_armor_changed_turn=self.turn
         if shielded and 'DIVINE_SHIELD' not in minion.keywords:
             self._queue_event('shield_lost',owner=minion.owner,target=target)
+        if dealt and target>0 and was_alive and minion.health<=0 and damage_cause=='hero_power' and damage_owner in (0,1):
+            listeners=[m.uid for m in self.players[damage_owner].minions if m.card_id=='TRL_315' and not m.silenced and m.health>0]
+            if listeners:
+                self._rule_events.append(('captured_effects',dict(operations=tuple(('draw',1) for _ in listeners),
+                    context=dict(owner=damage_owner,source=None,target=0,bonus=0,lifesteal=False)),[]))
+        if dealt and target>0 and minion.card_id=='AV_143':
+            minion.rule_state['historical_korrak_exact_lethal']=was_alive and dealt==target_health_before and minion.health<=0
         if dealt:
             if target>0 and was_alive:self._entity_damage(minion,getattr(self,'_damage_origin',None) if damage_source is ... else damage_source,dealt)
             if target<0:
                 self.players[-target-1].hero_damage_taken_turn+=dealt
                 self.players[-target-1].hero_damage_events_turn+=1
-            self._queue_event('damage', target=target, amount=dealt, damage_owner=damage_owner, target_owner=target_owner, source_uid=getattr(source,'uid',None), damage_cause=damage_cause)
+                if any(self._active('GDB_144',owner) for owner in (0,1)):self.players[-target-1].historical_lumia_immune_turn=self.turn
+            self._queue_event('damage', target=target, amount=dealt, damage_owner=damage_owner, target_owner=target_owner, source_uid=getattr(source,'uid',None), damage_cause=damage_cause, target_health_before=target_health_before if target>0 else None,target_attack_before=target_attack_before if target>0 else None)
             self._zone_damage_trigger(target)
         return dealt
 
@@ -365,8 +662,8 @@ class Systems:
         cid=ctx.get('card_id')
         if m is None or m.health<=0 or m.silenced or m.owner!=ctx['owner'] or cid not in self.cards:return False
         if m.card_id=='TIME_217' and has_school(self.cards[cid],'NATURE'):
-            from .generation_cards import pool,random_cards
-            request=pool(card_type='MINION',minimum=5,maximum=5)
+            from .generation_cards import pool,random_cards,board_pool
+            request=board_pool(pool(card_type='MINION',minimum=5,maximum=5))
             self._generation_candidates(request,m.owner)
             self._rule_events.append(('captured_effects',dict(operations=(random_cards(request,destination='board'),),
                 context=dict(owner=m.owner,source=m,target=0,bonus=0,lifesteal=False)),[]))
@@ -379,17 +676,24 @@ class Systems:
 
     def _freeze_from_damage(self,source,target,dealt):
         from .cards import DAMAGE_FREEZERS
-        if dealt>0 and source is not None and not source.silenced and source.card_id in DAMAGE_FREEZERS:
+        magnetic_freezer=source is not None and any(part['card_id']=='TTN_077' for part in source.rule_state.get('magnetic_parts',()))
+        if dealt>0 and source is not None and not source.silenced and (source.card_id in DAMAGE_FREEZERS or magnetic_freezer):
             self._freeze(target)
 
-    def _heal(self,target,amount,*,healer=None,_after_shadow=False,spell=False):
+    def _heal(self,target,amount,*,healer=None,_after_shadow=False,spell=False,power=False,_receipt=None):
         if self._fire_immune_target(target):return 0
         if target>0 and self._dormant_entity(target) is not None and self._dormant_entity(target).dormant:return 0
         entity=self.players[-target-1] if target<0 else self._find(target)
         if healer is not None and amount>0 and not _after_shadow:
             amount+=self.players[healer].permanent_healing_bonus
             if spell:amount*=self._spell_multiplier(healer)
+            if power:
+                from .historical_damage_modifiers import power_multiplier
+                amount*=power_multiplier(self,healer)
+            amount*=2**sum(m.card_id=='BOT_236' and not m.silenced and not m.dormant and m.health>0 for m in self.players[healer].minions)
         if not _after_shadow and self._ruby_heal(target,amount,healer):return 0
+        from .historical_damage_modifiers import healing_blocked
+        if healing_blocked(self,target):return 0
         if target<0 and entity.healing_block_expiry_players:return 0
         if not _after_shadow and healer is not None and amount>0 and entity.health>0:
             target_owner=-target-1 if target<0 else entity.owner
@@ -403,6 +707,7 @@ class Systems:
                 self._rule_events.append(('captured_effects',dict(operations=tuple(operations),context=dict(owner=healer,source=None,target=target,bonus=0,lifesteal=False)),[]))
                 self._settle(allow_event_choices=True)
                 return 0
+        if target>0 and amount>0 and entity.health>0:self._queue_event('historical_healing_effect',target=target,healer=healer,amount=amount)
         before=entity.health
         if target<0:
             actual=max(0,min(amount,entity.max_health-entity.health))
@@ -410,12 +715,25 @@ class Systems:
             self._log('heal',target=target,amount=actual)
         else:super()._heal(target,amount)
         restored=max(0,entity.health-before)
+        if restored and target>0 and entity.card_id=='AV_143':entity.rule_state.pop('historical_korrak_exact_lethal',None)
         if target<0 and entity.health!=before:
             entity.hero_health_changed_turn=True
-            if restored:entity.hero_healed_turn=True
+            if -target-1==self.current:
+                entity.historical_own_health_changes=getattr(entity,'historical_own_health_changes',0)+1
+                from .historical_growing_weapons import hero_health_changed
+                hero_health_changed(self,-target-1)
+            if restored:
+                entity.hero_healed_turn=True
+                self._queue_event('historical_hero_health_gained',owner=-target-1,amount=restored)
         if healer is not None and restored:
             self.players[healer].healing_done_turn+=restored
+            self.players[healer].historical_healing_done_total=getattr(self.players[healer],'historical_healing_done_total',0)+restored
             self._colossal_healed(healer,restored)
+        if restored:self._queue_event('historical_healed',target=target,restored=restored,healer=healer)
+        if before>0 and amount>0:
+            excess=max(0,amount-max(0,entity.max_health-before))
+            if _receipt is not None:_receipt['overheal']=excess
+            if target>0 and excess:self._queue_event('historical_overheal',target=target,overheal=excess,restored=restored,healer=healer)
         return restored
 
     def _silence(self, m):
@@ -425,7 +743,7 @@ class Systems:
         m.silenced = True
         m.remembered_discards.clear()
         m.rule_state.clear()
-        for private_field in ('_infinity_cost_receipts','remembered_draw','secret_discard','_bound_card','_bound_minion','_devoured_cards','_fragile_illusion','_illusion_possible'):
+        for private_field in ('_infinity_cost_receipts','remembered_draw','secret_discard','_bound_card','_bound_minion','_devoured_cards','_nellie_crew','_fragile_illusion','_illusion_possible','_jandice_illusion','_magnetic_upgrades'):
             if hasattr(m,private_field):delattr(m,private_field)
         m.attached_death_effects.clear()
         m.temporary_keywords.clear()
@@ -455,6 +773,8 @@ class Systems:
     def _transform(self, m, cid):
         if self._fire_immune_target(m.uid):return m
         if m.dormant:return m
+        from .historical_replacements import vashj_replaces,vashj_summon
+        if vashj_replaces(self,m,cid):return vashj_summon(self,m,cid)
         owner = m.owner
         self._colossal_preflight(cid,owner=owner)
         self._herald_entry_preflight(owner,cid)
@@ -472,76 +792,20 @@ class Systems:
         return new
 
     def _bounce(self, m, cost_delta=0):
-        if m.dormant:return 
-        p = self.players[m.owner]
-        if len(p.hand) >= 10:
-            # Returning to a full hand destroys the minion; deathrattles still apply.
-            m.health = 0
-            return
-        p.board.remove(m)
-        c = Card(self._new_id(), m.card_id)
-        from .base_stats import carry_base_stats
-        carry_base_stats(m,c)
-        c.cost_delta = cost_delta
-        self._carry_origin(m,c)
-        self._restore_crafted(c)
-        if 'rewinds_remaining' in getattr(m,'rule_state',{}):
-            self._b60_state(c)['rewinds_remaining']=m.rule_state['rewinds_remaining']
-        self._enter_hand(m.owner,c)
-        self._refresh_auras()
-        self._log('return_to_hand', player=m.owner, entity=m.uid)
-        from .generation_extensions import RETURN_EFFECTS
-        operations=RETURN_EFFECTS.get(m.card_id,()) if not m.silenced else ()
-        if operations:
-            self._rule_events.append(('captured_effects',dict(operations=tuple(operations),
-                context=dict(owner=m.owner,source=None,target=0,bonus=0,lifesteal=False)),[]))
+        return self._zone_manager.bounce(self,m=m,cost_delta=cost_delta)
 
     def _draw(self, owner, predicate=None, private=False, *, include_burned=False):
-        p = self.players[owner]
-        if predicate is None:
-            index = len(p.deck)-1
-        else:
-            options = [i for i, c in enumerate(p.deck)
-                       if predicate(self.cards[c.card_id if isinstance(c, Card) else c])]
-            if not options:
-                return
-            index = self.rng.choice(options)
-        if index < 0:
-            p.fatigue += 1
-            self._damage(self.hero_id(owner), p.fatigue,damage_source=None)
-            self._log('fatigue', player=owner, damage=p.fatigue)
-            return
-        return self._take_deck_draw(owner, index, private=private, include_burned=include_burned)
+        return self._zone_manager.draw(self,owner=owner,predicate=predicate,private=private,include_burned=include_burned)
 
     def _shuffle_hand_card(self, owner, card, *, actor=None):
-        p=self.players[owner]
-        if not any(c is card for c in p.hand):raise UnsupportedCard('Shuffle source is not in hand')
-        p.hand.remove(card)
-        clean=Card(card.uid,card.card_id)
-        self._carry_origin(card,clean)
-        if getattr(card,'rule_state',{}).get('shatter_combined'):
-            self._b60_state(clean)['shatter_combined']=True
-        p.deck.append(clean)
-        self.rng.shuffle(p.deck)
-        self._refresh_auras()
-        self._record_deck_insertion(owner,owner if actor is None else actor,1,'shuffle')
-        self._log('shuffle_from_hand',player=owner)
-        return clean
+        return self._zone_manager.shuffle_hand_card(self,owner=owner,card=card,actor=actor)
 
     def _own_shuffle_count(self,owner):
         return sum(entry['kind']=='shuffle' and entry['actor']==owner and entry['destination']==owner
                    for entry in self.players[owner].shuffle_history)
 
-    def _record_deck_insertion(self, destination, actor, count, kind):
-        # Public event metadata only: no identities or deck positions.
-        if destination not in (0,1) or actor not in (0,1):raise ValueError('Invalid shuffle player')
-        if type(count) is not int or count<1:raise ValueError('Shuffle count must be positive')
-        if kind not in ('shuffle','trade'):raise ValueError('Unknown deck insertion kind')
-        self.players[destination].shuffle_history.append(dict(
-            turn=self.turn,actor=actor,destination=destination,count=count,kind=kind))
-        quest=self.players[destination].quest
-        if kind=='shuffle' and actor==destination and quest and quest['card_id']=='TLC_513':
-            self._quest_progress(destination,1)
+    def _record_deck_insertion(self, destination, actor, count, kind, *, cards, suppress_elekk=False):
+        return self._zone_manager.record_deck_insertion(self,destination=destination,actor=actor,count=count,kind=kind,cards=cards,suppress_elekk=suppress_elekk)
 
     def _trade(self, uid):
         p = self.players[self.current]
@@ -549,60 +813,61 @@ class Systems:
         p.hand.remove(c)
         p.mana -= 1
         self._b60_spend_mana(self.current,1)
+        from .historical_play_batches import WINDUPS
+        if c.card_id in WINDUPS:
+            state=self._b60_state(c);state['historical_windup']=state.get('historical_windup',0)+1
+        from .historical_trade_spell_finish import progress as trade_progress
+        trade_progress(self,c)
+        # Replacement applies once even with multiple active Jaxons. Keep
+        # the traded physical card outside the selectable deck until drawing.
+        if any(m.card_id=='SW_045' and not m.silenced and m.health>0 for m in p.minions):
+            from .pools import deck_choice_options
+            options=deck_choice_options(p.deck,self.cards,3,self.rng)
+            if options:
+                for option in options:
+                    value=p.deck[option['index']]
+                    option['physical_uid']=getattr(value,'uid',None)
+                self.pending_choice=dict(owner=self.current,kind='historical_jaxon_draw',options=options)
+                self.phase='choice'
+                self._start_play_effects((('historical_copy_trade_finish',),),dict(owner=self.current,source=None,target=0,spell=False,bonus=0,trade_card=c))
+                return
         self._draw(self.current)
         # Preserve enchantments and the relative order of the remaining deck.
         p.deck.insert(self.rng.randrange(len(p.deck)+1), c)
         self._refresh_auras()
-        self._record_deck_insertion(self.current,self.current,1,'trade')
+        self._record_deck_insertion(self.current,self.current,1,'trade',cards=(c,))
         self._log('trade', player=self.current, card=c.card_id)
+        from .historical_trade_spell_finish import after_trade
+        after_trade(self,self.current,c)
 
     def _break_weapon(self, owner):
         p = self.players[owner]
         weapon = p.weapon
         if not weapon:
             return
+        from .historical_movements import record
+        record(self,'destroyed')
         physical_card = p.equipped_card
+        if physical_card is not None:
+            history=getattr(p,'historical_broken_weapons',[]);history.append(deepcopy(physical_card));p.historical_broken_weapons=history
+        self._queue_event('historical_weapon_broken',owner=owner,card_id=weapon['card_id'])
         p.weapon = None
         p.equipped_card = None
         self._log('weapon_broken',player=owner,card=weapon['card_id'])
         from .cards import DEATH_EFFECTS
-        for op in list(DEATH_EFFECTS.get(weapon['card_id'], []))+weapon.get('attached_death_effects',[]):
-            self._effect(op, dict(owner=owner,source=None,target=0,bonus=0,
-                                 lifesteal=False,death_position=len(p.board),broken_weapon=weapon,broken_weapon_card=physical_card))
+        operations=(list(DEATH_EFFECTS.get(weapon['card_id'], []))+
+                    list(weapon.get('attached_death_effects',[])))*self._deathrattle_repetitions(owner,weapon=True)
+        from .historical_physical_forms import weapon_death_source
+        death_source=weapon_death_source(weapon,physical_card)
+        for op in operations:
+            self._effect(op, dict(owner=owner,source=death_source,target=0,bonus=0,
+                                 lifesteal='LIFESTEAL' in weapon.get('historical_keywords',()),poisonous='POISONOUS' in weapon.get('historical_keywords',()),death_position=len(p.board),broken_weapon=weapon,broken_weapon_card=physical_card))
 
     def _discover_deck(self, owner):
-        p = self.players[owner]
-        options = deck_choice_options(p.deck, self.cards, 3, self.rng)
-        if not options:
-            return
-        self.pending_choice = dict(owner=owner, kind='draw_from_deck', options=options)
-        self.phase = 'choice'
+        return self._choice_resolver.discover_deck(self,owner)
 
     def _discard_cards(self, owner, cards):
-        """Remove an entire discard batch before exposing any discard event.
-
-        Selection is the caller's responsibility. Snapshot listeners before
-        removal; newly summoned listeners cannot observe earlier discards.
-        """
-        player=self.players[owner];cards=list(cards)
-        if len({id(c) for c in cards})!=len(cards) or any(
-                not any(c is held for held in player.hand) for c in cards):
-            raise ValueError('Discard batch requires distinct cards in the owner hand')
-        listeners=self._event_listeners()
-        snapshots=[deepcopy(c) for c in cards]
-        for card in cards:
-            player.hand.remove(card)
-            player.discard_history.append(card.card_id)
-            self._log('discard',player=owner,card=card.card_id)
-        self._refresh_auras()
-        from .generation_extensions import DISCARD_EFFECTS
-        for card in snapshots:
-            self._zone_card_removed(owner,card,'hand','discard')
-            self._rule_events.append(('discard',dict(owner=owner,card=card),list(listeners)))
-            operations=DISCARD_EFFECTS.get(card.card_id,())
-            if operations:
-                self._rule_events.append(('captured_effects',dict(operations=tuple(operations),
-                    context=dict(owner=owner,source=None,physical_card=card,target=0,bonus=0,lifesteal=False)),[]))
+        return self._zone_manager.discard_cards(self,owner=owner,cards=cards)
 
     def _discard_card(self, owner, card):
         self._discard_cards(owner,[card])
@@ -618,157 +883,55 @@ class Systems:
     def _is_discover_choice(choice):
         # Explicit semantics: a shared choice UI is not proof of Discover.
         # composed "top" is Dredge (TLC_521), not Discover.
-        return ((choice['kind']=='refresh_discover' and choice.get('completed_discover',False)) or choice['kind'] in {'dark_global','lasting_deck','draw_from_deck', 'temporary_deck',
+        return ((choice['kind']=='historical_physical_spell' and choice.get('discovering',False)) or (choice['kind']=='historical_infuse_choice' and choice.get('mode')=='relic') or (choice['kind']=='historical_treasure' and choice.get('mode') in ('crown','lackey','manager','artifact','cast','hurt','armor','elysiana','mystery','hipster','importer','maruut','murozond','ivory','amalgam','follow_fireheart','follow_hataaru','suspicious','chromatic','power_basic','power_upgraded','malygos','pillar')) or (choice['kind']=='historical_play_zone' and choice.get('discovering',False)) or (choice['kind']=='refresh_discover' and choice.get('completed_discover',False)) or choice['kind'] in {'historical_deck_finish','historical_history_batch','historical_continuation_gift','historical_archive_offer','historical_nature_offer','historical_mage_offer','historical_mage_deck_discover','historical_utility_potion','historical_music_movement','historical_change_transform','historical_generated_spell','historical_deck_spell','historical_tavish_secret','historical_etc_band','historical_jaxon_draw','historical_amulet_vendor','historical_future_location','historical_stitch','historical_griftah','historical_theotar','historical_held_spell','historical_secret_discover','historical_resurrection','dark_global','lasting_deck','draw_from_deck', 'temporary_deck',
                                     'local_enemy_top', 'local_resurrect',
                                     'suspicious_discover','contraband_discover','generation_discover','learned_mentor','evolving_dragon','choicegen_discover','dark_deck','map_discover'} or
                 (choice['kind'] == 'composed_zone' and
                  choice.get('mode') in {'copy', 'draw_bottom'}))
 
     def _record_discover(self, owner, offer=None):
-        player = self.players[owner]
-        player.discoveries_this_turn += 1
-        player.discoveries_total += 1
-        # Count is public; selected identity and physical destination are not.
-        self._log('discover', player=owner)
-        if offer is not None:self._queue_event('discover_completed',owner=owner,offer=offer)
+        return self._choice_resolver.record_discover(self,owner,offer)
 
     def _resolve_choice(self, index, *, resume=True):
-        """Apply one selection; internal callers may retain the enclosing frame.
-
-        A selection can itself open another choice. Never discard that child or
-        resume parent effects ahead of it. Automatic selection policy belongs
-        to the caller, separately from applying the selected option.
-        """
-        choice = self.pending_choice
-        if choice['kind']=='rewind':
-            self._rewind_choose(index)
-            return
-        self._trace_phase('choice_selected', choice_kind=choice['kind'], owner=choice['owner'], index=index)
-        owner = choice['owner']
-        p = self.players[owner]
-        selected = choice['options'][index]
-        offer = capture_offer(choice,index,getattr(p.equipped_card,'uid',None))
-        # The selected choice is consumed before its effect can open a child.
-        self.pending_choice = None
-        self.phase = 'play'
-        self._discovery_result = None
-        if self._finish_choice(choice,selected):pass
-        elif self._forge_choice(choice,selected):pass
-        elif self._craft_choice(choice,selected):pass
-        elif self._counterfeit_choice(choice,selected):pass
-        elif self._osk_choice(choice,selected):pass
-        elif self._remaining_setup_choice(choice,selected):pass
-        elif self._investigation_choice(choice,selected):pass
-        elif self._tiny_choice(choice,selected):pass
-        elif self._genn_choice(choice,selected):pass
-        elif self._quest_family_choice(choice,selected):pass
-        elif self._fabled_choice(choice,selected):pass
-        elif self._evolving_choice(choice,selected):pass
-        elif self._herald_choice(choice,selected):pass
-        elif self._future_summon_choice(choice,selected):pass
-        elif self._map_choice(choice,selected):pass
-        elif self._leyline_choice(choice,selected):pass
-        elif self._imbue_consumer_choice(choice,selected):pass
-        elif self._mutation_choice(choice,selected):pass
-        elif self._dark_global_choice(choice,selected):pass
-        elif self._entity_choice(choice,selected):pass
-        elif self._lasting_choice(choice,selected):pass
-        elif self._learned_choice(choice,selected):pass
-        elif self._stored_choice(choice,selected):pass
-        elif self._dark_choice(choice,selected):pass
-        elif self._autocast_choice(choice,selected):pass
-        elif self._spell_cast_choice(choice,selected):pass
-        elif self._imbue_choice(choice,selected):pass
-        elif self._choicegen_choice(choice,selected):pass
-        elif self._generation_choice(choice,selected):pass
-        elif self._temporary_choice(choice,selected):pass
-        elif self._local_choice(choice,selected):pass
-        elif self._b60_choice(choice,selected):pass
-        elif self._persistent_choice(choice,selected):pass
-        elif self._composed_choice(choice,selected):pass
-        elif choice['kind']=='hand_discard':
-            original=next((c for c in p.hand if c.uid==selected['uid']),None)
-            if original is None:raise UnsupportedCard('Selected discard left hand during choice')
-            if 'remember_source' in choice:
-                source=next((m for m in p.minions if m.uid==choice['remember_source']),None)
-                if source is not None:source.remembered_discards.append(original.card_id)
-            self._discard_card(owner,original)
-        elif choice['kind']=='hand_shuffle':
-            original=next((c for c in p.hand if c.uid==selected['uid']),None)
-            if original is None:raise UnsupportedCard('Selected hand card left hand during choice')
-            self._shuffle_hand_card(owner,original)
-        elif choice['kind']=='hand_copy':
-            original=next((c for c in p.hand if c.uid==selected['uid']),None)
-            if original is None:raise UnsupportedCard('Selected hand card left hand during choice')
-            if len(p.hand)<10:
-                self._clone_hand_card(owner,original)
-                self._refresh_auras()
-        elif choice['kind']=='hand_transform':
-            position=next((i for i,c in enumerate(p.hand) if c.uid==selected['uid']),None)
-            if position is None:raise UnsupportedCard('Selected hand card left hand during choice')
-            previous=p.hand[position]
-            p.hand[position]=Card(self._new_id(),choice['replacement'])
-            p.hand[position]._hand_entry_turn=getattr(previous,'_hand_entry_turn',self.turn)
-            self._refresh_auras()
-        elif choice['kind']=='self_effect':
-            source=next((m for m in p.minions if m.uid==choice['source_uid']),None)
-            if source is not None:self._effect(selected['operation'],dict(owner=owner,source=source,target=0,bonus=0,lifesteal=False,automatic_choices=choice.get('_automatic',False)))
-        elif choice['kind']=='fixed_summon':
-            self._summon(owner,selected['card_id'], entry_origin='choice', entry_site='systems._resolve_choice')
-        elif choice['kind']=='draw_from_deck':
-            value = p.deck.pop(selected['index'])
-            cid = value.card_id if isinstance(value, Card) else value
-            if len(p.hand) < 10:
-                self._discovery_result=self._enter_hand(owner,value if isinstance(value,Card) else Card(self._new_id(),cid))
-            else:
-                self._burn_deck_card(owner,value)
-        else:raise UnsupportedCard('Unknown choice kind: '+choice['kind'])
-        if self._is_discover_choice(choice):
-            self._record_discover(owner,offer)
-            self._defer_discover_followups(owner,self._discovery_result)
-        del self._discovery_result
-        if self.pending_choice is choice:
-            self.pending_choice = None
-        self.phase = 'choice' if self.pending_choice is not None else 'play'
-        if not resume or self.pending_choice is not None:
-            return
-        # Resume suspended child triggers before the parent card sequence.
-        self._settle(allow_event_choices=True)
-        if self.pending_choice is not None or self.terminal:
-            return
-        self._resume_turn()
-        if self.pending_choice is not None or self.terminal:
-            return
-        # A second choice may suspend the same card again. Keep its final
-        # callback until all remaining operations have finished.
-        if not self._resume_play_effects():
-            return
-        if not self._resume_power_sequence():
-            return
-        if self._minion_after_play_frame is not None:
-            self._resume_minion_after_play()
-            if self.pending_choice is not None or self.terminal:
-                return
-        context = self.pending_play
-        self.pending_play = None
-        if context and not self.terminal:
-            self._after_play(context)
+        return self._choice_resolver.resolve(self,index,resume=resume)
 
     def _after_play(self, context):
         if self._rewind_offer(context):return
         if self.terminal:
             return
         cid, owner, source, cost, targeted_minion = context
+        history=self.players[owner].replay_history
+        if history and history[-1].card.card_id==cid:
+            from .historical_obligation_spells import paid as obligation_paid
+            obligation_paid(self,owner,history[-1].card)
         self._trace_phase('after_play', card_id=cid, owner=owner, source_uid=getattr(source,'uid',None))
         kind = self.cards[cid]['type']
+        from .historical_spellstone_finish import paid as stone_finish_paid
+        stone_finish_paid(self,owner,cid)
+        edges=getattr(self.players[owner],'_historical_edge_plays',{}).pop((cid,getattr(source,'uid',None)),None)
+        if edges is not None:self._queue_event('historical_edge_play',owner=owner,card_id=cid,source=getattr(source,'uid',None),left=edges[0],right=edges[1],cost=cost)
+        pending_overloads=getattr(self.players[owner],'historical_play_overloads',{})
+        overload=pending_overloads.pop(getattr(source,'uid',None),0)
+        if overload:self._queue_event('historical_overload_card_played',owner=owner,card_id=cid,amount=overload)
+        if overload:
+            from .historical_elemental_questline import played as elemental_played
+            elemental_played(self,owner)
+            from .historical_whizbang_quests import progress as whizbang_progress
+            whizbang_progress(self,owner,'overload')
+        if 'COMBO' in self.cards[cid].get('mechanics',()):self._queue_event('historical_combo_card_played',owner=owner,card_id=cid)
         if kind == 'MINION':
             return self._start_minion_after_play(context)
         if kind == 'SPELL':
             self._secret_event('after_spell',owner)
-            self._queue_event('spell_cast', owner=owner,card_id=cid,cost=cost,targeted_minion=targeted_minion,physical_card=source)
+            self._queue_event('spell_cast', owner=owner,card_id=cid,cost=cost,targeted_minion=targeted_minion,physical_card=source,cast_target=getattr(source,'_historical_cast_target',{}))
+            from .historical_copy_batches import publish_zentimo
+            publish_zentimo(self,owner,source)
+            from .historical_copy_batches import publish_choose_spell
+            publish_choose_spell(self,owner,source)
+            if 'SECRET' in self.cards[cid].get('mechanics',()):self._queue_event('historical_secret_played',owner=owner,card_id=cid)
         if kind in ('WEAPON','LOCATION','HERO'):
             self._queue_event('dormant_other_card_played',owner=owner,card_id=cid)
-        self._secret_event('after_card',owner)
+        self._secret_event('after_card',owner,card_id=cid)
         self._publish_follow(owner,source)
         self._settle(allow_event_choices=True)
 
@@ -776,7 +939,13 @@ class Systems:
         """Return False for opcodes handled by the original explicit resolver."""
         owner=ctx['owner']; p=self.players[owner]; q=self.players[1-owner]
         source=ctx.get('source'); target=ctx.get('target',0); name=op[0]
-        if name=='next_power_set_cost':
+        if name=='inherit_friendly_deathrattle':
+            event=ctx['event'];operations=event.get('inherited_operations',())
+            if operations:
+                from .death_inheritance import check_supported
+                check_supported(operations)
+                source.attached_death_effects.extend(deepcopy(operations))
+        elif name=='next_power_set_cost':
             p.next_power_cost_effects.append(dict(kind='set',amount=op[1]))
         elif name=='opponent_next_power_cost':
             q.next_power_increase+=op[1]
@@ -806,11 +975,15 @@ class Systems:
             self._damage(self.hero_id(1-owner),op[1],damage_source=source,damage_owner=owner)
             self._heal(self.hero_id(owner),op[2],healer=owner,spell=ctx.get('spell',False))
         elif name=='summon_right':
+            if op[2] and source not in p.board:
+                raise UnsupportedCard('Right-side summon source left play; continuation ordering requires review')
+            initial_offset=op[3] if len(op)>3 else 0
             for offset in range(op[2]):
-                self._summon(owner,op[1],p.board.index(source)+1+offset, entry_origin='effect', entry_site="systems._system_effect:name == 'summon_right'", entry_source=ctx.get('source'))
+                self._summon(owner,op[1],p.board.index(source)+1+initial_offset+offset, entry_origin='effect', entry_site="systems._system_effect:name == 'summon_right'", entry_source=ctx.get('source'))
         elif name=='copy_self_right':
             for _ in range(op[1]):
-                self._summon(owner,source.card_id,p.board.index(source)+1,copy_from=source, entry_origin='copy', entry_site="systems._system_effect:name == 'copy_self_right'", entry_source=ctx.get('source'))
+                position=p.board.index(source)+1 if source in p.board else min(ctx.get('summon_position',len(p.board)),len(p.board))
+                self._summon(owner,source.card_id,position,copy_from=source, entry_origin='copy', entry_site="systems._system_effect:name == 'copy_self_right'", entry_source=ctx.get('source'))
         elif name=='corpse_missiles':
             spent=min(op[1],p.corpses);self._spend_corpses(owner,spent)
             for _ in range(spent):
@@ -866,8 +1039,8 @@ class Systems:
                 c=self.rng.choice(choices);q.hand.remove(c)
                 self._summon(1-owner,c.card_id,attack_bonus=c.attack_bonus,health_bonus=c.health_bonus, entry_origin='recruit', entry_zone='hand', entry_site="systems._system_effect:name == 'pull_enemy_hand'", entry_source=c)
         elif name=='recruit':
-            choices=[i for i,v in enumerate(p.deck) if self.cards[v.card_id if isinstance(v,Card) else v]['type']=='MINION'
-                     and self.cards[v.card_id if isinstance(v,Card) else v]['cost']<=op[1]]
+            choices=[i for i,v in enumerate(p.deck) if self._card_data(v)['type']=='MINION'
+                     and self._card_stat(v,'cost',owner)<=op[1]]
             if choices and len(p.board)<7:
                 v=p.deck.pop(self.rng.choice(choices))
                 self._summon(owner,v.card_id if isinstance(v,Card) else v,
@@ -884,7 +1057,7 @@ class Systems:
         elif name=='add_opponent':
             for _ in range(op[2]):self._add(1-owner,op[1])
         elif name=='fill_hand':
-            while len(p.hand)<10:self._add(owner,op[1])
+            while len(p.hand)<getattr(p,'hand_capacity',10):self._add(owner,op[1])
         elif name=='destroy_self':
             if source and source in p.minions:source.health=0
         elif name in ('buff_event_target','buff_event_source'):
@@ -934,6 +1107,7 @@ class Systems:
             group=op[1]
             choices=([self.hero_id(1-owner)]+[m.uid for m in q.minions if m.health>0] if group=='enemies' else
                      [m.uid for m in q.minions if m.health>0] if group=='enemy_minions' else
+                     [m.uid for player in self.players for m in player.minions if m.health>0] if group=='all_minions' else
                      [u for u in self._characters() if (source is None or u!=source.uid) and (u<0 or self._find(u).health>0)])
             if choices and not self.terminal:self._deal_effect(self.rng.choice(choices),1,dict(ctx,bonus=0,spell_multiplier_applied=True))
         elif name in ('missiles','attack_missiles'):
@@ -943,11 +1117,16 @@ class Systems:
             for _ in range(shots):
                 choices=([self.hero_id(1-owner)]+[m.uid for m in q.minions if m.health>0] if group=='enemies' else
                          [m.uid for m in q.minions if m.health>0] if group=='enemy_minions' else
+                     [m.uid for player in self.players for m in player.minions if m.health>0] if group=='all_minions' else
                          [u for u in self._characters() if (source is None or u!=source.uid) and (u<0 or self._find(u).health>0)])
                 if not choices or self.terminal:break
                 self._deal_effect(self.rng.choice(choices),1,dict(ctx,bonus=0,spell_multiplier_applied=True))
                 self._settle()
         elif name=='set_hero_health':
+            if owner==self.current and p.health!=op[1]:
+                p.historical_own_health_changes=getattr(p,'historical_own_health_changes',0)+1
+                from .historical_growing_weapons import hero_health_changed
+                hero_health_changed(self,owner)
             p.hero_health_changed_turn |= p.health!=op[1]
             p.health=p.max_health=op[1]
         elif name=='random_heal':
@@ -958,13 +1137,16 @@ class Systems:
         elif name=='death_attack_gift':
             if p.minions:self._buff(self.rng.choice(p.minions),source.attack,0)
         elif name=='dragon_held_aoe':
-            if any(has_tribe(self.cards[c.card_id],'DRAGON') for c in p.hand):
+            if any(has_tribe(self._card_data(c),'DRAGON') for c in p.hand):
                 self._effect(('area_damage','all_minions',op[1]),ctx)
         elif name=='remove_cheap_decks':
-            for player in self.players:
-                player.deck[:]=[v for v in player.deck if self.cards[v.card_id if isinstance(v,Card) else v]['cost']>op[1]]
+            for recipient,player in enumerate(self.players):
+                removed=[v for v in player.deck if self._card_data(v)['cost']<=op[1]]
+                player.deck[:]=[v for v in player.deck if self._card_data(v)['cost']>op[1]]
+                for value in removed:self._zone_card_removed(recipient,value,'deck','destroy')
         elif name=='remove_own_top':
-            for _ in range(min(op[1],len(p.deck))):p.deck.pop()
+            for _ in range(min(op[1],len(p.deck))):
+                value=p.deck.pop();self._zone_card_removed(owner,value,'deck','destroy')
         elif name=='unlock_mana':
             if self.current==owner:
                 p.mana+=p.locked_mana;p.locked_mana=0

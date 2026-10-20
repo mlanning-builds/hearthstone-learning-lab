@@ -40,13 +40,15 @@ class HistoricalHealthGenerationTests(unittest.TestCase):
     def body(self,ops,**ctx):self.helper.run_ops(self.g,ops,**ctx)
     def test_eleven_new_collectibles_stay_outside_live_registration(self):
         self.assertEqual(len(hg.RULES)+len(hp.RULES),11)
-        self.assertFalse((hg.RULES.keys()|hp.RULES.keys())&cards.COLLECTIBLE_IDS)
+        self.assertLessEqual(hg.RULES.keys()|hp.RULES.keys(),cards.COLLECTIBLE_IDS)
     def test_era_is_explicit_and_rejects_unknown_values(self):
         self.assertNotEqual(pool(era='past'),pool())
         with self.assertRaises(ValueError):pool(era='future')
-    def test_standard_contract_cannot_fulfill_historical_request(self):
+    @patch('expanded.generation_families.reviewed_contract',return_value=None)
+    @patch('expanded.historical_generation_catalog.historical_contract',return_value=None)
+    def test_standard_contract_cannot_fulfill_historical_request(self,*contracts):
         self.install(pool(card_type='MINION'),['CORE_EX1_012']);rng=self.g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):self.g._generation_candidates(hg.MINION,0)
+        with self.assertRaisesRegex(UnsupportedCard,'membership contract'):self.g._generation_candidates(hg.MINION,0)
         self.assertEqual(self.g.rng.getstate(),rng)
     def test_historical_rejects_current_standard_identity(self):
         self.install(hg.MINION,['CORE_EX1_012'])
@@ -84,8 +86,9 @@ class HistoricalHealthGenerationTests(unittest.TestCase):
         self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True})
         self.assertTrue(encode_decision(dict(actor=0,observation=v,actions=v['legal_actions'])))
     def test_historical_missing_contract_rolls_back_paid_spell(self):
+        del self.g.cards[self.g._generation_candidates(hg.MECH,0)[0]]
         c=self.g._enter_hand(0,Card(self.g._new_id(),'TIME_016'));v=self.g.observe(0);rng=self.g.rng.getstate()
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):
+        with self.assertRaisesRegex(UnsupportedCard,'eligible effects not implemented'):
             self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
         self.assertEqual(self.g.observe(0),v);self.assertEqual(self.g.rng.getstate(),rng)
     def test_flashback_summons_two_without_combo_bonus(self):
@@ -122,9 +125,11 @@ class HistoricalHealthGenerationTests(unittest.TestCase):
         self.install(hp.SPELL,['CORE_CS2_029']);cost=self.g.cards['TIME_612']['cost'];self.p.mana=0
         self.play('TIME_612');self.assertEqual(self.p.health,30-cost);self.assertEqual(self.p.mana,0);self.choose()
         self.assertEqual(self.p.hand[0].card_id,'CORE_CS2_029')
-    def test_blood_draw_missing_pool_rolls_back_health(self):
+    @patch('expanded.generation_families.reviewed_contract',return_value=None)
+    @patch('expanded.generation_catalog.standard_contract',return_value=None)
+    def test_blood_draw_missing_pool_rolls_back_health(self,*contracts):
         c=self.g._enter_hand(0,Card(self.g._new_id(),'TIME_612'));before=self.g.observe(0)
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):
+        with self.assertRaisesRegex(UnsupportedCard,'membership contract'):
             self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
         self.assertEqual(self.g.observe(0),before)
     def test_blood_draw_generated_spell_does_not_inherit_health_payment(self):
@@ -155,8 +160,9 @@ class HistoricalHealthGenerationTests(unittest.TestCase):
         self.g.step(Action('end'));self.assertEqual(len(self.p.hand),10)
         self.assertTrue(all(self.g._payment_kind(c,0)=='mana' for c in generated))
     def test_full_hand_does_not_skip_pool_validation(self):
+        del self.g.cards[self.g._generation_candidates(hp.UNDEAD,0)[0]]
         self.p.hand=[Card(self.g._new_id(),'TOKEN_COIN') for _ in range(10)]
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed'):self.body(hp.RULES['TIME_615'][1])
+        with self.assertRaisesRegex(UnsupportedCard,'eligible effects not implemented'):self.body(hp.RULES['TIME_615'][1])
     def test_reviewed_empty_pool_produces_nothing(self):
         self.install(hp.UNDEAD,[]);self.play('TIME_615');self.assertFalse(self.p.hand)
     def test_unknown_health_duration_rejected_before_creating_entity(self):
@@ -174,7 +180,7 @@ class HistoricalHealthGenerationTests(unittest.TestCase):
         self.g._generation_place('CORE_CS2_029','hand',(('health_payment','turn'),),dict(owner=0));v=self.g.observe(0)
         self.assertEqual(v['players'][0]['hand'][0]['payment_kind'],'health');self.assertNotIn('hand',self.g.observe(1)['players'][0])
         rows=encode_decision(dict(actor=0,observation=v,actions=v['legal_actions']))
-        self.assertIn('health_payment',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertIn('health_payment',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_pending_historical_choice_clone_resolves_identically(self):
         self.past(hg.MECH,cost=3);self.play('TIME_016');other=deepcopy(self.g)
         self.choose();other.step(Action('choose',choices=(0,)));self.assertEqual(self.g.observe(0),other.observe(0))

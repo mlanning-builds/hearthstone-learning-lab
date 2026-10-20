@@ -1,14 +1,16 @@
 import unittest
-from unittest.mock import patch
 import test_expanded_generation as fixtures
-from expanded import cards,zone_triggers
-from standard.catalog import load_catalog
+from expanded import cards,zone_triggers,Action
 class ZoneDeathrattleTests(unittest.TestCase):
  def setUp(self):
   self.fx=fixtures.GenerationTests();self.g=self.fx.game();self.p,self.q=self.g.players
-  self.g.cards.update({c['id']:c for c in load_catalog() if c['id']=='JAIL_398'})
-  for table,values in ((cards.RULES,zone_triggers.RULES),(cards.DEATH_EFFECTS,zone_triggers.DEATH_EFFECTS)):
-   ctx=patch.dict(table,values);ctx.start();self.addCleanup(ctx.stop)
+ def test_paid_impfernal_uses_real_registry_and_battlefield_deathrattle(self):
+  self.assertIn('JAIL_398',cards.COLLECTIBLE_IDS)
+  self.p.mana=10;c=self.g._add(0,'JAIL_398')
+  cost=self.g._cost(c,0);self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
+  self.assertEqual(self.p.mana,10-cost)
+  m=next(m for m in self.p.minions if m.card_id=='JAIL_398');m.health=0;self.g._settle()
+  self.assertEqual((self.p.health,self.q.health),(27,27));self.g.assert_invariants()
  def test_discard_damages_both_heroes_and_board(self):
   m=self.g._summon(1,'CORE_EX1_162');c=self.g._add(0,'JAIL_398');self.g._discard_card(0,c);self.g._settle();self.assertEqual((self.p.health,self.q.health),(27,27));self.assertNotIn(m,self.q.board)
  def test_board_death_uses_same_damage(self):

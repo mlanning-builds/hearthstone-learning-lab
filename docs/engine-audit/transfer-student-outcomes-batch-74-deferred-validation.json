@@ -1,0 +1,57 @@
+{
+  "scope": "Seventeen historic iconic-hand dependency spell definitions; all behavior unvalidated",
+  "new_dependency_spell_count": 17,
+  "new_unvalidated_bodies": 17,
+  "new_ids": [
+    "BRM_007",
+    "CS2_026",
+    "CS2_031",
+    "EX1_144",
+    "EX1_161",
+    "EX1_400",
+    "EX1_607",
+    "LEG_RLK_125",
+    "LOOT_017",
+    "NEW1_004",
+    "RLK_015",
+    "RLK_018",
+    "RLK_042",
+    "RLK_051",
+    "RLK_125",
+    "RLK_512",
+    "UNG_025"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "6a307f609a176a61262dd71d76acb85e7149fd91401d600e21ceec23cd70c8bb",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan",
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Seventeen spell definitions added using frozen printed values, including eight-health Dark Pact and one-overload Volcano",
+    "Inner Rage damage/buff and Howling Blast multi-target damage use native damage batches; death/trigger timing remains unvalidated",
+    "Vanish captures original entity order, Shadowstep preserves physical bounce modifiers and Gang Up uses fresh compiled definitions; hand-cap and order interactions need deferred review",
+    "Vampiric Blood corpse payment, max/current health gain and draw sequencing need deferred review",
+    "Harth source remains unregistered: other spell dependencies, exact hand order/printings and selection contract still pending",
+    "No gameplay/regressions/training run"
+  ]
+}

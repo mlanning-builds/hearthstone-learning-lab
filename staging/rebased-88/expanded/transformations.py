@@ -5,7 +5,7 @@ Divergence and Alternate Reality remain review-gated.
 """
 from engine.game import Card
 from engine.cards import UnsupportedCard
-from .generation_cards import pool
+from .generation_cards import pool,board_pool
 from .selectors import classes
 
 RULES={
@@ -32,14 +32,18 @@ UNRESOLVED={
 def cost_pool(cost,card_type='MINION'):
     return pool(card_type=card_type,minimum=cost,maximum=cost)
 
+def evolve_pool(original_cost,increase,*,board=True):
+    request=cost_pool(min(original_cost+increase,10))
+    return board_pool(request) if board else request
+
 def requests_for(cid):
     return {
       'TIME_707':{pool(era='past',mechanic='CHOOSE_ONE')},
       'EDR_493':{pool(card_type='MINION',tribe='DEMON')},
       'EDR_873':{pool(classes='DRUID')},
-      'JAIL_EVENT_102':{cost_pool(2),cost_pool(3)},
-      'TIME_049':{cost_pool(5)},'TIME_055':{cost_pool(7)},
-      'TIME_859':{cost_pool(10),cost_pool(1)},
+      'JAIL_EVENT_102':{board_pool(cost_pool(2)),board_pool(cost_pool(3))},
+      'TIME_049':{board_pool(cost_pool(5))},'TIME_055':{board_pool(cost_pool(7))},
+      'TIME_859':{board_pool(cost_pool(10)),board_pool(cost_pool(1))},
     }.get(cid,set())
 
 class Transformations:
@@ -47,7 +51,7 @@ class Transformations:
         if card.card_id=='EDR_529' and self.cards[cid]['type']=='MINION':
             owner=next((i for i,p in enumerate(self.players) if any(c is card for c in p.hand+p.deck)),None)
             if owner is None:raise UnsupportedCard('Podling transformation requires its zone owner')
-            values=self._generation_candidates(cost_pool(self.cards[cid]['cost']+2),owner)
+            values=self._generation_candidates(evolve_pool(self.cards[cid]['cost'],2,board=False),owner)
             if not values:return
             cid=self.rng.choice(values)
         return super()._b60_transform_card(card,cid,stats=stats)
@@ -55,13 +59,13 @@ class Transformations:
     def _mutation_validate_replacements(self,card,request,owner):
         values=self._generation_candidates(request,owner)
         if card.card_id=='EDR_529' and not getattr(card,'silenced',False):
-            for cost in {self.cards[cid]['cost']+2 for cid in values if self.cards[cid]['type']=='MINION'}:
-                self._generation_candidates(cost_pool(cost),owner)
+            for cost in {self.cards[cid]['cost'] for cid in values if self.cards[cid]['type']=='MINION'}:
+                self._generation_candidates(evolve_pool(cost,2,board=hasattr(card,'owner')),owner)
 
     def _transform(self,m,cid):
         if m.dormant:return m
         if m.card_id=='EDR_529' and not m.silenced and self.cards[cid]['type']=='MINION':
-            outcomes=self._generation_candidates(cost_pool(self.cards[cid]['cost']+2),m.owner)
+            outcomes=self._generation_candidates(evolve_pool(self.cards[cid]['cost'],2),m.owner)
             if not outcomes:return m
             cid=self.rng.choice(outcomes)
         return super()._transform(m,cid)
@@ -74,11 +78,45 @@ class Transformations:
         return self.rng.choice(values) if values else None
 
     def _mutation_replace_card(self,card,cid,*,retain_stats=False,retain_cost=False):
-        old=self.cards[card.card_id]
-        stats=(old.get('attack',0)+card.attack_bonus,old.get('health',0)+card.health_bonus)
-        cost=getattr(card,'set_cost',old['cost'])
-        self._b60_transform_card(card,cid,stats=stats if retain_stats else None)
-        if retain_cost:card.set_cost=cost
+        owner=next((i for i,p in enumerate(self.players) if any(card is c for c in p.hand+p.deck)),None)
+        stats=tuple(self._card_stat(card,key,owner) for key in ('attack','health'))
+        cost=self._cost(card,owner) if owner is not None else self._card_stat(card,'cost')
+        self._b60_transform_card(card,cid)
+        if retain_stats:self._mutation_set_stats(card,owner,*stats)
+        if retain_cost:self._set_card_cost(card,cost)
+
+    def _mutation_set_stats(self,card,owner,attack,health):
+        # Set removable stats against the effective base, including stored
+        # overrides and Crystal Core, rather than assuming the printed base.
+        from .historical_saidan import gain as saidan_gain
+        old_attack=self._card_stat(card,"attack",owner);old_health=self._card_stat(card,"health",owner)
+        attack+=saidan_gain(card,attack-old_attack)-(attack-old_attack)
+        health+=saidan_gain(card,health-old_health)-(health-old_health)
+        card._historical_set_stats=True
+        card.attack_bonus=card.health_bonus=0
+        card.attack_bonus=attack-self._card_stat(card,'attack',owner)
+        card.health_bonus=health-self._card_stat(card,'health',owner)
+
+    def _mutation_halves(self,value,*,health=False):
+        if health and value==1:return (1,1)
+        low,odd=divmod(value,2)
+        if not odd:return (low,low)
+        # Mes'Adune's split contract: odd values are divided unequally, with
+        # a random recipient for the spare point, independently per field.
+        first=low+self.rng.randrange(2)
+        return (first,value-first)
+
+    def _mutation_split_card(self,card,owner):
+        cost=self._mutation_halves(self._cost(card,owner))
+        attack=self._mutation_halves(self._card_stat(card,'attack',owner))
+        health=self._mutation_halves(self._card_stat(card,'health',owner),health=True)
+        # Both halves derive from the same physical definition before observers.
+        copy=self._copy_card(card,source_owner=owner)
+        for index,result in enumerate((card,copy)):
+            self._mutation_set_stats(result,owner,attack[index],health[index])
+            self._set_card_cost(result,cost[index])
+        self._enter_hand(owner,copy)
+        self._refresh_auras()
 
     def _mutation_split(self,op,ctx):
         name=op[0];owner=ctx['owner'];p=self.players[owner]
@@ -86,11 +124,11 @@ class Transformations:
         if name=='mutation_board':
             for m in list(p.minions):
                 if self._fire_immune_target(m.uid,ctx):continue
-                request=cost_pool(self.cards[m.card_id]['cost']+op[1])
+                request=evolve_pool(self._card_data(m)['cost'],op[1])
                 self._generation_candidates(request,owner)
                 # Replacement abilities need their entire outcome closure too.
                 if m.card_id=='EDR_529' and not m.silenced:
-                    self._generation_candidates(cost_pool(request.minimum+2),owner)
+                    self._generation_candidates(evolve_pool(request.minimum,2),owner)
                 operations.append(('mutation_board_one',m.uid,request,op[2]))
         elif name=='mutation_hand_demons':
             request=pool(card_type='MINION',tribe='DEMON');self._generation_candidates(request,owner)
@@ -107,17 +145,17 @@ class Transformations:
         elif name=='mutation_life_cycle':
             m=self._force_live(ctx.get('target',0))
             if m is not None and not m.dormant:
-                request=cost_pool(self.cards[m.card_id]['cost']);self._generation_candidates(request,m.owner)
+                request=board_pool(cost_pool(self._card_data(m)['cost']));self._generation_candidates(request,m.owner)
                 operations=[('destroy',),('mutation_replace_dead',m.owner,self.players[m.owner].board.index(m),request)]
         elif name=='mutation_bribe':
-            for recipient in (owner,1-owner):self._generation_candidates(cost_pool(2),recipient)
-            self._generation_candidates(cost_pool(3),owner)
-            operations=[('mutation_summon',recipient,cost_pool(2),None) for recipient in (owner,1-owner) for _ in range(2)]
+            for recipient in (owner,1-owner):self._generation_candidates(board_pool(cost_pool(2)),recipient)
+            self._generation_candidates(board_pool(cost_pool(3)),owner)
+            operations=[('mutation_summon',recipient,board_pool(cost_pool(2)),None) for recipient in (owner,1-owner) for _ in range(2)]
             operations.append(('mutation_board',1,False))
         elif name=='mutation_anomalize':
-            for cost in (10,1):self._generation_candidates(cost_pool(cost),owner)
+            for cost in (10,1):self._generation_candidates(board_pool(cost_pool(cost)),owner)
             state={'summoned':[]}
-            operations=[('mutation_summon',owner,cost_pool(cost),state) for cost in (10,1)]
+            operations=[('mutation_summon',owner,board_pool(cost_pool(cost)),state) for cost in (10,1)]
             operations.append(('mutation_scramble',state))
         else:return None
         return (operations[0],tuple(operations[1:])) if operations else (('batch30_noop',),())
@@ -150,27 +188,28 @@ class Transformations:
                     zone[i]=card
             self._refresh_auras()
         elif name=='mutation_split_minion':
-            import math
             choices=[c for c in p.hand if self.cards[c.card_id]['type']=='MINION']
             if choices:
-                card=self.rng.choice(choices);data=self.cards[card.card_id]
-                cost=math.ceil(self._cost(card,owner)/2)
-                attack=math.ceil((data['attack']+card.attack_bonus)/2)
-                health=math.ceil((data['health']+card.health_bonus)/2)
-                copy=self._clone_hand_card(owner,card)
-                for result in (card,copy):
-                    if result is None:continue
-                    result.attack_bonus=attack-data['attack'];result.health_bonus=health-data['health']
-                    result.set_cost=cost;result.cost_delta=0
-                    result.temporary_cost_discounts=[]
-                self._refresh_auras()
+                card=choices[0] if len(choices)==1 else self.rng.choice(choices)
+                self._mutation_split_card(card,owner)
         elif name=='mutation_board_one':
             m=self._force_live(op[1])
             if m is not None and not m.dormant and not self._fire_immune_target(m.uid,ctx):
                 cid=self._mutation_pick(op[2],owner)
                 if cid:
-                    original=m.card_id;result=self._transform(m,cid)
-                    if op[3] and result is not m:result.attached_death_effects.append(('death_summon',original,1))
+                    original=m.card_id
+                    learned=self._fresh_replay_card(m) if op[3] and hasattr(m,'_learned_spell') else None
+                    result=self._transform(m,cid)
+                    if op[3] and result is not m:
+                        if learned is not None:
+                            key=self._stored_save(owner,'ascendance_learned_original',[learned])
+                            result.attached_death_effects.append(('mutation_restore_learned',key))
+                        else:result.attached_death_effects.append(('death_summon',original,1))
+        elif name=='mutation_restore_learned':
+            payload=self._stored_payloads[op[1]]
+            if payload['kind']!='ascendance_learned_original':raise UnsupportedCard('Invalid Ascendance original payload')
+            card=self._fresh_replay_card(payload['values'][0])
+            self._summon(owner,card.card_id,ctx.get('death_position',-1),entry_origin='deathrattle',entry_site='ascendance_learned_original',entry_source=card)
         elif name=='mutation_hand_one':
             card=next((c for c in p.hand if c.uid==op[1]),None)
             if card is not None:
@@ -200,7 +239,7 @@ class Transformations:
         elif name=='mutation_self':
             m=ctx.get('source')
             if m is not None and m in self.players[m.owner].minions and m.health>0 and not m.silenced:
-                cid=self._mutation_pick(cost_pool(op[1]),owner)
+                cid=self._mutation_pick(board_pool(cost_pool(op[1])),owner)
                 if cid:self._transform(m,cid)
         elif name=='mutation_choose_hand':
             mode=op[1]

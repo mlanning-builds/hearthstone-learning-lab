@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 import unittest
 from unittest.mock import patch
 from copy import deepcopy
@@ -9,18 +10,19 @@ from engine.cards import UnsupportedCard
 class ConditionalDiscoverTests(unittest.TestCase):
     def setUp(self):
         self.helper=fixtures.GenerationTests();self.g=self.helper.game()
-        d=deepcopy(self.g.cards['CS3_025']);d.update(id='DEMON_TEST',dbfId=-99771,races=['DEMON'],cost=5)
+        d=thaw(self.g.cards['CS3_025']);d.update(id='DEMON_TEST',dbfId=-99771,races=['DEMON'],cost=5)
         self.g.cards[d['id']]=d
         patcher=patch.dict(cards.RULES,{'DEMON_TEST':('none',[])})
         patcher.start();self.addCleanup(patcher.stop)
     def start(self):
         self.helper.install(self.g,cd.DEMON,['DEMON_TEST'])
-        self.helper.run_ops(self.g,cd.RULES['TIME_446'][1])
+        self.helper.run_ops(self.g,cd.LOCATION_EFFECTS['TIME_446'])
     def choose(self):
         self.g.step(next(a for a in self.g.legal_actions() if a.kind=='choose'))
-    def test_staged_and_missing_pool_fail_closed(self):
-        self.assertNotIn('TIME_446',cards.COLLECTIBLE_IDS)
-        with self.assertRaises(UnsupportedCard):self.helper.run_ops(self.g,cd.RULES['TIME_446'][1])
+    def test_registered_complete_pool_opens_choice_before_discount(self):
+        self.assertIn('TIME_446',cards.COLLECTIBLE_IDS)
+        self.helper.run_ops(self.g,cd.LOCATION_EFFECTS['TIME_446'])
+        self.assertIsNotNone(self.g.pending_choice)
         self.assertFalse(self.g.players[0].cost_effects)
     def test_choice_before_discount_and_next_minion_only(self):
         self.start();self.assertFalse(self.g.players[0].cost_effects);self.choose()

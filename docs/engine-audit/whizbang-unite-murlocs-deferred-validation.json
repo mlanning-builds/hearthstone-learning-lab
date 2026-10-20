@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "UNG_942"
+  ],
+  "candidate_fingerprint": "43967218c4dcdffc0a8491f75bb0483d4c1b10729451d611ad4b03d184784880",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Summon publication, dormant and repeated summon semantics",
+    "Quest Accepted simultaneous quest exception remains unwritten"
+  ]
+}

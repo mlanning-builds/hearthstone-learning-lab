@@ -1,0 +1,34 @@
+{
+  "scope": "Partial Holmes clue/reward implementation; exact offer contract missing",
+  "implementation_complete": false,
+  "root_registered": false,
+  "unvalidated": true,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "candidate_fingerprint": "a88063efc5b8997413bbe8221d8eee0e673827ee53ea1245d37cf73a370af29a",
+  "written_minions": 3182,
+  "unwritten_minions": 19,
+  "metadata_sha256": "669aa8a356187e0cc06f972159cc5a4bc7666317687a153fced768245859c17c",
+  "checks": [
+    "AST parsing",
+    "Frozen Holmes wording/hash",
+    "Static inventory reconciliation",
+    "Strict staged rule schema",
+    "AST confirms clue metadata is confined to owner choice branch"
+  ],
+  "remaining": [
+    "Complete pinned distractor selection and offer weighting without invented distribution",
+    "Confirm current-versus-snapshotted zone semantics, opening-hand/coin/mulligan identities",
+    "Missing/empty zone behavior and canonical alias acceptance",
+    "Register root, choice execution and observation metadata only after full offer policy is authored",
+    "Review copy enchantments and full-hand rewards; all gameplay/regressions deferred"
+  ],
+  "choice_dispatch_written": true,
+  "owner_only_clue_observation_written": true,
+  "rejected_offer_policy_sources": [
+    {
+      "url": "https://www.hearthpwn.com/forums/hearthstone-general/card-discussion/253773-hypotheses-of-new-legendary-card-murloc-holmes",
+      "reason": "Pre-release article explicitly states that the author had not played the card and the proposed algorithm is a hypothesis; not evidence for runtime distribution"
+    }
+  ]
+}

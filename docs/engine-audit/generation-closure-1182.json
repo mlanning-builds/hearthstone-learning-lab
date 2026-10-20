@@ -1,0 +1,2159 @@
+{
+  "scope": "Membership and written-outcome closure only; not play/internal-cast/client interaction certification",
+  "registered_standard_count": 1182,
+  "closed_request_roots": [
+    "CAP_002",
+    "CAP_105",
+    "CATA_140",
+    "CATA_474",
+    "CATA_499",
+    "CATA_556",
+    "CATA_569",
+    "CATA_621",
+    "CORE_AT_062",
+    "CORE_AV_107",
+    "CORE_BT_321",
+    "CORE_DRG_024",
+    "CORE_EDR_001",
+    "CORE_GIL_531",
+    "CORE_KAR_062",
+    "CORE_KAR_077",
+    "CORE_LOE_039",
+    "CORE_ONY_022",
+    "CORE_REV_308",
+    "CORE_RLK_066",
+    "CORE_TID_931",
+    "CORE_UNG_912",
+    "CORE_WON_350",
+    "CORE_YOP_001",
+    "Core_UNG_072",
+    "DINO_412",
+    "DINO_415",
+    "DINO_422",
+    "DINO_426",
+    "DINO_427",
+    "DINO_430",
+    "DINO_431",
+    "DINO_433",
+    "EDR_060",
+    "EDR_105",
+    "EDR_270",
+    "EDR_273",
+    "EDR_456",
+    "EDR_461",
+    "EDR_462",
+    "EDR_463",
+    "EDR_465",
+    "EDR_488",
+    "EDR_530",
+    "EDR_781",
+    "EDR_848",
+    "EDR_872",
+    "EDR_882",
+    "EDR_999",
+    "END_013",
+    "END_015",
+    "END_020",
+    "END_029",
+    "FIR_913",
+    "FIR_924",
+    "FIR_927",
+    "FIR_939",
+    "FIR_952",
+    "JAIL_123",
+    "JAIL_125",
+    "JAIL_201",
+    "JAIL_328",
+    "JAIL_451",
+    "JAIL_460",
+    "JAIL_474",
+    "JAIL_507",
+    "JAIL_706",
+    "JAIL_735",
+    "JAIL_806",
+    "JAIL_861",
+    "JAIL_875",
+    "JAIL_878",
+    "JAIL_892",
+    "JAIL_912",
+    "JAIL_987",
+    "MEND_042",
+    "MEND_045",
+    "RLK_025",
+    "TIME_002",
+    "TIME_018",
+    "TIME_033",
+    "TIME_034",
+    "TIME_035",
+    "TIME_102",
+    "TIME_602",
+    "TIME_712",
+    "TIME_730",
+    "TIME_872",
+    "TLC_334",
+    "TLC_449",
+    "TLC_469",
+    "TLC_516",
+    "TLC_814"
+  ],
+  "blocked_request_roots": [
+    {
+      "card_id": "CAP_407",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_136",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=8, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_471",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_484",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CATA_723",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_BAR_541",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_CATA_009",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_CFM_781",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_ETC_111",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_EX1_189",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_GIL_836",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_GVG_114",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_KAR_057",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_KAR_069",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_RLK_116",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='unholy', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_WON_096",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "CORE_WON_337",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "Core_LOE_115",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "DINO_424",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "DINO_434",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "EDR_102",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "EDR_517",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "EDR_811",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='UNDEAD', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "END_005",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "FIR_900",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "FIR_920",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='BATTLECRY', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "JAIL_448",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "JAIL_876",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "JAIL_986",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_000",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_014",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=12, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_038",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_448",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_613",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TIME_EVENT_999",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_109",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='EPIC', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_434",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='UNDEAD', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_462",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_477",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_514",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    },
+    {
+      "card_id": "TLC_815",
+      "blocked_contexts": [
+        {
+          "hero_class": "DEATHKNIGHT",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DEMONHUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "DRUID",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "HUNTER",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "MAGE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PALADIN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "PRIEST",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "ROGUE",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "SHAMAN",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARLOCK",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        },
+        {
+          "hero_class": "WARRIOR",
+          "request": "PoolRequest(era='', rune='', card_type='MINION', tribe='', school='', minimum=4, maximum=4, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)"
+        }
+      ]
+    }
+  ],
+  "historical_canonical_universe": 4921,
+  "time052_eligible_past_minions": 3226,
+  "time052_unwritten_past_minions": 2878,
+  "evidence_note": "Calls use actual Game._generation_candidates and all eleven classes. These checks establish complete membership and written-outcome availability for recorded requests, not executable internal casts, nested dependencies, distributions, or client fidelity.",
+  "candidate_fingerprint": "a8fc29667f0daaba925f7f50b8d67ad899825932a677658a4a154d9fdc897495"
+}

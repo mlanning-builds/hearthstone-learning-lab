@@ -1,0 +1,249 @@
+{
+  "status": "written_unvalidated",
+  "patch": "36.6.0.251952",
+  "pools": {
+    "WORK_027t1": [
+      {
+        "card_id": "EX1_259",
+        "name": "Lightning Storm",
+        "sha256": "dbe8808434356ddea40b66ce4a8e9fd0c8dbe68fd8db248a54588748bf3de069"
+      },
+      {
+        "card_id": "CS2_026",
+        "name": "Frost Nova",
+        "sha256": "84b1eae36e001921cf32f9dab461e07c15e42647f286505b24cc586d029747ba"
+      },
+      {
+        "card_id": "CS2_032",
+        "name": "Flamestrike",
+        "sha256": "ebb10f531a90c30e5381c247dfd3cc816b169dbc5d8136f9eaa8a83ec482a022"
+      },
+      {
+        "card_id": "EX1_312",
+        "name": "Twisting Nether",
+        "sha256": "c6c50b75e85986bfe6e5699b0d139ea5fa332f39e457389d2cfd15061fc055e4"
+      },
+      {
+        "card_id": "CS2_093",
+        "name": "Consecration",
+        "sha256": "cc56c928859fdd2f7dd726438a24a5474163fbcfc138b4f247529f9f90aadc8a"
+      },
+      {
+        "card_id": "NEW1_007",
+        "name": "Starfall",
+        "sha256": "45cf9b83e56bab0aec2afce0db2402bd96a3b88d16812f9704f9eeb6fc9f0086"
+      },
+      {
+        "card_id": "NEW1_004",
+        "name": "Vanish",
+        "sha256": "ec2bf063d1cfa8e074d13581a5267e753e229806f0996094bf386504fb9df268"
+      },
+      {
+        "card_id": "EX1_309",
+        "name": "Siphon Soul",
+        "sha256": "81d01a9013125a28b6514a809a9463308fbe6721f2ce2f99db60c9449ddca303"
+      },
+      {
+        "card_id": "EX1_303",
+        "name": "Shadowflame",
+        "sha256": "edad3fab08e843ccabf26af6ac832b8503892d421a8c4c692119a84ab3f71152"
+      },
+      {
+        "card_id": "EX1_407",
+        "name": "Brawl",
+        "sha256": "1dd276961d75ab4fecbbaa295d5759fbbae30f76c6b9e8a77d4e91360ec9e02e"
+      },
+      {
+        "card_id": "EX1_334",
+        "name": "Shadow Madness",
+        "sha256": "2ea6972b5ea6338a6d2aba5ba8b8ac6f838d9d3e4e23175f6a713785e3ad7c17"
+      },
+      {
+        "card_id": "EX1_626",
+        "name": "Mass Dispel",
+        "sha256": "d01e3427f51570fc877c65b4dc39b58352d20c7155eac16f9563ac55d713c96a"
+      },
+      {
+        "card_id": "EX1_197",
+        "name": "Shadow Word: Ruin",
+        "sha256": "57db4738e8ba2d59d992d412668d45f1794a03980295b385b83321c306da9568"
+      },
+      {
+        "card_id": "EX1_619",
+        "name": "Equality",
+        "sha256": "30671d4e812345b6077f08b63917d8b2a834b1d3c86427ebdc82f2ecf0f8bd59"
+      },
+      {
+        "card_id": "CS2_028",
+        "name": "Blizzard",
+        "sha256": "aff6dbfcc3ec49580dfc00e3207e03d8c20245508458b41e101eaf9fbf0df9f5"
+      },
+      {
+        "card_id": "CS2_012",
+        "name": "Swipe",
+        "sha256": "d0f3c89b7dda6bcc54649d9cd66e94fcb9bae52f918ba78e66054a1310557e33"
+      },
+      {
+        "card_id": "CS1_112",
+        "name": "Holy Nova",
+        "sha256": "d69cc4530e05dc85edf8e46f11d61cbc78212ef38bcc7dcf8c1191a821e7ce9c"
+      },
+      {
+        "card_id": "EX1_246",
+        "name": "Hex",
+        "sha256": "a6eed254623be11e14f82998611831cb53af370f4dc19b7ca11982fc71f47a97"
+      },
+      {
+        "card_id": "CS2_022",
+        "name": "Polymorph",
+        "sha256": "9b8b012299a25e99808a49af926f100aa19a24df9fe93c64e588e9963e1a684e"
+      }
+    ],
+    "WORK_027t2": [
+      {
+        "card_id": "EX1_323",
+        "name": "Lord Jaraxxus",
+        "sha256": "d70092bd26b768fb7dcb8103c2b80b57c82900bdb2d52cb4f8ee1eab8e8ac61a"
+      },
+      {
+        "card_id": "EX1_383",
+        "name": "Tirion Fordring",
+        "sha256": "bc4a2b6daed37a8fa4ec764fe831f31913db52da4080200430fabd86a475fe1f"
+      },
+      {
+        "card_id": "CS1_113",
+        "name": "Mind Control",
+        "sha256": "065d13d1b69ebe9794115ed5b659e383a2c293df3c5463b71666bf845302d9e3"
+      },
+      {
+        "card_id": "EX1_016",
+        "name": "Sylvanas Windrunner",
+        "sha256": "bce45bc110044fcb76c7aeee12bc5f9d455d2f783605ea91e2e4a1adff3a697e"
+      },
+      {
+        "card_id": "EX1_573",
+        "name": "Cenarius",
+        "sha256": "cff301de910b715642047b8db9a30cb53c7cf3ae568fae2513537287b66c39ff"
+      },
+      {
+        "card_id": "EX1_559",
+        "name": "Archmage Antonidas",
+        "sha256": "103dccf95b7051376d708210c4108e0e278ba55cf5f107a59a0b629a26b3f9ea"
+      },
+      {
+        "card_id": "EX1_354",
+        "name": "Lay on Hands",
+        "sha256": "e5c56ffda88fbc0edaec082f17d44b62c6ad138deefbbf846af60cf241c246ce"
+      },
+      {
+        "card_id": "EX1_572",
+        "name": "Ysera",
+        "sha256": "aaa3edf32feba0b55293e80b1f5550d4f7ed40555d66cf994df84dbd1738470a"
+      },
+      {
+        "card_id": "NEW1_008",
+        "name": "Ancient of Lore",
+        "sha256": "2113626eb5eee67607c2865c49e3026693d169c364f2f043e1f860fe9c7a3d9e"
+      },
+      {
+        "card_id": "EX1_298",
+        "name": "Ragnaros the Firelord",
+        "sha256": "daf852ecdcbdf50f26851595f397af63411898f2c3865a91b37b7211169846e1"
+      },
+      {
+        "card_id": "EX1_295",
+        "name": "Ice Block",
+        "sha256": "e188d948044df1277082359269f1aa4e6f635475d00967ea93a809b5b64a154b"
+      },
+      {
+        "card_id": "EX1_144",
+        "name": "Shadowstep",
+        "sha256": "11812c56543abd710aeea8045684bcd51520988d35b25c79caf2b975f8d84184"
+      },
+      {
+        "card_id": "EX1_105",
+        "name": "Mountain Giant",
+        "sha256": "7ee45f277da89367374b89469317249910508c51498d385c7047b9a9029eb67b"
+      }
+    ],
+    "WORK_027t3": [
+      {
+        "card_id": "CS2_029",
+        "name": "Fireball",
+        "sha256": "bcc19545d8db4e95fdc8c67ed79314a52dba0dd27aa9f2349d074ea03ad4332c"
+      },
+      {
+        "card_id": "CS2_024",
+        "name": "Frostbolt",
+        "sha256": "bad00dea613d494e468dd234c119e345ad644723984f65ff6d62360e6cfa8e1d"
+      },
+      {
+        "card_id": "EX1_384",
+        "name": "Avenging Wrath",
+        "sha256": "d1aa775e8435baf08f5d52c8ffdfe354dbb297d9695b9b821188a1cbd60c1e05"
+      },
+      {
+        "card_id": "CS2_011",
+        "name": "Savage Roar",
+        "sha256": "c5108f43cc6251327b96e77d7ef63a2eda7c6d815d7a9ff74eb06eaab9e69f83"
+      },
+      {
+        "card_id": "EX1_124",
+        "name": "Eviscerate",
+        "sha256": "a74d86b013f8bcdcd87d75bf276abc0ccd96f163bf82854d48ab70b940050e45"
+      },
+      {
+        "card_id": "EX1_238",
+        "name": "Lightning Bolt",
+        "sha256": "88534516ecf26d4985d7d3522042e57196f304423f6d3f04da43fe0ceec2a268"
+      },
+      {
+        "card_id": "EX1_241",
+        "name": "Lava Burst",
+        "sha256": "2a760800c0c38c33558b8dd62dadb7d1c188ae1a4ec5e108857ef3aa8f291d5b"
+      },
+      {
+        "card_id": "CS2_039",
+        "name": "Windfury",
+        "sha256": "8a88101f24f049fd4d62df7c7379ee544d153c0a1120a41bd83c8870b7649c70"
+      },
+      {
+        "card_id": "EX1_308",
+        "name": "Soulfire",
+        "sha256": "489a1d82e623c79ba0b3eb7ba802c36a23279de724192d4845003a4314521a13"
+      },
+      {
+        "card_id": "EX1_408",
+        "name": "Mortal Strike",
+        "sha256": "67c9be6a709418fe0b3bc23a62a7e18a988547fbb1f3e03f212944dab44a505c"
+      },
+      {
+        "card_id": "EX1_414",
+        "name": "Grommash Hellscream",
+        "sha256": "2ff426e28c7b088278cc5804a771239f6582f8baa04d342dcce2c5a81da4be89"
+      },
+      {
+        "card_id": "EX1_116",
+        "name": "Leeroy Jenkins",
+        "sha256": "d88b9eae92f8a93db05e5a37c2b9cd86f9ec3bdbf74f9478c767ba4bba09840f"
+      },
+      {
+        "card_id": "NEW1_010",
+        "name": "Al'Akir the Windlord",
+        "sha256": "374690daef78ba94f878660f32bcd721ddd634bdd1f25075efdd58ae2a1b9e35"
+      },
+      {
+        "card_id": "DS1_233",
+        "name": "Mind Blast",
+        "sha256": "9663121628cf4143be5f917ea020ad5d92fcfdce56bfe030c67e45ea26fdffda"
+      }
+    ]
+  },
+  "source_urls": [
+    "https://hearthstonehungary.hu/card/118685/modest-tour",
+    "https://hearthstonehungary.hu/card/118686/extravagant-tour",
+    "https://hearthstonehungary.hu/card/118687/hectic-tour",
+    "https://hearthstone.wiki.gg/wiki/Dreamplanner_Zephrys"
+  ],
+  "membership_note": "Explicit collectible outcome lists; related generated tokens are dependencies, not extra selectable outcomes. Original Legacy/EXPERT1 printings, no Core substitutions. Exact pinned-client membership not independently certified."
+}

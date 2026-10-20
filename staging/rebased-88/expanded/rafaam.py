@@ -3,6 +3,7 @@
 Baaaafam belongs to the effect family, but is not a required Fabled companion.
 Historical Rafaams are not inferred from their displayed names.
 """
+from .historical_saidan import add as _saidan_add
 from .fabled_decks import BUNDLES
 from .pools import deck_choice_options
 
@@ -39,7 +40,7 @@ class Rafaam:
    self._draw(owner,predicate=lambda data:data['id'] in FAMILY)
   elif name=='rafaam_buff':
    for card in p.hand:
-    if card.card_id in FAMILY:card.attack_bonus+=2;card.health_bonus+=2
+    if card.card_id in FAMILY:_saidan_add(card,'attack_bonus',2);_saidan_add(card,'health_bonus',2)
    for m in p.minions:
     if m is not source and m.card_id in FAMILY:self._buff(m,2,2)
   elif name=='rafaam_discover':

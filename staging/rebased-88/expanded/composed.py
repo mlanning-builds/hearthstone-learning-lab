@@ -2,12 +2,15 @@
 
 No card text parsing or global generation-pool approximation is used here.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 from engine.cards import UnsupportedCard
 from .selectors import has_class
 from .pools import deck_choice_options
 
+
+DREDGE_MODES=frozenset(('none', 'discount', 'spell_discount', 'opponent_cost', 'stats', 'armor', 'undead_damage', 'mech_draw', 'beast_discount', 'pirate_weapon', 'affordable_draw', 'murloc_health', 'reveal_damage', 'murloc_summon','one_cost_recruit','murloc_copy'))
 
 class ComposedEffects:
     def _temporary_keyword(self,m,keyword,expiry):
@@ -16,13 +19,17 @@ class ComposedEffects:
                                          turn=self.turn+2 if expiry=='next_start' else self.turn))
 
     def _set_entity_stats(self,m,attack,health):
+        from .historical_saidan import gain as saidan_gain
+        delta=health+m.aura_health-m.max_health
+        health+=saidan_gain(m,delta)-delta
         self._set_minion_attack(m,attack+m.aura_attack)
         m.health=m.max_health=health+m.aura_health
         m.temporary_attack=0
 
     def _open_zone_choice(self,owner,zone_owner,zone,mode):
         values=getattr(self.players[zone_owner],zone)
-        options=deck_choice_options(values,self.cards,3,self.rng)
+        options=([dict(card_id=self._card_data(value)['id'],index=index) for index,value in enumerate(values[:3])]
+                 if mode=='dredge' else deck_choice_options(values,self.cards,3,self.rng))
         if not options:return
         # Index is used only while a choice freezes the game; snapshots preserve
         # the selected physical copy's enchantments for copy effects.
@@ -39,14 +46,47 @@ class ComposedEffects:
                 value=selected['snapshot']
                 card=deepcopy(value) if isinstance(value,Card) else Card(self._new_id(),value)
                 self._discovery_result=self._clone_hand_card(owner,card,source_owner=choice['zone_owner'] if choice['zone_owner']!=owner else None)
-            elif mode=='top':
-                values.append(values.pop(selected['index']))
+            elif mode in ('top','dredge'):
+                card=values.pop(selected['index'])
+                if mode=='dredge' and self._card_data(card)['type']=='MINION' and choice.get('dredge_buff'):
+                    if not isinstance(card,Card):card=Card(self._new_id(),card)
+                    attack,health=choice['dredge_buff'];_saidan_add(card,'attack_bonus',attack);_saidan_add(card,'health_bonus',health)
+                values.append(card)
+                if mode=='dredge' and choice.get('historical_dredge'):
+                    from .selectors import has_tribe
+                    effect=choice['historical_dredge'];data=self._card_data(card)
+                    zone_owner=choice['zone_owner']
+                    if not isinstance(card,Card):
+                        card=Card(self._new_id(),card);values[-1]=card
+                    operations=[];ctx=choice['effect_context']
+                    if effect=='discount':card.cost_delta=getattr(card,'cost_delta',0)-1
+                    elif effect=='spell_discount' and data['type']=='SPELL':card.cost_delta=getattr(card,'cost_delta',0)-3
+                    elif effect=='opponent_cost':self._set_card_cost(card,6)
+                    elif effect=='stats' and data['type'] in ('MINION','WEAPON'):
+                        _saidan_add(card,'attack_bonus',1);_saidan_add(card,'health_bonus',1)
+                    elif effect=='armor':operations=[('armor',self._cost(card,zone_owner))]
+                    elif effect=='undead_damage' and has_tribe(data,'UNDEAD'):operations=[('damage_enemy_hero',5)]
+                    elif effect=='mech_draw' and has_tribe(data,'MECHANICAL'):operations=[('draw',1)]
+                    elif effect=='beast_discount' and has_tribe(data,'BEAST'):card.cost_delta=getattr(card,'cost_delta',0)-2
+                    elif effect=='pirate_weapon' and has_tribe(data,'PIRATE'):
+                        _saidan_add(card,'attack_bonus',2)
+                        if p.weapon and getattr(p.equipped_card,'uid',None)==choice.get('weapon_uid'):self._buff_weapon(owner,attack=2)
+                    elif effect=='affordable_draw' and self._cost(card,zone_owner)<=p.mana:operations=[('draw',1)]
+                    elif effect=='murloc_health' and has_tribe(data,'MURLOC'):
+                        state=deepcopy(getattr(card,'rule_state',{}));state['health_payment']=True;state.pop('health_payment_until',None);card.rule_state=state
+                    elif effect=='reveal_damage':
+                        amount=self._cost(card,zone_owner);self._log('reveal_dredge',player=owner,card=card.card_id,cost=amount)
+                        operations=[('area_damage','all_minions',amount)]
+                    elif effect=='murloc_summon' and has_tribe(data,'MURLOC'):operations=[('summon','TSC_925t',1)]
+                    elif effect=='one_cost_recruit' and data['type']=='MINION' and self._cost(card,zone_owner)==1:operations=[('recruit_deck_uid',card.uid)]
+                    elif effect=='murloc_copy' and has_tribe(data,'MURLOC'):operations=[('historical_dredge_copy',deepcopy(card))]
+                    if operations:self._rule_events.append(('captured_effects',dict(operations=tuple(operations),context=ctx),[]))
             elif mode=='draw_bottom':
                 chosen=values[selected['index']]
                 rejected=[values[o['index']] for o in choice['options'] if o is not selected]
                 for index in sorted([o['index'] for o in choice['options']],reverse=True):values.pop(index)
                 self.rng.shuffle(rejected);values[0:0]=rejected
-                if len(p.hand)<10:self._discovery_result=self._enter_hand(owner,chosen if isinstance(chosen,Card) else Card(self._new_id(),chosen))
+                if len(p.hand)<getattr(p,'hand_capacity',10):self._discovery_result=self._enter_hand(owner,chosen if isinstance(chosen,Card) else Card(self._new_id(),chosen))
                 else:
                     self._burn_deck_card(owner,chosen)
             else:raise UnsupportedCard('Unknown zone choice mode')
@@ -54,7 +94,7 @@ class ComposedEffects:
         if choice['kind']=='composed_attack':
             if selected['zone']=='hand':
                 card=next((c for c in p.hand if c.uid==selected['uid']),None)
-                if card is not None:card.attack_bonus+=choice['amount']
+                if card is not None:_saidan_add(card,'attack_bonus',choice['amount'])
             else:
                 m=next((m for m in p.minions if m.uid==selected['uid']),None)
                 if m is not None:self._buff(m,choice['amount'],0)
@@ -65,8 +105,11 @@ class ComposedEffects:
             if choice['mode']=='discount':card.cost_delta=getattr(card,'cost_delta',0)-choice['amount']
             elif choice['mode']=='give':
                 p.hand.remove(card);other=self.players[1-owner]
-                if len(other.hand)<10:self._enter_hand(1-owner,card)
-                else:self._log('burn_generated',player=1-owner,card=card.card_id)
+                if len(other.hand)<getattr(other,'hand_capacity',10):self._enter_hand(1-owner,card)
+                else:
+                    from .historical_movements import record
+                    record(self,'destroyed')
+                    self._log('burn_generated',player=1-owner,card=card.card_id)
             else:raise UnsupportedCard('Unknown draw choice mode')
             self._refresh_auras();return True
         return False
@@ -75,7 +118,8 @@ class ComposedEffects:
         name=op[0];owner=ctx['owner'];p=self.players[owner]
         source=ctx.get('source');target=ctx.get('target',0)
         if name=='destroy_crystals':
-            p.max_mana=max(0,p.max_mana-op[1]);p.mana=min(p.mana,max(0,p.max_mana-p.locked_mana))
+            from .mana_accounting import destroy_permanent
+            destroy_permanent(p,op[1])
         elif name=='gain_full_crystals':
             gained=min(op[1],p.mana_capacity-p.max_mana);p.max_mana+=gained;p.mana=min(p.mana_capacity,p.mana+gained)
         elif name in ('temporary_keyword_self','temporary_keyword_target'):
@@ -115,7 +159,7 @@ class ComposedEffects:
             records=[r for player in self.players for r in player.death_records if r.get('entity') is not None and r['entity'].uid==target]
             if records:
                 card=Card(self._new_id(),records[-1]['card_id']);self._set_card_cost(card,op[1])
-                p.deck.append(card);self.rng.shuffle(p.deck);self._record_deck_insertion(owner,owner,1,'shuffle')
+                p.deck.append(card);self.rng.shuffle(p.deck);self._record_deck_insertion(owner,owner,1,'shuffle',cards=(card,))
         elif name=='draw_summon_set_stats':
             card=self._draw(owner,lambda d:d['type']=='MINION',include_burned=True)
             if card is not None:
@@ -129,6 +173,17 @@ class ComposedEffects:
                 if options:
                     self.pending_choice=dict(owner=owner,kind='composed_attack',amount=source.attack,options=options)
                     self.phase='choice'
+        elif name=='historical_dredge_copy':
+            card=op[1]
+            self._summon(owner,card.card_id,attack_bonus=card.attack_bonus,health_bonus=card.health_bonus,entry_origin='copy',entry_site='dredge_murloc_copy',entry_zone='deck',entry_source=card,entry_stats=(2,2))
+        elif name=='historical_dredge':
+            mode=op[1]
+            if mode not in DREDGE_MODES:raise UnsupportedCard('Unknown historical Dredge result: '+str(mode))
+            self._open_zone_choice(owner,1-owner if mode=='opponent_cost' else owner,'deck','dredge')
+            if self.pending_choice is not None:
+                self.pending_choice['historical_dredge']=mode
+                self.pending_choice['effect_context']=dict(ctx)
+                self.pending_choice['weapon_uid']=ctx.get('weapon_uid',getattr(ctx.get('physical_card'),'uid',None))
         elif name=='zone_choice':
             self._open_zone_choice(owner,owner if op[1]=='friendly' else 1-owner,op[2],op[3])
         elif name=='draw_pick':

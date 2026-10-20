@@ -118,7 +118,7 @@ class ReplacementPowersTests(unittest.TestCase):
         self.assertEqual(view['players'][0]['primary_power']['restore']['card_id'],'JAIL_EVENT_101hp')
         self.assertEqual(g.observe(1)['players'][0]['primary_power']['remaining'],2)
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertTrue(rows);self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertTrue(rows);self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_observation_cannot_mutate_stored_restore(self):
         g=self.game();self.star(g);self.play(g,'TLC_632');v=g.observe(0)
         v['players'][0]['primary_power']['restore']['damage']=100

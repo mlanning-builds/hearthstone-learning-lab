@@ -1,7 +1,8 @@
 """Staged Broxigar: a finite disappeared card and the four Argus portals.
 
 A copied final portal can release the original to either player. It never
-creates an additional Broxigar. Multiple originals remain explicitly gated.
+creates an additional Broxigar. Physical chain identity distinguishes both players' originals. Unbound copied
+portals with multiple waiting originals remain explicitly gated.
 """
 from engine.game import Card
 from engine.cards import UnsupportedCard
@@ -22,29 +23,47 @@ class Broxigar:
   for owner,p in enumerate(self.players):
    originals=[c for c in p.deck if isinstance(c,Card) and c.card_id=='TIME_020' and (self._started_in_deck(c,owner) or getattr(c,'_copied_opening_effect',False))]
    for card in originals:
+    for portal in p.deck:
+     if isinstance(portal,Card) and portal.card_id==PORTALS[0]:
+      portal._brox_chain=card.uid
     p.deck.remove(card);self._broxigar_waiting.append(card)
     self._log('broxigar_disappears',player=owner)
 
  def _brox_split(self,op,ctx):
   if op[0]!='brox_reward':return None
   beneficiary=1-ctx['owner']
-  return ('brox_draw',beneficiary),(('brox_shuffle',beneficiary,op[1]),)
+  chain=getattr(ctx.get('source'),'_brox_chain',None)
+  return ('brox_draw',beneficiary),(('brox_shuffle',beneficiary,op[1],chain),)
 
  def _brox_effect(self,op,ctx):
   owner=ctx['owner'];name=op[0]
   if name=='brox_portal':
-   self._summon(1-owner,op[1],entry_origin='effect',entry_site='broxigar_portal',entry_source=ctx.get('physical_card'))
+   portal=ctx.get('physical_card')
+   before={m.uid for m in self.players[1-owner].all_minions}
+   self._summon(1-owner,op[1],entry_origin='effect',entry_site='broxigar_portal',entry_source=portal)
+   chain=getattr(portal,'_brox_chain',None)
+   if chain is not None:
+    for demon in self.players[1-owner].all_minions:
+     if demon.uid not in before and demon.card_id==op[1]:demon._brox_chain=chain
   elif name=='brox_draw':self._draw(op[1])
   elif name=='brox_shuffle':
-   beneficiary,cid=op[1:]
+   beneficiary,cid=op[1:3]
+   chain=op[3] if len(op)>3 else None
    if cid not in self.cards:raise UnsupportedCard('Missing Argus portal: '+cid)
-   self.players[beneficiary].deck.append(Card(self._new_id(),cid));self.rng.shuffle(self.players[beneficiary].deck)
-   self._record_deck_insertion(beneficiary,beneficiary,1,'shuffle')
+   card=Card(self._new_id(),cid)
+   if chain is not None:card._brox_chain=chain
+   self.players[beneficiary].deck.append(card);self.rng.shuffle(self.players[beneficiary].deck)
+   self._record_deck_insertion(beneficiary,beneficiary,1,'shuffle',cards=(card,))
   elif name=='brox_return':
    waiting=getattr(self,'_broxigar_waiting',[])
-   if len(waiting)>1:raise UnsupportedCard('Multiple disappeared Broxigars require independent ownership evidence')
-   if waiting:
-    card=waiting.pop();beneficiary=1-owner
+   chain=getattr(ctx.get('source'),'_brox_chain',None)
+   if chain is not None:
+    card=next((c for c in waiting if c.uid==chain),None)
+   elif len(waiting)>1:
+    raise UnsupportedCard('Multiple disappeared Broxigars with an unbound portal require ownership evidence')
+   else:card=waiting[0] if waiting else None
+   if card is not None:
+    waiting.remove(card);beneficiary=1-owner
     self._enter_hand(beneficiary,card)
     self._log('broxigar_returns',player=beneficiary)
   elif name=='brox_axe':

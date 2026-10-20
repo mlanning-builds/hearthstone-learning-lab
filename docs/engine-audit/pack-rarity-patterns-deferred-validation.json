@@ -1,0 +1,26 @@
+{
+  "status": "written_contract_model_unvalidated",
+  "candidate_fingerprint": "0a4a8e62d735648c824ae8e107332fc71d21d727d03545fd4ef479daa8c6a4ae",
+  "historical_written": 3192,
+  "historical_remaining": 9,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Joint five-rarity pattern distribution model",
+    "Explicit conditional card identity weights",
+    "Full identity/rarity preflight before RNG",
+    "Elise complete 126-identity coverage and Epic-or-better guarantee enforced"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Actual Avatar/Elise in-game probabilities remain unresolved; no default distribution installed",
+    "Conditional identity independence is explicit in this model, not asserted as client behavior",
+    "Automatic-play order and generated dependencies require deferred gameplay review"
+  ]
+}

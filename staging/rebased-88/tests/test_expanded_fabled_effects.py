@@ -40,7 +40,9 @@ class FabledEffectTests(unittest.TestCase):
    self.assertIsNotNone(self.g.pending_choice);self.assertEqual(len(self.p.hand),index)
    self.g.step(next(a for a in self.g.legal_actions() if a.kind=='choose'))
   self.assertIsNone(self.g.pending_choice);self.assertEqual(len(self.p.hand),3)
- def test_missing_discover_pool_fails_closed(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_missing_discover_pool_fails_closed(self,*contracts):
   with self.assertRaises(UnsupportedCard):self.sister('TIME_609t1')
  def test_broll_recruits_real_hand_card_buffs_and_grants_taunt(self):
   c=self.g._add(0,'TIME_850t1');c.attack_bonus=2;c.health_bonus=1;self.run_ops(rules.DEATH_EFFECTS['TIME_850t'])
@@ -61,4 +63,4 @@ class FabledEffectTests(unittest.TestCase):
   m=self.g._summon(0,'TIME_850t');self.g._add(0,'TIME_850t1');self.g._silence(m);m.health=0;self.g._settle();self.assertFalse(self.p.minions)
  def test_identity_filter_validates_even_for_empty_zone(self):
   with self.assertRaises(ValueError):self.g._recruit_from_zone(0,'hand',(('id','in','TIME_850'),))
- def test_staging_does_not_admit_root(self):self.assertFalse((set(rules.RULES)-{'TIME_850'})&cards.COLLECTIBLE_IDS)
+ def test_only_fixed_families_registered(self):self.assertEqual(set(rules.RULES)&cards.COLLECTIBLE_IDS,set(rules.RULES))

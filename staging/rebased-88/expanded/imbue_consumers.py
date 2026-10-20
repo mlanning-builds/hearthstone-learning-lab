@@ -58,7 +58,7 @@ class ImbueConsumers:
                     context=dict(owner=owner,source=None,target=0,bonus=0,lifesteal=False)),[]))
 
     def _imbue_consumer_play(self,owner,source):
-        if source is None or not has_tribe(self.cards[source.card_id],'UNDEAD'):return
+        if source is None or not has_tribe(self._card_data(source),'UNDEAD'):return
         p=self.players[owner];first=p.undead_play_turn!=self.turn;p.undead_play_turn=self.turn
         power=p.primary_power
         if first and power and power['card_id']=='END_003p':
@@ -87,8 +87,10 @@ class ImbueConsumers:
             power=p.primary_power
             if power is None:raise UnsupportedCard('Free triggering of this base Hero Power is not connected')
             if power['card_id']=='END_003p':return ('batch30_noop',),() # passive has no activated body
-            if power['card_id']=='END_000p':raise UnsupportedCard('Free Rogue Imbue Rewind timing awaits conformance review')
-            operations=self._imbue_power_operations(owner)
+            if power['card_id']=='END_000p':
+                from .approximation_policy import mark
+                mark(self,'rogue_free_imbue')
+            operations=tuple(self._imbue_power_operations(owner))*self._trigger_repetitions(owner)
             targets=self._replacement_power_targets(owner)
             if not targets:return ('batch30_noop',),()
             target=self.rng.choice(targets) if len(targets)>1 else targets[0]

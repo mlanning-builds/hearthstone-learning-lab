@@ -52,10 +52,14 @@ class MedivhTests(unittest.TestCase):
   self.staff();self.p.health=1;self.run_ops([('heal',3)],target=-1);self.assertEqual(self.p.health,4)
  def test_area_heal_doubles_each_target(self):
   self.staff();self.p.health=1;m=self.g._summon(0,'TIME_890');m.health=1;self.run_ops([('area_heal',2)],spell=True);self.assertEqual(self.p.health,5);self.assertEqual(m.health,5)
- def test_unreviewed_spell_lifesteal_rejects_before_damage(self):
-  self.staff();before=self.q.health
-  with self.assertRaisesRegex(UnsupportedCard,'Atiesh spell Lifesteal'):self.run_ops([('damage',3)],target=-2,spell=True,lifesteal=True)
-  self.assertEqual(self.q.health,before)
+ def test_staff_spell_lifesteal_doubles_damage_and_healing(self):
+  self.staff();self.p.health=1
+  self.run_ops([('damage',3)],target=-2,spell=True,lifesteal=True)
+  self.assertEqual(self.q.health,24);self.assertEqual(self.p.health,13)
+ def test_staff_lifesteal_conversion_uses_damage_before_healing_multiplier(self):
+  self.staff();self.g._summon(0,'DMF_230');self.p.health=1
+  self.run_ops([('damage',3)],target=-2,spell=True,lifesteal=True)
+  self.assertEqual(self.q.health,18);self.assertEqual(self.p.health,1)
  def test_karazhan_summons_two_with_replacement(self):
   location=self.g._place_location(0,'TIME_890t2');self.g.step(Action('activate',source=location.uid));self.assertEqual([m.card_id for m in self.p.minions],['TEST_EIGHT']*2);self.assertEqual(location.durability,1)
  def test_karazhan_final_charge_frees_its_slot(self):
@@ -63,11 +67,11 @@ class MedivhTests(unittest.TestCase):
   for _ in range(6):self.g._summon(0,'NEW1_034')
   self.g.step(Action('activate',source=location.uid));self.assertNotIn(location,self.p.board);self.assertEqual(len(self.p.board),7);self.assertEqual(sum(m.card_id=='TEST_EIGHT' for m in self.p.minions),1)
  def test_missing_pool_rolls_back_location_payment(self):
-  location=self.g._place_location(0,'TIME_890t2');self.g._generation_pools.clear();before=deepcopy(self.g.observe(0))
+  location=self.g._place_location(0,'TIME_890t2');self.fx.install(self.g,rules.KARAZHAN_POOL,["MISSING_REVIEWED_EIGHT"]);before=deepcopy(self.g.observe(0))
   with self.assertRaises(UnsupportedCard):self.g.step(Action('activate',source=location.uid))
   self.assertEqual(self.g.observe(0),before)
- def test_source_remains_staged_and_pool_declared(self):
-  self.assertNotIn('TIME_890',cards.COLLECTIBLE_IDS);self.assertEqual(rules.requests_for('TIME_890'),{rules.KARAZHAN_POOL})
+ def test_source_is_reviewed_and_pool_declared(self):
+  self.assertIn('TIME_890',cards.COLLECTIBLE_IDS);self.assertEqual(rules.requests_for('TIME_890'),{rules.KARAZHAN_POOL})
 
  def test_split_damage_doubles_hit_count_not_each_hit(self):
   self.staff();self.g.events=[];self.run_ops([('missiles','enemies',3)],spell=True,bonus=1)

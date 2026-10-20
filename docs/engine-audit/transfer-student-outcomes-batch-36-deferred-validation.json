@@ -1,0 +1,40 @@
+{
+  "scope": "Arson, Murder and Theft Accusation persistent target marks",
+  "new_unvalidated_bodies": 3,
+  "new_ids": [
+    "MAW_001",
+    "MAW_019",
+    "MAW_023"
+  ],
+  "new_collectible_outcomes": 3,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 39,
+  "current_expansion_outcome_gap": 36,
+  "closed_outcome_ids": [
+    "MAW_001",
+    "MAW_019",
+    "MAW_023"
+  ],
+  "candidate_fingerprint": "89c3475a69f2594873d26952f2f907ffc52c6e48f0bf631dbfa0c94a8cf1502b",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Arson positive damage versus health changes and armor absorption",
+    "Murder chronological enemy-death delivery, simultaneous deaths and marked minion control changes",
+    "Theft physical copied-from-opponent ancestry, countered paid plays and play-phase ordering",
+    "Multiple marks, silence, bounce, transformation, copying and death-trigger ordering",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

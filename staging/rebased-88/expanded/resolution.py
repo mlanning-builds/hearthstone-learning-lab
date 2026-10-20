@@ -18,7 +18,83 @@ class PlayFrame:
 
 class Resolution:
     def _split_fixed_summon(self, operation, context):
+        if operation[0]=='inherited_deathrattle':
+            from .death_inheritance import split
+            return split(self,operation,context)
         if self._fire_effect_guard(operation,context):return ('batch30_noop',),()
+        from .historical_sleep_batches import split as historical_sleep_split
+        sleep_split=historical_sleep_split(self,operation,context)
+        if sleep_split is not None:return sleep_split
+        from .historical_arsenal_batches import split as historical_arsenal_split
+        arsenal_split=historical_arsenal_split(self,operation,context)
+        if arsenal_split is not None:return arsenal_split
+        from .historical_infuse_batches import split as infuse_split
+        infuse_result=infuse_split(self,operation,context)
+        if infuse_result is not None:return infuse_result
+        from .historical_tribal_batches import split as historical_tribal_batches_split
+        historical_tribal_batches_result=historical_tribal_batches_split(self,operation,context)
+        if historical_tribal_batches_result is not None:return historical_tribal_batches_result
+        from .historical_treasure_batches import split as historical_treasure_batches_split
+        historical_treasure_batches_result=historical_treasure_batches_split(self,operation,context)
+        if historical_treasure_batches_result is not None:return historical_treasure_batches_result
+        from .historical_galakrond_batches import split as galakrond_split
+        galakrond_result=galakrond_split(self,operation,context)
+        if galakrond_result is not None:return galakrond_result
+        from .historical_ritual_batches import split as ritual_split
+        ritual_result=ritual_split(self,operation,context)
+        if ritual_result is not None:return ritual_result
+        from .historical_secret_batches import split as secret_split
+        secret_result=secret_split(self,operation,context)
+        if secret_result is not None:return secret_result
+        from .historical_resource_batches import split as resource_split
+        resource_result=resource_split(self,operation,context)
+        if resource_result is not None:return resource_result
+        from .historical_hand_batches import split as historical_hand_split
+        hand_split=historical_hand_split(self,operation,context)
+        if hand_split is not None:return hand_split
+        from .historical_play_batches import split as historical_play_split
+        play_split=historical_play_split(self,operation,context)
+        if play_split is not None:return play_split
+        from .historical_resurrection_batches import split as historical_resurrection_split
+        resurrection_split=historical_resurrection_split(self,operation,context)
+        if resurrection_split is not None:return resurrection_split
+        from .historical_drawn_batches import split as historical_drawn_split
+        drawn_split=historical_drawn_split(self,operation,context)
+        if drawn_split is not None:return drawn_split
+        from .historical_upgrade_batches import split as historical_upgrade_split
+        upgrade_split=historical_upgrade_split(self,operation,context)
+        if upgrade_split is not None:return upgrade_split
+        from .historical_copy_batches import split as historical_copy_split
+        copy_split=historical_copy_split(self,operation,context)
+        if copy_split is not None:return copy_split
+        from .historical_family_batches import split as historical_family_split
+        family_split=historical_family_split(self,operation,context)
+        if family_split is not None:return family_split
+        from .historical_mutation_batches import split as historical_mutation_split
+        mutation_split=historical_mutation_split(self,operation,context)
+        if mutation_split is not None:return mutation_split
+        from .historical_prime_batches import split as historical_prime_split
+        prime_split=historical_prime_split(self,operation,context)
+        if prime_split is not None:return prime_split
+        from .historical_keyword_batches import split as historical_keyword_split
+        keyword_split=historical_keyword_split(self,operation,context)
+        if keyword_split is not None:return keyword_split
+        from .historical_draw_batches import split as historical_draw_split
+        draw_split=historical_draw_split(self,operation,context)
+        if draw_split is not None:return draw_split
+        from .historical_zone_batches import split as historical_zone_split
+        zone_split=historical_zone_split(self,operation,context)
+        if zone_split is not None:return zone_split
+        from .historical_condition_batches import split as historical_condition_split
+        condition_split=historical_condition_split(self,operation,context)
+        if condition_split is not None:return condition_split
+        from .historical_board_primitives import split as historical_board_split
+        expanded=historical_board_split(self,operation,context)
+        if expanded is not None:return expanded
+        expanded=self._historical_conditional_split(operation,context)
+        if expanded is not None:return expanded
+        expanded=self._historical_removal_split(operation,context)
+        if expanded is not None:return expanded
         expanded=self._finish_split(operation,context)
         if expanded is not None:return expanded
         expanded=self._craft_split(operation,context)
@@ -46,6 +122,8 @@ class Resolution:
         expanded=self._learned_split(operation,context)
         if expanded is not None:return expanded
         expanded=self._herald_split(operation,context)
+        if expanded is not None:return expanded
+        expanded=self._historic_colossal_split(operation,context)
         if expanded is not None:return expanded
         expanded=self._colossal_body_split(operation,context)
         if expanded is not None:return expanded
@@ -139,7 +217,7 @@ class Resolution:
         if operation[0] == 'recruits_shield':
             ops=(('one_shield_recruit',),)*operation[1]
             return (ops[0],ops[1:]) if ops else (('batch30_noop',),())
-        if operation[0] == 'choose_cenarius' and self._active('CORE_OG_044',context['owner']):
+        if operation[0] == 'choose_cenarius' and (self._active('CORE_OG_044',context['owner']) or self._active('OG_044',context['owner'])):
             return ('buff_other_minions',1,3), (('summon','EDR_209t5',1),)
         if operation[0] == 'bottom_demons':
             from .selectors import has_tribe
@@ -164,6 +242,12 @@ class Resolution:
             return operation,(('replay_context',(operation,),dict(context,kindred_repeats=1)),)
         if operation[0]=='kindred_cost_draws':
             return ('kindred_cost_draw_one',1),tuple(('kindred_cost_draw_one',cost) for cost in range(2,5))
+        if operation[0]=='copy_self_right':
+            if operation[1]<=0:return ('batch30_noop',),()
+            if operation[1]>1:return ('copy_self_right',1),(('copy_self_right',operation[1]-1),)
+        if operation[0]=='combo_operation':
+            if context.get('combo'):return self._split_fixed_summon(operation[1],context)
+            return ('batch30_noop',),()
         if operation[0]=='outcast_operation':
             if context.get('outcast'):return self._split_fixed_summon(operation[1],context)
             return ('batch30_noop',),()
@@ -197,6 +281,9 @@ class Resolution:
                 return operation, ()
             tail=(('death_summon_group',cards[1:],offset+1),) if len(cards)>1 else ()
             return ('death_summon',cards[0],1,offset), tail
+        if operation[0] == 'summon_right' and operation[2]>1:
+            offset=operation[3] if len(operation)>3 else 0
+            return ('summon_right',operation[1],1,offset), (('summon_right',operation[1],operation[2]-1,offset+1),)
         if operation[0] not in ('summon', 'combo_summon'):
 
             return operation, ()
@@ -232,19 +319,26 @@ class Resolution:
             # Game.step restores damage and all other state on failure.
             raise
         else:
-            for owner,amount in healing.items():
-                if amount:self._heal(self.hero_id(owner),amount,healer=owner)
+            for (owner,spell,power),amount in healing.items():
+                if amount:self._resolve_lifesteal(owner,amount,spell=spell,power=power)
         finally:
             self._lifesteal_batches.pop()
             self._trace_phase("damage_batch_end", depth=self._damage_batch_depth)
             self._damage_batch_depth -= 1
 
-    def _effect_lifesteal(self, owner, amount):
+    def _resolve_lifesteal(self,owner,amount,*,spell=False,power=False):
+        # Continuous replacement survives mortal damage until the death phase.
+        converters=[m for m in self.players[owner].minions if m.card_id=='DMF_230' and not m.silenced and not m.dormant]
+        if converters:
+            self._damage(self.hero_id(1-owner),amount,damage_source=None,damage_owner=owner,damage_cause='lifesteal_conversion')
+        else:self._heal(self.hero_id(owner),amount,healer=owner,spell=spell,power=power)
+
+    def _effect_lifesteal(self, owner, amount, *, spell=False, power=False):
         if self._lifesteal_batches:
             batch=self._lifesteal_batches[-1]
-            batch[owner]=batch.get(owner,0)+amount
+            key=(owner,spell,power);batch[key]=batch.get(key,0)+amount
         else:
-            self._heal(self.hero_id(owner),amount,healer=owner)
+            self._resolve_lifesteal(owner,amount,spell=spell,power=power)
 
     def _start_play_effects(self, operations, context):
         if self.pending_frame is not None:

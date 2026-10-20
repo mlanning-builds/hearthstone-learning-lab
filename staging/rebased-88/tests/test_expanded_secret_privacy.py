@@ -32,3 +32,10 @@ class SecretPrivacyTests(unittest.TestCase):
         g.observe(1);g.observe(1,include_events=False)
         self.assertEqual(g.players[0].spells_turn,before)
         self.assertEqual(g.players[0].played_history[-1]['card_id'],'CORE_EX1_287')
+
+    def test_public_school_remains_visible_beside_either_hidden_secret(self):
+        a=self.game_with_secret('CORE_EX1_287');b=self.game_with_secret('CORE_EX1_289')
+        for g in (a,b):
+            c=g._add(0,'CORE_CS2_029');g.step(Action('play',c.uid,target=-2))
+        self.assertEqual(a.observe(1),b.observe(1))
+        self.assertIn('FIRE',a.observe(1)['players'][0]['historical_spell_schools'])

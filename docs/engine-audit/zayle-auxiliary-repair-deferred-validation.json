@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "ddf534b50ab04cbd2136413e24382655a2996f1fd1ac44c2ecd5e750c8115c77",
+  "repaired_tables": {
+    "DEATH_EFFECTS": [
+      "EX1_012",
+      "DAL_720"
+    ]
+  },
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation",
+    "All five recipe literal dependency graph"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Runtime death effect timing and fidelity",
+    "Dynamic pools/helper-computed dependencies and pinned recipe selection"
+  ]
+}

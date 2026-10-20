@@ -1,0 +1,65 @@
+{
+  "scope": "Complete Opal/Spinel Spellstone and Remixed Tuning Fork/Rhapsody families",
+  "new_unvalidated_bodies": 17,
+  "new_ids": [
+    "JAM_015",
+    "JAM_015t",
+    "JAM_015t2",
+    "JAM_015t3",
+    "JAM_015t4",
+    "JAM_018",
+    "JAM_018t",
+    "JAM_018t2",
+    "JAM_018t3",
+    "JAM_018t4",
+    "JAM_018t5",
+    "TOY_645",
+    "TOY_645t",
+    "TOY_645t1",
+    "TOY_825",
+    "TOY_825t",
+    "TOY_825t2"
+  ],
+  "new_collectible_outcomes": 4,
+  "new_required_generated_spell_or_weapon_forms": 12,
+  "new_required_minion_bodies": 1,
+  "internal_operation_admissions": 232,
+  "internal_declaration_modules": 27,
+  "prior_expansion_outcome_gap": 77,
+  "current_expansion_outcome_gap": 73,
+  "closed_outcome_ids": [
+    "JAM_015",
+    "JAM_018",
+    "TOY_645",
+    "TOY_825"
+  ],
+  "candidate_fingerprint": "5545f57257a5776b5f5b97b11f99c93cfb9712c6dd95f0e0f0c9ac27f0bccb04",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz",
+    "https://hearthstone.blizzard.com/en-us/cards/105356-spinel-spellstone/",
+    "https://hearthstone.wiki.gg/wiki/Remixed_Tuning_Fork"
+  ],
+  "review_pending": [
+    "Spellstone held-only counting, stage transitions, excess progress and copied/reset progress",
+    "Opal hero-attack declaration versus completed/forced attack semantics",
+    "Spinel actual multiplied Corpses gained and hand/deck boundary timing",
+    "Remixed entry and owner-start reroll timing, distinct forms, enchantments and transformed physical identity",
+    "Curved Tuning Fork adjacent damage, Shield/Poisonous/Lifesteal and last-charge durability",
+    "Weapon Battlecry sequencing, Rhapsody damage checkpoints and generated Demon entry",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

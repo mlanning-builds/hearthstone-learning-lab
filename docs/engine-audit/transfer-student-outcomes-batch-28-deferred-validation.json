@@ -1,0 +1,55 @@
+{
+  "scope": "Rays, lowest-health missiles, excess damage and repeating Corpse detonations",
+  "new_unvalidated_bodies": 7,
+  "new_ids": [
+    "ETC_528",
+    "REV_369",
+    "REV_950",
+    "RLK_035",
+    "TOY_640",
+    "WW_006",
+    "WW_405"
+  ],
+  "new_collectible_outcomes": 7,
+  "new_required_generated_bodies": 0,
+  "internal_operation_admissions": 239,
+  "internal_declaration_modules": 28,
+  "prior_expansion_outcome_gap": 73,
+  "current_expansion_outcome_gap": 66,
+  "closed_outcome_ids": [
+    "ETC_528",
+    "REV_369",
+    "REV_950",
+    "RLK_035",
+    "TOY_640",
+    "WW_006",
+    "WW_405"
+  ],
+  "candidate_fingerprint": "908e1b3b271b1e5a3faef3bd0d2fed9f1b4422db4a02f4df3b6266511cdd26ce",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Lightshow cast/effect-repeat beam progression and Spell Damage/multiplier layering",
+    "Divine Toll friendly versus enemy rays and Dart Throw hit/Shield/prevention/Coin condition",
+    "Fan the Hammer lowest-Health ties, per-hit reselection and damage modifiers",
+    "Workshop Mishap captured neighbors, excess damage, Outcast Lifesteal and prevention/overkill",
+    "Collateral Damage preselected distinct targets, damage/death interrupts and excess hero damage",
+    "Corpse Explosion resource payment, generated Corpses, zero resources and all-Dormant/immune boards",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

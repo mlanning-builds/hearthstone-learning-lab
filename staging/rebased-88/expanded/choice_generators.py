@@ -169,7 +169,8 @@ class ChoiceGenerators:
             delta=max(0,min(1,p.mana_capacity-p.max_mana));p.max_mana+=delta;p.mana=min(p.mana_capacity,p.mana+delta)
             if delta:self._schedule_turn_effect(owner,'end',0,1,(('choicegen_remove_crystal',delta),))
         elif name=='choicegen_remove_crystal':
-            p.max_mana=max(0,p.max_mana-op[1]);p.mana=min(p.mana,p.max_mana)
+            from .mana_accounting import destroy_permanent
+            destroy_permanent(p,op[1])
         else:return False
         return True
 
@@ -182,7 +183,8 @@ class ChoiceGenerators:
         if choice['kind']!='choicegen_discover':return False
         mode=choice['mode'];ctx=choice['context'];mods=choice['modifiers']
         if mode=='destination':
-            self.pending_choice=dict(owner=owner,kind='choicegen_destination',options=[
+            self.pending_choice=dict(owner=owner,kind='choicegen_destination',
+                _automatic=choice.get('_automatic',False),options=[
                 dict(card_id=cid,label='Keep',destination='hand'),
                 dict(card_id=cid,label="Opponent's next draw",destination='enemy_top')])
             self.phase='choice'

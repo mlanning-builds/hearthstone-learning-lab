@@ -1,0 +1,21 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "3dc1976f45fd2e3a3ed5dfb7ed6cc022bb8267b689515b22d8e74cd6a5e5c638",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Validate initial distribution plus every seven-bullet transition row before RNG or power mutation"
+  ],
+  "remaining": [
+    "Exact sourced initial and transition probabilities"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false
+}

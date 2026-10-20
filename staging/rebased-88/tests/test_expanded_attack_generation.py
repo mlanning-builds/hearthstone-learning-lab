@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 import unittest
 from copy import deepcopy
 import test_expanded_generation as fixtures
@@ -8,7 +9,7 @@ from engine.cards import UnsupportedCard
 class AttackGenerationTests(unittest.TestCase):
  def setUp(self):self.h=fixtures.GenerationTests();self.g=self.h.game();self.p=self.g.players[0]
  def install(self,cost):
-  d=deepcopy(self.g.cards['CS3_025']);d.update(id='ATTACK_TEST',cost=cost,dbfId=-98214)
+  d=thaw(self.g.cards['CS3_025']);d.update(id='ATTACK_TEST',cost=cost,dbfId=-98214)
   self.g.cards[d['id']]=d;self.h.install(self.g,pool(card_type='MINION',minimum=cost,maximum=cost),[d['id']])
  def run_effect(self):self.h.run_ops(self.g,ag.RULES['JAIL_200'][1])
  def test_hero_attack_counts_and_survives_turn(self):
@@ -23,7 +24,7 @@ class AttackGenerationTests(unittest.TestCase):
  def test_total_not_current_turn_selects_cost(self):
   self.p.hero_attacks_total=4;self.p.hero_attacks=0;self.install(7);self.run_effect();self.assertEqual(len(self.p.board),2)
  def test_missing_exact_pool_does_not_fall_back(self):
-  self.install(3);self.p.hero_attacks_total=1;state=self.g.rng.getstate()
+  self.install(3);self.h.install(self.g,pool(card_type='MINION',minimum=4,maximum=4),['UNIMPLEMENTED_FOUR_COST_MINION']);self.p.hero_attacks_total=1;state=self.g.rng.getstate()
   with self.assertRaises(UnsupportedCard):self.run_effect()
   self.assertEqual(state,self.g.rng.getstate());self.assertFalse(self.p.board)
  def test_one_slot_only_summons_one(self):
@@ -34,4 +35,4 @@ class AttackGenerationTests(unittest.TestCase):
   self.p.hero_attacks_total=4;other=deepcopy(self.g)
   self.assertEqual(other.players[0].hero_attacks_total,4)
   self.assertEqual(self.g.observe(1)['players'][0]['hero_attacks_total'],4)
- def test_not_live_registered(self):self.assertNotIn('JAIL_200',cards.COLLECTIBLE_IDS)
+ def test_not_live_registered(self):self.assertIn('JAIL_200',cards.COLLECTIBLE_IDS)

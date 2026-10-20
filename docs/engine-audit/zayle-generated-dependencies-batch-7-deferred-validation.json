@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "AT_051",
+    "DRG_219",
+    "CS2_045"
+  ],
+  "candidate_fingerprint": "e34217d21e0f892cd19bf8b9ab7f52c0692fb3a5498a4d0623305e6476f52af4",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Per-target 4/5 distribution and simultaneous damage ordering",
+    "Temporary hero/minion attack expiry and Dragon/adjacency conditions"
+  ]
+}

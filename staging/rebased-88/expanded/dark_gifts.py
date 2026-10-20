@@ -4,6 +4,7 @@ Pinned EDR_100* data; excludes unused Nightmare Scales and Battlegrounds gifts.
 Eligibility follows the Constructed update in Blizzard's 32.2 patch notes:
 https://news.blizzard.com/en-gb/article/24198086/32-2-patch-notes
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from itertools import product
 from engine.game import Card
@@ -52,7 +53,7 @@ class DarkGifts:
         if gift not in GIFTS:raise UnsupportedCard('Unknown Constructed Dark Gift')
         if self._card_data(card)['type']!='MINION':raise UnsupportedCard('Dark Gift requires a minion')
         a,h,c,_=GIFTS[gift]
-        card.attack_bonus+=a;card.health_bonus+=h;card.cost_delta=getattr(card,'cost_delta',0)+c
+        _saidan_add(card,'attack_bonus',a);_saidan_add(card,'health_bonus',h);card.cost_delta=getattr(card,'cost_delta',0)+c
         self._b60_state(card).setdefault('dark_gifts',[]).append(gift)
         player=self.players[owner]
         if gift=='EDR_100t8' and any(card is held for held in player.hand):

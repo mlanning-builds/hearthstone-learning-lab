@@ -12,10 +12,11 @@ class DiscoverOffer:
  selected_index:int
  options:tuple
  weapon_uid:int = None
+ selected_indices:tuple = ()
  @property
  def selected(self):return deepcopy(self.options[self.selected_index])
  @property
- def unchosen(self):return tuple(deepcopy(v) for i,v in enumerate(self.options) if i!=self.selected_index)
+ def unchosen(self):return tuple(deepcopy(v) for i,v in enumerate(self.options) if i not in (self.selected_indices or (self.selected_index,)))
 def capture_offer(choice,index,weapon_uid=None):
  options=choice['options']
  if type(index) is not int or not 0<=index<len(options):raise ValueError('Invalid offer selection')

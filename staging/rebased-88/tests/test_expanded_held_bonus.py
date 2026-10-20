@@ -119,11 +119,12 @@ class HeldBonusTests(unittest.TestCase):
         self.assertEqual(view['players'][0]['hand'][0]['bonus_effects'],['POISONOUS','WINDFURY'])
         self.assertNotIn('bonus_pair',json.dumps(self.g.observe(1)))
         rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertTrue(any('bonus_effects' in str(row) for row in rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertTrue(any('bonus_effects' in str(row) for row in rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
 
     def test_bad_pair_fails_atomically_when_played(self):
-        c=self.hold();self.pair(c,('RUSH','RUSH'))
+        c=self.hold()
         action=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
+        self.pair(c,('RUSH','RUSH'))
         before=copy.deepcopy(self.g.__dict__)
         with self.assertRaises(ValueError):self.g.step(action)
         self.assertEqual(self.g.players,before['players']);self.assertEqual(self.g.rng.getstate(),before['rng'].getstate())

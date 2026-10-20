@@ -3,6 +3,7 @@ import unittest
 from unittest.mock import patch
 from expanded import Game, Action, random_deck
 from expanded.cards import TRIGGERS
+from engine.game import Card
 
 class AttackEventTests(unittest.TestCase):
     def setUp(self):
@@ -47,10 +48,13 @@ class AttackEventTests(unittest.TestCase):
         self.assertEqual(self.g._combat_sequence_depth,0)
 
     def test_cancelled_attack_has_no_after_event(self):
+        # The chronological planner dispatches only actual proposed Secrets.
+        self.q.secrets.append(Card(self.g._new_id(),'CORE_EX1_611'))
         with patch.dict(TRIGGERS,{'CORE_EX1_506':('attacked_self',[('draw',1)])}), patch.object(self.g,'_secret_event',return_value=True):self.attack()
         self.assertEqual(self.p.hand,[])
 
     def test_new_listener_during_proposed_attack_is_not_eligible(self):
+        self.q.secrets.append(Card(self.g._new_id(),'CORE_EX1_611'))
         def proposed(*args,**kwargs):
             self.g._summon(0,'CORE_EX1_506')
             return False

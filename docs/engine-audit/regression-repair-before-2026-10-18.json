@@ -1,0 +1,84 @@
+{
+  "status": "non_training_regressions_passed",
+  "candidate": "staging/rebased-88",
+  "candidate_fingerprint": "e8c3c34ba1c7037580126fc904075f50795b70456253199239d4d851a1ba41c1",
+  "candidate_receipt": {
+    "fingerprint": "e8c3c34ba1c7037580126fc904075f50795b70456253199239d4d851a1ba41c1",
+    "end_fingerprint": "e8c3c34ba1c7037580126fc904075f50795b70456253199239d4d851a1ba41c1",
+    "source_unchanged": true,
+    "fixture_success": true,
+    "success": true,
+    "tests_run": 5416,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "unexpected_successes": 0,
+    "completed_at": "2026-10-16T20:32:23.939860+00:00",
+    "excluded_modules": [
+      "test_expanded_learning_core",
+      "test_expanded_training"
+    ],
+    "rule_workers": 8,
+    "scope": "Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.",
+    "run_id": "5e8800f2be344f749b5b8cdb7e35dcbe",
+    "report_path": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-5e8800f2be344f749b5b8cdb7e35dcbe.json"
+  },
+  "supporting_checks": {
+    "tests_run": 75,
+    "success": true,
+    "log": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/staging/rebased-88/runs/expanded_validation/repair-5e8800f2be344f749b5b8cdb7e35dcbe/supporting.log",
+    "sha256": "288e8ae6aa51d144c0d67627d0d7beea67e654d25c5f2abb3f6f40e59715dc38"
+  },
+  "historical_minions_written": 3201,
+  "historical_minions_total": 3201,
+  "standard_roots_written": 1185,
+  "standard_roots_total": 1185,
+  "generated_historical_effect_entries": 3421,
+  "independent_client_fidelity_certified": false,
+  "approximation_profile": "special-approximations-v1",
+  "known_incomplete_historical_generation_pools": [
+    {
+      "card_id": "MIS_700",
+      "name": "Whack-A-Gnoll",
+      "behavior": "Reject incomplete historical outcome pool before sampling; do not filter to implemented cards"
+    },
+    {
+      "card_id": "NX2_001",
+      "name": "Tear Reality",
+      "behavior": "Reject incomplete historical outcome pool before sampling; do not filter to implemented cards"
+    },
+    {
+      "card_id": "REV_365",
+      "name": "Convoke the Spirits",
+      "behavior": "Reject incomplete historical outcome pool before sampling; do not filter to implemented cards"
+    },
+    {
+      "card_id": "TIME_707",
+      "name": "Alternate Reality",
+      "behavior": "Reject incomplete historical outcome pool before sampling; do not filter to implemented cards"
+    },
+    {
+      "card_id": "TIME_857",
+      "name": "Alter Time",
+      "behavior": "Reject incomplete historical outcome pool before sampling; do not filter to implemented cards"
+    }
+  ],
+  "known_pool_list_is_exhaustive": false,
+  "training_run": false,
+  "learning_run": false,
+  "deck_search_run": false,
+  "notebook_training_cells_run": false,
+  "github_published": false,
+  "repairs": [
+    "Physical card IDs and card objects interoperate in lifecycle, generation and replay paths",
+    "Native spell admission validates executable operations before consuming physical cards",
+    "Compound replay effects expand before primitive dispatch; bounce and forced-combat paths resolve",
+    "Missing cost modifiers default to zero; shared import shadowing removed",
+    "Bloodpetal Biome activates its effect after placement; experimental opening recipes preserve exceptional construction",
+    "Renathal baseline sampler honors forty-card decks; Underbelly baseline decks receive contraband selections",
+    "Secret spell-school observations preserve private identity and public cast history",
+    "Stateless action runner delegates game-specific activation and post-action hooks",
+    "Returned-token fixture covers 1003 ordinary noncollectible bodies using independent prepared-game copies and real compiled payloads",
+    "Parallel rule runner reports individual cases, aborts timed-out subtest loops, restores nested deadlines and preserves serial validation"
+  ]
+}

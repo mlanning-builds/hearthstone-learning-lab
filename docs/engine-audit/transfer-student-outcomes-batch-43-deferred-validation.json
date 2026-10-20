@@ -1,0 +1,41 @@
+{
+  "scope": "Fools Gold full other-class generation and Conquerors Banner repeated physical reveals",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "DEEP_022",
+    "REV_931"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 24,
+  "current_expansion_outcome_gap": 22,
+  "closed_outcome_ids": [
+    "DEEP_022",
+    "REV_931"
+  ],
+  "candidate_fingerprint": "7c6e15cd7199b2b60065d9d49f0a533cd634378ffebadf537540ebdf1de8858c",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Full other-class Pirate and Elemental pool closure, dual-tribe outcomes and canonical membership",
+    "Golden physical state preservation and cosmetic observation/serialization support",
+    "Banner reveal sampling, repeated losing cards, empty-deck comparison and ties",
+    "Physical draw index, cost modifications, overdraw and on-draw effects between reveal rounds",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

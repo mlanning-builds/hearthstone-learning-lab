@@ -1,0 +1,365 @@
+{
+  "scope": "Direct _find calls whose argument mentions target; occurrence is not proof of a stale-target bug.",
+  "occurrences": [
+    {
+      "file": "staging/rebased-88/expanded/batch30.py",
+      "line": 35,
+      "argument": "target",
+      "code": "elif target:self._find(target).keywords.add('DIVINE_SHIELD')"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch30.py",
+      "line": 78,
+      "argument": "target",
+      "code": "m=self._find(target);self._bounce(m)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch30.py",
+      "line": 83,
+      "argument": "target",
+      "code": "m=self._find(target);self._buff(m,0,op[1] if m.owner==owner else -op[1])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch30.py",
+      "line": 91,
+      "argument": "target",
+      "code": "m=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch60.py",
+      "line": 182,
+      "argument": "target",
+      "code": "m=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch60.py",
+      "line": 230,
+      "argument": "target",
+      "code": "s=self._b60_state(ctx['physical_card']);self._buff(self._find(target),s.get('buff_attack',0),s.get('buff_health',0))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch60.py",
+      "line": 249,
+      "argument": "target",
+      "code": "m=self._find(target);m.health=m.max_health=1+m.aura_health"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch60.py",
+      "line": 269,
+      "argument": "target",
+      "code": "if target:self._find(target).attached_death_effects.append(op[1])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch60.py",
+      "line": 301,
+      "argument": "target",
+      "code": "old=self._find(target).health"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 181,
+      "argument": "target",
+      "code": "chosen=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 209,
+      "argument": "target",
+      "code": "m=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 287,
+      "argument": "target",
+      "code": "chosen=self._find(target);board=self.players[chosen.owner].board"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 302,
+      "argument": "target",
+      "code": "chosen=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 364,
+      "argument": "target",
+      "code": "m=self._find(target);attack,health=m.attack,m.health;m.health=0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 514,
+      "argument": "target",
+      "code": "other=self._find(target).owner"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 552,
+      "argument": "target",
+      "code": "if p.fire_spell_played and target:self._find(target).health=0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 557,
+      "argument": "target",
+      "code": "m=self._find(target);self._deal_effect(target,op[1],ctx);self._buff(m,op[2],0)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 644,
+      "argument": "target",
+      "code": "chosen=self._find(target);tribes=set(self.cards[chosen.card_id].get('races',[]))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/batch_effects.py",
+      "line": 650,
+      "argument": "target",
+      "code": "before=max(0,self._find(target).health)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/combat_resolver.py",
+      "line": 56,
+      "argument": "target",
+      "code": "defender=game._find(target) if target>0 else None"
+    },
+    {
+      "file": "staging/rebased-88/expanded/draw_events.py",
+      "line": 155,
+      "argument": "target",
+      "code": "before = max(0, self._find(target).health)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/dreams.py",
+      "line": 67,
+      "argument": "target",
+      "code": "if target:self._bounce(self._find(target))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/dreams.py",
+      "line": 70,
+      "argument": "target",
+      "code": "m=self._find(target);p=self.players[m.owner]"
+    },
+    {
+      "file": "staging/rebased-88/expanded/dreams.py",
+      "line": 78,
+      "argument": "target",
+      "code": "m=self._find(target);self._buff(m,5,5)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 249,
+      "argument": "target",
+      "code": "if target and any(m.uid==target for player in game.players for m in player.minions): game._buff(game._find(target),op[1],op[2])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 251,
+      "argument": "target",
+      "code": "if target and any(m.uid==target for player in game.players for m in player.minions): game._find(target).keywords.add(op[1])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 257,
+      "argument": "target",
+      "code": "if target: game._find(target).health=0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 259,
+      "argument": "target",
+      "code": "if target: game._buff(game._find(target),len(p.minions),len(p.minions))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 262,
+      "argument": "target",
+      "code": "m=game._find(target); game._heal(target,m.max_health-m.health,healer=owner,spell=ctx.get('spell',False),power=ctx.get('power',False))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/effect_executor.py",
+      "line": 296,
+      "argument": "target",
+      "code": "game._deal_effect(target,op[1],ctx); dead=game._find(target).health<=0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/game.py",
+      "line": 1125,
+      "argument": "target",
+      "code": "minion=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/game.py",
+      "line": 1131,
+      "argument": "target",
+      "code": "entity=self._find(target); owner=entity.owner; attacked=entity.attacks>0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_board_primitives.py",
+      "line": 427,
+      "argument": "ctx['target']",
+      "code": "if ctx.get('target',0)>0:game._deal_effect(ctx['target'],max(0,game._find(ctx['target']).attack),ctx)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_colossal.py",
+      "line": 105,
+      "argument": "target",
+      "code": "m=self._find(target) if target>0 else None"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_conditional_battlecries.py",
+      "line": 105,
+      "argument": "target",
+      "code": "if target:self._bounce(self._find(target))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_conditional_battlecries.py",
+      "line": 108,
+      "argument": "target",
+      "code": "other=self._find(target);a,b=source.attack,other.attack"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_damage_modifiers.py",
+      "line": 44,
+      "argument": "target",
+      "code": "victim=game._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_damage_modifiers.py",
+      "line": 24,
+      "argument": "target",
+      "code": "owner=-target-1 if target<0 else game._find(target).owner"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_damage_modifiers.py",
+      "line": 35,
+      "argument": "target",
+      "code": "owner=-target-1 if target<0 else game._find(target).owner"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_resource_batches.py",
+      "line": 103,
+      "argument": "target",
+      "code": "else:game._buff(game._find(target),0,-op[1])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_zone_batches.py",
+      "line": 270,
+      "argument": "target_id",
+      "code": "victim=game._find(target_id) if target_id>0 else None"
+    },
+    {
+      "file": "staging/rebased-88/expanded/historical_zone_batches.py",
+      "line": 287,
+      "argument": "target_id",
+      "code": "target_owner=-target_id-1 if target_id<0 else game._find(target_id).owner"
+    },
+    {
+      "file": "staging/rebased-88/expanded/lasting_rules.py",
+      "line": 90,
+      "argument": "ctx['target']",
+      "code": "m=self._find(ctx['target']);self._buff(m,0,2);m.keywords.add('TAUNT')"
+    },
+    {
+      "file": "staging/rebased-88/expanded/local_family.py",
+      "line": 41,
+      "argument": "target",
+      "code": "victim = q if target < 0 else self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/locations.py",
+      "line": 157,
+      "argument": "action.target",
+      "code": "target=self._find(action.target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/persistent.py",
+      "line": 112,
+      "argument": "target",
+      "code": "m=self._find(target);recipient=m.owner;hand=self.players[recipient].hand;before=len(hand);self._bounce(m)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/spell_casting.py",
+      "line": 400,
+      "argument": "target",
+      "code": "victim=self.players[-target-1] if target<0 else self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/spell_casting.py",
+      "line": 419,
+      "argument": "target",
+      "code": "victim=self.players[-target-1] if target<0 else self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 596,
+      "argument": "target",
+      "code": "minion=self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 686,
+      "argument": "target",
+      "code": "entity=self.players[-target-1] if target<0 else self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1004,
+      "argument": "target",
+      "code": "if target:self._silence(self._find(target))"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1006,
+      "argument": "target",
+      "code": "if target:self._transform(self._find(target),op[1])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1022,
+      "argument": "target",
+      "code": "m=self._find(target);attack,health=m.attack,m.health"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1026,
+      "argument": "target",
+      "code": "m=self._find(target);self._adjust_minion_attack(m,op[1]);m.temporary_attack+=op[1]"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1029,
+      "argument": "target",
+      "code": "m=self._find(target);health=m.health;m.health=0"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1052,
+      "argument": "target",
+      "code": "if target and ctx.get('combo'):self._buff(self._find(target),op[1],op[2])"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1103,
+      "argument": "target",
+      "code": "m=self._find(target);cid=m.card_id;self._deal_effect(target,op[1],ctx)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1156,
+      "argument": "target",
+      "code": "victim=self.players[-target-1] if target<0 else self._find(target)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/systems.py",
+      "line": 1164,
+      "argument": "target",
+      "code": "m=self._find(target);self._deal_effect(target,op[1],ctx)"
+    },
+    {
+      "file": "staging/rebased-88/expanded/zone_triggers.py",
+      "line": 54,
+      "argument": "target",
+      "code": "owner=-target-1 if target<0 else self._find(target).owner"
+    }
+  ]
+}

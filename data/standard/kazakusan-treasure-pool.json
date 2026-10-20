@@ -1,0 +1,152 @@
+{
+  "build": "36.6.0.251952",
+  "source": "CardDefs 251952 tag 2054=1, corroborated launch pool minus LOCUUUUSTS removal",
+  "carddefs_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "outcomes": [
+    {
+      "card_id": "ONY_005ta1",
+      "name": "Necrotic Poison",
+      "metadata_sha256": "262d1607f9bdc01d4911a53f2ca379cac25fca252b2bf11db5a0711a5873a8a1"
+    },
+    {
+      "card_id": "ONY_005ta10",
+      "name": "Spyglass",
+      "metadata_sha256": "9a2bb1d41e97a8f53149a4de9891f713503ae9e749a46b97004e0cb74d1205eb"
+    },
+    {
+      "card_id": "ONY_005ta11",
+      "name": "Clockwork Assistant",
+      "metadata_sha256": "45b12255aeb55b4b9366b6df95e318d5efb928f7c83da87e75f0f658258e317a"
+    },
+    {
+      "card_id": "ONY_005ta12",
+      "name": "Grimmer Patron",
+      "metadata_sha256": "6364d49bcd29b35dda7f8fc2d9f9ddbcc4c8891c8137f6c49fc1f6cecdad707e"
+    },
+    {
+      "card_id": "ONY_005ta13",
+      "name": "Puzzle Box",
+      "metadata_sha256": "3fa55a1f48fb691f8230007972680cae51ba8a198b009f3f3d226e037bdf2ed6"
+    },
+    {
+      "card_id": "ONY_005ta2",
+      "name": "Mutating Injection",
+      "metadata_sha256": "a26043d07828adc85acde1c5d99eacae9a3f60d2c7e356c37a6e53f09ee07e91"
+    },
+    {
+      "card_id": "ONY_005ta3",
+      "name": "The Exorcisor",
+      "metadata_sha256": "0344d7eaf1267c8c3d2a3445f15760a0785141a874b0a1456c7e7b68eb170524"
+    },
+    {
+      "card_id": "ONY_005ta4",
+      "name": "Pure Cold",
+      "metadata_sha256": "4e5dc0891a9cfa8327fd421916591a1daffbf12cbc7fe2232391e6f659b9a937"
+    },
+    {
+      "card_id": "ONY_005ta5",
+      "name": "Bubba",
+      "metadata_sha256": "6a52a2b1298db794915ab00f7a30c999494e21e6f4d42e25032f8a40c5d85e84"
+    },
+    {
+      "card_id": "ONY_005ta6",
+      "name": "Holy Book",
+      "metadata_sha256": "c9e35df3a78a39d053697aa609c63abf7d4b9b0fbd89c430f009a9a71d3a74e7"
+    },
+    {
+      "card_id": "ONY_005ta7",
+      "name": "Crusty the Crustacean",
+      "metadata_sha256": "d997f3da5ac38414eb2de415b902b59aaa4dff638f149332133aaa5238e65987"
+    },
+    {
+      "card_id": "ONY_005ta8",
+      "name": "Looming Presence",
+      "metadata_sha256": "dc4e60fc246c22c9eab4cbcd36b27238065f3e1f74affdcdb4c2f0f244f3a20f"
+    },
+    {
+      "card_id": "ONY_005ta9",
+      "name": "Beastly Beauty",
+      "metadata_sha256": "6ec24a8ef742f0dadec03608ee1d5f3363b3f218ceb56f3632f966786a26eaa8"
+    },
+    {
+      "card_id": "ONY_005tb1",
+      "name": "Hyperblaster",
+      "metadata_sha256": "62e068fb619fe1f12a3f0a6fb6f9f38e5e9233ec64be8aa04ed1c5a243547266"
+    },
+    {
+      "card_id": "ONY_005tb12",
+      "name": "Dr. Boom's Boombox",
+      "metadata_sha256": "bb1ca01536e8eed1c6b50066246507592a23109d848f2297c44a41a5c1e7f4f3"
+    },
+    {
+      "card_id": "ONY_005tb13",
+      "name": "Wax Rager",
+      "metadata_sha256": "8ba88530d919ee8f36b3bef726e27ff90afa55650e883cdf4505e20ff858b9ef"
+    },
+    {
+      "card_id": "ONY_005tb14",
+      "name": "Vampiric Fangs",
+      "metadata_sha256": "3756ab6f2d6474514a26757fd2e5231ec6287044c6293bbf248a34944fe34451"
+    },
+    {
+      "card_id": "ONY_005tb2",
+      "name": "Gnomish Army Knife",
+      "metadata_sha256": "a9a18e0eca02e15e7092515013b08d921246988a33c9fddc95b8d06033f5c666"
+    },
+    {
+      "card_id": "ONY_005tb4",
+      "name": "Wand of Disintegration",
+      "metadata_sha256": "99a7fd5214b0f21d409a60c311cad59b7aa02ca52d624b040fb1ecbdec72f6d5"
+    },
+    {
+      "card_id": "ONY_005tb5",
+      "name": "Staff of Scales",
+      "metadata_sha256": "a92a1bae80d2b14a079b77ad0f26f6917432f376bb093df1d620a2c1dbc42009"
+    },
+    {
+      "card_id": "ONY_005tb7",
+      "name": "Canopic Jars",
+      "metadata_sha256": "d2e6fcece07d3bdbb61fe6c17f2463c705f652d1e836632918b847ad4fefe690"
+    },
+    {
+      "card_id": "ONY_005tb8",
+      "name": "Ancient Reflections",
+      "metadata_sha256": "4c89152146cc9f3d40551784a3432f3537dd790b968adc7f998a3e2cc2a6fae4"
+    },
+    {
+      "card_id": "ONY_005tb9",
+      "name": "Banana Split",
+      "metadata_sha256": "de29eacb30320e26df4496ae2efa712a066b859abda4805a87ce8c9e72dd1853"
+    },
+    {
+      "card_id": "ONY_005tc1",
+      "name": "Embers of Ragnaros",
+      "metadata_sha256": "871638cadcb5d420ed709b1a05bc2cfbae759a24c7b9c248845e2047119a6a6a"
+    },
+    {
+      "card_id": "ONY_005tc2",
+      "name": "Book of the Dead",
+      "metadata_sha256": "321dac9786759e3c8c1cc874b9e5b669aaa649154c2f2ca315069542ec74ef05"
+    },
+    {
+      "card_id": "ONY_005tc3",
+      "name": "Annoy-o Horn",
+      "metadata_sha256": "8c7ec2e57415246c7261266f8c4cdf7509b0d94e6ed22bd6018cfc4725a2b87b"
+    },
+    {
+      "card_id": "ONY_005tc5",
+      "name": "Blade of Quel'Delar",
+      "metadata_sha256": "16a210c6f231d2adb5b61c0c0739d80bcfec502bf6afb7e37056542ba25b9b3c"
+    },
+    {
+      "card_id": "ONY_005tc6",
+      "name": "Hilt of Quel'Delar",
+      "metadata_sha256": "23200d97021cc2c76d6b9e385254e99207b6dff45d5bf0689bd7966f0f0a7e70"
+    }
+  ],
+  "references": [
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan"
+  ],
+  "fidelity_validated": false
+}

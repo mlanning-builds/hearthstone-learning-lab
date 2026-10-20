@@ -40,4 +40,4 @@ class ExtraTurnTests(unittest.TestCase):
   self.fx.run_ops(self.g,[('cast_fixed_spell','UNG_028t','random')]);self.assertEqual(self.p.extra_turns_pending,1);self.assertTrue(self.p.time_warp_used)
  def test_public_state_and_feature_schema(self):
   self.cast();view=self.g.observe(0);self.assertEqual(view['players'][0]['extra_turns_pending'],1);self.assertTrue(view['players'][0]['time_warp_used'])
-  rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']));self.assertIn('extra_turns_pending',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
+  rows=encode_decision(dict(observation=view,actor=0,actions=view['legal_actions']));self.assertIn('extra_turns_pending',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')

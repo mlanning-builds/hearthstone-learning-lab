@@ -1,0 +1,59 @@
+{
+  "scope": "Generated conditional/Excavate/cost/fatigue spell outcomes",
+  "new_unvalidated_bodies": 12,
+  "new_ids": [
+    "TTN_853",
+    "WW_009",
+    "WW_027",
+    "WW_051",
+    "WW_051t",
+    "WW_334",
+    "WW_403",
+    "WW_409",
+    "WW_436",
+    "WW_441",
+    "YOG_301",
+    "YOG_513"
+  ],
+  "new_collectible_spell_outcomes": 11,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 216,
+  "current_expansion_outcome_gap": 205,
+  "closed_outcome_ids": [
+    "TTN_853",
+    "WW_009",
+    "WW_027",
+    "WW_051",
+    "WW_334",
+    "WW_403",
+    "WW_409",
+    "WW_436",
+    "WW_441",
+    "YOG_301",
+    "YOG_513"
+  ],
+  "candidate_fingerprint": "25153d2c14e2c7dc9b332d0130aced5ce7c7ffe48a74ff09001761be642bfc57",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict root and discard schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Next-card cost consumption, overlap and negative discount stacking",
+    "Corpse payment checkpoints and copy target survival",
+    "Fatigue hit ordering, ownership and replacement prevention",
+    "Health setters, all-type/multiple-type draws and full-hand cases",
+    "Furnace Fuel destruction versus discard/burn notification boundaries and trigger duplication",
+    "Quickdraw discard conditions, death-trigger draws and summon sequencing",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

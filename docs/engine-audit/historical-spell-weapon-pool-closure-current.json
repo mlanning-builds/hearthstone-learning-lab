@@ -1,0 +1,2249 @@
+{
+  "scope": "Full declared historical selectors plus the audited computed helper requests; counts are implementation inventories, not behavioral or recursive certification.",
+  "fingerprint": "52da3173768f37c4460dd783025bba55389da7ed4639323227cd50c40b91008e",
+  "goal_turn_classification": "progress",
+  "new_registered_definitions": 27,
+  "new_historical_spell_roots": 21,
+  "new_tokens_and_alternate_forms": 6,
+  "new_implementations": [
+    {
+      "id": "DAL_007",
+      "name": "Rafaam's Scheme",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_119",
+      "name": "Emergency Meeting",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_439",
+      "name": "Orbital Halo",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_462",
+      "name": "Orbital Satellite",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_473",
+      "name": "Headhunt",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_475",
+      "name": "Orbital Moon",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_217",
+      "name": "To My Side!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_521",
+      "name": "Coerce",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_000",
+      "name": "Spawning Pool",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_001",
+      "name": "Baneling Barrage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_015",
+      "name": "Nydus Worm",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_019",
+      "name": "Ultralisk Cavern",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_019t",
+      "name": "Baneling",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_020",
+      "name": "Consume",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_403",
+      "name": "Starport",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_410",
+      "name": "Lift Off",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_320",
+      "name": "Rats of Extraordinary Size",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_127",
+      "name": "Cannon Barrage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_302",
+      "name": "Time Out!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_308",
+      "name": "Siren Song",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_533",
+      "name": "Food Fight",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_533t",
+      "name": "Entr\u00e9e",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_020",
+      "name": "Perpetual Flame",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_022",
+      "name": "Final Gasp",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_064",
+      "name": "Shadow Word: Forbid",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_064ts",
+      "name": "Shadow Word: Forbid",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_020",
+      "name": "Monkey Business",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "registry_records": 8238,
+  "standard_roots_written": 1185,
+  "historical_minion_roots_written": 3201,
+  "original_five_pool_inventory_closed": true,
+  "pools": [
+    {
+      "source_card": "MIS_700",
+      "name": "Whack-A-Gnoll",
+      "eligible_unique_identities": 27,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 27,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 27,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 27,
+          "missing": []
+        }
+      }
+    },
+    {
+      "source_card": "NX2_001",
+      "name": "Tear Reality",
+      "eligible_unique_identities": 165,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 165,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 165,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 165,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 165,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 165,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 165,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 165,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 165,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 165,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 165,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 165,
+          "missing": []
+        }
+      }
+    },
+    {
+      "source_card": "TIME_707",
+      "name": "Alternate Reality",
+      "eligible_unique_identities": 54,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 54,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 54,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 54,
+          "missing": []
+        }
+      }
+    },
+    {
+      "source_card": "TIME_857",
+      "name": "Alter Time",
+      "eligible_unique_identities": 80,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 17,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 7,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 0,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 1,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 1,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 4,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 0,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 0,
+          "missing": []
+        }
+      }
+    }
+  ],
+  "additional_dependency_pools": [
+    {
+      "source_card": "WON_040",
+      "name": "Disco at the End of Time",
+      "eligible_unique_identities": 64,
+      "missing_implementations": []
+    }
+  ],
+  "declared_past_pool_census": [
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='MAGE', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "NX2_001"
+      ],
+      "eligible_unique_identities": 165,
+      "written_unique_identities": 165,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 165,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 165,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 165,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 165,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 165,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 165,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 165,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 165,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 165,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 165,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 165,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='WEAPON', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='PALADIN', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "MIS_700"
+      ],
+      "eligible_unique_identities": 27,
+      "written_unique_identities": 27,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 27,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 27,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 27,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='HERO', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='other', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "VAC_336"
+      ],
+      "eligible_unique_identities": 33,
+      "written_unique_identities": 33,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 31,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 31,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 30,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 29,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 29,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 30,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 29,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 29,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 29,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 28,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=10, maximum=10, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "GDB_857"
+      ],
+      "eligible_unique_identities": 46,
+      "written_unique_identities": 46,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 46,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 46,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 46,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 46,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 46,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 46,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 46,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 46,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 46,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 46,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 46,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='SECRET', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "WON_040"
+      ],
+      "eligible_unique_identities": 64,
+      "written_unique_identities": 64,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 64,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 64,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 64,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 64,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 64,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 64,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 64,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 64,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 64,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 64,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 64,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "MIS_701"
+      ],
+      "eligible_unique_identities": 677,
+      "written_unique_identities": 677,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 677,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 677,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 677,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 677,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 677,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 677,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 677,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 677,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 677,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 677,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 677,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='BEAST', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TOY_355"
+      ],
+      "eligible_unique_identities": 63,
+      "written_unique_identities": 63,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 63,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 63,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 63,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 63,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 63,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 63,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 63,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 63,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 63,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 63,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 63,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='ELEMENTAL', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "WW_428"
+      ],
+      "eligible_unique_identities": 222,
+      "written_unique_identities": 222,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 222,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 222,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 222,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 222,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 222,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 222,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 222,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 222,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 222,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 222,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 222,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "GIL_549"
+      ],
+      "eligible_unique_identities": 690,
+      "written_unique_identities": 690,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 690,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 690,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 690,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 690,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 690,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 690,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 690,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 690,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 690,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 690,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 690,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='LEGENDARY', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='PRIEST', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TTN_484"
+      ],
+      "eligible_unique_identities": 50,
+      "written_unique_identities": 50,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 50,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 50,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 50,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 50,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 50,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 50,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 50,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 50,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 50,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 50,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 50,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=5, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "ETC_349"
+      ],
+      "eligible_unique_identities": 439,
+      "written_unique_identities": 439,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 439,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 439,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 439,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 439,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 439,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 439,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 439,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 439,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 439,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 439,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 439,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='COLOSSAL', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "CATA_EVENT_000"
+      ],
+      "eligible_unique_identities": 13,
+      "written_unique_identities": 13,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 13,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 13,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 13,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 13,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 13,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 13,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 13,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 13,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 13,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 13,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 13,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='ARCANE', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_857"
+      ],
+      "eligible_unique_identities": 80,
+      "written_unique_identities": 80,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 17,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 7,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 0,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 1,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 1,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 4,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 0,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 0,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=5, maximum=5, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_040"
+      ],
+      "eligible_unique_identities": 439,
+      "written_unique_identities": 439,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 439,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 439,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 439,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 439,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 439,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 439,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 439,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 439,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 439,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 439,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 439,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_052"
+      ],
+      "eligible_unique_identities": 3201,
+      "written_unique_identities": 3201,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 3201,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 3201,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='', school='', minimum=1, maximum=1, rarity='', mechanic='', excluded_mechanic='COLOSSAL', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_711"
+      ],
+      "eligible_unique_identities": 257,
+      "written_unique_identities": 257,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 257,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 257,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 257,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 257,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 257,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 257,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 257,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 257,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 257,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 257,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 257,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='DEMON', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_444"
+      ],
+      "eligible_unique_identities": 153,
+      "written_unique_identities": 153,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 153,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 153,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 153,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 153,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 153,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 153,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 153,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 153,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 153,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 153,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 153,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='MINION', tribe='MECHANICAL', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='PALADIN', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_016"
+      ],
+      "eligible_unique_identities": 27,
+      "written_unique_identities": 27,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 27,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 27,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 27,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='NATURE', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_013"
+      ],
+      "eligible_unique_identities": 162,
+      "written_unique_identities": 162,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 79,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 9,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 0,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 0,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 2,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 8,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 66,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 0,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 3,
+          "missing": []
+        }
+      }
+    }
+  ],
+  "computed_past_pool_census": [
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='CHOOSE_ONE', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_707"
+      ],
+      "eligible_unique_identities": 54,
+      "written_unique_identities": 54,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 54,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 54,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 54,
+          "missing": []
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='', minimum=0, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='any', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_861"
+      ],
+      "eligible_unique_identities": 1442,
+      "written_unique_identities": 1414,
+      "missing_direct_identities": [
+        "AV_119",
+        "AV_269",
+        "AV_400",
+        "AV_405",
+        "BAR_323",
+        "BOT_912",
+        "BT_753",
+        "DMF_224",
+        "DMF_249",
+        "GDB_140",
+        "GDB_233",
+        "GDB_873",
+        "ICC_201",
+        "ICC_233",
+        "NEW1_036",
+        "OG_118",
+        "ONY_033",
+        "SCH_305",
+        "ULD_286",
+        "VAC_408",
+        "VAC_528",
+        "VAC_931",
+        "VAC_941",
+        "WON_078",
+        "WON_113",
+        "WORK_017",
+        "WORK_030",
+        "YOP_024"
+      ],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "DEMONHUNTER": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "DRUID": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "HUNTER": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "MAGE": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "PALADIN": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "PRIEST": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "ROGUE": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "SHAMAN": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "WARLOCK": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        },
+        "WARRIOR": {
+          "eligible": 1442,
+          "missing": [
+            "AV_119",
+            "AV_269",
+            "AV_400",
+            "AV_405",
+            "BAR_323",
+            "BOT_912",
+            "BT_753",
+            "DMF_224",
+            "DMF_249",
+            "GDB_140",
+            "GDB_233",
+            "GDB_873",
+            "ICC_201",
+            "ICC_233",
+            "NEW1_036",
+            "OG_118",
+            "ONY_033",
+            "SCH_305",
+            "ULD_286",
+            "VAC_408",
+            "VAC_528",
+            "VAC_931",
+            "VAC_941",
+            "WON_078",
+            "WON_113",
+            "WORK_017",
+            "WORK_030",
+            "YOP_024"
+          ]
+        }
+      }
+    },
+    {
+      "request": "PoolRequest(era='past', rune='', card_type='SPELL', tribe='', school='', minimum=7, maximum=None, rarity='', mechanic='', excluded_mechanic='', family='', minimum_tribes=0, classes='own_or_neutral', attack_minimum=None, attack_maximum=None)",
+      "sources": [
+        "TIME_704"
+      ],
+      "eligible_unique_identities": 112,
+      "written_unique_identities": 109,
+      "missing_direct_identities": [
+        "BOT_912",
+        "DMF_224",
+        "GDB_233"
+      ],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 2,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 5,
+          "missing": [
+            "DMF_224"
+          ]
+        },
+        "DRUID": {
+          "eligible": 21,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 9,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 22,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 15,
+          "missing": [
+            "BOT_912"
+          ]
+        },
+        "PRIEST": {
+          "eligible": 15,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 6,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 12,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 8,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 9,
+          "missing": [
+            "GDB_233"
+          ]
+        }
+      }
+    }
+  ],
+  "remaining_cards": [
+    {
+      "id": "AV_119",
+      "name": "To the Front!",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Your minions cost (2) less this turn <i>(but not less than 1)</i>."
+    },
+    {
+      "id": "AV_269",
+      "name": "Flanking Maneuver",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Summon a 4/2 Demon with <b>Rush</b>. If it dies this turn, summon another."
+    },
+    {
+      "id": "AV_400",
+      "name": "Snowfall Graveyard",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "[x]Your <b>Deathrattles</b>\ntrigger twice.\nLasts 3 turns."
+    },
+    {
+      "id": "AV_405",
+      "name": "Contraband Stash",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Replay 5 cards from other classes you've played this game."
+    },
+    {
+      "id": "BAR_323",
+      "name": "Yoink!",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "<b>Discover</b> a Hero Power and set its Cost to (0). Swap back after 2 uses."
+    },
+    {
+      "id": "BOT_912",
+      "name": "Kangor's Endless Army",
+      "classes": [
+        "PALADIN"
+      ],
+      "text": "Resurrect 3 friendly Mechs. They keep any <b>Magnetic</b> upgrades."
+    },
+    {
+      "id": "BT_753",
+      "name": "Mana Burn",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Your opponent has 2 fewer Mana Crystals next turn."
+    },
+    {
+      "id": "DMF_224",
+      "name": "Expendable Performers",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Summon seven 1/1 Illidari with <b>Rush</b>. If\u00a0they all die this turn, summon seven more."
+    },
+    {
+      "id": "DMF_249",
+      "name": "Acrobatics",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Draw 2 cards. If you play both this turn, draw 2 more."
+    },
+    {
+      "id": "GDB_140",
+      "name": "Celestial Aura",
+      "classes": [
+        "PALADIN"
+      ],
+      "text": "While you have exactly 1 minion in play, its Attack and Health are 10. Lasts 3 turns."
+    },
+    {
+      "id": "GDB_233",
+      "name": "Dwarf Planet",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Fill your board\nwith random 2-Cost minions that attack\nrandom enemies."
+    },
+    {
+      "id": "GDB_873",
+      "name": "Lucky Comet",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "<b>Discover</b> a <b>Combo</b> minion. The next one\nyou play triggers its <b>Combo</b> twice."
+    },
+    {
+      "id": "ICC_201",
+      "name": "Roll the Bones",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Draw a card.\nIf it has <b>Deathrattle</b>, cast this again."
+    },
+    {
+      "id": "ICC_233",
+      "name": "Doomerang",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Throw your weapon at a minion. It deals its damage, then returns to\u00a0your hand."
+    },
+    {
+      "id": "NEW1_036",
+      "name": "Commanding Shout",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Your minions can't be reduced below 1 Health this turn. Draw a card."
+    },
+    {
+      "id": "OG_118",
+      "name": "Renounce Darkness",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Replace your Hero Power and Warlock cards with another class's. The cards cost (1) less."
+    },
+    {
+      "id": "ONY_033",
+      "name": "Impfestation",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Summon a 3/3\nDread Imp to attack each enemy minion."
+    },
+    {
+      "id": "SCH_305",
+      "name": "Secret Passage",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Replace your hand with 4 cards from your deck. Swap back next turn."
+    },
+    {
+      "id": "ULD_286",
+      "name": "Shadow of Death",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "Choose a minion. Shuffle 3 'Shadows' into your deck that summon a copy when drawn."
+    },
+    {
+      "id": "VAC_408",
+      "name": "Birdwatching",
+      "classes": [
+        "HUNTER"
+      ],
+      "text": "[x]<b>Discover</b> a minion\nfrom your deck. Give all\ncopies of it +2/+1\n<i>(wherever they are)</i>."
+    },
+    {
+      "id": "VAC_528",
+      "name": "All You Can Eat",
+      "classes": [
+        "WARRIOR"
+      ],
+      "text": "Draw three minions of different minion types."
+    },
+    {
+      "id": "VAC_931",
+      "name": "Skirting Death",
+      "classes": [
+        "DEMONHUNTER"
+      ],
+      "text": "Choose a minion.\nThis turn, your hero steals 4 Attack from it."
+    },
+    {
+      "id": "VAC_941",
+      "name": "Announce Darkness",
+      "classes": [
+        "WARLOCK"
+      ],
+      "text": "Replace your Hero Power and non-Warlock cards with Warlock ones.\nThey cost (1) less."
+    },
+    {
+      "id": "WON_078",
+      "name": "Jade Telegram",
+      "classes": [
+        "ROGUE"
+      ],
+      "text": "[x]Look at 3 cards in your\nopponent's hand and shuffle\none of them into their deck.\nSummon a{1} {0} <b>Jade Golem</b>."
+    },
+    {
+      "id": "WON_113",
+      "name": "Champions of Azeroth",
+      "classes": [
+        "NEUTRAL"
+      ],
+      "text": "[x]Choose Alliance or Horde.\nGet 2 of their <b>Legendary</b>\nChampions and reduce\ntheir Costs by (2)."
+    },
+    {
+      "id": "WORK_017",
+      "name": "Silvermoon Brochure",
+      "classes": [
+        "PRIEST"
+      ],
+      "text": "Give a minion <b>Immune</b> this turn and +2/+2. <i>(Flips each turn.)</i>"
+    },
+    {
+      "id": "WORK_030",
+      "name": "Icecrown Brochure",
+      "classes": [
+        "SHAMAN"
+      ],
+      "text": "Deal $3 damage to a minion and <b>Freeze</b> its neighbors.\n<i>(Flips each turn.)</i>"
+    },
+    {
+      "id": "YOP_024",
+      "name": "Guidance",
+      "classes": [
+        "DRUID",
+        "SHAMAN"
+      ],
+      "text": "Look at two spells. Add one to your hand or <b>Overload:</b> (1) to get both."
+    }
+  ],
+  "remaining_required_direct_historical_spells": 28,
+  "literal_dependency_inventory": {
+    "roots_checked": 8238,
+    "edges": 888,
+    "missing_ids": []
+  },
+  "validation": {
+    "regressions_run_this_batch": false,
+    "gameplay_run_this_batch": false,
+    "training_run": false,
+    "syntax_parsing_passed": true,
+    "metadata_hash_integrity_passed": true,
+    "inventory_reconciled": true,
+    "behavior_status": "unvalidated",
+    "prior_receipts_do_not_validate_current_source": true
+  },
+  "task_complete": false,
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "41 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ],
+  "latest_batch_report": "historical-questline-combat-reconciled-deferred-validation.json",
+  "snapshot_status": "Preserved historical pool census; not recomputed for current source. See latest reconciliation for original-root binding closure only.",
+  "latest_reconciliation": {
+    "candidate_fingerprint": "77aa5714799adb3295ea8fca0f2bc7c788a394fedee86a2d4802d7fcadc567da",
+    "original_historical_spell_roots_missing": 0,
+    "latest_written_roots": [
+      "AV_269",
+      "AV_400",
+      "BAR_323",
+      "BOT_912",
+      "BT_753",
+      "DMF_224",
+      "DMF_249",
+      "GDB_140",
+      "GDB_233",
+      "GDB_873",
+      "NEW1_036",
+      "OG_118",
+      "ONY_033",
+      "SCH_305",
+      "ULD_286",
+      "VAC_941",
+      "WON_113",
+      "YOP_024"
+    ],
+    "full_regression_current": false,
+    "recursive_closure_verified": false,
+    "report": "project-completion-audit/evidence/remaining-42-deferred-2026-10-19.json"
+  },
+  "latest_coding_validation": {
+    "candidate_fingerprint": "1835ac39c646097302be3043ff3c11885ec629f8c3ec3933e61b08f14a160a56",
+    "receipt": "project-completion-audit/evidence/remaining-eight-completed-2026-10-19.json",
+    "scope": "Internal regression; no new independent membership or recursive fidelity certification"
+  }
+}

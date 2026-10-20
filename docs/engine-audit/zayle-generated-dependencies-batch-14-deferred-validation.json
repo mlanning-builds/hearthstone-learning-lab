@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "LOOT_064",
+    "LOOT_064t1",
+    "LOOT_064t2"
+  ],
+  "candidate_fingerprint": "d7066df4e046818dc0d0d0f198f89e6bed6724b3218e15704a2c622c4a47f9b4",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Overload upgrade overflow, prevention and copied held counters",
+    "Physical copy snapshots, summon multipliers and board capacity"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "staged_flow_unvalidated",
+  "candidate_fingerprint": "550b0d520e9ad555ad56420c59d67459a9d90df81293d8f688b084082d63fd83",
+  "root_admitted": false,
+  "new_card_admissions": 0,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "implemented": [
+    "Empty clue zones advance without calling the offer provider",
+    "Correct earlier picks retained and delivered after remaining applicable clues succeed",
+    "No fabricated reward for skipped zones",
+    "Require exactly three canonical-distinct offer identities and a valid answer",
+    "Reject answers outside actual offer and noncallable providers"
+  ],
+  "sources": [
+    "https://hearthstone.wiki.gg/wiki/Murloc_Holmes?section=1",
+    "https://www.reddit.com/r/hearthstone/comments/wku41y/"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Strict staged rule schema",
+    "All-eleven-class inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact distractor membership, probabilities and insufficient-distractor fallback",
+    "Empty-zone skip behavior is based on player reports and awaits pinned-client confirmation",
+    "Multiple simultaneously correct options and duplicate-card snapshot policies",
+    "Reward copies/enchantments, hand burns and public clue visibility"
+  ],
+  "source_sha256": "c201bca655144a9ec5ad3bb46a10ba31da4b0cd7d803293f3a628f2fd274e4f3"
+}

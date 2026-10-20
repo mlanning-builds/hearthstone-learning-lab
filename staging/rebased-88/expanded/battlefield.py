@@ -17,8 +17,9 @@ class Battlefield:
 
     def _public_entity(self, entity):
         if isinstance(entity,Permanent):
+            from .historical_starships import view as starship_view
             return dict(uid=entity.uid,card_id=entity.card_id,owner=entity.owner,
-                        type='PERMANENT',ready=entity.used_turn!=self.players[entity.owner].turns_taken)
+                        type='PERMANENT',ready=entity.used_turn!=self.players[entity.owner].turns_taken,**starship_view(self,entity))
 
         if isinstance(entity,Location):
             return dict(**asdict(entity),type='LOCATION',ready=self.turn>=entity.ready_turn)
@@ -46,7 +47,7 @@ class Battlefield:
     def assert_invariants(self):
         ids = []
         for p in self.players:
-            assert 0 <= len(p.board) <= 7 and 0 <= len(p.hand) <= 10
+            assert 0 <= len(p.board) <= 7 and 0 <= len(p.hand) <= max(getattr(p,'hand_capacity',10),getattr(p,'historical_hand_capacity_peak',10))
             assert 0 <= p.mana <= p.mana_capacity and 0 <= p.max_mana <= p.mana_capacity
             assert p.corpses >= 0 and p.armor >= 0
             if p.weapon:

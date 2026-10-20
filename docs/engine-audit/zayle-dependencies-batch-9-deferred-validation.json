@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_602"
+  ],
+  "candidate_fingerprint": "09ab809fc954aa78c2e3205f02cfe410568e3bbd8ccef662819f5c1b37dc1b8f",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Simultaneous shuffle observer ordering and physical reset",
+    "Draw continuation, quests, cast-on-draw and fatigue interactions"
+  ]
+}

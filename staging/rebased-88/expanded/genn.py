@@ -27,10 +27,13 @@ class Genn:
  def _genn_effect(self,op,ctx):
   owner=ctx['owner'];p=self.players[owner]
   if op[0]=='genn_upgrade':
+   # Upgrade the basic starting power only. An Imbue, Hero card, quest
+   # reward, or an already upgraded power is not a replacement target.
+   if p.primary_power is not None:return True
    k=getattr(p,'starting_hero_class',p.hero_class);cid=POWERS[k]
    if cid not in self.cards:raise UnsupportedCard('Missing upgraded starting power: '+cid)
    self._replace_primary_power(owner,dict(card_id=cid,upgraded_starting_class=k,cost=1))
-  elif op[0]=='genn_ghoul':self._summon(owner,'TOKEN_GHOUL',attack_bonus=1,expires=True,entry_origin='hero_power',entry_site='genn_power')
+  elif op[0]=='genn_ghoul':self._summon(owner,'HERO_11bp2t',expires=True,entry_origin='hero_power',entry_site='genn_power')
   elif op[0]=='genn_totem':
    from .game import BASIC_TOTEM_POOL
    choices=BASIC_TOTEM_POOL.resolve(self.cards,self.cards)

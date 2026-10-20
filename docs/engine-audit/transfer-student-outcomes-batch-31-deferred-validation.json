@@ -1,0 +1,56 @@
+{
+  "scope": "Remaining locations, physical owner-turn play locks and next-turn Health payment",
+  "new_unvalidated_bodies": 8,
+  "new_ids": [
+    "NX2_036",
+    "NX2_036t",
+    "REV_750",
+    "REV_750t2",
+    "REV_942",
+    "TOY_512",
+    "TTN_744",
+    "YOG_503"
+  ],
+  "new_collectible_outcomes": 6,
+  "new_required_minion_bodies": 2,
+  "internal_operation_admissions": 249,
+  "native_secret_placement_bindings": 32,
+  "prior_expansion_outcome_gap": 55,
+  "current_expansion_outcome_gap": 49,
+  "closed_outcome_ids": [
+    "NX2_036",
+    "REV_750",
+    "REV_942",
+    "TOY_512",
+    "TTN_744",
+    "YOG_503"
+  ],
+  "candidate_fingerprint": "b29e321590b925defb98a339696b7eb41f0f17bae8e1efbab9d21ae157ff93a8",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Frozen Over actual draw/burn identity, owner-turn lock scope, copying/control and observations",
+    "Curse of Flesh owner-turn payment effects, payment precedence and extra-turn behavior",
+    "Relic Vault stacked repeat counts, other repeat modifiers, counters and cast-versus-effect history",
+    "Graveyard other-card counting for played versus generated locations and subsequent turns",
+    "Crystal Cove next-summon timing, Dormant entry, copied summons, auras and stat-setting layers",
+    "Construct Quarter source text says 4/5 while archived token is 5/5: source-scoped persistent base override implemented; independent client evidence still required",
+    "Location final-charge removal, destruction/summon ordering and token copy/reset fidelity",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

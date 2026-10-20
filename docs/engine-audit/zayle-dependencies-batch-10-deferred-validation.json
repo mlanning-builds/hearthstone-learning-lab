@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_432"
+  ],
+  "candidate_fingerprint": "47e749c37ab6e564b2ad94e5794007d655b799a721c12507b7ef27b4de73afce",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Repeatable copy timing versus healing triggers and countering",
+    "Temporary expiry, hand capacity and zero-cost reductions"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "status": "staged_integration_unvalidated",
+  "candidate_fingerprint": "6d30b751bd7e2e71d801a95206d6c8d5c063abd5bea3f468d1b98d178855eab0",
+  "new_card_ids": [
+    "WW_0700p"
+  ],
+  "historical_written": 3190,
+  "historical_remaining": 11,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "sources": [
+    "https://news.blizzard.com/en-us/article/24161533/31-0-3-patch-notes",
+    "https://hearthstone.wiki.gg/wiki/Reno,_Lone_Ranger?section=1",
+    "https://www.highgroundgaming.com/hearthstone-showdown-in-the-badlands-best-cards/",
+    "https://us.forums.blizzard.com/en/hearthstone/t/reno-lone-rangers-handcannon-and-hunter-questline/116674"
+  ],
+  "implemented": [
+    "Starting-deck canonical singleton check",
+    "Active enemy minion removal without death; pending summon publications discarded",
+    "Dormant minions, locations and permanents preserved",
+    "Neutral hero preserves current class and grants printed armor",
+    "Initial random bullet and end-of-controller-turn replacement across all seven identities",
+    "Fresh Hero Power replacement discards outgoing temporary power modifications"
+  ],
+  "deferred": [
+    "Exact pinned initial/rotation probability and repeat-bullet policy require independent client confirmation",
+    "Removal priority and pending summon interactions",
+    "All seven power programs, random pool recursive closure and copied powers",
+    "End-turn rotation ordering versus other replacements"
+  ],
+  "checks": [
+    "AST parsing",
+    "Strict declaration schemas",
+    "Metadata hashes",
+    "All-eleven-class inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "root_admitted": false,
+  "distribution_note": "No default or inferred distribution installed. Exact source-backed initial and transition weights required, accounting for all seven bullets."
+}

@@ -1,0 +1,47 @@
+{
+  "scope": "Camouflage Mount and all eight keyword-specific Chameleon bodies",
+  "new_unvalidated_bodies": 9,
+  "new_ids": [
+    "WW_810",
+    "WW_810t1",
+    "WW_810t2",
+    "WW_810t3",
+    "WW_810t4",
+    "WW_810t5",
+    "WW_810t6",
+    "WW_810t7",
+    "WW_810t8"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 8,
+  "prior_expansion_outcome_gap": 15,
+  "current_expansion_outcome_gap": 14,
+  "closed_outcome_ids": [
+    "WW_810"
+  ],
+  "candidate_fingerprint": "4efd121a40b48779289ec238c9b19efc02f49dee2067101258cef0ed843854e0",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Bonus Effect pool, Rush eligibility and existing-keyword exclusions across owners/turns",
+    "All-eight-keyword exhausted Bonus pool explicitly unsupported pending client reference; no invented fallback",
+    "Granted Deathrattle keyword mapping, repeated mounts, silence, transformations, control changes and copying",
+    "Summon multiplier, token identity and original mount attachment survival in death memory",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

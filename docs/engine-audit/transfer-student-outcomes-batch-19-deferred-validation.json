@@ -1,0 +1,56 @@
+{
+  "scope": "Hero attack weapons and physical Banana depletion forms",
+  "new_unvalidated_bodies": 11,
+  "new_ids": [
+    "DEEP_016",
+    "ETC_201",
+    "ETC_201t",
+    "ETC_201t2",
+    "JAM_011",
+    "RLK_012",
+    "TOY_522",
+    "TOY_522t",
+    "TTN_088",
+    "TTN_467",
+    "TTN_725"
+  ],
+  "new_collectible_outcomes": 8,
+  "new_required_generated_spell_forms": 2,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 143,
+  "current_expansion_outcome_gap": 135,
+  "closed_outcome_ids": [
+    "DEEP_016",
+    "ETC_201",
+    "JAM_011",
+    "RLK_012",
+    "TOY_522",
+    "TTN_088",
+    "TTN_467",
+    "TTN_725"
+  ],
+  "candidate_fingerprint": "138382e20224ccda1d5e06abd9f7133ddaec7c46d4d51f961db89d1778739f06",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Before-attack weapon trigger order, armor listeners and interruption/redirection timing",
+    "Horn stat-setting layers and damage/retaliation snapshots",
+    "Crusher Freeze and Lifesteal on damage, last-charge weapon destruction and copied weapon identity",
+    "Soulbreaker actual kill confirmation and Tempest lowest-health tie selection",
+    "Watercannon summoned identities, multiplication, trigger interruption and forced attack continuation",
+    "Bow Secret-history costs and complete Banana chain copy/cost/reset behavior",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

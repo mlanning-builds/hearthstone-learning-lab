@@ -7,7 +7,7 @@ from copy import deepcopy
 from engine.cards import UnsupportedCard
 from engine.game import Card
 from .generation_cards import pool
-from .selectors import has_school
+from .selectors import has_school,effective_tribes,TRIBES
 from .automatic_cards import validate_automatic_card
 FIRE=pool(card_type='SPELL',school='FIRE',maximum=15)
 MINIONS=pool(card_type='MINION',classes='own_or_neutral')
@@ -41,37 +41,49 @@ class ExceptionalFinish:
    return ('batch30_noop',),(('cast_fixed_spell',cid,'enemies'),('fyrakk_budget',remaining-self.cards[cid]['cost'],steps+1))
   if name=='standard_pack':
    contract=getattr(self,'standard_pack_contract',None)
-   if not contract or not contract.get('source'):raise UnsupportedCard('Missing reviewed in-game Standard pack distribution')
-   outcomes=contract.get('outcomes',())
-   if not outcomes:raise UnsupportedCard('Empty pack distribution')
-   for weight,ids in outcomes:
-    if type(weight) is not int or weight<=0 or len(ids)!=5:raise UnsupportedCard('Invalid pack outcome')
-    for cid in ids:validate_automatic_card(self,Card(-1,cid))
-   ids=self.rng.choices([ids for weight,ids in outcomes],weights=[weight for weight,ids in outcomes],k=1)[0]
-   cards=[self._add(owner,cid) for cid in ids];cards=[c for c in cards if c is not None]
-   return ('batch30_noop',),tuple(('pack_play',c.uid) for c in cards)
+   from .pack_contracts import sample_pack
+   ids=sample_pack(self,contract,owner)
+   # Blizzard 31.2 removed Avatar's hand-space requirement. Pack cards are
+   # detached entities: no hand-entry triggers, burn, payment, or paid play.
+   cards=[Card(self._new_id(),cid) for cid in ids]
+   return ('batch30_noop',),tuple(('automatic_card',card,'random') for card in cards)
   if name=='pack_play':
    card=next((c for c in p.hand if c.uid==op[1]),None)
    if card is None:return ('batch30_noop',),()
-   validate_automatic_card(self,card);p.hand.remove(card)
+   validate_automatic_card(self,card,owner);p.hand.remove(card)
    return ('batch30_noop',),(('automatic_card',card,'random'),)
  def _finish_effect(self,op,ctx):
   if op[0]!='suspicious_discover':return False
   owner=ctx['owner'];values=self._generation_discover_candidates(MINIONS,ctx)
   contract=getattr(self,'suspicious_mutation_contract',None)
-  if not contract or not contract.get('source'):raise UnsupportedCard('Missing reviewed suspicious mutation distribution')
+  approximate=contract is None
+  if approximate:
+   from .approximation_policy import mark
+   mark(self,'watfin')
+   contract=dict(source='Owner-authorized approximation remaining-eight-v1',mutations=[dict(field='cost',delta=-1),dict(field='attack',delta=1),dict(field='health',delta=1),dict(field='tribe'),dict(field='name')])
+  if not contract.get('source'):raise UnsupportedCard('Suspicious mutation contract requires a source')
   mutations=contract.get('mutations',())
-  if not mutations or any(m.get('field') not in ('attack','health','cost') or type(m.get('delta')) is not int or not m['delta'] for m in mutations):
+  if not mutations or any(m.get('field') not in ('attack','health','cost','name','tribe') or (m.get('field') in ('attack','health','cost') and (type(m.get('delta')) is not int or not m['delta'])) for m in mutations):
    raise UnsupportedCard('Suspicious name/tribe replacement needs complete identity overlays')
   if not values:return True
-  ids=self.rng.sample(list(values),min(3,len(values)));suspect=self.rng.randrange(len(ids));mutation=self.rng.choice(mutations);options=[];cards=[]
+  ids=self.rng.sample(list(values),min(3,len(values)));suspect=self.rng.randrange(len(ids));options=[];cards=[]
   for index,cid in enumerate(ids):
    card=Card(self._new_id(),cid);d=self.cards[cid]
    if index==suspect:
-    field=mutation['field'];delta=mutation['delta']
-    if field=='cost':self._set_card_cost(card,max(0,d['cost']+delta))
-    else:setattr(card,field+'_bonus',max(1 if field=='health' else 0,d[field]+delta)-d[field])
-   options.append(dict(card_id=cid,attack=d['attack']+card.attack_bonus,health=d['health']+card.health_bonus,cost=self._cost(card,owner)))
+    names=sorted({v['name'] for v in self.cards.values() if v.get('type')=='MINION' and v.get('collectible') and v.get('name')!=d['name']})
+    tribes=sorted(set(TRIBES)-set(effective_tribes(d))-{'ALL'})
+    applicable=[m for m in mutations if (m['field']!='cost' or d['cost']>0) and (m['field']!='name' or names) and (m['field']!='tribe' or tribes)]
+    if not applicable:raise UnsupportedCard('No applicable suspicious mutation')
+    mutation=self.rng.choice(applicable);field=mutation['field'];delta=mutation.get('delta',0)
+    if field=='name':card._suspicious_overlay=dict(name=self.rng.choice(names))
+    elif field=='tribe':card._suspicious_overlay=dict(race=None,races=tuple(sorted(set(effective_tribes(d))|{self.rng.choice(tribes)})))
+    elif field=='cost':card._suspicious_overlay=dict(cost=max(0,d['cost']+delta))
+    else:
+     attack=d['attack']+(delta if field=='attack' else 0);health=d['health']+(delta if field=='health' else 0)
+     card.base_stat_override=(max(0,attack),max(1,health))
+     card._suspicious_overlay=dict(attack=card.base_stat_override[0],health=card.base_stat_override[1])
+   shown=self._card_data(card)
+   options.append(dict(card_id=cid,name=shown['name'],races=sorted(effective_tribes(shown)),attack=shown['attack']+card.attack_bonus,health=shown['health']+card.health_bonus,cost=self._cost(card,owner)))
    cards.append(card)
   self.pending_choice=dict(owner=owner,kind='suspicious_discover',options=options,cards=cards,suspect=suspect,source_uid=getattr(ctx.get('source'),'uid',None));self.phase='choice';return True
  def _finish_choice(self,choice,selected):

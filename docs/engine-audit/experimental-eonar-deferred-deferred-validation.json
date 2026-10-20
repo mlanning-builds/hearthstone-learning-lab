@@ -1,0 +1,33 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "TTN_903",
+    "TTN_903t",
+    "TTN_903t2",
+    "TTN_903t3",
+    "TTN_903t4"
+  ],
+  "candidate_fingerprint": "4954b5147b3d51fbf5bea0574360bbb7abe3e4980f6acec01301dcc68eba8a4e",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Titan copy, silence, control change, freeze and Windfury interactions",
+    "Draw-until-full capture, draw interrupts, healing replacements and post-ability source timing",
+    "Complete experimental opening integration remains unfinished"
+  ],
+  "sources": [
+    "https://hearthstone.blizzard.com/en-us/expansions-adventures/titans",
+    "https://hearthstone.wiki.gg/wiki/Eonar%2C_the_Life-Binder"
+  ]
+}

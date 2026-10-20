@@ -1,0 +1,1250 @@
+{
+  "scope": "Direct frozen historical pool membership across all eleven class contexts; recursive behavior is not certified by membership.",
+  "fingerprint": "20a527a8b8454514f1820b3b445346c676ff26afe1a47ac6c24395f56c409d7e",
+  "new_registered_definitions": 92,
+  "pools": [
+    {
+      "source_card": "MIS_700",
+      "name": "Whack-A-Gnoll",
+      "eligible_unique_identities": 27,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 27,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 27,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 27,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 27,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 27,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 27,
+          "missing": []
+        }
+      }
+    },
+    {
+      "source_card": "NX2_001",
+      "name": "Tear Reality",
+      "eligible_unique_identities": 165,
+      "missing_direct_identities": [
+        "AT_002",
+        "AV_212",
+        "AV_282",
+        "AV_283",
+        "AV_290",
+        "BAR_546",
+        "BOT_254",
+        "BRM_003",
+        "BT_003",
+        "BT_021",
+        "DAL_177",
+        "DAL_577",
+        "DAL_578",
+        "DED_517",
+        "DMF_104",
+        "DMF_105",
+        "DMF_107",
+        "DMF_108",
+        "DRG_321",
+        "DRG_323",
+        "DRG_324",
+        "EX1_294",
+        "EX1_594",
+        "FP1_018",
+        "GDB_133",
+        "GDB_301",
+        "GDB_305",
+        "GDB_456",
+        "GIFT_02",
+        "ICC_082",
+        "ICC_086",
+        "LOOT_103",
+        "LOOT_104",
+        "LOOT_106",
+        "LOOT_172",
+        "ONY_029",
+        "SCH_348",
+        "SW_110",
+        "SW_450",
+        "TRL_313",
+        "TRL_317",
+        "TRL_400",
+        "ULD_216",
+        "ULD_239",
+        "VAC_428",
+        "VAC_431",
+        "VAC_509",
+        "VAC_953",
+        "WON_040",
+        "WORK_012",
+        "WORK_026",
+        "tt_010"
+      ],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "DEMONHUNTER": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "DRUID": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "HUNTER": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "MAGE": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "PALADIN": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "PRIEST": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "ROGUE": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "SHAMAN": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "WARLOCK": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        },
+        "WARRIOR": {
+          "eligible": 165,
+          "missing": [
+            "AT_002",
+            "AV_212",
+            "AV_282",
+            "AV_283",
+            "AV_290",
+            "BAR_546",
+            "BOT_254",
+            "BRM_003",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_577",
+            "DAL_578",
+            "DED_517",
+            "DMF_104",
+            "DMF_105",
+            "DMF_107",
+            "DMF_108",
+            "DRG_321",
+            "DRG_323",
+            "DRG_324",
+            "EX1_294",
+            "EX1_594",
+            "FP1_018",
+            "GDB_133",
+            "GDB_301",
+            "GDB_305",
+            "GDB_456",
+            "GIFT_02",
+            "ICC_082",
+            "ICC_086",
+            "LOOT_103",
+            "LOOT_104",
+            "LOOT_106",
+            "LOOT_172",
+            "ONY_029",
+            "SCH_348",
+            "SW_110",
+            "SW_450",
+            "TRL_313",
+            "TRL_317",
+            "TRL_400",
+            "ULD_216",
+            "ULD_239",
+            "VAC_428",
+            "VAC_431",
+            "VAC_509",
+            "VAC_953",
+            "WON_040",
+            "WORK_012",
+            "WORK_026",
+            "tt_010"
+          ]
+        }
+      }
+    },
+    {
+      "source_card": "TIME_707",
+      "name": "Alternate Reality",
+      "eligible_unique_identities": 54,
+      "missing_direct_identities": [],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 54,
+          "missing": []
+        },
+        "HUNTER": {
+          "eligible": 54,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PALADIN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 54,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 54,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 54,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 54,
+          "missing": []
+        }
+      }
+    },
+    {
+      "source_card": "TIME_857",
+      "name": "Alter Time",
+      "eligible_unique_identities": 80,
+      "missing_direct_identities": [
+        "AV_212",
+        "BT_003",
+        "BT_021",
+        "DAL_177",
+        "DAL_578",
+        "DED_002",
+        "DED_517",
+        "EX1_294",
+        "FP1_018",
+        "GDB_133",
+        "LOOT_104",
+        "LOOT_106",
+        "TRL_400"
+      ],
+      "classes": {
+        "DEATHKNIGHT": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DEMONHUNTER": {
+          "eligible": 0,
+          "missing": []
+        },
+        "DRUID": {
+          "eligible": 17,
+          "missing": [
+            "DED_002"
+          ]
+        },
+        "HUNTER": {
+          "eligible": 7,
+          "missing": []
+        },
+        "MAGE": {
+          "eligible": 54,
+          "missing": [
+            "AV_212",
+            "BT_003",
+            "BT_021",
+            "DAL_177",
+            "DAL_578",
+            "DED_517",
+            "EX1_294",
+            "FP1_018",
+            "GDB_133",
+            "LOOT_104",
+            "LOOT_106",
+            "TRL_400"
+          ]
+        },
+        "PALADIN": {
+          "eligible": 0,
+          "missing": []
+        },
+        "PRIEST": {
+          "eligible": 1,
+          "missing": []
+        },
+        "ROGUE": {
+          "eligible": 1,
+          "missing": []
+        },
+        "SHAMAN": {
+          "eligible": 4,
+          "missing": []
+        },
+        "WARLOCK": {
+          "eligible": 0,
+          "missing": []
+        },
+        "WARRIOR": {
+          "eligible": 0,
+          "missing": []
+        }
+      }
+    }
+  ],
+  "remaining_unique_direct_identities": 53,
+  "remaining_cards": [
+    {
+      "id": "AT_002",
+      "name": "Effigy",
+      "text": "<b>Secret:</b> When a friendly minion dies, summon a random minion with the same Cost."
+    },
+    {
+      "id": "AV_212",
+      "name": "Siphon Mana",
+      "text": "Deal $2 damage.\n<b>Honorable Kill</b>: Reduce the Cost of spells in your hand by (1)."
+    },
+    {
+      "id": "AV_282",
+      "name": "Build a Snowman",
+      "text": "Summon a 3/3\nSnowman that <b>Freezes</b>.\nAdd \"Build a Snowbrute\"\nto your hand.\u00a0"
+    },
+    {
+      "id": "AV_283",
+      "name": "Rune of the Archmage",
+      "text": "[x]Cast 20 Mana worth of\nMage spells at enemies."
+    },
+    {
+      "id": "AV_290",
+      "name": "Iceblood Tower",
+      "text": "[x]At the end of your turn,\ncast another spell from\nyour deck. Lasts 3 turns."
+    },
+    {
+      "id": "BAR_546",
+      "name": "Wildfire",
+      "text": "[x]Your Hero Power\ndeals 1 more damage\nthis game."
+    },
+    {
+      "id": "BOT_254",
+      "name": "Unexpected Results",
+      "text": "[x]Summon two random\n$2-Cost minions <i>(improved\nby <b>Spell Damage</b>)</i>."
+    },
+    {
+      "id": "BRM_003",
+      "name": "Dragon's Breath",
+      "text": "Deal $4 damage. Costs (1) less for each minion that died this turn."
+    },
+    {
+      "id": "BT_003",
+      "name": "Netherwind Portal",
+      "text": "<b>Secret:</b> After your opponent casts a spell, summon a random\n4-Cost minion."
+    },
+    {
+      "id": "BT_021",
+      "name": "Font of Power",
+      "text": "<b>Discover</b> a Mage minion. If your deck\nhas no minions, keep\nall 3 instead."
+    },
+    {
+      "id": "DAL_177",
+      "name": "Conjurer's Calling",
+      "text": "<b>Twinspell</b>\nDestroy a minion. Summon 2 minions of the same Cost to replace it."
+    },
+    {
+      "id": "DAL_577",
+      "name": "Ray of Frost",
+      "text": "<b>Twinspell</b>\n<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it."
+    },
+    {
+      "id": "DAL_578",
+      "name": "Power of Creation",
+      "text": "<b>Discover</b> a 6-Cost minion. Summon two copies of it."
+    },
+    {
+      "id": "DED_002",
+      "name": "Moonlit Guidance",
+      "text": "[x]<b>Discover</b> a copy of\na card in your deck.\nIf you play it this turn,\ndraw the original."
+    },
+    {
+      "id": "DED_517",
+      "name": "Arcane Overflow",
+      "text": "[x]Deal $8 damage to an\nenemy minion. Summon a\n Remnant with stats equal\nto the excess damage."
+    },
+    {
+      "id": "DMF_104",
+      "name": "Grand Finale",
+      "text": "Summon an 8/8 Elemental. Repeat for each Elemental you played last turn."
+    },
+    {
+      "id": "DMF_105",
+      "name": "Ring Toss",
+      "text": "<b>Discover</b> a <b>Secret</b> and cast it. <b>Corrupt:</b> <b>Discover</b> 2 instead."
+    },
+    {
+      "id": "DMF_107",
+      "name": "Rigged Faire Game",
+      "text": "<b>Secret:</b> If you didn't take any damage during your opponent's turn, draw 3 cards."
+    },
+    {
+      "id": "DMF_108",
+      "name": "Deck of Lunacy",
+      "text": "Transform spells in your deck into ones that cost (3) more. <i>(They keep their original Cost.)</i>"
+    },
+    {
+      "id": "DRG_321",
+      "name": "Rolling Fireball",
+      "text": "Deal $8 damage to a minion. Any excess damage continues to\nthe left or right."
+    },
+    {
+      "id": "DRG_323",
+      "name": "Learn Draconic",
+      "text": "[x]<b>Sidequest:</b> Spend\n8 Mana on spells.\n<b>Reward:</b> Summon a\n6/6 Dragon."
+    },
+    {
+      "id": "DRG_324",
+      "name": "Elemental Allies",
+      "text": "[x]<b>Sidequest:</b> Play an\nElemental 2 turns in a row.\n<b>Reward:</b> Draw 3 spells\nfrom your deck."
+    },
+    {
+      "id": "EX1_294",
+      "name": "Mirror Entity",
+      "text": "<b>Secret:</b> After your opponent plays a minion, summon a copy of it."
+    },
+    {
+      "id": "EX1_594",
+      "name": "Vaporize",
+      "text": "<b>Secret:</b> When a minion attacks your hero, destroy it."
+    },
+    {
+      "id": "FP1_018",
+      "name": "Duplicate",
+      "text": "<b>Secret:</b> When a friendly minion dies, put 2 copies of it into your hand."
+    },
+    {
+      "id": "GDB_133",
+      "name": "Pocket Dimension",
+      "text": "<b>Discover</b> a spell.\nRepeat until you see one for the second time."
+    },
+    {
+      "id": "GDB_301",
+      "name": "Supernova",
+      "text": "Fill your hand with random Fire spells. They cost (1)."
+    },
+    {
+      "id": "GDB_305",
+      "name": "Solar Flare",
+      "text": "Deal $2 damage to all enemies. Costs (1) less for each Elemental you control."
+    },
+    {
+      "id": "GDB_456",
+      "name": "Spontaneous Combustion",
+      "text": "Deal $4 damage to a random enemy. If you played an Elemental last turn, choose the target."
+    },
+    {
+      "id": "GIFT_02",
+      "name": "Jaina's Gift",
+      "text": "<b>Discover</b> a <b>Temporary</b> Frostbolt, Arcane Intellect, or Fireball."
+    },
+    {
+      "id": "ICC_082",
+      "name": "Frozen Clone",
+      "text": "<b>Secret:</b> After your opponent plays a minion, add two copies of it to\u00a0your hand."
+    },
+    {
+      "id": "ICC_086",
+      "name": "Glacial Mysteries",
+      "text": "Put one of each <b>Secret</b> from your deck into\nthe battlefield."
+    },
+    {
+      "id": "LOOT_103",
+      "name": "Lesser Ruby Spellstone",
+      "text": "Add 1 random Mage spell to your hand. <i>(Play 2 Elementals to\u00a0upgrade.)</i>"
+    },
+    {
+      "id": "LOOT_104",
+      "name": "Shifting Scroll",
+      "text": "Each turn this is in your hand, transform it into a random Mage spell."
+    },
+    {
+      "id": "LOOT_106",
+      "name": "Deck of Wonders",
+      "text": "Shuffle 5 Scrolls into your deck. When drawn, cast a random spell."
+    },
+    {
+      "id": "LOOT_172",
+      "name": "Dragon's Fury",
+      "text": "Reveal a spell from your deck. Deal damage equal to its Cost to all\u00a0minions."
+    },
+    {
+      "id": "ONY_029",
+      "name": "Drakefire Amulet",
+      "text": "<b>Tradeable</b>\n<b>Discover</b> 2 Dragons. Summon them."
+    },
+    {
+      "id": "SCH_348",
+      "name": "Combustion",
+      "text": "[x]Deal $4 damage to\na minion. Any excess\ndamages both neighbors."
+    },
+    {
+      "id": "SW_110",
+      "name": "Ignite",
+      "text": "Deal $2 damage. Shuffle an Ignite into\nyour deck that deals\none more damage."
+    },
+    {
+      "id": "SW_450",
+      "name": "Sorcerer's Gambit",
+      "text": "<b>Questline:</b> Cast a Fire, Frost, and Arcane spell. <b>Reward: </b>Draw a spell."
+    },
+    {
+      "id": "TRL_313",
+      "name": "Scorch",
+      "text": "[x]Deal $4 damage to a\nminion. Costs (1) if you\nplayed an Elemental\nlast turn."
+    },
+    {
+      "id": "TRL_317",
+      "name": "Blast Wave",
+      "text": "Deal $2 damage to\u00a0all minions.\n<b>Overkill</b>: Add a random Mage spell to your hand."
+    },
+    {
+      "id": "TRL_400",
+      "name": "Splitting Image",
+      "text": "<b>Secret:</b> When one of your minions is attacked, summon a copy of it."
+    },
+    {
+      "id": "ULD_216",
+      "name": "Puzzle Box of Yogg-Saron",
+      "text": "Cast 10 random spells <i>(targets chosen randomly).</i>"
+    },
+    {
+      "id": "ULD_239",
+      "name": "Flame Ward",
+      "text": "<b>Secret:</b> After a minion attacks your hero, deal $3 damage to all enemy minions."
+    },
+    {
+      "id": "VAC_428",
+      "name": "Go with the Flow",
+      "text": "Choose a minion.\nIf it's an enemy, <b>Freeze</b> it. If it's friendly, give it <b>Spell Damage +1</b>."
+    },
+    {
+      "id": "VAC_431",
+      "name": "Under the Sea",
+      "text": "Draw a different spell. Summon a\nrandom minion of that\nspell's Cost."
+    },
+    {
+      "id": "VAC_509",
+      "name": "Tsunami",
+      "text": "Summon three\n3/6 Water Elementals\nthat <b>Freeze</b>. They attack random enemies."
+    },
+    {
+      "id": "VAC_953",
+      "name": "Rising Waves",
+      "text": "Deal $2 damage to all minions. If none die, deal $2 more."
+    },
+    {
+      "id": "WON_040",
+      "name": "Disco at the End of Time",
+      "text": "Cast 5 random <b>Secrets</b> from the past.\nAt the start of your turn, destroy them."
+    },
+    {
+      "id": "WORK_012",
+      "name": "Huddle Up",
+      "text": "Fill your board with random Naga."
+    },
+    {
+      "id": "WORK_026",
+      "name": "Burndown",
+      "text": "[x]Draw 3 cards and\nlight them on fire.\nIn 3 turns, any still\n\u00a0\u00a0in hand are destroyed!"
+    },
+    {
+      "id": "tt_010",
+      "name": "Spellbender",
+      "text": "<b>Secret:</b> When an enemy casts a spell on a minion, summon a 1/3 as the new target."
+    }
+  ],
+  "convoke": {
+    "source_card": "REV_365",
+    "direct_pool": "Pinned Standard Druid spells; already complete",
+    "prior_missing_choose_one_dependencies": 12,
+    "those_dependencies_now_written": true
+  },
+  "focused_checks": 50,
+  "physical_cast_checks": 30,
+  "full_regressions": "passed_final_source",
+  "training_run": false,
+  "supporting_checks": 75,
+  "implementation_status": "partial_three_reported_blockers_cleared_two_pools_incomplete",
+  "historical_minion_roots_written": 3201,
+  "standard_roots_written": 1185,
+  "registry_records": 7424,
+  "remaining_pool_summary": {
+    "NX2_001": 52,
+    "TIME_857": 13
+  },
+  "implementation_notes": [
+    "Twelve missing Choose One roots and required generated bodies are written; Alternate Reality direct membership is complete in all eleven classes.",
+    "Convoke no longer rejects the previously missing Choose One dependency family in the broad physical-cast fixture. This is internal coverage, not independent fidelity certification.",
+    "The three incomplete pools retain all catalog members and explicit pre-sampling rejection.",
+    "Captured draw sequences draw all requested cards before post-draw refresh, discount or discard, preserving full-hand burns.",
+    "Greater Arcane Missiles uses three independently targeted 3-damage hits, with spell damage applied to each.",
+    "No new approximation policies, training, learning, deck search, notebook execution or GitHub publication.",
+    "Full 27-member Paladin weapon pool now written with all four Maul forms, Sunscreen and the generated Student.",
+    "Ceremonial Maul physical base stats and cost persist through copying/return; Spellburst checks the pre-cast equipped UID.",
+    "Mana and Choose Thrice programs preserve ordered choices and leave Choose Both charges unused.",
+    "Historical conditional fixture retains every card and active/inactive case, using independent copies of one prepared game and one metadata load rather than hundreds of repeated archives/initializations."
+  ],
+  "mechanics_reference": {
+    "url": "https://hearthstone.wiki.gg/wiki/Copy",
+    "use": "Battlefield-to-hand copies reset ordinary enchantments; native physical replay builder retained."
+  },
+  "conditional_fixture_checks": 13,
+  "validation_attempts": [
+    {
+      "log": "/private/tmp/hs-pool-full.log",
+      "outcome": "stopped_before_completion_to_correct_greater_arcane_missiles",
+      "passing_receipt": false
+    },
+    {
+      "log": "/private/tmp/hs-pool-full-final.log",
+      "outcome": "stopped_after_historical_conditional_fixture_180_second_timeout",
+      "passing_receipt": false
+    },
+    {
+      "report_path": "runs/expanded_validation/validation-214d1b36135741cf8b352584f133d8f5.json",
+      "tests_run": 5466,
+      "failures": 1,
+      "errors": 2,
+      "source_unchanged": true,
+      "outcome": "Two broad fixture setup timeouts and stale missing-pool negative fixture; all repaired without removing cases."
+    }
+  ],
+  "fixture_repair": "All original conditional active/inactive cases retained; one prepared independent Game prototype, one metadata load and per-test patches replace repeated archive loads and repeated fixture initialization.",
+  "focused_repair_checks": {
+    "historical_numeric": 7,
+    "historical_vanilla": 9,
+    "remaining_systems": 19
+  },
+  "validation_receipt": {
+    "fingerprint": "20a527a8b8454514f1820b3b445346c676ff26afe1a47ac6c24395f56c409d7e",
+    "end_fingerprint": "20a527a8b8454514f1820b3b445346c676ff26afe1a47ac6c24395f56c409d7e",
+    "source_unchanged": true,
+    "fixture_success": true,
+    "success": true,
+    "tests_run": 5466,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "unexpected_successes": 0,
+    "completed_at": "2026-10-17T02:17:04.156465+00:00",
+    "excluded_modules": [
+      "test_expanded_learning_core",
+      "test_expanded_training"
+    ],
+    "rule_workers": 4,
+    "scope": "Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.",
+    "run_id": "178a33ffbad44e46820730369f320af7",
+    "report_path": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-178a33ffbad44e46820730369f320af7.json"
+  },
+  "archived_logs": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/staging/rebased-88/runs/expanded_validation/pool-closure-178a33ffbad44e46820730369f320af7",
+  "written_implementation_complete": false,
+  "all_five_pools_complete": false,
+  "github_published": false,
+  "passing_regressions_do_not_certify": "The 53 missing direct historical spell outcomes remain explicit pre-sampling errors. Existing special-card approximation policies remain labeled; no independent client fidelity claim.",
+  "additional_mechanics_references": [
+    {
+      "url": "https://www.vicioussyndicate.com/hasta-la-vista-mistah-vistah/",
+      "use": "Original reveal describes three independent choices, permitting every ordered combination."
+    },
+    {
+      "url": "https://us.forums.blizzard.com/en/hearthstone/t/number-cruncher-interaction-with-fandral-type-effects/141709",
+      "use": "Choose Thrice is distinct from Choose One; does not combine with Fandral effects."
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Ceremonial_Maul",
+      "use": "Generated Student retains matching base stats and cost through later use."
+    }
+  ]
+}

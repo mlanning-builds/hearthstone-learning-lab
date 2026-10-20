@@ -1,0 +1,54 @@
+{
+  "scope": "Remaining native Secrets, generated minions, physical Kidnap inheritance and Secret placement",
+  "new_unvalidated_bodies": 7,
+  "new_ids": [
+    "NX2_013",
+    "NX2_013t",
+    "REV_516",
+    "REV_828",
+    "REV_828t",
+    "TSC_929",
+    "WW_422"
+  ],
+  "new_collectible_outcomes": 5,
+  "new_required_minion_bodies": 2,
+  "internal_operation_admissions": 247,
+  "native_secret_placement_bindings": 32,
+  "prior_expansion_outcome_gap": 60,
+  "current_expansion_outcome_gap": 55,
+  "closed_outcome_ids": [
+    "NX2_013",
+    "REV_516",
+    "REV_828",
+    "TSC_929",
+    "WW_422"
+  ],
+  "candidate_fingerprint": "73e90940ef07d25bada290b71cb2b5f8d1a543a6b98a84176e3e809ebaa76a03",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz",
+    "https://outof.games/news/5089-hearthstone-designers-cora-georgiou-and-leo-robles-clarify-how-rogues-kidnap-secret-works/"
+  ],
+  "review_pending": [
+    "Azerite Vein payment/Secret-counter ordering, physical constructed payloads and zero-cost layers",
+    "Zombee and Visage summon/forced-attack phases, board space, summon multipliers and dead attacker copies",
+    "Emergency Maneuvers copied death state, Dormant awakening, chronological recheck and competing death Secrets",
+    "Kidnap after-Battlecry capture, physical owner return, copied/inherited Sack memory and full-hand behavior",
+    "Native Secret physical placement, internal casting duplicate/capacity fizzle, listener/reveal and Rhyssa repeat ordering",
+    "Prison preferred-selected internal cast policy is now admitted but remains behaviorally unvalidated",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

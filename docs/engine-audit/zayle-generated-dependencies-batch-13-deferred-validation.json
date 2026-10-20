@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "SW_035"
+  ],
+  "candidate_fingerprint": "a6577f09c038dcb2999b5607afe457867c34be50a5de52d39d96fd28e875d53e",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Printed versus granted/suppressed Overload membership and countered plays",
+    "Full dynamic cost pool closure, cap and Discover summon integration"
+  ]
+}

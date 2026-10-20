@@ -1,0 +1,32 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_041",
+    "GIL_600",
+    "OG_206",
+    "SCH_427",
+    "ULD_181",
+    "LOOT_504",
+    "YOD_020",
+    "DRG_215"
+  ],
+  "candidate_fingerprint": "a8eb79533c2e9f0a6d972fad6cf869fa5533b2fcf4f2878b0e0a6679eb34c48f",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Overload integration through printed metadata",
+    "Echo cost floor and two-wave damage death settlement",
+    "Full dynamic evolution closure"
+  ]
+}

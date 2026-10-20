@@ -1,0 +1,168 @@
+{
+  "fingerprint": "221ccaeea9f264cba43548b9a8ba3aa5fae7922ca4e09b9307d3935e5c75ad63",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 22,
+  "new_historical_spell_roots": 21,
+  "new_tokens_and_alternate_forms": 1,
+  "registry_records": 7921,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1206,
+    "remaining": 236
+  },
+  "new_implementations": [
+    {
+      "id": "AV_264",
+      "name": "Sigil of Reckoning",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_069",
+      "name": "The Boomship",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_435",
+      "name": "Cloning Device",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_436",
+      "name": "Prismatic Lens",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "BOT_567",
+      "name": "Zerek's Cloning Gallery",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_059",
+      "name": "Dimensional Ripper",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_173",
+      "name": "Darkest Hour",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_055",
+      "name": "Idol of Y'Shaarj",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_084",
+      "name": "Jewel of N'Zoth",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_345",
+      "name": "Mindgames",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "EX1_345t",
+      "name": "Shadow of Nothing",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIL_813",
+      "name": "Vivid Nightmare",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_017",
+      "name": "Call Pet",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_029",
+      "name": "Ancestor's Call",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_235",
+      "name": "Shadow Essence",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_073",
+      "name": "Thistle Tea",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_017",
+      "name": "Horn of Wrathion",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_021",
+      "name": "Scale of Onyxia",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_610",
+      "name": "Guardian Animals",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_244",
+      "name": "Predatory Instincts",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_255",
+      "name": "Stampeding Roar",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_028",
+      "name": "Trial of the Jormungars",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7921,
+    "edges": 780,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "236 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

@@ -5,6 +5,7 @@ player decision history. It is a separate choice from the Battlecry, and is not
 activated by recruiting a minion or by an internal spell cast. Lethal ends the
 game without a choice. Snapshot contents never enter public observations.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 from .rewind_generators import REWINDS as STAGED_REWINDS
@@ -26,7 +27,8 @@ class Rewind:
         if getattr(self,'_rewind_replaying',False):return
         self._rewind_state=None
         card=next(c for c in self.players[self.current].hand if c.uid==action.source)
-        maximum=REWINDS.get(card.card_id,STAGED_REWINDS.get(card.card_id,0))
+        from .forge_intrinsics import values
+        maximum=max(REWINDS.get(card.card_id,STAGED_REWINDS.get(card.card_id,0)),max(values(card,'rewind'),default=0))
         count=getattr(card,'rule_state',{}).get('rewinds_remaining',maximum)
         if maximum and count and self._active('END_036',self.current):
             self._rewind_state=dict(keep_all=True,remaining=count,owner=self.current,card_id=card.card_id)
@@ -73,7 +75,7 @@ class Rewind:
             self._grant_bonus_effects(minion,2)
         elif name=='rewind_draw_buff':
             card=self._draw_filtered(owner,(('type','eq','MINION'),))
-            if card is not None:card.attack_bonus+=op[1];card.health_bonus+=op[2]
+            if card is not None:_saidan_add(card,'attack_bonus',op[1]);_saidan_add(card,'health_bonus',op[2])
         elif name=='rewind_discard_both':
             # Select both random cards before any discard listener resolves.
             for recipient in (owner,1-owner):self._discard_random(recipient,1)

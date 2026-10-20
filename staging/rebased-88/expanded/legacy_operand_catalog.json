@@ -1,0 +1,3901 @@
+{
+  "format_version": 1,
+  "operations": {
+    "_turn_add": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "add_spell_damage": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "all_zone_tribe_buff": [
+      [
+        {
+          "kind": "literal",
+          "value": "BEAST"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "alternate_damage_others": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "alternate_destroy_neighbor": [
+      []
+    ],
+    "alternate_enemy_draw": [
+      []
+    ],
+    "alternate_next_payment": [
+      [
+        {
+          "kind": "literal",
+          "value": "enemy_health"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "murloc_health"
+        }
+      ]
+    ],
+    "aoe_draw_dead": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "archmage_cast": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "armor_aoe": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "armor_board_identity": [
+      [
+        {
+          "kind": "literal",
+          "value": "Wisp"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "ashalon_adapt": [
+      []
+    ],
+    "at_current_end_add": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "attack_threshold_copy": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "aura_random_shield_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "autocast_holy_history": [
+      []
+    ],
+    "autocast_install_manastorm": [
+      []
+    ],
+    "autocast_other_same_cost": [
+      []
+    ],
+    "autocast_prepared_secrets": [
+      []
+    ],
+    "autocast_secret_pair": [
+      []
+    ],
+    "automatic_top": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "avatar_form": [
+      []
+    ],
+    "b60_attach": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "b60_infest"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "summon_from_zone"
+            },
+            {
+              "kind": "literal",
+              "value": "hand"
+            },
+            {
+              "items": [
+                {
+                  "items": [
+                    {
+                      "kind": "literal",
+                      "value": "type"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "eq"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "MINION"
+                    }
+                  ],
+                  "kind": "sequence"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "b60_attack_damage": [
+      []
+    ],
+    "b60_attacker_health": [
+      []
+    ],
+    "b60_bones": [
+      []
+    ],
+    "b60_breath": [
+      []
+    ],
+    "b60_copy_victim": [
+      []
+    ],
+    "b60_damage_others": [
+      []
+    ],
+    "b60_death_missiles": [
+      []
+    ],
+    "b60_destroy_last_played": [
+      []
+    ],
+    "b60_discard_secret": [
+      []
+    ],
+    "b60_discount_random": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "b60_doomed_hand": [
+      []
+    ],
+    "b60_dragon_rush": [
+      []
+    ],
+    "b60_draw_discount": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "b60_draw_played": [
+      []
+    ],
+    "b60_egg_grow": [
+      []
+    ],
+    "b60_escape": [
+      []
+    ],
+    "b60_gain_dead_attack": [
+      []
+    ],
+    "b60_hatch": [
+      []
+    ],
+    "b60_heal_excess": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "b60_health_one": [
+      []
+    ],
+    "b60_held_armor": [
+      []
+    ],
+    "b60_held_nature": [
+      []
+    ],
+    "b60_held_shots": [
+      []
+    ],
+    "b60_minion_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "b60_missiles_repeat": [
+      []
+    ],
+    "b60_next_murloc": [
+      []
+    ],
+    "b60_omen_damage": [
+      []
+    ],
+    "b60_omen_grow": [
+      []
+    ],
+    "b60_other_health_one": [
+      []
+    ],
+    "b60_overkill_discount": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "b60_payload_buff": [
+      []
+    ],
+    "b60_payload_damage": [
+      []
+    ],
+    "b60_pterrordax": [
+      []
+    ],
+    "b60_reborn_corpses": [
+      []
+    ],
+    "b60_secret_hand": [
+      []
+    ],
+    "b60_shuffle_all": [
+      []
+    ],
+    "b60_silent_strike": [
+      []
+    ],
+    "b60_stealth_damage": [
+      []
+    ],
+    "b60_survived_missiles": [
+      []
+    ],
+    "b60_torch": [
+      []
+    ],
+    "b60_weapon_other": [
+      []
+    ],
+    "board_count_aoe": [
+      []
+    ],
+    "bottom_demons": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "bounce_all_enemies": [
+      []
+    ],
+    "bounce_locked": [
+      []
+    ],
+    "bounce_random_enemy": [
+      []
+    ],
+    "bounce_random_friendly": [
+      [],
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "bounce_then_summon": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "brox_axe": [
+      []
+    ],
+    "brox_portal": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "brox_return": [
+      []
+    ],
+    "brox_reward": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "buff_damaged_board": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_event_source": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_event_target": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_other_damaged": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_other_minions": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_random_friendly": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_random_hand_tribe": [
+      [
+        {
+          "kind": "literal",
+          "value": "BEAST"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_self_damaged_count": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_self_turns_taken": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_shared_type": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "buff_spell_cost": [
+      [],
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "bwonsamdi_summon": [
+      []
+    ],
+    "cast_absorbed_spell": [
+      []
+    ],
+    "cast_deck_spell": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "prefer_source"
+        }
+      ]
+    ],
+    "choicegen_corpse_discover": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "choicegen_damage_discover": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "choicegen_destroy_top_rarity": [
+      []
+    ],
+    "choicegen_discover": [
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "corpse_copy"
+        },
+        {
+          "items": [],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "destination"
+        },
+        {
+          "items": [],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "keep_all"
+        },
+        {
+          "items": [],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "plain"
+        },
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "follow"
+                },
+                {
+                  "kind": "text"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "plain"
+        },
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "prepare"
+                },
+                {
+                  "kind": "bool"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "plain"
+        },
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "repeat_spell"
+                },
+                {
+                  "kind": "bool"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "plain_opponent_copy"
+        },
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "choose_both"
+                },
+                {
+                  "kind": "bool"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "choicegen_discovered_summon": [
+      []
+    ],
+    "choicegen_fill_enemy": [
+      []
+    ],
+    "choicegen_no_minion_discount": [
+      []
+    ],
+    "choicegen_no_neutral": [
+      []
+    ],
+    "choicegen_playable_spell": [
+      []
+    ],
+    "choicegen_remaining_mana": [
+      []
+    ],
+    "choicegen_staff": [
+      []
+    ],
+    "choicegen_start_no_spells": [
+      []
+    ],
+    "choicegen_temporary_crystal": [
+      []
+    ],
+    "choicegen_two_mana_discount": [
+      []
+    ],
+    "choicegen_violet": [
+      []
+    ],
+    "choose_absorb_spell": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "choose_attack_recipient": [
+      []
+    ],
+    "choose_boon": [
+      []
+    ],
+    "choose_cenarius": [
+      []
+    ],
+    "choose_corpses_stats": [
+      []
+    ],
+    "choose_hand_copy": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "school"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "FEL"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "choose_hand_discard": [
+      [],
+      [
+        {
+          "kind": "literal",
+          "value": "remember"
+        }
+      ]
+    ],
+    "choose_hand_shuffle": [
+      []
+    ],
+    "choose_hand_transform": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "choose_held_modifier": [
+      [
+        {
+          "kind": "literal",
+          "value": "growing_discount"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "radiating_discount"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "spell_damage"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "choose_steal_health": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "class_board_buff": [
+      [
+        {
+          "kind": "literal",
+          "value": "PALADIN"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "colossal_attack_cost": [
+      []
+    ],
+    "colossal_friendly_deathrattles": [
+      []
+    ],
+    "colossal_heal_damaged": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "colossal_random_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "colossal_remove_keyword": [
+      [
+        {
+          "kind": "literal",
+          "value": "DIVINE_SHIELD"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "ELUSIVE"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "LIFESTEAL"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "TAUNT"
+        }
+      ]
+    ],
+    "colossus_start": [
+      []
+    ],
+    "combo_add": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "combo_cast_fixed_spell": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "literal",
+          "value": "random"
+        }
+      ]
+    ],
+    "combo_copy_self": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "combo_operation": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "draw"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "combo_overload_keywords": [
+      []
+    ],
+    "companions_all": [
+      []
+    ],
+    "companions_choose": [
+      []
+    ],
+    "companions_extra": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "companions_replace": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "contraband_discover": [
+      []
+    ],
+    "control_target": [
+      []
+    ],
+    "copy_cast_spell_to_other_player": [
+      []
+    ],
+    "copy_damaged_board": [
+      [
+        {
+          "kind": "literal",
+          "value": "RUSH"
+        }
+      ]
+    ],
+    "copy_deaths_this_turn": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "copy_deck_spells": [
+      []
+    ],
+    "copy_drawn_set_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "copy_lowest_enemy_hand": [
+      []
+    ],
+    "copy_lowest_hand_tribe": [
+      [
+        {
+          "kind": "literal",
+          "value": "BEAST"
+        }
+      ]
+    ],
+    "copy_random_hand_any": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "items": [
+                    {
+                      "kind": "literal",
+                      "value": "tribe"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "eq"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "ELEMENTAL"
+                    }
+                  ],
+                  "kind": "sequence"
+                }
+              ],
+              "kind": "sequence"
+            },
+            {
+              "items": [
+                {
+                  "items": [
+                    {
+                      "kind": "literal",
+                      "value": "tribe"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "eq"
+                    },
+                    {
+                      "kind": "literal",
+                      "value": "DRAGON"
+                    }
+                  ],
+                  "kind": "sequence"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "corpse_copy": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "corpse_missiles": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "counterfeit_choose": [
+      []
+    ],
+    "counterfeit_jade": [
+      []
+    ],
+    "counterfeit_potion": [
+      []
+    ],
+    "craft_location": [
+      []
+    ],
+    "craft_trial": [
+      []
+    ],
+    "crystal_core": [
+      []
+    ],
+    "damage_add_if_dead": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "damage_armor_if_dead": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_buff_attack": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_buff_if_dead": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_hand_center": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_heal_enemy_if_dead": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_hero_attack": [
+      []
+    ],
+    "damage_history": [
+      [
+        {
+          "kind": "literal",
+          "value": "deaths"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "shuffles"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_other_random": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_owner_draw": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_resummon": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "damage_summon_count": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "damage_then_summon_if_dead": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "dark_deck_discover": [
+      [
+        {
+          "kind": "literal",
+          "value": "opponent"
+        },
+        {
+          "kind": "literal",
+          "value": "combo"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "own"
+        },
+        {
+          "kind": "bool"
+        }
+      ]
+    ],
+    "dark_discount": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "dark_global_if_dragon": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "dark_global_discover"
+            },
+            {
+              "kind": "gift"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "dark_if_holding": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "hero_attack"
+                },
+                {
+                  "kind": "int"
+                }
+              ],
+              "kind": "sequence"
+            },
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "armor"
+                },
+                {
+                  "kind": "int"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "summon"
+                },
+                {
+                  "kind": "text"
+                },
+                {
+                  "kind": "int"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "weapon_buff"
+                },
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "int"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "death_area_by_turn": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "death_attack_gift": [
+      []
+    ],
+    "death_summon_group": [
+      [
+        {
+          "items": [
+            {
+              "kind": "text"
+            },
+            {
+              "kind": "text"
+            },
+            {
+              "kind": "text"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "text"
+            },
+            {
+              "kind": "text"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "death_threshold_missiles": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "deck_minions_set_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "deck_size_draw": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "descending_aoe": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "destroy_hurt_hero": [
+      []
+    ],
+    "destroy_not_class": [
+      [
+        {
+          "kind": "literal",
+          "value": "PALADIN"
+        }
+      ]
+    ],
+    "destroy_random_enemy_location": [
+      []
+    ],
+    "discard_filtered": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "school"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "FIRE"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "school"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "NATURE"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "discount_distinct_cost_hand": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "discount_hand_neighbors": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "discount_hand_position": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "dormant_awaken_source": [
+      []
+    ],
+    "dormant_confinement": [
+      []
+    ],
+    "dormant_imprison": [
+      []
+    ],
+    "dormant_maiev": [
+      []
+    ],
+    "dormant_reduce": [
+      []
+    ],
+    "dormant_release": [
+      []
+    ],
+    "double_played_minion": [
+      []
+    ],
+    "double_recruits": [
+      []
+    ],
+    "dragon_held_aoe": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "draw_extreme_cost": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "type"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "MINION"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "kind": "literal",
+          "value": "highest"
+        }
+      ]
+    ],
+    "draw_fire_spell_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "draw_locked": [
+      []
+    ],
+    "draw_pick": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "discount"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "give"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "draw_summon_set_stats": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "DIVINE_SHIELD"
+        }
+      ]
+    ],
+    "draw_temporary_discount": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "dream_all": [
+      []
+    ],
+    "dream_awaken": [
+      [
+        {
+          "kind": "bool"
+        }
+      ]
+    ],
+    "dream_bounce": [
+      []
+    ],
+    "dream_destroy_yseras": [
+      []
+    ],
+    "dream_nightmare": [
+      []
+    ],
+    "dream_random": [
+      []
+    ],
+    "dream_shuffle": [
+      []
+    ],
+    "dusk_ninja_returns": [
+      []
+    ],
+    "empty_deck_destroy_enemy_top": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "endtime_empty": [
+      []
+    ],
+    "endtime_start": [
+      []
+    ],
+    "enemy_edges_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "entity_illusion": [
+      []
+    ],
+    "entity_lunar_cycle": [
+      []
+    ],
+    "entity_replicate_killer": [
+      []
+    ],
+    "entity_swap_hand": [
+      []
+    ],
+    "entity_tribute": [
+      []
+    ],
+    "equalize_hand_stats": [
+      []
+    ],
+    "equilibrium_start": [
+      [],
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "essence_chain": [
+      []
+    ],
+    "event_minion_keyword": [
+      [
+        {
+          "kind": "literal",
+          "value": "RUSH"
+        }
+      ]
+    ],
+    "evolving_naga": [
+      []
+    ],
+    "excess_draw": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "extreme_draw_transfer": [
+      [
+        {
+          "kind": "literal",
+          "value": "high"
+        },
+        {
+          "kind": "literal",
+          "value": "friendly"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "low"
+        },
+        {
+          "kind": "literal",
+          "value": "enemy"
+        }
+      ]
+    ],
+    "fabled_blood_fighter": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "fabled_resurrect_dragons": [
+      []
+    ],
+    "fabled_sisters": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "feast_raptors": [
+      []
+    ],
+    "fill_board_target_copies": [
+      []
+    ],
+    "fill_enemy_deck_copies": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "fire_turn_destroy": [
+      []
+    ],
+    "foodchain_start": [
+      []
+    ],
+    "forbidden_start": [
+      []
+    ],
+    "force_duel": [
+      []
+    ],
+    "force_enemy_into_target": [
+      []
+    ],
+    "force_follow_hero": [
+      []
+    ],
+    "force_pre_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "force_resurrect_kills": [
+      []
+    ],
+    "force_source_excess": [
+      []
+    ],
+    "force_source_lowest": [
+      []
+    ],
+    "force_source_random": [
+      []
+    ],
+    "frail_ghoul": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "freeze_neighbors_destroy_damaged": [
+      []
+    ],
+    "freeze_random_enemies": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "fyrakk_budget": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "gain_summoned_stats": [
+      []
+    ],
+    "garona_assassinate": [
+      []
+    ],
+    "garona_king_shuffle": [
+      []
+    ],
+    "garona_kingslayers": [
+      []
+    ],
+    "gelbin_auras": [
+      []
+    ],
+    "generate_one": [
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "literal",
+          "value": "hand"
+        },
+        {
+          "items": [],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_attach": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_attach_board": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_attach_other_cost": [
+      []
+    ],
+    "generation_damage_branch": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_discount_school": [
+      [
+        {
+          "kind": "literal",
+          "value": "FEL"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "generation_discover_absorb": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_fill_board": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_fill_hand": [
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "generation_fill_health_hand": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_full_heal": [
+      []
+    ],
+    "generation_hero_attack_summons": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "generation_if_combo": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_if_corpses": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_if_holding": [
+      [
+        {
+          "kind": "literal",
+          "value": "DRAGON"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_discover"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "literal",
+              "value": "hand"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_if_outcast": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "choicegen_cosmic_again"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_mana_branch": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "generate_random"
+            },
+            {
+              "kind": "pool"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "literal",
+              "value": "board"
+            },
+            {
+              "items": [],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "generation_refresh_offer": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_reopen_attach": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_repeat_deaths": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "generation_skip_turn": [
+      []
+    ],
+    "generation_summon_attack": [
+      [
+        {
+          "kind": "pool"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "genn_upgrade": [
+      []
+    ],
+    "gorishi_enable": [
+      []
+    ],
+    "guess_hand": [
+      []
+    ],
+    "hammer_shuffle": [
+      []
+    ],
+    "hand_attack_types": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "MINION"
+            },
+            {
+              "kind": "literal",
+              "value": "WEAPON"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "heal_both_heroes": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "heal_enemy_hero": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "healed_this_turn_self_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "health_by_relation": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "held_keywords": [
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "tribe"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "DRAGON"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "TAUNT"
+            },
+            {
+              "kind": "literal",
+              "value": "DIVINE_SHIELD"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "type"
+                },
+                {
+                  "kind": "literal",
+                  "value": "eq"
+                },
+                {
+                  "kind": "literal",
+                  "value": "SPELL"
+                }
+              ],
+              "kind": "sequence"
+            },
+            {
+              "items": [
+                {
+                  "kind": "literal",
+                  "value": "cost"
+                },
+                {
+                  "kind": "literal",
+                  "value": "ge"
+                },
+                {
+                  "kind": "int"
+                }
+              ],
+              "kind": "sequence"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "DIVINE_SHIELD"
+            },
+            {
+              "kind": "literal",
+              "value": "LIFESTEAL"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "held_tribe_summon": [
+      [
+        {
+          "kind": "literal",
+          "value": "DRAGON"
+        },
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "herald": [
+      [],
+      [
+        {
+          "kind": "literal",
+          "value": "RUSH"
+        }
+      ]
+    ],
+    "herald_cataclysms": [
+      []
+    ],
+    "herald_consume_right": [
+      []
+    ],
+    "herald_death_damage": [
+      []
+    ],
+    "herald_hero_lifesteal": [
+      []
+    ],
+    "herald_topple": [
+      []
+    ],
+    "herald_ultraxion": [
+      []
+    ],
+    "hero_damaged_self_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "hero_eternal_life": [
+      []
+    ],
+    "historic_behemoth_lure": [
+      []
+    ],
+    "historic_gigafin_devour": [
+      []
+    ],
+    "historic_gigafin_dispose": [
+      []
+    ],
+    "historic_gigafin_return": [
+      []
+    ],
+    "historic_glugg_stats": [
+      []
+    ],
+    "historic_hydralodon_heads": [
+      []
+    ],
+    "historic_hydralodon_rush": [
+      []
+    ],
+    "historic_nellie_crew": [
+      []
+    ],
+    "historic_nellie_return": [
+      []
+    ],
+    "historic_ozumat_destroy": [
+      []
+    ],
+    "historic_stalk_damage": [
+      []
+    ],
+    "historic_xhilag_upgrade": [
+      []
+    ],
+    "historical_dredge": [
+      [
+        {
+          "kind": "literal",
+          "value": "affordable_draw"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "armor"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "beast_discount"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "discount"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "mech_draw"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "murloc_copy"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "murloc_health"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "murloc_summon"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "none"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "one_cost_recruit"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "opponent_cost"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "pirate_weapon"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "reveal_damage"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "spell_discount"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "stats"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "undead_damage"
+        }
+      ]
+    ],
+    "historical_dredge_stats": [
+      []
+    ],
+    "historical_held_mech_windfury": [
+      []
+    ],
+    "historical_one_attack_buff": [
+      []
+    ],
+    "historical_other_mech_keywords": [
+      []
+    ],
+    "if_discarded": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "board_buff"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "damage"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "imbue": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "imbue_enemy_attack": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "imbue_hand_discount": [
+      []
+    ],
+    "imbue_if": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "damage"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "draw"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "imbue_portal": [
+      []
+    ],
+    "imbue_trigger_power": [
+      []
+    ],
+    "imbue_wild_god": [
+      []
+    ],
+    "infinity_cost": [
+      []
+    ],
+    "infinity_delayed_attack": [
+      []
+    ],
+    "infinity_restore_cost": [
+      []
+    ],
+    "infinity_weapon": [
+      []
+    ],
+    "informant_discover": [
+      []
+    ],
+    "inherit_deathrattles_turn": [
+      []
+    ],
+    "inspect_rightmost": [
+      []
+    ],
+    "investigate_hand": [
+      []
+    ],
+    "keyword_or_copy": [
+      [
+        {
+          "kind": "literal",
+          "value": "REBORN"
+        }
+      ]
+    ],
+    "kindred_cost_draws": [
+      []
+    ],
+    "kindred_deathrattle_draw": [
+      []
+    ],
+    "kindred_destroy_attack": [
+      []
+    ],
+    "kindred_destroy_gain": [
+      []
+    ],
+    "kindred_discard": [
+      []
+    ],
+    "kindred_random_damage_freeze": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "lasting_corpse_draw": [
+      []
+    ],
+    "lasting_draw": [
+      []
+    ],
+    "lasting_life": [
+      []
+    ],
+    "lasting_sorry": [
+      []
+    ],
+    "latorvius_rewards": [
+      []
+    ],
+    "learned_bulb": [
+      []
+    ],
+    "learned_bulb_cast": [
+      []
+    ],
+    "learned_carve": [
+      []
+    ],
+    "learned_mentor": [
+      []
+    ],
+    "leech_steal_health": [
+      []
+    ],
+    "leyline_cast": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "leyline_choose": [
+      []
+    ],
+    "leyline_random": [
+      []
+    ],
+    "leyline_upgrade": [
+      [
+        {
+          "kind": "literal",
+          "value": "discount"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "effect"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "repeat"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "local_cannon_fire": [
+      []
+    ],
+    "local_dead_dragon": [
+      []
+    ],
+    "local_deck_or_buff": [
+      []
+    ],
+    "local_eat_deck_minion": [
+      []
+    ],
+    "local_enemy_deck_top": [
+      []
+    ],
+    "local_enemy_summon": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "local_fill_enemy_coins": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "local_fire_event": [
+      []
+    ],
+    "local_spell_treant": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "lost_city_start": [
+      []
+    ],
+    "low_health_buff_copy": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "magnetic_hand_buff": [
+      []
+    ],
+    "magnetic_return": [
+      []
+    ],
+    "map_discover": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "match_max_mana": [
+      []
+    ],
+    "medivh_clear": [
+      []
+    ],
+    "minion_adapt": [
+      []
+    ],
+    "moragg_recruit": [
+      []
+    ],
+    "mountain_start": [
+      []
+    ],
+    "muradin_take": [
+      []
+    ],
+    "mutation_alternate_reality": [
+      []
+    ],
+    "mutation_anomalize": [
+      []
+    ],
+    "mutation_bribe": [
+      []
+    ],
+    "mutation_choose_hand": [
+      [
+        {
+          "kind": "literal",
+          "value": "alchemy"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "split_spell"
+        }
+      ]
+    ],
+    "mutation_deck_druid": [
+      []
+    ],
+    "mutation_hand_demons": [
+      []
+    ],
+    "mutation_life_cycle": [
+      []
+    ],
+    "mutation_self": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "mutation_split_minion": [
+      []
+    ],
+    "nether_portal": [
+      []
+    ],
+    "next_cost_set": [
+      [
+        {
+          "kind": "literal",
+          "value": "DEMON"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "turn"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "SECRET"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "persistent"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "SECRET"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "turn"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "SPELL"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "turn"
+        }
+      ]
+    ],
+    "next_power_set_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "next_spells_twice": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "obligation_toki": [
+      []
+    ],
+    "obligation_void": [
+      []
+    ],
+    "on_draw_consume_shred": [
+      [
+        {
+          "kind": "literal",
+          "value": "buff"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "copy"
+        }
+      ]
+    ],
+    "on_draw_hurt_owner": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "on_draw_imp_upgrade": [
+      []
+    ],
+    "on_draw_top_imp": [
+      []
+    ],
+    "opponent_next_power_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "origin_discount": [
+      [
+        {
+          "kind": "literal",
+          "value": "nonstarting"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "opponent_copy"
+        }
+      ]
+    ],
+    "origin_draw": [
+      [
+        {
+          "kind": "bool"
+        },
+        {
+          "kind": "bool"
+        }
+      ]
+    ],
+    "origin_dreamwarden": [
+      []
+    ],
+    "origin_steal_new_hand": [
+      []
+    ],
+    "origin_sweeper": [
+      []
+    ],
+    "osk_consume": [
+      []
+    ],
+    "osk_control": [
+      []
+    ],
+    "osk_copy": [
+      []
+    ],
+    "osk_discount_minions": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "osk_draw_twos": [
+      []
+    ],
+    "osk_enemy_fights": [
+      []
+    ],
+    "osk_full_heal": [
+      []
+    ],
+    "osk_nether": [
+      []
+    ],
+    "osk_next_spell": [
+      []
+    ],
+    "osk_remove_pair": [
+      []
+    ],
+    "osk_six": [
+      []
+    ],
+    "osk_tendril": [
+      []
+    ],
+    "others_keyword": [
+      [
+        {
+          "kind": "literal",
+          "value": "RUSH"
+        }
+      ]
+    ],
+    "outcast_hero_immune": [
+      []
+    ],
+    "own_others_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "prepare_combo_stats": [
+      []
+    ],
+    "prepare_judgment": [
+      []
+    ],
+    "prison_replay": [
+      []
+    ],
+    "pull_enemy_hand": [
+      []
+    ],
+    "quest_assistant": [
+      []
+    ],
+    "quest_grave": [
+      []
+    ],
+    "quest_murloc_reward": [
+      []
+    ],
+    "rafaam_buff": [
+      []
+    ],
+    "rafaam_damage": [
+      []
+    ],
+    "rafaam_discover": [
+      []
+    ],
+    "rafaam_draw": [
+      []
+    ],
+    "rafaam_holding": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "armor"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "copy_self_right"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "rafaam_transform": [
+      []
+    ],
+    "rafaam_win": [
+      []
+    ],
+    "random_distinct_damage": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "random_minion_damage_draw_kills": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "recruit": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "recruits_shield": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "refresh_power": [
+      []
+    ],
+    "refresh_source_attack": [
+      []
+    ],
+    "remove_cheap_decks": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "remove_own_top": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "repeat_copy_damage": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "repeat_held_tribe": [
+      [
+        {
+          "kind": "literal",
+          "value": "DRAGON"
+        },
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "destroy_random_other"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "replace_or_upgrade_star": [
+      []
+    ],
+    "replay_dead_minions": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "replay_random_end": [
+      []
+    ],
+    "request_end_turn": [
+      []
+    ],
+    "reset_hand_costs": [
+      []
+    ],
+    "resistance_aura": [
+      []
+    ],
+    "resurrect_costs_reborn": [
+      [
+        {
+          "items": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "resurrect_deathrattle_copies": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "bool"
+        }
+      ]
+    ],
+    "resurrect_distinct_min_cost": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "resurrect_highest": [
+      [
+        {
+          "kind": "literal",
+          "value": "UNDEAD"
+        }
+      ],
+      [
+        {
+          "kind": "none"
+        }
+      ]
+    ],
+    "return_last_turn_spells": [
+      []
+    ],
+    "return_remembered_discards": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "return_spell_if_dead": [
+      []
+    ],
+    "reveal_spell_missiles": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "rewind_discard_both": [
+      []
+    ],
+    "rewind_draw_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "rewind_shade": [
+      []
+    ],
+    "rewind_silence_destroy": [
+      []
+    ],
+    "rewindgen_budget": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "rewindgen_cast": [
+      [
+        {
+          "kind": "pool"
+        }
+      ]
+    ],
+    "rewindgen_holy": [
+      []
+    ],
+    "rewindgen_sands": [
+      []
+    ],
+    "rewindgen_weapons": [
+      []
+    ],
+    "sawbones_destroy": [
+      []
+    ],
+    "schedule_stored_payload": [
+      []
+    ],
+    "secondary_corpse_power": [
+      []
+    ],
+    "set_bottom_cost": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "set_enemies_stats": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "set_hero_health": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "set_target_stats_by_owner": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "shadow_rounds": [
+      []
+    ],
+    "shatter_board_death": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "shatter_copy_target": [
+      []
+    ],
+    "shatter_generate_combined": [
+      []
+    ],
+    "shield_character": [
+      []
+    ],
+    "shield_or_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "shokk_preflight": [
+      []
+    ],
+    "shuffle_dead_target": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "shuffle_left_hand": [
+      []
+    ],
+    "shuffle_matching_enemy_hand": [
+      []
+    ],
+    "slice_replay": [
+      []
+    ],
+    "small_others_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "TAUNT"
+        }
+      ]
+    ],
+    "soletos_damage": [
+      []
+    ],
+    "source_health_damage": [
+      []
+    ],
+    "source_health_heal": [
+      []
+    ],
+    "spell_damage_turn_copy": [
+      []
+    ],
+    "spend_corpses_damage_summoned": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "store_highest_spell_aura": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "stored_beetles": [
+      []
+    ],
+    "stored_devour": [
+      []
+    ],
+    "stored_fire_choice": [
+      []
+    ],
+    "stored_future_hand": [
+      []
+    ],
+    "stored_jars": [
+      []
+    ],
+    "stored_mix_hands": [
+      []
+    ],
+    "stored_reborn_army": [
+      []
+    ],
+    "stored_reform": [
+      []
+    ],
+    "stored_release": [
+      []
+    ],
+    "stored_resummon": [
+      []
+    ],
+    "stored_return_devoured": [
+      []
+    ],
+    "stored_slime": [
+      []
+    ],
+    "stored_starting_hand": [
+      []
+    ],
+    "sulfuras_power": [
+      []
+    ],
+    "summon_corpse_keyword": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "RUSH"
+        }
+      ]
+    ],
+    "summon_death_identity": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "Treant"
+        }
+      ]
+    ],
+    "summon_discarded_copy": [
+      []
+    ],
+    "summon_played_one_cost": [
+      []
+    ],
+    "summon_right": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "summon_source_stats": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "summon_spend_mana_buff": [
+      [
+        {
+          "kind": "text"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "swap_self_stats": [
+      []
+    ],
+    "talanji_find": [
+      []
+    ],
+    "temporary_sulfuras_power": [
+      []
+    ],
+    "time_warp": [
+      []
+    ],
+    "tiny_after_attack": [
+      [
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "tiny_choose": [
+      [
+        {
+          "kind": "none"
+        }
+      ]
+    ],
+    "top_deck_minion_buff": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "tribal_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "tribal_draw_pair": [
+      []
+    ],
+    "tribal_esho": [
+      []
+    ],
+    "tribal_group_buff": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "tribal_trap_hand": [
+      []
+    ],
+    "trigger_cinders": [
+      []
+    ],
+    "void_soul_cast": [
+      []
+    ],
+    "vyranoth_stats": [
+      []
+    ],
+    "weapon_buff_or_equip": [
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "text"
+        }
+      ]
+    ],
+    "weapon_previous_runes": [
+      []
+    ],
+    "when_health_changed": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "damage"
+            },
+            {
+              "kind": "int"
+            }
+          ],
+          "kind": "sequence"
+        }
+      ]
+    ],
+    "zone_choice": [
+      [
+        {
+          "kind": "literal",
+          "value": "enemy"
+        },
+        {
+          "kind": "literal",
+          "value": "deck"
+        },
+        {
+          "kind": "literal",
+          "value": "copy"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "enemy"
+        },
+        {
+          "kind": "literal",
+          "value": "deck"
+        },
+        {
+          "kind": "literal",
+          "value": "top"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "enemy"
+        },
+        {
+          "kind": "literal",
+          "value": "hand"
+        },
+        {
+          "kind": "literal",
+          "value": "copy"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "friendly"
+        },
+        {
+          "kind": "literal",
+          "value": "deck"
+        },
+        {
+          "kind": "literal",
+          "value": "copy"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "friendly"
+        },
+        {
+          "kind": "literal",
+          "value": "deck"
+        },
+        {
+          "kind": "literal",
+          "value": "draw_bottom"
+        }
+      ],
+      [
+        {
+          "kind": "literal",
+          "value": "friendly"
+        },
+        {
+          "kind": "literal",
+          "value": "deck"
+        },
+        {
+          "kind": "literal",
+          "value": "dredge"
+        }
+      ]
+    ],
+    "zone_minion_buff": [
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "hand"
+            },
+            {
+              "kind": "literal",
+              "value": "deck"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "hand"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "literal",
+          "value": "LEGENDARY"
+        }
+      ],
+      [
+        {
+          "items": [
+            {
+              "kind": "literal",
+              "value": "hand"
+            }
+          ],
+          "kind": "sequence"
+        },
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "int"
+        }
+      ]
+    ],
+    "zone_spell_damage": [
+      [
+        {
+          "kind": "int"
+        }
+      ]
+    ]
+  },
+  "scope": "Explicit arity, type, literal selector and nested-container shapes of the 515 formerly uncovered authored operation names. Not executable-handler or game-fidelity certification."
+}

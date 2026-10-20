@@ -42,6 +42,6 @@ class HeroImmunityTests(unittest.TestCase):
         import json
         self.play();view=self.g.observe(0);self.assertTrue(view['players'][0]['immune']);self.assertTrue(self.g.observe(1)['players'][0]['immune'])
         actions=view['legal_actions'];rows=encode_decision(dict(actor=0,observation=view,actions=actions))
-        self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertEqual(SCHEMA,'visible-action-features-v62')
         for action,row in zip(actions,rows):
             if action.get('target')==-1:self.assertEqual(row[json.dumps(['target','immune'])],1.0)

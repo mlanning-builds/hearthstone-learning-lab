@@ -1,0 +1,55 @@
+{
+  "scope": "Fourteen iconic-hand Secret/Demon Hunter/power/Lady Deathwhisper dependencies; unvalidated",
+  "new_dependency_definitions": 14,
+  "new_unvalidated_bodies": 14,
+  "new_ids": [
+    "BT_175",
+    "BT_175t",
+    "BT_429",
+    "BT_429p",
+    "BT_429p2",
+    "BT_430",
+    "BT_601",
+    "CORE_BT_429",
+    "CORE_BT_430",
+    "CORE_LOOT_079",
+    "EX1_533",
+    "LOOT_079",
+    "RLK_713",
+    "VAN_EX1_533"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "f807af0435aab5b9b0208af4bd74172fa43fa3c80d6641cf01305cc1bd8c23db",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan",
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Fourteen new definitions: Lady Deathwhisper, four attack Secret printings, Twin Slice pair, Skull, Metamorphosis pair, Warglaives pair and Demonic Blast powers",
+    "Lady Deathwhisper correctly uses Deathrattle from frozen metadata, copying a captured Frost-spell hand roster",
+    "Attack replacements follow existing chronological Secret planner; Misdirection eligibility including Immunity and Stealth, Rhyssa repeats, full-board Monster and summon-trigger interruptions require deferred gameplay review",
+    "Wandering Monster retains full 3-cost pool; no implemented-only filter and no replacement outcome when a dependency fails",
+    "Ordinary Demon Hunter versions retain frozen costs/text separately from launch mint family; current power restore, Reckless Apprentice, forced Warglaives and Outcast require deferred review",
+    "Harth still needs Soul Mirror, Rexxar and exact ordered-hand/distribution contract",
+    "No gameplay/regressions/training run"
+  ]
+}

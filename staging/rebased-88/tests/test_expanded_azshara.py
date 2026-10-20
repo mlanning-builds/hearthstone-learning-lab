@@ -57,7 +57,8 @@ class AzsharaTests(unittest.TestCase):
   rng=self.g.rng.getstate();self.activate(rules.WELL[1]);self.assertEqual(len(self.p.hand),10);self.assertEqual(self.g.rng.getstate(),rng)
  def test_missing_pool_rolls_back_location_charge(self):
   location=self.g._place_location(0,rules.WELL[0]);self.g._generation_pools.clear();before=deepcopy(self.g.observe(0))
-  with self.assertRaises(UnsupportedCard):self.g.step(Action('activate',source=location.uid))
+  with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+   with self.assertRaises(UnsupportedCard):self.g.step(Action('activate',source=location.uid))
   self.assertEqual(self.g.observe(0),before)
  def test_well_spell_repeats_on_paid_play(self):
   self.activate(rules.WELL[1]);c=self.p.hand[0];self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==-2));self.assertEqual(self.q.health,18);self.assertEqual(len(self.p.played_history),1)
@@ -76,8 +77,8 @@ class AzsharaTests(unittest.TestCase):
  def test_full_board_nonfinal_use_does_not_create_copy(self):
   for _ in range(6):self.g._summon(0,'TEST_AZ_MINION')
   location=self.g._place_location(0,rules.ZIN[0]);self.g.step(Action('activate',source=location.uid,target=self.p.minions[0].uid));self.assertEqual(len(self.p.minions),6);self.assertEqual(location.durability,2)
- def test_staging_and_any_class_spell_contract(self):
-  self.assertNotIn('TIME_211',cards.COLLECTIBLE_IDS);self.assertEqual(rules.requests_for('TIME_211'),{rules.SPELLS})
+ def test_admission_and_any_class_spell_contract(self):
+  self.assertIn('TIME_211',cards.COLLECTIBLE_IDS);self.assertEqual(rules.requests_for('TIME_211'),{rules.SPELLS})
 
  def test_doubled_stats_exist_before_summon_notification(self):
   m=self.g._summon(0,'TEST_AZ_MINION');seen=[];capture=self.g._capture_summon_event

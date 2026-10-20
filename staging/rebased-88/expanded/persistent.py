@@ -67,7 +67,7 @@ class PersistentEffects:
                         if not isinstance(c,Card):c=Card(self._new_id(),c);zone[i]=c
                         c.spell_damage_bonus=getattr(c,'spell_damage_bonus',0)+op[1]*ctx.get('kindred_repeats',1)
         elif name=='add_spell_damage':
-            if len(p.hand)<10:
+            if len(p.hand)<getattr(p,'hand_capacity',10):
                 self._add(owner,op[1]);p.hand[-1].spell_damage_bonus=op[2]
             else:self._add(owner,op[1])
         elif name=='draw_fire_spell_damage':
@@ -93,7 +93,8 @@ class PersistentEffects:
                 if m is not source:self._buff(m,op[1],op[2])
         elif name=='combo_overload_keywords':
             if ctx.get('combo'):
-                p.overload_next+=2;p.overloaded_total+=2
+                from .historical_resource_batches import add_overload
+                add_overload(self,owner,2)
                 self._temporary_keyword(source,'IMMUNE','end');source.keywords.add('WINDFURY')
         elif name=='at_current_end_add':
             self._schedule_turn_effect(self.current,'end',0,1,(('add_to_player',owner,op[1]),))
@@ -112,7 +113,7 @@ class PersistentEffects:
                 if len(hand)>before:hand[-1].play_lock=dict(owner=recipient,until=self.players[recipient].turns_taken+2)
         elif name=='fill_enemy_deck_copies':
             if q.deck:
-                for _ in range(10-len(p.hand)):
+                for _ in range(getattr(p,'hand_capacity',10)-len(p.hand)):
                     value=self.rng.choice(q.deck);card=deepcopy(value) if isinstance(value,Card) else Card(self._new_id(),value)
                     card.cost_delta=getattr(card,'cost_delta',0)-op[1];self._clone_hand_card(owner,card,source_owner=1-owner)
         elif name=='reveal_spell_missiles':

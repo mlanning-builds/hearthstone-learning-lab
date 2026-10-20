@@ -1,0 +1,69 @@
+{
+  "status": "affected_regressions_passed_full_rerun_pending",
+  "candidate": "staging/rebased-88",
+  "candidate_fingerprint": "a4c421cee00aa5dbfd3427ed6e941b4b4bc832cc0fb437e9357b34ddfed01783",
+  "last_full_candidate_receipt": {
+    "fingerprint": "68296a3e5351872b44d31534d75a7b430eed7bb84a933941dbc73e8a1f2a6c0b",
+    "end_fingerprint": "68296a3e5351872b44d31534d75a7b430eed7bb84a933941dbc73e8a1f2a6c0b",
+    "source_unchanged": true,
+    "fixture_success": false,
+    "success": false,
+    "tests_run": 5505,
+    "failures": 5,
+    "errors": 3,
+    "skipped": 0,
+    "unexpected_successes": 0,
+    "completed_at": "2026-10-18T18:53:35.404733+00:00",
+    "excluded_modules": [
+      "test_expanded_learning_core",
+      "test_expanded_training"
+    ],
+    "rule_workers": 8,
+    "scope": "Non-training engine fixtures only; learning integration and policy-update scenarios excluded. Not full Standard certification.",
+    "run_id": "b45b7341d0664e8aa950ea07d5fb3aa5",
+    "report_path": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-b45b7341d0664e8aa950ea07d5fb3aa5.json"
+  },
+  "affected_checks": {
+    "tests_run": 79,
+    "failures": 0,
+    "errors": 0,
+    "success": true,
+    "log": "/private/tmp/hearthstone-family-repair-checks-final.log",
+    "sha256": "c2cd43c90046f4e0a1e66a526afbecea34aba64e792904921cf49d6179e5ce58"
+  },
+  "repairs": [
+    "Spawning Pool uses existing Zerg faction identity membership.",
+    "Swarm of Zerg uses faction-specific buffing rather than an invalid tribe selector.",
+    "Parrrley swaps without publishing destruction and preserves physical insertion provenance.",
+    "Top and swap insertion provenance are accepted without publishing shuffle events.",
+    "Mage Secret fixtures use real combat and a deliberately missing eligible identity.",
+    "Complete historical Mage/Arcane/Secret pools run; isolated missing eligible identities still verify rollback."
+  ],
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1380,
+    "remaining": 62
+  },
+  "historical_minions_written": 3201,
+  "historical_minions_total": 3201,
+  "standard_roots_written": 1185,
+  "standard_roots_total": 1185,
+  "registry_records": 8166,
+  "independent_client_fidelity_certified": false,
+  "training_run": false,
+  "learning_run": false,
+  "deck_search_run": false,
+  "notebook_training_cells_run": false,
+  "github_published": false,
+  "goal_turn_classification": "progress",
+  "task_complete": false,
+  "current_candidate_fingerprint": "52da3173768f37c4460dd783025bba55389da7ed4639323227cd50c40b91008e",
+  "current_source_modified_since_affected_checks": true,
+  "current_historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1401,
+    "remaining": 41
+  },
+  "current_source_full_regression_pass": false,
+  "latest_focused_check_report": "historical-questline-combat-reconciled-deferred-validation.json"
+}

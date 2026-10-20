@@ -10,8 +10,17 @@ RULES={'JAIL_398':('none',[]),'TIME_618':('none',[('hero_eternal_life',)]),'JAIL
 
 class ZoneTriggers:
  def _zone_card_removed(self,owner,card,zone,cause):
-  if zone not in ('hand','deck') or cause not in ('discard','destroy'):raise ValueError('Invalid zone destruction context')
+  if zone not in ('hand','deck') or cause not in ('discard','destroy','damage'):raise ValueError('Invalid zone destruction context')
+  from .historical_movements import record
+  record(self,'destroyed')
   cid=self._card_data(card)['id']
+  if cid=='WW_441' and cause in ('destroy','damage'):
+   self._rule_events.append(('captured_effects',dict(operations=(('draw',2),),context=dict(owner=owner,source=None,target=0,bonus=0,lifesteal=False,card_id=cid)),[]))
+   return
+  if cid=='WW_044t':
+   context=dict(owner=owner,source=None,target=0,bonus=self._spell_damage(owner,cid,card),spell=True,card_id=cid,physical_card=card,lifesteal=False)
+   self._rule_events.append(('captured_effects',dict(operations=(('historical_copy_sludge_damage',),),context=context),[]))
+   return
   if cid!='JAIL_398':return
   self._rule_events.append(('captured_effects',dict(operations=tuple(DEATH_EFFECTS[cid]),context=dict(owner=owner,source=None,target=0,bonus=0,lifesteal=False)),[]))
 

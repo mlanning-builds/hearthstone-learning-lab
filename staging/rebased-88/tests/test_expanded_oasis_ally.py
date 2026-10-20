@@ -39,6 +39,7 @@ class OasisAllyTests(unittest.TestCase):
         self.g.step(Action('attack',self.a.uid,self.b.uid))
         self.assertTrue(any(e.get('event')=='secret_revealed' and e.get('card')=='CORE_BAR_812' for e in self.g.events))
     def test_prior_freezing_trap_cancels_before_oasis(self):
-        self.q.secrets.insert(0,Card(self.g._new_id(),'CORE_EX1_611'))
+        trap=Card(self.g._new_id(),'CORE_EX1_611');trap._secret_entry_order=0
+        self.q.secrets.insert(0,trap)
         self.g.step(Action('attack',self.a.uid,self.b.uid))
         self.assertEqual(self.q.secrets,[self.secret]);self.assertEqual(len(self.q.minions),1)

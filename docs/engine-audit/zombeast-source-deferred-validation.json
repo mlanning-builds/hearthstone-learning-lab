@@ -1,0 +1,36 @@
+{
+  "scope": "Zombeast source/discount separation; full component pools still missing",
+  "implementation_complete": false,
+  "production_sources_registered": false,
+  "unvalidated": true,
+  "regressions_run": false,
+  "gameplay_run": false,
+  "candidate_fingerprint": "1c0236493293b2a2f8581328f4817e4028a67d88663bfbd05ee8cb48187c5b4c",
+  "written_minions": 3182,
+  "unwritten_minions": 19,
+  "checks": [
+    "AST parsing",
+    "Strict staged source/power schemas",
+    "Frozen Rexxar power identity and Tamer wording",
+    "Static inventory reconciliation"
+  ],
+  "metadata_hashes": {
+    "RLK_821": "859eda0b607f80753c90abd0fd42d1a3083443642eaf5e9d6229a69da44d8e2c",
+    "ICC_828": "ee6ce12759c4957694dfc4133ea13ba56fb2d67a4e26020fe3d793de4f7d6dfc",
+    "ICC_828p": "2ba6237fd2a16900c454650f3371ad1e965c3c06f91fc373e218b5f934ccd43d",
+    "ICC_828t": "ee3165abb8b5f2d7e3324daacdd585f7320a5073c24ae88dcce6bb4cfd688ac8"
+  },
+  "changes": [
+    "Separate zero-discount construction for Rexxar and Tamer from Storm three-mana discount",
+    "Reject invalid discounts before offer sampling",
+    "Recheck supplied first component against complete stage-one membership before second offer",
+    "Stage Rexxar battlecry, power and Tamer declarations without production bindings"
+  ],
+  "remaining": [
+    "Complete pinned first/second stage membership for each source and format",
+    "All component behavior including composite intrinsic/keyword effects",
+    "Complete automatic choice and Discover publication integration",
+    "Admit sources only with complete pools; no supported-subset fallback",
+    "Gameplay and regressions remain deferred until explicit owner request"
+  ]
+}

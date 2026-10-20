@@ -1,0 +1,27 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "AT_048",
+    "WON_320",
+    "FP1_025",
+    "WON_335"
+  ],
+  "candidate_fingerprint": "a4faa69c85465f5a9e3dcbd924e25d7a8531dbb48fc4e7e8500b78950cea3c92",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Joust cost and empty-deck semantics",
+    "Destroy/Deathrattle/resurrection ordering and compiled species reset"
+  ]
+}

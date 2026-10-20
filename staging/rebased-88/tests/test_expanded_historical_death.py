@@ -1,3 +1,4 @@
+from engine.cards import UnsupportedCard
 import unittest
 import test_expanded_generation as fixtures
 from expanded import Action,cards
@@ -17,15 +18,22 @@ class HistoricalDeathTests(unittest.TestCase):
   return next(m for m in g.players[0].minions if m.card_id==cid)
  def kill(self,g,m):
   g._damage(m.uid,100);g._settle()
- def test_all_sixteen_paid_plays_and_deaths(self):
-  self.assertEqual(len(GENERATED_IDS),16)
+ def test_all_registered_paid_plays_and_deaths(self):
+  self.assertEqual(len(GENERATED_IDS),76)
+  self.assertIn("SCH_711",GENERATED_IDS)
   for cid in sorted(GENERATED_IDS):
    with self.subTest(cid=cid):
     g=self.game();m=self.paid(g,cid);self.kill(g,m);g.assert_invariants()
  def test_registry_remains_generated_only(self):
   self.assertFalse(GENERATED_IDS&cards.COLLECTIBLE_IDS)
   self.assertTrue(GENERATED_IDS<=cards.TOKEN_IDS)
-  validate_past_candidates(GENERATED_IDS,cards.registry())
+  # Bodies may serve fixed recipes; current Core aliases are not past outcomes.
+  current_aliases=frozenset('EX1_096 LOOT_413'.split())
+  records=cards.registry()
+  validate_past_candidates(GENERATED_IDS-current_aliases,records)
+  for cid in current_aliases:
+   with self.subTest(alias=cid):
+    with self.assertRaisesRegex(UnsupportedCard,'Standard cards'):validate_past_candidates((cid,),records)
  def test_enemy_hero_damage_and_silence(self):
   for cid,damage in [('BOT_031',2),('LEG_CS3_013',3),('TSC_001',4)]:
    for silence in (False,True):

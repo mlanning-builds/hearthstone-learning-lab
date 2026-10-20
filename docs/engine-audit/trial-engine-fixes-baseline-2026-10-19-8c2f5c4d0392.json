@@ -1,0 +1,70 @@
+{
+  "engine_fingerprint": "8c2f5c4d0392acca58f53b396f46f44d06f804c5e88e5030fcf9a4d94d1ed1e1",
+  "full_regression_receipt": "staging/rebased-88/runs/expanded_validation/validation-2d97cdc8b92f4ab4ae4415451b9ee717.json",
+  "checks": {
+    "targeted_engine": 6,
+    "neural": 39,
+    "full_engine": 5626,
+    "full_failures": 0,
+    "full_errors": 0
+  },
+  "reproductions": {
+    "exact_full_game_replay": false,
+    "reason": "Artifacts retain only last 50 events and one chosen action, not complete actions/choices or full state.",
+    "minimal_original_handler": "Both recorded target scenarios reproduce ValueError with the original bones operation restored in memory; repaired scenarios pass."
+  },
+  "ooze_rule": "Original target UID is retained across repeated Battlecries. Missing/dead target explicitly fizzles without additional Bones or retargeting.",
+  "herald": {
+    "status": "unresolved off-class multi-class army routing; guard retained",
+    "source_plumbing": "Paid play preserves source card_id. Minimal Druid/Ultraxion scenario proves known source reaches guard.",
+    "diagnostic_change": "Exception now reports owner class, real source card ID and eligible source armies.",
+    "actual_trial_source": "Not explicitly recorded; generated Ultraxion is an established reachable minimal path.",
+    "native_fixed_decks": [
+      "cannoneer-dragon-warrior",
+      "thalena-egg-death-knight-4",
+      "stealth-herald-rogue"
+    ],
+    "direct_exposure": "bite-attack-druid: Merithra can generate Ultraxion.",
+    "frequency": "Not established from one trial occurrence."
+  },
+  "baseline": {
+    "default": true,
+    "file": "evaluation-000000.json",
+    "resume_label": "resumed-start",
+    "medium_local_games": [
+      0,
+      512,
+      1024,
+      1536,
+      2000
+    ],
+    "medium_local_batches": [
+      0,
+      64,
+      128,
+      192,
+      250
+    ]
+  },
+  "preflight": {
+    "fresh": "passed; no games",
+    "original_checkpoint": "expected version mismatch",
+    "trial_checkpoint": "expected version mismatch",
+    "notebook_trial_settings": "expected version mismatch"
+  },
+  "preservation": {
+    "protected_files": 154,
+    "changed": [],
+    "original_validation_pointer_preserved": true
+  },
+  "limitations": [
+    "Herald real-client behavior for a non-Herald class with a multi-class source remains unestablished; no approximation or pool filtering added.",
+    "Other target lookup occurrences are a search inventory, not independently certified failures.",
+    "No engine or trainer migration was implemented."
+  ],
+  "no_training": true,
+  "no_real_ppo_updates": true,
+  "no_neural_evaluation_games": true,
+  "no_notebook_cells": true,
+  "no_publication": true
+}

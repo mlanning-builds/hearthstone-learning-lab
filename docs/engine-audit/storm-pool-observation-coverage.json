@@ -1,0 +1,420 @@
+{
+  "rows": [
+    {
+      "observed_title": "Bloatray",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Dreambound Raptor",
+      "pinned_matches": [
+        "EDR_849"
+      ],
+      "pinned_standard_matches": [
+        "EDR_849"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Jeweled Macaw (Core)",
+      "pinned_matches": [
+        "CORE_UNG_912"
+      ],
+      "pinned_standard_matches": [
+        "CORE_UNG_912"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Paltry Flutterwing",
+      "pinned_matches": [
+        "TIME_058"
+      ],
+      "pinned_standard_matches": [
+        "TIME_058"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Platysaur",
+      "pinned_matches": [
+        "TLC_603"
+      ],
+      "pinned_standard_matches": [
+        "TLC_603"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Primordial Wyrm",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Swamp Leech (Core)",
+      "pinned_matches": [
+        "CORE_GIL_558"
+      ],
+      "pinned_standard_matches": [
+        "CORE_GIL_558"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Ancient Raptor",
+      "pinned_matches": [
+        "TLC_245"
+      ],
+      "pinned_standard_matches": [
+        "TLC_245"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Arrow Retriever",
+      "pinned_matches": [
+        "TIME_601"
+      ],
+      "pinned_standard_matches": [
+        "TIME_601"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Dire Wolf Alpha (Core)",
+      "pinned_matches": [
+        "CORE_EX1_162"
+      ],
+      "pinned_standard_matches": [
+        "CORE_EX1_162"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Guard Dog",
+      "pinned_matches": [
+        "JAIL_878"
+      ],
+      "pinned_standard_matches": [
+        "JAIL_878"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Plated Beetle (Core)",
+      "pinned_matches": [
+        "CORE_LOOT_413"
+      ],
+      "pinned_standard_matches": [
+        "CORE_LOOT_413"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Shadewing",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Watfin",
+      "pinned_matches": [
+        "JAIL_EVENT_100"
+      ],
+      "pinned_standard_matches": [
+        "JAIL_EVENT_100"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Ancient Stegodon",
+      "pinned_matches": [
+        "TLC_242"
+      ],
+      "pinned_standard_matches": [
+        "TLC_242"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Augmented Porcupine (Core)",
+      "pinned_matches": [
+        "CORE_BT_201"
+      ],
+      "pinned_standard_matches": [
+        "CORE_BT_201"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Brutish Endmaw",
+      "pinned_matches": [
+        "END_013"
+      ],
+      "pinned_standard_matches": [
+        "END_013"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Cyborg Patriarch",
+      "pinned_matches": [
+        "TIME_046"
+      ],
+      "pinned_standard_matches": [
+        "TIME_046"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "F3TCH3R",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Gorillabot A-3 (Core)",
+      "pinned_matches": [
+        "CORE_LOE_039"
+      ],
+      "pinned_standard_matches": [
+        "CORE_LOE_039"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Grazing Stegodon",
+      "pinned_matches": [
+        "TLC_827"
+      ],
+      "pinned_standard_matches": [
+        "TLC_827"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "King Mukla (Core)",
+      "pinned_matches": [
+        "CORE_EX1_014"
+      ],
+      "pinned_standard_matches": [
+        "CORE_EX1_014"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Marshland Thresher",
+      "pinned_matches": [
+        "TLC_256"
+      ],
+      "pinned_standard_matches": [
+        "TLC_256"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Primal Rockfang",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Raptor Herald (Core)",
+      "pinned_matches": [
+        "CORE_EDR_004",
+        "CORE_EDR_004_2026"
+      ],
+      "pinned_standard_matches": [
+        "CORE_EDR_004_2026"
+      ],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Sandmaw",
+      "pinned_matches": [
+        "TIME_053"
+      ],
+      "pinned_standard_matches": [
+        "TIME_053"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Ancient Pterrordax",
+      "pinned_matches": [
+        "TLC_246"
+      ],
+      "pinned_standard_matches": [
+        "TLC_246"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Assimilating Ooze",
+      "pinned_matches": [],
+      "pinned_standard_matches": [],
+      "resolved_unambiguously": false
+    },
+    {
+      "observed_title": "Crater Gator",
+      "pinned_matches": [
+        "TLC_250"
+      ],
+      "pinned_standard_matches": [
+        "TLC_250"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Fire Plume Phoenix (Core)",
+      "pinned_matches": [
+        "CORE_UNG_084"
+      ],
+      "pinned_standard_matches": [
+        "CORE_UNG_084"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Halazzi, the Lynx (Core)",
+      "pinned_matches": [
+        "CORE_TRL_900"
+      ],
+      "pinned_standard_matches": [
+        "CORE_TRL_900"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "King Maluk",
+      "pinned_matches": [
+        "TIME_042"
+      ],
+      "pinned_standard_matches": [
+        "TIME_042"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Lifedrinker (Core)",
+      "pinned_matches": [
+        "CORE_GIL_622"
+      ],
+      "pinned_standard_matches": [
+        "CORE_GIL_622"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Mother Duck",
+      "pinned_matches": [
+        "EDR_492"
+      ],
+      "pinned_standard_matches": [
+        "EDR_492"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Ravasaur Matriarch",
+      "pinned_matches": [
+        "TLC_825"
+      ],
+      "pinned_standard_matches": [
+        "TLC_825"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Torga",
+      "pinned_matches": [
+        "TLC_102"
+      ],
+      "pinned_standard_matches": [
+        "TLC_102"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Crater Experiment",
+      "pinned_matches": [
+        "DINO_435"
+      ],
+      "pinned_standard_matches": [
+        "DINO_435"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Lake Thresher (Core)",
+      "pinned_matches": [
+        "CORE_SCH_605"
+      ],
+      "pinned_standard_matches": [
+        "CORE_SCH_605"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Stranglethorn Tiger (Core)",
+      "pinned_matches": [
+        "CORE_EX1_028"
+      ],
+      "pinned_standard_matches": [
+        "CORE_EX1_028"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Triennium Rex",
+      "pinned_matches": [
+        "END_015"
+      ],
+      "pinned_standard_matches": [
+        "END_015"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Verdant Dreamsaber",
+      "pinned_matches": [
+        "EDR_014"
+      ],
+      "pinned_standard_matches": [
+        "EDR_014"
+      ],
+      "resolved_unambiguously": true
+    },
+    {
+      "observed_title": "Witchwood Grizzly (Core)",
+      "pinned_matches": [
+        "CORE_GIL_623"
+      ],
+      "pinned_standard_matches": [
+        "CORE_GIL_623"
+      ],
+      "resolved_unambiguously": true
+    }
+  ],
+  "unmapped_titles": [
+    "Bloatray",
+    "Primordial Wyrm",
+    "Shadewing",
+    "F3TCH3R",
+    "Primal Rockfang",
+    "Assimilating Ooze"
+  ],
+  "ambiguous_titles": [
+    "Raptor Herald (Core)"
+  ],
+  "runtime_activated": false,
+  "stage_membership_established": false,
+  "full_support_certified": false,
+  "limitation": "Live combined query is not a pinned first/second-stage pool; no text/keyword heuristic or supported-only filter is applied.",
+  "source": "https://hearthstone.wiki.gg/wiki/Storm_the_Gates",
+  "observed_on": "2026-10-15",
+  "observation_sha256": "020aec01f0b50172951d81c3ce5a2dcb3b603e1058e65ea5fab82f4e76f04be4",
+  "metadata_sha256": "bcd97d2e21a221ee75c563ffc6a20249ee0ad6796e2f67284f06753e4ab96661"
+}

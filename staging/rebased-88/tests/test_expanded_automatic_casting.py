@@ -30,10 +30,9 @@ class AutomaticCastingTests(unittest.TestCase):
  def test_family_accounted_for(self):
   from expanded.pending_definitions import DEFINITIONS
   from expanded.gelbin import RULES as PLACEMENT_RULES
-  self.assertEqual((set(RULES)|set(UNRESOLVED)|set(PLACEMENT_RULES))-cards.COLLECTIBLE_IDS,{cid for cid,d in DEFINITIONS.items() if d['family']=='automatic_casting'}|{'EDR_031','JAIL_500'})
-  self.assertEqual(DEFINITIONS['EDR_031']['family'],'automatic_play')
+  self.assertEqual((set(RULES)|set(UNRESOLVED)|set(PLACEMENT_RULES))-cards.COLLECTIBLE_IDS,{cid for cid,d in DEFINITIONS.items() if d['family']=='automatic_casting'})
   self.assertTrue(all(self.g.cards[cid]['type']=='LOCATION' for cid in LOCATION_RULES))
-  self.assertEqual(set(RULES)&cards.COLLECTIBLE_IDS,{'TLC_430'})
+  self.assertTrue(set(RULES)<=cards.COLLECTIBLE_IDS)
  def test_shrine_spends_available_mana_and_casts_exact_cost(self):
   self.play('EDR_520');self.p.mana=4;self.install(pool(card_type='SPELL',minimum=4,maximum=4),['CORE_CS2_029'])
   before=self.p.health+self.q.health;self.g.step(Action('activate',self.p.locations[0].uid))
@@ -44,6 +43,7 @@ class AutomaticCastingTests(unittest.TestCase):
   self.g.step(Action('activate',self.p.locations[0].uid));self.assertEqual(self.p.mana,0)
  def test_missing_shrine_pool_rolls_back(self):
   self.play('EDR_520');self.p.mana=4;location=self.p.locations[0];rng=self.g.rng.getstate()
+  self.install(pool(card_type='SPELL',minimum=4,maximum=4),['FIX_MISSING_SHRINE_OUTCOME'])
   with self.assertRaises(UnsupportedCard):self.g.step(Action('activate',location.uid))
   self.assertEqual(self.g.players[0].mana,4);self.assertEqual(self.g.rng.getstate(),rng);self.assertEqual(self.g.players[0].locations[0].durability,3)
  def test_unsupported_internal_outcome_not_filtered(self):

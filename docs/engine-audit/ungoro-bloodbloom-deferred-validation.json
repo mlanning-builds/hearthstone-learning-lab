@@ -1,0 +1,37 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "cf29bf47aa5aafc67bcb11703534ca57f497658370bac99a5bebb47ed853fa9f",
+  "new_card_ids": [
+    "UNG_832"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "elise_unwritten_ids": [
+    "UNG_111",
+    "UNG_851"
+  ],
+  "implemented": [
+    "Next-spell health payment through native ordered payment effects",
+    "Spell selector prevents minions, weapons, Hero Powers or launch actions from consuming the grant",
+    "Existing payment consumption and turn expiration retained"
+  ],
+  "checks": [
+    "AST all modules",
+    "Strict Bloodbloom declaration schema",
+    "Metadata hash and full inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Health-payment ordering, stacking and countered spells",
+    "Living Mana needs exact permanent/temporary available mana accounting; current destroy_crystals clamps total mana and cannot establish preservation of temporary crystals",
+    "Elise exact joint pack distribution still unresolved"
+  ],
+  "sources": [
+    "https://hearthstone.blizzard.com/en-us/cards/41872-bloodbloom",
+    "https://hearthstone.wiki.gg/wiki/Living_Mana"
+  ]
+}

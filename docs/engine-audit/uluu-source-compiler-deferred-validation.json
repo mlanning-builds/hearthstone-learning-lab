@@ -1,0 +1,33 @@
+{
+  "status": "written_unvalidated_source_compiler; root incomplete",
+  "candidate_fingerprint": "7e049ff3fed813540fe98a96afc67f7675a6d6a1deb8fd7bcfe0f710ce93d5cc",
+  "new_card_admissions": 0,
+  "historical_written": 3190,
+  "historical_remaining": 11,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "candidate_parents": 21,
+  "compiled_source_branches": 42,
+  "implemented": [
+    "Provider supplies parent and branch index; real declaration supplies operations",
+    "Canonical pinned Standard membership checked independently of executable branch membership",
+    "Arbitrary effect programs rejected",
+    "Distinct source branches and two-target prohibition preserved",
+    "Physical held-card refresh still replaces prior pair"
+  ],
+  "checks": [
+    "AST parsing",
+    "All 42 source branches passed strict declaration schemas",
+    "Metadata hashes recorded in candidate census",
+    "All-eleven-class inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Transforming/self-modifying parent exclusions",
+    "Non-Druid weapon choice behavior and eligibility",
+    "Fabled Lady Azshara source dependencies",
+    "Distinct choices and both-targeted prohibition do not establish exact pair probabilities"
+  ]
+}

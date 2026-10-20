@@ -537,7 +537,7 @@ END_EFFECTS = {
  'TLC_623': [('buff_other_damaged', 2, 2)],
 }
 # Explicit token rules; never inferred by parsing card text.
-NO_CORPSE = {'RLK_008t','RLK_061t'}
+NO_CORPSE = {'RLK_008t','RLK_061t','RLK_506t'}
 TOKEN_IDS = {'BAR_878t','CS2_033','EDR_457t','CATA_135t','CATA_465t','CATA_452t','TIME_006t1','TLC_622t','JAIL_877t','GIL_577t','AT_037t','CS2_091','EDR_233t2','EX1_014t','EX1_160t','EX1_383t','EX1_tk11','OG_031a','SW_429t','TRL_348t','TSC_650t','TSC_650t4','hexfrog','AV_337t','RLK_008t','RLK_061t','RLK_063t','RLK_118t3','TSC_076t','TSC_076t2','TSC_076t3','CS2_050','CS2_051','CS2_058','NEW1_009','CS2_101t','CS2_082','EX1_131t','CS2_065','SW_108t','UNG_809t1',
  'CATA_476t',
  'DINO_130t',
@@ -826,27 +826,309 @@ from . import kindred
 RULES['TLC_251']=kindred.RULES['TLC_251']
 from . import stored_obligations
 RULES['JAIL_719']=stored_obligations.RULES['JAIL_719']
+from . import hand_investigations,generation_cards
+from . import maps
+RULES.update({cid:maps.RULES[cid] for cid in ('TLC_442','TLC_515')})
+RULES['JAIL_851']=hand_investigations.RULES['JAIL_851']
+RULES['EDR_999']=generation_cards.RULES['EDR_999']
+from . import quest_families
+RULES['END_017']=quest_families.RULES['END_017']
+RULES['END_017t']=quest_families.TOKEN_RULES['END_017t']
+DEATH_EFFECTS['END_017t']=quest_families.DEATH_EFFECTS['END_017t']
+TOKEN_IDS.add('END_017t')
+PLAYABLE_TOKENS.add('END_017t')
+from . import genn
+RULES.update(genn.RULES)
+RULES.update(genn.TOKEN_RULES)
+RULES['AT_132_ROGUEt']=('none',[])
+RULES['HERO_11bp2t']=('none',[])
+GENN_TOKEN_IDS=set(genn.TOKEN_RULES)|set(genn.POWERS.values())|{'AT_132_ROGUEt','HERO_11bp2t'}
+TOKEN_IDS.update(GENN_TOKEN_IDS)
+PLAYABLE_TOKENS.update(set(genn.TOKEN_RULES)|{'AT_132_ROGUEt','HERO_11bp2t'})
 from . import historical_death
 RULES.update(historical_death.RULES)
 DEATH_EFFECTS.update(historical_death.DEATH_EFFECTS)
-TOKEN_IDS.update(historical_death.GENERATED_IDS)
-PLAYABLE_TOKENS.update(historical_death.GENERATED_IDS)
+TOKEN_IDS.update(historical_death.GENERATED_IDS|historical_death.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_death.GENERATED_IDS|historical_death.FIXED_TOKEN_IDS)
 
 from . import historical_numeric
 RULES.update(historical_numeric.RULES)
-TOKEN_IDS.update(historical_numeric.GENERATED_IDS)
-PLAYABLE_TOKENS.update(historical_numeric.GENERATED_IDS)
+END_EFFECTS.update(historical_numeric.END_EFFECTS)
+DEATH_EFFECTS.update(historical_numeric.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_numeric.GENERATED_IDS|historical_numeric.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_numeric.GENERATED_IDS|historical_numeric.FIXED_TOKEN_IDS)
+from . import historical_resurrection_batches
+RULES.update(historical_resurrection_batches.RULES)
+RULES.update(historical_resurrection_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_resurrection_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_resurrection_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_resurrection_batches.GENERATED_IDS|historical_resurrection_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_resurrection_batches.GENERATED_IDS|historical_resurrection_batches.FIXED_TOKEN_IDS)
+from . import historical_drawn_batches
+RULES.update(historical_drawn_batches.RULES)
+RULES.update(historical_drawn_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_drawn_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_drawn_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_drawn_batches.GENERATED_IDS|historical_drawn_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_drawn_batches.GENERATED_IDS|historical_drawn_batches.FIXED_TOKEN_IDS)
+from . import historical_upgrade_batches
+RULES.update(historical_upgrade_batches.RULES)
+RULES.update(historical_upgrade_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_upgrade_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_upgrade_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_upgrade_batches.GENERATED_IDS|historical_upgrade_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_upgrade_batches.GENERATED_IDS|historical_upgrade_batches.FIXED_TOKEN_IDS)
+
+from . import historical_copy_batches
+RULES.update(historical_copy_batches.RULES)
+RULES.update(historical_copy_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_copy_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_copy_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_copy_batches.GENERATED_IDS|historical_copy_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_copy_batches.GENERATED_IDS|historical_copy_batches.FIXED_TOKEN_IDS)
+
+from . import historical_family_batches
+RULES.update(historical_family_batches.RULES)
+RULES.update(historical_family_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_family_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_family_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_family_batches.GENERATED_IDS|historical_family_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_family_batches.GENERATED_IDS|historical_family_batches.FIXED_TOKEN_IDS)
+
+from . import historical_mutation_batches
+RULES.update(historical_mutation_batches.RULES)
+DEATH_EFFECTS.update(historical_mutation_batches.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_mutation_batches.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_mutation_batches.GENERATED_IDS)
+from . import historical_prime_batches
+RULES.update(historical_prime_batches.RULES)
+RULES.update(historical_prime_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_prime_batches.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_prime_batches.GENERATED_IDS|historical_prime_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_prime_batches.GENERATED_IDS|historical_prime_batches.FIXED_TOKEN_IDS)
+from . import historical_form_batches
+RULES.update(historical_form_batches.RULES)
+RULES.update(historical_form_batches.TOKEN_RULES)
+TOKEN_IDS.update(historical_form_batches.GENERATED_IDS|historical_form_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_form_batches.GENERATED_IDS|historical_form_batches.FIXED_TOKEN_IDS)
+from . import historical_event_batches
+RULES.update(historical_event_batches.RULES)
+DEATH_EFFECTS.update(historical_event_batches.DEATH_EFFECTS)
+RULES.update(historical_event_batches.TOKEN_RULES)
+END_EFFECTS.update(historical_event_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_event_batches.GENERATED_IDS|historical_event_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_event_batches.GENERATED_IDS|historical_event_batches.FIXED_TOKEN_IDS)
+from . import historical_keyword_batches
+RULES.update(historical_keyword_batches.RULES)
+RULES.update(historical_keyword_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_keyword_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_keyword_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_keyword_batches.GENERATED_IDS|historical_keyword_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_keyword_batches.GENERATED_IDS|historical_keyword_batches.FIXED_TOKEN_IDS)
+from . import historical_draw_batches
+RULES.update(historical_draw_batches.RULES)
+RULES.update(historical_draw_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_draw_batches.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_draw_batches.GENERATED_IDS|historical_draw_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_draw_batches.GENERATED_IDS|historical_draw_batches.FIXED_TOKEN_IDS)
+from . import historical_zone_batches
+RULES.update(historical_zone_batches.RULES)
+RULES.update(historical_zone_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_zone_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_zone_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_zone_batches.GENERATED_IDS|historical_zone_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_zone_batches.GENERATED_IDS|historical_zone_batches.FIXED_TOKEN_IDS)
+from . import historical_condition_batches
+RULES.update(historical_condition_batches.RULES)
+RULES.update(historical_condition_batches.TOKEN_RULES)
+TOKEN_IDS.update(historical_condition_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_condition_batches.FIXED_TOKEN_IDS)
+TOKEN_IDS.update(historical_condition_batches.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_condition_batches.GENERATED_IDS)
+from . import historical_board_primitives
+RULES.update(historical_board_primitives.RULES)
+RULES.update(historical_board_primitives.TOKEN_RULES)
+END_EFFECTS.update(historical_board_primitives.END_EFFECTS)
+DEATH_EFFECTS.update(historical_board_primitives.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_board_primitives.GENERATED_IDS|historical_board_primitives.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_board_primitives.GENERATED_IDS|historical_board_primitives.FIXED_TOKEN_IDS)
+from . import historical_generation_primitives
+RULES.update(historical_generation_primitives.RULES)
+END_EFFECTS.update(historical_generation_primitives.END_EFFECTS)
+DEATH_EFFECTS.update(historical_generation_primitives.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_generation_primitives.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_generation_primitives.GENERATED_IDS)
+from . import lost_city_rewards
+RULES.update(lost_city_rewards.RULES)
+TOKEN_IDS.update(lost_city_rewards.TOKEN_IDS)
+PLAYABLE_TOKENS.update(lost_city_rewards.PLAYABLE_IDS)
 from . import historical_vanilla
 RULES.update(historical_vanilla.RULES)
 TOKEN_IDS.update(historical_vanilla.GENERATED_IDS)
 PLAYABLE_TOKENS.update(historical_vanilla.GENERATED_IDS)
+from . import historical_hand_primitives
+RULES.update(historical_hand_primitives.RULES)
+TOKEN_IDS.update(historical_hand_primitives.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_hand_primitives.GENERATED_IDS)
+from . import historical_triggers
+RULES.update(historical_triggers.RULES)
+RULES.update(historical_triggers.TOKEN_RULES)
+TOKEN_IDS.update(set(historical_triggers.RULES)|historical_triggers.TOKEN_IDS)
+PLAYABLE_TOKENS.update(set(historical_triggers.RULES)|historical_triggers.TOKEN_IDS)
+from . import historical_death_primitives
+RULES.update(historical_death_primitives.RULES)
+RULES.update(historical_death_primitives.TOKEN_RULES)
+TOKEN_IDS.update(historical_death_primitives.GENERATED_IDS|historical_death_primitives.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_death_primitives.GENERATED_IDS|historical_death_primitives.FIXED_TOKEN_IDS)
+from . import historical_battlecry_buffs
+RULES.update(historical_battlecry_buffs.RULES)
+TOKEN_IDS.update(historical_battlecry_buffs.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_battlecry_buffs.GENERATED_IDS)
+from . import historical_scaling
+RULES.update(historical_scaling.RULES)
+TOKEN_IDS.update(historical_scaling.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_scaling.GENERATED_IDS)
+from . import historical_passive_stats
+# Continuous declarations add passive-only bodies without replacing actions
+# already registered for minions that also have a Battlecry.
+for _passive_id, _passive_rule in historical_passive_stats.RULES.items():
+    if _passive_rule == ('none', []):
+        RULES.setdefault(_passive_id, _passive_rule)
+    else:
+        RULES[_passive_id] = _passive_rule
+TOKEN_IDS.update(historical_passive_stats.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_passive_stats.GENERATED_IDS)
+from . import historical_tutors
+RULES.update(historical_tutors.RULES)
+TOKEN_IDS.update(historical_tutors.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_tutors.GENERATED_IDS)
+from . import historical_removal
+RULES.update(historical_removal.RULES)
+TOKEN_IDS.update(historical_removal.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_removal.GENERATED_IDS)
+from . import historical_fixed_summons
+RULES.update(historical_fixed_summons.RULES)
+TOKEN_IDS.update(historical_fixed_summons.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_fixed_summons.GENERATED_IDS)
+RULES.update(historical_fixed_summons.TOKEN_RULES)
+TOKEN_IDS.update(historical_fixed_summons.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_fixed_summons.FIXED_TOKEN_IDS)
+from . import historical_conditional_battlecries
+RULES.update(historical_conditional_battlecries.RULES)
+RULES.update(historical_conditional_battlecries.TOKEN_RULES)
+TOKEN_IDS.update(historical_conditional_battlecries.GENERATED_IDS|historical_conditional_battlecries.TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_conditional_battlecries.GENERATED_IDS|historical_conditional_battlecries.TOKEN_IDS)
+from . import historical_spellpower
+RULES.update(historical_spellpower.RULES)
+TOKEN_IDS.update(historical_spellpower.GENERATED_IDS)
+PLAYABLE_TOKENS.update(historical_spellpower.GENERATED_IDS)
 from . import historical_simple
 RULES.update(historical_simple.RULES)
 TOKEN_IDS.update(historical_simple.GENERATED_IDS)
 PLAYABLE_TOKENS.update(historical_simple.GENERATED_IDS)
 
-COLLECTIBLE_IDS = (LEGACY_SUPPORTED | PASSIVE | set(RULES) | set(LOCATION_RULES)) - historical_death.GENERATED_IDS - historical_numeric.GENERATED_IDS - BLOOD_FIGHTER_TOKEN_IDS - historical_simple.GENERATED_IDS - historical_vanilla.GENERATED_IDS - CLOSED_TIMELINE_TOKEN_IDS - entity_effects.TOKEN_IDS - stored_cards.TOKEN_IDS - shatter.TOKEN_IDS - spell_casting_cards.TOKEN_IDS - modifier_cards.TOKEN_IDS - hero_powers.TOKEN_IDS - permanents.TOKEN_IDS - dreams.TOKEN_IDS - quests.TOKEN_IDS - on_draw_cards.TOKEN_IDS - batch30_cards.TOKEN_IDS - composed_cards.TOKEN_IDS - persistent_cards.TOKEN_IDS - batch60_cards.TOKEN_IDS - local_family_cards.TOKEN_IDS - COIN_IDS - {'TOKEN_COIN','SW_108t','EX1_014t','EX1_277','WW_001t','TLC_630t','JAIL_941t'}
+from . import dragon_soul
+RULES.update(dragon_soul.TOKEN_RULES)
+TOKEN_IDS.update(dragon_soul.TOKEN_IDS)
+PLAYABLE_TOKENS.update(dragon_soul.TOKEN_IDS)
 
+# Fixed Standard families use the shared handlers through the real registry.
+from . import standard_integrations
+RULES.update(standard_integrations.RULES)
+LOCATION_RULES.update(standard_integrations.LOCATION_RULES)
+RULES.update(standard_integrations.TOKEN_RULES)
+TOKEN_IDS.update(standard_integrations.TOKEN_IDS)
+PLAYABLE_TOKENS.update(standard_integrations.PLAYABLE_TOKENS)
+DEATH_EFFECTS.update(standard_integrations.DEATH_EFFECTS)
+END_EFFECTS.update(standard_integrations.END_EFFECTS)
+
+from . import historical_infuse_batches
+RULES.update(historical_infuse_batches.RULES)
+RULES.update(historical_infuse_batches.TOKEN_RULES)
+RULES.update({cid:rule for cid,rule in historical_infuse_batches.STANDARD_RULES.items() if cid in RULES or cid in LEGACY_SUPPORTED})
+TOKEN_IDS.update(historical_infuse_batches.GENERATED_IDS|historical_infuse_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_infuse_batches.GENERATED_IDS|historical_infuse_batches.FIXED_TOKEN_IDS)
+from . import historical_tribal_batches
+RULES.update(historical_tribal_batches.RULES)
+RULES.update(historical_tribal_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_tribal_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_tribal_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_tribal_batches.GENERATED_IDS|historical_tribal_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_tribal_batches.GENERATED_IDS|historical_tribal_batches.FIXED_TOKEN_IDS)
+from . import historical_treasure_batches
+RULES.update(historical_treasure_batches.RULES)
+RULES.update(historical_treasure_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_treasure_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_treasure_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_treasure_batches.GENERATED_IDS|historical_treasure_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_treasure_batches.GENERATED_IDS|historical_treasure_batches.FIXED_TOKEN_IDS)
+from . import historical_galakrond_batches
+RULES.update(historical_galakrond_batches.RULES)
+RULES.update(historical_galakrond_batches.TOKEN_RULES)
+TOKEN_IDS.update(historical_galakrond_batches.GENERATED_IDS|historical_galakrond_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_galakrond_batches.GENERATED_IDS|historical_galakrond_batches.FIXED_TOKEN_IDS)
+hero_powers.HERO_POWERS.update(historical_galakrond_batches.HERO_POWERS)
+from . import historical_ritual_batches
+RULES.update(historical_ritual_batches.RULES)
+RULES.update(historical_ritual_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_ritual_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_ritual_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_ritual_batches.GENERATED_IDS|historical_ritual_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_ritual_batches.GENERATED_IDS|historical_ritual_batches.FIXED_TOKEN_IDS)
+from . import historical_secret_batches
+RULES.update(historical_secret_batches.RULES)
+RULES.update(historical_secret_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_secret_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_secret_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_secret_batches.GENERATED_IDS|historical_secret_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_secret_batches.GENERATED_IDS|historical_secret_batches.FIXED_TOKEN_IDS)
+from . import historical_resource_batches
+RULES.update(historical_resource_batches.RULES)
+RULES.update(historical_resource_batches.TOKEN_RULES)
+TOKEN_IDS.update(historical_resource_batches.GENERATED_IDS|historical_resource_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_resource_batches.GENERATED_IDS|historical_resource_batches.FIXED_TOKEN_IDS)
+from . import historical_sleep_batches
+RULES.update(historical_sleep_batches.RULES)
+RULES.update(historical_sleep_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_sleep_batches.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_sleep_batches.GENERATED_IDS|historical_sleep_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_sleep_batches.GENERATED_IDS|historical_sleep_batches.FIXED_TOKEN_IDS)
+from . import historical_arsenal_batches
+RULES.update(historical_arsenal_batches.RULES)
+RULES.update(historical_arsenal_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_arsenal_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_arsenal_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_arsenal_batches.GENERATED_IDS|historical_arsenal_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_arsenal_batches.GENERATED_IDS|historical_arsenal_batches.FIXED_TOKEN_IDS)
+from . import historical_hand_batches
+RULES.update(historical_hand_batches.RULES)
+RULES.update(historical_hand_batches.TOKEN_RULES)
+DEATH_EFFECTS.update(historical_hand_batches.DEATH_EFFECTS)
+END_EFFECTS.update(historical_hand_batches.END_EFFECTS)
+TOKEN_IDS.update(historical_hand_batches.GENERATED_IDS|historical_hand_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_hand_batches.GENERATED_IDS|historical_hand_batches.FIXED_TOKEN_IDS)
+from . import historical_play_batches
+RULES.update(historical_play_batches.RULES)
+RULES.update(historical_play_batches.TOKEN_RULES)
+SINGLE_PLAY_EFFECTS=historical_play_batches.SINGLE_PLAY_EFFECTS
+DEATH_EFFECTS.update(historical_play_batches.DEATH_EFFECTS)
+TOKEN_IDS.update(historical_play_batches.GENERATED_IDS|historical_play_batches.FIXED_TOKEN_IDS)
+PLAYABLE_TOKENS.update(historical_play_batches.GENERATED_IDS|historical_play_batches.FIXED_TOKEN_IDS)
+# Owner-authorized approximate special policies; executable rules, not empty placeholders.
+from . import historical_elise_pack, historical_holmes, historical_wisdomball, historical_lone_ranger
+RULES.update(historical_elise_pack.STAGED_RULES)
+RULES.update(historical_holmes.STAGED_RULES)
+RULES.update(historical_wisdomball.STAGED_RULES)
+RULES.update(historical_lone_ranger.STAGED_RULES)
+RULES.update({'BOT_914':('none',[]),'DAL_800':('none',[]),'TOY_700':('none',[]),'GDB_854':('none',[]),'GIFT_01':('none',[('historical_utility_harth',)]),'SCH_199':('none',[]),'CORE_WON_145':('none',[('standard_pack',)])})
+# Opening providers and Uluu/Transfer Student act through native lifecycle hooks.
+TOKEN_IDS.update({'GIFT_01', 'DAL_800', 'BOT_914', 'SCH_199', 'TOY_373t', 'TOY_700', 'WW_0700', 'UNG_851t1', 'UNG_851', 'GDB_854', 'TOY_373', 'REV_022', 'WON_145'})
+RULES['WON_145']=('none',[('standard_pack',)])
+PLAYABLE_TOKENS.update({'UNG_851t1','TOY_373t'})
+COLLECTIBLE_IDS = (LEGACY_SUPPORTED | PASSIVE | set(RULES) | set(LOCATION_RULES)) - standard_integrations.TOKEN_IDS - dragon_soul.TOKEN_IDS - GENN_TOKEN_IDS - lost_city_rewards.TOKEN_IDS - historical_death.GENERATED_IDS - historical_death.FIXED_TOKEN_IDS - historical_infuse_batches.GENERATED_IDS - historical_infuse_batches.FIXED_TOKEN_IDS - historical_tribal_batches.GENERATED_IDS - historical_tribal_batches.FIXED_TOKEN_IDS - historical_treasure_batches.GENERATED_IDS - historical_treasure_batches.FIXED_TOKEN_IDS - historical_galakrond_batches.GENERATED_IDS - historical_galakrond_batches.FIXED_TOKEN_IDS - historical_ritual_batches.GENERATED_IDS - historical_ritual_batches.FIXED_TOKEN_IDS - historical_secret_batches.GENERATED_IDS - historical_secret_batches.FIXED_TOKEN_IDS - historical_resource_batches.GENERATED_IDS - historical_resource_batches.FIXED_TOKEN_IDS - historical_sleep_batches.GENERATED_IDS - historical_sleep_batches.FIXED_TOKEN_IDS - historical_arsenal_batches.GENERATED_IDS - historical_arsenal_batches.FIXED_TOKEN_IDS - historical_hand_batches.GENERATED_IDS - historical_hand_batches.FIXED_TOKEN_IDS - historical_play_batches.GENERATED_IDS - historical_play_batches.FIXED_TOKEN_IDS - historical_resurrection_batches.GENERATED_IDS - historical_resurrection_batches.FIXED_TOKEN_IDS - historical_drawn_batches.GENERATED_IDS - historical_drawn_batches.FIXED_TOKEN_IDS - historical_upgrade_batches.GENERATED_IDS - historical_upgrade_batches.FIXED_TOKEN_IDS - historical_copy_batches.GENERATED_IDS - historical_copy_batches.FIXED_TOKEN_IDS - historical_family_batches.GENERATED_IDS - historical_family_batches.FIXED_TOKEN_IDS - historical_mutation_batches.GENERATED_IDS - historical_prime_batches.GENERATED_IDS - historical_prime_batches.FIXED_TOKEN_IDS - historical_form_batches.GENERATED_IDS - historical_form_batches.FIXED_TOKEN_IDS - historical_event_batches.GENERATED_IDS - historical_event_batches.FIXED_TOKEN_IDS - historical_keyword_batches.GENERATED_IDS - historical_keyword_batches.FIXED_TOKEN_IDS - historical_draw_batches.GENERATED_IDS - historical_draw_batches.FIXED_TOKEN_IDS - historical_zone_batches.GENERATED_IDS - historical_zone_batches.FIXED_TOKEN_IDS - historical_condition_batches.FIXED_TOKEN_IDS - historical_condition_batches.GENERATED_IDS - historical_board_primitives.GENERATED_IDS - historical_board_primitives.FIXED_TOKEN_IDS - historical_generation_primitives.GENERATED_IDS - historical_numeric.GENERATED_IDS - historical_numeric.FIXED_TOKEN_IDS - BLOOD_FIGHTER_TOKEN_IDS - historical_conditional_battlecries.GENERATED_IDS - historical_conditional_battlecries.TOKEN_IDS - historical_passive_stats.GENERATED_IDS - historical_tutors.GENERATED_IDS - historical_removal.GENERATED_IDS - historical_fixed_summons.GENERATED_IDS - historical_fixed_summons.FIXED_TOKEN_IDS - historical_scaling.GENERATED_IDS - historical_death_primitives.GENERATED_IDS - historical_death_primitives.FIXED_TOKEN_IDS - historical_battlecry_buffs.GENERATED_IDS - set(historical_triggers.RULES) - historical_triggers.TOKEN_IDS - historical_hand_primitives.GENERATED_IDS - historical_spellpower.GENERATED_IDS - historical_simple.GENERATED_IDS - historical_vanilla.GENERATED_IDS - CLOSED_TIMELINE_TOKEN_IDS - entity_effects.TOKEN_IDS - stored_cards.TOKEN_IDS - shatter.TOKEN_IDS - spell_casting_cards.TOKEN_IDS - modifier_cards.TOKEN_IDS - hero_powers.TOKEN_IDS - permanents.TOKEN_IDS - dreams.TOKEN_IDS - quests.TOKEN_IDS - on_draw_cards.TOKEN_IDS - batch30_cards.TOKEN_IDS - composed_cards.TOKEN_IDS - persistent_cards.TOKEN_IDS - batch60_cards.TOKEN_IDS - local_family_cards.TOKEN_IDS - COIN_IDS - {'END_017t','TOKEN_COIN','SW_108t','EX1_014t','EX1_277','WW_001t','TLC_630t','JAIL_941t'}
+
+
+COLLECTIBLE_IDS.difference_update({'BOT_914','DAL_800','TOY_700','GDB_854','GIFT_01','SCH_199','REV_022','TOY_373','UNG_851','UNG_851t1','TOY_373t','WW_0700','WON_145'})
 
 @lru_cache(maxsize=2)
 def _token_records(compressed_snapshot, token_ids):
@@ -857,18 +1139,26 @@ def _token_records(compressed_snapshot, token_ids):
             if card['id'] in wanted}
 
 
+@lru_cache(maxsize=2)
+def _reviewed_records(catalog_snapshot,manifest_snapshot,compressed_snapshot,collectible_ids,token_ids):
+ catalog=json.loads(catalog_snapshot);manifest=json.loads(manifest_snapshot)
+ selected={c['id']:c for c in catalog if c['id'] in collectible_ids}
+ tokens=_token_records(compressed_snapshot,token_ids)
+ reviewed={**selected,**tokens}
+ if set(selected)!=set(collectible_ids) or set(tokens)!=set(token_ids) or set(reviewed)!=set(manifest):
+  raise UnsupportedCard('Explicit expanded card registry and manifest disagree.')
+ for cid,c in reviewed.items():
+  if hashlib.sha256(json.dumps(c,sort_keys=True).encode()).hexdigest()!=manifest[cid]:
+   raise UnsupportedCard('Card changed; review its implementation: '+cid)
+ return reviewed
+
 def registry():
-    catalog=json.loads((ROOT/'data/standard/cards.json').read_text())
-    manifest=json.loads((Path(__file__).parent/'reviewed_cards.json').read_text())
-    selected={c['id']:c for c in catalog if c['id'] in COLLECTIBLE_IDS}
-    tokens=_token_records((ROOT/'data/standard/all_cards.json.gz').read_bytes(),tuple(sorted(TOKEN_IDS)))
-    reviewed={**selected,**tokens}
-    if set(selected)!=COLLECTIBLE_IDS or set(tokens)!=TOKEN_IDS or set(reviewed)!=set(manifest):
-        raise UnsupportedCard('Explicit expanded card registry and manifest disagree.')
-    for cid,c in reviewed.items():
-        if hashlib.sha256(json.dumps(c,sort_keys=True).encode()).hexdigest()!=manifest[cid]:
-            raise UnsupportedCard('Card changed; review its implementation: '+cid)
-    return deepcopy({**reviewed,**LEGACY_TOKENS,**LOCAL_TOKENS})
+ reviewed=_reviewed_records((ROOT/'data/standard/cards.json').read_bytes(),
+  (Path(__file__).parent/'reviewed_cards.json').read_bytes(),
+  (ROOT/'data/standard/all_cards.json.gz').read_bytes(),
+  tuple(sorted(COLLECTIBLE_IDS)),tuple(sorted(TOKEN_IDS)))
+ return deepcopy({**reviewed,**LEGACY_TOKENS,**LOCAL_TOKENS})
+
 
 CHOICES = {'CORE_AT_037': [('Living Roots: damage', 'character', [('damage', 2)]), ('Living Roots: Saplings', 'none', [('summon', 'AT_037t', 2)])], 'CORE_EX1_154': [('Wrath: damage', 'minion', [('damage', 3)]), ('Wrath: draw', 'minion', [('damage', 1), ('draw', 1)])], 'CORE_EX1_160': [('Power: buff', 'none', [('board_buff', 1, 1)]), ('Power: Panther', 'none', [('summon', 'EX1_160t', 1)])], 'CORE_OG_047': [('Feral Rage: Attack', 'none', [('hero_attack', 4)]), ('Feral Rage: Armor', 'none', [('armor', 8)])], 'CORE_ONY_018': [('Boomkin: heal', 'none', [('heal_own_hero', 8)]), ('Boomkin: damage', 'character', [('damage', 4)])], 'CORE_TSC_650': [('Flipper Friends: Orca', 'none', [('summon', 'TSC_650t', 1)]), ('Flipper Friends: Otters', 'none', [('summon', 'TSC_650t4', 6)])], 'EDR_233': [('Spirits: Wolves', 'none', [('summon', 'EX1_tk11', 3)]), ('Spirits: Falcons', 'none', [('summon', 'EDR_233t2', 2)])], 'EDR_257': [('Lightmender: Attack and Shield', 'none', [('buff_self', 3, 0), ('keyword_self', 'DIVINE_SHIELD')]), ('Lightmender: Health and Lifesteal', 'none', [('buff_self', 0, 3), ('keyword_self', 'LIFESTEAL')])], 'EDR_570': [('Nightmares: damage', 'none', [('area_damage', 'all_minions', 1)]), ('Nightmares: buff', 'damaged_minion', [('buff', 2, 2)])], 'END_010': [('Timereaver: Attack', 'none', [('set_others_attack', 1)]), ('Timereaver: Health', 'none', [('set_others_health', 1)])]}
 
@@ -879,6 +1169,11 @@ AURAS = {'CORE_CS2_122': ('others', 1, 0), 'CORE_CS2_222': ('others', 1, 1), 'CO
 CONDITIONAL_ATTACK = {'CORE_EX1_414': ('damaged', 6), 'CORE_OG_218': ('damaged', 3), 'TLC_101': ('damaged', 3), 'CORE_UNG_928': ('enemy_turn', 2), 'TLC_605': ('enemy_turn', 6), 'CORE_WON_351': ('weapon', 2),
  'JAIL_311': ('large_deck', 5),
 }
+
+CHOICES.update(historical_board_primitives.CHOICES)
+CHOICES.update(historical_form_batches.CHOICES)
+CHOICES.update(historical_prime_batches.CHOICES)
+CHOICES.update(historical_copy_batches.CHOICES)
 
 TRIGGERS = {
  'CORE_EX1_509': (('summon','friendly','MURLOC'),[('buff_self',1,0)]),
@@ -921,6 +1216,11 @@ START_EFFECTS = {'CORE_GVG_103': ('every', [('buff_self', 1, 0)]), 'CORE_NEW1_02
 # Keep the raw snapshot unchanged. Values here are explicit reviewed behavior.
 # https://hearthstone.blizzard.com/en-gb/cards/119632/
 SPELL_DAMAGE_VALUES = {'TIME_856': 2}
+SPELL_DAMAGE_VALUES.update(historical_generation_primitives.SPELL_DAMAGE_VALUES)
+SPELL_DAMAGE_VALUES.update(historical_condition_batches.SPELL_DAMAGE_VALUES)
+SPELL_DAMAGE_VALUES.update(historical_keyword_batches.SPELL_DAMAGE_VALUES)
+SPELL_DAMAGE_VALUES.update(historical_form_batches.SPELL_DAMAGE_VALUES)
+SPELL_DAMAGE_VALUES.update(historical_prime_batches.SPELL_DAMAGE_VALUES)
 
 # Explicit end-of-either-player-turn listeners, separate from owner-only effects.
 END_EVERY_EFFECTS = {
@@ -928,13 +1228,16 @@ END_EVERY_EFFECTS = {
  'JAIL_883': [('keyword_self','REBORN')],
 }
 
+END_EVERY_EFFECTS.update(historical_event_batches.END_EVERY_EFFECTS)
+
 CONDITIONAL_SPELL_DAMAGE = {'END_022': ('damaged', 2)}
-HERO_ATTACK_AURAS = {'JAIL_202': ('owner_turn', 1)}
+HERO_ATTACK_AURAS = {'TOY_028':('owner_turn',2),'JAIL_202': ('owner_turn', 1)}
 
 # Printed self damage modifiers: multiplier, then flat extra damage.
 INCOMING_DAMAGE_MODIFIERS = {'TIME_060': (2,0), 'CATA_208': (1,1)}
 
 DAMAGE_FREEZERS = {'CS2_033'}
+DAMAGE_FREEZERS.update(historical_zone_batches.DAMAGE_FREEZERS)
 
 HERO_DAMAGE_WEAPON_REPLACEMENTS = {'CORE_BT_781': 'lose_durability'}
 
@@ -945,6 +1248,7 @@ HERO_POWER_HAND_COST_AURAS = {
     'TIME_606': (3,0),
 }
 
+# String rules include the provider; ('others', keyword) excludes only that provider.
 FRIENDLY_KEYWORD_AURAS = {'JAIL_459':'POISONOUS'}
 
 CHOICES.update(batch30_cards.CHOICES)
@@ -981,6 +1285,13 @@ TRIGGERS.update(prepare_cards.TRIGGERS)
 TRIGGERS.update(forced_combat_cards.TRIGGERS)
 
 TRIGGERS.update(spell_casting_cards.TRIGGERS)
+TRIGGERS.update(historical_numeric.TRIGGERS)
+TRIGGERS.update(historical_board_primitives.TRIGGERS)
+TRIGGERS.update(historical_draw_batches.TRIGGERS)
+TRIGGERS.update(historical_event_batches.TRIGGERS)
+TRIGGERS.update(historical_prime_batches.TRIGGERS)
+TRIGGERS.update(historical_generation_primitives.TRIGGERS)
+WEAPON_TRIGGERS.update(historical_numeric.WEAPON_TRIGGERS)
 
 TRIGGERS.update(shatter.TRIGGERS)
 
@@ -994,3 +1305,318 @@ START_EFFECTS.update(entity_effects.START_EFFECTS)
 # replacement sources and Void Soul cards remain staged; Talya is live above.
 RULES.update(future_summons.CONSUMER_RULES)
 TRIGGERS.update(future_summons.CONSUMER_TRIGGERS)
+
+# Frozen numeric tag is 1; both parent and child printed text promise +2.
+SPELL_DAMAGE_VALUES['TID_708t']=2
+
+AURAS.update(historical_numeric.AURAS)
+HERO_IMMUNE_AURAS.update(historical_numeric.HERO_IMMUNE_AURAS)
+FRIENDLY_KEYWORD_AURAS.update(historical_numeric.FRIENDLY_KEYWORD_AURAS)
+
+WEAPON_TRIGGERS.update(standard_integrations.WEAPON_TRIGGERS)
+
+START_EFFECTS.update(historical_numeric.historical_colossal.START_EFFECTS)
+START_EFFECTS.update(historical_board_primitives.START_EFFECTS)
+START_EFFECTS.update(historical_event_batches.START_EFFECTS)
+DAMAGE_FREEZERS.update(historical_numeric.historical_colossal.WINGS)
+
+TRIGGERS.update(standard_integrations.generation_bindings.TRIGGERS)
+CHOICES.update(standard_integrations.generation_bindings.CHOICES)
+
+START_EFFECTS.update(standard_integrations.transformations.START_EFFECTS)
+TRIGGERS.update(standard_integrations.transformations.TRIGGERS)
+TRIGGERS.update(standard_integrations.automatic_casting.TRIGGERS)
+WEAPON_TRIGGERS.update(standard_integrations.future_summons.WEAPON_TRIGGERS)
+TRIGGERS.update(standard_integrations.system_bindings.TRIGGERS)
+CHOICES.update(standard_integrations.system_bindings.CHOICES)
+TRIGGERS.update(standard_integrations.rewind_bindings.TRIGGERS)
+on_draw_cards.CAST_EFFECTS.update(standard_integrations.rewind_bindings.CAST_EFFECTS)
+TRIGGERS.update(standard_integrations.large_bindings.TRIGGERS)
+
+SPELL_DAMAGE_VALUES.update(historical_spellpower.SPELL_DAMAGE_VALUES)
+CONDITIONAL_SPELL_DAMAGE.update(historical_spellpower.CONDITIONAL_SPELL_DAMAGE)
+
+DEATH_EFFECTS.update(historical_hand_primitives.DEATH_EFFECTS)
+END_EFFECTS.update(historical_hand_primitives.END_EFFECTS)
+START_EFFECTS.update(historical_hand_primitives.START_EFFECTS)
+
+TRIGGERS.update(historical_triggers.TRIGGERS)
+
+DEATH_EFFECTS.update(historical_death_primitives.DEATH_EFFECTS)
+
+AURAS.update(historical_passive_stats.AURAS)
+CONDITIONAL_ATTACK.update(historical_passive_stats.CONDITIONAL_ATTACK)
+SPELL_DAMAGE_VALUES.update(historical_passive_stats.SPELL_DAMAGE_VALUES)
+DEATH_EFFECTS.update(historical_removal.DEATH_EFFECTS)
+DEATH_EFFECTS.update(historical_fixed_summons.DEATH_EFFECTS)
+TRIGGERS.update(historical_fixed_summons.TRIGGERS)
+
+DEATH_EFFECTS.update(historical_conditional_battlecries.DEATH_EFFECTS)
+
+
+SPELL_DAMAGE_VALUES.update(historical_event_batches.SPELL_DAMAGE_VALUES)
+
+TRIGGERS.update(historical_keyword_batches.TRIGGERS)
+
+TRIGGERS.update(historical_family_batches.TRIGGERS)
+
+TRIGGERS.update(historical_copy_batches.TRIGGERS)
+
+WEAPON_TRIGGERS.update(historical_condition_batches.WEAPON_TRIGGERS)
+WEAPON_TRIGGERS['TTN_736']=[('historical_copy_shuffle_plagues',1)]
+
+DAMAGE_FREEZERS.update(('AV_133','CS2_033'))
+
+START_EFFECTS.update(historical_copy_batches.START_EFFECTS)
+END_EVERY_EFFECTS.update(historical_resurrection_batches.END_EVERY_EFFECTS)
+TRIGGERS.update(historical_sleep_batches.TRIGGERS)
+DAMAGE_FREEZERS.update(historical_sleep_batches.DAMAGE_FREEZERS)
+SPELL_DAMAGE_VALUES.update(historical_resource_batches.SPELL_DAMAGE_VALUES)
+AURAS.update(historical_infuse_batches.AURAS)
+TRIGGERS.update(historical_infuse_batches.TRIGGERS)
+TRIGGERS.update(historical_tribal_batches.TRIGGERS)
+TRIGGERS.update(historical_treasure_batches.TRIGGERS)
+TRIGGERS.update(historical_ritual_batches.TRIGGERS)
+TRIGGERS.update(historical_secret_batches.TRIGGERS)
+TRIGGERS.update(historical_resource_batches.TRIGGERS)
+TRIGGERS.update(historical_arsenal_batches.TRIGGERS)
+TRIGGERS.update(historical_hand_batches.TRIGGERS)
+DISCARD_EFFECTS=historical_hand_batches.DISCARD_EFFECTS
+TRIGGERS.update(historical_play_batches.TRIGGERS)
+SPELL_DAMAGE_VALUES.update(historical_play_batches.SPELL_DAMAGE_VALUES)
+TRIGGERS.update(historical_resurrection_batches.TRIGGERS)
+TRIGGERS.update(historical_drawn_batches.TRIGGERS)
+CHOICES.update(historical_upgrade_batches.CHOICES)
+TRIGGERS.update(historical_upgrade_batches.TRIGGERS)
+AURAS.update(historical_upgrade_batches.AURAS)
+
+# Validate complete assembled declarations before any registry is published.
+from .effect_schema import validate_namespace
+EFFECT_VALIDATION = validate_namespace(globals())
+
+WEAPON_TRIGGERS['DAL_379t']=[('historical_copy_weapon_spell_bonus',2)]
+
+NO_CORPSE.add('RLK_226t')
+
+END_EVERY_EFFECTS.update(historical_copy_batches.END_EVERY_EFFECTS)
+
+# Historical literal weapon effects; implementation-only, validation deferred.
+WEAPON_TRIGGERS['SW_075t']=[('historical_copy_sword_mana',)]
+WEAPON_TRIGGERS['WW_010t']=[('historical_copy_staff_frog',)]
+
+# Terran launch-conditioned transformations; behavior validation deferred.
+AURAS.update({'SC_412':('others',1,0),'SC_412t':('others',2,0)})
+FRIENDLY_KEYWORD_AURAS['SC_412t']=('others','RUSH')
+
+WEAPON_TRIGGERS['REV_316t']=[('historical_copy_remornia_return',)]
+
+WEAPON_TRIGGERS['TOY_400t7']=[('historical_mint_warglaives',)]
+
+WEAPON_TRIGGERS['AV_202t2']=[('historical_late_smash',)]
+
+from .historical_student_equipment import WEAPON_TRIGGERS as STUDENT_WEAPON_TRIGGERS
+WEAPON_TRIGGERS.update(STUDENT_WEAPON_TRIGGERS)
+
+# Equivalent historical printings share complete Core effect tables.
+from .historical_printing_aliases import apply as apply_printing_aliases
+apply_printing_aliases(globals())
+
+from .historical_attack_weapons import WEAPON_TRIGGERS as HISTORICAL_ATTACK_WEAPON_TRIGGERS
+WEAPON_TRIGGERS.update(HISTORICAL_ATTACK_WEAPON_TRIGGERS)
+
+from .historical_literal_bonus import SPELL_DAMAGE_VALUES as LITERAL_BONUS_SPELL_DAMAGE
+SPELL_DAMAGE_VALUES.update(LITERAL_BONUS_SPELL_DAMAGE)
+
+# Every registered native Secret has the same real physical placement program.
+from .secrets import SECRETS as NATIVE_SECRET_HANDLERS
+for _secret_cid in NATIVE_SECRET_HANDLERS:
+ if _secret_cid in RULES:RULES[_secret_cid]=('none',[('secret',_secret_cid)])
+
+WEAPON_TRIGGERS.update(historical_copy_batches.historical_growing_weapons.WEAPON_TRIGGERS)
+
+END_EFFECTS['ONY_005ta12']=[('copy_self_right',1)]
+DEATH_EFFECTS['ONY_005tb13']=[('summon','ONY_005tb13',1)]
+TRIGGERS['ONY_005ta9']=(('historical_event','source_attacked_minion_survived'),[('historical_utility_beauty',)])
+
+# Pinned Twig refreshes available mana; its historical ten-crystal text is
+# not the definition frozen by this simulator build.
+DEATH_EFFECTS['LOOT_392']=[('historical_utility_refresh_all',)]
+
+DEATH_EFFECTS['RLK_713']=[('historical_utility_frost_hand_copies',)]
+for _iconic_warglaives in ('BT_430','CORE_BT_430'):WEAPON_TRIGGERS[_iconic_warglaives]=[('historical_mint_warglaives',)]
+
+# Native hooks for Eudora-specific treasure identities.
+END_EFFECTS['VAC_464t26']=[('copy_self_right',1)]
+DEATH_EFFECTS['VAC_464t22']=[('summon','VAC_464t22',1)]
+TRIGGERS['VAC_464t27']=(('historical_event','source_attacked_minion_survived'),[('historical_utility_beauty',)])
+WEAPON_TRIGGERS['VAC_464t31']=[('area_damage','enemies',4)]
+
+DEATH_EFFECTS['EX1_383']=[('equip','EX1_383t')]
+CHOICES['NEW1_007']=[('Starfall: targeted','minion',[('damage',5)]),('Starfall: area','none',[('area_damage','enemy_minions',2)])]
+
+WEAPON_TRIGGERS['UNG_950']=[('summon','CS2_101t',2)]
+
+DEATH_EFFECTS['UNG_111t1']=[('empty_crystals','friendly',1)]
+
+# Native hooks for individually reviewed alternate iconic-hand printings.
+END_EFFECTS.update({'BT_493': [('missiles', 'enemies', 6)]})
+START_EFFECTS.update({'VAN_NEW1_021': ('owner', [('destroy_all_minions',)])})
+TRIGGERS.update({'VAN_EX1_559': ('spell_cast', [('add', 'CS2_029', 1)]), 'VAN_EX1_604': ('damaged_minion', [('buff_self', 1, 0)]), 'CORE_EX1_084': (('summon', 'friendly', None), [('historical_event_summon_modify', 'attack_at_most', 3, 0, 0, 'CHARGE')]), 'VAN_EX1_084': (('summon', 'friendly', None), [('historical_event_summon_modify', 'attack_at_most', 3, 0, 0, 'CHARGE')])})
+CHOICES.update({'CORE_ICC_832': [('Scarab Plague', 'none', [('summon', 'ICC_832t4', 2)]), ('Spider Plague', 'none', [('summon', 'ICC_832t3', 2)])]})
+
+# Both frozen Zola printings generate an explicitly Golden physical copy.
+RULES['LOOT_516']=('friendly_minion',[('historical_utility_zola_golden',)])
+RULES['CORE_LOOT_516']=('friendly_minion',[('historical_utility_zola_golden',)])
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+WEAPON_TRIGGERS.update({'ULD_708':[('historical_family_lackeys',1)]})
+
+# Original Zayle recipe printings share their native auxiliary programs.
+WEAPON_TRIGGERS.update({'DAL_063':[('on_draw_shuffle','BOT_511t',1,1)]})
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Exact native auxiliary tables for original Zayle printing aliases.
+DEATH_EFFECTS.update({'EX1_012': [('draw', 1)], 'DAL_720': [('bounce_random_friendly', -2)]})
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+CHOICES['SCH_612']=[('Call to Aid','none',[('historical_utility_runic',False)]),('Alarm the Forest','none',[('historical_utility_runic',True)])]
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+CHOICES.update({'EX1_164':[('Enrich','none',[('gain_full_crystals',2)]),('Draw','none',[('draw',3)])],'WON_014':[('Invigorate','none',[('empty_crystals','friendly',1)]),('Draw','none',[('draw',1)])]})
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+# Original Zayle recipe printings share their native auxiliary programs.
+
+
+CHOICES.update({'EX1_154': [('Wrath: damage', 'minion', [('damage', 3)]), ('Wrath: draw', 'minion', [('damage', 1), ('draw', 1)])], 'EX1_160': [('Power: buff', 'none', [('board_buff', 1, 1)]), ('Power: Panther', 'none', [('summon', 'EX1_160t', 1)])]})
+
+# Bloodpetal Biome's generation program belongs to location activation.
+RULES['TLC_449']=('none',[])
+
+from .historical_pool_closure import CHOICES as POOL_CLOSURE_CHOICES
+CHOICES.update(POOL_CLOSURE_CHOICES)
+
+from .historical_pool_weapons import DEATH_EFFECTS as POOL_WEAPON_DEATHS, WEAPON_TRIGGERS as POOL_WEAPON_ATTACKS
+DEATH_EFFECTS.update(POOL_WEAPON_DEATHS)
+WEAPON_TRIGGERS.update(POOL_WEAPON_ATTACKS)
+
+DAMAGE_FREEZERS.update(('AV_282t','AV_282t3','AV_282t5'))
+
+DAMAGE_FREEZERS.add('VAC_509t')
+
+from .historical_mount_spell_batch import DEATH_EFFECTS as MOUNT_BATCH_DEATHS
+DEATH_EFFECTS.update(MOUNT_BATCH_DEATHS)
+
+from .historical_sidequest_spell_batch import DEATH_EFFECTS as SIDEQUEST_BATCH_DEATHS
+DEATH_EFFECTS.update(SIDEQUEST_BATCH_DEATHS)
+
+from .historical_generation_finish_batch import AURAS as GENERATION_FINISH_AURAS
+AURAS.update(GENERATION_FINISH_AURAS)
+
+from .historical_summon_faction_finish import DEATH_EFFECTS as SUMMON_FACTION_DEATHS, LOCATION_RULES as SUMMON_FACTION_LOCATIONS
+DEATH_EFFECTS.update(SUMMON_FACTION_DEATHS)
+LOCATION_RULES.update(SUMMON_FACTION_LOCATIONS)
+
+from .historical_stormwind_questline_finish import DEATH_EFFECTS as STORMWIND_FINISH_DEATHS, TRIGGERS as STORMWIND_FINISH_TRIGGERS
+DEATH_EFFECTS.update(STORMWIND_FINISH_DEATHS)
+TRIGGERS.update(STORMWIND_FINISH_TRIGGERS)
+
+# Split cards execute their explicit branch program without another choice.
+from .historical_choose_splits import install as _install_choose_splits
+_install_choose_splits(RULES, CHOICES)
+
+# Original Crusader Aura printing shares the frozen legacy program.
+from .gelbin import AURA_RULES as _PLACED_AURA_RULES
+RULES['TTN_908']=_PLACED_AURA_RULES['TTN_908']
+TOKEN_IDS.add('TTN_908')
+PLAYABLE_TOKENS.add('TTN_908')
+
+# The full published namespace, including late-bound historical tables, must
+# have explicit operand contracts before any registry can be constructed.
+EFFECT_VALIDATION=validate_namespace(globals(),strict_unknown=True)

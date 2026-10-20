@@ -1,0 +1,31 @@
+{
+  "status": "staged_written_unvalidated",
+  "candidate_fingerprint": "9fa86257610fbcd59ab7bce4793dd4f03908cbef8d3bf91739adda37fc933e51",
+  "historical_written": 3192,
+  "historical_remaining": 9,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "All eleven experimental class recipe compiler",
+    "Exceptional twenty/forty-card deck setup",
+    "Cross-class and repeated-card recipe exceptions",
+    "Full twenty-five-treasure pool and eight distinct selections",
+    "Forty-health Shaman setup",
+    "Warrior all-seven-Lackey zero-cost setup",
+    "Both-player full preflight before opening selection"
+  ],
+  "checks": [
+    "AST all modules",
+    "Frozen source hash",
+    "Treasure inventory reconciliation",
+    "Candidate inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Pinned printing and selection-weight provenance still required; no default contract or root admission",
+    "Opening setup ordering and existing Start-of-Game interactions",
+    "Treasure selection and physical provenance"
+  ]
+}

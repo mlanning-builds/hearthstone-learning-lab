@@ -4,7 +4,7 @@ Animal Companion replacements are three stable owner-private identities, not
 three new rolls on every summon. Existing consumers share the same slots.
 """
 from engine.cards import UnsupportedCard
-from .generation_cards import pool
+from .generation_cards import board_pool,pool
 COMPANIONS=('NEW1_032','NEW1_033','NEW1_034')
 VOID_SOUL='JAIL_732'
 RULES={
@@ -53,7 +53,7 @@ class FutureSummons:
   if name=='void_soul_cast':
    level=p.void_soul_level
    if not 1<=level<=10:raise UnsupportedCard('Void Soul scaling beyond candidate 1–10 range')
-   request=pool(card_type='MINION',tribe='DEMON',minimum=level,maximum=level)
+   request=board_pool(pool(card_type='MINION',tribe='DEMON',minimum=level,maximum=level))
    self._generation_candidates(request,owner)
    return ('generate_one',request,'board',()),(('void_soul_improve',),)
   return None
@@ -62,10 +62,14 @@ class FutureSummons:
   if name=='companions_replace':
    old=self._companion_ids(owner);contracts=[]
    for cid in old:
-    cost=self.cards[cid]['cost']+op[1]
+    # Companion upgrades stop at 10; they do not enter Ultragigasaur's
+    # 11-cost tier. Post-hotfix client reports distinguish this from the
+    # launch bug that reset a slot to 1. Preserve full membership at 10.
+    # https://www.reddit.com/r/hearthstone/comments/1ttbq7f/
+    cost=min(10,self.cards[cid]['cost']+op[1])
     request=pool(card_type='MINION',tribe='BEAST',minimum=cost,maximum=cost)
     values=self._generation_candidates(request,owner)
-    # A missing/empty successor is not permission to invent a max-cost rule.
+    # An empty contract below/at the cap still cannot be silently filtered.
     if not values:raise UnsupportedCard('Companion replacement at empty successor Cost requires reviewed boundary semantics')
     contracts.append(values)
    p.companion_ids=[self.rng.choice(values) for values in contracts]

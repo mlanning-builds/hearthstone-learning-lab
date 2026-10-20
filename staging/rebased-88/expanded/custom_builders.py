@@ -23,6 +23,7 @@ def requests_for(cid):return {THREES} if cid=='CAP_405' else {SPELLS} if cid=='T
 class CustomBuilders:
  def _craft_offer(self,owner,kind,ids,**state):
   if any(cid not in self.cards for cid in ids):raise UnsupportedCard('Missing custom construction option')
+  if self.pending_choice is not None:raise UnsupportedCard('Cannot overwrite pending custom construction choice')
   self.pending_choice=dict(owner=owner,kind=kind,options=[dict(card_id=cid) for cid in ids],**state);self.phase='choice'
  def _craft_trial_parts(self,owner,picked):
   ids=['CAP_405t'+str(i) for i in range(1,10) if i not in picked]
@@ -34,7 +35,7 @@ class CustomBuilders:
   name=op[0];owner=ctx['owner'];p=self.players[owner];q=self.players[1-owner]
   if name=='craft_trial':self._craft_trial_parts(owner,[])
   elif name=='craft_location':
-   if len({self.cards[cid]['cost'] for cid in p.starting_deck})>=10:self._craft_offer(owner,'craft_location_cost',LOCATION_IDS)
+   if len({self._starting_card_data(owner,cid)['cost'] for cid in p.starting_deck})>=10:self._craft_offer(owner,'craft_location_cost',LOCATION_IDS)
   elif name=='trial_wait':
    delay,operations=op[1:]
    self._schedule_turn_effect(owner,'start',delay,1,operations,source_card_id=ctx.get('card_id'))
@@ -45,7 +46,7 @@ class CustomBuilders:
     card=q.hand.pop(self.rng.randrange(len(q.hand)));self._enter_hand(owner,card)
   elif name=='location_spell_bonus':p._next_spell_bonus=getattr(p,'_next_spell_bonus',0)+op[1]
   elif name=='location_attack':
-   p.temporary_attack+=op[1]
+   self._gain_hero_attack(owner,op[1])
    for m in p.minions:self._adjust_minion_attack(m,op[1]);m.temporary_attack+=op[1]
   elif name=='location_copy':
    options=[dict(card_id=m.card_id,uid=m.uid) for m in p.minions if m.health>0]
@@ -89,11 +90,13 @@ class CustomBuilders:
   elif kind=='location_copy':
    m=self._force_live(selected['uid'])
    if m and m.owner==owner:
-    copy=self._summon(owner,m.card_id,copy_from=m,entry_origin='effect',entry_site='elise_location')
-    if copy:self._set_entity_stats(copy,choice['size'],choice['size'])
+    self._summon(owner,m.card_id,copy_from=m,entry_origin='copy',entry_site='elise_location',entry_stats=(choice['size'],choice['size']))
   else:return False
   return True
  def _crafted_location_entry(self,location,card):
+  self._carry_origin(card,location)
   state=getattr(card,'rule_state',{})
+  if card.card_id in LOCATION_IDS and 'crafted_location_ops' not in state:
+   raise UnsupportedCard('Custom location has no physical crafted payload')
   if location is not None and 'crafted_location_ops' in state:
    location.rule_state=deepcopy(state);location.attached_death_effects.extend(deepcopy(state['crafted_location_death']))

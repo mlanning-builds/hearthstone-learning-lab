@@ -1,0 +1,63 @@
+{
+  "scope": "Complete seven-Movement Symphony, three Riffs, Forbidden Fruit and explicit internal-cast admission",
+  "new_unvalidated_bodies": 17,
+  "new_ids": [
+    "ETC_085",
+    "ETC_085t",
+    "ETC_085t2",
+    "ETC_085t3",
+    "ETC_085t4",
+    "ETC_085t6",
+    "ETC_085t7",
+    "ETC_085t8",
+    "ETC_363",
+    "ETC_364",
+    "ETC_365",
+    "ETC_365t",
+    "ETC_365t2",
+    "ETC_t8t",
+    "YOG_529",
+    "YOG_529a",
+    "YOG_529b"
+  ],
+  "new_collectible_outcomes": 5,
+  "new_required_generated_spell_forms": 9,
+  "new_required_minion_bodies": 3,
+  "internal_operation_admissions": 231,
+  "internal_declaration_modules": 26,
+  "prior_expansion_outcome_gap": 82,
+  "current_expansion_outcome_gap": 77,
+  "closed_outcome_ids": [
+    "ETC_085",
+    "ETC_363",
+    "ETC_364",
+    "ETC_365",
+    "YOG_529"
+  ],
+  "candidate_fingerprint": "c89a850d67adac04695cdf2ee5614d96406f17976e0c68ec498a415979c8e24b",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz"
+  ],
+  "review_pending": [
+    "Symphony Discover/cast/shuffle order, full seven-member choices and internal spell listeners",
+    "Movement Envy deck destruction, cost-capture draw, damage multipliers and physical zone buffs",
+    "Riff last-play history, replay-marker suppression, Finale, repeated casts and interruption",
+    "Forbidden Fruit shared mana snapshot for combined choices and repeated spell contexts",
+    "Explicit internal operation/target admissions are structural only; child cast/replay fidelity and recursive closure remain unvalidated",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

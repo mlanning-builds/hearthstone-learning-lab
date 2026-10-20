@@ -1,0 +1,42 @@
+{
+  "scope": "Runic Adornment physical draw-cast copies and Silk Stitching granted spell Deathrattles",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "TOY_822",
+    "TTN_845"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 32,
+  "current_expansion_outcome_gap": 30,
+  "closed_outcome_ids": [
+    "TOY_822",
+    "TTN_845"
+  ],
+  "candidate_fingerprint": "bfbc8e918b77fd8cfcbaf99ea64e07c4e49c1102dde52f3764eb0a789b5c08eb",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Complete Discover outcomes and internal-cast admission for generated spells",
+    "Adornment physical copies, deck insertion limits, shuffle bookkeeping, overdraw and replacement draw behavior",
+    "Draw-cast enchantment lifetime across copies, movement, transformation and manual casts",
+    "Stitching dead-minion caster identity, ownership, silence, copy and inherited attached Deathrattles",
+    "Choice continuation if marked minion leaves play before resolution",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

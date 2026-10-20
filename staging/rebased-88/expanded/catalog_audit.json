@@ -2,8 +2,8 @@
   "scope": "Pinned September 18, 2026 catalog. Hints are planning metadata, not executable rules.",
   "schema": 1,
   "total": 1185,
-  "written": 890,
-  "missing": 295,
+  "written": 1185,
+  "missing": 0,
   "fixture_status": "Current fixture status is recorded by expanded.status.readiness; written does not imply independent verification.",
   "cards": [
     {
@@ -53,7 +53,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Stealth\nminion. Give it this\neffect for a turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -172,7 +172,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Pirate.\nSummon two 1/1 Cannoneers.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -279,7 +279,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Plot a custom sham trial! Then choose the trial's length.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices"
       ]
@@ -305,7 +305,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a minion\n\u00a0that costs (5) or more.\nGive it Prepare.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -506,7 +506,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Shuffle 5 random minions into your deck\nthat cost (8) or more.\nDouble their stats.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "zone_changes",
@@ -534,7 +534,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +4\nAfter one of Wickerfang's Legs gains stats, this gains them too.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "expansion_mechanics"
@@ -548,7 +548,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Fill your hand with\nrandom Dragons. If you spent\n25 Mana while holding this,\nthey cost (1). ({0} left!)@Battlecry: Fill your hand with\nrandom Dragons. If you spent\n25 Mana while holding this,\nthey cost (1). (Ready!)@Battlecry: Fill your hand with\nrandom Dragons. If you spent\n25 Mana while holding\nthis, they cost (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -561,7 +561,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2\nAt the end of your turn, trigger\n\u00a0\u00a0\u00a0your minions' Deathrattles.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "deathrattles",
@@ -576,7 +576,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2\nYour hero has Windfury.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -589,7 +589,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2, Rush, Windfury\nBattlecry: Get 2 minions with\nCost equal to this minion's\nAttack. They cost (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -602,7 +602,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2\nYour spells from other classes cast twice.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -615,7 +615,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2. When your\nhero would lose Health on\nyour turn, gain that much\nmax Health instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "expansion_mechanics"
@@ -629,7 +629,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Herald {0}.\nDeal $4 damage to all enemy minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -642,7 +642,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Stealth\nDeathrattle: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles",
         "expansion_mechanics"
@@ -656,7 +656,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Herald {0}. Give the Soldier Rush.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -727,7 +727,7 @@
       ],
       "card_type": "HERO",
       "rules_text": "Battlecry: Choose {0}\nCataclysm to unleash!\nHerald twice to upgrade.@Battlecry: Choose {0}\n|4(Cataclysm,Cataclysms) to unleash!\nHerald once to upgrade.@Battlecry: Choose {0}\n|4(Cataclysm,Cataclysms) to unleash!",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "expansion_mechanics",
@@ -849,7 +849,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If the total Cost\nof your starting minions was\n100, split 100 stats among\nminions in your deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -888,7 +888,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +3. \nAfter you restore Health\nto a character, attack a\nrandom enemy minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation",
@@ -903,7 +903,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Your next Healing\neffect this turn deals\ndamage instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "locations"
       ]
@@ -1008,7 +1008,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +4\nTaunt, Lifesteal, Elusive, Divine Shield",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1100,7 +1100,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Craft a custom\nUndead Dragon. If you're\n holding a Dragon, reduce the\nCreation's Cost by (3).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -1113,7 +1113,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Give your minions\n\"Deathrattle: Summon a\nrandom 4-Cost minion.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -1154,7 +1154,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn,\nget a random Holy spell.\nReduce its Cost by (3).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -1275,7 +1275,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n1-Cost spell from any\u00a0class.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -1315,7 +1315,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2\nAt the end of your turn,\ndeal 3 damage to all\nother minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "expansion_mechanics"
@@ -1368,7 +1368,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Herald {0}.\nDraw a card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "locations"
@@ -1409,7 +1409,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Take control of an\nenemy minion until\nthe end of their turn.\n It can't attack this turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -1427,7 +1427,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Herald {0}.\nReduce Deathwing's\nCost by ({1}).\n (Herald to improve!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1453,7 +1453,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "When you play\nor discard this,\nsummon two random\n1-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -1467,7 +1467,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rush\nBattlecry: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1493,7 +1493,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Deal 1 damage. After you\ncast a Fel spell, reopen.\nDeathrattle: Summon\nNespirah, Unshackled.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "deathrattles",
@@ -1534,7 +1534,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Herald {0}.\nYour hero has \nLifesteal this turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1560,7 +1560,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +99\nSummon any leftover appendages when there is room.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "expansion_mechanics"
@@ -1626,7 +1626,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a random\nDragon that costs\n(3) or less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -1678,7 +1678,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Herald {0}.\nGet two 1/1 Elementals\nwith Rush.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1720,7 +1720,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nBattlecry: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1747,7 +1747,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Transform all friendly\nminions into ones that cost\n(1) more. They summon\nthe originals when they die.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "zone_changes"
@@ -1774,7 +1774,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random 3, 2,\nand 1-Cost minion.\nOverload: (1)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -1800,7 +1800,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "Battlecry: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -1935,7 +1935,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a spell\nfrom your class. (Swaps\nclass each turn!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -1949,7 +1949,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "While holding this, if the\nrest of your hand is all even\nor all odd, transform into\nthe 6/5 Worgen King.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes"
       ]
@@ -2047,7 +2047,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\n Battlecry: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -2060,7 +2060,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Summon two random 4-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -2087,7 +2087,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Herald {0}.\nDeathrattle: Restore #3 Health to your hero.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles",
         "expansion_mechanics"
@@ -2101,7 +2101,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Colossal +2\nYour Arms and Soldiers\ndestroy minions in the\n\u00a0enemy's deck instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -2114,7 +2114,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Lifesteal\nBattlecry: Herald {0}.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -2127,7 +2127,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Herald {0}.\nCombo: Deal $3 damage.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -2140,7 +2140,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "After you cast a spell, cast a\nrandom spell of the same\nCost from another class.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -2208,7 +2208,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Choose a spell\nin your hand. Split it into\ntwo random spells of the same Cost.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -2235,7 +2235,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a random Colossal minion\nfrom the past.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -2276,7 +2276,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Start of Game:\nBreak into 6 Essences.\nAdjoining Essences\nare cast together.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deck_construction"
       ]
@@ -2289,7 +2289,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Prepare\nBattlecry: Spend all your\nMana. Summon a random\n\u00a0minion of that Cost.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -2368,7 +2368,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon three 1/1 Webspinners\nwith \"Deathrattle: Get\na random Beast.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -2408,7 +2408,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover an 8-Cost minion. Summon and Freeze it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -2474,7 +2474,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $2 damage. Discover a spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -2541,7 +2541,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Summon a\nrandom minion with Cost\nequal to your hand size.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -2685,7 +2685,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a Demon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -2870,7 +2870,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Give your other\nminions \"Deathrattle:\nSummon a minion with\nthis minion's Cost.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "deathrattles"
@@ -2897,7 +2897,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Freeze a character. Discover a spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -2937,7 +2937,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "All targets are chosen randomly.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -2963,7 +2963,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Stealth\nWhenever this attacks,\nadd a card from another\nclass to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers"
       ]
@@ -3343,7 +3343,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add a random Pirate to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -3436,7 +3436,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add 2 random Mage spells to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -3475,7 +3475,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rewind\nBattlecry: Discover a Beast\nwith a Dark Gift. Kindred:\nIt costs (1) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -3491,7 +3491,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn, put\na random spell on the top\n\u00a0of your opponent's deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -3831,7 +3831,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add a random Legendary minion to your\u00a0hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -4226,7 +4226,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nBattlecry: Add a random Shaman spell to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -4305,7 +4305,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Battlecry\nminion. It costs (1) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -4372,7 +4372,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Summon a random Legendary minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -4453,7 +4453,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a spell.\nRestore Health to your hero\nequal to its Cost.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -4480,7 +4480,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If you're holding a Dragon, Discover\na Dragon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -4494,7 +4494,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add a random card from another class to\u00a0your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -4507,7 +4507,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Give a minion +2/+2. Summon a random\n2-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -4520,7 +4520,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If you control another Mech, Discover a Mech.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -4835,7 +4835,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\nHoly spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -4862,7 +4862,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Summon a random 2-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -4927,7 +4927,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Spend a\nCorpse to Discover a\nBlood Rune card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -4981,7 +4981,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If a friendly Undead died after your\nlast turn, Discover an Unholy Rune card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers",
@@ -5312,7 +5312,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Add two random\nspells from other classes\nthat cost (5) or more\nto your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation"
@@ -5604,7 +5604,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add a random Beast to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -5669,7 +5669,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n1-Cost card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -5696,7 +5696,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Open a Standard Pack. Play all cards from it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -5709,7 +5709,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Gain 4 Armor.\nSummon a random\n4-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -5722,7 +5722,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Taunt minion. Give it +1/+2.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -5762,7 +5762,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Spend up to 8 Corpses to summon a random minion of that Cost.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -5789,7 +5789,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover an Outcast card. Your next one costs (1) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -5883,7 +5883,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Start of Game: If this is in\nBOTH players' decks, turns\n\u00a0are only 15 seconds long.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deck_construction"
       ]
@@ -5922,7 +5922,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Choose One -\nDiscover a minion; or Discover a spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -5936,7 +5936,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nBattlecry: Discover a Taunt\u00a0minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -6189,7 +6189,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn,\nget a random minion with\nmultiple minion types.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -6231,7 +6231,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Deathrattle\nminion that costs (5) or\nmore. Summon it and\ntrigger its Deathrattle.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -6298,7 +6298,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt. Deathrattle: Summon\ntwo random 3-Cost Beasts.\n\u00a0They attack random enemies.\u00a0",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -6312,7 +6312,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Legendary minion to summon. Set its stats to 10/10.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -6326,7 +6326,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a 3-Cost minion. Summon a 2/3 copy of it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -6381,7 +6381,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n\u00a0\u00a0\u00a0Legendary Beast from any\u00a0\u00a0\u00a0\n\u00a0class to gain its stats.\n\u00a0\u00a0Deathrattle: Summon it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -6396,7 +6396,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt. Deathrattle: Summon a random Taunt minion that costs (5) or more.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -6423,7 +6423,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n6, 4, and 2-Cost\nTaunt minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -6436,7 +6436,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a random\n1-Cost minion.\nDeathrattle: Get a random\n1-Cost spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -6503,7 +6503,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn, play the top 3 cards from\u00a0your deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers"
       ]
@@ -6516,7 +6516,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Gain 5 Armor. Summon a random 5-Cost minion and give it Taunt.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -6529,7 +6529,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a Legendary minion\nwith a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -6544,7 +6544,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n3-Cost minion with a Dark\u00a0Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -6585,7 +6585,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Draw a Beast. Imbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -6598,7 +6598,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rush\nDeathrattle: Imbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles",
         "expansion_mechanics"
@@ -6625,7 +6625,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Restore #4 Health.\nDraw a card.\nImbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -6865,7 +6865,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n2-Cost minion and\ngive it Taunt. Imbue\nyour Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -6879,7 +6879,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Nature spell.\nIt costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -6922,7 +6922,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Choose One\ncard from another class.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -6976,7 +6976,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Lifesteal\nBattlecry: Imbue your Hero\u00a0Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -6989,7 +6989,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry and Deathrattle:\nImbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles",
         "expansion_mechanics"
@@ -7046,7 +7046,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If you're holding\na Dragon, Discover a Dragon\nwith a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -7100,7 +7100,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon two\nrandom 3-Cost minions.\n(Cast 3 spells to summon\n6-Cost minions instead.)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -7113,7 +7113,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Elusive\nAt the end of your turn,\nget a random Dragon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -7127,7 +7127,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Choose One - Destroy a minion with 3 or less Attack; or Summon a random 2-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -7156,7 +7156,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt. Deathrattle: Summon\na random Dragon for each\ntime Ysondre has died\nthis game.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -7366,7 +7366,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Deathrattle\nminion with a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -7434,7 +7434,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Transform minions\nin your hand into random\nDemons. (They keep their\n\u00a0\u00a0original stats and Cost.)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes",
         "card_generation"
@@ -7476,7 +7476,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a spell. Choose to keep it or\nput it on top of your opponent's deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -7490,7 +7490,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Imbue your Hero\nPower. Reduce the Cost of a\n\u00a0minion in your hand by (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -7503,7 +7503,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Imbue your Hero Power, then trigger it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -7516,7 +7516,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Spend all your Mana.\nCast a random spell\nthat costs that much.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "locations"
@@ -7638,7 +7638,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "If this would transform into\na minion, it transforms into\none that costs (2) more.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes"
       ]
@@ -7651,7 +7651,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn,\nget a random Nature spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -7771,7 +7771,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Whenever this enters your\nhand from the battlefield,\nsummon two random\n2-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -7785,7 +7785,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt, Divine Shield\nBattlecry: Imbue your Hero\u00a0Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -7824,7 +7824,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover an Undead. Spend 2 Corpses to give it a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -8025,7 +8025,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Start of Game: If each spell\nin your deck is Nature, Imbue\nyour Hero Power. Repeat this\n every 3 spells you cast.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -8065,7 +8065,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Restore #6 Health. Get 3 random Druid spells.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -8092,7 +8092,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Imbue your\nHero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8134,7 +8134,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Lifesteal\nBattlecry: If you've Imbued\nyour Hero Power twice, deal\n4 damage to a minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8160,7 +8160,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a Wisp. Imbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8173,7 +8173,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Choose One - Discover a Mage spell; or Discover a Druid spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -8187,7 +8187,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Transform all\nNeutral cards in your deck\n\u00a0into random Druid ones.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes",
         "card_generation"
@@ -8214,7 +8214,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Demon that costs (5) or more with a Dark Gift. Shuffle the other two into your deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -8230,7 +8230,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a Legendary\nWild God. If you've Imbued\nyour Hero Power 4 times,\nset its Cost to (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -8366,7 +8366,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Give all enemy\nminions -2 Attack until\nyour next turn. Imbue\nyour Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8418,7 +8418,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a\nrandom Murloc.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -8431,7 +8431,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $2 damage.\nImbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8445,7 +8445,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "Battlecry: Imbue your Hero Power.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8473,7 +8473,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Draw an Undead. Imbue your Hero\nPower twice.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -8501,7 +8501,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random 4-Cost minion. Spend 4\nCorpses to summon another.\nOutcast: And another.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -8596,7 +8596,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "Can't attack heroes.\nBattlecry: Set this\nweapon's Attack to\nINFINITY this turn!",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -8610,7 +8610,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n1-Cost minion with a Dark\u00a0Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -8638,7 +8638,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Kindred and Deathrattle:\nGet a random Deathrattle\n\u00a0minion. It costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation",
@@ -8669,7 +8669,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Fill your hand, then empty it.\nReward: Tick and Tock.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -8682,7 +8682,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Set the Cost of\na random card in your hand\nto INFINITY! Deathrattle:\nChange it back.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -8711,7 +8711,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $1 damage to a\nminion. If it survives, draw\na card. If it dies, summon\na random 1-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -8765,7 +8765,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Secret: When your enemy's turn ends, deal INFINITE damage to their highest Health minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "secrets"
@@ -8808,7 +8808,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Dragon\nfrom the past with a\nDark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -8838,7 +8838,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the end of your turn, get a random Shadow spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -8932,7 +8932,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Your Rewinds keep\nBOTH potential outcomes.\nBattlecry: Discover a Rewind\ncard from any class.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -8947,7 +8947,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Fill your board with random Dragons.\nFully heal your hero. Skip your next turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -8986,7 +8986,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a minion\nwith a Dark Gift.\nIt costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -9055,7 +9055,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Summon a 1-Cost minion.\nGain 1 Armor. Draw 1 card.\nRefresh 1 Mana |4(Crystal, Crystals).\n(Improves each use!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "locations"
       ]
@@ -9120,7 +9120,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "After you cast a Fire spell,\nget a random Elemental and\nreduce its Cost by (3).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -9188,7 +9188,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Combo, Battlecry, or Stealth minion with a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -9203,7 +9203,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If you've Imbued\nyour Hero Power twice,\ndraw 2 cards.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -9242,7 +9242,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a Demon with a Dark Gift. Get a copy of it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -9258,7 +9258,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\n5-Cost card. Gain 1 Mana\nCrystal next turn only.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -9298,7 +9298,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $2 damage.\nDiscover a Warrior\nminion with a Dark Gift.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -9352,7 +9352,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a Fel\nspell. Reduce the Cost\nof Fel spells in your\nhand by (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -9432,7 +9432,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Immune to Fire spells.\nBattlecry: Cast 15 Mana\nworth of Fire spells at\nrandom enemies.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -9549,7 +9549,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: After you cast a\nspell this game, summon\na random minion of the\nsame Cost.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -9563,7 +9563,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a spell\nthat costs (5) or more. It\n\u00a0casts twice when played.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers",
@@ -9578,7 +9578,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Freeze an enemy.\nGet a random\nFrost spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -9591,7 +9591,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon two random\n3-Cost minions.\n(Improved by your hero\nattacks this game.)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -9604,7 +9604,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Choose One -\nGive your hero +2 Attack this turn; or get a random Druid card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -9737,7 +9737,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Choose a card in\nyour hand. Transform it into\n\u00a0a spell that costs (5) more\n\u00a0\u00a0\u00a0(keeps its original Cost).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes"
@@ -9766,7 +9766,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a spell,\nor refresh your options\n(20% chance to take 5\ndamage each refresh!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -9780,7 +9780,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Prepare\nBattlecry: If you've cast a\nspell this turn, cast two\n\u00a0\u00a0random Mage Secrets.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "secrets",
@@ -9822,7 +9822,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: If your deck\nhas no Neutral cards, get\na random Paladin card.\nIt costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation",
@@ -9983,7 +9983,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Deal 3 damage\nto all other characters. (Also\ntriggers in hand or deck.)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles"
       ]
@@ -10009,7 +10009,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Prepare\nAfter you play a card, get a\nrandom Battlecry minion.\nIt costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "triggers",
@@ -10157,7 +10157,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Charge. Instead of damaging\nheroes, this shuffles that many\nBlights into their deck that deal\n\u00a02 damage when drawn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "zone_changes"
@@ -10224,7 +10224,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt \nDeathrattle: Get three 1/1\ncopies of random Legendary\n\u00a0\u00a0minions. They cost (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes",
         "card_generation",
@@ -10252,7 +10252,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a 5-Cost minion.\nSpend 5 Corpses to\nsummon a copy of it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -10347,7 +10347,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "Battlecry: Choose your\nelemental ammunition!\n(After your hero attacks,\nchoose another).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers"
@@ -10374,7 +10374,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Get a\nrandom weapon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -10428,7 +10428,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Get two random 8-Cost\nminions. They cost (1) less\nfor each card you played\nfor 2 Mana this game.@ (@)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -10441,7 +10441,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Replay all other cards played this turn (targeting enemies if possible). End your turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -10495,7 +10495,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "You always go second.\nBattlecry: Pick an upgraded\ncounterfeit to replace your\n\u00a0\u00a0Coins this game. Get 3.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices"
       ]
@@ -10508,7 +10508,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Summon a 2-Cost\nTaunt minion. If you have 10\nor more Mana, summon a\n6-Cost instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras"
       ]
@@ -10629,7 +10629,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Get two random 4-Cost spells. Reduce their Costs by (2).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -10696,7 +10696,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "After your hero attacks, get a Void Soul.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers"
       ]
@@ -10709,7 +10709,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n1-Cost Demon. Improve\nyour future Void Souls.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -10722,7 +10722,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nDeathrattle: Get\na Void Soul.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles"
       ]
@@ -10749,7 +10749,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Prepare. Summon an\n8-Cost minion. If you've\ncast 3 other spells this\nturn, do it again.@ ({0} left!) @ (Ready!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics"
       ]
@@ -10762,7 +10762,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Start of Game: If your deck\nhas no other minions, get\nMug's Hero Power. If it has\nno spells, get Zee's!",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deck_construction"
       ]
@@ -10827,7 +10827,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a random\n\u00a0spell that costs (5) or more.\nIf your deck started with no\n\u00a0\u00a0spells, it costs (5) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation",
@@ -10842,7 +10842,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "While building your deck,\n pick 3 contraband Beasts.\n Battlecry:\u00a0Discover one.\nIt costs (3) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -10870,7 +10870,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Investigate a card\nin the enemy hand. If they\nplay a card with that name\n\u00a0next turn, get 3 Coins.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -10910,7 +10910,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Choose One\ncard. It has both effects\ncombined. Give your\nopponent a plain copy.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -10951,7 +10951,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "After your hero attacks,\nDiscover a Druid card.\nReduce its Cost by\nyour hero's Attack.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers",
@@ -10966,7 +10966,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Give a friendly\nminion \"Deathrattle:\nSummon two random\n4-Cost minions.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -10994,7 +10994,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Summon\na random 1-Cost\n\u00a0Deathrattle minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -11008,7 +11008,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n5-Cost Beast. Shuffle 2\nspells into your deck that\ndo it again when drawn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "zone_changes",
@@ -11078,7 +11078,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Choose a card to discard\nto summon a 5/5 Taunt.\nDeathrattle: Free Zuramat\nwho plays one each turn!\u00a0\u00a0",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "deathrattles",
@@ -11107,7 +11107,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $3 damage to a minion. If it dies,\nget a Void Soul.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -11120,7 +11120,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $2 damage. Shuffle\na random Demon Hunter\nspell into your deck.\nOutcast: Do it again.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "zone_changes",
         "card_generation"
@@ -11162,7 +11162,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Prepare, Taunt\nDeathrattle: Restore #6 Health\nto your hero. Summon a\n\u00a0random 6-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles",
@@ -11244,7 +11244,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a\nrandom playable spell.\nIt is Temporary.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -11257,7 +11257,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Get a random Shaman\nminion. It's locked in\nyour hand until you\nplay another card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "locations"
@@ -11297,7 +11297,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a minion. Pick the suspicious one to gain +1/+1.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -11324,7 +11324,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon two 2-Cost minions for each player. Transform your minions into ones that cost (1) more.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "zone_changes"
@@ -11364,7 +11364,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Restore #8 Health to\nall friendly characters.\nSummon two random\n8-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -11403,7 +11403,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nDeathrattle: Get a random\n\u00a0\u00a0Dragon. It costs (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation",
@@ -11418,7 +11418,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get three\n2/2 Treants. Carve 12\nMana worth of Nature\nspells into them.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -11431,7 +11431,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a 3-Cost\nBulb that casts three\n\u00a0random 1-Cost spells.\n\u00a0It upgrades each turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -11444,7 +11444,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Replace your future\nAnimal Companions with\nrandom Beasts that cost\n(1) more. Draw a card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -11483,7 +11483,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt. Battlecry: Replace your\nfuture Animal Companions\nwith random Beasts that\ncost (1) more.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "card_generation"
@@ -11523,7 +11523,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Replace your future Animal\nCompanions with random\nBeasts that cost (2) more.\nChoose one to summon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "auras",
@@ -11551,7 +11551,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Your Leylines\ncost (1) less this game.\nDeathrattle: Get a\nrandom Leyline.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -11565,7 +11565,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n{0}-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -11604,7 +11604,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Get all 3 Leylines.\nChoose an upgrade\nfor your Leylines.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices"
       ]
@@ -11734,7 +11734,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Deal $3 damage to a minion. If it dies, Discover a Frost\nRune card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -11905,7 +11905,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Rewind\nAdd a random minion\nto your hand. It costs\n(3) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -11933,7 +11933,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rewind\nBattlecry: Get 2 random\nspells from your class.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -11975,7 +11975,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled+. Your deck size is 40,\nbut has 10 Rafaams! Battlecry:\nIf you played the rest, destroy\nthe enemy hero.@ ({0} left!)@ (Ready!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -12016,7 +12016,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled\nBattlecry: Put one of each\nAura from your deck into\nthe battlefield.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -12030,7 +12030,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Elusive\nAfter you cast a spell,\nDiscover a Nature spell\nfrom the past.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers",
@@ -12045,7 +12045,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Rewind\nSummon 12 Mana worth of random minions.\nOverload: (3)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -12072,7 +12072,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Paladin Mech from the past. Give it +5/+5.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -12099,7 +12099,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Rewind\nGet 2 random Holy spells. Restore Health to your hero equal to their Costs.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -12126,7 +12126,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled, Charge\nStart of Game: Disappear.\nKill all 4 Demons from Argus\nto reappear in hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -12179,7 +12179,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: At the start of your next turn, set this minion's Attack to INFINITY!",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers"
       ]
@@ -12258,7 +12258,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Split a random\nminion in your hand into two halves.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -12297,7 +12297,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rewind\nBattlecry: Cast 2 random Nature spells.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -12311,7 +12311,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rewind\nBattlecry: Both players\nequip a random weapon.\nGive yours +1/+1.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -12325,7 +12325,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nDeathrattle: Get a random Rewind card.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles",
@@ -12366,7 +12366,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rewind, Rewind, Rewind\nBattlecry: Summon 2 random\nLegendary minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -12395,7 +12395,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Get a\nrandom 5-Cost minion from the past.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -12409,7 +12409,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt. Battlecry: Look at 3\ncards. Guess which one is\nin your opponent's hand\nto gain +4 Health.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "direct_effect_or_card_specific_rule"
       ]
@@ -12513,7 +12513,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "At the start of your turn, transform into a random 5-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "zone_changes",
@@ -12554,7 +12554,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nDeathrattle: Summon a\nrandom minion from\nthe past.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -12594,7 +12594,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "After this survives damage, transform into a random 7-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "zone_changes",
@@ -12635,7 +12635,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Summon a\nrandom 2-Cost minion that\nis Dormant for 2 turns.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -12714,7 +12714,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Your Battlecries,\nDeathrattles, Hero Power,\nand end of turn effects\ntrigger twice.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles"
       ]
@@ -12754,7 +12754,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Add a random\n8-Cost minion to your hand.\nAt the start of your turns,\nreduce its Cost by (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -12782,7 +12782,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled, Rush. Battlecry:\nBring the High King's\nHammer to ME! Deathrattle:\nAdd it to your hand.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deathrattles",
         "expansion_mechanics",
@@ -12797,7 +12797,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled. Choose One -\nEmpower Zin-Azshari; or\nThe Well of Eternity. (The\n\u00a0\u00a0other gets destroyed!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "expansion_mechanics",
@@ -12877,7 +12877,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Whenever you would\ndamage this with a Nature\nspell, summon a random\n\u00a0\u00a05-Cost minion instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "triggers",
         "card_generation"
@@ -13013,7 +13013,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Summon a random Dragon\nthat costs (5) or more.\nAdvance to the present!",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "locations"
@@ -13067,7 +13067,7 @@
       ],
       "card_type": "WEAPON",
       "rules_text": "Deathrattle: Get a random Demon\nfrom the past.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -13081,7 +13081,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Discover any Demon that\ncosts (5) or more. If your\ndeck has no minions,\nyour next one costs (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -13109,7 +13109,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover 2 minions. If\nyour deck has no minions,\nreduce the Cost of any\nin your hand by (2).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13162,7 +13162,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Rewind\nSummon a random\n3-Cost Beast. It attacks\na random enemy.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -13216,7 +13216,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled. Battlecry: Deal 2\ndamage to all enemies.\n\u00a0\u00a0\u00a0\u00a0If you've played Alleria or\u00a0\u00a0\u00a0\u00a0\n\u00a0\u00a0Vereesa, repeat for each.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -13257,7 +13257,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a spell.\nThis costs Health instead of Mana.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13271,7 +13271,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Get a random\nLegendary minion. Reduce its Cost by (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -13298,7 +13298,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Fill your hand with random Undead.\nThey cost Health instead of Mana this turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13351,7 +13351,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled. Battlecry: Draw\nBwonsamdi (or resurrect\nhim if he has died). Choose\na Boon to give him.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -13435,7 +13435,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a 2/2 Pupil.\nDiscover a spell that costs\n(7) or more from the past\nto teach it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13475,7 +13475,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Replace your hand and\ndeck with random Choose\nOne cards from the past.\nThey cost (1) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13502,7 +13502,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon two random 1-Cost minions from the past. Combo: With +1 Attack.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13515,7 +13515,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Destroy a minion. Combo: Summon a random 8-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13593,7 +13593,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover 2 Beasts.\nPut them on the bottom of\nyour deck with +5/+5.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13664,7 +13664,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled\nIf you control another\nDragon, your Arcane\nspells cost (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -13704,7 +13704,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover two Arcane spells from the past. They cost (2) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -13731,7 +13731,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random\n10 and 1-Cost minion. Scramble their stats.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13744,7 +13744,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Look at 2 random\nSecrets. Pick one to cast for\nyourself. The other casts\nfor your opponent.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -13759,7 +13759,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get 3 random\nspells from the past. When\nyou play ALL 3, get another\nTimelooper Toki.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13798,7 +13798,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Rush. Battlecry: Fill your\nopponent's board with\n\u00a0\u00a0random 1-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -13824,7 +13824,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled. Battlecry: If your\nopponent is holding King\nLlane, destroy him and cut\ntheir Health in half.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -13852,7 +13852,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Fabled. Costs (0) if\nyou control Karazhan.\nBattlecry: Silence and destroy\nall other minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "expansion_mechanics",
         "deck_construction"
@@ -13892,7 +13892,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Reopen a location. Give it \"Deathrattle: Summon a random\n3-Cost minion.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -13919,7 +13919,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Rewind\nDiscover a spell from\nANY class. (Or just your class after you Rewind!)",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "triggers",
@@ -13935,7 +13935,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: If your deck started with 10 cards of different Costs, craft a custom location.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "deck_construction"
       ]
@@ -14001,7 +14001,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Destroy the top\ncard of your deck. Discover a\ncard of the same Rarity.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14148,7 +14148,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Play 6 minions\nof unique types.\nReward: Ashalon.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -14226,7 +14226,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Destroy a minion. Summon a random minion of the same\nCost to replace it.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -14516,7 +14516,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a spell from any class that costs (8) or more. It costs (1).",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14680,7 +14680,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover an Undead. Spend 5 Corpses to keep all 3 instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14694,7 +14694,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Frost Rune card. If you play it this turn, also pick one\nof the others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14776,7 +14776,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Murloc.\nIf you play it this turn, also\npick one of the others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14842,7 +14842,7 @@
       ],
       "card_type": "LOCATION",
       "rules_text": "Discover a Temporary 1-Cost minion.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -14884,7 +14884,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Gains a random Titan ability in your hand that changes each turn.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -14910,7 +14910,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Discover 8 cards.\nReward: The Origin Stone.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation",
@@ -14925,7 +14925,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover a\ncard with Cost equal to your\nremaining Mana Crystals.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14939,7 +14939,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random 2-Cost\nminion. If you've Discovered\nthis turn, summon a random\n4-Cost minion instead.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -14967,7 +14967,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a minion with\na type you haven't played.\nIf you play it this turn, also\npick one of the others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -15008,7 +15008,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Taunt\nDeathrattle: Get 2 random\nFel spells. They cost Health\ninstead of Mana.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -15035,7 +15035,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Get two random Temporary\n2-Cost minions.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -15049,7 +15049,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Give a friendly minion +4/+4 and \"Deathrattle: Summon a random 4-Cost minion.\"",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -15146,7 +15146,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Discover\na Legendary minion.\nShuffle the other two into\u00a0your deck.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "zone_changes",
@@ -15161,7 +15161,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a card from your deck. If you play it this turn, also pick one of the others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -15175,7 +15175,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Battlecry: Get a random\nweapon from another class.\nCombo: Give it +2 Attack.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation"
       ]
@@ -15295,7 +15295,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Survive 10 turns.\nReward: Latorvius, Gaze\nof the City.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -15425,7 +15425,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Deal exactly 2 damage to an enemy\non your turn, 12 times.\nReward: Gorishi Colossus.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -15491,7 +15491,7 @@
       ],
       "card_type": "MINION",
       "rules_text": "Deathrattle: Get a random Holy and Shadow spell.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "deathrattles"
@@ -15505,7 +15505,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Summon a random 4-Cost minion and\ngive it Taunt.\nKindred: Do it again.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "card_generation",
         "expansion_mechanics"
@@ -15533,7 +15533,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Cast 4 Holy spells\nReward: Life's Breath.\nQuest: Cast 4 Shadow spells.\nReward: Death's Touch.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -15625,7 +15625,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover an odd-Attack\nBeast. If you play it this\nturn, also pick one of\nthe others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -15704,7 +15704,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Quest: Play a 1, 3, 5, and 7-Attack Beast.\nReward: Shokk.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "quests"
       ]
@@ -15810,7 +15810,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Discover a Fel spell.\nIf you play it this turn, also\npick one of the others.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "choices",
         "card_generation"
@@ -15876,7 +15876,7 @@
       ],
       "card_type": "SPELL",
       "rules_text": "Sidequest: Play\n3 Beasts or Undead.\nReward: Craft a custom\nZombeast. It costs (3) less.",
-      "implementation": "missing",
+      "implementation": "written_unverified",
       "dependency_hints": [
         "auras",
         "quests"

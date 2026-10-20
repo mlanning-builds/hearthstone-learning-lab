@@ -1,0 +1,33 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "AV_342",
+    "AV_342t",
+    "BRM_001",
+    "DAL_010",
+    "GVG_008",
+    "GVG_015",
+    "ULD_160",
+    "VAC_700"
+  ],
+  "candidate_fingerprint": "9d7411010db02a4006d02b9f0cdef50d84e6ba8c2c459287f42884eb75f2cfab",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Snapshot Lightbomb damage, death/draw ordering and replacement effects",
+    "Held scheme growth and shuffled copy reset semantics",
+    "Foreign-class played history and cost modifiers",
+    "Full Lackey Discover offer/reward timing"
+  ]
+}

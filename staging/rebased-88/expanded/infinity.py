@@ -19,7 +19,7 @@ class InfinityEffects:
            if due_owner==self.current and due<=self.players[self.current].turns_taken]
   if phase!='end':return []
   owner=1-self.current
-  return [dict(source=None,order=c.uid,operations=(('infinity_secret',owner,c.uid),))
+  return [dict(source=None,order=getattr(c,'_secret_entry_order',c.uid),operations=(('infinity_secret',owner,c.uid),))
           for c in self.players[owner].secrets if c.card_id=='END_024']
  def _infinity_expire(self):
   for p in self.players:
@@ -55,9 +55,6 @@ class InfinityEffects:
    secret=next((c for c in self.players[beneficiary].secrets if c.uid==uid),None)
    targets=[m for m in q.minions if m.health>0]
    if secret is not None and self.current!=beneficiary and targets:
-    high=max(m.health for m in targets);target=self.rng.choice([m for m in targets if m.health==high])
-    self._reveal_secret(beneficiary,secret)
-    # Frozen ImmuneToSpellpower tag: use ordinary damage protection without bonus.
-    self._damage(target.uid,INFINITY,damage_owner=beneficiary,damage_source=None)
+    self._trigger_secret_program(beneficiary,secret,(('historical_rhyssa_infinity',),),dict(owner=beneficiary,source=None,target=0,bonus=0,lifesteal=False))
   else:return False
   return True

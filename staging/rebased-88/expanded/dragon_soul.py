@@ -12,6 +12,8 @@ TOKEN_RULES={
  ESSENCES[4]:('none',[('summon',ROOT+'t6t',1),('essence_chain',)]),
  ESSENCES[5]:('none',[('area_damage','enemy_minions',4),('essence_chain',)]),
 }
+TOKEN_RULES[ROOT+'t6t']=('none',[])
+TOKEN_IDS=frozenset((*ESSENCES,ROOT+'t6t'))
 class DragonSoul:
  def _essence_setup(self):
   for p in self.players:
@@ -35,6 +37,6 @@ class DragonSoul:
   p=self.players[ctx['owner']];ids=ctx.get('essence_neighbors',())
   cards=[c for uid in ids for c in p.hand if c.uid==uid and c.card_id in ESSENCES]
   for c in cards:
-   if not self._supports_internal_spell(c.card_id):raise UnsupportedCard('Essence lacks internal cast support: '+c.card_id)
+   if not self._supports_internal_spell(c.card_id,ctx['owner']):raise UnsupportedCard('Essence lacks internal cast support: '+c.card_id)
   for c in cards:p.hand.remove(c)
   return ('batch30_noop',),tuple(('cast_physical_spell',c,'random') for c in cards)

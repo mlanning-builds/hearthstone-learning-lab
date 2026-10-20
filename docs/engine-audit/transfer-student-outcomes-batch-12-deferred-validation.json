@@ -1,0 +1,55 @@
+{
+  "scope": "Nine native Secret trigger families and required Spider body",
+  "new_unvalidated_bodies": 10,
+  "new_ids": [
+    "DEEP_000",
+    "JAM_003",
+    "MAW_006",
+    "MAW_010",
+    "MAW_018",
+    "MIS_105",
+    "REV_825",
+    "REV_827",
+    "REV_827t",
+    "TTN_504"
+  ],
+  "new_collectible_secret_outcomes": 9,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 225,
+  "current_expansion_outcome_gap": 216,
+  "closed_outcome_ids": [
+    "DEEP_000",
+    "JAM_003",
+    "MAW_006",
+    "MAW_010",
+    "MAW_018",
+    "MIS_105",
+    "REV_825",
+    "REV_827",
+    "TTN_504"
+  ],
+  "candidate_fingerprint": "a7db710bdb31f63d9c03a04270979a795e31d2888a4ee1bec543a8ef0ce70872",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict root declarations and shared Secret program schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Secret play order, owner/opponent windows and Rhyssa repeated effects",
+    "Objection versus Okani and countered-card paid/after-play histories",
+    "Double Cross trigger timing across card/power/Forge/Trade spending and zero-cost cards",
+    "Draw-trigger interruptions and multiple Secret triggers from one event",
+    "Turn-boundary copy selection, board capacity and full Perjury generated closure",
+    "Hidden identity observation and Secret dynamic program coverage",
+    "All new behavior remains unvalidated"
+  ]
+}

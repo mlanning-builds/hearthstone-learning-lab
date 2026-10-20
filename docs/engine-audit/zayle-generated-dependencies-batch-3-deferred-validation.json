@@ -1,0 +1,29 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "GVG_038",
+    "EX1_251",
+    "OG_023",
+    "GIL_586",
+    "SCH_352"
+  ],
+  "candidate_fingerprint": "e73e4c87bc762dc5f34299ddf2dda99537967f4a3d73041531028ac052cc5168",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Random damage and simultaneous sampled damage",
+    "Totem/Elemental live tribe conditions",
+    "Physical copy stats, cost and hand capacity"
+  ]
+}

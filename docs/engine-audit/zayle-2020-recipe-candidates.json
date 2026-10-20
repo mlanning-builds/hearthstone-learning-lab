@@ -1,0 +1,682 @@
+{
+  "status": "all_five_source_candidates_not_production",
+  "source": "https://www.reddit.com/r/hearthstone/comments/fpsxjm/",
+  "source_date": "2020-03-27",
+  "candidate_fingerprint": "a6a0cd6936322ad9587af59484a5ee3e7233fe7adba75a3d6205fb8a6b588105",
+  "complete": false,
+  "recipes": [
+    {
+      "hero_class": "ROGUE",
+      "deckstring": "AAECAaIHBrICzQPtBZKXA8GuA8e2Awy0Ae0CmwWIB90Ihgm0kQOPlwOQlwOJmwP1pwO/rgMA",
+      "format": 2,
+      "hero_dbf_ids": [
+        930
+      ],
+      "cards": [
+        {
+          "card_id": "EX1_613",
+          "name": "Edwin VanCleef",
+          "count": 1,
+          "written": true,
+          "dbf_id": 306
+        },
+        {
+          "card_id": "EX1_581",
+          "name": "Sap",
+          "count": 1,
+          "written": true,
+          "dbf_id": 461
+        },
+        {
+          "card_id": "EX1_012",
+          "name": "Bloodmage Thalnos",
+          "count": 1,
+          "written": true,
+          "dbf_id": 749
+        },
+        {
+          "card_id": "DAL_417",
+          "name": "Heistbaron Togwaggle",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52114
+        },
+        {
+          "card_id": "DRG_037",
+          "name": "Flik Skyshiv",
+          "count": 1,
+          "written": true,
+          "dbf_id": 55105
+        },
+        {
+          "card_id": "YOD_035",
+          "name": "Grand Lackey Erkh",
+          "count": 1,
+          "written": true,
+          "dbf_id": 56135
+        },
+        {
+          "card_id": "CS2_072",
+          "name": "Backstab",
+          "count": 2,
+          "written": true,
+          "dbf_id": 180
+        },
+        {
+          "card_id": "EX1_144",
+          "name": "Shadowstep",
+          "count": 2,
+          "written": true,
+          "dbf_id": 365
+        },
+        {
+          "card_id": "EX1_129",
+          "name": "Fan of Knives",
+          "count": 2,
+          "written": true,
+          "dbf_id": 667
+        },
+        {
+          "card_id": "EX1_124",
+          "name": "Eviscerate",
+          "count": 2,
+          "written": true,
+          "dbf_id": 904
+        },
+        {
+          "card_id": "EX1_134",
+          "name": "SI:7 Agent",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1117
+        },
+        {
+          "card_id": "EX1_145",
+          "name": "Preparation",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1158
+        },
+        {
+          "card_id": "DAL_400",
+          "name": "EVIL Cable Rat",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51380
+        },
+        {
+          "card_id": "DAL_415",
+          "name": "EVIL Miscreant",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52111
+        },
+        {
+          "card_id": "DAL_416",
+          "name": "Hench-Clan Burglar",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52112
+        },
+        {
+          "card_id": "DAL_720",
+          "name": "Waggle Pick",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52617
+        },
+        {
+          "card_id": "ULD_186",
+          "name": "Pharaoh Cat",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54261
+        },
+        {
+          "card_id": "DRG_035",
+          "name": "Bloodsail Flybooter",
+          "count": 2,
+          "written": true,
+          "dbf_id": 55103
+        }
+      ],
+      "missing_ids": [],
+      "unparsed_trailing_bytes": []
+    },
+    {
+      "hero_class": "WARRIOR",
+      "deckstring": "AAECAQcCm5QD360DDkuiBP8Hl5QDmpQDkp8Dg6ADn6EDgqgD9agD2a0D260DpbYDq7YDAA==",
+      "format": 2,
+      "hero_dbf_ids": [
+        7
+      ],
+      "cards": [
+        {
+          "card_id": "DAL_064",
+          "name": "Blastmaster Boom",
+          "count": 1,
+          "written": true,
+          "dbf_id": 51739
+        },
+        {
+          "card_id": "DRG_026",
+          "name": "Deathwing, Mad Aspect",
+          "count": 1,
+          "written": true,
+          "dbf_id": 55007
+        },
+        {
+          "card_id": "EX1_407",
+          "name": "Brawl",
+          "count": 2,
+          "written": true,
+          "dbf_id": 75
+        },
+        {
+          "card_id": "EX1_410",
+          "name": "Shield Slam",
+          "count": 2,
+          "written": true,
+          "dbf_id": 546
+        },
+        {
+          "card_id": "EX1_606",
+          "name": "Shield Block",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1023
+        },
+        {
+          "card_id": "DAL_060",
+          "name": "Clockwork Goblin",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51735
+        },
+        {
+          "card_id": "DAL_063",
+          "name": "Wrenchcalibur",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51738
+        },
+        {
+          "card_id": "DAL_770",
+          "name": "Omega Devastator",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53138
+        },
+        {
+          "card_id": "DAL_592",
+          "name": "Batterhead",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53251
+        },
+        {
+          "card_id": "ULD_206",
+          "name": "Restless Mummy",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53407
+        },
+        {
+          "card_id": "ULD_195",
+          "name": "Frightened Flunky",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54274
+        },
+        {
+          "card_id": "ULD_708",
+          "name": "Livewire Lance",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54389
+        },
+        {
+          "card_id": "DRG_020",
+          "name": "EVIL Quartermaster",
+          "count": 2,
+          "written": true,
+          "dbf_id": 55001
+        },
+        {
+          "card_id": "DRG_022",
+          "name": "Ramming Speed",
+          "count": 2,
+          "written": true,
+          "dbf_id": 55003
+        },
+        {
+          "card_id": "YOD_023",
+          "name": "Boom Squad",
+          "count": 2,
+          "written": true,
+          "dbf_id": 56101
+        },
+        {
+          "card_id": "YOD_024",
+          "name": "Bomb Wrangler",
+          "count": 2,
+          "written": true,
+          "dbf_id": 56107
+        }
+      ],
+      "missing_ids": [],
+      "unparsed_trailing_bytes": []
+    },
+    {
+      "hero_class": "PRIEST",
+      "deckstring": "AAECAa0GAuubA6mlAw7dBMkG1QilCYOUA4eVA5ibA66bA4KdA6+lA9KlA/2nA4SoA9isAwA=",
+      "format": 2,
+      "hero_dbf_ids": [
+        813
+      ],
+      "cards": [
+        {
+          "card_id": "DAL_729",
+          "name": "Madame Lazul",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52715
+        },
+        {
+          "card_id": "ULD_262",
+          "name": "High Priest Amet",
+          "count": 1,
+          "written": true,
+          "dbf_id": 53929
+        },
+        {
+          "card_id": "EX1_045",
+          "name": "Ancient Watcher",
+          "count": 2,
+          "written": true,
+          "dbf_id": 605
+        },
+        {
+          "card_id": "CS1_112",
+          "name": "Holy Nova",
+          "count": 2,
+          "written": true,
+          "dbf_id": 841
+        },
+        {
+          "card_id": "CS2_181",
+          "name": "Injured Blademaster",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1109
+        },
+        {
+          "card_id": "EX1_332",
+          "name": "Silence",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1189
+        },
+        {
+          "card_id": "DAL_040",
+          "name": "Hench-Clan Shadequill",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51715
+        },
+        {
+          "card_id": "DAL_065",
+          "name": "Unsleeping Soul",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51847
+        },
+        {
+          "card_id": "DAL_723",
+          "name": "Forbidden Words",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52632
+        },
+        {
+          "card_id": "DAL_434",
+          "name": "Arcane Watcher",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52654
+        },
+        {
+          "card_id": "DAL_735",
+          "name": "Dalaran Librarian",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52866
+        },
+        {
+          "card_id": "ULD_268",
+          "name": "Psychopomp",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53935
+        },
+        {
+          "card_id": "ULD_271",
+          "name": "Injured Tol'vir",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53970
+        },
+        {
+          "card_id": "ULD_191",
+          "name": "Beaming Sidekick",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54269
+        },
+        {
+          "card_id": "ULD_196",
+          "name": "Neferset Ritualist",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54276
+        },
+        {
+          "card_id": "DRG_301",
+          "name": "Whispers of EVIL",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54872
+        }
+      ],
+      "missing_ids": [],
+      "unparsed_trailing_bytes": []
+    },
+    {
+      "hero_class": "SHAMAN",
+      "source": "https://hearthstone.wiki.gg/wiki/Zayle",
+      "cards": [
+        {
+          "card_id": "DAL_071",
+          "name": "Mutate",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52148
+        },
+        {
+          "card_id": "ULD_291",
+          "name": "Corrupt the Waters",
+          "count": 1,
+          "written": true,
+          "dbf_id": 54369
+        },
+        {
+          "card_id": "DAL_433",
+          "name": "Sludge Slurper",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52422
+        },
+        {
+          "card_id": "DAL_400",
+          "name": "EVIL Cable Rat",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51380
+        },
+        {
+          "card_id": "ULD_276",
+          "name": "EVIL Totem",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54009
+        },
+        {
+          "card_id": "ULD_157",
+          "name": "Questing Explorer",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53947
+        },
+        {
+          "card_id": "ULD_158",
+          "name": "Sandstorm Elemental",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53967
+        },
+        {
+          "card_id": "DAL_432",
+          "name": "Witch's Brew",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52421
+        },
+        {
+          "card_id": "CS2_053",
+          "name": "Far Sight",
+          "count": 1,
+          "written": true,
+          "dbf_id": 818
+        },
+        {
+          "card_id": "EX1_575",
+          "name": "Mana Tide Totem",
+          "count": 2,
+          "written": true,
+          "dbf_id": 513
+        },
+        {
+          "card_id": "ULD_209",
+          "name": "Vulpera Scoundrel",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53413
+        },
+        {
+          "card_id": "ULD_170",
+          "name": "Weaponized Wasp",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53973
+        },
+        {
+          "card_id": "YOD_035",
+          "name": "Grand Lackey Erkh",
+          "count": 1,
+          "written": true,
+          "dbf_id": 56135
+        },
+        {
+          "card_id": "DAL_546",
+          "name": "Barista Lynchen",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52413
+        },
+        {
+          "card_id": "DAL_009",
+          "name": "Hagatha's Scheme",
+          "count": 2,
+          "written": true,
+          "dbf_id": 51373
+        },
+        {
+          "card_id": "ULD_178",
+          "name": "Siamat",
+          "count": 1,
+          "written": true,
+          "dbf_id": 54148
+        },
+        {
+          "card_id": "DAL_431",
+          "name": "Swampqueen Hagatha",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52409
+        },
+        {
+          "card_id": "DAL_752",
+          "name": "Jepetto Joybuzz",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52954
+        },
+        {
+          "card_id": "ULD_169",
+          "name": "Mogu Fleshshaper",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53972
+        }
+      ],
+      "missing_ids": [],
+      "identity_status": "Original collectible printings resolved by exact name; pinned-client printing confirmation deferred"
+    },
+    {
+      "hero_class": "WARLOCK",
+      "source": "https://hearthstone.wiki.gg/wiki/Zayle",
+      "cards": [
+        {
+          "card_id": "EX1_302",
+          "name": "Mortal Coil",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1092
+        },
+        {
+          "card_id": "ULD_140",
+          "name": "Supreme Archaeology",
+          "count": 1,
+          "written": true,
+          "dbf_id": 53739
+        },
+        {
+          "card_id": "DAL_602",
+          "name": "Plot Twist",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52698
+        },
+        {
+          "card_id": "ULD_157",
+          "name": "Questing Explorer",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53947
+        },
+        {
+          "card_id": "YOD_025",
+          "name": "Twisted Knowledge",
+          "count": 2,
+          "written": true,
+          "dbf_id": 56109
+        },
+        {
+          "card_id": "DRG_204",
+          "name": "Dark Skies",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54891
+        },
+        {
+          "card_id": "CS2_117",
+          "name": "Earthen Ring Farseer",
+          "count": 1,
+          "written": true,
+          "dbf_id": 1651
+        },
+        {
+          "card_id": "CS2_062",
+          "name": "Hellfire",
+          "count": 2,
+          "written": true,
+          "dbf_id": 950
+        },
+        {
+          "card_id": "CS2_057",
+          "name": "Shadow Bolt",
+          "count": 2,
+          "written": true,
+          "dbf_id": 914
+        },
+        {
+          "card_id": "ULD_275",
+          "name": "Bone Wraith",
+          "count": 2,
+          "written": true,
+          "dbf_id": 54002
+        },
+        {
+          "card_id": "DAL_551",
+          "name": "Proud Defender",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52418
+        },
+        {
+          "card_id": "EX1_309",
+          "name": "Siphon Soul",
+          "count": 2,
+          "written": true,
+          "dbf_id": 1100
+        },
+        {
+          "card_id": "DAL_185",
+          "name": "Aranasi Broodmother",
+          "count": 2,
+          "written": true,
+          "dbf_id": 52058
+        },
+        {
+          "card_id": "DAL_422",
+          "name": "Arch-Villain Rafaam",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52119
+        },
+        {
+          "card_id": "DRG_208",
+          "name": "Valdris Felgorge",
+          "count": 1,
+          "written": true,
+          "dbf_id": 54896
+        },
+        {
+          "card_id": "DAL_592",
+          "name": "Batterhead",
+          "count": 2,
+          "written": true,
+          "dbf_id": 53251
+        },
+        {
+          "card_id": "DAL_607",
+          "name": "Fel Lord Betrug",
+          "count": 1,
+          "written": true,
+          "dbf_id": 52873
+        },
+        {
+          "card_id": "EX1_312",
+          "name": "Twisting Nether",
+          "count": 1,
+          "written": true,
+          "dbf_id": 859
+        }
+      ],
+      "missing_ids": [],
+      "identity_status": "Original collectible printings resolved by exact name; pinned-client printing confirmation deferred"
+    }
+  ],
+  "missing_recipe_classes": [],
+  "notes": [
+    "Player-reported exact deckstrings, not independently pinned-client certified",
+    "No selection weights inferred",
+    "No production contract or root admission",
+    "Trailing deckstring extension bytes retained",
+    "Shaman and Warlock full 30-card lists from current wiki table",
+    "All five recipe lists collected; exact pinned client printing/version and selection weights still unconfirmed"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false
+}

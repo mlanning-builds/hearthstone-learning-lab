@@ -11,6 +11,17 @@ class EffectReplay:
             operations,context=op[1:]
             if not operations:return ('batch30_noop',),()
             first,tail=self._split_fixed_summon(operations[0],context)
+            # Some family splitters return another compound operation. Resolve
+            # that leading operation before handing it to primitive dispatch.
+            prior=operations[0]
+            for _ in range(128):
+                if first==prior:break
+                prior=first
+                first,extra=self._split_fixed_summon(first,context)
+                tail=tuple(extra)+tuple(tail)
+            else:
+                from engine.cards import UnsupportedCard
+                raise UnsupportedCard('Replay expansion did not reach a primitive operation')
             remaining=tuple(tail)+tuple(operations[1:])
             return ('replay_one',first,context),((('replay_context',remaining,context),) if remaining else ())
         if name=='replay_live_end':

@@ -5,6 +5,7 @@ Historical membership needs an explicit contract; no Standard-pool substitute.
 """
 from dataclasses import dataclass
 from copy import deepcopy
+from .identities import canonical_identity,identity_resolver
 from engine.game import Card
 from engine.cards import UnsupportedCard
 from .generation_cards import pool,PoolRequest
@@ -54,17 +55,21 @@ class DarkGiftGenerators:
         if not isinstance(req,GiftRequest):raise UnsupportedCard('Expected an explicit Dark Gift request')
         hero_class=self.players[owner].hero_class
         contract=getattr(self,'_dark_generation_pools',{}).get((req,hero_class))
-        if req.historical and not isinstance(contract,GenerationPool):
-            raise UnsupportedCard('Historical Dark Gift pool requires a reviewed historical contract')
         if contract is not None:
             if not isinstance(contract,GenerationPool):raise UnsupportedCard('Invalid Dark Gift contract')
             ids=contract.resolve(self.cards,self.cards)
         else:
-            ids=tuple(dict.fromkeys(cid for alternative in req.alternatives
-                      for cid in self._generation_candidates(alternative,owner)))
+            from dataclasses import replace
+            try:
+                ids=tuple(dict.fromkeys(cid for alternative in req.alternatives
+                      for cid in self._generation_candidates(replace(alternative,era='past') if req.historical else alternative,owner)))
+            except UnsupportedCard as error:
+                if req.historical:raise UnsupportedCard('Historical Dark Gift pool incomplete: '+str(error)) from error
+                raise
         invalid=[cid for cid in ids if not any(request_matches(r,self.cards[cid],hero_class) for r in req.alternatives)]
         if invalid:raise UnsupportedCard('Ineligible Dark Gift outcomes: '+', '.join(invalid))
-        canonical=lambda cid:self.cards[cid].get('countAsCopyOfDbfId',self.cards[cid].get('dbfId',cid))
+        identity=identity_resolver(self.cards)
+        canonical=lambda cid:identity(self.cards[cid])
         if len({canonical(cid) for cid in ids})!=len(ids):raise UnsupportedCard('Duplicate canonical Dark Gift outcomes')
         if req.historical:
             from .historical_generation import validate_past_candidates
@@ -109,12 +114,13 @@ class DarkGiftGenerators:
             self._spend_corpses(owner,cost)
         if mods.get('shuffle_unchosen'):
             others=[option for option in choice['options'] if option is not selected]
+            shuffled=[]
             for option in others:
                 card=Card(self._new_id(),option['card_id'])
                 if option['dark_gift']:card=self._dark_attach(owner,card,option['dark_gift'],notify=False)
-                p.deck.append(card)
+                p.deck.append(card);shuffled.append(card)
             if others:
-                self.rng.shuffle(p.deck);self._record_deck_insertion(owner,owner,len(others),'shuffle')
+                self.rng.shuffle(p.deck);self._record_deck_insertion(owner,owner,len(others),'shuffle',cards=shuffled)
         card=Card(self._new_id(),selected['card_id']);result=self._enter_hand(owner,card)
         if result is not None:
             if gift:result=self._dark_attach(owner,result,gift)

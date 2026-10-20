@@ -35,7 +35,7 @@ class RewindTests(unittest.TestCase):
         self.play('TIME_001')
         for owner in (0,1):
             serialized=json.dumps(self.g.observe(owner))
-            self.assertNotIn('snapshot',serialized);self.assertNotIn('_rewind_state',serialized)
+            self.assertNotIn('"snapshot":',serialized);self.assertNotIn('_rewind_state',serialized)
         self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True})
     def test_choice_is_not_discover(self):
         self.play('TIME_001');self.choose(False)

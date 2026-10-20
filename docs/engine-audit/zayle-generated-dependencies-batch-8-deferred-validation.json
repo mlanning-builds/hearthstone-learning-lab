@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "GDB_479",
+    "GDB_445"
+  ],
+  "candidate_fingerprint": "fe254f6397683dbd499a9d9be150af87047414d52f0a4bc3fbbfbb8aebd85e3a",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Multiple entry keyword timing and repeated Discover continuation",
+    "Asteroid shuffle observers and damage settlement"
+  ]
+}

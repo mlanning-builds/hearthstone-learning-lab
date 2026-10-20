@@ -69,7 +69,7 @@ def classes(card):
 
 
 def has_class(card, hero_class, include_neutral=False):
-    if hero_class not in HERO_CLASSES:
+    if hero_class not in HERO_CLASSES | {'NEUTRAL'}:
         raise ValueError('Unknown Constructed hero class: '+str(hero_class))
     values = classes(card)
     return hero_class in values or (include_neutral and 'NEUTRAL' in values)

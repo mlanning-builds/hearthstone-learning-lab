@@ -1,0 +1,33 @@
+{
+  "status": "written_approximate_unvalidated",
+  "candidate_fingerprint": "1c6de78dbf970a833a5b66355e58463b8b9511acae5b717b98c2f2283cb19b9f",
+  "historical_written": 3192,
+  "historical_remaining": 9,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "offer_identities": 139,
+  "offer_identities_written": 139,
+  "new_definitions": 35,
+  "approximate_roots": [
+    "ULD_003",
+    "TOY_700t9t2"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "checks": [
+    "AST all expanded modules",
+    "Strict schemas",
+    "Metadata hashes",
+    "Full offer-list identity closure",
+    "Inventory reconciliation",
+    "Pure metadata/policy contract validation; no evaluator execution"
+  ],
+  "limitations": [
+    "139-card historical candidate list not certified exhaustive for pinned client",
+    "Heuristic scoring and category diversity are explicitly approximate",
+    "No exact client ranking guarantee",
+    "Lethal estimation lacks full Taunt trade search and special-card text understanding",
+    "New outcome effects and weapon hooks need deferred interaction review"
+  ]
+}

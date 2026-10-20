@@ -1,0 +1,30 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_004",
+    "DS1_184",
+    "EX1_154",
+    "EX1_160",
+    "EX1_278",
+    "EX1_391",
+    "NEW1_031"
+  ],
+  "candidate_fingerprint": "4838a1cb8f89110ee30f0cb07cf90c851a7f94a437ca9dc95e5dccd845783ebf",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Choice, draw/death and companion summon ordering",
+    "Exact Zephrys pool eligibility and evaluator still unresolved"
+  ]
+}

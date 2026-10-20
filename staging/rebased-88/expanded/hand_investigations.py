@@ -4,6 +4,12 @@ RULES={'JAIL_851':('none',[('investigate_hand',)]),'TIME_041':('none',[('guess_h
 DECOYS=pool(classes='own_or_neutral')
 def requests_for(cid):return {DECOYS} if cid=='TIME_041' else set()
 class HandInvestigations:
+ def _investigation_turn_finished(self,owner):
+  # Keep watches through end-of-turn plays, then discard missed rewards before
+  # the next turn starts. The commitment belongs to the player, not Holmes.
+  for p in self.players:
+   p._hand_investigations=[w for w in getattr(p,'_hand_investigations',[])
+                          if w['enemy']!=owner or w['due']>self.players[owner].turns_taken]
  def _investigation_effect(self,op,ctx):
   name=op[0];owner=ctx['owner'];enemy=self.players[1-owner]
   if name not in ('investigate_hand','guess_hand'):return False

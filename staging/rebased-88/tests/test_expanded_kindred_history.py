@@ -39,11 +39,11 @@ class KindredHistoryTests(unittest.TestCase):
         self.assertTrue(self.g._kindred('TLC_226',0))
         self.assertFalse(self.g._kindred('TLC_366',0))
 
-    def test_countered_spell_does_not_enter_school_or_play_history(self):
+    def test_countered_spell_is_played_without_entering_cast_school_history(self):
         self.q.secrets.append(Card(self.g._new_id(),'CORE_EX1_287'))
         self.play('CORE_CS2_029',-2);self.cycle()
         self.assertNotIn('FIRE',self.p.previous_schools)
-        self.assertEqual(self.p.played_history,[])
+        self.assertEqual(self.p.played_history,[{'card_id':'CORE_CS2_029','cost':4,'overload_card':False}])
 
     def test_kindred_spell_school_is_separate_from_minion_type(self):
         self.play('CORE_CS2_024',-2);self.cycle()
@@ -227,7 +227,7 @@ class KindredHistoryTests(unittest.TestCase):
         secret=self.give('FIR_778');self.play('TLC_249');self.kill('Core_CS2_200')
         view=self.g.observe(1)['players'][0]
         self.assertNotIn('hand',view)
-        self.assertEqual(view['played_history'],[{'card_id':'TLC_249','cost':1}])
+        self.assertEqual(view['played_history'],[{'card_id':'TLC_249','cost':1,'overload_card':False}])
         self.assertNotIn(secret.card_id,view['death_history'])
 
     def test_permanent_end_damage_hits_only_enemy_hero(self):

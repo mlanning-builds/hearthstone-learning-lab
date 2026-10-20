@@ -5,7 +5,7 @@ Python helpers. A clean report is not full dependency certification.
 """
 
 # Positions are part of the engine operation schema, not string heuristics.
-SINGLE = {'evolving_advance':1, 'store_highest_spell_aura':1, 'archmage_cast':1, 'cast_fixed_spell':1, 'combo_cast_fixed_spell':1, 'on_draw_shuffle':1, 'force_summon_group':1, 'bonus_summon':1, 'local_enemy_summon':1, 'local_spell_treant':1, 'local_fill_enemy_coins':1, 'add_spell_damage':1, 'at_current_end_add':1, 'add_to_player':2, 'summon_death_identity':1, 'summon_identity_buff':1, 'insert_fixed':1, 'bounce_then_summon':1, 'damage_then_summon_if_dead':2, 'fill_board_summon':1, 'summon':1, 'combo_summon':1, 'death_summon':1,
+SINGLE = {'historical_utility_archive_opponent_summon':1,'historical_utility_archive_repeat_hand':1,'historical_utility_archive_attack_group':1,'summon_opponent':1, 'evolving_advance':1, 'store_highest_spell_aura':1, 'archmage_cast':1, 'cast_fixed_spell':1, 'combo_cast_fixed_spell':1, 'on_draw_shuffle':1, 'force_summon_group':1, 'bonus_summon':1, 'local_enemy_summon':1, 'local_spell_treant':1, 'local_fill_enemy_coins':1, 'add_spell_damage':1, 'at_current_end_add':1, 'add_to_player':2, 'summon_death_identity':1, 'summon_identity_buff':1, 'insert_fixed':1, 'bounce_then_summon':1, 'damage_then_summon_if_dead':2, 'fill_board_summon':1, 'summon':1, 'combo_summon':1, 'death_summon':1,
           'raise_corpses':1, 'tomb_guardians':1, 'add':1, 'equip':1}
 GROUP = {'summon_fixed_random':1, 'death_summon_group':1, 'choose_fixed_summon':1}
 
@@ -65,12 +65,23 @@ def declaration_operations(tables):
     for name in ('RULES','TRIGGERS','START_EFFECTS'):
         for cid,value in tables.get(name,{}).items():
             declarations.setdefault(cid,[]).append(value[1])
-    for name in ('DEATH_EFFECTS','END_EFFECTS','END_EVERY_EFFECTS'):
+    for name in ('DEATH_EFFECTS','END_EFFECTS','END_EVERY_EFFECTS','WEAPON_TRIGGERS'):
         for cid,value in tables.get(name,{}).items():
             declarations.setdefault(cid,[]).append(value)
     for cid,choices in tables.get('CHOICES',{}).items():
         for label,target,operations in choices:
             declarations.setdefault(cid,[]).append(operations)
+    from .historical_identified_spell_finish import FORMS
+    for root,forms in FORMS.items():
+        if root in declarations:
+            declarations[root].append(("summon_fixed_random",forms))
+    if "DED_504" in declarations:declarations["DED_504"].append(("summon","CORE_GIL_191t",1))
+    from .historical_summon_faction_finish import LOCATION_EFFECTS as FACTION_LOCATION_EFFECTS
+    for cid,operations in FACTION_LOCATION_EFFECTS.items():
+        if cid in declarations:declarations[cid].append(operations)
+    from .historical_stormwind_questline_finish import STAGES as STORMWIND_STAGES
+    for cid,row in STORMWIND_STAGES.items():
+        if cid in declarations:declarations[cid].append(("add",row[3],1))
     # LOCATION_RULES contains target restrictions, not executable operations.
     return declarations
 
@@ -85,5 +96,12 @@ def current_dependency_report():
         stages=TIMELINES[root]
         for current,following in zip(stages,stages[1:]):
             declarations.setdefault(current,[]).append(('evolving_advance',following))
+    from .historical_spell_continuation import GIFT
+    for cid,ids in GIFT.items():
+        for outcome in ids:declarations.setdefault(cid,[]).append(("add",outcome,1))
     registry=cards.registry()
     return dependency_report(declarations,registry,roots=cards.COLLECTIBLE_IDS)
+
+SINGLE["historical_utility_continuation_gift"]=1
+
+SINGLE['open_permanent']=1

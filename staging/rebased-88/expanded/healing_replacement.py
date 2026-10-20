@@ -8,7 +8,10 @@ class HealingReplacement:
  def _ruby_heal(self,target,amount,healer):
   if healer is None or amount<=0:return False
   p=self.players[healer];frame=getattr(self,'_healing_replacement_frame',None)
-  active=frame is not None and healer in frame
+  active=self._active('EX1_591',healer) or (frame is not None and healer in frame) or getattr(p,'historical_healing_damage_turn',None)==self.turn
+  if not active and getattr(p,'historical_healing_damage_charges',0)>0:
+   p.historical_healing_damage_charges-=1;active=True
+   if frame is not None:frame.add(healer)
   if getattr(p,'ruby_until',-1)==self.turn:
    p.ruby_until=-1;active=True
    if frame is not None:frame.add(healer)

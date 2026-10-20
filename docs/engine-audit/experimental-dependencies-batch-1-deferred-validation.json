@@ -1,0 +1,27 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CFM_313",
+    "BAR_041",
+    "EX1_164",
+    "WON_014"
+  ],
+  "candidate_fingerprint": "9d55e46fbb067cf4db8b90452f2417dc4987ed5de193d2f0058ff54acc300efb",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Choose Both, resource caps and draw timing",
+    "Overload pool and combined Murloc buff semantics"
+  ]
+}

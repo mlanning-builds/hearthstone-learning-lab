@@ -1,8 +1,8 @@
 """Explicit candidate-pool contracts. No text parsing or supported-only fallback.
 
-A caller must supply reviewed membership and exclusions for its particular
-card/patch. This module cannot infer Standard Discover eligibility from class
-or collectible flags alone. Copies from a deck are not generation pools.
+Membership comes from the complete frozen Standard catalog or a separately
+reviewed exceptional contract. Eligibility is checked before executable coverage.
+Copies from a deck are not generation pools.
 """
 from dataclasses import dataclass
 from engine.cards import UnsupportedCard

@@ -1,0 +1,51 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "a5f93228a0ebba5999647fe0c5621789456521066a5affea868399fa73e45544",
+  "new_card_ids": [
+    "VAC_464",
+    "VAC_464t"
+  ],
+  "historical_written": 3190,
+  "historical_remaining": 11,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "treasure_pool_count": 28,
+  "pool_source": "Frozen CardDefs 36.6.0.251952, tag 3431=1; exact 28 identities, no implementation filtering",
+  "implemented": [
+    "Battlecry starts sidequest directly",
+    "Sidequest spell starts same objective",
+    "Duplicate active quest and shared secret-zone capacity handling",
+    "Three paid plays of cards from other hero classes; excludes neutral and own class",
+    "Completion removes objective and queues two resumable Discover offers",
+    "Reward insertion uses native hand/burn/Quel Delar forging",
+    "Public observation and feature field"
+  ],
+  "static_checks": [
+    "AST parse all expanded modules",
+    "Strict root, sidequest, treasure and hook declaration schemas",
+    "Metadata hashes updated",
+    "All eleven class historical inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact quest completion versus resolving played-card priority",
+    "Countered play progress and replayed Battlecry interactions",
+    "Duplicate reward between independent Discover offers",
+    "Shared slot limits with Storm the Gates sidequest",
+    "Generated treasure recursive closure and independent client fidelity"
+  ],
+  "files_sha256": {
+    "historical_eudora.py": "62c7ba8bae29660ca13ed53eaac27fc67f3895a995989a9ce3758b6341cebc9d",
+    "historical_utility_spells.py": "24f7289d838502b246824cc1115d3b54abd2118eed02a0978f72c107c7e4c5d3",
+    "historical_copy_batches.py": "385423fe1e88c4774b4aca02bc1445c6982f471e3e274fc31227ff17b01ba434",
+    "quests.py": "27356d751057d216139f3cef1da4a5a0212f543b7424501aa6f1e5250c529c72",
+    "quest_families.py": "faf7e7461a15467a7041f3e143f6f59787c240642fb3a332e49e59285af5b46c",
+    "game.py": "ac0aaa60727908ea5198528d6e4232c5dec75a2fdcdcdde600a1a914234999f5",
+    "features.py": "2c4b8afab3f1c859b142ee602525f281be5b303491435ed6852c71860a2c188b",
+    "effect_schema.py": "93bddbd23ffc876691f55a838a2eb77165c00fa2882ff41299cae6c017c54221",
+    "spell_casting.py": "d27e6fad976457e72f5e6d60483568175b5fea1fbec3205794a5802823565d95",
+    "historical_internal_spell_ops.py": "685d153d3acc553b48af72a08b6bb70244a4f519105497fa76c2a3c7a60e1a8b"
+  }
+}

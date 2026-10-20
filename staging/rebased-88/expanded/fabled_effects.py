@@ -3,7 +3,7 @@
 Windrunner repetitions snapshot distinct other sisters already played, then
 use ordinary effect frames so each Discover and damage wave can settle.
 """
-from .generation_cards import pool,discover
+from .generation_cards import board_pool,pool,discover
 from . import azshara
 from .selectors import has_tribe,has_school
 from engine.cards import UnsupportedCard
@@ -39,7 +39,8 @@ def requests_for(cid):
 class FabledEffects:
  def _spell_multiplier(self,owner):
   weapon=self.players[owner].weapon
-  return 2 if weapon and weapon['card_id']=='TIME_890t' else 1
+  from .historical_damage_modifiers import spell_multiplier
+  return (2 if weapon and weapon['card_id']=='TIME_890t' else 1)*spell_multiplier(self,owner)
 
  def _medivh_free(self,cid,owner):
   p=self.players[owner]
@@ -58,7 +59,7 @@ class FabledEffects:
   return True
 
  def _azure_sources(self,owner,cid):
-  dragons=[m for m in self.players[owner].minions if m.health>0 and has_tribe(self.cards[m.card_id],'DRAGON')]
+  dragons=[m for m in self.players[owner].minions if m.health>0 and has_tribe(self._card_data(m),'DRAGON')]
   return [m for m in dragons if m.card_id==cid and not m.silenced and any(other is not m for other in dragons)]
 
  def _azure_discount(self,owner,cid):
@@ -67,15 +68,16 @@ class FabledEffects:
  def _azure_repeats_spell(self,owner,cid,other_repeat=False):
   if not has_school(self.cards[cid],'ARCANE'):return False
   sources=self._azure_sources(owner,'TIME_852t1')
-  if sources and (len(sources)>1 or other_repeat):
-   raise UnsupportedCard('Malygos repetition stacking needs reviewed semantics')
+  # 'Cast twice' establishes one repeated cast, rather than an additional
+  # cast per bearer. Other twice-only providers share the same cast limit.
   return bool(sources)
 
  def _fabled_split(self,op,ctx):
   if op[0]=='fabled_resurrect_dragons':
    # Preserve death multiplicity, not distinct identities. Snapshot before
    # summons so deaths caused during this effect cannot grow its own list.
-   ids=[cid for cid in self.players[ctx['owner']].death_history if has_tribe(self.cards[cid],'DRAGON')]
+   from .death_definitions import definitions
+   ids=[value for value in definitions(self,ctx['owner']) if has_tribe(self._card_data(value),'DRAGON')]
    self.rng.shuffle(ids)
    ops=[('fabled_resurrect',cid) for cid in ids]
    return (ops[0],tuple(ops[1:])) if ops else (('batch30_noop',),())
@@ -112,13 +114,13 @@ class FabledEffects:
     self.phase='choice'
   elif op[0]=='bwonsamdi_summon':
    boons=tuple(self.players[owner].bwonsamdi_boons);cost=4+2*len(boons)
-   request=pool(card_type='MINION',minimum=cost,maximum=cost)
+   request=board_pool(pool(card_type='MINION',minimum=cost,maximum=cost))
    candidates=self._generation_candidates(request,owner)
    if candidates and len(self.players[owner].board)<7:
-    m=self._generation_place(self.rng.choice(candidates),'board',(),ctx)
-    if m is not None:m.keywords.update(BOONS[cid] for cid in boons)
+    self._summon(owner,self.rng.choice(candidates),entry_keywords=tuple(BOONS[cid] for cid in boons),entry_origin='deathrattle',entry_site='bwonsamdi',entry_source=ctx.get('source'))
   elif op[0]=='fabled_resurrect':
-   self._summon(owner,op[1],entry_origin='resurrection',entry_site='azure_oathstone',entry_source=ctx.get('physical_card'))
+   from .death_definitions import summon
+   summon(self,owner,op[1],dict(ctx,source=ctx.get('physical_card')),'azure_oathstone')
   elif op[0]=='fabled_recruit_fighter':
    cid,state=op[1:]
    if cid not in BLOOD_FIGHTERS:raise ValueError('Unknown Blood Fighter')

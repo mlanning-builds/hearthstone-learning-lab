@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "BOT_093",
+    "DMF_701",
+    "DMF_701t"
+  ],
+  "candidate_fingerprint": "f5f81f6a73af4dca04d4c0c3db3a10b41e12af3209bb2cc4afffdc7ca0c97ff9",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Draw-copy continuations, burn and fatigue",
+    "Prior completed-turn Elemental ledger and native Corrupt conversion"
+  ]
+}

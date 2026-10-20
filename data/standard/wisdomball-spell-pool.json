@@ -1,0 +1,67 @@
+{
+  "status": "staged_unvalidated",
+  "root_admitted": false,
+  "weapon_admitted": false,
+  "patch": "36.6.0.251952",
+  "spell_count": 10,
+  "spell_ids": [
+    "CS2_023",
+    "CS2_032",
+    "CS2_022",
+    "EX1_277",
+    "CS2_027",
+    "EX1_287",
+    "EX1_289",
+    "CS2_028",
+    "CS2_024",
+    "CS2_029"
+  ],
+  "source_urls": [
+    "https://hearthstonehungary.hu/card/117460/puzzlemaster-khadgar",
+    "https://www.reddit.com/r/hearthstone/comments/1avpc9b/",
+    "https://hearthstone.wiki.gg/wiki/Puzzlemaster_Khadgar"
+  ],
+  "selection_status": "Exact usefulness evaluator unknown; no guessed threshold policy installed",
+  "spells": [
+    {
+      "card_id": "CS2_023",
+      "sha256": "98af50a7c398bd448516d36f0ef2a335313aeac8e9c8f290d77e71a6555fa9c3"
+    },
+    {
+      "card_id": "CS2_032",
+      "sha256": "ebb10f531a90c30e5381c247dfd3cc816b169dbc5d8136f9eaa8a83ec482a022"
+    },
+    {
+      "card_id": "CS2_022",
+      "sha256": "9b8b012299a25e99808a49af926f100aa19a24df9fe93c64e588e9963e1a684e"
+    },
+    {
+      "card_id": "EX1_277",
+      "sha256": "d1fd1da637fe5f498a7092828f36ba196f20bd0fbf5a2635fba269b3837db405"
+    },
+    {
+      "card_id": "CS2_027",
+      "sha256": "1c0e18c3a50ecbb448b1bb888d1c25b417e1b67e719fe633f1f8b60eee818119"
+    },
+    {
+      "card_id": "EX1_287",
+      "sha256": "3a4c2fc82cde06569aead065b539c5ef9d2d06b3c059e18f54f1ba5ccb2ae0eb"
+    },
+    {
+      "card_id": "EX1_289",
+      "sha256": "3bec32631172e94267593ce35b9b1e7ac1042d3c05ecb8a612120d28b2c38bef"
+    },
+    {
+      "card_id": "CS2_028",
+      "sha256": "aff6dbfcc3ec49580dfc00e3207e03d8c20245508458b41e101eaf9fbf0df9f5"
+    },
+    {
+      "card_id": "CS2_024",
+      "sha256": "bad00dea613d494e468dd234c119e345ad644723984f65ff6d62360e6cfa8e1d"
+    },
+    {
+      "card_id": "CS2_029",
+      "sha256": "bcc19545d8db4e95fdc8c67ed79314a52dba0dd27aa9f2349d074ea03ad4332c"
+    }
+  ]
+}

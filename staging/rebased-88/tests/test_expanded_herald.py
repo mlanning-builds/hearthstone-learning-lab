@@ -39,11 +39,11 @@ class HeraldTests(unittest.TestCase):
    for n in (2,4,8):
     cid='TEST_COST_'+str(n);self.g.cards[cid]=dict(id=cid,name=cid,type='MINION',cardClass='NEUTRAL',cost=n,attack=1,health=1,mechanics=[])
     self.contract(pool(card_type='MINION',minimum=n,maximum=n),[cid])
- def test_all_fifteen_sources_remain_staged(self):
+ def test_all_fifteen_sources_are_bound_with_no_pending_herald_declarations(self):
   from expanded.pending_definitions import DEFINITIONS
   from expanded.herald import UNRESOLVED
   pending={cid for cid,d in DEFINITIONS.items() if d['family']=='herald'}
-  self.assertEqual(set(RULES)|set(UNRESOLVED),pending);self.assertFalse(set(RULES)&cards.COLLECTIBLE_IDS)
+  self.assertEqual((set(RULES)|set(UNRESOLVED))-cards.COLLECTIBLE_IDS,pending);self.assertEqual(len(set(RULES)&cards.COLLECTIBLE_IDS),15)
  def test_multiplier_has_two_thresholds_and_caps(self):
   self.assertEqual([multiplier(n) for n in range(8)],[1,1,2,2,4,4,4,4])
   for bad in (-1,True,1.5):
@@ -122,7 +122,7 @@ class HeraldTests(unittest.TestCase):
   self.prep('ROGUE');self.p.herald_count=4;self.op(('herald',))
   self.assertEqual(len(self.p.hand),1);self.assertEqual(self.p.hand[0].cost_delta,-4)
  def test_missing_generation_pool_rolls_back_play(self):
-  self.p.hero_class='ROGUE';c=Card(self.g._new_id(),'CATA_722');self.g._enter_hand(0,c);state=(self.p.mana,self.g.rng.getstate())
+  self.p.hero_class='ROGUE';self.contract(pool(card_type='SPELL',classes='other'),['MISSING_REVIEWED_OUTCOME']);c=Card(self.g._new_id(),'CATA_722');self.g._enter_hand(0,c);state=(self.p.mana,self.g.rng.getstate())
   with self.assertRaises(UnsupportedCard):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
   self.assertEqual((self.p.mana,self.g.rng.getstate()),state);self.assertEqual(self.p.herald_count,0);self.assertFalse(self.p.board)
  def test_dk_generates_exact_cost_health_payment(self):

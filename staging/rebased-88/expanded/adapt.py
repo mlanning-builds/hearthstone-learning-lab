@@ -17,14 +17,17 @@ ADAPTATIONS={
  'UNG_999t14':('stats',1,1),
 }
 PLANT='UNG_999t2t1'
-def apply_adaptation(game,minion,choice):
+def apply_adaptation(game,minion,choice,*,entry=False):
  if choice not in ADAPTATIONS:raise UnsupportedCard('Unknown Constructed Adaptation: '+str(choice))
- if minion is None or minion.health<=0 or minion.dormant:return False
+ if minion is None or minion.health<=0 or (minion.dormant and not entry):return False
  op=ADAPTATIONS[choice]
  if op[0]=='spores':
   if game.cards.get(PLANT,{}).get('type')!='MINION':raise UnsupportedCard('Missing Adapt Plant dependency')
   minion.attached_death_effects.append(('death_summon',PLANT,2))
- elif op[0]=='stats':game._buff(minion,op[1],op[2])
+ elif op[0]=='stats':
+  if entry and minion.dormant:
+   game._adjust_minion_attack(minion,op[1]);minion.health+=op[2];minion.max_health+=op[2]
+  else:game._buff(minion,op[1],op[2])
  elif op[0]=='keyword':minion.keywords.add(op[1])
  else:
   minion.temporary_keywords.append(dict(keyword='STEALTH',phase='start',turn=game.turn+(2 if minion.owner==game.current else 1)))

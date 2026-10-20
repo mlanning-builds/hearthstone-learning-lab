@@ -1,0 +1,42 @@
+{
+  "scope": "Arcanite Ripper physical health-change upgrades, Imbued Axe Infuse and Wild Spirits",
+  "new_unvalidated_bodies": 5,
+  "new_ids": [
+    "ETC_423",
+    "ETC_423t",
+    "REV_361",
+    "REV_933",
+    "REV_933t"
+  ],
+  "new_collectible_outcomes": 3,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 43,
+  "current_expansion_outcome_gap": 40,
+  "closed_outcome_ids": [
+    "ETC_423",
+    "REV_361",
+    "REV_933"
+  ],
+  "candidate_fingerprint": "82b281ecf16303d93b2622a73488b2e2b5b8aab9a5be35724d8c21beed1ae397",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Ripper actual hero health changes through damage, healing, health setting and alternate direct mutation paths",
+    "Ripper bound Lifesteal summon stats, multipliers and physical upgrade preservation",
+    "Imbued Axe surviving damaged minions after hero attacks, Infuse held state and replay identity",
+    "Wild Spirits two-distinct sample, summon multiplier and board space, Dormant reduction and awakening ordering",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

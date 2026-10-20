@@ -1,0 +1,40 @@
+{
+  "status": "staged_pipeline_unvalidated",
+  "candidate_fingerprint": "654c102f6c5cc15146fb4dc5c1dc63132a8dd1bdce87d70f230cb9463053877f",
+  "new_admitted_card_ids": [
+    "EX1_287",
+    "EX1_289"
+  ],
+  "staged_card_ids": [
+    "TOY_373",
+    "TOY_373t"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "full_spell_pool_count": 10,
+  "unwritten_spell_identities": [],
+  "implemented": [
+    "End-controller-turn physical weapon trigger",
+    "Full ten-spell preflight without coverage trimming",
+    "Sourced evaluator outcome validation",
+    "Enemy-only legal selected targets",
+    "Native internal casting with selected target",
+    "Post-cast durability loss and weapon break, keyed to original physical weapon identity"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Strict staged/root/spell declaration schemas",
+    "Full ten-spell identity closure",
+    "Metadata hashes and all-eleven-class inventories"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Exact usefulness evaluator, targeting distribution and no-useful-spell behavior unresolved",
+    "End-turn priority, spell interruptions, destruction/replacement of weapon during cast",
+    "All ten spell runtime behaviors and recursive dependencies"
+  ]
+}

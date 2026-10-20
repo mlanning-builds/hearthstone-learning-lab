@@ -1,0 +1,45 @@
+{
+  "status": "partial_implementation_unvalidated",
+  "card": "GDB_854",
+  "root_registered": false,
+  "written_minions": 3183,
+  "unwritten_minions": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "candidate_fingerprint": "eceafff77395f4a337a151d8051b84de72f8dd03be4875987f1fc187d628e9bf",
+  "written": [
+    "Physical two-branch Choose One payload with strict declaration validation and deep copy on installation",
+    "Legal actions select physical branches and intersect target restrictions for Choose Both",
+    "Selected operations execute with original physical card context and captured Battlecry program",
+    "Owner hand observation exposes physical branch labels",
+    "Shared static card definitions remain unchanged",
+    "Owner-start ordered hand triggers keyed to physical card UID",
+    "Recheck hand zone and card identity when each trigger resolves",
+    "Replace previous choices atomically after checking two explicit branches, distinct source identities and at most one targeted branch",
+    "Missing complete pool/pair provider raises explicitly; no fallback sampling",
+    "Frozen Standard observation reconciles 21 CHOOSE_ONE parents and 42 declared branches without certifying eligibility"
+  ],
+  "remaining": [
+    "Establish complete frozen format-eligible choice pool, excluded branches, choice-card text and pair-selection distribution",
+    "Install complete production provider and register Uluu root only after pool and source-context review",
+    "Review weapon/Fabled source adaptation, pair duplicate policy, target/corpse requirements, Silence, copying and repetitions"
+  ],
+  "checks": [
+    "AST syntax parsing of all expanded modules",
+    "Static inventory reconciliation across all eleven classes",
+    "Strict staged refresh opcode schema",
+    "Strict declaration schemas for all 42 observed Standard branches",
+    "Frozen metadata hashes for all 21 observed parents"
+  ],
+  "not_run": [
+    "regression suites",
+    "gameplay",
+    "simulation",
+    "training",
+    "benchmarks"
+  ],
+  "research_sources": [
+    "https://hearthstone.wiki.gg/wiki/Uluu%2C_the_Everdrifter",
+    "https://hearthstone.blizzard.com/en-us/news/24163459/31-2-patch-notes"
+  ]
+}

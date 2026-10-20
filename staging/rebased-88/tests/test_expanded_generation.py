@@ -1,3 +1,4 @@
+from unittest.mock import patch
 """Generation contracts, choice privacy, physical cards, and fail-closed staging."""
 import copy
 import json
@@ -16,7 +17,10 @@ from standard.catalog import load_catalog
 
 class GenerationTests(unittest.TestCase):
     def game(self):
-        g = Game([random_deck('MAGE', 1), random_deck('HUNTER', 2)], seed=97)
+        # General effect fixtures must not inherit random opening-deck effects.
+        from test_expanded_passive_admission import PassiveAdmissionTests
+        helper=PassiveAdmissionTests()
+        g = Game([helper.deck('MAGE','CORE_CS2_029'),helper.deck('HUNTER','CORE_EX1_162')], seed=97)
         g.step(Action('mulligan')); g.step(Action('mulligan'))
         g.current = 0
         for p in g.players:
@@ -35,9 +39,9 @@ class GenerationTests(unittest.TestCase):
         g._start_play_effects(ops, ctx)
         g._settle(allow_event_choices=True)
 
-    def test_sixty_unregistered_recipes(self):
+    def test_sixty_reviewed_recipes_bound_without_bypassing_pool_preflight(self):
         self.assertEqual(len(RULES), 60)
-        self.assertFalse(set(RULES) & COLLECTIBLE_IDS)
+        self.assertTrue(set(RULES)<=COLLECTIBLE_IDS)
         self.assertTrue(all(requests_for(cid) for cid in RULES))
 
     def test_every_record_is_in_pinned_standard(self):
@@ -46,8 +50,8 @@ class GenerationTests(unittest.TestCase):
         self.assertTrue(all(records[cid]['collectible'] for cid in RULES))
 
     def test_missing_contract_preserves_rng_and_zones(self):
-        g=self.game(); before=g.rng.getstate(); hand=copy.deepcopy(g.players[0].hand)
-        with self.assertRaisesRegex(UnsupportedCard, 'no reviewed'):
+        g=self.game(); del g.cards['CORE_CS2_029']; before=g.rng.getstate(); hand=copy.deepcopy(g.players[0].hand)
+        with self.assertRaisesRegex(UnsupportedCard, 'eligible effects not implemented'):
             self.run_ops(g, [random_cards(pool())])
         self.assertEqual(g.rng.getstate(), before);self.assertEqual(g.players[0].hand, hand)
 
@@ -63,7 +67,7 @@ class GenerationTests(unittest.TestCase):
         self.assertFalse(g.players[0].hand)
 
     def test_zero_count_still_requires_closure(self):
-        g=self.game()
+        g=self.game(); del g.cards['CORE_CS2_029']
         with self.assertRaises(UnsupportedCard):self.run_ops(g,[random_cards(pool(),0)])
 
     def test_negative_count_rejected(self):
@@ -192,7 +196,8 @@ class GenerationTests(unittest.TestCase):
 
     def test_class_context_contract_is_not_reused_after_class_change(self):
         g=self.game();r=pool();self.install(g,r,['TOKEN_COIN']);g.players[0].hero_class='HUNTER'
-        with self.assertRaises(UnsupportedCard):self.run_ops(g,[random_cards(r)])
+        with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+            with self.assertRaises(UnsupportedCard):self.run_ops(g,[random_cards(r)])
 
     def test_conditional_no_dragon_does_not_generate(self):
         g=self.game();self.run_ops(g,RULES['CORE_KAR_062'][1]);self.assertIsNone(g.pending_choice)
@@ -225,17 +230,22 @@ class GenerationTests(unittest.TestCase):
 
     def test_preflight_includes_death_effects(self):
         g=self.game()
-        with self.assertRaises(UnsupportedCard):g._generation_preflight('MEND_045',0)
+        with patch('expanded.generation_families.reviewed_contract',return_value=None),patch('expanded.generation_catalog.standard_contract',return_value=None):
+            with self.assertRaises(UnsupportedCard):g._generation_preflight('MEND_045',0)
 
     def test_webspinner_dependency_request_included(self):
         self.assertEqual(requests_for('CORE_AT_062'),{pool(card_type='MINION',tribe='BEAST')})
 
     def test_report_is_conservative_and_does_not_change_coverage(self):
         report=build_report(load_catalog(),COLLECTIBLE_IDS)
-        self.assertEqual(report['staged_cards'],60);self.assertEqual(report['newly_playable_cards'],0)
-        self.assertEqual(report['playable_catalog_cards'],len(COLLECTIBLE_IDS));self.assertFalse(report['membership_reviewed'])
-        self.assertTrue(report['blockers_by_affected_generators'])
-        self.assertTrue(all(not c['membership_reviewed'] for row in report['cards'] for c in row['pool_contexts']))
+        self.assertEqual(report['reviewed_cards'],60)
+        self.assertEqual(report['staged_cards'],0);self.assertEqual(report['registered_recipe_cards'],60)
+        self.assertEqual(report['registered_catalog_cards'],len(COLLECTIBLE_IDS));self.assertFalse(report['membership_reviewed'])
+        self.assertFalse(report['blockers_by_affected_generators'])
+        missing=build_report(load_catalog(),COLLECTIBLE_IDS-{'CORE_CS2_029'})
+        self.assertTrue(missing['blockers_by_affected_generators'])
+        for row in report['cards']:
+            self.assertTrue(all(c['membership_reviewed']==(row['card_id']=='EDR_999') for c in row['pool_contexts']))
 
     def test_audit_written_status_matches_index(self):
         root=Path(__file__).resolve().parents[1]

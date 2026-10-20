@@ -29,9 +29,9 @@ class ImbueConsumerTests(unittest.TestCase):
  def cycle(self):self.g.step(Action('end'));self.g.step(Action('end'))
  def start_hamuul(self,deck):
   self.p.starting_deck=deck;self.p.imbue_start_checked=False;self.g._imbue_start_game(0)
- def test_all_nineteen_declared_and_staged(self):
+ def test_all_nineteen_imbue_consumers_are_bound(self):
   from expanded.pending_definitions import DEFINITIONS
-  self.assertEqual(set(RULES),{cid for cid,d in DEFINITIONS.items() if d['family']=='imbue'});self.assertEqual(len(RULES),19);self.assertFalse(set(RULES)&cards.COLLECTIBLE_IDS)
+  self.assertEqual(set(RULES)-cards.COLLECTIBLE_IDS,{cid for cid,d in DEFINITIONS.items() if d['family']=='imbue'});self.assertEqual(len(RULES),19);self.assertEqual(set(RULES)-cards.COLLECTIBLE_IDS,set())
  def test_all_simple_battlecries_imbue_once(self):
   for cid in ('EDR_449','EDR_451','EDR_800','EDR_852','END_001'):
    with self.subTest(cid=cid):
@@ -50,6 +50,7 @@ class ImbueConsumerTests(unittest.TestCase):
  def test_aegis_summon_taunt_before_imbue(self):
   self.install(TWO,['CORE_EX1_012']);self.play('EDR_264');self.assertIn('TAUNT',self.p.minions[0].keywords);self.assertEqual(self.p.imbue_count,1)
  def test_aegis_missing_pool_rolls_back_play(self):
+  self.install(TWO,['MISSING_REVIEWED_OUTCOME'])
   with self.assertRaises(UnsupportedCard):self.play('EDR_264')
   self.assertEqual(self.p.imbue_count,0);self.assertEqual(self.p.mana,10)
  def test_aegis_full_board_still_imbues(self):
@@ -67,8 +68,10 @@ class ImbueConsumerTests(unittest.TestCase):
   self.p.power_used=True;self.play('EDR_519');self.assertEqual(self.q.health,29);self.assertTrue(self.p.power_used)
  def test_wisprider_imbues_before_free_trigger(self):
   self.g._imbue(0,2);self.play('EDR_519');self.assertEqual(self.p.imbue_count,3);self.assertEqual(self.q.health,27)
- def test_unconnected_wisprider_power_fails_without_payment(self):
+ def test_incomplete_wisprider_power_pool_fails_without_payment(self):
   self.p.hero_class='PRIEST'
+  from expanded.generation_cards import pool
+  self.install(pool(card_type='MINION',classes='PRIEST'),['MISSING_REVIEWED_OUTCOME'])
   with self.assertRaises(UnsupportedCard):self.play('EDR_519')
   self.assertEqual(self.p.mana,10);self.assertEqual(self.p.imbue_count,0)
  def test_dreamweaver_no_target_below_two(self):
@@ -83,9 +86,9 @@ class ImbueConsumerTests(unittest.TestCase):
   self.play('END_000',-2);self.assertEqual(self.q.health,28);self.assertEqual(self.p.imbue_count,1)
  def test_picker_threshold(self):
   self.play('FIR_921');self.assertFalse(self.p.hand);self.g._imbue(0,2);self.play('FIR_921');self.assertEqual(len(self.p.hand),2)
- def test_malorne_requires_explicit_wild_pool(self):
-  with self.assertRaises(UnsupportedCard):self.play('EDR_888')
-  self.assertEqual(self.p.mana,10)
+ def test_malorne_uses_complete_production_wild_pool(self):
+  self.assertEqual(set(self.g._generation_candidates(WILD_POOL,0)),WILD_GODS)
+  self.play('EDR_888');self.assertEqual(len(self.g.pending_choice['options']),3)
  def test_malorne_four_imbues_sets_cost_one(self):
   self.install(WILD_POOL,['EDR_895']);self.g._imbue(0,4);self.play('EDR_888');self.choose();self.assertEqual(self.g._cost(self.p.hand[0],0),1)
  def test_malorne_below_four_retains_cost(self):

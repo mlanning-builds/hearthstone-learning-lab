@@ -84,7 +84,7 @@ class DiscoverHistoryTests(unittest.TestCase):
         self.assertTrue(all('card' not in e for e in events))
         own=g.observe(0,include_events=False)
         rows=encode_decision(dict(actor=0,observation=own,actions=own['legal_actions']))
-        self.assertTrue(any('discoveries_this_turn' in key for key in rows[0]));self.assertEqual(SCHEMA,'visible-action-features-v58')
+        self.assertTrue(any('discoveries_this_turn' in key for key in rows[0]));self.assertEqual(SCHEMA,'visible-action-features-v62')
     def test_tracking_play_lifecycle_counts_once(self):
         g=self.game();card=g._enter_hand(0,Card(g._new_id(),'CORE_DS1_184'))
         g.step(next(a for a in g.legal_actions() if a.kind=='play' and a.source==card.uid))

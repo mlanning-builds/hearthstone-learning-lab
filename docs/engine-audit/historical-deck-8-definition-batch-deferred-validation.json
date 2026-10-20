@@ -1,0 +1,84 @@
+{
+  "fingerprint": "99562ab95be76b53deed016df03d8e2a97319218318f6b93bfda9eaf4694da51",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 8,
+  "new_historical_spell_roots": 8,
+  "new_tokens_and_alternate_forms": 0,
+  "registry_records": 8131,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1363,
+    "remaining": 79
+  },
+  "new_implementations": [
+    {
+      "id": "DMF_075",
+      "name": "Guess the Weight",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_451",
+      "name": "Triangulate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_031",
+      "name": "Smokescreen",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_405",
+      "name": "Sketchy Information",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_440",
+      "name": "Call of the Grave",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_339",
+      "name": "Master's Call",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_016",
+      "name": "Shroud of Concealment",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_070",
+      "name": "Soul Searching",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8131,
+    "edges": 820,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "79 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

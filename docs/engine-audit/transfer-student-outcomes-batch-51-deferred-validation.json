@@ -1,0 +1,40 @@
+{
+  "scope": "Repackage and physically bound Repackaged Box contents",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "TOY_879",
+    "TOY_879t"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 10,
+  "current_expansion_outcome_gap": 9,
+  "closed_outcome_ids": [
+    "TOY_879"
+  ],
+  "candidate_fingerprint": "2272dc644afd4a88c743bf91ad89fc5015577849f82d398d911de28d92667e78",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Captured minion ordering, all-Dormant/Immune/untouchable semantics and board removal listeners",
+    "Box fresh replay definitions versus battlefield enchantments, nested stored cards and constructed payloads",
+    "Shuffle/deck capacity, Box copy/replay payload, transformation clearing and bare unbound Box rejection",
+    "Opening Box repeated spell effects, hand overflow, entry triggers and opponent-private payload exposure",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

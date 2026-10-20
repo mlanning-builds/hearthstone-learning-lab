@@ -48,7 +48,8 @@ def requests_for(cid):
 
 def validate_past_candidates(ids,metadata):
     from standard.catalog import load_catalog
-    def canonical(d):return d.get('countAsCopyOfDbfId',d.get('dbfId',d['id']))
+    from .identities import identity_resolver
+    canonical=identity_resolver(metadata)
     standard={canonical(d) for d in load_catalog()}
     invalid=[cid for cid in ids if not metadata[cid].get('collectible')
              or metadata[cid].get('set') not in PAST_SETS

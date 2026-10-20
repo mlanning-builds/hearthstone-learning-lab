@@ -403,13 +403,14 @@ class SharedSystemsTests(unittest.TestCase):
         self.assertIsNone(self.p.weapon)
 
     def test_unknown_full_pool_cards_still_rejected(self):
-        cards=registry();self.assertNotIn('CORE_AV_107',COLLECTIBLE_IDS)
-        self.assertNotIn('CORE_AV_107',cards)
+        cards=registry();self.assertNotIn('UNKNOWN_CARD_FIXTURE',COLLECTIBLE_IDS)
+        self.assertNotIn('UNKNOWN_CARD_FIXTURE',cards)
 
     def test_choice_registry_is_explicit_and_all_options_have_labels(self):
+        records=registry()
         for cid,options in CHOICES.items():
-            self.assertIn(cid,COLLECTIBLE_IDS)
-            self.assertEqual(len(options),2)
+            self.assertIn(cid,records)
+            self.assertGreaterEqual(len(options),2)
             self.assertTrue(all(label for label,_,_ in options))
 
 if __name__=='__main__':

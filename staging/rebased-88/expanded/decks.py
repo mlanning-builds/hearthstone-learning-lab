@@ -3,6 +3,7 @@ from collections import Counter
 from dataclasses import dataclass
 import random
 from standard.catalog import CLASSES
+from .identities import canonical_identity,identity_resolver
 from .cards import COLLECTIBLE_IDS, registry, RULES, PASSIVE, PLAYABLE_TOKENS
 from .selectors import has_class
 from .fabled_decks import expand_bundle_ids,deck_size,companion_ids
@@ -16,6 +17,8 @@ class Deck:
     runes: tuple = (0,0,0)
     beatrix_minion: str = None
     contraband_beasts: tuple = ()
+    etc_band: tuple = ()
+    zilliax_modules: tuple = ()
 
 
 def eligible(card, hero_class, runes):
@@ -30,6 +33,8 @@ def validate(deck, cards=None):
     if sum(deck.runes)!=(3 if deck.hero_class=='DEATHKNIGHT' else 0): errors.append('Death Knight uses three runes; other classes use zero.')
     try:expanded=expand_bundle_ids(deck.cards)
     except ValueError as exc:return [str(exc)]
+    from .historical_zilliax import selection_errors
+    errors.extend(selection_errors(deck,expanded))
     expected=deck_size(expanded);companions=companion_ids(expanded)
     if len(expanded)!=expected:errors.append(f'Deck requires exactly {expected} cards including Fabled companions; got {len(expanded)}.')
     selected=deck.beatrix_minion
@@ -49,15 +54,31 @@ def validate(deck, cards=None):
     elif deck.contraband_beasts:errors.append('Contraband selections require King of the Underbelly.')
     if 'JAIL_430' in expanded and any(cid in expanded for cid in ('TIME_005','REV_018')):
         errors.append('Azalina cannot share a submitted deck with a conflicting deck-size modifier.')
-    counts=Counter(); limits={}
+    from .historical_etc import EXCLUDED
+    band=getattr(deck,'etc_band',())
+    if not isinstance(band,tuple) or len(band)>3:
+        errors.append('E.T.C. band must be a tuple of at most three cards.')
+        band=()
+    if band and 'ETC_080' not in expanded:errors.append('Band requires E.T.C. in the submitted deck.')
+    for cid in band:
+        c=cards.get(cid,{})
+        if not c.get('collectible') or cid not in cards:
+            errors.append('Band member is not an implemented collectible: '+str(cid))
+        elif not eligible(c,deck.hero_class,deck.runes):errors.append('Band class or rune mismatch: '+cid)
+        if cid in EXCLUDED or 'START_OF_GAME' in c.get('mechanics',()):errors.append('Card cannot join E.T.C. band: '+str(cid))
+    counts=Counter(); limits={}; identity=identity_resolver(cards)
     for cid in expanded:
         executable_token=cid in companions and (cid in RULES or cid in PASSIVE or cid in PLAYABLE_TOKENS)
         if (cid not in COLLECTIBLE_IDS and not executable_token) or cid not in cards:
             errors.append('Effect not implemented: '+str(cid)); continue
         c=cards[cid]
         if not eligible(c,deck.hero_class,deck.runes): errors.append('Class or rune mismatch: '+cid)
-        canonical=c.get('countAsCopyOfDbfId',c.get('dbfId',cid))
+        canonical=identity(c)
         counts[canonical]+=1
+        limits[canonical]=min(limits.get(canonical,2),1 if c.get('rarity')=='LEGENDARY' else 2)
+    for cid in band:
+        if cid not in cards:continue
+        c=cards[cid];canonical=identity(c);counts[canonical]+=1
         limits[canonical]=min(limits.get(canonical,2),1 if c.get('rarity')=='LEGENDARY' else 2)
     errors.extend('Copy limit exceeded: '+str(key) for key,count in counts.items() if count>limits[key])
     return errors
@@ -69,11 +90,11 @@ def random_deck(hero_class, seed, runes=None):
     cards=registry(); probe=Deck(hero_class,(),tuple(runes))
     if len(runes)!=3 or any(type(v) is not int or v<0 for v in runes) or sum(runes)!=(3 if hero_class=='DEATHKNIGHT' else 0):
         raise ValueError('Invalid runes for class')
-    groups={}
+    groups={}; identity=identity_resolver(cards)
     for cid in sorted(COLLECTIBLE_IDS):
         c=cards[cid]
         if eligible(c,hero_class,runes):
-            groups.setdefault(c.get('countAsCopyOfDbfId',c['dbfId']),c)
+            groups.setdefault(identity(c),c)
     slots=[c['id'] for c in groups.values() for _ in range(1 if c.get('rarity')=='LEGENDARY' else 2)]
     if len(slots)<30: raise ValueError('Not enough implemented cards for this class/rune profile')
     from .fabled_decks import BUNDLES, sample_bundle_slots
@@ -83,7 +104,14 @@ def random_deck(hero_class, seed, runes=None):
         choices=sorted(c['id'] for c in groups.values() if c.get('type')=='MINION' and c.get('cost')==2)
         if not choices:raise ValueError('No implemented legal Beatrix selection')
         selection=random.Random(seed).choice(choices)
-    deck=Deck(hero_class,tuple(sorted(expand_bundle_ids(chosen))),tuple(runes),beatrix_minion=selection)
+    contraband=()
+    if 'JAIL_831' in chosen:
+        from .selectors import has_tribe,classes
+        beasts=sorted(cid for cid in COLLECTIBLE_IDS if cards[cid].get('type')=='MINION'
+                      and has_tribe(cards[cid],'BEAST') and not classes(cards[cid])&{'NEUTRAL',hero_class})
+        if len(beasts)<3:raise ValueError('Not enough implemented off-class contraband Beasts')
+        contraband=tuple(random.Random(seed).sample(beasts,3))
+    deck=Deck(hero_class,tuple(sorted(expand_bundle_ids(chosen))),tuple(runes),beatrix_minion=selection,contraband_beasts=contraband)
     errors=validate(deck,cards)
     if errors: raise ValueError('; '.join(errors))
     return deck

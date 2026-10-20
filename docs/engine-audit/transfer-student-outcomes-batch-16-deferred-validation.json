@@ -1,0 +1,56 @@
+{
+  "scope": "Physical draw, recruitment, mana and deck spell outcomes",
+  "new_unvalidated_bodies": 12,
+  "new_ids": [
+    "DEEP_028",
+    "DEEP_028t",
+    "DEEP_031",
+    "MAW_015",
+    "MIS_301",
+    "MIS_301t",
+    "MIS_902",
+    "TOY_352",
+    "TOY_510",
+    "TOY_602",
+    "TSC_079",
+    "WW_053"
+  ],
+  "new_collectible_outcomes": 10,
+  "new_required_minion_bodies": 2,
+  "prior_expansion_outcome_gap": 177,
+  "current_expansion_outcome_gap": 167,
+  "closed_outcome_ids": [
+    "DEEP_028",
+    "DEEP_031",
+    "MAW_015",
+    "MIS_301",
+    "MIS_902",
+    "TOY_352",
+    "TOY_510",
+    "TOY_602",
+    "TSC_079",
+    "WW_053"
+  ],
+  "candidate_fingerprint": "dd51a1351c4d0f70a982acfe4b7c6a8fa5e26b54344c6769831d2ce8cc5bed8f",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Draw and overdraw-dependent follow-ups, tribal identity and recruit trigger checkpoints",
+    "Bottom-deck scans, physical draw identities, shuffle timing and deck destruction notifications",
+    "Empty mana capacity, summon multipliers, armor spending and discount consumption",
+    "Opponent paid-card history includes counters; Tram Heist chronology requires review",
+    "All new behavior and recursive generated closure remain unvalidated"
+  ]
+}

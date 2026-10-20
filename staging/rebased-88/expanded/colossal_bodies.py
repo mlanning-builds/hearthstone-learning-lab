@@ -74,8 +74,7 @@ class ColossalBodies:
         values=classes(self.cards[cid])
         if self.cards[cid]['type']!='SPELL' or self.players[owner].hero_class in values or not (values & HERO_CLASSES):return False
         sources=[m for m in self.players[owner].minions if m.card_id=='CATA_154' and m.health>0 and not m.silenced]
-        if sources and (len(sources)>1 or other_repeat):
-            raise UnsupportedCard('Sinestra repetition stacking needs reviewed semantics')
+        # Multiple 'cast twice' sources still impose the same two-cast limit.
         return bool(sources)
 
     def _colossal_healed(self,owner,restored):
@@ -107,13 +106,25 @@ class ColossalBodies:
         if targets:self._heal(self.rng.choice(targets),op[1],healer=owner)
         return True
 
-    def _hero_attack_limit(self,owner):
+    def _hero_base_attack_limit(self,owner):
         weapon=self.players[owner].weapon
         keywords=set(self.cards[weapon['card_id']].get('mechanics',[])) if weapon else set()
+        if weapon:keywords.update(weapon.get('historical_keywords',()))
         if 'MEGA_WINDFURY' in keywords:return 4
-        if 'WINDFURY' in keywords:return 2
+        if self.current==owner and self._active('DMF_708',owner):return 2
+        if 'WINDFURY' in keywords or getattr(self.players[owner],'historical_hero_windfury_turn',None)==self.turn:return 2
         return 2 if any(m.card_id=='CATA_151' and m.health>0 and not m.silenced
                         for m in self.players[owner].minions) else 1
+
+    def _hero_attack_limit(self,owner):
+        state=getattr(self.players[owner],'historical_multistrike',{})
+        extra=state.get('grants',0) if state.get('turn')==self.turn else 0
+        return self._hero_base_attack_limit(owner)+extra
+
+    def _hero_can_attack_face(self,owner):
+        p=self.players[owner];state=getattr(p,'historical_multistrike',{})
+        credit=min(state.get('grants',0),state.get('minion_attacks',0)) if state.get('turn')==self.turn else 0
+        return p.hero_attacks-credit<self._hero_base_attack_limit(owner)
 
     def _colossal_body_split(self,op,ctx):
         owner=ctx['owner'];p=self.players[owner]

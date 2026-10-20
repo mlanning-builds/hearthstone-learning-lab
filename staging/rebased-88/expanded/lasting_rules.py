@@ -28,6 +28,8 @@ class LastingRules:
                         for m in self.players[owner].minions)
         actual=amount*(2**multipliers)
         self.players[owner].corpses+=actual
+        from .historical_held_upgrades import progress as held_spellstone_progress
+        held_spellstone_progress(self,owner,'spinel',actual)
         return actual
 
     def _lasting_checkpoint(self):
@@ -55,6 +57,7 @@ class LastingRules:
             removed=p.deck.pop(index)
             if index!=selected['index']:
                 self._log('deck_card_destroyed',player=owner,card=self._card_data(removed)['id'])
+                self._zone_card_removed(owner,removed,'deck','destroy')
         if not isinstance(card,Card):card=Card(self._new_id(),card)
         card.cost_delta=getattr(card,'cost_delta',0)-3
         self._discovery_result=self._enter_hand(owner,card)
@@ -90,3 +93,6 @@ class LastingRules:
         elif name=='lasting_awaken':self._awaken(self._dormant_entity(op[1]))
         else:return False
         return True
+
+# Historical printing retains the same explicit Corpse-spender identity.
+CORPSE_SPENDERS=CORPSE_SPENDERS|{'RLK_506'}

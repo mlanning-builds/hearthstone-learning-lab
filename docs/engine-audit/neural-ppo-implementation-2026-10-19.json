@@ -1,0 +1,127 @@
+{
+  "schema": "neural-implementation-checks-v1",
+  "date": "2026-10-19",
+  "training_started_by_implementation": false,
+  "optimizer_updates_executed": 0,
+  "live_game_actions_executed": 0,
+  "github_actions": false,
+  "compatibility": {
+    "engine": "1835ac39c646097302be3043ff3c11885ec629f8c3ec3933e61b08f14a160a56",
+    "neural_code": "4a463aff26263a9b78300c34339a59aaf64416a8c9c94f4c449543f45de90aad",
+    "encoder_schema": "visible-entity-transformer-v1",
+    "encoder": {
+      "buckets": 32768,
+      "history_events": 64,
+      "max_state_tokens": 768,
+      "max_fields_per_token": 8192
+    },
+    "model": {
+      "buckets": 32768,
+      "width": 128,
+      "heads": 4,
+      "layers": 3,
+      "feedforward": 384
+    },
+    "decks_sha256": "03caff30a31e89b5bcb6c87126f3e0189dccd8c4beb28d0ec4503da16f83814a",
+    "torch": "2.8.0",
+    "python": "3.9.6"
+  },
+  "preflight": {
+    "event": "preflight_passed",
+    "training_started": false,
+    "decks": [
+      {
+        "id": "cannoneer-dragon-warrior",
+        "hero_class": "WARRIOR",
+        "cards": 30
+      },
+      {
+        "id": "bite-attack-druid",
+        "hero_class": "DRUID",
+        "cards": 30
+      },
+      {
+        "id": "thalena-egg-death-knight-4",
+        "hero_class": "DEATHKNIGHT",
+        "cards": 30
+      },
+      {
+        "id": "stealth-herald-rogue",
+        "hero_class": "ROGUE",
+        "cards": 30
+      }
+    ],
+    "parameters": 4757122,
+    "device": "cpu",
+    "model": {
+      "buckets": 32768,
+      "width": 128,
+      "heads": 4,
+      "layers": 3,
+      "feedforward": 384
+    },
+    "ppo": {
+      "learning_rate": 0.0003,
+      "gamma": 1.0,
+      "gae_lambda": 0.95,
+      "clip": 0.2,
+      "value_weight": 0.5,
+      "entropy_weight": 0.01,
+      "max_grad_norm": 0.5,
+      "epochs": 4,
+      "minibatch": 16,
+      "target_kl": 0.02
+    },
+    "compatibility": {
+      "engine": "1835ac39c646097302be3043ff3c11885ec629f8c3ec3933e61b08f14a160a56",
+      "neural_code": "4a463aff26263a9b78300c34339a59aaf64416a8c9c94f4c449543f45de90aad",
+      "encoder_schema": "visible-entity-transformer-v1",
+      "encoder": {
+        "buckets": 32768,
+        "history_events": 64,
+        "max_state_tokens": 768,
+        "max_fields_per_token": 8192
+      },
+      "model": {
+        "buckets": 32768,
+        "width": 128,
+        "heads": 4,
+        "layers": 3,
+        "feedforward": 384
+      },
+      "decks_sha256": "03caff30a31e89b5bcb6c87126f3e0189dccd8c4beb28d0ec4503da16f83814a",
+      "torch": "2.8.0",
+      "python": "3.9.6"
+    }
+  },
+  "checks": {
+    "neural_nontraining_fixtures": 19,
+    "supporting_nontraining_checks": 75,
+    "ruff": "passed",
+    "staged_facade_mypy": "passed (3 files)",
+    "notebook_schema": "passed",
+    "notebook_code_ast": "passed",
+    "notebook_cells_executed": 0,
+    "opening_position_forward_checks": 4,
+    "pip_check": "passed"
+  },
+  "unvalidated": [
+    "End-to-end training",
+    "Learning curves and playing strength",
+    "Accelerator paths",
+    "Cross-platform reproducibility"
+  ],
+  "files": {
+    "hearthstone_sim/neural/__init__.py": "95aef5534eb2646ed8a4d6b55472c76268a8c16198e6656a8bca4a8ed9321744",
+    "hearthstone_sim/neural/checkpoints.py": "e77a41ca0851bd943b7e716d40d16792585315d5212d6bfe606fed18a361d735",
+    "hearthstone_sim/neural/decks.py": "40b946e920cdce3d78ffeedd938abbeafa1e2dd0960e65250be93cea10a5e5af",
+    "hearthstone_sim/neural/encoding.py": "847e1aac749c13d81b3bd1e913625b86220e079c53ca8af2828b6dec9b221908",
+    "hearthstone_sim/neural/model.py": "d3220c0709d728a3b1e65d7a3a20b3c7cfa4b51ff7f07848b55193f73819ae7d",
+    "hearthstone_sim/neural/ppo.py": "84bcd1a476a19b109a09c7551258a3e13c27623bafeef356b5c1e636fa728d5e",
+    "hearthstone_sim/neural/runner.py": "94918b5fb3686c38fdaaaed512f30d1b0500b1129d3d9f30c98f405ac75ffecb",
+    "tools/train_neural.py": "f4c69131a837a0c2a13acb591ad66ac386a9b41b21f7ffd7a5933ac0435e42a9",
+    "notebooks/15_transformer_ppo.ipynb": "d4a3c4690d68a1ffd758fc5f5d06f0172f4572fd7c1b6c123c797632ebcbcd8a",
+    "configs/neural_competitive_decks.json": "03caff30a31e89b5bcb6c87126f3e0189dccd8c4beb28d0ec4503da16f83814a",
+    "tests/test_neural_ppo.py": "5488d09c90742516c8dff2789463c09132d32f0eedbd508740f012900632860b"
+  }
+}

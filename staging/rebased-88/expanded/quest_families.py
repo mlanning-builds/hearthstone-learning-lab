@@ -49,20 +49,40 @@ DEATH_EFFECTS={cid:[('soletos_damage',)] for cid in (HALVES[1],COMBINED)}
 
 DEATH_EFFECTS['END_017t']=[('endtime_empty',)]
 
+def maximum_tribe_matching(plays):
+    """Match each played minion to at most one distinct printed type."""
+    matched = {}
+    def assign(index, visited):
+        for tribe in sorted(plays[index]):
+            if tribe in visited:
+                continue
+            visited.add(tribe)
+            previous = matched.get(tribe)
+            if previous is None or assign(previous, visited):
+                matched[tribe] = index
+                return True
+        return False
+    for index in range(len(plays)):
+        assign(index, set())
+    return sorted(matched)
+
 class QuestFamilies:
  def _quest_family_card_played(self,owner,card):
   q=self.players[owner].quest;d=self._card_data(card)
-  if q and q.get('mountain'):
-   unused=sorted(effective_tribes(d)-set(q['seen']))
-   if unused:
-    q['seen'].append(self.rng.choice(unused));q['progress']=len(q['seen']);self._quest_deliver_ready(owner)
+  if q and q.get('mountain') and d.get('type')=='MINION':
+   tribes=tuple(sorted(effective_tribes(d)))
+   if tribes:
+    q.setdefault('played_types',[]).append(tribes)
+    q['seen']=maximum_tribe_matching(q['played_types'])
+    q['progress']=min(q['total'],len(q['seen']));self._quest_deliver_ready(owner)
   if not q or not q.get('foodchain') or d.get('type')!='MINION' or not has_tribe(d,'BEAST'):return
   attack=d.get('attack',0)+card.attack_bonus
   if attack in (1,3,5,7) and attack not in q['seen']:
-   q['seen'].append(attack);q['progress']=len(q['seen']);self._quest_deliver_ready(owner)
+   q['seen'].append(attack);q['progress']=min(q['total'],len(q['seen']));self._quest_deliver_ready(owner)
 
  def _ashalon_play(self,owner,minion):
-  for choice in self.players[owner].ashalon_adaptations:apply_adaptation(self,minion,choice)
+  grants=self.players[owner].ashalon_adaptations
+  for choice in grants:apply_adaptation(self,minion,choice,entry=True)
 
  def _quest_family_choice(self,choice,selected):
   if choice['kind'] not in ('ashalon_adapt','minion_adapt'):return False
@@ -78,14 +98,15 @@ class QuestFamilies:
 
  def _is_quest(self,cid):
   from .quests import QUESTS
-  return cid in QUESTS or cid in RULES or cid in SUBQUESTS
+  return cid in ('SW_450','SW_450t','SW_450t2') or cid in QUESTS or cid in RULES or cid in SUBQUESTS or cid=='TLC_602'
 
  def _quest_slots(self,owner):
   q=self.players[owner].quest
-  if not q:return 0
+  extra=len(getattr(self.players[owner],'historical_mage_sidequests',()))+int(getattr(self.players[owner],'eudora_sidequest',None) is not None)+len(getattr(self.players[owner],'whizbang_quests',()))
+  if not q:return extra
   if 'equilibrium_branches' in q:
-   return sum(i not in q['rewards_delivered'] for i in range(len(q['equilibrium_branches'])))
-  return 1
+   return extra+sum(i not in q['rewards_delivered'] for i in range(len(q['equilibrium_branches'])))
+  return 1+extra
 
  def _quest_family_event(self,kind,data):
   if kind=='discover_completed':
@@ -101,7 +122,7 @@ class QuestFamilies:
    return
   if kind=='damage':
    owner=data.get('damage_owner')
-   if owner not in (0,1) or data.get('target_owner')==owner or data['amount']!=2:return
+   if owner not in (0,1) or data.get('target_owner')!=1-owner or data['amount']!=2:return
    p=self.players[owner];q=p.quest
    if q and q.get('colossus') and self.current==owner:
     q['progress']=min(12,q['progress']+1);self._quest_deliver_ready(owner)
@@ -121,33 +142,33 @@ class QuestFamilies:
   self._quest_hand_state(owner)
   p=self.players[owner];q=p.quest
   if q and q.get('lost_city'):
-   if q['progress']==10 and len(p.hand)<10:
+   if q['progress']==10 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'TLC_602t')
    return True
   if q and q.get('forbidden'):
-   if q['progress']==8 and len(p.hand)<10:
+   if q['progress']==8 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'TLC_460t')
    return True
   if q and q.get('mountain'):
-   if q['progress']==6 and len(p.hand)<10:
+   if q['progress']==6 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'TLC_229t14')
    return True
   if q and q.get('foodchain'):
-   if q['progress']==4 and len(p.hand)<10:
+   if q['progress']==4 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'TLC_830t')
    return True
   if q and q.get('endtime'):
-   if q['progress']==2 and len(p.hand)<10:
+   if q['progress']==2 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'END_017t')
    return True
   if q and q.get('colossus'):
-   if q['progress']==12 and len(p.hand)<10:
+   if q['progress']==12 and len(p.hand)<getattr(p,'hand_capacity',10):
     p.quest=None;self._add(owner,'TLC_631t')
    return True
   if not q or 'equilibrium_branches' not in q:return False
   for index,branch in enumerate(q['equilibrium_branches']):
    if index in q['rewards_delivered'] or not q['objective']['children'][index]['complete']:continue
-   if len(p.hand)>=10:break
+   if len(p.hand)>=getattr(p,'hand_capacity',10):break
    q['rewards_delivered'].append(index)
    self._add(owner,HALVES[branch])
    self._log('quest_reward_delivered',player=owner,card=HALVES[branch])
@@ -185,7 +206,7 @@ class QuestFamilies:
    for cid in chosen:self._add(owner,cid)
    rest=[Card(self._new_id(),cid) for cid in LATORVIUS_REWARDS if cid not in chosen]
    p.deck.extend(rest);self.rng.shuffle(p.deck)
-   self._record_deck_insertion(owner,owner,len(rest),'shuffle')
+   self._record_deck_insertion(owner,owner,len(rest),'shuffle',cards=rest)
   elif op[0]=='crystal_core':
    p.crystal_core=True
    for m in p.all_minions:
@@ -210,14 +231,14 @@ class QuestFamilies:
   elif op[0]=='origin_execute':
    if p.equipped_card is None or p.equipped_card.uid!=op[1] or not p.weapon:return True
    # Reserve the triggering charge before nested Discover can enqueue more.
-   p.weapon['durability']-=1
-   if p.weapon['durability']<=0:self._break_weapon(owner)
+   from .historical_arsenal_batches import lose_durability
+   lose_durability(self,owner,1)
    operations=tuple(('automatic_card',Card(self._new_id(),cid),'random') for cid in op[2])
    self._rule_events.appendleft(('captured_effects',dict(operations=operations,context=dict(owner=owner,source=None,target=0,bonus=0,lifesteal=False,automatic_choices=True)),[]))
   elif op[0]=='mountain_start':
    if p.quest is None and len(p.secrets)<5:
     if self.cards.get('TLC_229t14',{}).get('type')!='MINION':raise UnsupportedCard('Missing Ashalon reward')
-    p.quest=dict(card_id='TLC_229',progress=0,total=6,mountain=True,seen=[])
+    p.quest=dict(card_id='TLC_229',progress=0,total=6,mountain=True,seen=[],played_types=[])
   elif op[0] in ('ashalon_adapt','minion_adapt'):
    for cid in (*ADAPTATIONS,PLANT):
     if cid not in self.cards:raise UnsupportedCard('Missing Adapt dependency: '+cid)

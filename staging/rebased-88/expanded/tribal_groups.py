@@ -1,4 +1,5 @@
 """Shared type assignment, deck draws, and explicit tribe damage modifiers."""
+from .historical_saidan import add as _saidan_add
 from engine.game import Card
 from .selectors import effective_tribes,common_tribes,has_tribe
 RULES={
@@ -19,7 +20,7 @@ class TribalGroups:
         order=list(range(len(values)));self.rng.shuffle(order)
         assigned={};selected=[]
         def match(index,seen):
-            kinds=sorted(effective_tribes(self.cards[getattr(values[index],'card_id',values[index])]));self.rng.shuffle(kinds)
+            kinds=sorted(effective_tribes(self._card_data(values[index])));self.rng.shuffle(kinds)
             for kind in kinds:
                 if kind in seen:continue
                 seen.add(kind)
@@ -42,7 +43,7 @@ class TribalGroups:
 
     def _outgoing_tribal_damage(self,source,amount):
         if source is None or amount<=0:return amount
-        owner=source.owner;card=self.cards[source.card_id]
+        owner=source.owner;card=self._card_data(source)
         active=[m for m in self.players[owner].minions if not m.silenced and m.health>0]
         multiplier=2**sum(m.card_id=='EDR_480' for m in active) if has_tribe(card,'BEAST') else 1
         extra=sum(m.card_id=='CAP_104' for m in active) if owner==self.current and has_tribe(card,'PIRATE') else 0
@@ -63,7 +64,7 @@ class TribalGroups:
             if any(c is v for v in p.deck):self._draw_index(owner,next(i for i,v in enumerate(p.deck) if c is v))
         elif name=='tribal_buff_drawn':
             for c in op[1]:
-                if any(c is v for v in p.hand):c.attack_bonus+=1;c.health_bonus+=1
+                if any(c is v for v in p.hand):_saidan_add(c,'attack_bonus',1);_saidan_add(c,'health_bonus',1)
                 else:
                     m=getattr(c,'_drawn_minion',None)
                     if m is not None and m in self.players[m.owner].minions and m.health>0:self._buff(m,1,1)

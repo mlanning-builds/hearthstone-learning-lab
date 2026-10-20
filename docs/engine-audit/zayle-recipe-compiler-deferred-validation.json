@@ -1,0 +1,34 @@
+{
+  "status": "staged_unvalidated",
+  "candidate_fingerprint": "90e91831fe3cfabba50a277ef9413c4e773b6e5f97273a9814bf15f16da3b641",
+  "recipe_count": 5,
+  "physical_card_counts": {
+    "ROGUE": 30,
+    "WARRIOR": 30,
+    "PRIEST": 30,
+    "SHAMAN": 30,
+    "WARLOCK": 30
+  },
+  "data_sha256": "eed4262fc6064c23f87145dcf0b5fc86d33ffc2ce1f6e1f39dff86a26524068f",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "changes": [
+    "Frozen complete five-deck candidate data with integrity hash",
+    "Typed compiler into existing full preflighted opening replacement contract",
+    "Explicit all-five weights and pinned recipe/distribution provenance required; no defaults"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Inventory reconciliation",
+    "Frozen data count/hash"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Pinned-client identity confirmation and actual distribution evidence",
+    "Full helper-generated dependencies and runtime fidelity"
+  ]
+}

@@ -26,6 +26,6 @@ class MerithraTests(unittest.TestCase):
         g=self.game();self.play(g);self.assertEqual(len(g.players[0].minions),1)
         g=self.game();g.players[0].death_history=['DINO_132'];g._summon(0,'EDR_238');self.assertEqual(len(g.players[0].minions),1)
     def test_copy_aliases_share_one_identity(self):
-        g=self.game();g.cards['TEST_COPY']=dict(g.cards['DINO_132'],id='TEST_COPY',countAsCopyOfDbfId=g.cards['DINO_132']['dbfId'])
+        g=self.game();g.cards['TEST_COPY']=dict(g.cards['DINO_132'],id='TEST_COPY',dbfId=-502,countAsCopyOfDbfId=g.cards['DINO_132']['dbfId'])
         g.players[0].death_history=['DINO_132','TEST_COPY'];self.play(g)
         self.assertEqual(len(g.players[0].minions),2)

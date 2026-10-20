@@ -1,0 +1,71 @@
+{
+  "scope": "Kazakusan full pinned 28-treasure deck construction and dragon-play history; unvalidated",
+  "treasure_pool_size": 28,
+  "treasure_ids": [
+    "ONY_005ta1",
+    "ONY_005ta10",
+    "ONY_005ta11",
+    "ONY_005ta12",
+    "ONY_005ta13",
+    "ONY_005ta2",
+    "ONY_005ta3",
+    "ONY_005ta4",
+    "ONY_005ta5",
+    "ONY_005ta6",
+    "ONY_005ta7",
+    "ONY_005ta8",
+    "ONY_005ta9",
+    "ONY_005tb1",
+    "ONY_005tb12",
+    "ONY_005tb13",
+    "ONY_005tb14",
+    "ONY_005tb2",
+    "ONY_005tb4",
+    "ONY_005tb5",
+    "ONY_005tb7",
+    "ONY_005tb8",
+    "ONY_005tb9",
+    "ONY_005tc1",
+    "ONY_005tc2",
+    "ONY_005tc3",
+    "ONY_005tc5",
+    "ONY_005tc6"
+  ],
+  "new_unvalidated_bodies": 1,
+  "new_ids": [
+    "ONY_005"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "6436f501b05c970e872cdfbbe3b41ddc4f2f2a63ba22bdc51f4f52eba1a3dab7",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan",
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Kazakusan and all twenty-eight treasure identities now have authored implementations; no gameplay fidelity claim",
+    "Pinned flag 2054 retains Ancient Reflections ONY_005tb8; separate Duels removal notice requires client comparison before certification",
+    "Five distinct selected treasures, two copies per pick, removal versus destruction, in-progress deck visibility and repeated Battlecry order require deferred review",
+    "Dragon-play history includes countered paid Dragons, excludes current source once; copy/replay and All-tribe provenance require deferred review",
+    "Quel delar forging destination/checkpoints remain unvalidated from earlier batch",
+    "No gameplay/regressions/training run"
+  ]
+}

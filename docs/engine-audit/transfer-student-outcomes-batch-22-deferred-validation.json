@@ -1,0 +1,69 @@
+{
+  "scope": "Complete literal companion, Vortex, Bandit, Sparkbot source and Valkyr families",
+  "new_unvalidated_bodies": 25,
+  "new_ids": [
+    "DEEP_002",
+    "DEEP_002t",
+    "DEEP_002t2",
+    "DEEP_002t3",
+    "TTN_470",
+    "TTN_470t",
+    "TTN_480",
+    "TTN_480t",
+    "TTN_480t1",
+    "TTN_480t2",
+    "TTN_480t3",
+    "TTN_480t4",
+    "TTN_480t5",
+    "TTN_480t6",
+    "TTN_480t7",
+    "TTN_719",
+    "WW_345",
+    "WW_345t1",
+    "WW_345t2",
+    "WW_345t3",
+    "WW_345t4",
+    "WW_345t5",
+    "WW_345t6",
+    "WW_345t7",
+    "WW_345t8"
+  ],
+  "new_collectible_outcomes": 5,
+  "new_required_minion_bodies": 20,
+  "prior_expansion_outcome_gap": 112,
+  "current_expansion_outcome_gap": 107,
+  "closed_outcome_ids": [
+    "DEEP_002",
+    "TTN_470",
+    "TTN_480",
+    "TTN_719",
+    "WW_345"
+  ],
+  "candidate_fingerprint": "6c4560c94c89d9689191e9aebc4f59168b9006c23cdb89c11be6e3db8a129cad",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "reference_sources": [
+    "Frozen HearthSim build 36.6.0.251952 CardDefs.xml and all_cards.json.gz",
+    "https://www.vicioussyndicate.com/the-comprehensive-showdown-in-the-badlands-preview/7/"
+  ],
+  "review_pending": [
+    "Bandit random order is supported by the cited reference; hand overflow and interruption ordering still need client review",
+    "Full eight-keyword frozen Vortex/Sparkbot selection and independent summon modifiers",
+    "Companion spell cost aura layers and Spell Damage scaling/copies/silence",
+    "Spell-school count timing including the source spell and per-summon checkpoints",
+    "Valkyr same-identity death buffs, silence, simultaneous deaths and Reborn",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

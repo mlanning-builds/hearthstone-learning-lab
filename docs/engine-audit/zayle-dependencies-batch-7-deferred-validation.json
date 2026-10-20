@@ -1,0 +1,29 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_053",
+    "EX1_302",
+    "DAL_071",
+    "ULD_178",
+    "YOD_025"
+  ],
+  "candidate_fingerprint": "0c466c1a566bfeac85e2821b918e185387941c6f17d4e90a575b1d262d120012",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Sequential Discover continuation and hand capacity",
+    "Siamat unique-choice integration",
+    "Native evolution and conditional draw interactions"
+  ]
+}

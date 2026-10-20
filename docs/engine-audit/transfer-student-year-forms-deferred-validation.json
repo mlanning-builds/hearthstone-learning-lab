@@ -1,0 +1,161 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "58d59add39331305e3a413065a3d702a24db83a5ce6af9a9db933a114cc18ee0",
+  "new_card_ids": [
+    "SCH_199t37",
+    "SCH_199t38"
+  ],
+  "historical_written": 3190,
+  "historical_remaining": 11,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "year_pool_class_closure": [
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "DRUID",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "HUNTER",
+      "eligible": 158,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "MAGE",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "PALADIN",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "PRIEST",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "ROGUE",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "SHAMAN",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "WARLOCK",
+      "eligible": 158,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_RAPTOR",
+      "hero_class": "WARRIOR",
+      "eligible": 159,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "DEATHKNIGHT",
+      "eligible": 72,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "DEMONHUNTER",
+      "eligible": 72,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "DRUID",
+      "eligible": 76,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "HUNTER",
+      "eligible": 76,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "MAGE",
+      "eligible": 76,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "PALADIN",
+      "eligible": 76,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "PRIEST",
+      "eligible": 76,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "ROGUE",
+      "eligible": 79,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "SHAMAN",
+      "eligible": 72,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "WARLOCK",
+      "eligible": 79,
+      "missing": []
+    },
+    {
+      "year": "YEAR_OF_THE_SCARAB",
+      "hero_class": "WARRIOR",
+      "eligible": 79,
+      "missing": []
+    }
+  ],
+  "checks": [
+    "AST parsing",
+    "Strict declaration schemas",
+    "Reviewed metadata hashes",
+    "Full frozen identity inventory closure across eleven classes for both years"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Board selection and identity transitions remain unvalidated",
+    "Year membership and exceptional Discover exclusions await independent client review",
+    "Seven older expansion forms still have five unwritten outcome identities",
+    "Transfer Student root remains unadmitted until full required dependency closure"
+  ]
+}

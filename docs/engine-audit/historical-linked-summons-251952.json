@@ -1,0 +1,77 @@
+{
+  "scope": "Frozen collection-related identity links only; printed effects establish multiplicity and order. Not a runtime rule or pool approval.",
+  "build": "251952",
+  "xml_sha256": "cf1a321d73ebcf28b8d4086b610e2403dca3ec8fce3a8d3253ee23a33e8c25ed",
+  "links": [
+    {
+      "parent_id": "BOT_420",
+      "related_dbf_id": 358,
+      "child_id": "EX1_tk9",
+      "child_name": "Treant",
+      "child_metadata_sha256": "3c5ad420d7df93afba8aff7cfc22213f5e0c382181e1b884c44c5f855375117a"
+    },
+    {
+      "parent_id": "CFM_310",
+      "related_dbf_id": 42223,
+      "child_id": "CFM_310t",
+      "child_name": "Murloc Razorgill",
+      "child_metadata_sha256": "f45dc97fa7228a6006584a27f0f64a64978013793df2d033a2516285de7ff304"
+    },
+    {
+      "parent_id": "EX1_248",
+      "related_dbf_id": 533,
+      "child_id": "EX1_tk11",
+      "child_name": "Spirit Wolf",
+      "child_metadata_sha256": "fdb1a2e429d386f837b59770a370437653d90c3f2968a81fab62dd4d2c77822f"
+    },
+    {
+      "parent_id": "EX1_571",
+      "related_dbf_id": 358,
+      "child_id": "EX1_tk9",
+      "child_name": "Treant",
+      "child_metadata_sha256": "3c5ad420d7df93afba8aff7cfc22213f5e0c382181e1b884c44c5f855375117a"
+    },
+    {
+      "parent_id": "ICC_050",
+      "related_dbf_id": 45302,
+      "child_id": "ICC_832t3",
+      "child_name": "Frost Widow",
+      "child_metadata_sha256": "cda7e7b0caf74998616b755eeca729bf903982591c93b123f2b7d52d95b34564"
+    },
+    {
+      "parent_id": "OG_273",
+      "related_dbf_id": 1652,
+      "child_id": "CS2_101t",
+      "child_name": "Silver Hand Recruit",
+      "child_metadata_sha256": "d76453d59e51c01c959077a070fc8754faf7fc397839bae570b352a07c71beed"
+    },
+    {
+      "parent_id": "ULD_713",
+      "related_dbf_id": 53921,
+      "child_id": "ULD_430t",
+      "child_name": "Locust",
+      "child_metadata_sha256": "ae6fcd831b28e0ceae55dd0502b614a814841c1187a02be303580198920b83ed"
+    },
+    {
+      "parent_id": "UNG_960",
+      "related_dbf_id": 1652,
+      "child_id": "CS2_101t",
+      "child_name": "Silver Hand Recruit",
+      "child_metadata_sha256": "d76453d59e51c01c959077a070fc8754faf7fc397839bae570b352a07c71beed"
+    },
+    {
+      "parent_id": "WON_086",
+      "related_dbf_id": 42223,
+      "child_id": "CFM_310t",
+      "child_name": "Murloc Razorgill",
+      "child_metadata_sha256": "f45dc97fa7228a6006584a27f0f64a64978013793df2d033a2516285de7ff304"
+    },
+    {
+      "parent_id": "YOP_026",
+      "related_dbf_id": 61465,
+      "child_id": "DMF_061t2",
+      "child_name": "Treant",
+      "child_metadata_sha256": "c5e94bcb0668cde30b270d1bd42a61a379801d395f9c052f0d6ea62303e01428"
+    }
+  ]
+}

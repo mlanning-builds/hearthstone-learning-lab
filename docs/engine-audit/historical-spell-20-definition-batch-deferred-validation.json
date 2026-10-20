@@ -1,0 +1,156 @@
+{
+  "fingerprint": "db8ee14e84b6991554f735888dd8e0904bded925d5533752f6b996756b4871ca",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 20,
+  "new_historical_spell_roots": 12,
+  "new_tokens_and_alternate_forms": 8,
+  "registry_records": 7983,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1254,
+    "remaining": 188
+  },
+  "new_implementations": [
+    {
+      "id": "ICC_244",
+      "name": "Desperate Stand",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOE_105",
+      "name": "Explorer's Hat",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_012",
+      "name": "Spirit Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_012t",
+      "name": "Bru'kan's Raptor",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_087",
+      "name": "Dreaded Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_087t",
+      "name": "Tamsin's Dreadsteed",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_316",
+      "name": "Noble Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_316t",
+      "name": "Cariel's Warhorse",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_432",
+      "name": "Kodo Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_432t",
+      "name": "Guff's Kodo",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_443",
+      "name": "Elekk Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_443t",
+      "name": "Xyrella's Elekk",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_458",
+      "name": "Ramming Mount",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_458t",
+      "name": "Tavish's Ram",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_021",
+      "name": "Ball of Spiders",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_022",
+      "name": "Explorer's Hat",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_005",
+      "name": "Fresh Scent",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_005ts",
+      "name": "Fresh Scent",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_012",
+      "name": "Air Raid",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_012ts",
+      "name": "Air Raid",
+      "collectible": false,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7983,
+    "edges": 794,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "188 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

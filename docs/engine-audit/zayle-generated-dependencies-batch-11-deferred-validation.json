@@ -1,0 +1,27 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "SCH_612",
+    "SCH_612a",
+    "SCH_612b",
+    "SCH_612t"
+  ],
+  "candidate_fingerprint": "a8885ce23e4e6e4db2d7320ad68f217e20d2499ad0d58d888e96f98c010f5f23",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Choose Both and automatic casting branch overload accounting",
+    "Summon multipliers, board capacity and Rush entry"
+  ]
+}

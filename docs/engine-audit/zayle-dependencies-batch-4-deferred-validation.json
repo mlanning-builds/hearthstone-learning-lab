@@ -1,0 +1,25 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_065",
+    "DRG_022"
+  ],
+  "candidate_fingerprint": "bad055d26b2acd1138813f70735d654648b79cc92bf09ba504526a05060cb599",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Silence aura/death scheduling and copied physical state",
+    "Adjacent forced combat legality, dormant and location adjacency"
+  ]
+}

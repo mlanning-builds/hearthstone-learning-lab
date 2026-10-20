@@ -6,6 +6,7 @@ search remains gated on simulator completeness.
 """
 from collections import Counter
 import random
+from .identities import canonical_identity,identity_resolver
 from .cards import COLLECTIBLE_IDS,registry
 from .decks import Deck,eligible,validate
 from .status import require_full_standard
@@ -28,7 +29,8 @@ def single_card_neighbors(deck,*,experimental=False):
     if not experimental:require_full_standard()
     cards=registry();errors=validate(deck,cards)
     if errors:raise ValueError('; '.join(errors))
-    def canonical(cid):return cards[cid].get('countAsCopyOfDbfId',cards[cid]['dbfId'])
+    identity=identity_resolver(cards)
+    def canonical(cid):return identity(cards[cid])
     groups={}
     for cid in sorted(COLLECTIBLE_IDS):
         if eligible(cards[cid],deck.hero_class,deck.runes):

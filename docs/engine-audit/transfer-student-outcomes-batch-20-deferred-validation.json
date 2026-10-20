@@ -1,0 +1,63 @@
+{
+  "scope": "Restricted buffs, physical copies, recruitment and full-pool deck spell outcomes",
+  "new_unvalidated_bodies": 13,
+  "new_ids": [
+    "DEEP_021",
+    "ETC_338",
+    "ETC_362",
+    "ETC_838",
+    "MIS_302",
+    "REV_842",
+    "TID_949",
+    "TOY_354",
+    "TOY_881",
+    "TSC_940",
+    "TSC_944",
+    "TTN_745",
+    "YOG_082"
+  ],
+  "new_collectible_outcomes": 13,
+  "new_required_generated_bodies": 0,
+  "prior_expansion_outcome_gap": 135,
+  "current_expansion_outcome_gap": 122,
+  "closed_outcome_ids": [
+    "DEEP_021",
+    "ETC_338",
+    "ETC_362",
+    "ETC_838",
+    "MIS_302",
+    "REV_842",
+    "TID_949",
+    "TOY_354",
+    "TOY_881",
+    "TSC_940",
+    "TSC_944",
+    "TTN_745",
+    "YOG_082"
+  ],
+  "candidate_fingerprint": "daaf79fa82eecb04238700f44a049c2b1fd381ebccdf14aa927c24783b67e476",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Recipient-aware bounce destruction with full hands, return listeners and owner provenance",
+    "Promotion canonical recruit and Fancy Packaging effective Divine Shield target restrictions",
+    "Frozen copies, Synchronize Finale stat/copy/reset behavior and summon multipliers",
+    "Grace overheal replacements, dynamic-cost Discover and full outcome closure",
+    "Dormant recruitment, Front Lines pair ordering and summon/death interruptions",
+    "Rampage overflow counting with summon multipliers and existing Hounds",
+    "Bottom-five discounts before Dredge and full deck replacement order/provenance/cost",
+    "All new behavior and full recursive generated closure remain unvalidated"
+  ]
+}

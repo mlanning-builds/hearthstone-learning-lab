@@ -383,7 +383,6 @@ DEFINITIONS.update({
  'CAP_806':definition('resurrection',battlecry=(op('resurrect_friendly_minions_reborn_this_game'),op('each_result_attacks_random_enemy_minion'))),
  'CATA_190h':definition('herald',battlecry=(op('choose_cataclysms',('script_data','cataclysm_choice_count')),op('execute_chosen_cataclysms')),upgrade=(op('herald_threshold_increment',2),)),
  'CATA_470':definition('custom_creation',battlecry=(op('craft_undead_dragon'),condition('holding_tribe','DRAGON',op('creation_cost_delta',-3)))),
- 'CATA_EVENT_110':definition('setup',start_game=(op('replace_self_with_dependency_family','CATA_EVENT_110','essences',6),op('install_adjacent_essence_combined_casting'))),
  'CORE_WON_145':definition('automatic_play',battlecry=(op('open_random_standard_pack'),op('play_each_pack_card')),required_contracts=('patch_pack_distribution','generated_card_pools')),
  'EDR_818':definition('stored_cards',deathrattle=(op('split_source_into_bound_beetles',{'stats':(1,1)}),),delayed=('next_owner_turn_start',op('reform_source_from_surviving_bound_beetles'))),
  'EDR_895':definition('persistent',battlecry=(op('start_lunar_cycle',3,op('on_full_moon',op('owner_cards_set_cost',1,'game'))),)),
@@ -484,5 +483,78 @@ for _integrated in ('JAIL_330','JAIL_509','JAIL_860'):
 # Closed Blood Fighter family; independent interaction review remains pending.
 DEFINITIONS.pop('TIME_850')
 
-for _integrated in ('JAIL_719','TLC_251'):
+for _integrated in ('JAIL_719','TLC_251','JAIL_851','EDR_999','TLC_442','TLC_515'):
     DEFINITIONS.pop(_integrated)
+
+DEFINITIONS.pop('END_017')
+
+DEFINITIONS.pop('CATA_615')
+
+# Fixed Colossal families and opening passives use the normal registry.
+for _integrated in ("CATA_139","CATA_150","CATA_151","CATA_300","CATA_432","CATA_550","CATA_726","CS3_035","JAIL_800"):
+    DEFINITIONS.pop(_integrated)
+
+for _integrated in ("TLC_460","TLC_817","CATA_301","EDR_031","JAIL_500"):
+    DEFINITIONS.pop(_integrated)
+
+for _integrated in ("EDR_860","EDR_888","FIR_921"):
+    DEFINITIONS.pop(_integrated)
+
+DEFINITIONS.pop('JAIL_398',None)
+
+DEFINITIONS.pop('TIME_852',None)
+
+for _integrated in ('EDR_226','EDR_227','EDR_845','EDR_871','EDR_519','END_003'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('TIME_005','TIME_875','TIME_209','TIME_020'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('TIME_064','JAIL_443','CORE_CFM_670','JAIL_887'):
+    DEFINITIONS.pop(_integrated,None)
+
+DEFINITIONS.pop('TLC_631',None)
+
+for _integrated in ('EDR_231', 'EDR_449', 'EDR_451', 'EDR_518', 'EDR_800', 'EDR_852', 'EDR_970', 'END_000', 'END_001'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('CATA_525', 'CATA_530', 'CATA_565', 'CATA_580', 'CATA_725', 'CATA_160', 'CATA_561', 'FIR_952'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('TLC_467','TLC_900'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('TLC_229','CATA_496'):
+    DEFINITIONS.pop(_integrated,None)
+
+for _integrated in ('END_012','END_018','END_024','TIME_024'):
+    DEFINITIONS.pop(_integrated,None)
+
+DEFINITIONS.pop('TIME_009',None)
+
+for _integrated in ('JAIL_321','TIME_860'):
+    DEFINITIONS.pop(_integrated,None)
+
+from .reviewed_generation_bindings import COLLECTIBLE_IDS as REVIEWED_GENERATORS
+for _integrated in REVIEWED_GENERATORS:DEFINITIONS.pop(_integrated,None)
+
+from . import transformations, future_summons
+for _integrated in set(transformations.RULES)|set(future_summons.RULES)|{'CATA_786','EDR_520','JAIL_122','CATA_EVENT_000'}:DEFINITIONS.pop(_integrated,None)
+from .reviewed_system_bindings import COLLECTIBLE_IDS as REVIEWED_SYSTEMS
+for _integrated in REVIEWED_SYSTEMS:DEFINITIONS.pop(_integrated,None)
+from .reviewed_rewind_bindings import COLLECTIBLE_IDS as REVIEWED_REWINDS
+for _integrated in REVIEWED_REWINDS:DEFINITIONS.pop(_integrated,None)
+from .reviewed_large_families import ROOT_IDS as REVIEWED_LARGE
+for _integrated in REVIEWED_LARGE:DEFINITIONS.pop(_integrated,None)
+DEFINITIONS.pop('FIR_959',None)
+from .reviewed_complex_bindings import RULES as REVIEWED_COMPLEX
+for _integrated in REVIEWED_COMPLEX:DEFINITIONS.pop(_integrated,None)
+
+# Runtime integration is written; behavior is still unvalidated.
+DEFINITIONS.pop("TLC_EVENT_400",None)
+
+# Authored production binding, with independent fidelity review still deferred.
+DEFINITIONS.pop("CATA_470",None)
+
+# Owner-authorized approximate Avatar runtime integration; fidelity unvalidated.
+DEFINITIONS.pop('CORE_WON_145',None)

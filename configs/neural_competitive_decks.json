@@ -1,0 +1,562 @@
+{
+  "schema": "fixed-competitive-decks-v1",
+  "patch": "36.6.0.251952",
+  "report": "https://www.vicioussyndicate.com/vs-data-reaper-report-358/",
+  "note": "Fixed published lists, not a claim of optimal play or present-day meta strength. No substitutions. Fabled companions are listed explicitly.",
+  "decks": [
+    {
+      "id": "cannoneer-dragon-warrior",
+      "name": "Cannoneer Dragon Warrior",
+      "hero_class": "WARRIOR",
+      "runes": [
+        0,
+        0,
+        0
+      ],
+      "cards": [
+        "CAP_107",
+        "CAP_107",
+        "CATA_556",
+        "CATA_556",
+        "EDR_456",
+        "EDR_456",
+        "CORE_REV_990",
+        "CORE_REV_990",
+        "CATA_585",
+        "CATA_585",
+        "EDR_457",
+        "EDR_457",
+        "CAP_105",
+        "CAP_105",
+        "CATA_582",
+        "CATA_582",
+        "FIR_939",
+        "FIR_939",
+        "CATA_584",
+        "CATA_584",
+        "EDR_492",
+        "EDR_492",
+        "TIME_034",
+        "TIME_034",
+        "JAIL_421",
+        "END_033",
+        "END_033",
+        "JAIL_384",
+        "TLC_600",
+        "TLC_600"
+      ],
+      "source": "https://www.vicioussyndicate.com/decks/cannoneer-dragon-warrior/",
+      "published": "2026-09-02",
+      "card_list": [
+        {
+          "name": "Cannonmaster",
+          "card_id": "CAP_107",
+          "count": 2
+        },
+        {
+          "name": "Carrier Whelp",
+          "card_id": "CATA_556",
+          "count": 2
+        },
+        {
+          "name": "Darkrider",
+          "card_id": "EDR_456",
+          "count": 2
+        },
+        {
+          "name": "Sanguine Depths",
+          "card_id": "CORE_REV_990",
+          "count": 2
+        },
+        {
+          "name": "Torch",
+          "card_id": "CATA_585",
+          "count": 2
+        },
+        {
+          "name": "Brood Keeper",
+          "card_id": "EDR_457",
+          "count": 2
+        },
+        {
+          "name": "Hook n' Heave",
+          "card_id": "CAP_105",
+          "count": 2
+        },
+        {
+          "name": "Searing Fissure",
+          "card_id": "CATA_582",
+          "count": 2
+        },
+        {
+          "name": "Shadowflame Suffusion",
+          "card_id": "FIR_939",
+          "count": 2
+        },
+        {
+          "name": "Erupting Volcano",
+          "card_id": "CATA_584",
+          "count": 2
+        },
+        {
+          "name": "Mother Duck",
+          "card_id": "EDR_492",
+          "count": 2
+        },
+        {
+          "name": "Stadium Announcer",
+          "card_id": "TIME_034",
+          "count": 2
+        },
+        {
+          "name": "Warptooth",
+          "card_id": "JAIL_421",
+          "count": 1
+        },
+        {
+          "name": "Prescient Slitherdrake",
+          "card_id": "END_033",
+          "count": 2
+        },
+        {
+          "name": "Chainbreaker Hogger",
+          "card_id": "JAIL_384",
+          "count": 1
+        },
+        {
+          "name": "Windpeak Wyrm",
+          "card_id": "TLC_600",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "bite-attack-druid",
+      "name": "Bite Attack Druid",
+      "hero_class": "DRUID",
+      "runes": [
+        0,
+        0,
+        0
+      ],
+      "cards": [
+        "CORE_EX1_169",
+        "CORE_EX1_169",
+        "JAIL_201",
+        "JAIL_201",
+        "JAIL_202",
+        "JAIL_202",
+        "TIME_701",
+        "TIME_701",
+        "END_011",
+        "END_011",
+        "TIME_702",
+        "TIME_702",
+        "CATA_131",
+        "CATA_131",
+        "EDR_270",
+        "EDR_270",
+        "END_007",
+        "END_007",
+        "JAIL_872",
+        "JAIL_872",
+        "JAIL_436",
+        "JAIL_436",
+        "JAIL_875",
+        "FIR_907",
+        "JAIL_200",
+        "JAIL_200",
+        "CATA_139",
+        "MEND_046",
+        "CATA_140",
+        "EDR_846"
+      ],
+      "source": "https://www.vicioussyndicate.com/decks/bite-attack-druid/",
+      "published": "2026-09-01",
+      "card_list": [
+        {
+          "name": "Innervate",
+          "card_id": "CORE_EX1_169",
+          "count": 2
+        },
+        {
+          "name": "Secret Ingredient",
+          "card_id": "JAIL_201",
+          "count": 2
+        },
+        {
+          "name": "Spiderling",
+          "card_id": "JAIL_202",
+          "count": 2
+        },
+        {
+          "name": "Waveshaping",
+          "card_id": "TIME_701",
+          "count": 2
+        },
+        {
+          "name": "Acceleration Aura",
+          "card_id": "END_011",
+          "count": 2
+        },
+        {
+          "name": "Ebb and Flow",
+          "card_id": "TIME_702",
+          "count": 2
+        },
+        {
+          "name": "Felwood Treant",
+          "card_id": "CATA_131",
+          "count": 2
+        },
+        {
+          "name": "Horn of Plenty",
+          "card_id": "EDR_270",
+          "count": 2
+        },
+        {
+          "name": "Press the Advantage",
+          "card_id": "END_007",
+          "count": 2
+        },
+        {
+          "name": "Spider Rider",
+          "card_id": "JAIL_872",
+          "count": 2
+        },
+        {
+          "name": "Widow's Bite",
+          "card_id": "JAIL_436",
+          "count": 2
+        },
+        {
+          "name": "Staff of Trickery",
+          "card_id": "JAIL_875",
+          "count": 1
+        },
+        {
+          "name": "Amirdrassil",
+          "card_id": "FIR_907",
+          "count": 1
+        },
+        {
+          "name": "Infest the Scullery",
+          "card_id": "JAIL_200",
+          "count": 2
+        },
+        {
+          "name": "Wickerfang",
+          "card_id": "CATA_139",
+          "count": 1
+        },
+        {
+          "name": "Bashana Runetotem",
+          "card_id": "MEND_046",
+          "count": 1
+        },
+        {
+          "name": "Merithra of the Dream",
+          "card_id": "CATA_140",
+          "count": 1
+        },
+        {
+          "name": "Shaladrassil",
+          "card_id": "EDR_846",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "thalena-egg-death-knight-4",
+      "name": "Thalena Egg Death Knight",
+      "hero_class": "DEATHKNIGHT",
+      "runes": [
+        1,
+        0,
+        2
+      ],
+      "cards": [
+        "CORE_UNG_205",
+        "EDR_813",
+        "EDR_813",
+        "DINO_417",
+        "DINO_417",
+        "JAIL_450",
+        "JAIL_450",
+        "JAIL_441",
+        "JAIL_441",
+        "DINO_411",
+        "DINO_411",
+        "JAIL_998",
+        "JAIL_998",
+        "TLC_252",
+        "CORE_EDR_003",
+        "TIME_003",
+        "TIME_003",
+        "TLC_EVENT_402",
+        "DINO_410",
+        "JAIL_446",
+        "EDR_856",
+        "JAIL_454",
+        "JAIL_454",
+        "TLC_436",
+        "TLC_436",
+        "JAIL_444",
+        "JAIL_444",
+        "TLC_106",
+        "END_004",
+        "END_004"
+      ],
+      "source": "https://www.vicioussyndicate.com/decks/thalena-egg-death-knight-4/",
+      "published": "2026-09-16",
+      "card_list": [
+        {
+          "name": "Glacial Shard",
+          "card_id": "CORE_UNG_205",
+          "count": 1
+        },
+        {
+          "name": "Morbid Swarm",
+          "card_id": "EDR_813",
+          "count": 2
+        },
+        {
+          "name": "Soulrest Ceremony",
+          "card_id": "DINO_417",
+          "count": 2
+        },
+        {
+          "name": "Corpse Cannon",
+          "card_id": "JAIL_450",
+          "count": 2
+        },
+        {
+          "name": "Drink Blood",
+          "card_id": "JAIL_441",
+          "count": 2
+        },
+        {
+          "name": "Holy Eggbearer",
+          "card_id": "DINO_411",
+          "count": 2
+        },
+        {
+          "name": "Defias Smuggler",
+          "card_id": "JAIL_998",
+          "count": 2
+        },
+        {
+          "name": "Dissolving Ooze",
+          "card_id": "TLC_252",
+          "count": 1
+        },
+        {
+          "name": "Falric",
+          "card_id": "CORE_EDR_003",
+          "count": 1
+        },
+        {
+          "name": "Portal Vanguard",
+          "card_id": "TIME_003",
+          "count": 2
+        },
+        {
+          "name": "Staff of the Endbringer",
+          "card_id": "TLC_EVENT_402",
+          "count": 1
+        },
+        {
+          "name": "The Egg of Khelos",
+          "card_id": "DINO_410",
+          "count": 1
+        },
+        {
+          "name": "Blood Doctor Thal'ena",
+          "card_id": "JAIL_446",
+          "count": 1
+        },
+        {
+          "name": "Nightmare Lord Xavius",
+          "card_id": "EDR_856",
+          "count": 1
+        },
+        {
+          "name": "Emergency Surgery",
+          "card_id": "JAIL_454",
+          "count": 2
+        },
+        {
+          "name": "Reanimated Pterrordax",
+          "card_id": "TLC_436",
+          "count": 2
+        },
+        {
+          "name": "Sawbones",
+          "card_id": "JAIL_444",
+          "count": 2
+        },
+        {
+          "name": "Endbringer Umbra",
+          "card_id": "TLC_106",
+          "count": 1
+        },
+        {
+          "name": "Remnant of Rage",
+          "card_id": "END_004",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "stealth-herald-rogue",
+      "name": "Stealth Herald Rogue",
+      "hero_class": "ROGUE",
+      "runes": [
+        0,
+        0,
+        0
+      ],
+      "cards": [
+        "CORE_EX1_145",
+        "CORE_EX1_145",
+        "CORE_RLK_567",
+        "CATA_200",
+        "CATA_200",
+        "CORE_BT_701",
+        "CORE_BT_701",
+        "TLC_515",
+        "TLC_515",
+        "CATA_785",
+        "CATA_785",
+        "CAP_003",
+        "CAP_003",
+        "TIME_875t1",
+        "TIME_875t",
+        "CATA_158",
+        "CATA_158",
+        "CAP_000",
+        "CAP_000",
+        "TLC_100",
+        "TIME_875",
+        "CAP_005",
+        "TLC_522",
+        "CATA_154",
+        "CATA_497",
+        "EDR_844",
+        "EDR_846",
+        "CATA_201",
+        "CATA_201",
+        "CATA_190h"
+      ],
+      "source": "https://www.vicioussyndicate.com/decks/stealth-herald-rogue/",
+      "published": "2026-09-01",
+      "card_list": [
+        {
+          "name": "Preparation",
+          "card_id": "CORE_EX1_145",
+          "count": 2
+        },
+        {
+          "name": "Shadow of Demise",
+          "card_id": "CORE_RLK_567",
+          "count": 1
+        },
+        {
+          "name": "Agent of the Old Ones",
+          "card_id": "CATA_200",
+          "count": 2
+        },
+        {
+          "name": "Spymistress",
+          "card_id": "CORE_BT_701",
+          "count": 2
+        },
+        {
+          "name": "Cultist Map",
+          "card_id": "TLC_515",
+          "count": 2
+        },
+        {
+          "name": "Rite of Twilight",
+          "card_id": "CATA_785",
+          "count": 2
+        },
+        {
+          "name": "SI:7 Supplier",
+          "card_id": "CAP_003",
+          "count": 2
+        },
+        {
+          "name": "The Kingslayers",
+          "card_id": "TIME_875t1",
+          "count": 1
+        },
+        {
+          "name": "King Llane",
+          "card_id": "TIME_875t",
+          "count": 1
+        },
+        {
+          "name": "Maniacal Follower",
+          "card_id": "CATA_158",
+          "count": 2
+        },
+        {
+          "name": "SI:7 Slayer",
+          "card_id": "CAP_000",
+          "count": 2
+        },
+        {
+          "name": "Elise the Navigator",
+          "card_id": "TLC_100",
+          "count": 1
+        },
+        {
+          "name": "Garona Halforcen",
+          "card_id": "TIME_875",
+          "count": 1
+        },
+        {
+          "name": "Mathias Shaw",
+          "card_id": "CAP_005",
+          "count": 1
+        },
+        {
+          "name": "Opu the Unseen",
+          "card_id": "TLC_522",
+          "count": 1
+        },
+        {
+          "name": "Sinestra",
+          "card_id": "CATA_154",
+          "count": 1
+        },
+        {
+          "name": "Ultraxion",
+          "card_id": "CATA_497",
+          "count": 1
+        },
+        {
+          "name": "Naralex, Herald of the Flights",
+          "card_id": "EDR_844",
+          "count": 1
+        },
+        {
+          "name": "Shaladrassil",
+          "card_id": "EDR_846",
+          "count": 1
+        },
+        {
+          "name": "Twilight Mistress",
+          "card_id": "CATA_201",
+          "count": 2
+        },
+        {
+          "name": "Deathwing, Worldbreaker",
+          "card_id": "CATA_190h",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

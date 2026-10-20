@@ -78,7 +78,8 @@ class InternalCastTests(unittest.TestCase):
         g=self.game();self.cast(g,tail=(('armor',3),));self.assertEqual(g.players[0].armor,3);self.assertIsNone(g.pending_frame)
     def test_unsupported_internal_spell_fails_before_rng(self):
         g=self.game();state=g.rng.getstate()
-        with self.assertRaises(UnsupportedCard):self.cast(g,'CORE_RLK_567')
+        with patch.dict(RULES,{'CORE_RLK_567':('none',[('future_unimplemented_effect',)])}):
+            with self.assertRaises(UnsupportedCard):self.cast(g,'CORE_RLK_567')
         self.assertEqual(g.rng.getstate(),state)
     def test_parent_choice_waits_after_cast(self):
         g=self.game();self.cast(g,tail=(('choose_fixed_summon',('EDR_851t',)),('armor',3)))

@@ -1,22 +1,32 @@
-"""Closed-pool generation primitives; production declarations remain gated.
+"""Generation from complete pinned Standard membership or explicit contracts.
 
-No automatic pool construction and no substitution of supported outcomes. The
-caller must install complete reviewed GenerationPool contracts, keyed by request
-and current hero class. The default is rejection before RNG or state mutation.
+Membership is independent of executable coverage. Every eligible outcome must
+have a written effect before sampling; historical and named exceptional pools
+retain their separate membership contracts.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.cards import UnsupportedCard
 from engine.game import Card
 from .pools import GenerationPool
 from .selectors import has_tribe, has_school, classes, HERO_CLASSES, effective_tribes
-from .generation_cards import requests_for, pool
+from .generation_cards import requests_for, pool, board_pool
+from .identities import canonical_identity,identity_resolver
 
 
 def request_matches(request, data, hero_class):
+    from .generation_bans import CONSTRUCTED_GENERATION_BANS
+    if data.get('id') in CONSTRUCTED_GENERATION_BANS:return False
     # Frozen Constructed Fabled roots are excluded from generated-card pools.
     # Deck/hand selection and explicit copies do not use this predicate.
     from .fabled_decks import BUNDLES
+    # Blizzard TITANS FAQ forbids random generation, Discover and summons.
+    # Literal copies, deck selection and card play do not use this predicate.
+    # https://hearthstone.blizzard.com/en-gb/expansions-adventures/titans
+    if 'TITAN' in data.get('mechanics',()):return False
     if data.get("id") in BUNDLES:return False
+    if sum(data.get('runeCost',{}).values())>=3:return False
+    if data.get('rarity')=='LEGENDARY' and 'QUEST' in data.get('mechanics',()):return False
     if request.excluded_mechanic and request.excluded_mechanic in data.get('mechanics',()):return False
     if request.rune and data.get('runeCost',{}).get(request.rune,0)<=0:return False
     if request.family:
@@ -42,7 +52,10 @@ def request_matches(request, data, hero_class):
         return False
     if request.rarity and data.get('rarity') != request.rarity:
         return False
-    if request.mechanic=='WILD_GOD':
+    if request.mechanic=='NEWEST_EXPANSION':
+        from .expansion_rules import NEWEST_EXPANSION
+        if data.get('set')!=NEWEST_EXPANSION:return False
+    elif request.mechanic=='WILD_GOD':
         from .imbue_consumers import WILD_GODS
         if data.get('id') not in WILD_GODS:return False
     elif request.mechanic=='REWIND':
@@ -65,18 +78,50 @@ def request_matches(request, data, hero_class):
 class GenerationEffects:
     def _generation_candidates(self, request, owner):
         hero_class = self.players[owner].hero_class
+        metadata=self.cards
         contract = getattr(self, '_generation_pools', {}).get((request, hero_class))
+        if contract is None and request.excluded_mechanic=='COLOSSAL':
+            from dataclasses import replace
+            # An explicit fixture contract may be reused only after checking
+            # every member against the stronger board exclusion below.
+            contract=getattr(self,'_generation_pools',{}).get((replace(request,excluded_mechanic=''),hero_class))
         if contract is None:
             from .generation_families import reviewed_contract
             contract=reviewed_contract(request,hero_class)
+            if contract is None and request.era=='past' and not request.family:
+                from .historical_generation_catalog import load_universe,historical_contract
+                from collections import ChainMap
+                universe=getattr(self,'_historical_generation_universe',None)
+                if universe is None:
+                    universe=load_universe();self._historical_generation_universe=universe
+                contract=historical_contract(request,hero_class,universe)
+                metadata=ChainMap(self.cards,universe.records)
+            if contract is None and not request.era and not request.family:
+                from .generation_catalog import load_universe,standard_contract
+                from collections import ChainMap
+                universe=getattr(self,'_standard_generation_universe',None)
+                if universe is None:
+                    universe=load_universe();self._standard_generation_universe=universe
+                contract=standard_contract(request,hero_class,universe)
+                metadata=ChainMap(self.cards,universe.records)
         if not isinstance(contract, GenerationPool):
             raise UnsupportedCard('Generation pool has no reviewed membership contract: ' + str(request))
-        candidates = contract.resolve(self.cards, self.cards)
+        if contract.name=='pinned past collectible Colossals':
+            from pathlib import Path
+            import json,hashlib
+            manifest=json.loads(Path(__file__).with_name('historical_colossal_pool.json').read_text())
+            for member in manifest['members']:
+                record=metadata.get(member['id'])
+                if record is not None and (record.get('dbfId')!=member['dbfId'] or
+                    hashlib.sha256(json.dumps(record,sort_keys=True).encode()).hexdigest()!=member['sha256']):
+                    raise UnsupportedCard('Past Colossal frozen record changed: '+member['id'])
+        candidates = contract.resolve(metadata, self.cards)
         if request.era=='past':
             from .historical_generation import validate_past_candidates
             validate_past_candidates(candidates,self.cards)
         # Do not silently filter an invalid reviewed contract either.
-        canonical = [self.cards[cid].get('countAsCopyOfDbfId', self.cards[cid].get('dbfId', cid)) for cid in candidates]
+        identity=identity_resolver(self.cards)
+        canonical = [identity(self.cards[cid]) for cid in candidates]
         if len(canonical) != len(set(canonical)):
             raise UnsupportedCard('Generation contract contains duplicate canonical identities')
         invalid = [cid for cid in candidates if not request_matches(request, self.cards[cid], hero_class)]
@@ -85,18 +130,26 @@ class GenerationEffects:
         return candidates
 
     def _generation_discover_candidates(self,request,ctx):
+        return self._generation_created_candidates(request,ctx)
+
+    def _generation_created_candidates(self,request,ctx):
+        # Validate the whole reviewed universe before excluding the creator.
+        # Discovering existing physical deck cards uses a separate path.
         values=self._generation_candidates(request,ctx['owner'])
-        source=ctx.get('card_id')
+        # A delayed effect's bearer is not necessarily its creator. Use
+        # explicit provenance; never infer it from an attached effect's host.
+        source=ctx.get('generation_creator_id',ctx.get('card_id'))
+        identity=identity_resolver(self.cards)
         def canonical(cid):
-            d=self.cards[cid]
-            return d.get('countAsCopyOfDbfId',d.get('dbfId',cid))
+            return identity(self.cards[cid])
         return tuple(cid for cid in values if source not in self.cards or canonical(cid)!=canonical(source))
 
     def _generation_preflight(self, card_id, owner):
         # Includes later death/end/attached effects. Called BEFORE paying/playing
         # by a future reviewed registration, never a permissive support fallback.
         from .generation_extensions import requests_for as extension_requests
-        for request in sorted(requests_for(card_id) | extension_requests(card_id), key=repr):
+        from .historical_utility_pools import requests_for as utility_requests
+        for request in sorted(requests_for(card_id) | extension_requests(card_id) | utility_requests(self,card_id,owner), key=repr):
             self._generation_candidates(request, owner)
 
     def _generation_split(self, op, ctx):
@@ -107,18 +160,18 @@ class GenerationEffects:
             return self._generation_split(('generate_random',op[1],count,'board',()),ctx)
         if name=='generation_hero_attack_summons':
             cost=op[1]+self.players[owner].hero_attacks_total
-            request=pool(card_type='MINION',minimum=cost,maximum=cost)
+            request=board_pool(pool(card_type='MINION',minimum=cost,maximum=cost))
             return self._generation_split(('generate_random',request,op[2],'board',()),ctx)
         if name=='generation_fill_health_hand':
-            count=max(0,10-len(self.players[owner].hand))
+            count=max(0,getattr(self.players[owner],'hand_capacity',10)-len(self.players[owner].hand))
             return self._generation_split(('generate_random',op[1],count,'hand',(('health_payment','turn'),)),ctx)
         if name == 'generation_fill_plain_hand':
-            count=max(0,10-len(self.players[owner].hand))
+            count=max(0,getattr(self.players[owner],'hand_capacity',10)-len(self.players[owner].hand))
             return self._generation_split(('generate_random',op[1],count,'hand',()),ctx)
         if name == 'generation_fill_hand':
             # Snapshot free slots and held progress once. Child effects cannot
             # turn a fill-hand operation into an unbounded refill loop.
-            count=max(0,10-len(self.players[owner].hand))
+            count=max(0,getattr(self.players[owner],'hand_capacity',10)-len(self.players[owner].hand))
             physical=ctx.get('physical_card')
             ready=(getattr(physical,'rule_state',{}).get('held_mana_spent',0)>=op[2])
             modifiers=(('set_cost',1),) if ready else ()
@@ -131,9 +184,9 @@ class GenerationEffects:
             elif mode=='death_source_cost':
                 source=ctx.get('source')
                 if source is None:raise UnsupportedCard('Missing death source for generation')
-                cost=self.cards[source.card_id]['cost']
+                cost=self._card_data(source)['cost']
             else:raise UnsupportedCard('Unknown dynamic generation selector: '+mode)
-            request=pool(card_type='MINION',minimum=cost,maximum=cost)
+            request=board_pool(pool(card_type='MINION',minimum=cost,maximum=cost))
             self._generation_candidates(request,owner)
             return ('generation_pay_resource',mode,cost),(('generate_one',request,'board',()),)
         if name == 'generation_repeat_deaths':
@@ -142,8 +195,9 @@ class GenerationEffects:
         if name == 'generation_if_corpses':
             if self.players[owner].corpses<op[1]:return ('batch30_noop',),()
             # Validate the nested generation before spending its resource.
-            self._generation_candidates(op[2],owner)
-            return ('generation_pay_resource','corpses_up_to',op[1]),(('generate_one',op[2],'board',()),)
+            request=board_pool(op[2])
+            self._generation_candidates(request,owner)
+            return ('generation_pay_resource','corpses_up_to',op[1]),(('generate_one',request,'board',()),)
         if name == 'generation_if_outcast':
             return self._split_fixed_summon(op[1],ctx) if ctx.get('outcast') else (('batch30_noop',),())
         if name == 'generation_damage_branch':
@@ -152,7 +206,7 @@ class GenerationEffects:
                 return ('batch30_noop',),()
             return ('damage',op[1]),(('generation_after_damage',uid,op[2]),)
         if name == 'generation_summon_attack':
-            request,count=op[1:]
+            request,count=op[1:];request=board_pool(request)
             if type(count) is not int or count<0:raise ValueError('Invalid generation summon count')
             self._generation_candidates(request,owner)
             if count==0:return ('batch30_noop',),()
@@ -165,15 +219,16 @@ class GenerationEffects:
             if type(count) is not int or count < 0:
                 raise ValueError('Generation count must be a nonnegative integer')
             # Full closure validation precedes even a zero request.
-            candidates = self._generation_candidates(op[1], owner)
+            request=board_pool(op[1]) if op[3]=='board' else op[1]
+            candidates = self._generation_created_candidates(request, ctx)
             if count == 0 or not candidates:
                 return ('batch30_noop',), ()
             if op[3] == 'deck':
-                state = {'inserted': 0}
+                state = {'inserted': 0, 'cards': []}
                 operations = [('generation_deck_one', op[1], op[4], state)] * count + [('generation_record_shuffle', state)]
                 return operations[0], tuple(operations[1:])
-            first = ('generate_one', op[1], op[3], op[4])
-            tail = (('generate_random', op[1], count-1, op[3], op[4]),) if count > 1 else ()
+            first = ('generate_one', request, op[3], op[4])
+            tail = (('generate_random', request, count-1, op[3], op[4]),) if count > 1 else ()
             return first, tail
         if name == 'generation_if_combo':
             return self._split_fixed_summon(op[1], ctx) if ctx.get('combo') else (('batch30_noop',), ())
@@ -181,7 +236,7 @@ class GenerationEffects:
             condition = any(has_tribe(self._card_data(c), op[1]) for c in self.players[owner].hand)
             return self._split_fixed_summon(op[2], ctx) if condition else (('batch30_noop',), ())
         if name == 'generation_if_other_tribe':
-            condition = any(m is not ctx.get('source') and m.health > 0 and has_tribe(self.cards[m.card_id], op[1]) for m in self.players[owner].minions)
+            condition = any(m is not ctx.get('source') and m.health > 0 and has_tribe(self._card_data(m), op[1]) for m in self.players[owner].minions)
             return self._split_fixed_summon(op[2], ctx) if condition else (('batch30_noop',), ())
         if name == 'generation_mana_branch':
             return self._split_fixed_summon(op[2] if self.players[owner].max_mana >= op[1] else op[3], ctx)
@@ -191,31 +246,39 @@ class GenerationEffects:
         owner = ctx['owner']
         data = self.cards[cid]
         mods = dict(modifiers)
-        allowed = {'attack', 'health', 'combo_attack', 'double_stats', 'stats', 'set_cost', 'cost_delta', 'freeze', 'keyword', 'heal_cost', 'shuffle_unchosen', 'temporary', 'trigger_deathrattle', 'combo_cost_delta', 'duration_delta','prepare','follow','repeat_spell','choose_both','locked_until_play','growing_discount','health_payment','dormant_turns'}
+        allowed = {'attack', 'health', 'combo_attack', 'double_stats', 'stats', 'set_cost', 'cost_delta', 'freeze', 'keyword', 'keywords', 'heal_cost', 'shuffle_unchosen', 'temporary', 'trigger_deathrattle', 'combo_cost_delta', 'duration_delta','prepare','follow','repeat_spell','choose_both','locked_until_play','growing_discount','health_payment','dormant_turns','turn_cost_delta'}
         if set(mods) - allowed:
             raise UnsupportedCard('Unknown generation modifiers: ' + ', '.join(sorted(set(mods)-allowed)))
+        if 'keywords' in mods and (destination!='board' or not isinstance(mods['keywords'],(tuple,list)) or any(not isinstance(keyword,str) or not keyword for keyword in mods['keywords'])):
+            raise UnsupportedCard('Generated summon keywords require a board destination and keyword sequence')
         if 'dormant_turns' in mods and (destination!='board' or type(mods['dormant_turns']) is not int or mods['dormant_turns']<=0):
             raise UnsupportedCard('Dormant generation requires a board destination and positive integer duration')
         if 'health_payment' in mods and mods['health_payment'] not in ('turn','permanent'):
             raise UnsupportedCard('Unknown health-payment duration')
-        if destination not in ('hand', 'board', 'deck', 'enemy_top', 'bottom'):
+        if destination not in ('hand', 'board', 'deck', 'enemy_top', 'bottom','nellie_crew'):
             raise UnsupportedCard('Unknown generation destination: ' + str(destination))
         if destination == 'board' and data['type'] != 'MINION':
             raise UnsupportedCard('Generation board destination requires a minion')
+        if destination=='nellie_crew':
+            if mods:raise UnsupportedCard('Nellie crew stores unmodified generated identities')
+            return self._historic_nellie_store(cid,ctx)
         card = Card(self._new_id(), cid)
         card.attack_bonus = mods.get('attack', 0) + (mods.get('combo_attack', 0) if ctx.get('combo') else 0)
         card.health_bonus = mods.get('health', 0)
         if mods.get('double_stats'):
-            card.attack_bonus += data.get('attack', 0)
-            card.health_bonus += data.get('health', 0)
+            _saidan_add(card,'attack_bonus',data.get('attack', 0))
+            _saidan_add(card,'health_bonus',data.get('health', 0))
         if 'stats' in mods:
             card.attack_bonus = mods['stats'][0] - data.get('attack', 0)
             card.health_bonus = mods['stats'][1] - data.get('health', 0)
         if 'set_cost' in mods:
-            card.cost_delta = mods['set_cost'] - data.get('cost', 0)
+            card.set_cost = mods['set_cost']
+            card.cost_delta = 0
         else:
             card.cost_delta = mods.get('cost_delta', 0)
         if ctx.get('combo'):card.cost_delta+=mods.get('combo_cost_delta',0)
+        if mods.get('turn_cost_delta'):
+            card.temporary_cost_discounts=getattr(card,'temporary_cost_discounts',[])+[dict(amount=-mods['turn_cost_delta'],end=self.turn)]
         if mods.get('duration_delta'):
             self._b60_state(card)['aura_duration_delta']=mods['duration_delta']
         if mods.get('temporary'):
@@ -241,12 +304,10 @@ class GenerationEffects:
             result = self._summon(owner, cid, attack_bonus=card.attack_bonus,
                                   health_bonus=card.health_bonus, entry_origin='effect',
                                   entry_site='generation', entry_source=ctx.get('source'),
-                                  dormant_turns=mods.get('dormant_turns'))
-            if result:
-                if mods.get('freeze'):
-                    self._freeze(result.uid)
-                if mods.get('keyword'):
-                    result.keywords.add(mods['keyword'])
+                                  dormant_turns=mods.get('dormant_turns'),
+                                  entry_stats=mods.get('stats'),
+                                  entry_keywords=tuple(dict.fromkeys(((mods['keyword'],) if mods.get('keyword') else ())+tuple(mods.get('keywords',())))),
+                                  entry_frozen=bool(mods.get('freeze')))
         elif destination in ('deck', 'enemy_top', 'bottom'):
             recipient = 1-owner if destination == 'enemy_top' else owner
             deck = self.players[recipient].deck
@@ -257,7 +318,7 @@ class GenerationEffects:
             else:
                 deck.insert(self.rng.randrange(len(deck)+1), card)
                 if record_shuffle:
-                    self._record_deck_insertion(recipient, owner, 1, 'shuffle')
+                    self._record_deck_insertion(recipient, owner,1,'shuffle',cards=(card,))
             result = card
         else:
             raise UnsupportedCard('Unknown generation destination: ' + str(destination))
@@ -313,27 +374,29 @@ class GenerationEffects:
             target=next((m for player in self.players for m in player.minions if m.uid==op[1] and m.health>0),None)
             if target is not None:self._draw(ctx['owner'])
             elif any(record['entity'].uid==op[1] for player in self.players for record in player.death_records):
-                candidates=self._generation_candidates(op[2],ctx['owner'])
+                candidates=self._generation_candidates(board_pool(op[2]),ctx['owner'])
                 if candidates:self._generation_place(self.rng.choice(candidates),'board',(),ctx)
         elif name == 'generation_capture_summon':
-            candidates=self._generation_candidates(op[1],ctx['owner'])
+            candidates=self._generation_candidates(board_pool(op[1]),ctx['owner'])
             if candidates:
                 minion=self._generation_place(self.rng.choice(candidates),'board',(),ctx)
                 if minion:op[2]['summoned'].append(minion.uid)
         elif name == 'generate_one':
-            candidates = self._generation_candidates(op[1], ctx['owner'])
+            request=board_pool(op[1]) if op[2]=='board' else op[1]
+            candidates = self._generation_created_candidates(request, ctx)
             if candidates:
                 # Separate random requests sample WITH replacement. Discover
                 # instead samples distinct identities below.
                 self._generation_place(self.rng.choice(candidates), op[2], op[3], ctx)
         elif name == 'generation_deck_one':
-            candidates = self._generation_candidates(op[1], ctx['owner'])
+            candidates = self._generation_created_candidates(op[1], ctx)
             if candidates:
-                self._generation_place(self.rng.choice(candidates), 'deck', op[2], ctx, record_shuffle=False)
+                card=self._generation_place(self.rng.choice(candidates), 'deck', op[2], ctx, record_shuffle=False)
+                op[3]['cards'].append(card)
                 op[3]['inserted'] += 1
         elif name == 'generation_record_shuffle':
             if op[1]['inserted']:
-                self._record_deck_insertion(ctx['owner'], ctx['owner'], op[1]['inserted'], 'shuffle')
+                self._record_deck_insertion(ctx['owner'], ctx['owner'], op[1]['inserted'], 'shuffle',cards=op[1]['cards'])
         elif name in ('generate_discover', 'generation_discover_absorb'):
             candidates = self._generation_discover_candidates(op[1],ctx)
             ids = self.rng.sample(list(candidates), min(3, len(candidates)))
@@ -386,13 +449,13 @@ class GenerationEffects:
         else:
             self._discovery_result=self._generation_place(selected['card_id'], state['destination'], state['modifiers'], state['context'])
         if dict(state['modifiers']).get('shuffle_unchosen'):
-            count = 0
+            count = 0;shuffled=[]
             for option in choice['options']:
                 if option is not selected:
-                    self._generation_place(option['card_id'], 'deck', (), state['context'], record_shuffle=False)
+                    shuffled.append(self._generation_place(option['card_id'], 'deck', (), state['context'], record_shuffle=False))
                     count += 1
             if count:
                 owner = choice['owner']
-                self._record_deck_insertion(owner, owner, count, 'shuffle')
+                self._record_deck_insertion(owner, owner, count, 'shuffle',cards=shuffled)
         del self._generation_choice_context
         return True

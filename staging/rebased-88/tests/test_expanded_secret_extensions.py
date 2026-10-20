@@ -43,4 +43,6 @@ class SecretExtensions(unittest.TestCase):
         for cid in ('JAIL_315','CORE_LOOT_101'):
             g=self.game();self.play(g,cid)
             self.assertEqual(g.players[0].secrets[0].card_id,cid)
-            self.assertNotIn(cid,str(g.observe(1)))
+            view=g.observe(1)
+            self.assertNotIn(cid,str(view['players'][0]))
+            self.assertNotIn(cid,str(view['events']))

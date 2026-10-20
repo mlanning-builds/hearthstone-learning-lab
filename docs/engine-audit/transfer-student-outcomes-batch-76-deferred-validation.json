@@ -1,0 +1,53 @@
+{
+  "scope": "Thirteen new iconic-hand Spellstone/choice/Secret spell definitions; existing Wolf and Scarab reused",
+  "new_dependency_definitions": 13,
+  "new_unvalidated_bodies": 13,
+  "new_ids": [
+    "EX1_295",
+    "ICC_054",
+    "LOOT_051",
+    "LOOT_051t1",
+    "LOOT_051t2",
+    "LOOT_054",
+    "LOOT_054b",
+    "LOOT_054c",
+    "LOOT_054d",
+    "LOOT_080",
+    "LOOT_080t2",
+    "LOOT_080t3",
+    "VAN_EX1_295"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "de4925241053a9730d2e0e82ec06c64c0fc5d779754d438188603c2fb8c19963",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Kazakusan",
+    "https://outof.games/news/4256-blizzard-clarifies-treasures-info-on-the-new-kazakusan-legendary-in-onyxias-lair/"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Thirteen new spell definitions; existing Wolf and Scarab minions reused without new placeholders",
+    "Jasper upgrades from actual armor gain and Emerald from paid Secret completion; reset, over-threshold progress and identity preservation remain unvalidated",
+    "Branching Paths repeats its three-option choice after the first effect and allows choosing an option twice; choice modifiers and interruption order need deferred review",
+    "Spreading Plague uses a resumable summon/count loop; repeated-cast bookkeeping and summon triggers need deferred review",
+    "Ice Block checks fatal damage after modifiers and armor, before health loss, and grants turn-scoped immunity; replacement priority, Rhyssa and simultaneous lethal remain unvalidated",
+    "Harth source remains unfinished; no gameplay/regressions/training run"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "EX1_410",
+    "DRG_301",
+    "ULD_708"
+  ],
+  "candidate_fingerprint": "b1f3de071b8045f62889a5579d61679d09ae1855a5b56f9250b39106f9f2262a",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Armor spell damage calculation",
+    "Weapon attack trigger timing and hand capacity interactions"
+  ]
+}

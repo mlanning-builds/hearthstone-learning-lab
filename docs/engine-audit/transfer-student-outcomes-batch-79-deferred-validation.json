@@ -1,0 +1,39 @@
+{
+  "scope": "Composite All-type, Prepare/Tradeable and physical-definition preservation; explicit candidate census",
+  "new_component_recipes": 3,
+  "historical_component_recipes_total": 27,
+  "new_unvalidated_bodies": 0,
+  "new_ids": [],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 6,
+  "current_expansion_outcome_gap": 6,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "76cfdb9a15c15b2029ce8f443192b35fa67c890e0c859c84586afdb9b001c926",
+  "historical_minions_written": 3187,
+  "historical_minions_remaining": 14,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata",
+    "https://hearthstone.wiki.gg/wiki/Template%3ADeathstalker_Rexxar_notes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "All-type inheritance now applies to Zombeasts and Dragons; Silence/copy/replay behavior still unvalidated",
+    "Three explicit component recipes added: Rustrot Viper, Sewer Swimmer and Jailbird; eligibility remains a separate contract",
+    "Prepare eligibility and prepare-linked discounts use inherited physical properties; Tradeable actions use physical mechanics",
+    "Hand-to-deck resets retain compiled physical definitions while clearing temporary enchantments; identity/zone-copy interactions require deferred review",
+    "Complete frozen affordable Standard Hunter/neutral Beast candidate census saved with explicit sourced exclusions and all unresolved rows retained; not a production offer pool",
+    "No source cards admitted and no gameplay/regressions/training run"
+  ]
+}

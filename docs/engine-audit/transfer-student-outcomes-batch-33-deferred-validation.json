@@ -1,0 +1,38 @@
+{
+  "scope": "Physical Timber Tambourine and Jazz Bass upgrades and death effects",
+  "new_unvalidated_bodies": 3,
+  "new_ids": [
+    "ETC_387bt",
+    "ETC_388",
+    "ETC_813"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 45,
+  "current_expansion_outcome_gap": 43,
+  "closed_outcome_ids": [
+    "ETC_388",
+    "ETC_813"
+  ],
+  "candidate_fingerprint": "a92ca804609776c938434aaa57780c127491fde7d8ee51347d5c7fe3409cfad9",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Timber paid-cost threshold, countered plays and physical upgrade preservation",
+    "Ancient token client identity and deathrattle summon ordering/multipliers",
+    "Jazz Overload instance count versus overloaded crystal count, locked mana prevention and discount consumption",
+    "All new behavior and recursive generated closure remain unvalidated"
+  ]
+}

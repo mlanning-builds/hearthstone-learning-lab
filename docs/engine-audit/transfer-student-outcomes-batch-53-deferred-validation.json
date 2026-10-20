@@ -1,0 +1,44 @@
+{
+  "scope": "Seven Reno bullet power programs; hero board-clear staged pending rotation contract",
+  "new_unvalidated_bodies": 7,
+  "new_ids": [
+    "WW_0700p1",
+    "WW_0700p2",
+    "WW_0700p3",
+    "WW_0700p4",
+    "WW_0700p5",
+    "WW_0700p6",
+    "WW_0700p7"
+  ],
+  "new_collectible_outcomes": 0,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 8,
+  "current_expansion_outcome_gap": 8,
+  "closed_outcome_ids": [],
+  "candidate_fingerprint": "40816ec474452bdf78f16d58d5316d518993ca712b7e66ce8ed2bc3692753100",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Reno root WW_0700 remains unregistered; exact initial and per-turn bullet-selection distribution, repeat eligibility and rotation phase unresolved",
+    "Seven literal bullet programs have executable replacement-power handlers; no rotation invented for isolated powers",
+    "Native power modifier handling of secondary area damage, mana refresh, armor, Discover and random summon",
+    "Reno neutral hero class preservation and usage/cost reset on future power replacements",
+    "Staged starting-deck canonical uniqueness and enemy minion-only removal versus Locations, Dormant and other permanents",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

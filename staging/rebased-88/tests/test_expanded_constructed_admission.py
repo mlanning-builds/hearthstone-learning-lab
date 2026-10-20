@@ -1,5 +1,6 @@
 """Normal-registry construction and paid-action checks for opening effects."""
 import unittest
+from unittest.mock import patch
 from expanded import Game, Action, random_deck
 from expanded.decks import Deck, eligible, validate
 from expanded.cards import registry, COLLECTIBLE_IDS
@@ -8,7 +9,7 @@ from expanded.fabled_decks import BUNDLES
 class ConstructedAdmissionTests(unittest.TestCase):
  def deck(self,hero,root,size,selection=None):
   cards=registry()
-  ids=[c for c in sorted(COLLECTIBLE_IDS) if c not in BUNDLES and c not in ('JAIL_397','JAIL_430') and eligible(cards[c],hero,(0,0,0))]
+  ids=[c for c in sorted(COLLECTIBLE_IDS) if c not in BUNDLES and c not in ('JAIL_397','JAIL_430','CATA_EVENT_110') and eligible(cards[c],hero,(0,0,0))]
   d=Deck(hero,(root,)+tuple(ids[:size-1]),beatrix_minion=selection)
   self.assertEqual(validate(d),[])
   return d
@@ -38,13 +39,33 @@ class ConstructedAdmissionTests(unittest.TestCase):
   self.assertEqual(len(p.hand),10);self.assertEqual(len(p.deck),before-10)
   self.assertEqual(p.mana,3)
  def test_random_decks_supply_legal_deterministic_opening_choices(self):
-  seen=set()
   for hero,root in (('PALADIN','JAIL_397'),('PRIEST','JAIL_430')):
    for seed in range(80):
     d=random_deck(hero,seed);self.assertEqual(validate(d),[])
     self.assertEqual(d,random_deck(hero,seed))
     if root in d.cards:
-     seen.add(root)
      if root=='JAIL_397':self.assertIsNotNone(d.beatrix_minion)
      else:self.assertEqual(len(d.cards),20)
-  self.assertEqual(seen,{'JAIL_397','JAIL_430'})
+ def test_random_deck_handles_forced_opening_modifier_choice(self):
+  for hero,root,size in (('PALADIN','JAIL_397',30),('PRIEST','JAIL_430',20)):
+   with self.subTest(root=root):
+    selected=self.deck(hero,root,size,'CORE_EX1_162' if root=='JAIL_397' else None).cards
+    def forced(slots,seed):
+     self.assertIn(root,slots)
+     return selected
+    with patch('expanded.fabled_decks.sample_bundle_slots',side_effect=forced),patch('expanded.decks.random.Random.sample',return_value=list(selected)):
+     d=random_deck(hero,91);self.assertEqual(validate(d),[]);self.assertIn(root,d.cards)
+     self.assertEqual(d,random_deck(hero,91));self.assertEqual(len(d.cards),size)
+     if root=='JAIL_397':
+      record=registry()[d.beatrix_minion]
+      self.assertEqual(record['type'],'MINION');self.assertEqual(record['cost'],2)
+      self.assertTrue(eligible(record,hero,(0,0,0)))
+
+ def test_beatrix_and_dragon_soul_both_expand_original_deck(self):
+  d=self.deck('PALADIN','JAIL_397',30,'CORE_EX1_162')
+  d=Deck(d.hero_class,d.cards[:-1]+('CATA_EVENT_110',),beatrix_minion=d.beatrix_minion)
+  self.assertEqual(validate(d),[]);g=Game([d,self.deck('WARRIOR','CORE_EX1_162',30)],seed=33)
+  p=g.players[0];physical=p.hand+p.deck
+  self.assertEqual(len(physical),45);self.assertEqual(len(p.starting_deck),30)
+  self.assertEqual(sum(c.card_id=='CORE_EX1_162' for c in physical),10+d.cards.count('CORE_EX1_162'))
+  self.assertTrue(all(sum(c.card_id=='CATA_EVENT_110t'+str(i) for c in physical)==1 for i in range(2,8)))

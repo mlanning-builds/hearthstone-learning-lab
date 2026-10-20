@@ -1,0 +1,41 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "d821bac00b0e63914a041e7135e39b9b7da2665d22118bca8b881c0aaeba6df7",
+  "new_card_ids": [
+    "CORE_FB_Champs_LOOT_080",
+    "CORE_LOOT_516"
+  ],
+  "repaired_existing_ids": [
+    "LOOT_516"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "harth_written_name_slots": 104,
+  "unwritten_usable_candidate_printings": [],
+  "invalid_name_collisions": [
+    "HERO_04a"
+  ],
+  "implemented": [
+    "Alternate Lesser Emerald Spellstone body and native secret-play upgrade chain",
+    "Core Zola Golden-copy Battlecry",
+    "Original Zola also records Golden physical-card property",
+    "Fresh replay and origin transfer preserve Golden property"
+  ],
+  "checks": [
+    "AST all expanded modules",
+    "Strict printing rule declarations",
+    "Metadata hashes and full Harth candidate printing inventory",
+    "All-eleven-class inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Harth exact printing choices, order and selection distribution",
+    "Alternate Spellstone upgrade identity against pinned client",
+    "Golden cosmetic metadata through all other zone/copy paths",
+    "Zola retained enchantment and compiled-card copy semantics"
+  ]
+}

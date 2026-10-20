@@ -1,0 +1,14 @@
+{
+  "note": "Additive local neural dependencies; original environment snapshot is preserved. This is not a cross-platform lockfile.",
+  "versions": {
+    "torch": "2.8.0",
+    "numpy": "2.0.2",
+    "ruff": "0.17.1",
+    "mypy": "1.14.1",
+    "filelock": "3.19.1",
+    "fsspec": "2025.10.0",
+    "networkx": "3.2.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  }
+}

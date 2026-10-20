@@ -15,28 +15,49 @@ DEATH_EFFECTS={'CAP_004':[('alternate_enemy_draw',),('alternate_enemy_draw',)],
                'JAIL_442':[('on_draw_shuffle','JAIL_443t',4,0)]}
 
 class AlternatePlay:
+    def _historical_payment_matches(self,effect,card,owner):
+        if not isinstance(effect,dict) or effect.get('kind')!='historical_payment' or not(effect['start']<=self.turn<=effect['end']):return False
+        data=self._card_data(card);selector=effect['selector']
+        from .selectors import has_class
+        return selector=='all' or selector=='spell' and data['type']=='SPELL' or selector=='minion' and data['type']=='MINION' or selector=='paladin_minion' and data['type']=='MINION' and has_class(data,'PALADIN')
     def _payment_kind(self,card,owner,cost=None):
         p=self.players[owner];cost=self._cost(card,owner) if cost is None else cost
-        kind='corpses' if card.card_id=='TLC_436' else 'health' if card.card_id=='CORE_ETC_523' and p.hero_healed_turn else 'mana'
+        kind='corpses' if card.card_id=='TLC_436' else 'health' if card.card_id in ('CORE_ETC_523','ETC_523') and p.hero_healed_turn else 'mana'
         state=getattr(card,'rule_state',{})
-        if card.card_id in HEALTH_PAYMENT_IDS or (state.get('health_payment') and self.turn<=state.get('health_payment_until',self.turn)):
+        if card.card_id=='JAM_028' or card.card_id in HEALTH_PAYMENT_IDS or (state.get('health_payment') and self.turn<=state.get('health_payment_until',self.turn)):
             kind='health'
         for effect in p.payment_effects:
-            if effect=='enemy_health':kind='enemy_health'
-            elif effect=='murloc_health' and cost<=3 and has_tribe(self.cards[card.card_id],'MURLOC'):kind='health'
+            if self._historical_payment_matches(effect,card,owner):kind=effect['payment']
+            elif isinstance(effect,dict) and effect.get('kind')=='historical_murloc_health' and effect['turn']==self.turn and has_tribe(self._card_data(card),'MURLOC'):kind='health'
+            elif isinstance(effect,dict) and effect.get('kind')=='historical_minion_health_turn' and effect['owner_turn']==p.turns_taken and self._card_data(card)['type']=='MINION':kind='health'
+            elif effect=='enemy_health':kind='enemy_health'
+            elif effect=='murloc_health' and cost<=3 and has_tribe(self._card_data(card),'MURLOC'):kind='health'
         return kind
 
     def _can_pay(self,card,owner):
         p=self.players[owner];cost=self._cost(card,owner);kind=self._payment_kind(card,owner,cost)
         if kind=='mana':return cost<=p.mana
         if kind=='corpses':return cost<=p.corpses
+        if kind=='armor':return cost<=p.armor
         if kind=='health':return cost<p.health or self._onyxia_active(owner)
         return cost<=10
 
     def _pay_card(self,card,owner,cost):
         p=self.players[owner];kind=self._payment_kind(card,owner,cost)
-        p.payment_effects[:]=[e for e in p.payment_effects if e!='enemy_health' and not (e=='murloc_health' and cost<=3 and has_tribe(self.cards[card.card_id],'MURLOC'))]
+        p.payment_effects[:]=[e for e in p.payment_effects if e!='enemy_health' and not (e=='murloc_health' and cost<=3 and has_tribe(self._card_data(card),'MURLOC'))]
+        p.payment_effects[:]=[e for e in p.payment_effects if not (isinstance(e,dict) and e.get('kind')=='historical_murloc_health' and (e['turn']<self.turn or has_tribe(self._card_data(card),'MURLOC')))]
+        kept=[]
+        for effect in p.payment_effects:
+            if isinstance(effect,dict) and effect.get('kind')=='historical_payment':
+                if effect['end']<self.turn:continue
+                if self._historical_payment_matches(effect,card,owner) and 'uses' in effect:
+                    effect['uses']-=1
+                    if effect['uses']<=0:continue
+            kept.append(effect)
+        p.payment_effects[:]=kept
         if kind=='mana':p.mana-=cost;self._b60_spend_mana(owner,cost)
+        elif kind=='armor':
+            p.armor-=cost;p.historical_armor_changed_turn=self.turn
         elif kind=='corpses':
             self._spend_corpses(owner,cost)
         else:

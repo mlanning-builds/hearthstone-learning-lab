@@ -23,6 +23,17 @@ class BonusEffects:
 
     def _card_mechanics(self,card):
         data=self._card_data(card);keywords=set(data.get('mechanics',[]))
+        state=getattr(card,'rule_state',{})
+        if 'forge_parts' in state:
+            from .forge_intrinsics import values
+            keywords.update(state.get('forge_keywords',()))
+            if state.get('crafted_ops'):keywords.add('BATTLECRY')
+            if state.get('forge_death'):keywords.add('DEATHRATTLE')
+            if any(values(card,'spell_damage')) or any(values(card,'damaged_spell_damage')):keywords.add('SPELLPOWER')
+            if any(values(card,'overload')):keywords.add('OVERLOAD')
+        if state.get('historical_ouroboros_deaths',0):keywords.add('DEATHRATTLE')
+        if state.get('historical_granted_deaths'):keywords.add('DEATHRATTLE')
+        if state.get('historical_ritual_taunt'):keywords.add('TAUNT')
         keywords.update(self._dark_keywords(card))
         if hasattr(card,'_bound_card') or hasattr(card,'_bound_minion'):keywords.add('DEATHRATTLE')
         if data['id']=='CATA_206':

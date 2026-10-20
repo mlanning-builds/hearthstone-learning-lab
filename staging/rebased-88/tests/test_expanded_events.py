@@ -19,7 +19,7 @@ class EventContractsTests(unittest.TestCase):
         rules={self.parent.card_id:('spell_cast',parent_ops),
                self.child.card_id:('hero_attack',[('child',)])}
         with patch.dict(TRIGGERS,rules,clear=True), patch.object(self.g,'_effect',side_effect=effect):
-            self.g._queue_event('spell_cast',owner=0)
+            self.g._queue_event('spell_cast',owner=0,card_id='TOKEN_COIN',cost=0)
             self.g._drain_events()
 
     def effect(self,op,ctx):
@@ -36,7 +36,7 @@ class EventContractsTests(unittest.TestCase):
         rules={self.parent.card_id:('spell_cast',[('emit',),('parent_done',)]),
                self.child.card_id:('hero_attack',[('child',)])}
         with patch.dict(TRIGGERS,rules,clear=True),patch.object(self.g,'_effect',side_effect=effect):
-            self.g._queue_event('spell_cast',owner=0)
+            self.g._queue_event('spell_cast',owner=0,card_id='TOKEN_COIN',cost=0)
             self.g._queue_event('hero_attack',owner=0)
             self.g._drain_events()
         self.assertEqual(self.trace,['emit','child','parent_done','child'])
@@ -69,7 +69,7 @@ class EventContractsTests(unittest.TestCase):
         self.assertNotIn(self.child,self.p.board)
 
     def test_reentrant_trigger_fails_explicitly_and_releases_dispatch_guard(self):
-        def effect(op,ctx): self.g._queue_event('spell_cast',owner=0)
+        def effect(op,ctx): self.g._queue_event('spell_cast',owner=0,card_id='TOKEN_COIN',cost=0)
         with self.assertRaisesRegex(UnsupportedCard,'Re-entrant'):
             self.dispatch(effect)
         self.assertFalse(self.g._draining_events)

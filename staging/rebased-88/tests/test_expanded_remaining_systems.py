@@ -23,10 +23,11 @@ class RemainingSystemTests(unittest.TestCase):
  @property
  def q(self):return self.g.players[1]
  def op(self,*ops,target=0):self.g._start_play_effects(ops,dict(owner=0,source=None,target=target,bonus=0,lifesteal=False));self.g._settle(allow_event_choices=True)
- def test_split_rounds_odd_stats_up_and_preserves_physical_original(self):
+ def test_split_distributes_odd_stats_and_preserves_physical_original(self):
   c=self.g._enter_hand(0,Card(self.g._new_id(),'NEW1_034'));c.attack_bonus=1;c.health_bonus=1;c.set_cost=5;uid=c.uid
-  self.op(('mutation_split_minion',));self.assertEqual(len(self.p.hand),2);self.assertEqual(self.p.hand[0].uid,uid)
-  self.assertEqual([self.g._cost(x,0) for x in self.p.hand],[3,3]);self.assertEqual([x.attack_bonus for x in self.p.hand],[-1,-1]);self.assertEqual([x.health_bonus for x in self.p.hand],[0,0])
+  with patch.object(self.g.rng,'randrange',side_effect=[1,1,1]):self.op(('mutation_split_minion',))
+  self.assertEqual(len(self.p.hand),2);self.assertEqual(self.p.hand[0].uid,uid)
+  self.assertEqual([self.g._cost(x,0) for x in self.p.hand],[3,2]);self.assertEqual([x.attack_bonus for x in self.p.hand],[-1,-2]);self.assertEqual([x.health_bonus for x in self.p.hand],[0,-1])
  def test_split_full_hand_keeps_one_half_and_does_not_overfill(self):
   self.g._enter_hand(0,Card(self.g._new_id(),'NEW1_034'))
   for _ in range(9):self.g._enter_hand(0,Card(self.g._new_id(),'CORE_CS2_029'))
@@ -41,9 +42,12 @@ class RemainingSystemTests(unittest.TestCase):
   cid=self.alternate_pool();self.g._enter_hand(0,Card(self.g._new_id(),'CORE_CS2_029'));before=(len(self.p.hand),len(self.p.deck));self.op(('mutation_alternate_reality',))
   self.assertEqual((len(self.p.hand),len(self.p.deck)),before);self.assertTrue(all(c.card_id==cid and c.cost_delta==-1 for c in self.p.hand+self.p.deck))
  def test_alternate_reality_missing_pool_does_not_mutate_zones(self):
-  old=list(self.p.deck)
-  with self.assertRaises(UnsupportedCard):self.op(('mutation_alternate_reality',))
-  self.assertEqual(self.p.deck,old)
+  # The production pool is written now; remove a real eligible identity
+  # to keep this a genuine missing-dependency rollback check.
+  del self.g.cards['CFM_602']
+  old=list(self.p.deck);hand=list(self.p.hand);rng=self.g.rng.getstate()
+  with self.assertRaisesRegex(UnsupportedCard,'eligible effects not implemented'):self.op(('mutation_alternate_reality',))
+  self.assertEqual(self.p.deck,old);self.assertEqual(self.p.hand,hand);self.assertEqual(self.g.rng.getstate(),rng)
  def test_stormrook_replaces_nature_damage_without_consuming_shield(self):
   m=self.g._summon(0,'TIME_217');m.keywords.add('DIVINE_SHIELD');self.g.cards['TEST_NATURE']=dict(id='TEST_NATURE',type='SPELL',spellSchool='NATURE')
   self.g.cards['TEST_FIVE']=dict(id='TEST_FIVE',name='Five',type='MINION',cost=5,attack=1,health=1,cardClass='NEUTRAL')

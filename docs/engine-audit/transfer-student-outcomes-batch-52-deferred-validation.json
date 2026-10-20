@@ -1,0 +1,44 @@
+{
+  "scope": "Headless Horseman full hero, Head and replacement-power family",
+  "new_unvalidated_bodies": 5,
+  "new_ids": [
+    "TOY_829",
+    "TOY_829hp",
+    "TOY_829hp3",
+    "TOY_829t",
+    "TOY_829t2"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 9,
+  "current_expansion_outcome_gap": 8,
+  "closed_outcome_ids": [
+    "TOY_829"
+  ],
+  "candidate_fingerprint": "41e37e69551c596d344c1f8f4db95e0c7755c34414335038df0b1a185f3d18ce",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Highest-Attack tie selection and destruction immunity, Battlecry repetitions and Head insertion order",
+    "Hero replacement armor/class semantics and alternate TOY_829t2 presentation identity",
+    "Head overdraw, replacement draw and manual-cast behavior, transformed/stolen hero powers and usage state",
+    "Power damage modifiers followed by complete class-eligible Undead Discover and death/choice continuations",
+    "Maestra complete historical Hero generation closure remains independently incomplete",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

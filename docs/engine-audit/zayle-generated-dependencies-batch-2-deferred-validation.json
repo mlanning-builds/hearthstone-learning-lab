@@ -1,0 +1,27 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "BT_100",
+    "VAC_329",
+    "ULD_171"
+  ],
+  "candidate_fingerprint": "ef3de1c3e5e61d4cffeaa0e2dbed87b8aeb23f99d639a0b06001cb45adf53b0f",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Random summon completion after damage",
+    "Class-independent Naga/spell pools and cost modifier lifecycle",
+    "Totem buff and Overload integration"
+  ]
+}

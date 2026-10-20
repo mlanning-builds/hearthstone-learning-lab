@@ -3,11 +3,12 @@
 Power bodies and card consumers are connected separately; this module does not
 claim the Imbue family is playable. Unsupported power bodies fail explicitly.
 """
+from .historical_saidan import add as _saidan_add
 import json
 from pathlib import Path
 from engine.cards import UnsupportedCard
 from .selectors import has_tribe
-from .generation_cards import pool, random_cards
+from .generation_cards import board_pool, pool, random_cards
 from engine.game import Card
 
 PINNED_VALUES=json.loads(Path(__file__).with_name('imbue_values.json').read_text())['cards']
@@ -74,7 +75,7 @@ class Imbue:
                          entry_origin='hero_power',entry_site='imbued_power')
         elif op[0]=='imbue_portal':
             cost=p.imbue_count
-            candidates=self._generation_candidates(pool(card_type='MINION',tribe='DRAGON',minimum=cost,maximum=cost),owner)
+            candidates=self._generation_candidates(board_pool(pool(card_type='MINION',tribe='DRAGON',minimum=cost,maximum=cost)),owner)
             if candidates:self._generation_place(self.rng.choice(candidates),'board',(),ctx)
         elif op[0]=='imbue_priest_choose':
             # Validate BOTH complete pools before sampling either. Eligibility
@@ -96,14 +97,14 @@ class Imbue:
         elif op[0]=='imbue_evolve':
             target=next((m for m in p.minions if m.uid==ctx.get('target') and m.health>0 and not m.dormant),None)
             if target is None:return True
-            cost=self.cards[target.card_id].get('cost',0)+op[1]
-            request=pool(card_type='MINION',minimum=cost,maximum=cost)
+            cost=min(self._card_data(target).get('cost',0)+op[1],10)
+            request=board_pool(pool(card_type='MINION',minimum=cost,maximum=cost))
             candidates=self._generation_candidates(request,owner)
             if candidates:self._transform(target,self.rng.choice(candidates))
         elif op[0]=='imbue_beast_buff':
-            choices=[c for c in p.hand if self.cards[c.card_id]['type']=='MINION' and has_tribe(self.cards[c.card_id],'BEAST')]
+            choices=[c for c in p.hand if self.cards[c.card_id]['type']=='MINION' and has_tribe(self._card_data(c),'BEAST')]
             if choices:
-                card=self.rng.choice(choices);card.attack_bonus+=op[1]
+                card=self.rng.choice(choices);_saidan_add(card,'attack_bonus',op[1])
                 card.cost_delta=getattr(card,'cost_delta',0)-op[1]
                 self._refresh_auras()
         else:return False

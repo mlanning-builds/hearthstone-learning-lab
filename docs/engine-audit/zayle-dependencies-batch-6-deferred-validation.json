@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "DAL_723"
+  ],
+  "candidate_fingerprint": "3b1ac3fbea9266c72b87de6292656334d72824dc8825e05a7e3065e01052a683",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Cost changes, automatic casts and target attack changes",
+    "Spent-mana trigger ordering and destruction settlement"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Five Harmonic/Dissonant historical spell families and physical hand swaps",
+  "new_unvalidated_bodies": 11,
+  "new_ids": [
+    "ETC_314",
+    "ETC_314t",
+    "ETC_314t2",
+    "ETC_379",
+    "ETC_379t",
+    "ETC_427",
+    "ETC_427t",
+    "ETC_506",
+    "ETC_506t",
+    "ETC_717",
+    "ETC_717t"
+  ],
+  "new_collectible_spell_outcomes": 5,
+  "new_dissonant_spell_forms": 5,
+  "new_required_minion_bodies": 1,
+  "prior_expansion_outcome_gap": 373,
+  "current_expansion_outcome_gap": 368,
+  "closed_outcome_ids": [
+    "ETC_314",
+    "ETC_379",
+    "ETC_427",
+    "ETC_506",
+    "ETC_717"
+  ],
+  "candidate_fingerprint": "df5377a6ab006a1069ba3b2da444b50894adf82bba26923b976b2d22d2b2fc09",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "research_sources": [
+    "https://hearthstone.blizzard.com/en-us/news/23935243"
+  ],
+  "review_pending": [
+    "Owner-end swap phase and ordering need client-level confirmation; official announcement establishes swapping in hand each turn without precise phase",
+    "Physical UID/discount/provenance retention, copies, stolen cards and end-trigger hand changes",
+    "Popstar stat layering and summon multipliers",
+    "Distinct hand selection, Discover class restrictions and complete generated closure",
+    "All new behavior unvalidated"
+  ]
+}

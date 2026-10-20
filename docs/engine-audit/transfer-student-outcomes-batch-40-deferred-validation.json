@@ -1,0 +1,41 @@
+{
+  "scope": "Monstrous Form expiring physical stat grants and Jormungar combat excess",
+  "new_unvalidated_bodies": 2,
+  "new_ids": [
+    "TTN_079",
+    "TTN_486"
+  ],
+  "new_collectible_outcomes": 2,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 30,
+  "current_expansion_outcome_gap": 28,
+  "closed_outcome_ids": [
+    "TTN_079",
+    "TTN_486"
+  ],
+  "candidate_fingerprint": "427fe011a36eea21372fd3181846d9665905e47eb51a36b3f87f7946fd7f71f3",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Monstrous Form exact owner-start expiry phase and preservation through control changes, dormant copies and unusual forms",
+    "Stat enchantment layering, Saidan grants, set-stat effects, silence and health clamp at expiry",
+    "Jormungar excess from actual damage, prevention, shields, immunity, overkill and Poisonous",
+    "Repeated grants, cleave victims, Rhino combination, Lifesteal and simultaneous combat/death ordering",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

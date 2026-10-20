@@ -1,0 +1,222 @@
+{
+  "fingerprint": "8382dc86444d978bff1ecb9448b18dec80bf1a5c2fba2a477773fba64bc47499",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 31,
+  "new_historical_spell_roots": 21,
+  "new_tokens_and_alternate_forms": 10,
+  "registry_records": 8109,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1345,
+    "remaining": 97
+  },
+  "new_implementations": [
+    {
+      "id": "CS3_002",
+      "name": "Ritual of Doom",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS3_002t",
+      "name": "Demonic Tyrant",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_113",
+      "name": "Airlock Breach",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_113t",
+      "name": "Unfortunate Soul",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_124",
+      "name": "Bad Omen",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_124t2",
+      "name": "Felborne Overfiend",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_137",
+      "name": "Libram of Clarity",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_138",
+      "name": "Libram of Divinity",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_139",
+      "name": "Libram of Faith",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GDB_139t",
+      "name": "Lightforged Draenei",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_302",
+      "name": "Gift of Luminance",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_357",
+      "name": "Fel Guardians",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_357t",
+      "name": "Soulfed Felhound",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_533",
+      "name": "Commencement",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_617",
+      "name": "Adorable Infestation",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_617t",
+      "name": "Marsuul Cub",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_702",
+      "name": "Felosophy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SC_404",
+      "name": "Salvage the Bunker",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_034",
+      "name": "Tiny Toys",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_085",
+      "name": "Dark Alley Pact",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_085t",
+      "name": "Fiend",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_095",
+      "name": "Investment Opportunity",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_321",
+      "name": "Aimed Shot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_324",
+      "name": "Impbalming",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_324t",
+      "name": "Worthless Imp",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_558",
+      "name": "Sea Shanty",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_558t",
+      "name": "Chorus Corsair",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_925",
+      "name": "Sigil of Skydiving",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_949",
+      "name": "New Heights",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_005",
+      "name": "Barricade",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOP_005t",
+      "name": "Race Guard",
+      "collectible": false,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 8109,
+    "edges": 810,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "97 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

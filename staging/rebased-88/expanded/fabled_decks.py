@@ -39,7 +39,7 @@ def expand_bundle_ids(ids):
 
 
 def deck_size(ids):
- return 20 if 'JAIL_430' in ids else 40 if 'TIME_005' in ids else 30
+ return 20 if 'JAIL_430' in ids else 40 if 'TIME_005' in ids or 'REV_018' in ids else 30
 
 
 def companion_ids(ids):
@@ -62,7 +62,7 @@ def sample_bundle_slots(slots,seed):
   # Conflicting modifiers cannot coexist in the submitted deck.
   if cid=='JAIL_430' and any(x in selected for x in ('TIME_005','REV_018')):continue
   if cid in ('TIME_005','REV_018') and 'JAIL_430' in selected:continue
-  limit=20 if cid=='JAIL_430' else 40 if cid=='TIME_005' else target
+  limit=20 if cid=='JAIL_430' else 40 if cid in ('TIME_005','REV_018') else target
   cost=1+len(BUNDLES.get(cid,()))
   if used+cost>limit:continue
   selected.append(cid);used+=cost;target=limit

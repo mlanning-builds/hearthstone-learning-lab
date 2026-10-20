@@ -3,6 +3,7 @@
 Burn, fatigue, generation, recruitment, and deck Discover are different zone
 transitions. They must not silently publish a successful-draw event.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 from .kindred import KINDRED_IDS, activates_kindred
@@ -10,46 +11,18 @@ from .kindred import KINDRED_IDS, activates_kindred
 
 class DrawEvents:
     def _burn_deck_card(self, owner, value):
-        """Destruction and Godfrey recovery are separate parts of overdraw."""
-        player = self.players[owner]
-        cid = self._card_data(value)['id']
-        self._log('burn', player=owner, card=cid)
-        if player.overdraw_return_active and len(player.overdraw_cache) < 99:
-            card = value if isinstance(value, Card) else Card(self._new_id(), cid)
-            card.cost_delta = getattr(card, 'cost_delta', 0) - 1
-            player.overdraw_cache.append(card)
-        self._zone_card_removed(owner, value, 'deck', 'destroy')
+        return self._zone_manager.burn_deck_card(self,owner=owner,value=value)
 
     def _receive_draw(self, owner, value, *, private=False, include_burned=False):
-        self._quest_deliver_ready(owner)
-        player = self.players[owner]
-        cid = self._card_data(value)['id']
-        if len(player.hand) >= 10:
-            self._burn_deck_card(owner, value)
-            if include_burned:
-                return value if isinstance(value, Card) else Card(self._new_id(), cid)
-            return None
-        if self._on_draw_receive(owner,value,private):return None
-        card = value if isinstance(value, Card) else Card(self._new_id(), cid)
-        self._enter_hand(owner,card)
-        self._refresh_auras()
-        if not private:
-            self._log('draw', player=owner)
-            # Snapshot at the zone transition; later discounts/transforms must
-            # not retroactively change the identity drawn for these listeners.
-            self._queue_event('card_drawn', owner=owner, card=deepcopy(card))
-        return card
+        return self._zone_manager.receive_draw(self,owner=owner,value=value,private=private,include_burned=include_burned)
 
     def _take_deck_draw(self, owner, index, *, private=False, include_burned=False, recipient=None):
-        value = self.players[owner].deck.pop(index)
-        self._refresh_auras()
-        return self._receive_draw(owner if recipient is None else recipient, value,
-                                  private=private, include_burned=include_burned)
+        return self._zone_manager.take_deck_draw(self,owner=owner,index=index,private=private,include_burned=include_burned,recipient=recipient)
 
     def _draw_split(self, operation, context):
         name = operation[0]
         owner = context['owner']
-        if name in ('barnabus_draw','draw_summon_set_stats'):
+        if name in ('barnabus_draw','draw_summon_set_stats','historical_security_draw'):
             state={}
             return ('capture_effect_draw',name,state), (('finish_effect_draw',operation,state),)
         if name == 'draw_kindred_pair':
@@ -126,7 +99,13 @@ class DrawEvents:
             if card is not None:
                 if original[0]=='barnabus_draw':
                     if state['large']:
-                        card.health_bonus+=5;self._gain_armor(owner,5)
+                        _saidan_add(card,'health_bonus',5);self._gain_armor(owner,5)
+                elif original[0]=='historical_security_draw':
+                    # Replace current stats, retaining identity and other enchantments.
+                    card.attack_bonus=0;card.health_bonus=0
+                    card.attack_bonus=5-self._card_stat(card,'attack',owner)
+                    card.health_bonus=5-self._card_stat(card,'health',owner)
+                    self._set_card_cost(card,5)
                 else:
                     data=self.cards[card.card_id]
                     minion=self._summon(owner,card.card_id,
@@ -211,7 +190,7 @@ class DrawEvents:
             elif mode == 'draw_minions_mana_buff' and player.max_mana >= original[2]:
                 for card in cards:
                     if card in player.hand:
-                        card.attack_bonus += original[3]; card.health_bonus += original[4]
+                        _saidan_add(card,'attack_bonus',original[3]); _saidan_add(card,'health_bonus',original[4])
         else:
             return False
         return True

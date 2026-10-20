@@ -1,0 +1,26 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "CS2_013",
+    "BT_130",
+    "CS2_013t"
+  ],
+  "candidate_fingerprint": "8652e028df4c3b73be28afdaee6184aa68482fbb54288ff58ab116a8b36344d5",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Modified mana caps and temporary mana interaction",
+    "Nine-to-ten versus already-full Overgrowth behavior and generation hand capacity"
+  ]
+}

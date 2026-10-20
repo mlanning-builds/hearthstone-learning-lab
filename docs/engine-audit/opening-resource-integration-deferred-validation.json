@@ -1,0 +1,38 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "f89624c28a92e439cfa78dd928b32e1e517fe1dee69d04f6b6ea1bdcecebcb6f",
+  "new_card_admissions": 0,
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "fixes": [
+    "Moved prepared recipe append back inside per-owner validation loop",
+    "Preflight rejects Fabled expansion lacking custom physical setup before recipe selection",
+    "Native refresh computes empty permanent crystals independently of temporary available mana",
+    "Native composed/choice crystal destruction preserves temporary mana via shared ledger",
+    "Chef resource reset clears temporary ledger"
+  ],
+  "static_findings": {
+    "recent_pool_roots": 205,
+    "missing_named_dependencies": [
+      "UNG_851"
+    ],
+    "limitation": "Dynamic pools, computed IDs, legacy/helper behavior and executable fidelity still require review."
+  },
+  "checks": [
+    "AST all modules",
+    "Recipe-loop AST structure inspected",
+    "Literal dependency graph for 205 unique recent-pool identities",
+    "Inventory reconciliation all eleven classes"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Shared resource changes unvalidated, including caps/Overload and direct mutation paths",
+    "Opening recipe data and physical setup incomplete",
+    "Dynamic pools and helper-computed identities are outside literal graph coverage",
+    "Elise remains unwritten; exact pack distributions and other card policies remain unresolved"
+  ]
+}

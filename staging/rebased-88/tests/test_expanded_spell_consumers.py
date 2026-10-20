@@ -1,5 +1,7 @@
 """Physical selection, vanilla absorption and deck spell consumer boundaries."""
 import unittest
+from unittest.mock import patch
+from expanded.cards import RULES
 from copy import deepcopy
 from expanded import Game,Action,random_deck
 from engine.game import Card
@@ -75,5 +77,6 @@ class SpellConsumerTests(unittest.TestCase):
         g=self.game();g.players[0].deck=['CORE_RLK_567'];c=g._add(0,'TLC_438')
         action=next(a for a in g.legal_actions() if a.kind=='play' and a.source==c.uid)
         before=g.observe(0)
-        with self.assertRaises(UnsupportedCard):g.step(action)
+        with patch.dict(RULES,{'CORE_RLK_567':('none',[('future_unimplemented_effect',)])}):
+            with self.assertRaises(UnsupportedCard):g.step(action)
         self.assertEqual(g.observe(0),before)

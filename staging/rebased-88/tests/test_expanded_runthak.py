@@ -37,5 +37,6 @@ class RunthakTests(unittest.TestCase):
         self.a.keywords.add('WINDFURY');self.b.health=self.b.max_health=20;self.b.attack=0
         self.attack();self.attack();self.assertEqual(self.held.attack_bonus,2)
     def test_cancelled_attack_has_no_attack_event(self):
+        self.g.players[1].secrets.append(Card(self.g._new_id(),'CORE_EX1_611'))
         with patch.object(self.g,'_secret_event',return_value=True):self.attack()
         self.assertEqual(self.held.attack_bonus,0);self.assertEqual(self.a.attacks,0)

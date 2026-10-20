@@ -1,3 +1,4 @@
+from unittest.mock import patch
 """Imbue progression, identity, ownership and visible state; not power fidelity."""
 import unittest
 from expanded import Game,Action,random_deck
@@ -49,10 +50,12 @@ class ImbueStateTests(unittest.TestCase):
             view['players'][0]['primary_power']['imbue_level']=99
         self.assertEqual(g.players[0].primary_power['imbue_level'],3)
         view=g.observe(0);rows=encode_decision(dict(actor=0,observation=view,actions=view['legal_actions']))
-        self.assertIn('imbue_count',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v58')
-    def test_missing_power_pool_raises_and_rolls_back_payment(self):
+        self.assertIn('imbue_count',str(rows));self.assertEqual(SCHEMA,'visible-action-features-v62')
+    @patch("expanded.generation_families.reviewed_contract",return_value=None)
+    @patch("expanded.generation_catalog.standard_contract",return_value=None)
+    def test_missing_power_pool_raises_and_rolls_back_payment(self,*unused):
         g=self.game('PRIEST');g._imbue(0);before=g.observe(0)
-        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership'):g.step(Action('power'))
+        with self.assertRaisesRegex(UnsupportedCard,'no reviewed membership contract|eligible effects not implemented'):g.step(Action('power'))
         self.assertEqual(g.observe(0),before)
     def test_deathknight_passive_does_not_offer_an_activation(self):
         g=self.game('DEATHKNIGHT');g._imbue(0)

@@ -1,5 +1,9 @@
 """Staged Muradin family; attachment/copy edge cases remain admission gates.
 
+Hearth Tech #417.5 Test2 (00:30–01:06) demonstrates three Battlecry
+activations holding three Hammers and one Deathrattle returning all three.
+https://www.youtube.com/watch?v=c1ynWrIqUpI&t=30s
+
 Pinned TIME_209e describes a held weapon with its own return Deathrattle.
 Avatar Form uses character damage, not spell damage; Blizzard 35.2 explicitly
 fixed Poisonous propagation (https://hearthstone.blizzard.com/en-us/news/24271853).
@@ -15,12 +19,6 @@ DEATH_EFFECTS={HAMMER:[('hammer_shuffle',)]}
 class Muradin:
  def _muradin_take(self,owner,source):
   if source is None or source not in self.players[owner].minions:return
-  if hasattr(source,'_muradin_hammer'):
-   # Repeated Battlecry cannot create a replacement for a held physical card.
-   # How a second distinct Hammer replaces/joins one is not yet established.
-   if any(self._card_data(c)['id']==HAMMER for zone in (self.players[owner].deck,self.players[owner].hand) for c in zone) or (self.players[owner].weapon or {}).get('card_id')==HAMMER:
-    raise UnsupportedCard('Binding a second Hammer requires reviewed replacement semantics')
-   return
   d=self.cards.get(HAMMER)
   if not d or d['type']!='WEAPON':raise UnsupportedCard('Missing High King Hammer metadata')
   p=self.players[owner];card=None;attack=durability=None
@@ -40,7 +38,10 @@ class Muradin:
    card.attack_bonus=attack-d['attack']
    p.weapon=None;p.equipped_card=None
   if card is None:return
-  source._muradin_hammer=dict(card=card,attack=attack,durability=durability)
+  held=dict(card=card,attack=attack,durability=durability)
+  if hasattr(source,'_muradin_hammer'):
+   source._muradin_extra_hammers=getattr(source,'_muradin_extra_hammers',[])+[held]
+  else:source._muradin_hammer=held
   self._refresh_auras()
   self._log('muradin_holds_hammer',player=owner,entity=source.uid)
 
@@ -63,8 +64,10 @@ class Muradin:
   elif name=='muradin_return':
    held=getattr(source,'_muradin_hammer',None)
    if held is not None:
+    hammers=[held]+list(getattr(source,'_muradin_extra_hammers',()))
     del source._muradin_hammer
-    self._enter_hand(owner,held['card'])
+    if hasattr(source,'_muradin_extra_hammers'):del source._muradin_extra_hammers
+    for hammer in hammers:self._enter_hand(owner,hammer['card'])
   elif name=='hammer_shuffle':
    weapon=ctx.get('broken_weapon');card=ctx.get('broken_weapon_card')
    if weapon is None or card is None or card.card_id!=HAMMER:
@@ -75,13 +78,13 @@ class Muradin:
    # Return the same card. Damage to equipped durability is not a permanent
    # enchantment; retained printed/held durability bonuses remain on the card.
    p.deck.insert(self.rng.randrange(len(p.deck)+1),card)
-   self._record_deck_insertion(owner,owner,1,'shuffle')
+   self._record_deck_insertion(owner,owner,1,'shuffle',cards=(card,))
    self._log('hammer_shuffled',player=owner,attack=self.cards[HAMMER]['attack']+card.attack_bonus)
   elif name=='avatar_form':
    target=ctx.get('target',0)
    if target<0:
     if -target-1!=owner:return True
-    p.temporary_attack+=2;bindings=p.avatar_form
+    self._gain_hero_attack(owner,2);bindings=p.avatar_form
    else:
     m=next((m for m in p.minions if m.uid==target),None)
     if m is None:return True

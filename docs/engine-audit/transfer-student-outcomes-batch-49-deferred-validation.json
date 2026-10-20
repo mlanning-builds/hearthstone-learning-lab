@@ -1,0 +1,39 @@
+{
+  "scope": "Deputization Aura continuous left-most minion attack and Lifesteal",
+  "new_unvalidated_bodies": 1,
+  "new_ids": [
+    "WW_341"
+  ],
+  "new_collectible_outcomes": 1,
+  "new_required_minion_bodies": 0,
+  "prior_expansion_outcome_gap": 13,
+  "current_expansion_outcome_gap": 12,
+  "closed_outcome_ids": [
+    "WW_341"
+  ],
+  "candidate_fingerprint": "e77f1ea1af907bd2582d82d585a252be6477b488152ee047d1b17668e1196d43",
+  "historical_minions_written": 3183,
+  "historical_minions_remaining": 18,
+  "standard_written": 1182,
+  "standard_remaining": 3,
+  "checks": [
+    "AST syntax parsing",
+    "Strict declaration schemas",
+    "Frozen metadata hashes and registry reconciliation",
+    "Complete all-eleven-class expansion inventory"
+  ],
+  "reference_sources": [
+    "Frozen build 36.6.0.251952 card metadata"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "fidelity_validated": false,
+  "review_pending": [
+    "Aura end-of-owner-turn duration and modifiers versus trigger repeat effects",
+    "Left-most minion transitions on death, control, Dormant, Locations, summon and Silence",
+    "Multiple Aura attack stacking, external keyword persistence and temporary stat copies",
+    "Public aura timers and ML observation feature encoding",
+    "All behavior and recursive generated closure remain unvalidated"
+  ]
+}

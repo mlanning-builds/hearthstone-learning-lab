@@ -4,11 +4,11 @@ No playable registration. Morchie's staged outcome sequence is implemented in
 morchie.py; interactions and independent timing review still gate admission.
 """
 from engine.cards import UnsupportedCard
-from .generation_cards import pool,PoolRequest,random_cards,discover
+from .generation_cards import pool,board_pool,PoolRequest,random_cards,discover
 from .dark_gift_generators import request as gift_request,discover as gift_discover
 
 BEAST_GIFT=gift_request(tribe='BEAST')
-BUDGET_POOL=pool(card_type='MINION',maximum=12)
+BUDGET_POOL=board_pool(pool(card_type='MINION',maximum=12))
 HOLY=pool(card_type='SPELL',school='HOLY')
 NATURE=pool(card_type='SPELL',school='NATURE')
 WEAPON=pool(card_type='WEAPON')
@@ -54,7 +54,7 @@ class RewindGenerators:
 
     def _rewindgen_cast_candidates(self,request,owner):
         values=self._generation_candidates(request,owner)
-        unsupported=[cid for cid in values if not self._supports_internal_spell(cid)]
+        unsupported=[cid for cid in values if not self._supports_internal_spell(cid,owner)]
         if unsupported:raise UnsupportedCard('Rewind cast outcomes lack internal support: '+', '.join(unsupported))
         return values
 
@@ -71,7 +71,7 @@ class RewindGenerators:
             cid=self.rng.choice(values);cost=self.cards[cid]['cost']
             return ('summon',cid,1),(('rewindgen_budget',remaining-cost,steps+1),)
         if name=='rewindgen_holy':
-            values=self._generation_candidates(HOLY,owner)
+            values=self._generation_created_candidates(HOLY,ctx)
             if not values:return ('batch30_noop',),()
             ids=[self.rng.choice(values) for _ in range(2)]
             return ('add',ids[0],1),(('add',ids[1],1),('heal_own_hero',sum(self.cards[cid]['cost'] for cid in ids)))

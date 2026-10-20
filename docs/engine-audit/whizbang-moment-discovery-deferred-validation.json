@@ -1,0 +1,24 @@
+{
+  "status": "written_unvalidated",
+  "new_card_ids": [
+    "TOY_700t"
+  ],
+  "candidate_fingerprint": "caf6b1cb9537442edd9cf0e9e33e3123664d97651507a343f131e073d75ae76a",
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "checks": [
+    "AST all expanded modules",
+    "Strict rule schema",
+    "Metadata hashes",
+    "Inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Printed cost versus effective cost affordability and constrained-play cases",
+    "Category-empty behavior and exact offer distribution"
+  ]
+}

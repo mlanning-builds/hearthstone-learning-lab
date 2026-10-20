@@ -1,0 +1,51 @@
+{
+  "status": "written_unvalidated",
+  "candidate_fingerprint": "ae7ed1ba71e5227b852f75cfd745fe36852cf496280826bf4c842328c786a732",
+  "new_definitions": 7,
+  "card_ids": [
+    "UNG_831",
+    "UNG_834",
+    "UNG_834t1",
+    "UNG_917",
+    "UNG_917t1",
+    "UNG_922",
+    "UNG_922t1"
+  ],
+  "historical_written": 3191,
+  "historical_remaining": 10,
+  "standard_written": 1184,
+  "standard_remaining": 1,
+  "elise_pool_total": 126,
+  "elise_unwritten_after": 7,
+  "elise_unwritten_ids": [
+    "UNG_024",
+    "UNG_061",
+    "UNG_111",
+    "UNG_832",
+    "UNG_851",
+    "UNG_916",
+    "UNG_929"
+  ],
+  "implemented": [
+    "Silence-removable Corrupting Mist marks and owner-next-start destruction, including copied marked minions",
+    "Explore replaces deck at same size with explicit Discover tokens",
+    "Dinomancy replacement power, visible Beast targets, repeated power and Reckless consumer paths",
+    "Feeding Time damages then summons three Pterrordaxes and adapts newly summoned group, including summon repetitions"
+  ],
+  "checks": [
+    "All expanded modules parsed",
+    "Strict seven-rule schema validation",
+    "Exact metadata hashes",
+    "Full pack inventory and all-eleven-class historical inventory reconciliation"
+  ],
+  "regressions_run": false,
+  "gameplay_run": false,
+  "training_run": false,
+  "deferred": [
+    "Curse priority and controller/silence/transform interactions",
+    "Deck replacement and portal-deck subtype interactions",
+    "Dinomancy target/cost/repeated-power fidelity",
+    "Adapt group identity and triggered summons",
+    "Full recursive Discover eligibility and pool behavior"
+  ]
+}

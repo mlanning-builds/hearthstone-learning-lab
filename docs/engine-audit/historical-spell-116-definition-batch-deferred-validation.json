@@ -1,0 +1,732 @@
+{
+  "fingerprint": "cc2db4be09a91b02fd67d5ce93b4a43f735cb2136ea995d688b80f1022aa42a1",
+  "goal_turn_classification": "progress",
+  "status": "written_unvalidated",
+  "new_definitions": 116,
+  "new_historical_spell_roots": 115,
+  "new_tokens_and_alternate_forms": 1,
+  "registry_records": 7899,
+  "historical_spell_inventory": {
+    "eligible": 1442,
+    "written": 1185,
+    "remaining": 257
+  },
+  "new_implementations": [
+    {
+      "id": "BT_253",
+      "name": "Psyche Split",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CFM_616",
+      "name": "Pilfered Power",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "CS2_233",
+      "name": "Blade Flurry",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DAL_716",
+      "name": "Vendetta",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_119",
+      "name": "Wicked Whispers",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "DMF_221",
+      "name": "Felscream Blast",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_03",
+      "name": "Rexxar's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_04",
+      "name": "Arthas's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_05",
+      "name": "Uther's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_06",
+      "name": "Thrall's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_07",
+      "name": "Garrosh's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_08",
+      "name": "Illidan's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_09",
+      "name": "Valeera's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_10",
+      "name": "Malfurion's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_11",
+      "name": "Gul'dan's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GIFT_12",
+      "name": "Anduin's Gift",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_019",
+      "name": "Demonheart",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_022",
+      "name": "Tinker's Sharpsword Oil",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_026",
+      "name": "Feign Death",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_047",
+      "name": "Sabotage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_052",
+      "name": "Crush",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "GVG_057",
+      "name": "Seal of Light",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_039",
+      "name": "Dark Conviction",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_052",
+      "name": "Play Dead",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_078",
+      "name": "Avalanche",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_089",
+      "name": "Ice Fishing",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_091",
+      "name": "Dead Man's Hand",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_206",
+      "name": "Treachery",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_207",
+      "name": "Devour Mind",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_281",
+      "name": "Forge of Souls",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_469",
+      "name": "Unwilling Sacrifice",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ICC_837",
+      "name": "Bring It On!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "KAR_013",
+      "name": "Purify",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_060",
+      "name": "Crushing Hand",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_093",
+      "name": "Call to Arms",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_333",
+      "name": "Level Up!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_353",
+      "name": "Psionic Probe",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_364",
+      "name": "Reckless Flurry",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_370",
+      "name": "Gather Your Party",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_417",
+      "name": "Cataclysm",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "LOOT_522",
+      "name": "Crushing Walls",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_048",
+      "name": "Mark of Y'Shaarj",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_072",
+      "name": "Journey Below",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_100",
+      "name": "Shadow Word: Horror",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_104",
+      "name": "Embrace the Shadow",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_116",
+      "name": "Spreading Madness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_176",
+      "name": "Shadow Strike",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_198",
+      "name": "Forbidden Healing",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_239",
+      "name": "DOOM!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_276",
+      "name": "Blood Warriors",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "OG_311",
+      "name": "A Light in the Darkness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_008",
+      "name": "Furious Howl",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_011",
+      "name": "Don't Stand in the Fire!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_013",
+      "name": "Bracing Cold",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_025",
+      "name": "Shoulder Check",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ONY_027",
+      "name": "Ring of Courage",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_057",
+      "name": "Dark Transformation",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "RLK_057t",
+      "name": "Undead Monstrosity",
+      "collectible": false,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_247",
+      "name": "First Day of School",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_250",
+      "name": "Wave of Apathy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_307",
+      "name": "School Spirits",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_422",
+      "name": "Double Jump",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_524",
+      "name": "Shield of Honor",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_525",
+      "name": "In Formation!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_604",
+      "name": "Overwhelm",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_606",
+      "name": "Partner Assignment",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_623",
+      "name": "Cutting Class",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SCH_701",
+      "name": "Soul Shear",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_027",
+      "name": "Shiver Their Timbers!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_041",
+      "name": "Sigil of Alacrity",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_046",
+      "name": "City Tax",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_090",
+      "name": "Touch of the Nathrezim",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_094",
+      "name": "Heavy Plate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_412",
+      "name": "SI:7 Extortion",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_441",
+      "name": "Shard of the Naaru",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "SW_452",
+      "name": "Chaos Leech",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_058",
+      "name": "Haunting Visions",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_097",
+      "name": "Seance",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_124",
+      "name": "Raiding Party",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_156",
+      "name": "Stolen Steel",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_157",
+      "name": "Walk the Plank",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_245",
+      "name": "Shriek",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_246",
+      "name": "Void Contract",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_249",
+      "name": "Grim Rally",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_321",
+      "name": "Devastate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_362",
+      "name": "Dragon Roar",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_500",
+      "name": "Surrender to Madness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "TRL_555",
+      "name": "Demonbolt",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_272",
+      "name": "Holy Ripple",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_328",
+      "name": "Clever Disguise",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_429",
+      "name": "Hunter's Pack",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_716",
+      "name": "Tip the Scales",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "ULD_728",
+      "name": "Subdue",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_335",
+      "name": "Petty Theft",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_414",
+      "name": "Hot Coals",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_460",
+      "name": "Oh, Manager!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_915",
+      "name": "Power Spike",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_928",
+      "name": "Paraglide",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "VAC_939",
+      "name": "Eat! The! Imp!",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_007",
+      "name": "Serpentbloom",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WC_014",
+      "name": "Against All Odds",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_023",
+      "name": "Lock and Load",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_049",
+      "name": "Enter the Coliseum",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_071",
+      "name": "Burgle",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_093",
+      "name": "Demonfuse",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_097",
+      "name": "Spreading Madness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_100",
+      "name": "Dark Bargain",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_110",
+      "name": "Stolen Goods",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_309",
+      "name": "Silvermoon Portal",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_333",
+      "name": "A Light in the Darkness",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_342",
+      "name": "Convert",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WON_347",
+      "name": "Smuggler's Crate",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_007",
+      "name": "Deadline",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_014",
+      "name": "Demonic Deal",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "WORK_021",
+      "name": "Reserved Spot",
+      "collectible": true,
+      "status": "written_unvalidated"
+    },
+    {
+      "id": "YOD_018",
+      "name": "Waxmancy",
+      "collectible": true,
+      "status": "written_unvalidated"
+    }
+  ],
+  "literal_dependency_inventory": {
+    "roots_checked": 7899,
+    "edges": 780,
+    "missing_ids": []
+  },
+  "checks": {
+    "syntax": true,
+    "strict_batch_schemas": true,
+    "metadata_hash_integrity": true,
+    "root_opcode_admission": true,
+    "inventory_reconciled": true,
+    "regressions": false,
+    "gameplay": false,
+    "training": false
+  },
+  "limitations": [
+    "Static checks do not establish executable behavior, complete recursive computed pools or client fidelity.",
+    "257 direct historical spells and their required generated dependencies remain.",
+    "Prior regression receipts are preserved and do not validate this source."
+  ]
+}

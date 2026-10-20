@@ -25,7 +25,9 @@ class Maps:
     # shuffle, draw or transform the deck before the follow-up choice.
     for i,c in enumerate(p.deck):
      if not isinstance(c,Card):p.deck[i]=Card(self._new_id(),c)
-    indexed=[(i,c) for i,c in enumerate(p.deck) if c.card_id!=cid]
+    # Existing physical deck cards may include another copy of the Map.
+    # The creator exclusion applies to generated identities, not deck pulls.
+    indexed=list(enumerate(p.deck))
     options=deck_choice_options([c for _,c in indexed],self.cards,3,self.rng)
     for option in options:
      option['uid']=indexed[option.pop('index')][1].uid

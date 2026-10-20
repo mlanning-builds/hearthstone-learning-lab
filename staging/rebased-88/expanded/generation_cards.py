@@ -1,12 +1,12 @@
-"""Sixty staged Constructed generation declarations, NOT playable registration.
+"""Sixty Constructed generation declarations with separately gated admission.
 
 Pool eligibility needs a separately reviewed, complete per-class contract. These
-recipes are intentionally absent from cards.RULES/COLLECTIBLE_IDS. A recipe and
+recipes stay staged except explicit closed admissions in cards.RULES. A recipe and
 its full outcome closure must be reviewed before promotion to the live tables.
 No rules are inferred from card text at runtime.
 """
 from __future__ import annotations
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 @dataclass(frozen=True)
 class PoolRequest:
@@ -36,7 +36,7 @@ class PoolRequest:
         for value, domain in ((self.card_type, CARD_TYPES), (self.tribe, TRIBES), (self.school, SCHOOLS)):
             if value and value not in domain:
                 raise ValueError('Unknown generation selector: ' + value)
-        if self.classes not in {'any', 'own', 'own_or_neutral', 'other'} | HERO_CLASSES:
+        if self.classes not in {'any', 'own', 'own_or_neutral', 'other', 'NEUTRAL'} | HERO_CLASSES:
             raise ValueError('Unknown generation class selector')
         for value in (self.attack_minimum,self.attack_maximum):
             if value is not None and (type(value) is not int or value<0):raise ValueError('Invalid Attack bound')
@@ -54,11 +54,20 @@ def pool(**kwargs):
     return PoolRequest(**kwargs)
 
 
+def board_pool(request):
+    """Random board creation excludes Colossals; literal summons remain separate."""
+    if request.excluded_mechanic not in ('','COLOSSAL'):
+        raise ValueError('Multiple generation exclusion predicates need an explicit contract')
+    return replace(request,excluded_mechanic='COLOSSAL')
+
+
 def random_cards(request, count=1, destination='hand', **modifiers):
+    if destination=='board':request=board_pool(request)
     return ('generate_random', request, count, destination, tuple(modifiers.items()))
 
 
 def discover(request, destination='hand', **modifiers):
+    if destination=='board':request=board_pool(request)
     return ('generate_discover', request, destination, tuple(modifiers.items()))
 
 
@@ -159,6 +168,8 @@ TOKEN_RULES = {'FP1_011': ('none', [])}
 
 
 def requests_for(card_id):
+    from .historical_printing_aliases import ALIASES
+    card_id=ALIASES.get(card_id,card_id)
     """All pool requests, including attached effects and the Webspinner token."""
     found = set()
     def walk(value):
@@ -171,4 +182,7 @@ def requests_for(card_id):
                 walk(item)
     for table in (RULES, DEATH_EFFECTS, END_EFFECTS, TRIGGERS):
         walk(table.get(card_id, ()))
+    if card_id=='SCH_711':
+        from .historical_death import DEATH_EFFECTS as historical_deaths
+        walk(historical_deaths[card_id])
     return found

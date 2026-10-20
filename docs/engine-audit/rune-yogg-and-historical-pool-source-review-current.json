@@ -1,0 +1,39 @@
+{
+  "fingerprint": "2cbb677610f88c9f1b955b2f5e0fa88f4d73809ebcfa9dc044abeef379c72a45",
+  "behavior_validated": false,
+  "accepted_references": [
+    {
+      "url": "https://github.com/shinoi2/fireplace/blob/bcabe7dcdcdb91a6a64662aea20afb3acc902716/fireplace/cards/alterac/mage.py#L177",
+      "finding": "Rune samples Mage spells that fit remaining budget, deducts spell cost and prefers enemy targets; public simulator reference, not client certification."
+    },
+    {
+      "url": "https://github.com/shinoi2/fireplace/blob/bcabe7dcdcdb91a6a64662aea20afb3acc902716/fireplace/cards/darkmoon_faire/paladin.py#L100",
+      "finding": "Oh My Yogg cost predicate uses the triggering card current cost. Source alone is not a complete correct counter/ownership implementation; local implementation separately retains opponent ownership and paid cost."
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Rune_of_the_Archmage",
+      "finding": "Enemy preference with friendly fallback and fizzled spells still consuming the mana budget."
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Shenanigans",
+      "finding": "Second-draw transformation applies to Soul Fragments and must remove obsolete Deathrattle payloads."
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Shifting_Scroll",
+      "finding": "End-of-owner-turn transformation; initially unplayable; random casting original is a no-op."
+    },
+    {
+      "url": "https://hearthstone.wiki.gg/wiki/Deck_of_Lunacy",
+      "finding": "Use current deck cost, cap outcome slot at ten and retain old cost."
+    }
+  ],
+  "rejected_references": [
+    {
+      "url": "https://github.com/marssuren/fireplace/blob/33724afb7a77f09e00077ebb284ab95578642013/fireplace/cards/alterac/mage.py#L120",
+      "reason": "Rune implementation casts ten unrestricted random spells, contradicting the actual card text. It was not adopted."
+    }
+  ],
+  "remaining_fidelity_review": [
+    "Independent client verification of Rune zero-cost sequencing, Oh My Yogg outcome exclusions/fizzle event ordering, multi-result Discover interactions, held transformations, sidequest timing and physical draw/copy transitions."
+  ]
+}

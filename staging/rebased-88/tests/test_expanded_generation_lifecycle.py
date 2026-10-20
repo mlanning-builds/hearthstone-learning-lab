@@ -1,3 +1,4 @@
+from expanded.static_metadata import thaw
 """Closed Fel Beasts and staged event/choice/turn generation contracts."""
 import json,unittest
 from copy import deepcopy
@@ -26,7 +27,7 @@ class GenerationLifecycleTests(unittest.TestCase):
   a=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid and a.target==target)
   self.g.step(a);return c
  def outcome(self,request):
-  cid='GEN_FIX_'+str(len(self.g.cards));d=deepcopy(self.g.cards['CS3_025'])
+  cid='GEN_FIX_'+str(len(self.g.cards));d=thaw(self.g.cards['CS3_025'])
   d.update(id=cid,dbfId=-len(self.g.cards),cost=request.minimum,mechanics=[request.mechanic] if request.mechanic else [],races=[request.tribe] if request.tribe else [])
   self.g.cards[cid]=d;self.h.install(self.g,request,[cid]);return cid
  def kill(self,m):self.g._damage(m.uid,99);self.g._settle(allow_event_choices=True)
@@ -72,6 +73,7 @@ class GenerationLifecycleTests(unittest.TestCase):
   self.g._remove_location(loc);self.g._settle(allow_event_choices=True)
   self.assertEqual([m.card_id for m in self.p.minions],[cid,cid])
  def test_location_missing_contract_rolls_back(self):
+  self.h.install(self.g,eg.THREE,['UNIMPLEMENTED_THREE_COST_MINION'])
   loc=self.g._place_location(0,'CATA_584');loc.ready_turn=20;c=self.put('TIME_EVENT_997')
   a=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
   with self.assertRaises(UnsupportedCard):self.g.step(a)
@@ -123,7 +125,9 @@ class GenerationLifecycleTests(unittest.TestCase):
  def test_refresh_clone_replays(self):
   self.spell_pool();self.play('JAIL_319');other=deepcopy(self.g);a=Action('choose',choices=(1,))
   self.g.step(a);other.step(a);self.assertEqual(self.g.observe(0),other.observe(0))
- def test_missing_skeleton_contract_rolls_back_paid_play(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ def test_missing_skeleton_contract_rolls_back_paid_play(self,*contracts):
   c=self.put('JAIL_319');a=next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid)
   with self.assertRaises(UnsupportedCard):self.g.step(a)
   self.assertEqual(self.g.players[0].mana,10);self.assertEqual(len(self.g.players[0].hand),1)

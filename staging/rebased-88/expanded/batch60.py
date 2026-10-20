@@ -3,6 +3,7 @@
 No card-text interpreter and no reduced random generation pools. Physical card
 progress lives on Card objects; private remembered hand IDs never enter views.
 """
+from .historical_saidan import add as _saidan_add
 from copy import deepcopy
 from engine.game import Card
 from .selectors import has_tribe, has_school
@@ -19,6 +20,8 @@ class Batch60:
     def _b60_transform_card(self,card,cid,*,stats=None):
         # Transformations in hand keep enchantments and the physical identity.
         if card.card_id!=cid and hasattr(card,'_learned_spell'):del card._learned_spell
+        if card.card_id!=cid and hasattr(card,'_historical_bottle_amount'):del card._historical_bottle_amount
+        if card.card_id!=cid and hasattr(card,'_historical_resealed_cards'):del card._historical_resealed_cards
         card.card_id=cid
         if stats is not None:
             card.attack_bonus=stats[0]-self.cards[cid].get('attack',0)
@@ -27,10 +30,10 @@ class Batch60:
     def _b60_mark_mirrors(self):
         for p in self.players:
             for c in p.hand:
-                if c.card_id in ('CORE_RLK_567','DINO_407','TIME_876'):
+                if c.card_id in ('CORE_RLK_567','RLK_567','DINO_407','TIME_876'):
                     state=self._b60_state(c)
                     if 'mirror' not in state:
-                        state['mirror']=c.card_id
+                        state['mirror']='CORE_RLK_567' if c.card_id=='RLK_567' else c.card_id
                         if c.card_id=='DINO_407':
                             cid=self.players[1-self.players.index(p)].last_minion_played
                             if cid:self._b60_transform_card(c,cid,stats=(3,4));c.set_cost=3;c._copied_from_owner=1-self.players.index(p)
@@ -55,21 +58,26 @@ class Batch60:
                     else:self._b60_transform_card(c,cid)
         if kind=='minion_played':
             owner=data['owner'];cid=data['card_id']
-            if has_tribe(self.cards[cid],'DRAGON'):self.players[owner].dragons_played_turn+=1
+            if has_tribe(self._event_card_data(data),'DRAGON'):self.players[owner].dragons_played_turn+=1
             self.players[owner].last_minion_played=cid
             for recipient,p in enumerate(self.players):
                 for c in p.hand:
                     s=self._b60_state(c)
                     if recipient==owner:
                         if c.card_id=='TIME_702':s['minion']=True
-                        if c.card_id in DRAGON_TRANSFORMS and has_tribe(self.cards[cid],'DRAGON'):
+                        if c.card_id in DRAGON_TRANSFORMS and has_tribe(self._event_card_data(data),'DRAGON'):
                             self._b60_transform_card(c,DRAGON_TRANSFORMS[c.card_id])
                     elif s.get('mirror')=='DINO_407':self._b60_transform_card(c,cid,stats=(3,4));c.set_cost=3;c._copied_from_owner=owner
 
     def _b60_spend_mana(self,owner,amount):
+        from .mana_accounting import spent
+        spent(self.players[owner],amount)
         self._held_spend(owner,amount)
+        from .historical_rock_duel import spend as rock_spend
+        rock_spend(self,owner,amount)
         p=self.players[owner]
         if amount>0 and p.mana==0:
+            self._secret_event('spent_all',owner,amount=amount)
             for m in p.minions:
                 if m.card_id=='CATA_130' and not m.silenced and m.health>0:self._buff(m,1,1)
 
@@ -106,9 +114,11 @@ class Batch60:
         p=self.players[owner]
         for zone in (p.hand,p.deck):
             for i,c in enumerate(zone):
-                if self._card_data(c)['id']=='TLC_827':
+                from .forge_intrinsics import values
+                amount=int(self._card_data(c)['id']=='TLC_827')+sum(values(c,'end_zone_attack'))
+                if amount:
                     if not isinstance(c,Card):c=Card(self._new_id(),c);zone[i]=c
-                    c.attack_bonus+=1
+                    _saidan_add(c,'attack_bonus',amount)
 
     def _b60_pre_attack(self,source):
         if source<=0:return False
@@ -127,7 +137,7 @@ class Batch60:
         if wanted=='b60_attack_kill':return kind=='minion_attack' and data['source']==m.uid and data.get('killed',False)
         if wanted=='b60_any_death':return kind=='minion_died'
         if wanted=='b60_friendly_death':return kind=='minion_died' and data['owner']==m.owner
-        if wanted=='b60_undead_death':return kind=='minion_died' and data['owner']==m.owner and has_tribe(self.cards[data['card_id']],'UNDEAD')
+        if wanted=='b60_undead_death':return kind=='minion_died' and data['owner']==m.owner and has_tribe(self._event_card_data(data),'UNDEAD')
         return False
 
     def _b60_choice(self,choice,selected):
@@ -207,8 +217,14 @@ class Batch60:
             if c:self._discard_card(owner,c)
         elif name=='b60_bones':
             if target:
-                m=self._find(target);a,h=m.attack,m.health;m.health=0
-                self._b60_add_payload(owner,'TLC_829t',dict(buff_attack=a,buff_health=h))
+                # Repeated Battlecries retain their original target UID. Once it
+                # leaves play there is nothing to destroy and no Bones to create.
+                m=self._force_live(target)
+                if m is None:
+                    self._log('effect_fizzled',card='TLC_252',operation=name,target=target,reason='target_left_play')
+                else:
+                    a,h=m.attack,m.health;m.health=0
+                    self._b60_add_payload(owner,'TLC_829t',dict(buff_attack=a,buff_health=h))
         elif name=='b60_payload_buff':
             if target:
                 s=self._b60_state(ctx['physical_card']);self._buff(self._find(target),s.get('buff_attack',0),s.get('buff_health',0))
@@ -232,7 +248,7 @@ class Batch60:
             if target:
                 m=self._find(target);m.health=m.max_health=1+m.aura_health
         elif name=='b60_other_health_one':
-            if any(has_tribe(self.cards[c.card_id],'DRAGON') for c in p.hand):
+            if any(has_tribe(self._card_data(c),'DRAGON') for c in p.hand):
                 allowed=set(self._visible_targets(owner,magic=True));options=[dict(card_id=m.card_id,uid=m.uid) for m in q.minions if m.uid!=target and m.uid in allowed]
                 if options:self.pending_choice=dict(kind='b60_health_one',owner=owner,options=options);self.phase='choice'
         elif name=='b60_draw_discount':
@@ -248,7 +264,7 @@ class Batch60:
         elif name=='b60_doomed_hand':
             for c in p.hand:
                 if self.cards[c.card_id]['type']=='MINION':
-                    c.attack_bonus+=3;c.health_bonus+=3;self._b60_state(c)['destroy_on_turn']=p.turns_taken+3
+                    _saidan_add(c,'attack_bonus',3);_saidan_add(c,'health_bonus',3);self._b60_state(c)['destroy_on_turn']=p.turns_taken+3
         elif name=='b60_attach':
             if target:self._find(target).attached_death_effects.append(op[1])
         elif name=='b60_infest':
@@ -277,7 +293,7 @@ class Batch60:
                     if self._fire_immune_target(m.uid,ctx):continue
                     player.board.remove(m);recipient=self.rng.randrange(2);deck=self.players[recipient].deck
                     card=Card(self._new_id(),m.card_id);self._carry_origin(m,card)
-                    deck.insert(self.rng.randrange(len(deck)+1),card);self._record_deck_insertion(recipient,owner,1,'shuffle')
+                    deck.insert(self.rng.randrange(len(deck)+1),card);self._record_deck_insertion(recipient,owner,1,'shuffle',cards=(card,))
             self._refresh_auras()
         elif name in ('b60_overkill_discount','b60_torch'):
             if target:

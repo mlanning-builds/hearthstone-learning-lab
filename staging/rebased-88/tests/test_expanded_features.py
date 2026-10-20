@@ -188,3 +188,14 @@ class FeatureTests(unittest.TestCase):
         self.assertEqual(before,encode_decision(d))
         d['observation']['players'][0]['board'][0]['rule_state']['colossal_remaining']=1
         self.assertNotEqual(before,encode_decision(d))
+
+    def test_stormwind_reward_flags_are_visible_features_for_both_sides(self):
+        fields=('historical_stormwind_draw_discount', 'historical_stormwind_tamsin', 'historical_stormwind_tavish', 'historical_stormwind_power_targets', 'historical_stormwind_power_zero')
+        for owner in (0,1):
+            for key in fields:
+                with self.subTest(owner=owner,key=key):
+                    d=decision();p=d['observation']['players'][owner]
+                    p[key]=0 if key.endswith('discount') else False
+                    before=encode_decision(d)
+                    p[key]=2 if key.endswith('discount') else True
+                    self.assertNotEqual(before,encode_decision(d))

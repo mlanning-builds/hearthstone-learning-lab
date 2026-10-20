@@ -37,13 +37,16 @@ class RewindGeneratorTests(unittest.TestCase):
  def test_remaining_family_accounted_for(self):
   from expanded.pending_definitions import DEFINITIONS
   from expanded.morchie import RULES as SHARED_RULES
-  self.assertEqual(set(RULES)|set(UNRESOLVED)|set(SHARED_RULES),{cid for cid,d in DEFINITIONS.items() if d['family']=='rewind'})
-  self.assertFalse(set(SHARED_RULES)&cards.COLLECTIBLE_IDS)
-  self.assertFalse(set(RULES)&cards.COLLECTIBLE_IDS);self.assertEqual(REWINDS['TIME_038'],3);self.assertNotIn('TIME_035',REWINDS)
+  self.assertFalse({cid for cid,d in DEFINITIONS.items() if d['family']=='rewind'})
+  self.assertLessEqual(set(SHARED_RULES),cards.COLLECTIBLE_IDS)
+  self.assertLessEqual(set(RULES),cards.COLLECTIBLE_IDS);self.assertEqual(REWINDS['TIME_038'],3);self.assertNotIn('TIME_035',REWINDS)
  def test_portal_discount_and_reroll_no_extra_card(self):
   self.install(pool(card_type='MINION'),['CORE_EX1_012']);self.play('TIME_000');mana=self.p.mana;self.reroll()
   self.assertEqual(len(self.p.hand),1);self.assertEqual(self.p.hand[0].cost_delta,-3);self.assertEqual(self.p.mana,mana);self.assertEqual(self.p.cards_played,1)
- def test_missing_pool_rejected_before_payment(self):
+ @patch('expanded.generation_families.reviewed_contract',return_value=None)
+ @patch('expanded.generation_catalog.standard_contract',return_value=None)
+ @patch('expanded.historical_generation_catalog.historical_contract',return_value=None)
+ def test_missing_pool_rejected_before_payment(self,*contracts):
   c=self.add('TIME_000');before=(self.p.mana,self.g.rng.getstate())
   with self.assertRaises(UnsupportedCard):self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid))
   self.assertEqual((self.p.mana,self.g.rng.getstate()),before);self.assertIn(c.uid,[c.uid for c in self.p.hand])
@@ -64,7 +67,7 @@ class RewindGeneratorTests(unittest.TestCase):
  def test_clocksworth_keep_ends_choice_early(self):
   self.install(pool(card_type='MINION',rarity='LEGENDARY'),['CORE_EX1_012']);self.play('TIME_038');self.reroll();self.keep();self.assertIsNone(self.g.pending_choice);self.assertEqual(len(self.p.minions),3)
  def test_multiple_rewind_budget_private_to_chooser(self):
-  self.install(pool(card_type='MINION',rarity='LEGENDARY'),['CORE_EX1_012']);self.play('TIME_038');self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True});self.assertNotIn('snapshot',json.dumps(self.g.observe(0)))
+  self.install(pool(card_type='MINION',rarity='LEGENDARY'),['CORE_EX1_012']);self.play('TIME_038');self.assertEqual(self.g.observe(1)['pending_choice'],{'owner':0,'waiting':True});self.assertNotIn('"snapshot":',json.dumps(self.g.observe(0)))
  def test_clocksworth_bounce_preserves_two_remaining(self):
   self.install(pool(card_type='MINION',rarity='LEGENDARY'),['CORE_EX1_012']);self.play('TIME_038');self.reroll();self.keep();m=next(m for m in self.p.minions if m.card_id=='TIME_038');self.g._bounce(m);c=self.p.hand[0];self.p.mana=10;self.g.step(next(a for a in self.g.legal_actions() if a.kind=='play' and a.source==c.uid));self.assertEqual(self.g.pending_choice['remaining'],2)
  def test_budget_spends_printed_cost_until_twelve(self):
@@ -101,6 +104,7 @@ class RewindGeneratorTests(unittest.TestCase):
   self.play('TIME_034');before=copy.deepcopy(self.p.weapon);self.reroll();self.assertEqual(self.p.weapon,before)
  def test_opponent_weapon_contract_required_before_payment(self):
   self.install(WEAPON,[])
+  self.install(WEAPON,['UNIMPLEMENTED_OPPONENT_WEAPON'],1)
   with self.assertRaises(UnsupportedCard):self.play('TIME_034')
   self.assertEqual(self.p.mana,10);self.assertFalse(self.p.minions)
  def test_wormhole_attacks_and_reroll_keeps_one_result(self):
@@ -113,6 +117,7 @@ class RewindGeneratorTests(unittest.TestCase):
   self.install(ANY_SPELL,['CORE_CS2_004']);self.install(OWN_SPELL,['CORE_CS2_029']);self.play('TIME_EVENT_999');self.assertEqual(self.g.pending_choice['options'][0]['card_id'],'CORE_CS2_004');self.choose();self.reroll();self.assertEqual(self.g.pending_choice['options'][0]['card_id'],'CORE_CS2_029');self.choose();self.assertEqual([c.card_id for c in self.p.hand],['CORE_CS2_029']);self.assertEqual(self.p.discoveries_total,1)
  def test_sands_validates_both_timeline_pools_before_play(self):
   self.install(ANY_SPELL,['CORE_CS2_004'])
+  self.install(OWN_SPELL,['unsupported_own_spell'])
   with self.assertRaises(UnsupportedCard):self.play('TIME_EVENT_999')
   self.assertEqual(self.p.mana,10)
  def test_raptor_dark_gift_choice_then_rewind(self):
