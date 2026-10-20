@@ -47,6 +47,7 @@ Notebooks [15](notebooks/15_transformer_ppo.ipynb) and [16](notebooks/16_long_tr
 
 - Both notebooks start in a safe mode: setup and preflight only. You must set `START_TRAINING = True` yourself.
 - Modes in notebook 16: `preflight`, `trial` (400 games), `medium` (2,000 games), `full` (10,000 games).
+- The original harness upgrade (`--allow-code-upgrade`) requires an unchanged engine. The separate [`tools/migrate_400_game_checkpoint.py`](tools/migrate_400_game_checkpoint.py) handles only the owner’s exact 400-game checkpoint after the engine repairs; it preserves learning state and starts no games. Checkpoints are not distributed.
 - Install with `python -m pip install -e '.[neural,notebook]'`. See [neural training details](docs/NEURAL_TRAINING.md) for resume rules, checks and limitations.
 - This is a research baseline, not demonstrated strong play. Beating a random or earlier version of the model is not evidence of expert strength.
 - The original linear trainer (notebook 11) and its checkpoints remain separate.
