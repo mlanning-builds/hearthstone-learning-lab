@@ -7,7 +7,7 @@ Candidate coverage: **606 → 666 / 1,185 written collectible implementations**;
 - **1423 full-suite checks passed**, zero failures or errors.
 - **77 new focused scenarios**, including every added collectible, negative conditions, generated cards, private choices, rollback, Silence, turn expiry, full-hand draw continuation, exact physical-card selection and overkill/shield interactions.
 - Source fingerprint: `9a28ca6b4823eb9084f718db705a1a20197e056295b36518d889d17fd64256ec`.
-- Receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-0c5c3e0144f9437989050337de30c288.json`.
+- Receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-0c5c3e0144f9437989050337de30c288.json`.
 - Detailed log: `staging/rebased-88/runs/expanded_validation/batch60-666.log`.
 - Explicit literal dependency scan: no missing IDs. Dynamic generation pools remain separately incomplete.
 - No training or deck search was launched.

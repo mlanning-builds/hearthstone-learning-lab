@@ -8,7 +8,7 @@ Candidate coverage: **576 → 606 / 1,185 written collectible implementations**;
 - **46 new batch scenarios**, covering each new collectible and interactions including Silence, copying, private choices, rollback, turn expiry, full boards, no qualifying choices, and complete fixed-token chains.
 - The older Morbid Swarm scenario now checks that insufficient-Corpse options are absent from legal actions.
 - Source fingerprint: `078f4c4565d8ca4c94cbca8916e90760dcc1daf5ca7384c8e487fb7b875238ed`.
-- Receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-95a4ac46aa2142dca8f64aecc4bb8f46.json`.
+- Receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-95a4ac46aa2142dca8f64aecc4bb8f46.json`.
 - Log: `staging/rebased-88/runs/expanded_validation/batch30-606.log`.
 - Explicit literal dependency report: no missing IDs. This is not a complete dynamic-pool audit.
 - No training or deck search was launched.

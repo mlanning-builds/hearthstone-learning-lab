@@ -7,7 +7,7 @@ The candidate now has **576 / 1,185 written collectible implementations**, up fr
 - **1300 full-suite checks passed**, zero failures or errors.
 - 47 batch scenarios cover the 30 cards, alternate choices, failed conditions, copy/Silence, temporary expiry, full hands, private observations, rollback, and suspended death choices.
 - Source fingerprint: `f27d15c50bd7dfe26a97a7bdbdc8792099be2986641a835b362ca9f87568c0b9`.
-- Receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-4bd62c51adf44d37888d6543af94743e.json`.
+- Receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-4bd62c51adf44d37888d6543af94743e.json`.
 - Log: `staging/rebased-88/runs/expanded_validation/batch30-576.log`.
 - Explicit literal dependency audit: no missing IDs. Dynamic pools and independent game conformance remain unfinished.
 - No training or deck search was launched.

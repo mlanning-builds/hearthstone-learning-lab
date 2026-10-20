@@ -33,9 +33,9 @@ Independent target-patch traces are still required for nested swap/reset timing,
 
 **2,012 / 2,012 checks pass**, zero failures/errors/skips, including 50 new Hero Power checks. Final source stayed unchanged throughout validation: `bf10a12e30fc3571a77e2185a2f7cf41a09abb337565f7d138bab7c4eb33fa1c`.
 
-Full receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-b84d8790a0944a3bad81554add0a3cdd.json`.
+Full receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-b84d8790a0944a3bad81554add0a3cdd.json`.
 
-**22 random games completed**, zero errors/caps; **2,309 feature decisions checked**. Random receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/random_validation/summary-df9cf2013e63-281fb097ae75422c98a7e13b78811aa3.json`. The random run used `df9cf2013e6361646c1ae16662df75a38d9907735cbf8ec69fb0006c7f867e97`; only an outdated statement in the fidelity-gap documentation was corrected afterward. Runtime source is unchanged from that passing game run.
+**22 random games completed**, zero errors/caps; **2,309 feature decisions checked**. Random receipt: `<project-root>/staging/rebased-88/runs/random_validation/summary-df9cf2013e63-281fb097ae75422c98a7e13b78811aa3.json`. The random run used `df9cf2013e6361646c1ae16662df75a38d9907735cbf8ec69fb0006c7f867e97`; only an outdated statement in the fidelity-gap documentation was corrected afterward. Runtime source is unchanged from that passing game run.
 
 The [current generation dependency inventory](engine-audit/generation-current.json) reflects 791 registered cards. All 60 staged generator declarations remain excluded from collectible coverage while their pool contracts and outcome closure remain incomplete.
 

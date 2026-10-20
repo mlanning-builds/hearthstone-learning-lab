@@ -11,7 +11,7 @@
   "package_versions_match": true,
   "pip_check_passed": true,
   "environment_path": "/private/tmp/hearthstone-fresh-20260923-0806",
-  "notebook_receipt": "/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/runs/relocation_checks/bbca04eba89f4ddba948e881e4c4d0de/receipt.json",
+  "notebook_receipt": "<project-root>/runs/relocation_checks/bbca04eba89f4ddba948e881e4c4d0de/receipt.json",
   "notebook_sha256": "f0fa3b630c4a75e77d67781c53185482036168a69b8ec52a12fb6817fd2d6cca",
   "engine_fingerprint": "1cf36f08bcdf85f8e2f281bd65f0273fcb5118464b27b78f168201858239ab51",
   "games": 11,

@@ -20,9 +20,9 @@ The enclosing-effect timing model is tested internally across all four continuat
 
 **1,962 / 1,962 checks pass**, zero failures/errors/skips, including 18 new focused follow-up checks. Final fingerprint: `191ce01ebabe2b43cd1497630bf6e0463639896dc87219e507d20d6cdd264cdd`.
 
-Full receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-f345381ac8244eaa9593b3e2e782794c.json`.
+Full receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-f345381ac8244eaa9593b3e2e782794c.json`.
 
-**22 random games completed**, zero errors/caps; **2,567 feature decisions checked**. Random receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/random_validation/summary-336dc91f7dc3-a8dcbe80d57a4325af0c18ba7cd3228c.json`. The random run used fingerprint `336dc91f7dc3ce80549ad63e606ebc137b758d38e18f153861ce2d063f58a44f`; afterward only the old Frame Job test assertion was updated to compare physical card identity rather than require a string. Runtime source did not change after the random run.
+**22 random games completed**, zero errors/caps; **2,567 feature decisions checked**. Random receipt: `<project-root>/staging/rebased-88/runs/random_validation/summary-336dc91f7dc3-a8dcbe80d57a4325af0c18ba7cd3228c.json`. The random run used fingerprint `336dc91f7dc3ce80549ad63e606ebc137b758d38e18f153861ce2d063f58a44f`; afterward only the old Frame Job test assertion was updated to compare physical card identity rather than require a string. Runtime source did not change after the random run.
 
 The 60 staged random-generation declarations remain blocked outside the registry. Their [current candidate dependency report](engine-audit/generation-current.json) reflects 787 implementations; it is not a set of approved runtime pools.
 

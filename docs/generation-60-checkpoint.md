@@ -109,8 +109,8 @@ A low count does not guarantee an easy unlock: for example, a missing outcome ca
 
 **1,924 / 1,924 checks passed**, zero failures/errors/skips, including 50 new generation checks. Full-suite source fingerprint stayed unchanged: `55253110f866279ce09c3d6d06502d092ed7e3c91fe894588d5d79cc70453cb4`.
 
-Full receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-a7645f3ae9964bcda3b7b5cb3d65fd7c.json`.
+Full receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-a7645f3ae9964bcda3b7b5cb3d65fd7c.json`.
 
-**22 existing-deck games completed**, zero errors/caps; 2,754 feature decisions checked with the same fingerprint. Random receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/random_validation/summary-55253110f866-95eb42e613e942c0af952abc12519607.json`. These games do not exercise the unregistered recipes.
+**22 existing-deck games completed**, zero errors/caps; 2,754 feature decisions checked with the same fingerprint. Random receipt: `<project-root>/staging/rebased-88/runs/random_validation/summary-55253110f866-95eb42e613e942c0af952abc12519607.json`. These games do not exercise the unregistered recipes.
 
 No training or deck search was run. No Jupyter reload/run is needed for this checkpoint. The agreed completed batch target remains 845 playable collectible implementations.

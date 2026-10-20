@@ -1,7 +1,7 @@
 """Read-only AST inventory; no simulator imports or execution."""
 import ast,hashlib,json
 from pathlib import Path
-p=Path('/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab');root=p/'staging/rebased-88'
+p=Path(__file__).resolve().parents[3];root=p/'staging/rebased-88'
 methods={'_summon','_create_minion','_queue_event','_secret_event','_settle','_damage_batch','_start_play_effects','_after_play'}
 rows=[];hashes={};functions=[]
 for path in sorted((root/'expanded').glob('*.py')):

@@ -13,9 +13,9 @@ Scope: the frozen regular Standard catalog; all-class simulation. This is an int
 
 **1,944 / 1,944 checks pass**, with zero failures, errors or skips, including 20 new Discover-history checks. Fingerprint remained unchanged: `6ab2b75a5bb80b0217ba66480f41fee7d3756bc17d9e1b823554a3b143da88c4`.
 
-Full receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-e6458c3056b846f1a035d184810efc66.json`.
+Full receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-e6458c3056b846f1a035d184810efc66.json`.
 
-**22 random games completed**, zero errors/caps; **2,566 feature decisions checked** with the same fingerprint. Random receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/random_validation/summary-6ab2b75a5bb8-53ee7c1e79474f299b2602d0107a26bc.json`. These are internal regression checks, not independent certification of every interaction.
+**22 random games completed**, zero errors/caps; **2,566 feature decisions checked** with the same fingerprint. Random receipt: `<project-root>/staging/rebased-88/runs/random_validation/summary-6ab2b75a5bb8-53ee7c1e79474f299b2602d0107a26bc.json`. These are internal regression checks, not independent certification of every interaction.
 
 ## Remaining work
 

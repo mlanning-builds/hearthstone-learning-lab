@@ -63,7 +63,7 @@
   "kl_early_stop": true,
   "checkpoint_verified": true,
   "checkpoint": {
-    "path": "/Users/matthewlanning/Desktop/HearthStone AI/death-knight-lab/runs/neural_ppo/8917daca7a65408abf918ee8740b9dea/training-000001.pt",
+    "path": "<project-root>/runs/neural_ppo/8917daca7a65408abf918ee8740b9dea/training-000001.pt",
     "sha256": "3f3345052f5989c4d7b1701fff609fddeee52275fd9ca247eb10308b842dc9f0"
   },
   "playing_strength": "not established"

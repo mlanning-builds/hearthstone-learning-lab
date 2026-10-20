@@ -8,7 +8,7 @@ Candidate coverage: **516 → 546 of 1,185** collectible implementations; **639 
 
 - Full suite: **1253 checks; 0 failures; 0 errors**.
 - New batch scenarios: 37, including one or more per collectible.
-- Receipt: `/Users/matthewlanning/Desktop/HearthStone AI /death-knight-lab/staging/rebased-88/runs/expanded_validation/validation-b246580da142419a911d9bdc258faac5.json`.
+- Receipt: `<project-root>/staging/rebased-88/runs/expanded_validation/validation-b246580da142419a911d9bdc258faac5.json`.
 - Fingerprint: `023f4f40da8e3d4a9700132f64464b9c3b10ade2552438491c0e9769085817d7`.
 - Literal generated-dependency audit: no missing IDs; dynamic pools and semantic completeness remain separate work.
 - No training was run.
