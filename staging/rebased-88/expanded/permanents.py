@@ -14,7 +14,8 @@ FEL_POOL=GenerationPool('Underfel Rift Fel Beasts',FEL_BEASTS,
     'Pinned TLC_446 reward family: Felscreamer, Felraptor, Felhorn')
 NETHER_PORTAL='UNG_829t2'
 NETHER_IMP='UNG_829t3'
-PERMANENT_IDS={RIFT,NETHER_PORTAL,'BAR_919t','WW_824t','SW_028t6'}
+# Starship assembly is an untouchable board object until launched.
+PERMANENT_IDS={RIFT,NETHER_PORTAL,'BAR_919t','WW_824t','SW_028t6','GDB_100t1'}
 TOKEN_IDS={RIFT,'TLC_446t',*FEL_BEASTS}
 PLAYABLE_TOKENS={'TLC_446t',*FEL_BEASTS}
 TOKEN_RULES={'TLC_446t':('none',[('open_permanent',RIFT)])}

@@ -102,7 +102,7 @@ class QuestFamilies:
 
  def _quest_slots(self,owner):
   q=self.players[owner].quest
-  extra=len(getattr(self.players[owner],'historical_mage_sidequests',()))+int(getattr(self.players[owner],'eudora_sidequest',None) is not None)+len(getattr(self.players[owner],'whizbang_quests',()))
+  extra=len(getattr(self.players[owner],'historical_mage_sidequests',()))+int(getattr(self.players[owner],'eudora_sidequest',None) is not None)+len(getattr(self.players[owner],'whizbang_quests',()))+len(getattr(self.players[owner],'forge_sidequests',()))
   if not q:return extra
   if 'equilibrium_branches' in q:
    return extra+sum(i not in q['rewards_delivered'] for i in range(len(q['equilibrium_branches'])))

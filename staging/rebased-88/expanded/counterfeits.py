@@ -1,4 +1,5 @@
 """Aya setup and physical counterfeit replacement, with explicit potion parts."""
+from copy import deepcopy
 from engine.game import Card
 from engine.cards import UnsupportedCard
 from .generation_cards import pool,random_cards
@@ -28,8 +29,10 @@ class Counterfeits:
   if identity and card.card_id in COIN_IDS|set(COINS):card.card_id=identity
  def _crafted_rule(self,card):
   state=getattr(card,'rule_state',{})
+  if 'crafted_ops' not in state:
+   state=getattr(card,'_crafted_definition',{}).get('state',{})
   if 'crafted_ops' not in state:return None
-  return state.get('crafted_target','none'),state['crafted_ops']
+  return state.get('crafted_target','none'),deepcopy(state['crafted_ops'])
  def _counterfeit_effect(self,op,ctx):
   owner=ctx['owner'];p=self.players[owner];name=op[0]
   if name=='counterfeit_choose':

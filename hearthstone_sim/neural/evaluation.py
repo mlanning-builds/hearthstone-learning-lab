@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass
 import math
-import torch
 
 
 @dataclass(frozen=True)
@@ -103,75 +102,142 @@ def heuristic_action(decision, cards):
     return max(range(len(decision["actions"])), key=lambda i: score(decision["actions"][i]))
 
 
-def evaluate(learner, anchors, encoder, decks, cards, *, config, max_actions, emit,
-             folder=None, iteration=0, engine_fingerprint=None, failure_fraction=0.02,
-             failure_min_attempts=100, failure_repeats=5, safety=None):
+def evaluate(
+    learner,
+    anchors,
+    encoder,
+    decks,
+    cards,
+    *,
+    config,
+    max_actions,
+    emit,
+    folder=None,
+    iteration=0,
+    engine_fingerprint=None,
+    failure_fraction=0.02,
+    failure_min_attempts=100,
+    failure_repeats=5,
+    safety=None,
+    cache_dir=None,
+    workers=4,
+):
     """Same monitoring cases across snapshots, never training on these returns.
 
     Repeated monitoring is validation, not a fresh unbiased final test. Caps
     are reported separately. Wilson intervals describe completed-game wins
     (draws count as non-wins), approximate for the fixed matchup panel.
     """
-    from .runner import match_schedule, policy_action, GameCapture, new_safety_state, account_attempt, failure_limit
-    import time
+    from .runner import match_schedule, new_safety_state, account_attempt, failure_limit
+
     safety = safety if safety is not None else new_safety_state()
+    journal = None
+    seen = set(safety.get("evaluation_case_ids", ()))
+    if cache_dir is not None:
+        from .evaluation_cache import EvaluationJournal, identity
+
+        journal = EvaluationJournal(
+            cache_dir,
+            identity(learner, anchors, encoder, decks, config, max_actions, engine_fingerprint),
+        )
     stopped = None
-    from expanded.environment import PolicyEnvironment
 
     all_results = []
     opponents = [("heuristic", None)] + list(anchors.items())
     learner.eval()
-    for opponent_index, (name, opponent) in enumerate(opponents):
-        if opponent is not None:
-            opponent.eval()
-        rows = []
-        for index in range(config.games_per_opponent):
-            left, right, seat, first = match_schedule(list(decks), index, config.seed)
-            pair = [None, None]
-            pair[seat] = decks[left]
-            pair[1 - seat] = decks[right]
-            capture = GameCapture(dict(seed=config.seed+index, learner_deck=left,
-                opponent_deck=right, learner_seat=seat, first_player=first,
-                opponent=name, engine_fingerprint=engine_fingerprint), folder,
-                f"evaluation-{iteration:06d}-{opponent_index}-{index:04d}")
-            try:
-                decision = capture.reset(PolicyEnvironment, pair, seed=config.seed+index,
-                                         max_actions=max_actions, first_player=first)
-                rng = torch.Generator().manual_seed(config.seed + 100000 * opponent_index + index)
-                while not decision["terminated"] and not decision["truncated"]:
-                    inference_start = time.monotonic()
-                    if decision["actor"] == seat:
-                        action, _, _ = policy_action(learner, encoder.encode(decision), rng)
-                    elif opponent is None:
-                        action = heuristic_action(decision, cards)
+    from .evaluation_workers import case, EvaluationPool
+
+    if type(workers) is not int or not 1 <= workers <= 4:
+        raise ValueError("Evaluation workers must be between one and four")
+    pool = EvaluationPool(workers, learner, anchors, encoder) if workers > 1 else None
+
+    def make_task(opponent_index, name, index):
+        left, right, seat, first = match_schedule(list(decks), index, config.seed)
+        pair = [None, None]
+        pair[seat] = decks[left]
+        pair[1 - seat] = decks[right]
+        # Speculative failures are kept apart; only consumed results enter safety/cache.
+        diagnostic_folder = (
+            folder
+            if pool is None or folder is None
+            else __import__("pathlib").Path(folder) / "evaluation-worker-diagnostics"
+        )
+        return dict(
+            metadata=dict(
+                seed=config.seed + index,
+                learner_deck=left,
+                opponent_deck=right,
+                learner_seat=seat,
+                first_player=first,
+                opponent=name,
+                engine_fingerprint=engine_fingerprint,
+            ),
+            pair=pair,
+            folder=diagnostic_folder,
+            name=f"evaluation-{iteration:06d}-{opponent_index}-{index:04d}",
+            action_seed=config.seed + 100000 * opponent_index + index,
+            max_actions=max_actions,
+        )
+
+    def fill(opponent_index, name, start):
+        for future_index in range(start, min(start + workers, config.games_per_opponent)):
+            key = (opponent_index, future_index)
+            if key not in pool.pending and not (journal and journal.read(*key) is not None):
+                pool.submit(key, make_task(opponent_index, name, future_index))
+
+    try:
+        for opponent_index, (name, opponent) in enumerate(opponents):
+            if opponent is not None:
+                opponent.eval()
+            rows = []
+            if pool is not None:
+                fill(opponent_index, name, 0)
+            for index in range(config.games_per_opponent):
+                left, right, seat, first = match_schedule(list(decks), index, config.seed)
+                pair = [None, None]
+                pair[seat] = decks[left]
+                pair[1 - seat] = decks[right]
+                result = journal.read(opponent_index, index) if journal else None
+                cached = result is not None
+                if not cached:
+                    task = make_task(opponent_index, name, index)
+                    if pool is None:
+                        result = case(learner, opponent, encoder, cards, task)
                     else:
-                        action, _, _ = policy_action(opponent, encoder.encode(decision), rng)
-                    capture.inference_seconds += time.monotonic()-inference_start
-                    decision = capture.step(action)
-                result = dict(
-                    opponent=name,
-                    seed=config.seed + index,
-                    learner_deck=left,
-                    opponent_deck=right,
-                    learner_seat=seat,
-                    first_player=first,
-                    terminated=decision["terminated"],
-                    truncated=decision["truncated"],
-                    actions=decision["steps"],
-                    reward=decision["rewards"][seat] if decision["terminated"] else None,
+                        key = (opponent_index, index)
+                        if key not in pool.pending:
+                            pool.submit(key, task)
+                        result = pool.result(key)
+                    if pool is not None:
+                        # Bounded speculation; accounting/journal writes remain in serial order.
+                        fill(opponent_index, name, index + 1)
+                    if journal:
+                        journal.write(opponent_index, index, result)
+                case_id = journal.case_id(opponent_index, index) if journal else None
+                if case_id is None or case_id not in seen:
+                    account_attempt(safety, result, left, right)
+                    if case_id is not None:
+                        safety.setdefault("evaluation_case_ids", []).append(case_id)
+                        seen.add(case_id)
+                stopped = failure_limit(
+                    safety, failure_fraction, failure_min_attempts, failure_repeats
                 )
-                result = capture.finish(result)
-            except Exception as error:
-                result = capture.failure(error)
-            account_attempt(safety, result, left, right)
-            stopped = failure_limit(safety, failure_fraction, failure_min_attempts, failure_repeats)
-            rows.append(result)
-            all_results.append(result)
-            emit("evaluation_game", opponent=name, done=len(rows), total=config.games_per_opponent)
+                rows.append(result)
+                all_results.append(result)
+                emit(
+                    "evaluation_game",
+                    opponent=name,
+                    done=len(rows),
+                    total=config.games_per_opponent,
+                    cached=cached,
+                )
+                if stopped:
+                    break
             if stopped:
                 break
-        if stopped:
-            break
+    finally:
+        if pool is not None:
+            pool.close()
     by_opponent = {
         name: result_summary([r for r in all_results if r["opponent"] == name])
         for name, _ in opponents
@@ -181,7 +247,9 @@ def evaluate(learner, anchors, encoder, decks, cards, *, config, max_actions, em
         key = " / ".join((row["opponent"], row["learner_deck"], row["opponent_deck"]))
         matchups.setdefault(key, []).append(row)
     return dict(
-        schema="frozen-opponent-monitoring-v1", safety=safety, stopped=stopped,
+        schema="frozen-opponent-monitoring-v1",
+        safety=safety,
+        stopped=stopped,
         summary=result_summary(all_results),
         by_opponent=by_opponent,
         by_matchup={k: result_summary(v) for k, v in matchups.items()},

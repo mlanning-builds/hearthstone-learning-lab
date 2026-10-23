@@ -239,7 +239,7 @@ CORRUPT_FORMS={
  'DMF_526':('DMF_526a',0,0),'DMF_730':('DMF_730t',0,0),
 }
 CAST_EFFECTS={'AT_035t':(op('opponent_summon','AT_036t',1),)}
-FIXED_TOKEN_IDS=frozenset(TOKEN_RULES)
+FIXED_TOKEN_IDS=frozenset(TOKEN_RULES)|{'TOKEN_SCOUT'}
 
 def sequence(game,ctx,operations):
  operations=tuple(operations)
@@ -469,7 +469,7 @@ def execute(game,operation,ctx):
   if victim is not None and operation[2] in victim.rule_state.get('historical_archive_expirations',()):victim.health=0
  elif name=='board_death':
   mode=operation[1];victims=[target] if mode=='ancestral' and target is not None else list(p.minions) if mode!='ancestral' else []
-  effect=random_cards(pool(card_type='MINION',tribe='MECHANICAL')) if mode=='mech' else ('summon','EX1_506a',1) if mode=='murloc' else op('resummon')
+  effect=random_cards(pool(card_type='MINION',tribe='MECHANICAL')) if mode=='mech' else ('summon','TOKEN_SCOUT',1) if mode=='murloc' else op('resummon')
   for victim in victims:victim.attached_death_effects.append(effect);victim.keywords.add('DEATHRATTLE')
  elif name=='resummon':
   source=ctx.get('source')

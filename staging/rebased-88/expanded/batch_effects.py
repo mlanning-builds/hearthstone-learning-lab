@@ -361,7 +361,9 @@ class BatchEffects:
         elif name=='source_attack_damage':self._deal_effect(target,max(0,source.attack),ctx)
         elif name=='kindred_destroy_gain':
             if target:
-                m=self._find(target);attack,health=m.attack,m.health;m.health=0
+                m=self._force_live(target)
+                if m is None:return True
+                attack,health=m.attack,m.health;m.health=0
                 self._settle()
                 if ctx.get('kindred') and source in p.minions:self._buff(source,attack*ctx.get('kindred_repeats',1),max(0,health)*ctx.get('kindred_repeats',1))
         elif name=='kindred_deathrattle_draw':
@@ -549,7 +551,10 @@ class BatchEffects:
                 self._remove_location(location)
                 self._refresh_auras()
         elif name=='fire_turn_destroy':
-            if p.fire_spell_played and target:self._find(target).health=0
+            if p.fire_spell_played and target:
+                # Earlier spell effects may already have removed this target.
+                victim=next((m for player in self.players for m in player.minions if m.uid==target),None)
+                if victim is not None:victim.health=0
         elif name=='combo_add':
             if ctx.get('combo'):self._add(owner,op[1])
         elif name=='damage_buff_attack':

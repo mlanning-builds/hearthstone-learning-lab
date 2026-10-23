@@ -70,7 +70,9 @@ class MinionForge:
    self._forge_offer(owner,'zombeast',discount)
   elif op[0]=='forge_sidequest':
    quests=getattr(p,'forge_sidequests',[])
-   if quests:raise UnsupportedCard('Duplicate Storm the Gates sidequest')
+   # Automatic/repeated casts cannot add a duplicate or exceed the shared
+   # secret/quest capacity. Keep the active quest and its progress intact.
+   if quests or len(p.secrets)+self._quest_slots(owner)>=5:return True
    p.forge_sidequests=[dict(card_id='TLC_EVENT_400',progress=0,total=3)]
   else:return False
   return True

@@ -46,7 +46,7 @@ class TransformerPolicyValue(nn.Module):
             nn.Linear(config.width, config.width), nn.GELU(), nn.Linear(config.width, 1), nn.Tanh()
         )
 
-    def _embed(self, rows):
+    def _prepare_rows(self, rows):
         ids, weights, offsets = [], [], []
         for row in rows:
             offsets.append(len(ids))
@@ -55,18 +55,32 @@ class TransformerPolicyValue(nn.Module):
                 ids.append(token)
                 weights.append(value * scale)
         device = self.cls.device
-        return self.token_norm(
-            self.fields(
-                torch.tensor(ids, dtype=torch.long, device=device),
-                torch.tensor(offsets, dtype=torch.long, device=device),
-                per_sample_weights=torch.tensor(weights, dtype=torch.float32, device=device),
-            )
+        return (
+            torch.tensor(ids, dtype=torch.long, device=device),
+            torch.tensor(offsets, dtype=torch.long, device=device),
+            torch.tensor(weights, dtype=torch.float32, device=device),
         )
+
+    def prepare_encoded(self, item):
+        """Cache input tensors only, never embeddings/activations or gradients."""
+        return dict(
+            item,
+            state=self._prepare_rows(item["state"]),
+            actions=self._prepare_rows(item["actions"]),
+            _prepared_fields=True,
+        )
+
+    def _embed(self, rows, prepared=False):
+        ids, offsets, weights = rows if prepared else self._prepare_rows(rows)
+        return self.token_norm(self.fields(ids, offsets, per_sample_weights=weights))
 
     def forward(self, encoded_batch):
         if not encoded_batch:
             raise ValueError("Empty batch")
-        states = [self._embed(item["state"]) for item in encoded_batch]
+        states = [
+            self._embed(item["state"], item.get("_prepared_fields", False))
+            for item in encoded_batch
+        ]
         length = max(s.shape[0] for s in states) + 1
         padded = self.cls.new_zeros((len(states), length, self.config.width))
         mask = torch.ones((len(states), length), dtype=torch.bool, device=self.cls.device)
@@ -77,7 +91,7 @@ class TransformerPolicyValue(nn.Module):
         context = self.norm(self.encoder(padded, src_key_padding_mask=mask)[:, 0])
         logits = []
         for i, item in enumerate(encoded_batch):
-            action = self._embed(item["actions"])
+            action = self._embed(item["actions"], item.get("_prepared_fields", False))
             ctx = context[i].expand(len(action), -1)
             logits.append(self.policy(torch.cat((action, ctx, action * ctx), dim=-1)).squeeze(-1))
         # Only legal candidates exist: variable candidate sets need no fixed action vocabulary.

@@ -234,7 +234,7 @@ def execute(game,op,ctx):
    if target:game._force_attack(source.uid,target)
  elif name=='historical_keyword_event_armor':game._gain_armor(owner,ctx['event']['amount'])
  elif name=='historical_keyword_discount_hand':
-  for card in p.hand:card.cost_delta-=op[1]
+  for card in p.hand:card.cost_delta=getattr(card,'cost_delta',0)-op[1]
  elif name=='historical_keyword_transform_source':
   if source is not None and source in p.minions:game._transform(source,op[1])
  elif name=='historical_keyword_damaged_attack':

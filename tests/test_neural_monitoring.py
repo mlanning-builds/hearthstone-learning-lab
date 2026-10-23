@@ -99,6 +99,7 @@ class MonitoringTests(unittest.TestCase):
                 {"A": "scripted-deck"},
                 {},
                 config=EvaluationConfig(games_per_opponent=2),
+                workers=1,  # This fixture mocks the serial environment and uses a Linear stub.
                 max_actions=5,
                 emit=lambda *a, **k: None,
             )
@@ -125,6 +126,14 @@ class MonitoringTests(unittest.TestCase):
     def test_upgrade_is_explicit_narrow_and_hash_verified(self):
         old = dict(neural_code=LEGACY_CODE, engine="unchanged", model={"width": 128})
         new = dict(old, neural_code="new-monitoring-code")
+        # PPO telemetry changed: the real legacy upgrade must now reject.
+        self.assertFalse(compatible_upgrade(old, new))
+        from hearthstone_sim.neural.upgrade import UNCHANGED
+        import hashlib
+        root=Path('hearthstone_sim/neural')
+        approved={name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in UNCHANGED}
+        guard=patch.dict(UNCHANGED,approved)
+        guard.start();self.addCleanup(guard.stop)
         self.assertTrue(compatible_upgrade(old, new))
         self.assertFalse(compatible_upgrade(old, dict(new, engine="changed")))
         self.assertFalse(compatible_upgrade(old, dict(new, model={"width": 256})))

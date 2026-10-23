@@ -237,7 +237,8 @@ def execute(game,op,ctx):
   target=next((m for player in game.players for m in player.minions if m.uid==target_id and m.health>0),None)
   if target is not None:
    operations=game._death_operations(target)
-   if operations:game._rule_events.append(('captured_effects',dict(operations=operations,context=dict(owner=target.owner,source=target,target=0,bonus=0,lifesteal=False)),[]))
+   if operations:game._rule_events.append(('captured_effects',dict(operations=operations,context=dict(owner=target.owner,source=target,target=0,bonus=0,lifesteal=False,
+    death_position=game.players[target.owner].board.index(target)+1)),[]))
  elif name=='historical_batch_manathirst_damage':game._deal_effect(target_id,op[3] if p.max_mana>=op[1] else op[2],ctx)
  elif name=='historical_batch_random_enemy_damage':
   targets=[game.hero_id(1-owner)]+[m.uid for m in q.minions if m.health>0]

@@ -13,6 +13,14 @@ from .selectors import classes
 VALUES=json.loads(Path(__file__).with_name('herald_values.json').read_text())['values']
 SOLDIERS={'WARRIOR':'CATA_580t','DEMONHUNTER':'CATA_525t','SHAMAN':'CATA_565t',
           'ROGUE':'CATA_158t','DEATHKNIGHT':'CATA_780t','WARLOCK':'CATA_725t'}
+HERALD_COLOSSALS=frozenset(('CATA_150','CATA_151','CATA_153','CATA_154','CATA_155','CATA_726'))
+
+def herald_related(data):
+    # The reduced export omits the keyword tag on several Herald sources and
+    # Colossal roots; retain their explicit identity linkage and printed text.
+    return (data.get('id') in HERALD_COLOSSALS or
+            'HERALD' in data.get('mechanics',()) or
+            (data.get('set')=='CATACLYSM' and 'herald' in data.get('text','').lower()))
 ARMIES={
  'WARRIOR':('CATA_580t','CATA_150t','CATA_150t1'),
  'DEMONHUNTER':('CATA_525t','CATA_151t','CATA_151t1'),
@@ -119,6 +127,11 @@ class Herald:
         if cid is None and source_card_id in self.cards:
             armies=classes(self.cards[source_card_id])&set(SOLDIERS)
             if len(armies)==1:cid=SOLDIERS[next(iter(armies))]
+            elif len(armies)>1:
+                # Developer clarification: generic Heralds next use the enemy
+                # hero's army. No random fallback if neither hero has one.
+                # https://hearthstone.wiki.gg/wiki/Herald (ClayByte clarification)
+                cid=SOLDIERS.get(self.players[1-owner].hero_class)
         if cid is None:raise UnsupportedCard('Off-class Herald army selection requires reviewed routing for an ambiguous source: owner_class='+p.hero_class+' source_card_id='+str(source_card_id)+' eligible_armies='+','.join(sorted(classes(self.cards.get(source_card_id,{}))&set(SOLDIERS))))
         if self.cards.get(cid,{}).get('type')!='MINION':raise UnsupportedCard('Missing Herald Soldier: '+cid)
         self._herald_entry_preflight(owner,cid)

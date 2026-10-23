@@ -1,0 +1,21 @@
+{
+  "schema": "architecture-comparison-v1",
+  "purpose": "Bounded feasibility pilot, not a paper-level architecture ranking",
+  "architectures": ["mlp", "transformer"],
+  "training_seeds": [113],
+  "chunk_games_per_model": 128,
+  "games_per_batch": 64,
+  "soft_limit_minutes": 90,
+  "max_actions": 1000,
+  "threads": 2,
+  "training_seed": 2000000,
+  "evaluation_seed": 3000000,
+  "evaluation_cases": 44,
+  "panel": "configs/neural_all_classes.json",
+  "learning_rate": 0.0001,
+  "minibatch": 64,
+  "epochs": 4,
+  "tactical_lessons": false,
+  "opponent": "Same frozen saved Transformer for both architectures; no handwritten opponent or self-play in this first controlled experiment",
+  "evaluation_scope": "New game seeds on the training deck roster against the same frozen opponent. Not unseen-deck or unseen-opponent generalization."
+}

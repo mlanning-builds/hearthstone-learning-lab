@@ -254,7 +254,9 @@ class EffectExecutor:
         elif name=='freeze_enemies':
             for m in q.minions: game._freeze(m.uid)
         elif name=='destroy':
-            if target: game._find(target).health=0
+            # Earlier effects/triggers can remove the locked target before resolution.
+            victim=next((m for player in game.players for m in player.minions if m.uid==target),None)
+            if victim is not None: victim.health=0
         elif name=='buff_board_count':
             if target: game._buff(game._find(target),len(p.minions),len(p.minions))
         elif name=='heal_full':

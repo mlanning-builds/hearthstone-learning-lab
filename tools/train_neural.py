@@ -22,7 +22,9 @@ def main():
     parser.add_argument("--max-actions", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=71)
     parser.add_argument("--device", choices=["cpu", "auto", "mps", "cuda"], default="cpu")
+    parser.add_argument("--collection-workers",type=int,choices=range(1,5),default=1)
     parser.add_argument("--threads", type=int, default=2)
+    parser.add_argument('--session-seconds', type=float, default=0, help='Soft wall-clock budget; finish and save the current batch before pausing')
     parser.add_argument(
         "--panel", type=Path, default=ROOT / "configs/neural_competitive_decks.json"
     )
@@ -40,6 +42,8 @@ def main():
     parser.add_argument("--minibatch", type=int, default=16)
     parser.add_argument("--self-play-fraction", type=float, default=0.25)
     parser.add_argument("--league-size", type=int, default=32)
+    parser.add_argument("--heuristic-fraction", type=float, default=0.0)
+    parser.add_argument("--tactical-steps", type=int, default=0)
     parser.add_argument("--evaluation-every-iterations", type=int, default=0)
     parser.add_argument("--evaluation-games-per-opponent", type=int, default=64)
     parser.add_argument("--evaluation-seed", type=int, default=1_000_000_000)
@@ -60,6 +64,8 @@ def main():
     args = parser.parse_args()
     if not 0 <= args.failure_fraction <= 1 or min(args.failure_min_attempts, args.failure_repeats, args.retry_cap) < 1 or min(args.trace_first, args.trace_every) < 0:
         parser.error("Invalid safety thresholds")
+    if not 0 <= args.heuristic_fraction <= 1-args.self_play_fraction or args.tactical_steps < 0:
+        parser.error('Invalid heuristic mixture or lesson budget')
     if args.train and args.preflight:
         parser.error("Choose --train or --preflight")
     if args.threads < 1:
@@ -77,6 +83,8 @@ def main():
     from hearthstone_sim.neural.evaluation import EvaluationConfig, ensure_disjoint
     from hearthstone_sim.neural.checkpoints import load
 
+    if args.collection_workers > 1 and args.device != "cpu":
+        parser.error("Parallel collection currently requires --device cpu")
     torch.set_num_threads(args.threads)
     model = ModelConfig(
         width=args.width, heads=args.heads, layers=args.layers, feedforward=args.feedforward
@@ -105,6 +113,19 @@ def main():
             if args.resume
             else None
         )
+        if previous is not None:
+            planned = dict(seed=args.seed,games_per_iteration=args.games_per_iteration,
+                max_actions=args.max_actions,ppo=asdict(ppo),device=choose_device(args.device),
+                self_play_fraction=args.self_play_fraction,league_size=args.league_size,
+                heuristic_fraction=args.heuristic_fraction,tactical_steps=args.tactical_steps,collection_workers=args.collection_workers,
+                threads=args.threads,evaluation=asdict(evaluation) if evaluation.every_iterations else None,
+                checkpoint_every_iterations=args.checkpoint_every_iterations,
+                failure_fraction=args.failure_fraction,failure_min_attempts=args.failure_min_attempts,
+                failure_repeats=args.failure_repeats,retry_cap=args.retry_cap,
+                trace_first=args.trace_first,trace_every=args.trace_every,
+                evaluation_at=list(args.evaluation_at),evaluate_at_start=args.evaluate_at_start)
+            if previous.get('settings') != planned:
+                parser.error('Resume settings do not match; use the prepared configuration or an explicit migration')
         if evaluation.every_iterations:
             ensure_disjoint(
                 args.seed,
@@ -119,6 +140,7 @@ def main():
                 dict(
                     event="preflight_passed",
                     training_started=False, evaluate_at_start=args.evaluate_at_start,
+                    heuristic_fraction=args.heuristic_fraction, tactical_steps=args.tactical_steps, collection_workers=args.collection_workers,
                     safety=dict(failure_fraction=args.failure_fraction, failure_min_attempts=args.failure_min_attempts, failure_repeats=args.failure_repeats, retry_cap=args.retry_cap, trace_first=args.trace_first, trace_every=args.trace_every),
                     decks=[
                         dict(id=name, hero_class=d.hero_class, cards=len(d.cards))
@@ -158,8 +180,9 @@ def main():
         resume=args.resume,
         opponents=args.opponent,
         self_play_fraction=args.self_play_fraction,
-        league_size=args.league_size,
+        league_size=args.league_size, heuristic_fraction=args.heuristic_fraction, tactical_steps=args.tactical_steps, collection_workers=args.collection_workers,
         allow_training=True,
+        session_seconds=args.session_seconds,
         evaluation=evaluation if evaluation.every_iterations else None,
         checkpoint_every_iterations=args.checkpoint_every_iterations,
         allow_code_upgrade=args.allow_code_upgrade,

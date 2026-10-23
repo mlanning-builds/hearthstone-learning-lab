@@ -345,7 +345,10 @@ class Systems:
                     (m.card_id=='DINO_400' and wanted=='friendly_armor_gained') or
                     (m.card_id=='EDR_471' and wanted=='damaged_self') or
                     (m.card_id=='REV_377' and wanted==('historical_copy_event','courier')) or
-                    (m.card_id=='TOY_511' and wanted==('summon','friendly','PIRATE'))):
+                    (m.card_id=='TOY_511' and wanted==('summon','friendly','PIRATE')) or
+                    # Umbra observes the minions summoned by a triggered
+                    # Deathrattle as well as the original summoned minion.
+                    (m.card_id=='UNG_900' and wanted==('summon','friendly',None))):
                 raise UnsupportedCard('Re-entrant trigger compensation is not supported')
             frame.update(operations=tuple(operations), operation=0, key=key,
                          context=dict(owner=m.owner,source=m,target=0,bonus=0,
@@ -681,6 +684,13 @@ class Systems:
             self._freeze(target)
 
     def _heal(self,target,amount,*,healer=None,_after_shadow=False,spell=False,power=False,_receipt=None):
+        # Repeated spell effects defer death settlement across their copies
+        # and choices. An on-board target may recover before that boundary.
+        healable=next((m for p in self.players for m in p.minions
+                       if m.uid==target and (m.health>0 or self._spell_repeat_depth)),None) if target>0 else None
+        if target>0 and healable is None:
+            self._log('effect_fizzled',effect='heal',target=target,reason='target_departed_or_dead')
+            return 0
         if self._fire_immune_target(target):return 0
         if target>0 and self._dormant_entity(target) is not None and self._dormant_entity(target).dormant:return 0
         entity=self.players[-target-1] if target<0 else self._find(target)
@@ -1053,7 +1063,12 @@ class Systems:
         elif name=='discover_deck':self._discover_deck(owner)
         elif name=='copy_cast_spell_to_other_player':
             event=ctx['event']
-            self._clone_hand_card(1-event['owner'],Card(self._new_id(),event['card_id']),source_owner=event['owner'])
+            physical=event.get('physical_card')
+            if physical is None:
+                raise UnsupportedCard('Spell-copy event is missing its physical card')
+            # Preserve constructed effects, chosen ingredients and provenance.
+            # A new bare card ID cannot represent a player-crafted spell.
+            self._clone_hand_card(1-event['owner'],physical,source_owner=event['owner'])
         elif name=='add_opponent':
             for _ in range(op[2]):self._add(1-owner,op[1])
         elif name=='fill_hand':

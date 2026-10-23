@@ -1,0 +1,77 @@
+{
+  "schema": "matched-game-study-v1",
+  "architectures": [
+    "mlp",
+    "gru",
+    "large_transformer"
+  ],
+  "training_seeds": [
+    113
+  ],
+  "panel": "runs/all_class_campaign/panels/continuum-000005703.json",
+  "panel_sha256": "391d4795de51a5327fc41a982f254ba65815257df3870212bc66e79b5bbcf135",
+  "reference": "runs/research_matched_games/reference-engine-repair/training-000573.pt",
+  "reference_sha256": "83e8f6c6ed408fb70e7a73faf48ddd1fc5334b34d20781e5a6ac7c0ff625d72a",
+  "output": "runs/research_matched_games",
+  "session_seconds": 7200,
+  "turn_seconds": 900,
+  "games_per_batch": 64,
+  "threads": 6,
+  "workers": 4,
+  "max_actions": 1000,
+  "memory_decisions": 16,
+  "league_size": 8,
+  "self_play_fraction": 0.6,
+  "older_fraction": 0.3,
+  "heuristic_fraction": 0.1,
+  "ppo": {
+    "learning_rate": 0.0001,
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "value_weight": 0.5,
+    "entropy_weight": 0.01,
+    "max_grad_norm": 0.5,
+    "epochs": 4,
+    "minibatch": 16,
+    "target_kl": 0.02
+  },
+  "evaluation_cases_per_opponent": 44,
+  "training_seed": 600000000,
+  "evaluation_seed": 900000000,
+  "evaluation_opponents": [
+    "heuristic",
+    "400-game",
+    "saved-19931"
+  ],
+  "search": {
+    "depth": 2,
+    "width": 3,
+    "max_nodes": 12
+  },
+  "scope": "Owner-selected equal-completed-game comparison of three fresh alternatives with the preserved historical 19,931-game Transformer, accepting different training histories. Time and recorded CPU usage are measured, not fixed. Single seed. Search is a bounded public-information combat planner using the preserved Transformer; not a full-game planner.",
+  "comparison_mode": "alternatives-versus-historical-player",
+  "budget_mode": "games",
+  "milestones_games": [
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000,
+    15000,
+    16000,
+    17000,
+    18000,
+    19000,
+    19931
+  ]
+}

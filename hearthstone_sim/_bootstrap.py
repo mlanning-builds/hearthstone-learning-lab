@@ -1,10 +1,12 @@
 """Select the active checkout without replacing already-loaded legacy modules."""
+
 from importlib import import_module
 from pathlib import Path
 import sys
 from types import ModuleType
 
 CANDIDATE_ROOT = Path(__file__).resolve().parents[1] / "staging" / "rebased-88"
+
 
 def activate() -> ModuleType:
     """Reject mixed engines, then load the current candidate implementation."""

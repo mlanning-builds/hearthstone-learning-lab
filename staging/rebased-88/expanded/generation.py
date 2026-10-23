@@ -127,6 +127,13 @@ class GenerationEffects:
         invalid = [cid for cid in candidates if not request_matches(request, self.cards[cid], hero_class)]
         if invalid:
             raise UnsupportedCard('Generation contract contains ineligible identities: ' + ', '.join(invalid))
+        # Conditional client eligibility, independent of implementation coverage.
+        # Random generation/Discover requires Herald support in the starting
+        # deck; physical steals and explicit copies bypass this pool path.
+        # https://hearthstone.wiki.gg/wiki/Herald (ClayByte clarification)
+        from .herald import herald_related
+        if not any(herald_related(self.cards.get(cid,{})) for cid in self.players[owner].starting_deck):
+            candidates=tuple(cid for cid in candidates if not herald_related(self.cards[cid]))
         return candidates
 
     def _generation_discover_candidates(self,request,ctx):
@@ -359,7 +366,8 @@ class GenerationEffects:
                 operations=self._death_operations(minion)
                 if operations:
                     self._rule_events.append(('captured_effects',dict(operations=operations,
-                        context=dict(owner=minion.owner,source=minion,target=0,bonus=0,lifesteal=False)),[]))
+                        context=dict(owner=minion.owner,source=minion,target=0,bonus=0,lifesteal=False,
+                                     death_position=self.players[minion.owner].board.index(minion))),[]))
         elif name == 'generation_pay_resource':
             if op[1]=='remaining_mana':
                 self.players[ctx['owner']].mana-=op[2]

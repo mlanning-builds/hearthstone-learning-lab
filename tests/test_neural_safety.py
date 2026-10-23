@@ -143,7 +143,9 @@ class SafetyTests(unittest.TestCase):
         doc=json.loads(Path('notebooks/16_long_transformer_training.ipynb').read_text())
         source='\n'.join(''.join(c['source']) for c in doc['cells'] if c['cell_type']=='code')
         ast.parse(source)
-        self.assertIn("['--evaluation-at', '512', '1024', '1536', '2000']",source)
+        # Owner notebooks contain continuation-local milestones and may be edited.
+        self.assertIn('--evaluation-at',source)
+        self.assertIn('EVALUATE_AT_START',source)
         self.assertEqual([n//8 for n in (512,1024,1536,2000)],[64,128,192,250])
 
     def test_summary_cli_reads_only_synthetic_file(self):
@@ -162,4 +164,4 @@ class SafetyTests(unittest.TestCase):
 
     def test_dashboard_failure_timing_and_exposure(self):
         d=Dashboard(8);d.consume(dict(event='iteration_saved',metrics={'optimizer_steps':0},safety={'attempted':3,'failed':1,'approximations':{'A':{'bashana':1}}},timing={'engine_seconds':1,'ppo_seconds':0}))
-        self.assertIn('Failed: 1',d.html());self.assertIn('bashana',d.html());self.assertIn('engine_seconds',d.html())
+        self.assertIn('Failures: 1',d.html());self.assertIn('bashana',d.html());self.assertIn('engine_seconds',d.html())

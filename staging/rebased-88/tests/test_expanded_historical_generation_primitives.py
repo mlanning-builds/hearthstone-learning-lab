@@ -7,6 +7,7 @@ import json,unittest
 import test_expanded_generation as fixtures
 from expanded import Action,cards
 from expanded.generation import request_matches
+from expanded.herald import herald_related
 from expanded.pools import GenerationPool
 from expanded.effect_schema import validate_namespace
 from engine.cards import UnsupportedCard
@@ -25,7 +26,7 @@ class HistoricalGenerationPrimitiveTests(unittest.TestCase):
   selected={};hero=g.players[0].hero_class
   for req in family.requests_for(cid):
    if req.era=='past':outcome=g._generation_candidates(req,0)[0]
-   else:outcome=next(d['id'] for d in load_catalog() if d['id'] in g.cards and request_matches(req,d,hero))
+   else:outcome=next(d['id'] for d in load_catalog() if d['id'] in g.cards and request_matches(req,d,hero) and not herald_related(d))
    self.assertTrue(request_matches(req,g.cards[outcome],hero))
    g._generation_pools[(req,hero)]=GenerationPool('explicit single-outcome fixture',(outcome,),'Controlled body test; not production membership')
    selected[req]=outcome

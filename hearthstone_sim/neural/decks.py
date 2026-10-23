@@ -17,7 +17,7 @@ def load_panel(path=DEFAULT_PANEL):
 
     raw = Path(path).read_bytes()
     data = json.loads(raw)
-    if data.get("schema") != "fixed-competitive-decks-v1":
+    if data.get("schema") not in ("fixed-competitive-decks-v1", "training-deck-mixture-v1"):
         raise ValueError("Unsupported fixed deck panel")
     if data.get("patch") != verify_data()["patch"]:
         raise ValueError("Deck panel patch differs from frozen catalog")
@@ -42,7 +42,11 @@ def load_panel(path=DEFAULT_PANEL):
             errors.append("Not in pinned Standard catalog: " + str(sorted(outside)))
         if errors:
             raise ValueError(name + ": " + "; ".join(errors))
-        if not entry.get("source", "").startswith("https://"):
+        if not entry.get("source", "").startswith("https://") and not (
+            data["schema"] == "training-deck-mixture-v1"
+            and entry.get("kind") == "legal-random"
+            and type(entry.get("generator_seed")) is int
+        ):
             raise ValueError("Fixed competitive list needs a source URL")
         decks[name] = deck
     if len(decks) < 2:

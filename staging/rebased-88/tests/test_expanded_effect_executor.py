@@ -26,3 +26,23 @@ class EffectExecutorTests(unittest.TestCase):
         self.assertEqual(game.players[0].armor, 0)
         game._effect(('armor', 3), dict(owner=0, source=None))
         self.assertEqual(game.observe(0), clone.observe(0))
+
+    def test_destroy_departed_target_finishes_remaining_effects(self):
+        game = fixtures.ChoiceContinuationTests().game()
+        game._summon(1, 'CORE_CS2_179')
+        victim = game.players[1].minions[0]
+        game.players[1].board.remove(victim)
+        game._start_play_effects([('destroy',), ('armor', 3)],
+                                dict(owner=0, source=None, target=victim.uid,
+                                     bonus=0, lifesteal=False))
+        self.assertEqual(game.players[0].armor, 3)
+        self.assertIsNone(game.pending_frame)
+
+    def test_destroy_live_target_and_zero_target(self):
+        game = fixtures.ChoiceContinuationTests().game()
+        game._summon(1, 'CORE_CS2_179')
+        victim = game.players[1].minions[0]
+        game._effect(('destroy',), dict(owner=0, source=None, target=0))
+        self.assertGreater(victim.health, 0)
+        game._effect(('destroy',), dict(owner=0, source=None, target=victim.uid))
+        self.assertEqual(victim.health, 0)

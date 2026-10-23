@@ -708,3 +708,6 @@ INTERNAL_OPERATIONS.update(OBLIGATION_PREFIX+name for name in ('yoink','yoink_us
 
 from .historical_final_spell_roots import PREFIX as FINAL_ROOT_PREFIX
 INTERNAL_OPERATIONS.update(FINAL_ROOT_PREFIX+name for name in ('kangor','dwarf','impfestation','dwarf_one','imp_pair','imp_summon','imp_attacks','mech_return','darkness','champions','champion_side'))
+
+# Emerald Portal is also cast by explicit deck/physical spell effects.
+INTERNAL_OPERATIONS.add('imbue_portal')

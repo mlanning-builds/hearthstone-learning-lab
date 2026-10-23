@@ -703,6 +703,7 @@ class Game(HistoricalConditionalBattlecries,HistoricalPassiveStats,HistoricalRem
         targets=self._visible_targets(owner,magic=data['type']=='SPELL')
         def valid(uid):
             if mode=='character': return True
+            if mode=='hero': return uid<0
             m=self._find(uid) if uid>0 else None
             friendly=(-uid-1==owner) if uid<0 else m.owner==owner
             if mode=='friendly_character': return friendly
@@ -909,6 +910,7 @@ class Game(HistoricalConditionalBattlecries,HistoricalPassiveStats,HistoricalRem
                 continue
             if d['type'] in ('MINION','LOCATION') and len(p.board)>=7 and not (d['type']=='MINION' and c.card_id in MAGNETIC_IDS):continue
             from .historical_sidequest_spell_batch import TOTALS as historical_sidequest_totals
+            if c.card_id=='TLC_EVENT_400' and (getattr(p,'forge_sidequests',()) or len(p.secrets)+self._quest_slots(owner)>=5):continue
             if c.card_id in historical_sidequest_totals or c.card_id in ('DRG_323','DRG_324'):
                 if len(p.secrets)+self._quest_slots(owner)>=5 or any(q['card_id']==c.card_id for q in getattr(p,'historical_mage_sidequests',())):continue
             if self._is_quest(c.card_id) and (p.quest is not None or len(p.secrets)>=5):continue
@@ -1147,6 +1149,7 @@ class Game(HistoricalConditionalBattlecries,HistoricalPassiveStats,HistoricalRem
         self._rewind_begin(action)
         owner=self.current; p=self.players[owner]
         card=next(c for c in p.hand if c.uid==action.source); cid=card.card_id; d=self._card_data(card)
+        crafted_program=deepcopy(self._crafted_rule(card))
         from .historical_location_timed import frozen_locked
         if frozen_locked(self,owner,card):raise UnsupportedCard('Frozen Over prevents playing this physical card this turn')
         echo_play='ECHO' in d.get('mechanics',()) or (d['type']=='MINION' and self._active('GIL_618',owner))
@@ -1324,7 +1327,7 @@ class Game(HistoricalConditionalBattlecries,HistoricalPassiveStats,HistoricalRem
             context['lifesteal']=context['lifesteal'] or historical_spell_lifesteal
         from .kindred import consume_repetition
         context['kindred_repeats']=consume_repetition(self,owner,cid,context['kindred'])
-        operations=(self._crafted_rule(card) or RULES.get(cid,('none',[])))[1]
+        operations=(crafted_program or RULES.get(cid,('none',[])))[1]
         if physical_choice_branches:
             selected=physical_choice_branches if action.choices==(-1,) else [physical_choice_branches[action.choices[0]]]
             operations=[op for _,_,ops in selected for op in ops]

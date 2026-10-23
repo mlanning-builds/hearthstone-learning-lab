@@ -36,7 +36,7 @@ def execute(game,op,ctx):
   if card is None:return True
   amount=getattr(card,'rule_state',{}).get('historical_rock_damage',8)
   player.hand.remove(card)
-  game._zone_card_removed(owner,'hand',card,cause='destroy')
+  game._zone_card_removed(owner=owner,card=card,zone='hand',cause='destroy')
   game._refresh_auras()
   game._deal_effect(game.hero_id(owner),amount,dict(owner=owner,source=None,target=game.hero_id(owner),spell=False,bonus=0,lifesteal=False,physical_card=card,card_id=PICK))
  else:return False

@@ -134,12 +134,13 @@ def execute(game,op,ctx):
    for index,value in enumerate(cards):
     if card_matches(game,value,op[2]):
      card=value if isinstance(value,Card) else Card(game._new_id(),value)
-     card.cost_delta-=op[3];cards[index]=card
+     card.cost_delta=getattr(card,'cost_delta',0)-op[3];cards[index]=card
  elif name=='historical_mutation_discount_extreme':
   cards=[c for c in p.hand if card_matches(game,c,op[1])]
   if cards:
    highest=max(game._cost(c,owner) for c in cards)
-   game.rng.choice([c for c in cards if game._cost(c,owner)==highest]).cost_delta-=op[2]
+   card=game.rng.choice([c for c in cards if game._cost(c,owner)==highest])
+   card.cost_delta=getattr(card,'cost_delta',0)-op[2]
  elif name=='historical_mutation_swap_hands':
   for player in game.players:
    for card in player.hand:
@@ -178,7 +179,7 @@ def execute(game,op,ctx):
    game._buff_weapon(owner,attack=op[1]-p.weapon['attack'],durability=op[1]-p.weapon['durability'])
  elif name=='historical_mutation_dragons_hand':
   for card in p.hand:
-   if game._card_data(card)['type']=='MINION' and has_tribe(game._card_data(card),'DRAGON'):card.cost_delta-=op[1];_saidan_add(card,'attack_bonus',op[2]);_saidan_add(card,'health_bonus',op[3])
+   if game._card_data(card)['type']=='MINION' and has_tribe(game._card_data(card),'DRAGON'):card.cost_delta=getattr(card,'cost_delta',0)-op[1];_saidan_add(card,'attack_bonus',op[2]);_saidan_add(card,'health_bonus',op[3])
  elif name=='historical_mutation_deathrattle_hand':
   for card in p.hand:
    if game._card_data(card)['type']=='MINION' and 'DEATHRATTLE' in game._card_mechanics(card):game._mutation_set_stats(card,owner,op[1],op[2]);game._set_card_cost(card,op[3])

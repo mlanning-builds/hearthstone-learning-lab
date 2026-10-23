@@ -171,6 +171,8 @@ class PhysicalCastTests(unittest.TestCase):
     def test_incompatible_fel_autocast_pool_rejects_without_sampling(self):
         from expanded.health_generation import FEL
         g=self.game();g.players[0].hero_class='MAGE';before=g.rng.getstate()
+        # Make the deliberately broken Herald outcome eligible for generation.
+        g.players[0].starting_deck.append('CATA_530')
         with patch.dict(RULES,{'CATA_530':('none',[('future_unimplemented_effect',)])}):
             with self.assertRaisesRegex(UnsupportedCard,'lacks internal support'):
                 g._autocast_candidates(FEL,0)

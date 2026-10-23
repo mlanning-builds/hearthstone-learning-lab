@@ -72,9 +72,11 @@ class FinalSpellRootTests(unittest.TestCase):
   from expanded.generation_cards import pool
   from expanded.selectors import HERO_CLASSES
   from expanded.pools import GenerationPool
+  from expanded.generation import request_matches
+  from expanded.herald import herald_related
   self.g._generation_pools={}
   # The frozen members have genuine class eligibility; no production pool is narrowed.
-  candidates={hero:next(cid for cid,data in self.g.cards.items() if data.get('collectible') and data.get('cardClass')==hero and cid not in ('OG_118','VAC_941')) for hero in HERO_CLASSES}
+  candidates={hero:next(cid for cid,data in self.g.cards.items() if data.get('collectible') and data.get('cardClass')==hero and cid not in ('OG_118','VAC_941') and request_matches(pool(classes=hero),data,self.p.hero_class) and not herald_related(data)) for hero in HERO_CLASSES}
   for hero,cid in candidates.items():
    self.g._generation_pools[(pool(classes=hero),self.p.hero_class)]=GenerationPool('fixture only',(cid,),'Controlled class conversion witness')
   warlock=Card(self.g._new_id(),candidates['WARLOCK']);neutral=Card(self.g._new_id(),'CS2_231')

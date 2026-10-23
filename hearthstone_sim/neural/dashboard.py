@@ -26,6 +26,8 @@ class Dashboard:
         self.safety = {}
         self.timing = {}
         self.evaluation_safety = {}
+        self.session_start_safety = {}
+        self.session_start_evaluation_safety = {}
 
     def consume(self, event):
         kind = event.get("event")
@@ -36,8 +38,21 @@ class Dashboard:
             self.status = "Stopped: " + event["reason"] + " · " + event["failures"]
         self.elapsed = event.get("elapsed_seconds", self.elapsed)
         if kind == "started":
+            self.session_start_safety = dict(event.get("session_start_safety", {}))
+            self.session_start_evaluation_safety = dict(
+                event.get("session_start_evaluation_safety", {})
+            )
+            self.safety = dict(self.session_start_safety)
+            self.evaluation_safety = dict(self.session_start_evaluation_safety)
             self.folder = event["folder"]
             self.status = "Starting"
+        elif kind == "tactical_progress":
+            self.status = (
+                f"Tactical lessons: {event['done']}/{event['total']} — supervised learning"
+            )
+        elif kind == "tactical_finished":
+            self.checkpoint = event["checkpoint"]["path"]
+            self.status = "Tactical lessons saved; starting PPO"
         elif kind == "game_started":
             self.status = "Playing: " + event["learner_deck"] + " vs " + event["opponent_deck"]
         elif kind == "game_finished":
@@ -149,11 +164,11 @@ class Dashboard:
 <progress value="{self.done}" max="{self.total}" style="width:100%"></progress>
 <p><b>{self.done:,} / {self.total:,} training games ({pct:.1f}%)</b> · {self.completed:,} finished · {self.capped:,} capped · {self.updates:,} PPO updates</p>
 <p>Elapsed: {duration(self.elapsed)} · Rough time remaining: {duration(self.eta)}</p>
-<p>Attempts: {self.safety.get("attempted",0)} · Failed: {self.safety.get("failed",0)}</p>
-<p>Evaluation attempts / failures: {self.evaluation_safety.get("attempted",0)} / {self.evaluation_safety.get("failed",0)}</p>
+<p>This run — training attempts: {self.safety.get("attempted", 0) - self.session_start_safety.get("attempted", 0)} · Failures: {self.safety.get("failed", 0) - self.session_start_safety.get("failed", 0)}</p>
+<p>This run — evaluation attempts / failures: {self.evaluation_safety.get("attempted", 0) - self.session_start_evaluation_safety.get("attempted", 0)} / {self.evaluation_safety.get("failed", 0) - self.session_start_evaluation_safety.get("failed", 0)}</p>
 <p>Batch engine / inference / PPO seconds: {escape(str(self.timing))}</p>
-<p>Approximation executions by learner deck: {escape(str(self.safety.get("approximations",{})))}</p>
-<p>Approximation card-use proxies (not executions): {escape(str(self.safety.get("approximation_proxies",{})))}</p>
+<p>Approximation executions by learner deck: {escape(str(self.safety.get("approximations", {})))}</p>
+<p>Approximation card-use proxies (not executions): {escape(str(self.safety.get("approximation_proxies", {})))}</p>
 {self.chart()}{table}{deck_table}
 <p style="font-size:12px">Evaluation games are separate and never update weights. Caps are excluded from win rates. Intervals are approximate for this fixed matchup panel. These opponents are baselines, not expert players.</p>
 <p>Latest durable checkpoint: <code>{escape(self.checkpoint or "No new checkpoint yet")}</code></p>

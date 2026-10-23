@@ -119,6 +119,12 @@ def split(game,op,ctx):
  result=split_pool(game,op,ctx)
  if result is not None:return result
  owner=ctx['owner'];name=op[0]
+ if name=='historical_utility_earthen_might':
+  target=game._force_live(ctx.get('target'))
+  if target is not None and has_tribe(game._card_data(target),'ELEMENTAL'):
+   from .generation_cards import random_cards
+   return game._generation_split(random_cards(pool(card_type='MINION',tribe='ELEMENTAL')),ctx)
+  return ('batch30_noop',),()
  if name=='historical_utility_eonar_draw':
   count=max(0,getattr(game.players[owner],'hand_capacity',10)-len(game.players[owner].hand))
   return (('draw',count),()) if count else (('batch30_noop',),())
@@ -157,7 +163,8 @@ def split(game,op,ctx):
   return operations[0],operations[1:]
 
  if name=='historical_utility_devolving_missiles':
-  return ('historical_utility_devolving_hit',),(('historical_utility_devolving_hit',),('historical_utility_devolving_hit',))
+  # All hits need their own split pass, including the first one.
+  return ('batch30_noop',),(('historical_utility_devolving_hit',),)*3
  if name=='historical_utility_devolving_hit':
   from .transformations import evolve_pool
   victims=tuple(m for m in game.players[1-owner].minions if m.health>0)
@@ -430,12 +437,6 @@ def execute(game,op,ctx):
   target=game._force_live(ctx.get('target'))
   count=sum(has_tribe(game._card_data(m),'TOTEM') for m in p.minions if m.health>0)
   if target is not None:game._buff(target,count,count)
-  return True
- if name=='historical_utility_earthen_might':
-  target=game._force_live(ctx.get('target'))
-  if target is not None and has_tribe(game._card_data(target),'ELEMENTAL'):
-   from .generation_cards import random_cards
-   game._effect(random_cards(pool(card_type='MINION',tribe='ELEMENTAL')),ctx)
   return True
  if name=='historical_utility_reincarnate_summon':
   donor=op[1]

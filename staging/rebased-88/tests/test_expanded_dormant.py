@@ -177,3 +177,9 @@ class DormantTests(unittest.TestCase):
     def test_fresh_resurrection_restarts_dormancy(self):
         g=self.game();m=g._summon(0,'CORE_BT_156');g._awaken(m);m.health=0;g._settle()
         new=g._summon(0,m.card_id,entry_origin='resurrection');self.assertEqual(new.dormant,2)
+
+    def test_newest_expansion_trigger_accepts_setless_coin(self):
+        g=self.game();m=g._summon(0,'TIME_063')
+        self.assertFalse(g._dormant_trigger_matches('dormant_newest_played','spell_cast',dict(owner=0,card_id='TOKEN_COIN'),m))
+        self.assertTrue(g._dormant_trigger_matches('dormant_newest_played','minion_played',dict(owner=0,card_id='JAIL_201'),m))
+        self.assertFalse(g._dormant_trigger_matches('dormant_newest_played','minion_played',dict(owner=0,card_id='CATA_556'),m))

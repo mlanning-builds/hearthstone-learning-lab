@@ -208,7 +208,7 @@ def resolve_choice(game,choice,selected):
   from .historical_copy_batches import attach_same_turn_follow
   card=game._add(owner,cid);game._discovery_result=card
   if card is not None:
-   if choice['mode']=='follow_hataaru':card.cost_delta-=1
+   if choice['mode']=='follow_hataaru':card.cost_delta=getattr(card,'cost_delta',0)-1
    attach_same_turn_follow(game,card,choice['context'],choice['mode'][7:])
  elif choice['mode'] in ('hipster','importer','maruut','murozond','ivory','amalgam','pillar'):
   context=choice['context'];mode=choice['mode']

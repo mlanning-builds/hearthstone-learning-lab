@@ -68,7 +68,7 @@ class Dormancy:
             from .expansion_rules import NEWEST_EXPANSION
             return bool(minion.dormant and kind in ('minion_played', 'spell_cast', 'dormant_other_card_played')
                         and data['owner'] == minion.owner
-                        and self.cards[data['card_id']]['set'] == NEWEST_EXPANSION)
+                        and self.cards[data['card_id']].get('set') == NEWEST_EXPANSION)
         return None
 
     def _dormant_effect(self, op, ctx):

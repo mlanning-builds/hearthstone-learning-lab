@@ -1,128 +1,86 @@
 # Hearthstone Learning Lab
 
-A side quest that got out of hand: build a Hearthstone simulator, then use it to explore how a player can learn the game and how decks can evolve.
+A personal research project exploring reinforcement learning in a card game with hidden information, generated cards and interruptible effects. The project combines an explicit Hearthstone rules simulator with resumable PPO self-play and a model-comparison harness.
 
-The interesting part is everything underneath the model. Hearthstone has hidden information, thousands of card interactions, generated cards, persistent effects, and choices that interrupt other choices. This project builds those rules explicitly so that future learning experiments have a game they can trust.
+**Research prototype.** Internal rule checks and observed learning results are not independent certification of game fidelity or evidence of expert-level play. Known approximations and unresolved interactions are documented.
 
-**Work in progress.** The goal is the complete frozen Standard format across all 11 classes. The simulator is still being built, and no learned policy has yet been shown to play well. Training is run manually in Jupyter.
+## Engineering focus
 
-## What is here
+- **Rules and information boundaries:** legal-action masks, player-visible observations, ordered effect resolution and resumable choices.
+- **Reproducible runs:** frozen card data and deck panels, separate training/evaluation seeds, immutable checkpoints, source fingerprints and explicit compatibility migrations.
+- **Training:** a policy/value Transformer with PPO, checkpoint opponents, tactical fixtures and parallel game collection.
+- **Evaluation:** fixed opponents, confidence intervals, tactical categories, error accounting and resumable case-level receipts. Failed games are not silently scored as losses.
+- **Research comparison:** fresh MLP, bounded-memory GRU and larger Transformer learners compared with a preserved small Transformer, with and without limited combat look-ahead. Equal completed-game budgets; time recorded separately.
 
-- An explicit rules engine with legal actions, private player observations, resumable effects, combat, and deterministic replays.
-- A frozen catalog of **1,185 Standard cards**, pinned to patch **36.6.0.251952** and September 18, 2026.
-- An experimental learning interface with action features, policy updates, saved checkpoints, and resumable runs.
-- A deck-search workflow that compares legal candidate decks using frozen policies and separate evaluation seeds.
-- Jupyter notebooks for inspecting the simulator, checking rules, recording games, and running your own experiments.
+## Architecture
 
 ```mermaid
 flowchart LR
-    C[Frozen card catalog] --> R[Explicit card rules]
-    R --> S[Simulator]
-    S --> A[Legal actions and private observations]
-    A --> J[Jupyter experiments]
-    J --> P[Policy checkpoints]
-    P --> D[Deck search and evaluation]
-    S --> V[Rule checks and deterministic replays]
+    Data[Frozen JSON card catalog] --> Engine[Rules and effect resolution]
+    Engine --> API[Legal actions and visible observations]
+    API --> Workers[Parallel collectors]
+    Workers --> PPO[PPO learner]
+    PPO --> Checkpoints[Immutable checkpoints and opponent archive]
+    Checkpoints --> Workers
+    Checkpoints --> Eval[Held-out evaluation]
+    Eval --> Dashboard[Jupyter dashboard and learning curves]
 ```
 
-## Current status
+| Location | Purpose |
+|---|---|
+| [`staging/rebased-88/expanded/`](staging/rebased-88/expanded/) | Active all-class simulator; folder name is historical |
+| [`hearthstone_sim/neural/`](hearthstone_sim/neural/) | Encoding, Transformer/PPO, collection, evaluation and tactical fixtures |
+| [`hearthstone_sim/research/matched_games/`](hearthstone_sim/research/matched_games/) | Architecture comparison, bounded GRU context, combat look-ahead and graphs |
+| [`configs/`](configs/) | Experiment configurations; some resume profiles require local artifacts |
+| [`tests/`](tests/) and [`staging/rebased-88/tests/`](staging/rebased-88/tests/) | Harness contracts and simulator scenarios |
+| [`notebooks/`](notebooks/) | Manually launched experiments; published without outputs |
+| [`engine/`](engine/) and [`learner/`](learner/) | Preserved original experiment |
 
-Last updated October 19, 2026. These figures measure written code and internal regression checks. They are **not** independent certification of Hearthstone fidelity.
+Card metadata lives in JSON; effects are explicit code. This keeps complex timing and generated dependencies reviewable rather than treating card text as an executable specification. The tradeoff is substantial interaction-testing work.
 
-| Area | Status |
-| --- | --- |
-| Pinned Standard roots | 1,185 of 1,185 registered in the development candidate |
-| Historical minion roots | 3,201 of 3,201 registered; generated effects and recursive pools are still being audited |
-| Historical spell roots | 1,414 of 1,442 written; 28 remain (see `docs/engine-audit/historical-generated-spell-backlog-current.json`) |
-| Non-training rule regressions | 5,626 checks passing, 0 failures or errors, on source fingerprint `8c2f5c4d0392acca58f53b396f46f44d06f804c5e88e5030fcf9a4d94d1ed1e1` |
-| Shared interactions and client fidelity | In progress; known gaps are tracked in `staging/rebased-88/expanded/fidelity_gaps.json` |
-| Approximated cards | A short list of cards (for example Bashana, Garona, Zephrys, Whizbang, Elise) use documented approximations; see `staging/rebased-88/APPROXIMATIONS.md` |
-| Neural training | A Transformer/PPO trainer and monitoring notebooks exist. A 400-game trial ran without engine crashes after safety changes, but showed no measurable improvement against a hand-written heuristic opponent. Whether it learns at scale is untested. |
+## Current experiments
 
-**The simulator is not complete and full-format training is not ready.** Unsupported behavior raises an error instead of being silently approximated. See the [candidate status](staging/rebased-88/STATUS.md) for validation evidence and the [completion queue](docs/engine-audit/completion-queue.md) for unfinished work. Older, more detailed progress notes are kept in the [development log](docs/DEVELOPMENT-LOG.md).
+As of **October 23, 2026**, the local small-Transformer lineage has **19,931 completed training games**. The campaign uses a frozen **176-deck panel across all eleven classes**, including strategy variants and randomized legal decks. Its opponent mix is 60% current self-play, 30% archived models and 10% heuristic.
 
-## Neural training
+Notebook 22 prepares an exploratory comparison with three fresh alternatives, each targeting 19,931 completed games. Graph checkpoints occur every 1,000 games and at the final budget. Two-hour resumable sessions bound each launch. The saved Transformer and its search variant are already-trained references, not fresh learning curves. Different training histories and a single seed limit causal conclusions. **The comparison has not completed; no architecture winner is claimed.**
 
-Notebooks [15](notebooks/15_transformer_ppo.ipynb) and [16](notebooks/16_long_transformer_training.ipynb) train a 4.76-million-parameter Transformer policy with PPO on four fixed published decks, against frozen copies of itself and archived checkpoints. Notebook 16 adds failure logging, saved game traces, timing, and fixed-opponent evaluation (including one before learning starts).
+The search variant is a bounded two-ply public-information planner for supported ordinary minion combat, with base-policy fallback. It is not full-game MCTS and does not model unknown secret activation. Coverage and additional decision time must accompany its score.
 
-- Both notebooks start in a safe mode: setup and preflight only. You must set `START_TRAINING = True` yourself.
-- Modes in notebook 16: `preflight`, `trial` (400 games), `medium` (2,000 games), `full` (10,000 games).
-- The original harness upgrade (`--allow-code-upgrade`) requires an unchanged engine. The separate [`tools/migrate_400_game_checkpoint.py`](tools/migrate_400_game_checkpoint.py) handles only the owner’s exact 400-game checkpoint after the engine repairs; it preserves learning state and starts no games. Checkpoints are not distributed.
-- Install with `python -m pip install -e '.[neural,notebook]'`. See [neural training details](docs/NEURAL_TRAINING.md) for resume rules, checks and limitations.
-- This is a research baseline, not demonstrated strong play. Beating a random or earlier version of the model is not evidence of expert strength.
-- The original linear trainer (notebook 11) and its checkpoints remain separate.
+See [comparison design](docs/research/MATCHED_GAMES_COMPARISON.md), [campaign setup](docs/ALL-CLASS-CAMPAIGN.md) and [validation status](STATUS.md).
 
-## Try it locally
+## Run locally
+
+Python 3.9.6 is the observed development environment. Preserve the checkout layout: the active candidate uses shared data through a relative link. Standalone wheel distribution is not supported.
 
 ```sh
 git clone https://github.com/mlanning-builds/hearthstone-learning-lab.git
 cd hearthstone-learning-lab
-make install
-make notebook
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -e '.[neural,notebook,research,dev]'
+make neural-preflight
+make notebook-neural
 ```
 
-Without Make (including Windows), run `python -m venv .venv`, upgrade pip with `.venv\Scripts\python -m pip install --upgrade pip` on Windows or `.venv/bin/python -m pip install --upgrade pip` on macOS/Linux, then use `.venv\Scripts\python -m pip install -e ".[notebook]"` on Windows or `.venv/bin/python -m pip install -e ".[notebook]"` on macOS/Linux. Preserve the repository layout: the candidate uses a relative link to the shared frozen data. Python 3.9.6 is the currently observed local environment; cross-platform setup remains under review.
+Notebook 15 is the fresh-run entry point. Notebook 21 is the local campaign resume workflow. Notebook 22 is the model-comparison resume workflow. **Resume notebooks require the matching local checkpoints and frozen deck-panel files; these artifacts are intentionally not distributed.** Installation, imports and CI do not launch training. Read each notebook's start gate before running cells.
 
-Dependencies are declared in `pyproject.toml`. Use an editable installation from the repository checkout; the candidate and frozen data require the existing folder layout. `requirements.txt` forwards to that same configuration for compatibility. Standalone wheel distribution is not supported yet.
+On Windows, use `.venv\Scripts\python` in place of `.venv/bin/python`; that platform has not been validated for the full workflow.
 
-Run `make help` for available commands. `make test` checks project tools; `make test-candidate` runs the full non-training rule suite. `make check` checks coverage inventory. `make sim SEEDS=1 MAX_ACTIONS=500` runs bounded random-play validation without updating a model. `make notebook` opens JupyterLab without executing cells. No Make target starts training or deck search.
-
-Start with notebook **09** to inspect coverage and validate random games without learning. Notebook **13** runs the shared-rule checks. When you choose to train, notebook **11** lets you set the budget and start the run yourself. Notebooks **12** and **14** compare and search decks with saved policies.
-
-Training is never started by installation, imports, or continuous integration. Local runs and model files remain under ignored `runs/` directories.
-
-For rule checks only, the candidate checker can use four independent processes:
+## Validation and limitations
 
 ```sh
-cd staging/rebased-88
-../../.venv/bin/python ../../tools/check_without_training.py --suite candidate --workers 4
+make quality          # staged lint and strict facade typing
+make smoke            # bounded non-learning simulator checks
+make test             # supporting tool contracts
+make test-candidate   # full non-training candidate rule suite
 ```
 
-The checker excludes training scenarios and binds its receipt to unchanged source. Sequential execution remains the default.
+The latest destroy-target repair passed **93 targeted non-training checks** and a resume-integrity preflight. This is not a new full-suite pass. Earlier full-suite evidence is tied to its original source fingerprint; see [validation status](STATUS.md).
 
-## Explore the code
+The pinned catalog targets patch **36.6.0.251952** (September 18, 2026), rather than automatically following the live game. Registered card identities do not establish correct behavior in every interaction. [Known fidelity gaps](staging/rebased-88/expanded/fidelity_gaps.json) and [documented approximations](staging/rebased-88/APPROXIMATIONS.md) remain part of the experimental scope. Tactical quiz success and wins against historical checkpoints do not establish ladder strength.
 
-| Path | Purpose |
-| --- | --- |
-| [`staging/rebased-88/expanded/`](staging/rebased-88/expanded/) | Current all-class development candidate |
-| [`notebooks/`](notebooks/) | Interactive simulator and experiment workflows |
-| [`tools/`](tools/) | Validation, recording, training, and deck-search runners |
-| [`data/standard/`](data/standard/) | Frozen card catalog and provenance |
-| [`docs/engine-audit/`](docs/engine-audit/) | Dependency inventories, reviewed behavior, and unresolved fidelity gaps |
-| [`engine/`](engine/) and [`learner/`](learner/) | Preserved original Death Knight experiment |
+CI runs lint/type checks, smoke checks and non-training rules. Neural experiments remain owner-launched. Models, live outputs, run receipts, environments and credentials remain outside Git.
 
-The candidate folder's name is historical. The older root simulator and notebooks are retained for provenance; use notebooks 09–14 for current candidate work. The [project guide](PROJECT_GUIDE.md) has detailed workflows and experiment boundaries.
+## Contributing and license
 
-## Where this is going
-
-Complete the remaining card effects and generated dependencies, validate shared interactions against independent evidence, and make the simulator easy for other people to use. Then run larger learning and deck-search experiments in Jupyter with explicit budgets and reproducible reports.
-
-Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](docs/ROADMAP.md). Changes should include a meaningful rules scenario and preserve hidden-information boundaries and deterministic replay.
-
-## License and data
-
-Project source code is available under the [MIT license](LICENSE). Frozen third-party card data and game content retain their original rights and are excluded from that source-code license; see [NOTICE](NOTICE). This is an unofficial fan project, with no Blizzard affiliation.
-
-## Explore the code
-
-| Path | Purpose |
-| --- | --- |
-| [`staging/rebased-88/expanded/`](staging/rebased-88/expanded/) | Current all-class development candidate |
-| [`hearthstone_sim/`](hearthstone_sim/) | Public facade and neural training code |
-| [`notebooks/`](notebooks/) | Interactive simulator and experiment workflows |
-| [`tools/`](tools/) | Validation, recording, training, and deck-search runners |
-| [`data/standard/`](data/standard/) | Frozen card catalog and provenance |
-| [`docs/engine-audit/`](docs/engine-audit/) | Dependency inventories, reviewed behavior, and unresolved fidelity gaps |
-| [`engine/`](engine/) and [`learner/`](learner/) | Preserved original Death Knight experiment |
-
-The candidate folder's name is historical. The older root simulator and notebooks are retained for provenance; use notebooks 09-16 for current work. The [project guide](PROJECT_GUIDE.md) has detailed workflows and experiment boundaries.
-
-## Where this is going
-
-Complete the remaining card effects and generated dependencies, validate shared interactions against independent evidence, and make the simulator easy for other people to use. Then run larger learning and deck-search experiments in Jupyter with explicit budgets and reproducible reports.
-
-Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](docs/ROADMAP.md). Changes should include a meaningful rules scenario and preserve hidden-information boundaries and deterministic replay.
-
-## License and data
-
-Project source code is available under the [MIT license](LICENSE). Frozen third-party card data and game content retain their original rights and are excluded from that source-code license; see [NOTICE](NOTICE). This is an unofficial fan project, with no Blizzard affiliation.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for rule scenarios and information-boundary expectations. Source is [MIT licensed](LICENSE). Third-party game data retains its original rights; see [NOTICE](NOTICE). This is an unofficial fan project with no Blizzard affiliation.

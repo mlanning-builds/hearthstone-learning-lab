@@ -139,8 +139,13 @@ class ChoiceGenerators:
             self._generation_effect(discover(pool(minimum=p.mana,maximum=p.mana,classes=OWN)),ctx)
         elif name=='choicegen_destroy_top_rarity':
             if p.deck:
-                value=p.deck[-1];rarity=self._card_data(value).get('rarity')
-                if not rarity:raise UnsupportedCard('Destroyed top card has no reviewed rarity')
+                value=p.deck[-1];data=self._card_data(value);rarity=data.get('rarity')
+                if not rarity:
+                    if data.get('collectible'):
+                        raise UnsupportedCard('Collectible destroyed top card has no reviewed rarity')
+                    # Untagged tokens have INVALID rarity, not COMMON/FREE.
+                    # Resolve that exact selector: an empty pool offers nothing.
+                    rarity='INVALID'
                 request=pool(rarity=rarity,classes=OWN)
                 self._generation_candidates(request,owner)
                 p.deck.pop();self._zone_card_removed(owner,value,'deck','destroy');self._log('destroy_deck',player=owner,card=self._card_data(value)['id']);self._refresh_auras()

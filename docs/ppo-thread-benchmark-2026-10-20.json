@@ -1,0 +1,143 @@
+{
+  "scope": "Static legal-position 64-decision PPO forward/loss/backward/gradient-clip probe. No complete games, action sampling, optimizer steps or weight updates. Adam step and full-rollout diagnostics are not timed.",
+  "concurrent_training": true,
+  "background_priority": true,
+  "checkpoint": "runs/neural_ppo/4c5fc45ad8bf4c2a9039e868c597f229/training-000309-evaluation.pt",
+  "checkpoint_sha256": "abb3d50a6c121e3d24cad5969230bdba6332fd3f8610e4cdeab7820e34b5b366",
+  "weights_unchanged": true,
+  "checkpoint_unchanged": true,
+  "repeats": 3,
+  "batch_size": 64,
+  "positions": {
+    "mixed": {
+      "state_tokens_min": 477,
+      "state_tokens_max": 507,
+      "legal_actions_min": 8,
+      "legal_actions_max": 128
+    },
+    "crowded": {
+      "state_tokens_min": 502,
+      "state_tokens_max": 507,
+      "legal_actions_min": 98,
+      "legal_actions_max": 128
+    }
+  },
+  "rows": [
+    {
+      "threads": 1,
+      "mean_of_fixture_medians": 2.064656603999996,
+      "fixtures": {
+        "mixed": {
+          "median_seconds": 1.9695360829999942,
+          "min_seconds": 1.9252311249999998,
+          "max_seconds": 2.004014415999997
+        },
+        "crowded": {
+          "median_seconds": 2.159777124999998,
+          "min_seconds": 2.038889832999999,
+          "max_seconds": 2.1908887079999886
+        }
+      },
+      "numerics": {
+        "loss": 0.05976920202374458,
+        "kl": 0.0,
+        "gradient_max_abs_difference": 9.909272193908691e-07,
+        "gradient_relative_l2": 3.6891790387016954e-06
+      },
+      "speedup_vs_two_threads": 0.6420364679200692
+    },
+    {
+      "threads": 2,
+      "mean_of_fixture_medians": 1.3255848335000024,
+      "fixtures": {
+        "mixed": {
+          "median_seconds": 1.3052720000000022,
+          "min_seconds": 1.287763874999996,
+          "max_seconds": 1.3813461250000003
+        },
+        "crowded": {
+          "median_seconds": 1.3458976670000027,
+          "min_seconds": 1.320132084000008,
+          "max_seconds": 1.4202823329999994
+        }
+      },
+      "numerics": {
+        "loss": 0.05976920202374458,
+        "kl": 0.0,
+        "gradient_max_abs_difference": 0.0,
+        "gradient_relative_l2": 0.0
+      },
+      "speedup_vs_two_threads": 1.0
+    },
+    {
+      "threads": 4,
+      "mean_of_fixture_medians": 1.1418726039999996,
+      "fixtures": {
+        "mixed": {
+          "median_seconds": 1.114643749999999,
+          "min_seconds": 1.0989737080000026,
+          "max_seconds": 1.1516991250000004
+        },
+        "crowded": {
+          "median_seconds": 1.169101458,
+          "min_seconds": 1.1445834169999998,
+          "max_seconds": 1.1997750420000006
+        }
+      },
+      "numerics": {
+        "loss": 0.05976920202374458,
+        "kl": 0.0,
+        "gradient_max_abs_difference": 3.91155481338501e-07,
+        "gradient_relative_l2": 1.995027787415893e-06
+      },
+      "speedup_vs_two_threads": 1.1608868002056059
+    },
+    {
+      "threads": 6,
+      "mean_of_fixture_medians": 1.1104427709999989,
+      "fixtures": {
+        "mixed": {
+          "median_seconds": 1.0840339169999993,
+          "min_seconds": 1.0774171659999965,
+          "max_seconds": 1.150614042
+        },
+        "crowded": {
+          "median_seconds": 1.1368516249999985,
+          "min_seconds": 1.1222531250000003,
+          "max_seconds": 1.1965319999999995
+        }
+      },
+      "numerics": {
+        "loss": 0.05976920202374458,
+        "kl": 0.0,
+        "gradient_max_abs_difference": 3.995373845100403e-07,
+        "gradient_relative_l2": 2.0404725091793807e-06
+      },
+      "speedup_vs_two_threads": 1.1937443946852473
+    },
+    {
+      "threads": 8,
+      "mean_of_fixture_medians": 1.102687833000001,
+      "fixtures": {
+        "mixed": {
+          "median_seconds": 1.103227000000004,
+          "min_seconds": 1.0843907500000007,
+          "max_seconds": 1.1282700829999968
+        },
+        "crowded": {
+          "median_seconds": 1.102148665999998,
+          "min_seconds": 1.1003975419999996,
+          "max_seconds": 1.129690832999998
+        }
+      },
+      "numerics": {
+        "loss": 0.05976920202374458,
+        "kl": 0.0,
+        "gradient_max_abs_difference": 4.684552550315857e-07,
+        "gradient_relative_l2": 2.3846728254284244e-06
+      },
+      "speedup_vs_two_threads": 1.202139711556971
+    }
+  ],
+  "elapsed_seconds": 89.06006241600001
+}

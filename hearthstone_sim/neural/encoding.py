@@ -7,6 +7,7 @@ Hashed field/value embeddings have collisions: this is a versioned baseline,
 not a claim of a lossless sufficient statistic.
 """
 
+from functools import lru_cache
 from dataclasses import dataclass
 import hashlib
 import json
@@ -30,11 +31,38 @@ class EncoderConfig:
             raise ValueError("Invalid encoder limits")
 
 
-def stable_bucket(value, buckets):
-    raw = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+def _freeze_bucket(value):
+    # Typed keys avoid bool/int and int/float equality changing JSON hashes.
+    if isinstance(value, (list, tuple)):
+        return ("sequence", tuple(_freeze_bucket(v) for v in value))
+    if isinstance(value, dict):
+        return ("mapping", tuple((k, _freeze_bucket(v)) for k, v in sorted(value.items())))
+    if type(value) is float:
+        return ("float", value.hex())
+    return (type(value).__name__, value)
+
+
+def _thaw_bucket(key):
+    kind, value = key
+    if kind == "float":
+        return float.fromhex(value)
+    if kind == "sequence":
+        return [_thaw_bucket(v) for v in value]
+    if kind == "mapping":
+        return {k: _thaw_bucket(v) for k, v in value}
+    return value
+
+
+@lru_cache(maxsize=32768)
+def _cached_bucket(key, buckets):
+    raw = json.dumps(_thaw_bucket(key), sort_keys=True, separators=(",", ":"), ensure_ascii=True)
     return 1 + int.from_bytes(hashlib.blake2b(raw.encode(), digest_size=8).digest(), "little") % (
         buckets - 1
     )
+
+
+def stable_bucket(value, buckets):
+    return _cached_bucket(_freeze_bucket(value), buckets)
 
 
 class VisibleEncoder:
@@ -60,6 +88,16 @@ class VisibleEncoder:
                         )
 
         def clean(value, key=""):
+            # Public generated effects contain this immutable selector record.
+            # Encode its explicit fields just as the equivalent JSON mapping;
+            # arbitrary runtime objects must still fail below.
+            if (
+                type(value).__module__ == "expanded.generation_cards"
+                and type(value).__name__ == "PoolRequest"
+            ):
+                from dataclasses import asdict
+
+                return clean(asdict(value), key)
             if isinstance(value, dict):
                 result = {}
                 for k, v in sorted(value.items()):
